@@ -8,6 +8,24 @@
       "merged_at": "2026-03-26",
       "deployed": true,
       "accepted": true
+    },
+    {
+      "pr_number": 5,
+      "issue_numbers": [],
+      "status": "merged",
+      "commit_sha": "1ebc02b",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 6,
+      "issue_numbers": [],
+      "status": "open",
+      "commit_sha": null,
+      "merged_at": null,
+      "deployed": false,
+      "accepted": false
     }
   ]
 }
