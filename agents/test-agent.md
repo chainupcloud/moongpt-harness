@@ -28,13 +28,21 @@
 Playwright 安装路径：/tmp/pw-test/node_modules/playwright
 测试脚本：tests/ 目录下的 .spec.js 文件
 
+若目标为 staging URL 且 `VERCEL_BYPASS_SECRET` 已配置，需在脚本开头先访问 bypass URL 设置 cookie，再执行测试：
+```js
+// 访问此 URL 让 Vercel 设置 bypass cookie，再正常访问页面
+const bypassUrl = process.env.TEST_URL + '?x-vercel-protection-bypass=' + process.env.VERCEL_BYPASS_SECRET + '&x-vercel-set-bypass-cookie=samesitenone';
+await page.goto(bypassUrl);
+// 之后 page.goto(process.env.TEST_URL) 即可正常访问
+```
+
 运行方式：
 ```bash
 cd /tmp/pw-test
-TEST_URL="{target_url}" node /home/ubuntu/chainup/moongpt-harness/tests/smoke.spec.js 2>&1
+TEST_URL="{target_url}" VERCEL_BYPASS_SECRET="$VERCEL_BYPASS_SECRET" node /home/ubuntu/chainup/moongpt-harness/tests/smoke.spec.js 2>&1
 ```
 
-如果 tests/ 目录为空，先根据 rules/test-rules.md 编写测试脚本，使用 TEST_URL 环境变量作为测试目标。
+如果 tests/ 目录为空，先根据 rules/test-rules.md 编写测试脚本，使用 TEST_URL 和 VERCEL_BYPASS_SECRET 环境变量。
 
 ### Step 4：分析结果，去重后创建 Issue
 对每个测试失败：
