@@ -12,7 +12,7 @@
 
   "vercel": {
     "project_id": "prj_vMXnKzkyDeD9eIyXnqyoIpqhUP6u",
-    "staging_domain": null,
+    "staging_domain": "hermes-testnet-git-dev-chainupclouds-projects.vercel.app",
     "production_domain": "moongpt.ai",
     "staging_git_branch": "dev",
     "staging_target": "preview",
@@ -20,7 +20,7 @@
   },
 
   "test": {
-    "staging_url": null,
+    "staging_url": "https://hermes-testnet-git-dev-chainupclouds-projects.vercel.app",
     "production_url": "https://moongpt.ai",
     "active_env": "staging"
   },
