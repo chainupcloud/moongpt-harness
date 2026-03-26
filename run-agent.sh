@@ -23,9 +23,12 @@ if [ ! -f "$PROJECT_CONFIG" ]; then
 fi
 
 case "$AGENT" in
-  test|fix|master|coverage) ;;
+  test|smoke|fix|master|coverage) ;;
   *) echo "Unknown agent: $AGENT"; exit 1 ;;
 esac
+
+# smoke is an alias for test (uses test-agent.md)
+[ "$AGENT" = "smoke" ] && AGENT="test"
 
 # 各 Agent 使用的模型
 case "$AGENT" in
