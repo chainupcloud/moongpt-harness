@@ -40,11 +40,11 @@
     {
       "pr_number": 12,
       "issue_numbers": [11],
-      "status": "open",
-      "commit_sha": "be01cb2",
-      "merged_at": null,
-      "deployed": false,
-      "accepted": false
+      "status": "merged",
+      "commit_sha": "dd3adaa",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": true
     }
   ]
 }
