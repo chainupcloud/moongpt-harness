@@ -1,5 +1,9 @@
 {
   "modules": ["smoke", "coverage"],
   "current_index": 0,
+  "run_counts": {
+    "smoke": 0,
+    "coverage": 0
+  },
   "last_runs": {}
 }
