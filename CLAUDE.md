@@ -1,29 +1,109 @@
-# CLAUDE.md
+# CLAUDE.md — moongpt-harness
 
-## 概述
+## 定位
 
-moongpt.ai（Hermes DEX）AI 自动化测试与修复流水线。
+**通用 AI 驱动 CI/CD 流水线仓库**，与具体项目解耦。
 
-全流程：**用户维度测试 → 发现问题 → Claude Code Fix → Review 发布 → 线上验证**
+当前接入项目：`dex-ui`（chainupcloud/dex-ui，Hermes DEX，moongpt.ai）
 
-## 文件命名规范
+---
 
-- 探索报告：`explore-{YYYYMMDD}.md`
-- 测试报告：`test-{模块}-{YYYYMMDD}.md`
-- 问题记录：`issues-{YYYYMMDD}.md`
-- 修复记录：`fixes/fix-{issue-id}-{YYYYMMDD}.md`
-- 测试脚本：`tests/{模块}-{场景}.spec.js`
+## 四 Agent 流水线
 
-## 文档结构
+```
+Agent 1: test-agent   → 每 6h，Playwright 测试，发现 bug → 项目仓库开 Issue
+Agent 2: fix-agent    → 每 30min，读 state/issues.json，自动 fix → PR + 请 Copilot review
+Agent 3: Copilot      → GitHub PR review（由 Agent 2 自动 request）
+Agent 4: master-agent → 每 15min，检查 review → merge → Vercel 部署 → 验收 → 关闭 Issue
+```
 
-- 探索报告：概述 → 网络/钱包配置 → 页面结构 → 交易流程 → 发现问题
-- 测试报告：测试目标 → 环境 → 用例 → 结果 → 截图 → 结论
-- 问题记录：优先级 → 现象 → 复现步骤 → 根因 → 修复状态
+**Issue 跟踪在项目仓库**（如 chainupcloud/dex-ui），moongpt-harness 只管流水线。
 
-## 流水线说明
+---
 
-1. **测试**：Playwright headless / Synpress（含钱包）自动化测试
-2. **问题**：记录到 issues-{date}.md，标注优先级 P1~P4
-3. **修复**：Claude Code 定位并修复，记录到 fixes/ 目录
-4. **Review**：PR 到 randd1024 分支，人工 review 后合并
-5. **验证**：线上回归，截图存档
+## 目录结构
+
+```
+projects/          # 项目配置（每个项目一个 JSON 文件）
+  dex-ui.json      # dex-ui 配置（仓库、分支、Vercel、测试 URL）
+  template.json    # 新项目接入模板
+
+agents/            # Claude Code CLI prompt（各 Agent 的执行指令）
+  test-agent.md
+  fix-agent.md
+  master-agent.md
+
+rules/             # 规则定义（测试范围、修复约束、验收标准）
+  test-rules.md
+  fix-rules.md
+  acceptance-rules.md
+
+state/             # 流水线状态（单一数据源，每次运行后提交到 randd1024）
+  issues.json      # issue 状态：open / fixing / closed / needs-human
+  prs.json         # PR 状态：open / merged，含 SHA、是否 deployed/accepted
+
+tests/             # Playwright 测试脚本
+  smoke.spec.js    # 基础 smoke 测试
+  acceptance.spec.js # 验收测试（Master Agent 调用）
+
+design/            # 设计文档
+  pipeline-design.md
+
+logs/              # 运行日志（gitignored）
+.env               # 密钥（gitignored）：GH_TOKEN, VERCEL_TOKEN
+run-agent.sh       # Agent 统一启动脚本
+```
+
+---
+
+## 运行方式
+
+```bash
+# 手动触发
+bash run-agent.sh test dex-ui
+bash run-agent.sh fix dex-ui
+bash run-agent.sh master dex-ui
+
+# 日志查看
+tail -f logs/fix-agent.log
+```
+
+系统 crontab 已配置自动运行（test: 6h / fix: 30min / master: 15min）。
+
+---
+
+## 项目配置文件（projects/{name}.json）
+
+所有 Agent prompt 从项目配置文件读取，不使用硬编码值。关键字段：
+
+| 字段 | 说明 |
+|------|------|
+| `github.fix_base_branch` | PR base 分支（dex-ui 为 dev） |
+| `vercel.project_id` | Vercel 项目 ID |
+| `vercel.staging_domain` | Staging 域名（null = 待配置） |
+| `test.staging_url` | 测试目标 URL（null 时用 production_url） |
+| `test.active_env` | 当前激活环境（staging / production） |
+
+**新增项目**：复制 `projects/template.json`，填写配置，无需修改 agent 代码。
+
+---
+
+## State 文件规范
+
+`state/issues.json` 的 issue 状态流转：
+
+```
+open → fixing → closed
+          ↓（fix_attempts >= 3）
+       needs-human
+```
+
+每次 Agent 修改 state 后必须 git commit + push 到 randd1024。
+
+---
+
+## Git 规范
+
+- harness 自身变更提交到 `randd1024` 分支
+- dex-ui 修复分支基于 `dev`，前缀 `fix/issue-{N}`
+- 禁止直接推送 main/master
