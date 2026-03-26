@@ -17,7 +17,7 @@ BASE = Path(__file__).parent
 
 # cron 调度（分钟间隔）
 AGENT_SCHEDULE = {
-    'test':   {'interval_min': 360,  'cron': '23 */6 * * *',  'label': '每 6h'},
+    'test':   {'interval_min': 120,  'cron': '23 */2 * * *',  'label': '每 2h'},
     'fix':    {'interval_min': 30,   'cron': '17,47 * * * *', 'label': '每 30min'},
     'master': {'interval_min': 15,   'cron': '7,22,37,52 * * * *', 'label': '每 15min'},
 }
