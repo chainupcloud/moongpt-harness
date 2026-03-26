@@ -30,24 +30,34 @@ MODULES_COUNT=$(python3 -c "import json; d=json.load(open('$SCHEDULE_FILE')); pr
 CURRENT_MODULE=$(python3 -c "import json; d=json.load(open('$SCHEDULE_FILE')); print(d['modules'][d['current_index']])")
 RUN_COUNT=$(python3 -c "import json; d=json.load(open('$SCHEDULE_FILE')); print(d.get('run_counts',{}).get('$CURRENT_MODULE', 0))")
 
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] Scheduler: module [$((CURRENT_INDEX+1))/$MODULES_COUNT] = $CURRENT_MODULE (run #$((RUN_COUNT+1)), project: $PROJECT)"
+MAX_RUNS=3
+
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Scheduler: module [$((CURRENT_INDEX+1))/$MODULES_COUNT] = $CURRENT_MODULE (run #$((RUN_COUNT+1))/${MAX_RUNS}, project: $PROJECT)"
 echo "Order: $MODULES_LIST"
 
-# Run the selected module
-bash "$HARNESS_DIR/run-agent.sh" "$CURRENT_MODULE" "$PROJECT" \
-  >> "$LOG_DIR/test-${CURRENT_MODULE}.log" 2>&1
-EXIT=$?
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] $CURRENT_MODULE done (exit: $EXIT)"
+# Skip modules that have reached the max run count
+if [ "$RUN_COUNT" -ge "$MAX_RUNS" ]; then
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $CURRENT_MODULE has reached max runs ($MAX_RUNS), skipping."
+  SKIP=1
+else
+  SKIP=0
+  # Run the selected module
+  bash "$HARNESS_DIR/run-agent.sh" "$CURRENT_MODULE" "$PROJECT" \
+    >> "$LOG_DIR/test-${CURRENT_MODULE}.log" 2>&1
+  EXIT=$?
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $CURRENT_MODULE done (exit: $EXIT)"
+fi
 
-# Advance index, increment run count, record timestamp
+# Advance index; only increment run_count if we actually ran
 NEXT_INDEX=$(python3 -c "import json; d=json.load(open('$SCHEDULE_FILE')); print((d['current_index']+1) % len(d['modules']))")
 python3 - <<PYEOF
 import json, datetime
 with open('$SCHEDULE_FILE', 'r') as f:
     d = json.load(f)
 d['current_index'] = $NEXT_INDEX
-d.setdefault('run_counts', {})['$CURRENT_MODULE'] = d.get('run_counts', {}).get('$CURRENT_MODULE', 0) + 1
-d.setdefault('last_runs', {})['$CURRENT_MODULE'] = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+if $SKIP == 0:
+    d.setdefault('run_counts', {})['$CURRENT_MODULE'] = d.get('run_counts', {}).get('$CURRENT_MODULE', 0) + 1
+    d.setdefault('last_runs', {})['$CURRENT_MODULE'] = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
 with open('$SCHEDULE_FILE', 'w') as f:
     json.dump(d, f, indent=2)
 PYEOF
@@ -57,7 +67,7 @@ NEW_COUNT=$(python3 -c "import json; d=json.load(open('$SCHEDULE_FILE')); print(
 
 # Commit updated schedule
 git add state/test-schedule.json
-git commit -m "test-schedule: $CURRENT_MODULE run #${NEW_COUNT} → next: ${NEXT_MODULE}" --quiet
+git commit -m "test-schedule: $CURRENT_MODULE run_count=${NEW_COUNT} (skip=$SKIP) → next: ${NEXT_MODULE}" --quiet
 git push origin randd1024 --quiet
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Updated test-schedule.json ($CURRENT_MODULE run_count=${NEW_COUNT}). Next: $NEXT_MODULE"
