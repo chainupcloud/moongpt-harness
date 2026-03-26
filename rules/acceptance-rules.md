@@ -1,11 +1,15 @@
 # Acceptance Rules（验收规则）
 
+## 【铁律】验收只在 Staging 环境执行
+
+所有自动化验收**只针对 staging 环境**，严禁对 production 执行自动化验收或写操作。
+
 ## 验收时机
-在 Vercel 部署完成、commit SHA 验证通过后执行。
+在 Vercel staging 部署完成、commit SHA 验证通过后执行。
 
 ## 验收方式
-使用 Playwright headless 对 `test.staging_url`（或 production_url）执行定向验收。
-Vercel Preview 需先访问 bypass URL 设置 cookie（详见 master-agent.md Step 7）。
+使用 Playwright headless 对 `test.staging_url` 执行定向验收。
+Vercel Preview 开启了 Deployment Protection，需先访问 bypass URL 设置 cookie（详见 master-agent.md Step 7）。
 
 ## 各优先级验收标准
 

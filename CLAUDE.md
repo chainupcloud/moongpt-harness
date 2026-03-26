@@ -52,10 +52,18 @@ closed → open（验收失败时回滚，fix_attempts += 1）
 
 ---
 
+## 【铁律】自动化只在 Staging 执行
+
+所有自动化测试和验收**只针对 staging 环境**（`test.staging_url`），严禁对 production 执行自动化操作。
+生产环境仅人工访问，不做任何自动化写操作或验收。
+
+---
+
 ## 环境变量
 
 - `GH_TOKEN` — GitHub API（来自 .env）
 - `VERCEL_TOKEN` — Vercel API（来自 .env）
+- `VERCEL_BYPASS_SECRET` — Vercel Preview Deployment Protection bypass（来自 .env，用于 Playwright 访问 staging）
 
 ---
 

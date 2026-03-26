@@ -1,9 +1,11 @@
 # Test Agent 规则
 
-## 目标项目
-- URL: https://moongpt.ai
-- 仓库: chainupcloud/dex-ui
-- Issue 跟踪: chainupcloud/dex-ui
+## 【铁律】自动化测试只在 Staging 环境执行
+
+所有自动化测试（Test Agent、验收测试）**只针对 staging 环境**，严禁对 production 执行写操作或破坏性测试。
+
+测试 URL 始终从项目配置 `test.staging_url` 读取，`active_env` 应保持 `"staging"`。
+生产环境（moongpt.ai）不做自动化测试，仅人工访问确认。
 
 ## 测试范围
 
