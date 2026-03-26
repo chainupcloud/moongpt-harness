@@ -1,0 +1,44 @@
+{
+  "last_test_run": null,
+  "issues": [
+    {
+      "github_number": 1,
+      "title": "/app 路径 404",
+      "priority": "P1",
+      "status": "closed",
+      "pr_number": 3,
+      "created_at": "2026-03-26",
+      "closed_at": "2026-03-26"
+    },
+    {
+      "github_number": 7,
+      "title": "多页面共用同一 <title>，SEO 问题",
+      "priority": "P2",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-26",
+      "closed_at": null,
+      "fix_attempts": 0
+    },
+    {
+      "github_number": 8,
+      "title": "/dashboard 页面内容为空",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-26",
+      "closed_at": null,
+      "fix_attempts": 0
+    },
+    {
+      "github_number": 9,
+      "title": "测试网仅 1 个市场（BTC-USDC），测试覆盖面受限",
+      "priority": "P4",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-26",
+      "closed_at": null,
+      "fix_attempts": 0
+    }
+  ]
+}

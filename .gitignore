@@ -1,0 +1,6 @@
+.env
+/tmp/
+screenshots/
+node_modules/
+*.log
+logs/
