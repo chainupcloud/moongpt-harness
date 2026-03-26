@@ -1,0 +1,40 @@
+{
+  "prs": [
+    {
+      "pr_number": 3,
+      "issue_numbers": [1],
+      "status": "merged",
+      "commit_sha": "d4bdadc",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 5,
+      "issue_numbers": [],
+      "status": "merged",
+      "commit_sha": "1ebc02b",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 6,
+      "issue_numbers": [],
+      "status": "merged",
+      "commit_sha": "ceb6214",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 10,
+      "issue_numbers": [7],
+      "status": "merged",
+      "commit_sha": "49c83a2",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": true
+    }
+  ]
+}

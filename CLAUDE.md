@@ -1,29 +1,84 @@
 # CLAUDE.md
 
-## 概述
+## 你是谁
 
-moongpt.ai（Hermes DEX）AI 自动化测试与修复流水线。
+你是 moongpt-harness 的执行 Agent，通过 `run-agent.sh` 以 Claude Code CLI 方式被调用。
 
-全流程：**用户维度测试 → 发现问题 → Claude Code Fix → Review 发布 → 线上验证**
+---
 
-## 文件命名规范
+## 必读：当前运行上下文
 
-- 探索报告：`explore-{YYYYMMDD}.md`
-- 测试报告：`test-{模块}-{YYYYMMDD}.md`
-- 问题记录：`issues-{YYYYMMDD}.md`
-- 修复记录：`fixes/fix-{issue-id}-{YYYYMMDD}.md`
-- 测试脚本：`tests/{模块}-{场景}.spec.js`
+每次被调用时，`run-agent.sh` 会在 prompt 末尾附加当前项目配置（JSON）。**所有项目相关值必须从该配置读取，禁止使用硬编码值。**
 
-## 文档结构
+关键配置字段速查：
+- `github.owner` / `github.repo` — 目标仓库
+- `github.fix_base_branch` — PR base 分支（dex-ui = "dev"）
+- `vercel.project_id` / `vercel.staging_target` — Vercel 部署参数
+- `test.staging_url` — 验收 URL（null 则跳过 UI 验收）
+- `issue_tracker.owner` / `issue_tracker.repo` — Issue 所在仓库
+- `local_path` — 本地代码路径
 
-- 探索报告：概述 → 网络/钱包配置 → 页面结构 → 交易流程 → 发现问题
-- 测试报告：测试目标 → 环境 → 用例 → 结果 → 截图 → 结论
-- 问题记录：优先级 → 现象 → 复现步骤 → 根因 → 修复状态
+---
 
-## 流水线说明
+## 状态文件操作规范
 
-1. **测试**：Playwright headless / Synpress（含钱包）自动化测试
-2. **问题**：记录到 issues-{date}.md，标注优先级 P1~P4
-3. **修复**：Claude Code 定位并修复，记录到 fixes/ 目录
-4. **Review**：PR 到 randd1024 分支，人工 review 后合并
-5. **验证**：线上回归，截图存档
+`state/issues.json` 和 `state/prs.json` 是唯一数据源。
+
+**每次修改 state 后必须立即提交：**
+```bash
+cd /home/ubuntu/chainup/moongpt-harness
+git add state/
+git commit -m "state: <描述变更>"
+git push origin randd1024
+```
+
+issue 状态只能按以下方向流转：
+```
+open → fixing → closed
+fixing → needs-human（fix_attempts >= 3 时）
+closed → open（验收失败时回滚，fix_attempts += 1）
+```
+
+---
+
+## Git 操作约束
+
+| 操作 | 规则 |
+|------|------|
+| harness 自身变更 | 提交到 `randd1024` 分支 |
+| 项目修复分支 | 基于 `fix_base_branch`（读配置），前缀 `fix/issue-{N}` |
+| push | 禁止 `--force`，禁止推送 `main/master` |
+| 修改范围 | 禁止修改 `.github/workflows/` |
+
+---
+
+## 【铁律】自动化只在 Staging 执行
+
+所有自动化测试和验收**只针对 staging 环境**（`test.staging_url`），严禁对 production 执行自动化操作。
+生产环境仅人工访问，不做任何自动化写操作或验收。
+
+---
+
+## 环境变量
+
+- `GH_TOKEN` — GitHub API（来自 .env）
+- `VERCEL_TOKEN` — Vercel API（来自 .env）
+
+---
+
+## 关键路径
+
+- harness 根目录：`/home/ubuntu/chainup/moongpt-harness`
+- Playwright：`/tmp/pw-test/node_modules/playwright`
+- 截图输出：`/tmp/screenshots/{project}/`
+- Agent prompt：`agents/{name}-agent.md`
+- 规则文件：`rules/{test,fix,acceptance}-rules.md`
+
+---
+
+## 各 Agent 入口
+
+被调用时读取对应 prompt 文件并执行：
+- `test-agent.md` — 测试，发现 bug，开 Issue
+- `fix-agent.md` — 选取最高优先级 open issue，实施修复，提 PR
+- `master-agent.md` — 检查 PR review，merge，部署，验收，关闭 Issue

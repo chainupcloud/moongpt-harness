@@ -1,0 +1,109 @@
+name: DEX-UI Pipeline (Merge + Deploy + Verify)
+
+on:
+  repository_dispatch:
+    types: [dex-ui-pr-review]
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_PROJECT_ID: prj_vMXnKzkyDeD9eIyXnqyoIpqhUP6u
+
+    steps:
+      - name: Merge dex-ui PR
+        id: merge
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.DEX_UI_TOKEN }}
+          script: |
+            const { pr_number, pr_title, repo, reviewer, review_state } = context.payload.client_payload;
+            const [owner, repoName] = repo.split('/');
+
+            console.log(`PR #${pr_number} reviewed by ${reviewer} (${review_state})`);
+
+            const isCopilot = reviewer === 'copilot-pull-request-reviewer[bot]';
+            const isApproved = review_state === 'APPROVED';
+
+            if (!isApproved && !isCopilot) {
+              console.log('Skip: not approved and not Copilot.');
+              core.setOutput('merged', 'false');
+              return;
+            }
+
+            try {
+              const result = await github.rest.pulls.merge({
+                owner,
+                repo: repoName,
+                pull_number: pr_number,
+                merge_method: 'squash',
+                commit_title: `${pr_title} (#${pr_number})`,
+              });
+              console.log(`PR #${pr_number} merged: ${result.data.sha}`);
+              core.setOutput('merged', 'true');
+              core.setOutput('commit_sha', result.data.sha);
+            } catch (err) {
+              core.setFailed(`Merge failed: ${err.message}`);
+            }
+
+      - name: Trigger and verify Vercel deployment
+        if: steps.merge.outputs.merged == 'true'
+        env:
+          EXPECTED_SHA: ${{ steps.merge.outputs.commit_sha }}
+        run: |
+          echo "触发 Vercel 部署..."
+
+          TRIGGER=$(curl -sf -X POST "https://api.vercel.com/v13/deployments" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"name\": \"hermes-testnet\",
+              \"project\": \"$VERCEL_PROJECT_ID\",
+              \"gitSource\": {
+                \"type\": \"github\",
+                \"org\": \"chainupcloud\",
+                \"repo\": \"dex-ui\",
+                \"ref\": \"main\"
+              },
+              \"target\": \"production\"
+            }")
+
+          DEPLOY_ID=$(echo "$TRIGGER" | python3 -c "import sys,json; print(json.load(sys.stdin).get('id',''))")
+          DEPLOY_URL=$(echo "$TRIGGER" | python3 -c "import sys,json; print(json.load(sys.stdin).get('url',''))")
+          echo "部署已触发：$DEPLOY_ID"
+          echo "URL：https://$DEPLOY_URL"
+
+          echo "等待部署完成..."
+          for i in $(seq 1 20); do
+            sleep 15
+            echo "检查 $i/20（${i}×15s）..."
+
+            STATE=$(curl -sf "https://api.vercel.com/v13/deployments/$DEPLOY_ID" \
+              -H "Authorization: Bearer $VERCEL_TOKEN" | python3 -c "import sys,json; print(json.load(sys.stdin).get('readyState',''))")
+
+            echo "状态：$STATE"
+
+            if [ "$STATE" = "READY" ]; then
+              DEPLOYED_SHA=$(curl -sf \
+                "https://api.vercel.com/v6/deployments?projectId=$VERCEL_PROJECT_ID&target=production&state=READY&limit=1" \
+                -H "Authorization: Bearer $VERCEL_TOKEN" \
+                | python3 -c "import sys,json; deps=json.load(sys.stdin).get('deployments',[]); print(deps[0].get('meta',{}).get('githubCommitSha','') if deps else '')")
+
+              echo "线上 commit: ${DEPLOYED_SHA:0:7} | 预期: ${EXPECTED_SHA:0:7}"
+
+              if [ "${DEPLOYED_SHA:0:7}" = "${EXPECTED_SHA:0:7}" ]; then
+                echo "✅ 部署验证通过！commit ${EXPECTED_SHA:0:7} 已上线"
+                echo "🔗 https://$DEPLOY_URL"
+                exit 0
+              else
+                echo "⚠️  部署完成但 commit 不匹配，继续等待..."
+              fi
+            elif [ "$STATE" = "ERROR" ] || [ "$STATE" = "CANCELED" ]; then
+              echo "❌ 部署失败，状态：$STATE"
+              exit 1
+            fi
+          done
+
+          echo "❌ 超时：5 分钟内 commit ${EXPECTED_SHA:0:7} 未上线"
+          exit 1

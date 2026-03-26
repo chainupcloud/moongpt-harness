@@ -1,0 +1,36 @@
+{
+  "_comment": "复制此文件到 projects/{project-name}.json 并填写",
+
+  "name": "{project-name}",
+  "description": "{项目描述}",
+
+  "github": {
+    "owner": "{github-org-or-user}",
+    "repo": "{repo-name}",
+    "fix_base_branch": "dev",
+    "production_branch": "main",
+    "fix_branch_prefix": "fix/issue-"
+  },
+
+  "vercel": {
+    "project_id": "{vercel-project-id}",
+    "staging_domain": "{staging.example.com}",
+    "production_domain": "{production.example.com}",
+    "staging_git_branch": "dev",
+    "staging_target": "preview",
+    "production_target": "production"
+  },
+
+  "test": {
+    "staging_url": "https://{staging.example.com}",
+    "production_url": "https://{production.example.com}",
+    "active_env": "staging"
+  },
+
+  "issue_tracker": {
+    "owner": "{github-org-or-user}",
+    "repo": "{repo-name}"
+  },
+
+  "local_path": "/home/ubuntu/chainup/{project-name}"
+}
