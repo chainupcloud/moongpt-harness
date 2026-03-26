@@ -11,16 +11,48 @@ import argparse
 from datetime import datetime, timedelta
 from pathlib import Path
 from flask import Flask, jsonify, request, Response
+from croniter import croniter
 
 app = Flask(__name__)
 BASE = Path(__file__).parent
 
-# cron 调度（分钟间隔）
-AGENT_SCHEDULE = {
-    'test':   {'interval_min': 120,  'cron': '23 */2 * * *',  'label': '每 2h'},
-    'fix':    {'interval_min': 30,   'cron': '17,47 * * * *', 'label': '每 30min'},
-    'master': {'interval_min': 15,   'cron': '7,22,37,52 * * * *', 'label': '每 15min'},
-}
+
+def parse_crontab_schedules():
+    """Read crontab -l and extract cron expressions for each agent (single source of truth)."""
+    try:
+        output = subprocess.check_output(['crontab', '-l'], text=True)
+    except subprocess.CalledProcessError:
+        return {}
+    schedules = {}
+    cron_re = re.compile(r'^(\S+\s+\S+\s+\S+\s+\S+\s+\S+)\s+(.+)')
+    for line in output.splitlines():
+        line = line.strip()
+        if not line or line.startswith('#'):
+            continue
+        m = cron_re.match(line)
+        if not m:
+            continue
+        expr, cmd = m.group(1), m.group(2)
+        if 'run-scheduler.sh' in cmd:
+            schedules['test'] = expr
+        elif 'run-agent.sh fix' in cmd:
+            schedules['fix'] = expr
+        elif 'run-agent.sh master' in cmd:
+            schedules['master'] = expr
+    return schedules
+
+
+def cron_label(expr):
+    """Human-readable label derived from cron expression."""
+    parts = expr.split()
+    minute, hour = parts[0], parts[1]
+    if hour == '*':
+        return f'每 1h (:{minute.zfill(2)})'
+    if hour.startswith('*/'):
+        return f'每 {hour[2:]}h (:{minute.zfill(2)})'
+    if ',' in hour:
+        return f'每 2h (:{minute.zfill(2)})'
+    return expr
 
 HTML = """<!DOCTYPE html>
 <html lang="zh">
@@ -361,28 +393,23 @@ def is_agent_running(agent: str) -> bool:
     except subprocess.CalledProcessError:
         return False
 
-def next_run_info(agent: str, last_start):
-    cfg = AGENT_SCHEDULE[agent]
-    now = datetime.now()
-    if last_start:
-        nxt = last_start + timedelta(minutes=cfg['interval_min'])
-        if nxt < now:
-            nxt = now + timedelta(minutes=1)
-    else:
-        nxt = now + timedelta(minutes=cfg['interval_min'])
-
-    delta = nxt - now
-    total_sec = cfg['interval_min'] * 60
-    elapsed_sec = total_sec - delta.total_seconds()
-    pct = max(0, min(100, int(elapsed_sec / total_sec * 100)))
-
-    mins = int(delta.total_seconds() // 60)
-    secs = int(delta.total_seconds() % 60)
-    if mins > 0:
-        label = f'{mins}m {secs}s 后'
-    else:
-        label = f'{secs}s 后'
-    return label, pct
+def next_run_info(cron_expr: str):
+    """Compute next-run label and progress % from a live cron expression."""
+    if not cron_expr:
+        return '—', 0
+    try:
+        now = datetime.now()
+        nxt = croniter(cron_expr, now).get_next(datetime)
+        prev = croniter(cron_expr, now).get_prev(datetime)
+        interval_sec = max((nxt - prev).total_seconds(), 1)
+        elapsed_sec = (now - prev).total_seconds()
+        pct = max(0, min(100, int(elapsed_sec / interval_sec * 100)))
+        delta = nxt - now
+        mins = int(delta.total_seconds() // 60)
+        secs = int(delta.total_seconds() % 60)
+        return (f'{mins}m {secs}s 后' if mins > 0 else f'{secs}s 后'), pct
+    except Exception:
+        return '—', 0
 
 @app.route('/')
 def index():
@@ -403,11 +430,13 @@ def api_state():
 
 @app.route('/api/agents')
 def api_agents():
+    schedules = parse_crontab_schedules()
     result = []
     for name in ('test', 'fix', 'master'):
         last_start, last_end, status = parse_log_times(name)
         running = is_agent_running(name)
-        nxt_label, pct = next_run_info(name, last_start)
+        cron_expr = schedules.get(name, '')
+        nxt_label, pct = next_run_info(cron_expr)
 
         duration = None
         if last_start and last_end and last_end >= last_start:
@@ -422,7 +451,8 @@ def api_agents():
             'last_duration': duration,
             'next_run': nxt_label,
             'next_run_pct': pct,
-            'schedule_label': AGENT_SCHEDULE[name]['label'],
+            'schedule_label': cron_label(cron_expr) if cron_expr else '未配置',
+            'cron': cron_expr,
         })
     return jsonify(result)
 
