@@ -1,10 +1,12 @@
 # Fix Agent 规则
 
 ## 工作目录
-- dex-ui 本地路径: /home/ubuntu/chainup/dex-ui
-- 仓库: chainupcloud/dex-ui
-- 目标分支: main（PR base）
-- 工作分支命名: fix/issue-{github_number}
+所有路径和分支从项目配置文件读取（projects/{project}.json），不要硬编码。
+
+关键字段：
+- `local_path` → 本地代码路径
+- `github.fix_base_branch` → PR 的 base 分支（dex-ui 为 "dev"，非 main）
+- `github.fix_branch_prefix` → 工作分支前缀
 
 ## Issue 优先级处理顺序
 P1 > P2 > P3 > P4

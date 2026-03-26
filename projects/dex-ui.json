@@ -1,0 +1,34 @@
+{
+  "name": "dex-ui",
+  "description": "Hermes DEX (moongpt.ai) — Hyperliquid testnet perp DEX",
+
+  "github": {
+    "owner": "chainupcloud",
+    "repo": "dex-ui",
+    "fix_base_branch": "dev",
+    "production_branch": "main",
+    "fix_branch_prefix": "fix/issue-"
+  },
+
+  "vercel": {
+    "project_id": "prj_vMXnKzkyDeD9eIyXnqyoIpqhUP6u",
+    "staging_domain": null,
+    "production_domain": "moongpt.ai",
+    "staging_git_branch": "dev",
+    "staging_target": "preview",
+    "production_target": "production"
+  },
+
+  "test": {
+    "staging_url": null,
+    "production_url": "https://moongpt.ai",
+    "active_env": "staging"
+  },
+
+  "issue_tracker": {
+    "owner": "chainupcloud",
+    "repo": "dex-ui"
+  },
+
+  "local_path": "/home/ubuntu/chainup/dex-ui"
+}
