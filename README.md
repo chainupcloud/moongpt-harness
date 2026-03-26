@@ -49,8 +49,51 @@ run-agent.sh       Agent 启动脚本
 
 | 项目 | 仓库 | 生产域名 | Staging |
 |------|------|----------|---------|
-| dex-ui | chainupcloud/dex-ui | moongpt.ai | 待配置 |
+| dex-ui | chainupcloud/dex-ui | moongpt.ai | hermes-testnet-git-dev-chainupclouds-projects.vercel.app |
 
 ## 状态说明
 
 issue 状态：`open` → `fixing` → `closed`（失败超 3 次变为 `needs-human`）
+
+## 人工操作手册
+
+### 日常无需操作
+所有 Agent 定时自动运行，正常情况下全流程无人工干预。
+
+### 需要人工介入的场景
+
+#### 1. issue 变为 `needs-human`（修复失败 3 次）
+打开 dex-ui GitHub Issues，查看具体 issue，人工修复后：
+```bash
+# 将 state 中对应 issue 重置为 open
+vim /home/ubuntu/chainup/moongpt-harness/state/issues.json
+# 修改 status 为 "open"，fix_attempts 清零
+git add state/ && git commit -m "state: manual reset issue #N" && git push origin randd1024
+```
+
+#### 2. 手动触发某个 Agent
+```bash
+cd /home/ubuntu/chainup/moongpt-harness
+bash run-agent.sh test dex-ui    # 立即跑一次 UI 测试
+bash run-agent.sh fix dex-ui     # 立即跑一次修复
+bash run-agent.sh master dex-ui  # 立即跑一次 merge/部署/验收
+```
+
+#### 3. 查看实时日志
+```bash
+tail -f /home/ubuntu/chainup/moongpt-harness/logs/fix-agent.log
+tail -f /home/ubuntu/chainup/moongpt-harness/logs/master-agent.log
+```
+
+#### 4. 查看任务面板（Web UI）
+访问 http://206.223.224.29:5050
+
+#### 5. Vercel staging 说明
+- Staging 域名：`hermes-testnet-git-dev-chainupclouds-projects.vercel.app`
+- Vercel Authentication 已**关闭**（公开可访问，Playwright 可直接测试）
+- staging 基于 `dev` 分支，所有修复 PR 合并到 `dev` 后自动触发 staging 部署
+
+#### 6. Copilot review 说明
+- 仓库已开启 "Automated code reviews on push"
+- fix-agent 创建 PR 后 Copilot 自动触发 review，无需手动点击
+- Master agent 识别 Copilot COMMENTED 即视为 review 通过，执行 merge
