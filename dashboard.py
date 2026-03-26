@@ -206,8 +206,12 @@ function showLog(agent, e) {
 const AGENT_LABELS = {test:'🔍 Test Agent', fix:'🔧 Fix Agent', master:'🎛 Master Agent'};
 function agentLabel(name) { return AGENT_LABELS[name] || name; }
 
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
 function badge(cls, text) {
-  return `<span class="badge badge-${cls}">${text}</span>`;
+  return `<span class="badge badge-${cls}">${esc(text)}</span>`;
 }
 
 function renderStats(state) {
@@ -256,8 +260,8 @@ function renderIssues(issues) {
   const rows = issues.map(i => `
     <tr>
       <td><a href="https://github.com/chainupcloud/dex-ui/issues/${i.github_number}" target="_blank">#${i.github_number}</a></td>
-      <td>${i.title}</td>
-      <td>${badge('p'+i.priority.toLowerCase(), i.priority)}</td>
+      <td>${esc(i.title)}</td>
+      <td>${badge(i.priority.toLowerCase(), i.priority)}</td>
       <td>${badge(i.status, i.status)}</td>
       <td>${i.pr_number ? `<a href="https://github.com/chainupcloud/dex-ui/pull/${i.pr_number}" target="_blank">PR #${i.pr_number}</a>` : '—'}</td>
       <td>${i.fix_attempts || 0}</td>
