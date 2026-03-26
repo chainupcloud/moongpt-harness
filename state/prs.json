@@ -83,6 +83,16 @@
       "deployed": true,
       "accepted": false,
       "note": "P4 issue — awaiting human acceptance"
+    },
+    {
+      "pr_number": 22,
+      "issue_numbers": [19],
+      "status": "merged",
+      "commit_sha": "4e9367437c21524984392884b8cbb4c5f5723e20",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": false,
+      "note": "P4 issue — awaiting human acceptance"
     }
   ]
 }
