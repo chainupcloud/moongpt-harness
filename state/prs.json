@@ -45,6 +45,15 @@
       "merged_at": "2026-03-26",
       "deployed": true,
       "accepted": true
+    },
+    {
+      "pr_number": 15,
+      "issue_numbers": [13],
+      "status": "open",
+      "commit_sha": "9f3a64d",
+      "merged_at": null,
+      "deployed": false,
+      "accepted": false
     }
   ]
 }
