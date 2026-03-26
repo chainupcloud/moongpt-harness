@@ -4,3 +4,7 @@ screenshots/
 node_modules/
 *.log
 logs/
+.venv/
+uv.lock
+__pycache__/
+*.pyc
