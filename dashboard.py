@@ -211,7 +211,9 @@ HTML = """<!DOCTYPE html>
     <div class="section">
       <h2>Agent 日志（最近 30 行）</h2>
       <div class="log-tabs">
-        <button class="log-tab active" onclick="showLog('test',event)">test</button>
+        <button class="log-tab active" onclick="showLog('smoke',event)">smoke</button>
+        <button class="log-tab" onclick="showLog('coverage',event)">coverage</button>
+        <button class="log-tab" onclick="showLog('scheduler',event)">scheduler</button>
         <button class="log-tab" onclick="showLog('fix',event)">fix</button>
         <button class="log-tab" onclick="showLog('master',event)">master</button>
       </div>
@@ -221,7 +223,7 @@ HTML = """<!DOCTYPE html>
 </div>
 
 <script>
-let currentLog = 'test';
+let currentLog = 'smoke';
 
 async function loadAll() {
   document.getElementById('ts').textContent = '更新于 ' + new Date().toLocaleTimeString('zh');
@@ -470,12 +472,18 @@ def api_projects():
 
 @app.route('/api/logs')
 def api_logs():
-    agent = request.args.get('agent', 'test')
-    log_file = BASE / 'logs' / f'{agent}-agent.log'
-    if not log_file.exists():
-        return jsonify({'content': f'日志文件不存在：logs/{agent}-agent.log'})
-    lines = log_file.read_text().splitlines()
-    return jsonify({'content': '\n'.join(lines[-30:])})
+    agent = request.args.get('agent', 'smoke')
+    # Map agent name to log file (scheduler writes to test-{module}.log)
+    candidates = [
+        BASE / 'logs' / f'test-{agent}.log',   # new: test-smoke.log, test-coverage.log
+        BASE / 'logs' / f'{agent}-agent.log',   # legacy: fix-agent.log, master-agent.log
+        BASE / 'logs' / f'{agent}.log',         # new: scheduler.log
+    ]
+    for log_file in candidates:
+        if log_file.exists():
+            lines = log_file.read_text().splitlines()
+            return jsonify({'content': '\n'.join(lines[-30:])})
+    return jsonify({'content': f'日志文件不存在（agent={agent}）'})
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
