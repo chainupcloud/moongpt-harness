@@ -1,5 +1,5 @@
 {
-  "last_test_run": "2026-03-26T11:00:31Z",
+  "last_test_run": "2026-03-26T12:23:23Z",
   "issues": [
     {
       "github_number": 1,
@@ -51,6 +51,15 @@
       "created_at": "2026-03-26",
       "closed_at": "2026-03-26",
       "fix_attempts": 1
+    },
+    {
+      "github_number": 13,
+      "title": "首页导航链接指向 404：/blog, /contact, /faq, /privacy, /terms",
+      "priority": "P2",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-26",
+      "fix_attempts": 0
     }
   ]
 }
