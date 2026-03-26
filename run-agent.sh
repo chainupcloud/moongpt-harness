@@ -65,6 +65,7 @@ except Exception as e:
 " 2>/dev/null)
   if [ "${OPEN_COUNT:-1}" = "0" ]; then
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] fix: no open issues with fix_attempts<3 — skipping (0 tokens used)."
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] fix agent completed for $PROJECT."
     exit 0
   fi
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] fix: $OPEN_COUNT open issue(s) found, proceeding."
@@ -90,6 +91,7 @@ except:
 
   if [ "${LOCAL_OPEN:-0}" = "0" ] && [ "${GH_OPEN:-0}" = "0" ]; then
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] master: no open PRs (local=0, github=0) — skipping (0 tokens used)."
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] master agent completed for $PROJECT."
     exit 0
   fi
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] master: local_open=${LOCAL_OPEN} github_open=${GH_OPEN}, proceeding."
