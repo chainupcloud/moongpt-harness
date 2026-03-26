@@ -1,109 +1,77 @@
-# CLAUDE.md — moongpt-harness
+# CLAUDE.md
 
-## 定位
+## 你是谁
 
-**通用 AI 驱动 CI/CD 流水线仓库**，与具体项目解耦。
-
-当前接入项目：`dex-ui`（chainupcloud/dex-ui，Hermes DEX，moongpt.ai）
+你是 moongpt-harness 的执行 Agent，通过 `run-agent.sh` 以 Claude Code CLI 方式被调用。
 
 ---
 
-## 四 Agent 流水线
+## 必读：当前运行上下文
 
-```
-Agent 1: test-agent   → 每 6h，Playwright 测试，发现 bug → 项目仓库开 Issue
-Agent 2: fix-agent    → 每 30min，读 state/issues.json，自动 fix → PR + 请 Copilot review
-Agent 3: Copilot      → GitHub PR review（由 Agent 2 自动 request）
-Agent 4: master-agent → 每 15min，检查 review → merge → Vercel 部署 → 验收 → 关闭 Issue
-```
+每次被调用时，`run-agent.sh` 会在 prompt 末尾附加当前项目配置（JSON）。**所有项目相关值必须从该配置读取，禁止使用硬编码值。**
 
-**Issue 跟踪在项目仓库**（如 chainupcloud/dex-ui），moongpt-harness 只管流水线。
-
----
-
-## 目录结构
-
-```
-projects/          # 项目配置（每个项目一个 JSON 文件）
-  dex-ui.json      # dex-ui 配置（仓库、分支、Vercel、测试 URL）
-  template.json    # 新项目接入模板
-
-agents/            # Claude Code CLI prompt（各 Agent 的执行指令）
-  test-agent.md
-  fix-agent.md
-  master-agent.md
-
-rules/             # 规则定义（测试范围、修复约束、验收标准）
-  test-rules.md
-  fix-rules.md
-  acceptance-rules.md
-
-state/             # 流水线状态（单一数据源，每次运行后提交到 randd1024）
-  issues.json      # issue 状态：open / fixing / closed / needs-human
-  prs.json         # PR 状态：open / merged，含 SHA、是否 deployed/accepted
-
-tests/             # Playwright 测试脚本
-  smoke.spec.js    # 基础 smoke 测试
-  acceptance.spec.js # 验收测试（Master Agent 调用）
-
-design/            # 设计文档
-  pipeline-design.md
-
-logs/              # 运行日志（gitignored）
-.env               # 密钥（gitignored）：GH_TOKEN, VERCEL_TOKEN
-run-agent.sh       # Agent 统一启动脚本
-```
+关键配置字段速查：
+- `github.owner` / `github.repo` — 目标仓库
+- `github.fix_base_branch` — PR base 分支（dex-ui = "dev"）
+- `vercel.project_id` / `vercel.staging_target` — Vercel 部署参数
+- `test.staging_url` — 验收 URL（null 则跳过 UI 验收）
+- `issue_tracker.owner` / `issue_tracker.repo` — Issue 所在仓库
+- `local_path` — 本地代码路径
 
 ---
 
-## 运行方式
+## 状态文件操作规范
 
+`state/issues.json` 和 `state/prs.json` 是唯一数据源。
+
+**每次修改 state 后必须立即提交：**
 ```bash
-# 手动触发
-bash run-agent.sh test dex-ui
-bash run-agent.sh fix dex-ui
-bash run-agent.sh master dex-ui
-
-# 日志查看
-tail -f logs/fix-agent.log
+cd /home/ubuntu/chainup/moongpt-harness
+git add state/
+git commit -m "state: <描述变更>"
+git push origin randd1024
 ```
 
-系统 crontab 已配置自动运行（test: 6h / fix: 30min / master: 15min）。
-
----
-
-## 项目配置文件（projects/{name}.json）
-
-所有 Agent prompt 从项目配置文件读取，不使用硬编码值。关键字段：
-
-| 字段 | 说明 |
-|------|------|
-| `github.fix_base_branch` | PR base 分支（dex-ui 为 dev） |
-| `vercel.project_id` | Vercel 项目 ID |
-| `vercel.staging_domain` | Staging 域名（null = 待配置） |
-| `test.staging_url` | 测试目标 URL（null 时用 production_url） |
-| `test.active_env` | 当前激活环境（staging / production） |
-
-**新增项目**：复制 `projects/template.json`，填写配置，无需修改 agent 代码。
-
----
-
-## State 文件规范
-
-`state/issues.json` 的 issue 状态流转：
-
+issue 状态只能按以下方向流转：
 ```
 open → fixing → closed
-          ↓（fix_attempts >= 3）
-       needs-human
+fixing → needs-human（fix_attempts >= 3 时）
+closed → open（验收失败时回滚，fix_attempts += 1）
 ```
-
-每次 Agent 修改 state 后必须 git commit + push 到 randd1024。
 
 ---
 
-## Git 规范
+## Git 操作约束
 
-- harness 自身变更提交到 `randd1024` 分支
-- dex-ui 修复分支基于 `dev`，前缀 `fix/issue-{N}`
-- 禁止直接推送 main/master
+| 操作 | 规则 |
+|------|------|
+| harness 自身变更 | 提交到 `randd1024` 分支 |
+| 项目修复分支 | 基于 `fix_base_branch`（读配置），前缀 `fix/issue-{N}` |
+| push | 禁止 `--force`，禁止推送 `main/master` |
+| 修改范围 | 禁止修改 `.github/workflows/` |
+
+---
+
+## 环境变量
+
+- `GH_TOKEN` — GitHub API（来自 .env）
+- `VERCEL_TOKEN` — Vercel API（来自 .env）
+
+---
+
+## 关键路径
+
+- harness 根目录：`/home/ubuntu/chainup/moongpt-harness`
+- Playwright：`/tmp/pw-test/node_modules/playwright`
+- 截图输出：`/tmp/screenshots/{project}/`
+- Agent prompt：`agents/{name}-agent.md`
+- 规则文件：`rules/{test,fix,acceptance}-rules.md`
+
+---
+
+## 各 Agent 入口
+
+被调用时读取对应 prompt 文件并执行：
+- `test-agent.md` — 测试，发现 bug，开 Issue
+- `fix-agent.md` — 选取最高优先级 open issue，实施修复，提 PR
+- `master-agent.md` — 检查 PR review，merge，部署，验收，关闭 Issue
