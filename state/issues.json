@@ -1,5 +1,5 @@
 {
-  "last_test_run": "2026-03-26T12:23:23Z",
+  "last_test_run": "2026-03-26T12:40:00Z",
   "issues": [
     {
       "github_number": 1,
@@ -55,6 +55,15 @@
     {
       "github_number": 13,
       "title": "首页导航链接指向 404：/blog, /contact, /faq, /privacy, /terms",
+      "priority": "P2",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-26",
+      "fix_attempts": 0
+    },
+    {
+      "github_number": 14,
+      "title": "多个 App 页面 <title> 中 \"Hermes DEX\" 重复出现（SEO 问题）",
       "priority": "P2",
       "status": "open",
       "pr_number": null,
