@@ -30,7 +30,7 @@ esac
 # 各 Agent 使用的模型
 case "$AGENT" in
   test)   MODEL="claude-sonnet-4-6" ;;
-  fix)    MODEL="" ;;  # 默认模型
+  fix)    MODEL="claude-opus-4-6" ;;
   master) MODEL="" ;;  # 默认模型
 esac
 
