@@ -41,9 +41,20 @@ state/             流水线状态（issues.json / prs.json）
 tests/             Playwright 测试脚本
 design/            架构设计文档
 logs/              运行日志（gitignored）
-.env               密钥（gitignored）
+.env               密钥（gitignored，参考 .env.example）
+.env.example       密钥模板
 run-agent.sh       Agent 启动脚本
 ```
+
+### 密钥配置
+
+复制 `.env.example` 为 `.env` 并填入真实值：
+```bash
+cp .env.example .env
+# 编辑 .env，填入 GH_TOKEN 和 VERCEL_TOKEN
+```
+
+**注意：`.env` 已加入 `.gitignore`，严禁提交真实 token 到 GitHub。**
 
 ## 当前接入项目
 
@@ -86,7 +97,7 @@ tail -f /home/ubuntu/chainup/moongpt-harness/logs/master-agent.log
 ```
 
 #### 4. 查看任务面板（Web UI）
-访问 http://206.223.224.29:5050
+访问 `http://{服务器IP}:5050`（IP 见内部文档，不提交到 GitHub）
 
 #### 5. Vercel staging 说明
 - Staging 域名：`hermes-testnet-git-dev-chainupclouds-projects.vercel.app`
