@@ -88,16 +88,7 @@ DEPLOYED_SHA=$(curl -sf \
 
 ### Step 7：Playwright 页面验收
 
-若 `test.staging_url` 非 null：
-
-Vercel Preview 有 Deployment Protection，Playwright 访问前需先设置 bypass cookie：
-```bash
-BYPASS_URL="{staging_url}?x-vercel-protection-bypass=${VERCEL_BYPASS_SECRET}&x-vercel-set-bypass-cookie=samesitenone"
-```
-
-在 Playwright 脚本开头先访问 BYPASS_URL（会自动设置 bypass cookie），再执行后续页面验收，参考 rules/acceptance-rules.md。
-
-若 `VERCEL_BYPASS_SECRET` 未配置（空）→ 跳过 UI 验收，记录 "需配置 VERCEL_BYPASS_SECRET"。
+若 `test.staging_url` 非 null，直接对 staging URL 执行验收测试，参考 rules/acceptance-rules.md。
 若 `test.staging_url` 为 null → 跳过 UI 验收，仅验证 SHA 匹配，记录 "staging URL 待配置"。
 
 ### Step 8：验收通过 → 关闭 Issue，更新状态

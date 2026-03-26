@@ -8,8 +8,7 @@
 在 Vercel staging 部署完成、commit SHA 验证通过后执行。
 
 ## 验收方式
-使用 Playwright headless 对 `test.staging_url` 执行定向验收。
-Vercel Preview 开启了 Deployment Protection，需先访问 bypass URL 设置 cookie（详见 master-agent.md Step 7）。
+使用 Playwright headless 对 `test.staging_url` 执行定向验收（staging 已关闭 Vercel Auth，可直接访问）。
 
 ## 各优先级验收标准
 

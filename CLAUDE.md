@@ -63,7 +63,6 @@ closed → open（验收失败时回滚，fix_attempts += 1）
 
 - `GH_TOKEN` — GitHub API（来自 .env）
 - `VERCEL_TOKEN` — Vercel API（来自 .env）
-- `VERCEL_BYPASS_SECRET` — Vercel Preview Deployment Protection bypass（来自 .env，用于 Playwright 访问 staging）
 
 ---
 
