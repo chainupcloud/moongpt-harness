@@ -36,5 +36,15 @@
       "deployed": true,
       "accepted": true
     }
+    ,
+    {
+      "pr_number": 12,
+      "issue_numbers": [11],
+      "status": "open",
+      "commit_sha": "be01cb2",
+      "merged_at": null,
+      "deployed": false,
+      "accepted": false
+    }
   ]
 }
