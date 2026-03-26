@@ -31,48 +31,66 @@ HTML = """<!DOCTYPE html>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-         background: #0d1117; color: #e6edf3; min-height: 100vh; }
-  .header { padding: 20px 32px; border-bottom: 1px solid #21262d;
+         background: #0d1117; color: #e6edf3; min-height: 100vh; display: flex; flex-direction: column; }
+
+  /* ── Header ── */
+  .header { padding: 14px 28px; border-bottom: 1px solid #21262d; flex-shrink: 0;
             display: flex; align-items: center; justify-content: space-between; }
-  .header h1 { font-size: 18px; font-weight: 600; }
+  .header h1 { font-size: 16px; font-weight: 600; }
   .header .updated { font-size: 12px; color: #7d8590; }
   .refresh-btn { background: #21262d; border: 1px solid #30363d; color: #e6edf3;
-                 padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+                 padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; }
   .refresh-btn:hover { background: #30363d; }
-  .container { padding: 24px 32px; max-width: 1200px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px; }
-  .stat-card { background: #161b22; border: 1px solid #21262d; border-radius: 10px; padding: 18px 20px; }
-  .stat-card .label { font-size: 12px; color: #7d8590; margin-bottom: 8px; text-transform: uppercase; letter-spacing: .5px; }
-  .stat-card .value { font-size: 28px; font-weight: 700; }
-  .stat-card .value.green { color: #3fb950; }
-  .stat-card .value.yellow { color: #d29922; }
-  .stat-card .value.red { color: #f85149; }
-  .stat-card .value.blue { color: #58a6ff; }
-  .section { background: #161b22; border: 1px solid #21262d; border-radius: 10px;
-             padding: 20px; margin-bottom: 20px; }
-  .section h2 { font-size: 15px; font-weight: 600; margin-bottom: 16px;
-                padding-bottom: 12px; border-bottom: 1px solid #21262d; }
 
-  /* Agent status cards */
-  .agent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-  .agent-card { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 16px; position: relative; }
+  /* ── Stats bar (top, full width) ── */
+  .stats-bar { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px;
+               padding: 16px 28px; border-bottom: 1px solid #21262d; flex-shrink: 0; }
+  .stat-card { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 12px 16px; }
+  .stat-card .label { font-size: 11px; color: #7d8590; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .5px; }
+  .stat-card .value { font-size: 24px; font-weight: 700; }
+  .stat-card .value.green  { color: #3fb950; }
+  .stat-card .value.yellow { color: #d29922; }
+  .stat-card .value.red    { color: #f85149; }
+  .stat-card .value.blue   { color: #58a6ff; }
+  .stat-card .value.muted  { font-size: 13px; color: #7d8590; padding-top: 4px; }
+
+  /* ── Main two-column layout ── */
+  .main { display: flex; flex: 1; overflow: hidden; }
+
+  /* ── Sidebar ── */
+  .sidebar { width: 320px; flex-shrink: 0; border-right: 1px solid #21262d;
+             overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+
+  /* ── Content area ── */
+  .content { flex: 1; overflow-y: auto; padding: 16px 20px; display: flex; flex-direction: column; gap: 14px; }
+
+  /* ── Shared section ── */
+  .section { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 16px; }
+  .section h2 { font-size: 13px; font-weight: 600; margin-bottom: 12px;
+                padding-bottom: 10px; border-bottom: 1px solid #21262d;
+                text-transform: uppercase; letter-spacing: .5px; color: #7d8590; }
+
+  /* ── Agent cards (sidebar, stacked) ── */
+  .agent-card { background: #0d1117; border: 1px solid #21262d; border-radius: 6px;
+                padding: 12px; margin-bottom: 8px; }
+  .agent-card:last-child { margin-bottom: 0; }
   .agent-card.running { border-color: #3fb950; }
   .agent-card.error   { border-color: #f85149; }
-  .agent-card .agent-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-  .agent-card .agent-name { font-size: 14px; font-weight: 600; }
-  .agent-card .agent-dot { width: 8px; height: 8px; border-radius: 50%; background: #30363d; }
-  .agent-card .agent-dot.running { background: #3fb950; box-shadow: 0 0 6px #3fb950; animation: pulse 1.5s infinite; }
-  .agent-card .agent-dot.idle    { background: #7d8590; }
-  .agent-card .agent-dot.error   { background: #f85149; }
+  .agent-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .agent-name { font-size: 13px; font-weight: 600; }
+  .agent-dot { width: 7px; height: 7px; border-radius: 50%; }
+  .agent-dot.running { background: #3fb950; box-shadow: 0 0 5px #3fb950; animation: pulse 1.5s infinite; }
+  .agent-dot.idle    { background: #7d8590; }
+  .agent-dot.error   { background: #f85149; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
-  .agent-kv { display: flex; justify-content: space-between; font-size: 12px; padding: 4px 0; border-bottom: 1px solid #21262d; }
+  .agent-kv { display: flex; justify-content: space-between; font-size: 11px; padding: 3px 0; border-bottom: 1px solid #21262d; }
   .agent-kv:last-child { border-bottom: none; }
   .agent-kv .k { color: #7d8590; }
   .agent-kv .v { color: #e6edf3; }
   .agent-kv .v.green  { color: #3fb950; }
   .agent-kv .v.yellow { color: #d29922; }
   .agent-kv .v.red    { color: #f85149; }
-  .progress-bar { height: 3px; background: #21262d; border-radius: 2px; margin-top: 12px; overflow: hidden; }
+  .progress-bar { height: 2px; background: #21262d; border-radius: 2px; margin-top: 8px; overflow: hidden; }
   .progress-fill { height: 100%; background: #388bfd; border-radius: 2px; transition: width .3s; }
 
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
@@ -119,43 +137,41 @@ HTML = """<!DOCTYPE html>
     <button class="refresh-btn" onclick="loadAll()">↻ 刷新</button>
   </div>
 </div>
-<div class="container">
-  <!-- Stats -->
-  <div class="grid" id="stats"></div>
-
-  <!-- Agent Status -->
-  <div class="section">
-    <h2>Agent 状态</h2>
-    <div class="agent-grid" id="agents-wrap"></div>
-  </div>
-
-  <!-- Issues -->
-  <div class="section">
-    <h2>Issues</h2>
-    <div id="issues-wrap"></div>
-  </div>
-
-  <!-- PRs -->
-  <div class="section">
-    <h2>Pull Requests</h2>
-    <div id="prs-wrap"></div>
-  </div>
-
-  <!-- Projects -->
-  <div class="section">
-    <h2>项目配置</h2>
-    <div class="project-grid" id="projects-wrap"></div>
-  </div>
-
-  <!-- Logs -->
-  <div class="section">
-    <h2>Agent 日志（最近 30 行）</h2>
-    <div class="log-tabs">
-      <button class="log-tab active" onclick="showLog('test',event)">test</button>
-      <button class="log-tab" onclick="showLog('fix',event)">fix</button>
-      <button class="log-tab" onclick="showLog('master',event)">master</button>
+<div class="stats-bar" id="stats"></div>
+<div class="main">
+  <div class="sidebar">
+    <!-- Agent Status -->
+    <div class="section">
+      <h2>Agent 状态</h2>
+      <div id="agents-wrap"></div>
     </div>
-    <div class="log-box" id="log-box">加载中...</div>
+    <!-- Projects -->
+    <div class="section">
+      <h2>项目配置</h2>
+      <div id="projects-wrap"></div>
+    </div>
+  </div>
+  <div class="content">
+    <!-- Issues -->
+    <div class="section">
+      <h2>Issues</h2>
+      <div id="issues-wrap"></div>
+    </div>
+    <!-- PRs -->
+    <div class="section">
+      <h2>Pull Requests</h2>
+      <div id="prs-wrap"></div>
+    </div>
+    <!-- Logs -->
+    <div class="section">
+      <h2>Agent 日志（最近 30 行）</h2>
+      <div class="log-tabs">
+        <button class="log-tab active" onclick="showLog('test',event)">test</button>
+        <button class="log-tab" onclick="showLog('fix',event)">fix</button>
+        <button class="log-tab" onclick="showLog('master',event)">master</button>
+      </div>
+      <div class="log-box" id="log-box">加载中...</div>
+    </div>
   </div>
 </div>
 
@@ -271,8 +287,9 @@ function renderPRs(prs) {
 }
 
 function renderProjects(projects) {
-  if (!projects.length) { document.getElementById('projects-wrap').innerHTML = '<p class="none-tip">无项目配置</p>'; return; }
-  document.getElementById('projects-wrap').innerHTML = projects.map(p => `
+  const wrap = document.getElementById('projects-wrap');
+  if (!projects.length) { wrap.innerHTML = '<p class="none-tip">无项目配置</p>'; return; }
+  wrap.innerHTML = projects.map(p => `
     <div class="project-card">
       <div class="name">${p.name}</div>
       <div class="kv"><span class="k">仓库</span><span class="v">${p.github?.owner}/${p.github?.repo}</span></div>
@@ -284,6 +301,7 @@ function renderProjects(projects) {
       <div class="kv"><span class="k">激活环境</span><span class="v">${p.test?.active_env}</span></div>
     </div>`).join('');
 }
+
 
 loadAll();
 setInterval(loadAll, 15000);
