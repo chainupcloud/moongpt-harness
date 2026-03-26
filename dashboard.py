@@ -1,19 +1,26 @@
 #!/usr/bin/env -S uv run
 """
 moongpt-harness 任务面板
-用法: python3 dashboard.py [--port 8080]
+用法: uv run dashboard.py [--port 8080]
 """
 
 import json
-import os
-import glob
+import re
+import subprocess
 import argparse
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
-from flask import Flask, jsonify, render_template_string
+from flask import Flask, jsonify, request, render_template_string
 
 app = Flask(__name__)
 BASE = Path(__file__).parent
+
+# cron 调度（分钟间隔）
+AGENT_SCHEDULE = {
+    'test':   {'interval_min': 360,  'cron': '23 */6 * * *',  'label': '每 6h'},
+    'fix':    {'interval_min': 30,   'cron': '17,47 * * * *', 'label': '每 30min'},
+    'master': {'interval_min': 15,   'cron': '7,22,37,52 * * * *', 'label': '每 15min'},
+}
 
 HTML = """<!DOCTYPE html>
 <html lang="zh">
@@ -45,19 +52,41 @@ HTML = """<!DOCTYPE html>
              padding: 20px; margin-bottom: 20px; }
   .section h2 { font-size: 15px; font-weight: 600; margin-bottom: 16px;
                 padding-bottom: 12px; border-bottom: 1px solid #21262d; }
+
+  /* Agent status cards */
+  .agent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .agent-card { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 16px; position: relative; }
+  .agent-card.running { border-color: #3fb950; }
+  .agent-card.error   { border-color: #f85149; }
+  .agent-card .agent-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .agent-card .agent-name { font-size: 14px; font-weight: 600; }
+  .agent-card .agent-dot { width: 8px; height: 8px; border-radius: 50%; background: #30363d; }
+  .agent-card .agent-dot.running { background: #3fb950; box-shadow: 0 0 6px #3fb950; animation: pulse 1.5s infinite; }
+  .agent-card .agent-dot.idle    { background: #7d8590; }
+  .agent-card .agent-dot.error   { background: #f85149; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+  .agent-kv { display: flex; justify-content: space-between; font-size: 12px; padding: 4px 0; border-bottom: 1px solid #21262d; }
+  .agent-kv:last-child { border-bottom: none; }
+  .agent-kv .k { color: #7d8590; }
+  .agent-kv .v { color: #e6edf3; }
+  .agent-kv .v.green  { color: #3fb950; }
+  .agent-kv .v.yellow { color: #d29922; }
+  .agent-kv .v.red    { color: #f85149; }
+  .progress-bar { height: 3px; background: #21262d; border-radius: 2px; margin-top: 12px; overflow: hidden; }
+  .progress-fill { height: 100%; background: #388bfd; border-radius: 2px; transition: width .3s; }
+
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   th { text-align: left; padding: 8px 12px; color: #7d8590; font-weight: 500;
        font-size: 12px; border-bottom: 1px solid #21262d; }
   td { padding: 10px 12px; border-bottom: 1px solid #161b22; vertical-align: middle; }
   tr:last-child td { border-bottom: none; }
   tr:hover td { background: #1c2128; }
-  .badge { display: inline-block; padding: 2px 8px; border-radius: 12px;
-           font-size: 11px; font-weight: 600; }
-  .badge-open      { background: #388bfd26; color: #58a6ff; }
-  .badge-fixing    { background: #d2992226; color: #d29922; }
-  .badge-closed    { background: #3fb95026; color: #3fb950; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+  .badge-open        { background: #388bfd26; color: #58a6ff; }
+  .badge-fixing      { background: #d2992226; color: #d29922; }
+  .badge-closed      { background: #3fb95026; color: #3fb950; }
   .badge-needs-human { background: #f8514926; color: #f85149; }
-  .badge-merged    { background: #8957e526; color: #bc8cff; }
+  .badge-merged      { background: #8957e526; color: #bc8cff; }
   .badge-p1 { background: #f8514926; color: #f85149; }
   .badge-p2 { background: #d2992226; color: #d29922; }
   .badge-p3 { background: #388bfd26; color: #58a6ff; }
@@ -69,11 +98,10 @@ HTML = """<!DOCTYPE html>
                       padding: 4px 0; border-bottom: 1px solid #21262d; }
   .project-card .kv:last-child { border-bottom: none; }
   .project-card .kv .k { color: #7d8590; }
-  .project-card .kv .v { color: #e6edf3; max-width: 200px; overflow: hidden;
-                          text-overflow: ellipsis; white-space: nowrap; }
+  .project-card .kv .v { color: #e6edf3; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .log-box { background: #0d1117; border: 1px solid #21262d; border-radius: 6px;
              padding: 12px; font-family: monospace; font-size: 12px; color: #7d8590;
-             max-height: 200px; overflow-y: auto; white-space: pre-wrap; }
+             max-height: 220px; overflow-y: auto; white-space: pre-wrap; }
   .log-tabs { display: flex; gap: 8px; margin-bottom: 12px; }
   .log-tab { padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 12px;
              background: #21262d; color: #7d8590; border: 1px solid #30363d; }
@@ -94,28 +122,38 @@ HTML = """<!DOCTYPE html>
 <div class="container">
   <!-- Stats -->
   <div class="grid" id="stats"></div>
+
+  <!-- Agent Status -->
+  <div class="section">
+    <h2>Agent 状态</h2>
+    <div class="agent-grid" id="agents-wrap"></div>
+  </div>
+
   <!-- Issues -->
   <div class="section">
     <h2>Issues</h2>
     <div id="issues-wrap"></div>
   </div>
+
   <!-- PRs -->
   <div class="section">
     <h2>Pull Requests</h2>
     <div id="prs-wrap"></div>
   </div>
+
   <!-- Projects -->
   <div class="section">
     <h2>项目配置</h2>
     <div class="project-grid" id="projects-wrap"></div>
   </div>
+
   <!-- Logs -->
   <div class="section">
     <h2>Agent 日志（最近 30 行）</h2>
     <div class="log-tabs">
-      <button class="log-tab active" onclick="showLog('test')">test</button>
-      <button class="log-tab" onclick="showLog('fix')">fix</button>
-      <button class="log-tab" onclick="showLog('master')">master</button>
+      <button class="log-tab active" onclick="showLog('test',event)">test</button>
+      <button class="log-tab" onclick="showLog('fix',event)">fix</button>
+      <button class="log-tab" onclick="showLog('master',event)">master</button>
     </div>
     <div class="log-box" id="log-box">加载中...</div>
   </div>
@@ -126,22 +164,24 @@ let currentLog = 'test';
 
 async function loadAll() {
   document.getElementById('ts').textContent = '更新于 ' + new Date().toLocaleTimeString('zh');
-  const [state, projects, logs] = await Promise.all([
+  const [state, projects, agents, logs] = await Promise.all([
     fetch('/api/state').then(r=>r.json()),
     fetch('/api/projects').then(r=>r.json()),
+    fetch('/api/agents').then(r=>r.json()),
     fetch('/api/logs?agent=' + currentLog).then(r=>r.json()),
   ]);
   renderStats(state);
+  renderAgents(agents);
   renderIssues(state.issues || []);
   renderPRs(state.prs || []);
   renderProjects(projects);
   document.getElementById('log-box').textContent = logs.content || '（无日志）';
 }
 
-function showLog(agent) {
+function showLog(agent, e) {
   currentLog = agent;
   document.querySelectorAll('.log-tab').forEach(t => t.classList.remove('active'));
-  event.target.classList.add('active');
+  e.target.classList.add('active');
   fetch('/api/logs?agent=' + agent).then(r=>r.json()).then(d => {
     document.getElementById('log-box').textContent = d.content || '（无日志）';
   });
@@ -163,8 +203,33 @@ function renderStats(state) {
     <div class="stat-card"><div class="label">Closed</div><div class="value green">${counts.closed}</div></div>
     <div class="stat-card"><div class="label">需人工</div><div class="value red">${counts['needs-human']}</div></div>
     <div class="stat-card"><div class="label">PRs Open</div><div class="value blue">${prs.filter(p=>p.status==='open').length}</div></div>
-    <div class="stat-card"><div class="label">上次测试</div><div class="value" style="font-size:14px;padding-top:6px;">${lastRun}</div></div>
+    <div class="stat-card"><div class="label">上次测试</div><div class="value" style="font-size:14px;padding-top:6px">${lastRun}</div></div>
   `;
+}
+
+function renderAgents(agents) {
+  document.getElementById('agents-wrap').innerHTML = agents.map(a => {
+    const dotCls = a.running ? 'running' : (a.last_status === 'error' ? 'error' : 'idle');
+    const cardCls = a.running ? 'running' : (a.last_status === 'error' ? 'error' : '');
+    const statusText = a.running ? '运行中' : (a.last_status === 'error' ? '错误' : '空闲');
+    const statusColor = a.running ? 'green' : (a.last_status === 'error' ? 'red' : '');
+    const pct = a.next_run_pct ?? 0;
+    return `
+    <div class="agent-card ${cardCls}">
+      <div class="agent-header">
+        <span class="agent-name">${{test:'🔍 Test Agent',fix:'🔧 Fix Agent',master:'🎛 Master Agent'}[a.name] || a.name}</span>
+        <span class="agent-dot ${dotCls}"></span>
+      </div>
+      <div class="agent-kv"><span class="k">状态</span><span class="v ${statusColor}">${statusText}</span></div>
+      <div class="agent-kv"><span class="k">调度</span><span class="v">${a.schedule_label}</span></div>
+      <div class="agent-kv"><span class="k">上次运行</span><span class="v">${a.last_run || '—'}</span></div>
+      <div class="agent-kv"><span class="k">运行时长</span><span class="v">${a.last_duration || '—'}</span></div>
+      <div class="agent-kv"><span class="k">下次运行</span><span class="v">${a.next_run || '—'}</span></div>
+      <div class="progress-bar" title="距下次运行进度">
+        <div class="progress-fill" style="width:${pct}%"></div>
+      </div>
+    </div>`;
+  }).join('');
 }
 
 function renderIssues(issues) {
@@ -210,17 +275,76 @@ function renderProjects(projects) {
       <div class="kv"><span class="k">仓库</span><span class="v">${p.github?.owner}/${p.github?.repo}</span></div>
       <div class="kv"><span class="k">fix 分支</span><span class="v">${p.github?.fix_base_branch}</span></div>
       <div class="kv"><span class="k">生产域名</span><span class="v"><a href="https://${p.vercel?.production_domain}" target="_blank">${p.vercel?.production_domain}</a></span></div>
-      <div class="kv"><span class="k">Staging</span><span class="v">${p.vercel?.staging_domain ? `<a href="https://${p.vercel.staging_domain}" target="_blank">${p.vercel.staging_domain.split('.')[0]}...</a>` : '待配置'}</span></div>
+      <div class="kv"><span class="k">Staging</span><span class="v">${p.vercel?.staging_domain
+        ? `<a href="https://${p.vercel.staging_domain}" target="_blank">${p.vercel.staging_domain.split('.')[0]}...</a>`
+        : '待配置'}</span></div>
       <div class="kv"><span class="k">激活环境</span><span class="v">${p.test?.active_env}</span></div>
     </div>`).join('');
 }
 
 loadAll();
-setInterval(loadAll, 30000);
+setInterval(loadAll, 15000);
 </script>
 </body>
 </html>
 """
+
+def parse_log_times(agent: str):
+    """从日志文件解析最后一次运行的开始时间、结束时间、状态。"""
+    log_file = BASE / 'logs' / f'{agent}-agent.log'
+    if not log_file.exists():
+        return None, None, None
+
+    lines = log_file.read_text().splitlines()
+    start_re = re.compile(r'\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\] Starting')
+    end_re   = re.compile(r'\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\] \S+ agent completed')
+
+    starts, ends = [], []
+    for line in lines:
+        m = start_re.search(line)
+        if m: starts.append(datetime.strptime(m.group(1), '%Y-%m-%d %H:%M:%S'))
+        m = end_re.search(line)
+        if m: ends.append(datetime.strptime(m.group(1), '%Y-%m-%d %H:%M:%S'))
+
+    last_start = starts[-1] if starts else None
+    last_end   = ends[-1]   if ends   else None
+    # 判断是否异常结束（有 start 但无对应 end，或最后一行是 error）
+    status = 'ok'
+    if last_start and (not last_end or last_end < last_start):
+        status = 'error'
+    return last_start, last_end, status
+
+def is_agent_running(agent: str) -> bool:
+    try:
+        out = subprocess.check_output(
+            ['pgrep', '-fa', f'run-agent.sh {agent}'], text=True
+        )
+        return bool(out.strip())
+    except subprocess.CalledProcessError:
+        return False
+
+def next_run_info(agent: str, last_start):
+    cfg = AGENT_SCHEDULE[agent]
+    now = datetime.now()
+    if last_start:
+        nxt = last_start + timedelta(minutes=cfg['interval_min'])
+        if nxt < now:
+            nxt = now + timedelta(minutes=1)
+    else:
+        nxt = now + timedelta(minutes=cfg['interval_min'])
+
+    delta = nxt - now
+    total_sec = cfg['interval_min'] * 60
+    elapsed_sec = total_sec - delta.total_seconds()
+    pct = max(0, min(100, int(elapsed_sec / total_sec * 100)))
+
+    mins = int(delta.total_seconds() // 60)
+    secs = int(delta.total_seconds() % 60)
+    if mins > 0:
+        label = f'{mins}m {secs}s 后'
+    else:
+        label = f'{secs}s 后'
+    return label, pct
 
 @app.route('/')
 def index():
@@ -229,7 +353,7 @@ def index():
 @app.route('/api/state')
 def api_state():
     issues_file = BASE / 'state' / 'issues.json'
-    prs_file = BASE / 'state' / 'prs.json'
+    prs_file    = BASE / 'state' / 'prs.json'
     data = {}
     if issues_file.exists():
         d = json.loads(issues_file.read_text())
@@ -238,6 +362,31 @@ def api_state():
     if prs_file.exists():
         data['prs'] = json.loads(prs_file.read_text()).get('prs', [])
     return jsonify(data)
+
+@app.route('/api/agents')
+def api_agents():
+    result = []
+    for name in ('test', 'fix', 'master'):
+        last_start, last_end, status = parse_log_times(name)
+        running = is_agent_running(name)
+        nxt_label, pct = next_run_info(name, last_start)
+
+        duration = None
+        if last_start and last_end and last_end >= last_start:
+            secs = int((last_end - last_start).total_seconds())
+            duration = f'{secs // 60}m {secs % 60}s' if secs >= 60 else f'{secs}s'
+
+        result.append({
+            'name': name,
+            'running': running,
+            'last_status': status,
+            'last_run': last_start.strftime('%m-%d %H:%M') if last_start else None,
+            'last_duration': duration,
+            'next_run': nxt_label,
+            'next_run_pct': pct,
+            'schedule_label': AGENT_SCHEDULE[name]['label'],
+        })
+    return jsonify(result)
 
 @app.route('/api/projects')
 def api_projects():
@@ -253,7 +402,6 @@ def api_projects():
 
 @app.route('/api/logs')
 def api_logs():
-    from flask import request
     agent = request.args.get('agent', 'test')
     log_file = BASE / 'logs' / f'{agent}-agent.log'
     if not log_file.exists():
