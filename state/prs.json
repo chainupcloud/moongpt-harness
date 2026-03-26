@@ -73,6 +73,15 @@
       "deployed": true,
       "accepted": false,
       "note": "P4 issue — awaiting human acceptance"
+    },
+    {
+      "pr_number": 21,
+      "issue_numbers": [18],
+      "status": "open",
+      "commit_sha": null,
+      "merged_at": null,
+      "deployed": false,
+      "accepted": false
     }
   ]
 }
