@@ -1,7 +1,7 @@
 #!/bin/bash
 # moongpt-harness Agent Runner
 # Usage: ./run-agent.sh <agent> <project>
-#   agent:   test | fix | master
+#   agent:   test | fix | master | coverage
 #   project: dex-ui | ... (must match a file in projects/{project}.json)
 
 set -e
@@ -13,7 +13,7 @@ CLAUDE="/home/ubuntu/.local/bin/claude"
 PROJECT_CONFIG="$HARNESS_DIR/projects/${PROJECT}.json"
 
 if [ -z "$AGENT" ]; then
-  echo "Usage: $0 <test|fix|master> [project]"
+  echo "Usage: $0 <test|fix|master|coverage> [project]"
   exit 1
 fi
 
@@ -23,15 +23,16 @@ if [ ! -f "$PROJECT_CONFIG" ]; then
 fi
 
 case "$AGENT" in
-  test|fix|master) ;;
+  test|fix|master|coverage) ;;
   *) echo "Unknown agent: $AGENT"; exit 1 ;;
 esac
 
 # 各 Agent 使用的模型
 case "$AGENT" in
-  test)   MODEL="claude-sonnet-4-6" ;;
-  fix)    MODEL="claude-opus-4-6" ;;
-  master) MODEL="" ;;  # 默认模型
+  test)     MODEL="claude-sonnet-4-6" ;;
+  coverage) MODEL="claude-sonnet-4-6" ;;
+  fix)      MODEL="claude-opus-4-6" ;;
+  master)   MODEL="" ;;  # 默认模型
 esac
 
 # Load secrets from .env
