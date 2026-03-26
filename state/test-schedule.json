@@ -3,13 +3,13 @@
     "smoke",
     "coverage"
   ],
-  "current_index": 0,
+  "current_index": 1,
   "run_counts": {
-    "smoke": 1,
+    "smoke": 2,
     "coverage": 1
   },
   "last_runs": {
-    "smoke": "2026-03-26T19:15:22Z",
+    "smoke": "2026-03-26T19:25:02Z",
     "coverage": "2026-03-26T19:19:21Z"
   }
 }
