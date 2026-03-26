@@ -27,6 +27,13 @@ case "$AGENT" in
   *) echo "Unknown agent: $AGENT"; exit 1 ;;
 esac
 
+# 各 Agent 使用的模型
+case "$AGENT" in
+  test)   MODEL="claude-sonnet-4-6" ;;
+  fix)    MODEL="" ;;  # 默认模型
+  master) MODEL="" ;;  # 默认模型
+esac
+
 # Load secrets from .env
 if [ -f "$HARNESS_DIR/.env" ]; then
   export $(grep -v '^#' "$HARNESS_DIR/.env" | xargs)
@@ -43,8 +50,12 @@ echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting $AGENT agent for project: $PROJECT
 cd "$HARNESS_DIR"
 git pull origin randd1024 --quiet 2>/dev/null || true
 
+MODEL_FLAG=""
+[ -n "$MODEL" ] && MODEL_FLAG="--model $MODEL"
+
 $CLAUDE \
   --print \
+  $MODEL_FLAG \
   --allowedTools "Bash,Read,Write,Edit,Glob,Grep" \
   --max-turns 40 \
   -p "$(cat "$PROMPT_FILE")
