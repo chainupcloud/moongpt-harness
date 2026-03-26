@@ -45,6 +45,8 @@ HTML = """<!DOCTYPE html>
   /* ── Stats bar (top, full width) ── */
   .stats-bar { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px;
                padding: 16px 28px; border-bottom: 1px solid #21262d; flex-shrink: 0; }
+  @media (max-width: 1100px) { .stats-bar { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 600px)  { .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 12px 16px; gap: 8px; } }
   .stat-card { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 12px 16px; }
   .stat-card .label { font-size: 11px; color: #7d8590; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .5px; }
   .stat-card .value { font-size: 24px; font-weight: 700; }
@@ -63,6 +65,16 @@ HTML = """<!DOCTYPE html>
 
   /* ── Content area ── */
   .content { flex: 1; overflow-y: auto; padding: 16px 20px; display: flex; flex-direction: column; gap: 14px; }
+
+  /* ── Responsive: stack on narrow screens ── */
+  @media (max-width: 900px) {
+    .main { flex-direction: column; overflow: auto; }
+    .sidebar { width: 100%; border-right: none; border-bottom: 1px solid #21262d;
+               overflow-y: visible; padding: 12px 16px; }
+    .content { overflow-y: visible; padding: 12px 16px; }
+    .header { padding: 10px 16px; }
+    .header h1 { font-size: 14px; }
+  }
 
   /* ── Shared section ── */
   .section { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 16px; }
@@ -93,9 +105,10 @@ HTML = """<!DOCTYPE html>
   .progress-bar { height: 2px; background: #21262d; border-radius: 2px; margin-top: 8px; overflow: hidden; }
   .progress-fill { height: 100%; background: #388bfd; border-radius: 2px; transition: width .3s; }
 
-  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 480px; }
   th { text-align: left; padding: 8px 12px; color: #7d8590; font-weight: 500;
-       font-size: 12px; border-bottom: 1px solid #21262d; }
+       font-size: 12px; border-bottom: 1px solid #21262d; white-space: nowrap; }
   td { padding: 10px 12px; border-bottom: 1px solid #161b22; vertical-align: middle; }
   tr:last-child td { border-bottom: none; }
   tr:hover td { background: #1c2128; }
@@ -268,9 +281,9 @@ function renderIssues(issues) {
       <td>${i.resolution || '—'}</td>
     </tr>`).join('');
   document.getElementById('issues-wrap').innerHTML = `
-    <table><thead><tr>
+    <div class="table-wrap"><table><thead><tr>
       <th>#</th><th>标题</th><th>优先级</th><th>状态</th><th>PR</th><th>尝试次数</th><th>备注</th>
-    </tr></thead><tbody>${rows}</tbody></table>`;
+    </tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 
 function renderPRs(prs) {
@@ -285,9 +298,9 @@ function renderPRs(prs) {
       <td>${p.merged_at || '—'}</td>
     </tr>`).join('');
   document.getElementById('prs-wrap').innerHTML = `
-    <table><thead><tr>
+    <div class="table-wrap"><table><thead><tr>
       <th>PR</th><th>状态</th><th>commit</th><th>已部署</th><th>已验收</th><th>合并日期</th>
-    </tr></thead><tbody>${rows}</tbody></table>`;
+    </tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 
 function renderProjects(projects) {
