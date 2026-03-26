@@ -10,7 +10,7 @@ import subprocess
 import argparse
 from datetime import datetime, timedelta
 from pathlib import Path
-from flask import Flask, jsonify, request, render_template_string
+from flask import Flask, jsonify, request, Response
 
 app = Flask(__name__)
 BASE = Path(__file__).parent
@@ -187,6 +187,9 @@ function showLog(agent, e) {
   });
 }
 
+const AGENT_LABELS = {test:'🔍 Test Agent', fix:'🔧 Fix Agent', master:'🎛 Master Agent'};
+function agentLabel(name) { return AGENT_LABELS[name] || name; }
+
 function badge(cls, text) {
   return `<span class="badge badge-${cls}">${text}</span>`;
 }
@@ -217,7 +220,7 @@ function renderAgents(agents) {
     return `
     <div class="agent-card ${cardCls}">
       <div class="agent-header">
-        <span class="agent-name">${{test:'🔍 Test Agent',fix:'🔧 Fix Agent',master:'🎛 Master Agent'}[a.name] || a.name}</span>
+        <span class="agent-name">${agentLabel(a.name)}</span>
         <span class="agent-dot ${dotCls}"></span>
       </div>
       <div class="agent-kv"><span class="k">状态</span><span class="v ${statusColor}">${statusText}</span></div>
@@ -348,7 +351,7 @@ def next_run_info(agent: str, last_start):
 
 @app.route('/')
 def index():
-    return render_template_string(HTML)
+    return Response(HTML, mimetype='text/html')
 
 @app.route('/api/state')
 def api_state():
