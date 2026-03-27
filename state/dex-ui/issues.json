@@ -421,6 +421,17 @@
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/60",
       "created_date": "2026-03-27",
       "fix_attempts": 0
+    },
+    {
+      "number": 62,
+      "title": "[P3] Buy/Long button click without wallet connection shows empty toast — no Connect Wallet prompt",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E127",
+      "created": "2026-03-27",
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-27",

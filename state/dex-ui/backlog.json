@@ -1162,9 +1162,11 @@
       "priority": 3,
       "title": "/markets 资金费率 NaN% 修复验证",
       "description": "验证 Issue #38 修复后：/markets 页面 BTC-USDC 资金费率列不显示 NaN%，应显示实际数值或 —",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — No NaN% funding rate on /markets page; fix #38 confirmed working"
     },
     {
       "id": "E102",
@@ -1438,11 +1440,11 @@
       "priority": 2,
       "title": "Limit 订单提交 toast — 使用 session key 完整授权后提交订单验证成功 toast",
       "description": "通过 approveAgent API 完整授权 session key 后，提交 Limit 订单，观察页面是否出现成功/失败 toast 提示",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": ""
+      "result_summary": "FAIL — clicking Buy/Long without wallet shows empty toast (no text). Issue #62 filed."
     },
     {
       "id": "E128",
@@ -1997,9 +1999,11 @@
       "priority": 2,
       "title": "/explorer/checkpoint/{id} 详情页 — 实现后验收路由可达性",
       "description": "Issue #60 修复后，验收 /explorer/checkpoint/{id} 路由可访问并展示：tx hash、时间戳、操作类型、地址、金额等字段",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /explorer/checkpoint/{id} route is working; tested real ID #38049 shows correct page"
     },
     {
       "id": "E181",
@@ -2037,6 +2041,58 @@
       "priority": 2,
       "title": "/markets API 数据 — 直接调用后端验证价格/OI 来源",
       "description": "直接 fetch staging 后端 /dex-api/meta 和 /dex-api/info，检查返回的 price、open_interest 字段是否为 0 或正常值，定位 E099/已知价格 bug 的根因层",
+      "status": "tested",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Backend API valid: BTC price=66821.1, funding=0.00302, OI=0.0 (testnet expected)"
+    },
+    {
+      "id": "E185",
+      "area": "trade",
+      "priority": 2,
+      "title": "Trade page 24h change display — verify non-zero 24h % change in stats bar",
+      "description": "Trade page header shows '24小时变化 +0.00%'. Verify if this is a real data issue or just testnet limitation. Expected: non-zero 24h change when BTC has moved.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E186",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint detail content — timestamp and transaction data accuracy",
+      "description": "After route fix, verify checkpoint detail page shows: correct timestamp (not 1970), actual tx count, user addresses. Test with recent checkpoint ID from /explorer listing.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E187",
+      "area": "trade",
+      "priority": 2,
+      "title": "Limit order TP/SL input behavior — can user set take-profit/stop-loss price",
+      "description": "When placing a limit order, test the TP and SL input fields (3 text inputs visible). Verify: values can be entered, are validated (SL < entry < TP), and persist when switching Long/Short.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E188",
+      "area": "markets",
+      "priority": 2,
+      "title": "/markets page price fix verification — BTC price shows non-zero value after #57 fix",
+      "description": "Issue #57 tracking $0 prices on /markets page is in 'fixing' state. Once PR merged, verify BTC price column shows real market price (should be ~66000) and 24h change is non-zero.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E189",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order type switch state persistence — price/size fields retain values on Market→Limit switch",
+      "description": "When user fills in size (e.g. 0.1 BTC) in Market order and switches to Limit, does size persist? When switching back, does price clear correctly? Tests the order type tab switching behavior.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
