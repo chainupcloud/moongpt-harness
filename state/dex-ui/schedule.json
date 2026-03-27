@@ -1,19 +1,15 @@
 {
   "modules": [
     "explore",
-    "smoke",
     "explore",
     "explore",
-    "smoke",
     "explore"
   ],
   "current_index": 0,
   "run_counts": {
-    "smoke": 0,
     "explore": 0
   },
   "last_runs": {
-    "smoke": "",
     "explore": ""
   }
 }
