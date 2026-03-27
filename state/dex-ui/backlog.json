@@ -2844,9 +2844,11 @@
       "priority": 3,
       "title": "Spot page — market selector shows spot pairs, not perp pairs",
       "description": "Navigate to /spot, verify the market selector shows spot trading pairs (BTC/USDC spot, not perp). Verify order book and trade form adapt to spot mode.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — /spot returns 404 \"页面不存在\", regression → Issue #107"
     },
     {
       "id": "E242",
@@ -2854,9 +2856,11 @@
       "priority": 3,
       "title": "Markets page — verify all listed markets load and are clickable",
       "description": "Navigate to /markets page. Verify it loads market data (name, price, 24h change, volume). Click a market row and verify it navigates to the correct trade page.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Markets page loads BTC/USDC (testnet 1 market, div-based layout)"
     },
     {
       "id": "E243",
@@ -2876,9 +2880,11 @@
       "priority": 3,
       "title": "Limit order form — price input visibility after clicking Limit tab",
       "description": "Click the Limit order type, verify the price input field becomes visible and accepts numeric input. Currently price input invisible even on Limit tab.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Limit tab shows price input (aria-label=Price), accepts numeric input"
     },
     {
       "id": "E245",
@@ -4410,6 +4416,58 @@
       "priority": 2,
       "title": "TWAP form — Interval and Parts inputs visible and accept numeric input when wallet connected",
       "description": "Connect wallet and switch order type to TWAP. Verify that Interval and Parts-specific form fields appear and accept numeric values. Relates to issue #104 (missing labels). This verifies the fields exist and work even if labels are missing.",
+      "status": "tested",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — TWAP inputs (placeholder=0) accept numeric input; label issue tracked in #104"
+    },
+    {
+      "id": "E390",
+      "area": "spot",
+      "priority": 2,
+      "title": "Spot page — verify page loads after fix for /spot 404 regression",
+      "description": "After fix for Issue #107, verify /spot page renders spot trading interface without 404",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E391",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets page — clickable market row navigates to /trade/{pair}",
+      "description": "On /markets, click the BTC/USDC row and verify navigation to /trade/BTC-USDC or equivalent",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E392",
+      "area": "trade",
+      "priority": 3,
+      "title": "Limit order form — TIF (Time in Force) selector visible and has GTC/IOC options",
+      "description": "After clicking Limit tab, verify TIF/time-in-force dropdown exists and offers GTC, IOC options",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E393",
+      "area": "trade",
+      "priority": 3,
+      "title": "TWAP order — verify Interval and Parts labels visible after wallet connect",
+      "description": "Connect wallet and switch to TWAP tab; verify Interval and Parts inputs have visible labels (related to #104)",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E394",
+      "area": "spot",
+      "priority": 3,
+      "title": "Spot page — market selector shows only spot pairs (not perp/futures)",
+      "description": "Once /spot is fixed, verify the market selector lists spot pairs (e.g., BTC/USDC spot) distinct from perp markets",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"

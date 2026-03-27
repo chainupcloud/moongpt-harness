@@ -847,6 +847,16 @@
       "created_date": "2026-03-27",
       "fix_attempts": 1,
       "pr_number": 106
+    },
+    {
+      "id": "dex-ui-107",
+      "title": "[P3] /spot page returns 404 — 页面不存在 (regression after recent spot/page.tsx change)",
+      "github_issue_number": 107,
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E241",
+      "created": "2026-03-27",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-27",
