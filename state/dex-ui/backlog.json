@@ -8,7 +8,9 @@
       "priority": 1,
       "title": "切换交易对（watchlist 点击 ETH/SOL）→ 订单簿更新",
       "description": "点击 watchlist 中非 BTC 交易对，验证价格栏、订单簿、K线 coin 参数均切换",
-      "status": "pending"
+      "status": "skipped",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — testnet only has BTC-USDC, no ETH/SOL pairs available"
     },
     {
       "id": "E002",
@@ -16,7 +18,9 @@
       "priority": 1,
       "title": "深链接 /trade?coin=ETH 直接跳转 → 正确加载 ETH 交易对",
       "description": "直接访问 /trade?coin=ETH，不通过 watchlist，验证页面加载的是 ETH 而非 BTC",
-      "status": "pending"
+      "status": "skipped",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — testnet only has BTC-USDC; /trade?coin=ETH URL preserved but content undetermined"
     },
     {
       "id": "E003",
@@ -24,7 +28,9 @@
       "priority": 1,
       "title": "钱包连接后刷新页面 → session key 持久，不重新弹签名提示",
       "description": "wagmi cookie + localStorage session key 应在刷新后恢复，EnableTradingPrompt 不应再次出现",
-      "status": "pending"
+      "status": "tested",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — no EnableTrading modal after reload with session key in localStorage"
     },
     {
       "id": "E004",
@@ -32,7 +38,9 @@
       "priority": 1,
       "title": "杠杆调整后下单 → UI 显示新杠杆，保证金占用变化",
       "description": "从默认杠杆改为 5x，提交，验证订单表单中 Required Margin 随之变化",
-      "status": "pending"
+      "status": "skipped",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — leverage controls not rendered without real wallet connection"
     },
     {
       "id": "E005",
@@ -241,6 +249,56 @@
       "title": "Markets 页面按 24h 涨跌幅排序",
       "description": "/markets 页面点击 24h Change 列头，验证列表重新排序（第一行与最后一行涨跌幅大小关系正确）",
       "status": "pending"
+    },
+    {
+      "id": "E031",
+      "area": "trade",
+      "priority": 1,
+      "title": "深链接 /trade?coin=BTC → 正确加载 BTC 交易对",
+      "description": "测试网有 BTC-USDC，访问 /trade?coin=BTC，验证页面加载 BTC 交易对且 URL coin 参数保留",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E032",
+      "area": "pages",
+      "priority": 2,
+      "title": "/spot 页面可访问，不 404，有内容",
+      "description": "访问 /spot（近期新增页面），验证 HTTP 200，页面有实质内容，无 JS 崩溃",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E033",
+      "area": "pages",
+      "priority": 3,
+      "title": "/privacy 和 /terms 页面可访问，不 404，有法律文本",
+      "description": "访问近期新增的 /privacy 和 /terms 页面，验证均可访问，有实质性内容（不空白）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E034",
+      "area": "trade",
+      "priority": 2,
+      "title": "钱包未连接时，下单按钮显示 'Connect Wallet' 而非 'Long/Short'",
+      "description": "未连接钱包访问 /trade，验证下单按钮显示引导连接钱包的文字（Connect Wallet），不显示 Long/Short",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E035",
+      "area": "session",
+      "priority": 2,
+      "title": "多标签页 session 共享 — 第二个标签不重复弹签名",
+      "description": "先在 tab1 完成 session 初始化，打开 tab2 同 URL，验证 tab2 不再弹出 EnableTrading 签名提示",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
     }
   ]
 }
