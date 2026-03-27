@@ -1008,6 +1008,23 @@
       "closed_at": "2026-03-27",
       "resolution": "already-resolved",
       "note": "TwapPanel component already exists on dev with Duration presets, Hour(s)/Minute(s) inputs, Randomize/Private checkboxes, and TWAP Order Preview. Same false positive as #109 and #113 — stale Vercel staging (issue #98)."
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-120",
+      "title": "[P4] Stop Limit form: limit price input has wrong aria-label (\"Trigger price\" instead of \"Limit price\")",
+      "github_issue_number": 120,
+      "github_repo": "chainupcloud/dex-ui",
+      "status": "open",
+      "priority": "P4",
+      "created_date": "2026-03-27",
+      "scenarios": [
+        "E302"
+      ],
+      "labels": [
+        "bug",
+        "accessibility"
+      ],
+      "notes": "src/components/trading/TradeForm/index.tsx line ~673: aria-label=\"Trigger price\" on limitPrice input for stop-limit"
     }
   ],
   "last_updated": "2026-03-27",

@@ -3566,9 +3566,11 @@
       "title": "Checkpoint 详情页 — 点击单条 transaction hash 跳转详情",
       "description": "在 /explorer/checkpoint/{id} 点击列表中的 transaction hash，验证跳转到对应 /explorer/tx/{hash} 页面，显示 tx 类型、gas、状态等字段。",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Checkpoint detail shows no tx links (root cause: backend issue #29 in dex-sui)"
     },
     {
       "id": "E302",
@@ -3577,9 +3579,11 @@
       "title": "Stop Market 订单 — 仅显示 trigger price（无 limit price）",
       "description": "切换 Order Type 到 Stop Market，验证只显示 trigger price 输入框（没有 limit price），与 Stop Limit 的双价格输入区分。执行 Buy/Sell 按钮应 enable。",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Stop Market shows trigger price only (no limit price). Side bug found: Stop Limit aria-label wrong → Issue #120"
     },
     {
       "id": "E303",
@@ -3587,9 +3591,11 @@
       "priority": 3,
       "title": "/explorer/address/{addr} — 钱包地址详情页数据展示验证",
       "description": "搜索真实测试钱包地址后，/explorer/address/ 页面应展示该地址的历史订单/交易列表；验证数据加载、分页、空态提示",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Explorer address page loads with H1=\"Address Activity\"; content renders correctly"
     },
     {
       "id": "E304",
@@ -5236,9 +5242,11 @@
       "title": "TWAP 订单提交 — 填写 Size + Duration 后点击 TWAP Buy",
       "description": "选择 TWAP 订单类型，输入 Size=0.01，选择 Duration=30m，点击 TWAP Buy 按钮，验证提交后出现确认 toast 或订单出现在 TWAP 列表",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — TWAP order type selectable via dropdown; duration presets (30m/1h/4h/12h/24h) visible in TwapPanel"
     },
     {
       "id": "E461",
@@ -5280,6 +5288,56 @@
       "title": "Markets 页面加载 — /markets 渲染市场列表",
       "description": "访问 /markets，验证页面加载不白屏，市场列表（BTC-USDC 等交易对）正确显示价格/24h变化/成交量，近期代码变更涉及 app/markets/",
       "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E465",
+      "area": "trade",
+      "priority": 3,
+      "title": "TWAP 订单提交验证 — 填写 Size + Duration 后实际提交",
+      "description": "选择 TWAP 订单类型，填入 Size 和 Duration 预设，点击 Buy / Long，验证提交响应（需 session key）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E466",
+      "area": "accessibility",
+      "priority": 4,
+      "title": "TriggerPriceInput aria-label 缺失 — Stop Market 触发价格字段无可访问标签",
+      "description": "Stop Market 的 TriggerPriceInput 组件 input 无 aria-label，屏幕阅读器无法识别该字段",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E467",
+      "area": "trade",
+      "priority": 3,
+      "title": "Scale 订单类型 — 验证价格区间输入和阶梯数量设置",
+      "description": "选择 Scale 订单，检查 Price Range（Min/Max）和 Number of Orders 字段是否正确显示",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E468",
+      "area": "trade",
+      "priority": 3,
+      "title": "Scalp 订单类型 — 同时设置多空入场订单字段验证",
+      "description": "选择 Scalp 订单，检查 Long Entry Price + Short Entry Price 字段是否同时显示，TP/SL 支持",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E469",
+      "area": "explorer",
+      "priority": 2,
+      "title": "Explorer checkpoint list — txCount 与实际 tx 数量一致性检查",
+      "description": "获取列表中 txCount>0 的 checkpoint，进入详情页验证是否能看到对应数量的交易（关联 issue #29）",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
