@@ -2768,11 +2768,12 @@
       "priority": 2,
       "title": "Order book spread calculation — verify spread value correctness",
       "description": "Order book shows Spread value (e.g. -1,797.8 (-2.713%)). Verify this is calculated as (best_ask - best_bid) / best_bid * 100. Negative spread is suspicious and may indicate a display bug.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — Order book spread is negative (-1,797.8), asks < bids — price inversion bug"
+      "result_summary": "FAIL — Order book spread is negative (-1,797.8), asks < bids — price inversion bug",
+      "note": "Reset after issue #78 fix (PR #79 merged). Re-verify spread sorting fix."
     },
     {
       "id": "E248",

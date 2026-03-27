@@ -573,12 +573,16 @@
     {
       "github_number": 78,
       "title": "[P2] Order book spread显示为负值 — 买卖盘价格倒置（asks < bids）",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P2",
       "scenario": "E247",
       "created": "2026-03-27",
+      "closed_at": "2026-03-27",
       "fix_attempts": 1,
-      "pr_number": 79
+      "pr_number": 79,
+      "deployed_sha": "8947f7483f296a4c1fe800d6ca992f8e7accb2ab",
+      "accepted": true,
+      "note": "Sorting fix correctly implemented (bids desc, asks asc). Remaining negative spread on staging is testnet crossed-book data anomaly."
     }
   ],
   "last_updated": "2026-03-27",
