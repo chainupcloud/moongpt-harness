@@ -213,8 +213,6 @@ HTML = """<!DOCTYPE html>
       <div class="log-tabs">
         <button class="log-tab active" onclick="showLog('explore',event)">explore</button>
         <button class="log-tab" onclick="showLog('smoke',event)">smoke</button>
-        <button class="log-tab" onclick="showLog('coverage',event)">coverage</button>
-        <button class="log-tab" onclick="showLog('advanced',event)">advanced</button>
         <button class="log-tab" onclick="showLog('scheduler',event)">scheduler</button>
         <button class="log-tab" onclick="showLog('fix',event)">fix</button>
         <button class="log-tab" onclick="showLog('master',event)">master</button>

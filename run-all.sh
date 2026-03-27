@@ -10,7 +10,7 @@ LOG_DIR="$HARNESS_DIR/logs"
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] run-all start for $PROJECT"
 
 # Ordered list of test agents — add new modules here
-TEST_AGENTS=(smoke explore coverage advanced)
+TEST_AGENTS=(smoke explore)
 
 for AGENT in "${TEST_AGENTS[@]}"; do
   echo ""

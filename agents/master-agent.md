@@ -118,6 +118,8 @@ curl -s -X POST \
 更新 state/issues.json：status → "closed", closed_at → today
 更新 state/prs.json：status → "merged", deployed → true, accepted → true
 
+**重置探索背板**：若关闭的 issue 来自 explore-agent（body 含 "Explore Agent"），在 `state/test-backlog.json` 中找到对应场景（status = "failed"），重置为 `"status": "pending"` 以便重新验证修复效果。
+
 ### Step 8b：验收失败
 Issue 评论说明失败原因。
 state/issues.json：status → "open", fix_attempts += 1
