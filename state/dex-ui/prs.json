@@ -222,8 +222,13 @@
       "issue_numbers": [
         41
       ],
-      "status": "open",
-      "title": "fix: 移动端横屏底部标签栏 Order History 按钮溢出视口 (#41)"
+      "status": "merged",
+      "title": "fix: 移动端横屏底部标签栏 Order History 按钮溢出视口 (#41)",
+      "commit_sha": "dd607dba85a55938bafa4b35c090c2bff9e21ff3",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": false,
+      "note": "Acceptance failed: Order History button still overflows viewport in 812×375 landscape"
     }
   ]
 }
