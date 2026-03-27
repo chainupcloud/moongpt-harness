@@ -30,5 +30,17 @@
     "repo": "dex-ui"
   },
 
+  "backend_issue_tracker": {
+    "owner": "chainupcloud",
+    "repo": "dex-sui"
+  },
+
+  "backend_test": {
+    "cli": "dex",
+    "cli_repo": "https://github.com/chainupcloud/dex-cli",
+    "api_url": "https://dex-api.hifo.one",
+    "env": "testnet"
+  },
+
   "local_path": "/home/ubuntu/chainup/dex-ui"
 }

@@ -212,7 +212,7 @@ HTML = """<!DOCTYPE html>
       <h2>Agent 日志（最近 30 行）</h2>
       <div class="log-tabs">
         <button class="log-tab active" onclick="showLog('explore',event)">explore</button>
-        <button class="log-tab" onclick="showLog('smoke',event)">smoke</button>
+        <button class="log-tab" onclick="showLog('plan',event)">plan</button>
         <button class="log-tab" onclick="showLog('scheduler',event)">scheduler</button>
         <button class="log-tab" onclick="showLog('fix',event)">fix</button>
         <button class="log-tab" onclick="showLog('master',event)">master</button>

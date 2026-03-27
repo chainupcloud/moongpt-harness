@@ -30,9 +30,29 @@ cd /home/ubuntu/chainup/dex-ui && git log --since="3 days ago" --name-only --for
 ```
 若变更包含 `Navigation` → 优先 E002/E013/E026；`TradeForm` → 优先 E004/E008；`Portfolio` → 优先 E005/E018；以此类推。
 
+### Step 2c：检查背板是否需要补充
+若 pending 场景 < 10 条，在本次运行末尾追加一条建议：「建议手动触发 plan-agent 补充测试场景」。（plan-agent 由 cron 每周自动运行，也可手动触发）
+
 ### Step 3：执行测试
 
-每个选中场景**现场写 Node.js Playwright 脚本执行**，不依赖固定 spec 文件。
+根据场景的 `track` 字段选择执行方式：
+- `track = "frontend"` → Playwright UI 测试
+- `track = "backend"` → dex-cli 命令行测试
+- 无 track 字段 → 默认 frontend
+
+**后端场景执行方式**：
+```bash
+# 确认 dex-cli 可用
+export DEX_API_URL={api_url}
+dex --version 2>/dev/null || (cd /tmp/dex-cli-build && cargo build --release 2>/dev/null && cp target/release/dex /usr/local/bin/)
+
+# 执行测试命令
+dex -o json {command} 2>&1
+```
+
+后端场景的 issue 提交到 `backend_issue_tracker`（dex-sui），不是 dex-ui。
+
+每个选中场景**现场写 Node.js Playwright 脚本执行**（前端），或直接运行 dex-cli 命令（后端），不依赖固定 spec 文件。
 
 **钱包初始化模板（每个脚本复用此模式）：**
 ```javascript
