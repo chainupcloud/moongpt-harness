@@ -97,9 +97,12 @@
     {
       "pr_number": 23,
       "issue_numbers": [],
-      "status": "open",
+      "status": "merged",
       "title": "fix: correct spot navigation link to /spot",
-      "note": "No reviews yet — awaiting review"
+      "commit_sha": "fd926f8b5976271a6fc401ff4e99341ac7f3f130",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
     }
   ]
 }
