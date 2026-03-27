@@ -3726,9 +3726,11 @@
       "priority": 3,
       "title": "Order type TWAP — basic UI render and input fields",
       "description": "Select TWAP from Order Type dropdown. Verify TWAP-specific fields appear (duration, intervals, price limit). Check that standard size/quantity input is still present.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — TWAP selectable but no TWAP-specific fields rendered (regression of #113) → issue #125"
     },
     {
       "id": "E315",
@@ -3746,9 +3748,11 @@
       "priority": 3,
       "title": "Leverage slider — drag to verify max leverage changes order margin calculation",
       "description": "On /trade page, the Cross/10x button area likely has a leverage selector. Verify: clicking shows leverage options (1x-20x), changing leverage updates margin/liquidation price shown in the form.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Leverage selector shows 1x/3x/5x/10x/25x/50x options; range sliders present"
     },
     {
       "id": "E317",
@@ -5544,9 +5548,11 @@
       "title": "/markets Trade button navigation — verify coin param passed to /trade",
       "description": "After #124 is fixed, verify clicking Trade button for BTC-USDC navigates to /trade?coin=BTC (with correct coin param). Check that the trade form pre-selects BTC-USDC market.",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Trade button href=\"#\", still does not navigate to /trade (issue #124 still open)"
     },
     {
       "id": "E486",
@@ -5555,9 +5561,11 @@
       "title": "TP/SL inputs validation — post-fix verification of #122",
       "description": "After issue #122 (TP/SL inputs not revealed) is fixed: (1) click TP/SL checkbox, (2) verify inputs appear, (3) for LONG enter TP < current price → expect error, (4) enter SL > current price → expect error. Verifies both reveal and validation.",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — TP/SL inputs now reveal (issue #122 fix confirmed), but no validation for invalid TP/SL prices → issue #126"
     },
     {
       "id": "E487",
@@ -5588,6 +5596,56 @@
       "title": "Trade form — switching between Long/Short resets or preserves form values",
       "description": "Enter size=0.01, price=65000 in Long form. Switch to Short. Check if values are preserved or reset. Then switch back to Long. Document behavior — either behavior could be intentional.",
       "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E490",
+      "area": "order-form",
+      "priority": 2,
+      "title": "TWAP order form — regression E314 re-verify after fix",
+      "description": "After issue #125 (TWAP fields missing) is fixed: select TWAP, verify duration input and interval count fields appear and accept numeric input.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E491",
+      "area": "order-form",
+      "priority": 2,
+      "title": "TP/SL validation — re-verify after #126 fix",
+      "description": "After issue #126 is fixed: enable TP/SL, enter TP below mark price for LONG → expect inline error. Enter SL above mark price → expect error. Both errors should prevent submission.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E492",
+      "area": "order-form",
+      "priority": 3,
+      "title": "TWAP order — submit flow with valid duration/interval values",
+      "description": "Once TWAP fields are rendered (post #125 fix): fill in duration=5min, parts=5, no price limit, submit. Verify order acknowledgement or error if not connected.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E493",
+      "area": "order-form",
+      "priority": 3,
+      "title": "Leverage change — margin and liquidation price update verification",
+      "description": "Change leverage from 10x to 1x: verify that margin required and liquidation price shown in order form change accordingly. Tests that leverage selector drives recalculation.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E494",
+      "area": "order-form",
+      "priority": 3,
+      "title": "Scale order type — fields render check",
+      "description": "Select Scale from Order Type dropdown. Verify Scale-specific fields appear: lower price, upper price, number of orders. Check that submit is disabled without required fields.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
