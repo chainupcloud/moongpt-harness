@@ -430,7 +430,8 @@
       ],
       "status": "open",
       "created_at": "2026-03-27",
-      "title": "fix: 移动端底部标签栏添加滚动渐变提示 (#73)"
+      "title": "fix: 移动端底部标签栏添加滚动渐变提示 (#73)",
+      "note": "Merge conflict (dirty state) — needs rebase onto dev. Copilot review COMMENTED (mergeable once rebased)."
     },
     {
       "pr_number": 83,
@@ -439,7 +440,8 @@
       ],
       "status": "open",
       "created_at": "2026-03-27",
-      "title": "fix: /trade/BTC-USDC deep-link returns 404 — add catch-all redirect (#76)"
+      "title": "fix: /trade/BTC-USDC deep-link returns 404 — add catch-all redirect (#76)",
+      "note": "No reviews yet. Mergeable but waiting for review."
     }
   ]
 }
