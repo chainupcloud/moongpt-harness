@@ -477,6 +477,15 @@
       "fix_attempts": 1,
       "pr_number": 68,
       "notes": "Input type=text, no min constraint. Deposit modal has validation (PR #43/issue #40). Withdraw modal does not."
+    },
+    {
+      "github_issue_number": 69,
+      "title": "[P3] Limit 订单提交后无 toast 反馈 — 点击 Buy/Long 按钮后页面无响应提示",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E127",
+      "created_date": "2026-03-27",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-27",
