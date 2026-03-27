@@ -620,15 +620,19 @@
       "id": "issue-80",
       "github_number": 80,
       "title": "[P4] Stop Limit order form — trigger price input has no label, indistinguishable from limit price field",
-      "status": "open",
+      "status": "closed",
       "priority": "P4",
       "scenario_id": "E254",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "labels": [
         "bug",
         "enhancement"
       ],
-      "url": "https://github.com/chainupcloud/dex-ui/issues/80"
+      "url": "https://github.com/chainupcloud/dex-ui/issues/80",
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "TriggerPriceInput component has 'Stop Price' label + direction indicators. Limit Price has separate labeled section. Both distinguishable on dev."
     },
     {
       "number": 85,
