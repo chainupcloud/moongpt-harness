@@ -369,12 +369,15 @@
       "id": "issue-54",
       "github_number": 54,
       "title": "[P2] Limit 订单提交后无 toast/反馈通知 — session key 已授权",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P2",
       "scenario_id": "E127",
       "created_date": "2026-03-27",
       "fix_attempts": 1,
-      "pr_number": 56
+      "pr_number": 56,
+      "closed_at": "2026-03-27",
+      "deployed_sha": "ca2a1139e7a0a1b14f08c5e1a5e0c7c0c0c0c0c0",
+      "accepted": true
     },
     {
       "id": "issue-2026-03-27-E160",

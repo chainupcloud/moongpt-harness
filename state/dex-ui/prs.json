@@ -298,8 +298,12 @@
       "issue_numbers": [
         54
       ],
-      "status": "open",
-      "title": "fix: limit order submit shows no toast with session key (#54)"
+      "status": "merged",
+      "title": "fix: limit order submit shows no toast with session key (#54)",
+      "commit_sha": "ca2a113",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
     },
     {
       "pr_number": 59,
