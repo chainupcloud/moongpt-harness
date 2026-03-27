@@ -172,10 +172,12 @@
       "id": "issue-29",
       "github_number": 29,
       "title": "[P3] 交易表单下单按钮未感知钱包连接状态 — 未连接时应显示 Connect Wallet",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario_id": "E034",
       "created_date": "2026-03-27",
+      "fix_attempts": 1,
+      "pr_number": 33,
       "labels": [
         "bug"
       ]

@@ -139,6 +139,12 @@
       "issue_numbers": [28],
       "status": "open",
       "title": "fix: /markets page showing $0 prices — coin key mismatch (#28)"
+    },
+    {
+      "pr_number": 33,
+      "issue_numbers": [29],
+      "status": "open",
+      "title": "fix: 交易表单下单按钮未感知钱包连接状态 (#29)"
     }
   ]
 }
