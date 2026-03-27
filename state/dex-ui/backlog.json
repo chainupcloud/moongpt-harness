@@ -2555,9 +2555,11 @@
       "priority": 3,
       "title": "移动端竖屏（390×844）标签栏滚动提示 UX 验证",
       "description": "验证底部面板标签栏溢出时是否有可见的滚动指示器（渐变、箭头或 '>' 符号），并验证横向滑动是否正常工作。",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — overflow-x:auto with scrollbar-hide, right-edge gradient indicator present. Trailing tab in viewport (right=383 < 390)."
     },
     {
       "id": "E218",
@@ -3865,9 +3867,11 @@
       "priority": 2,
       "title": "Vercel staging 部署失败后自动检测 — 验证 PR merge 后 staging URL 实际运行最新代码",
       "description": "PR 合并后，检查 Vercel staging URL 的实际 git SHA 是否与 dev 分支最新提交一致，检测部署失败情况",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Staging at b520cb2e (PR #93), dev at 5762b50 (4 commits newer). 3 consecutive deploys ERROR. Vercel team config issue persistent."
     },
     {
       "id": "E343",
@@ -3907,9 +3911,11 @@
       "priority": 2,
       "title": "OrderTypeSelector 下拉 — 切换 Market/Limit/Stop 订单类型",
       "description": "点击 'Order Type' 下拉按钮，验证 Market、Limit、Stop Market、Stop Limit 等选项可选，切换后表单字段相应变化（Market 无价格输入，Limit 有价格输入）",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Dropdown opens 7 types: Market/Limit/Stop Market/Stop Limit/TWAP/Scale/Scalp. All selectable."
     },
     {
       "id": "E347",
@@ -3917,9 +3923,11 @@
       "priority": 2,
       "title": "Market 订单 — 选择 Market 类型后无价格输入框验证",
       "description": "切换至 Market 订单类型，验证价格输入框隐藏/禁用，显示滑点设置，Size 输入有效后可点击 Buy / Long",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Market order: no price input field present. Size/Total inputs remain. Correct behavior."
     },
     {
       "id": "E348",
@@ -3947,6 +3955,47 @@
       "priority": 3,
       "title": "Balances 标签 — 无钱包时显示状态验证",
       "description": "在未连接钱包的情况下点击 Balances 标签，验证是否显示空状态/连接提示，而非报错",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E351",
+      "area": "trade",
+      "priority": 2,
+      "title": "TWAP 订单表单 — 验证时间间隔和分批参数",
+      "description": "切换至 TWAP 订单类型，验证出现时间间隔(interval)、份数(parts)等特有参数输入框，提交后有反馈",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E352",
+      "area": "trade",
+      "priority": 2,
+      "title": "Stop Market 订单 — 触发价格输入与方向验证",
+      "description": "切换至 Stop Market 类型，验证触发价格(trigger price)输入框存在，方向选择（above/below）可用，无普通价格输入框",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E353",
+      "area": "deployment",
+      "priority": 2,
+      "title": "Vercel 部署失败根因 — 检查 team config 错误日志",
+      "description": "通过 Vercel API 获取最近 ERROR 部署的构建日志，分析 team config 错误的具体原因，判断是否需要人工介入",
+      "track": "backend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E354",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Limit 订单 — trigger price + limit price 双字段验证",
+      "description": "切换至 Stop Limit，验证同时显示 Stop Price 和 Limit Price 两个输入框，两者可独立设置不同值",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
