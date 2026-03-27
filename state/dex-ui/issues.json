@@ -432,6 +432,17 @@
       "labels": [
         "bug"
       ]
+    },
+    {
+      "github_issue_number": 63,
+      "title": "[P3] /trade 页面 24h 涨跌显示 +0.00% — 标记价格正常但涨跌幅数据缺失",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E185",
+      "created_date": "2026-03-27",
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-27",
