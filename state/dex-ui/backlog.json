@@ -2349,11 +2349,11 @@
       "priority": 3,
       "title": "Markets 页面持仓量（Open Interest）显示 $0.00 — 数据映射验证",
       "description": "markets 表格中 BTC-USDC 持仓量列显示 $0.00，检查 API 是否提供该字段，前端映射是否正确",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — Open Interest shows $0.00 (1 occurrence). Issue #94 created."
+      "result_summary": "Reset to pending after fix merged (PR #96). Previous: FAIL — Open Interest shows $0.00."
     },
     {
       "id": "E201",

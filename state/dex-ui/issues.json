@@ -705,15 +705,19 @@
     {
       "github_number": 94,
       "title": "[P3] /markets 页面 Open Interest 显示 $0.00 — 持仓量数据映射错误",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E200",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "labels": [
         "bug"
       ],
       "pr_number": 96,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "deployed_sha": "5762b5049e14a2330cbd089933124ce8a6320048",
+      "accepted": true,
+      "note": "PR #96 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification."
     },
     {
       "github_number": 95,

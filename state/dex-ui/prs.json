@@ -532,8 +532,14 @@
       "issue_numbers": [
         94
       ],
-      "status": "open",
-      "branch": "fix/issue-94"
+      "status": "merged",
+      "branch": "fix/issue-94",
+      "title": "fix: /markets Open Interest 显示 $0.00 — 币单位未转 USD 名义值 (#94)",
+      "commit_sha": "5762b5049e14a2330cbd089933124ce8a6320048",
+      "merged_at": "2026-03-27",
+      "deployed": false,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     }
   ]
 }
