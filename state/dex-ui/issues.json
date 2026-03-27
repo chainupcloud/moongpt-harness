@@ -405,6 +405,16 @@
         "bug"
       ],
       "github_repo": "chainupcloud/dex-ui"
+    },
+    {
+      "issue_number": 60,
+      "title": "[P3] /explorer 交易详情页返回 404 — checkpoint 路由未实现",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E098",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/60",
+      "created_date": "2026-03-27",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-27",

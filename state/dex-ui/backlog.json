@@ -1126,9 +1126,11 @@
       "priority": 3,
       "title": "/explorer 交易详情 — 点击 tx hash 查看详情",
       "description": "在 /explorer 搜索一个 transaction hash（如从 /api-tx 获取），验证能正确展示交易详情页",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — /explorer/checkpoint/{id} returns 404, detail route not implemented → Issue #60"
     },
     {
       "id": "E099",
@@ -1136,9 +1138,11 @@
       "priority": 3,
       "title": "/markets 持仓量（OI）数据正确性 — 非 $0.01",
       "description": "当前 /markets 持仓量列显示 $0.01，验证这是真实 testnet 数据还是计算错误，与后端 API 原始值对比",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — /markets OI shows $0.00, same root cause as existing price data issue"
     },
     {
       "id": "E100",
@@ -1939,9 +1943,11 @@
       "priority": 2,
       "title": "/spot 页面功能可达性 — 现货交易入口",
       "description": "访问 /spot 页面（最近新增），验证页面正常加载、显示现货交易对列表或交易表单，无 500/404 错误",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /spot page exists, shows \"Spot Trading Coming Soon\" placeholder, nav link present"
     },
     {
       "id": "E176",
@@ -1949,9 +1955,11 @@
       "priority": 2,
       "title": "/api-keys 页面功能可达性 — API 密钥管理入口",
       "description": "访问 /api-keys 页面（最近新增），验证页面正常加载，显示 API 密钥列表/生成界面，无 500/404 错误",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /api-keys page exists, heading \"API\", shows connect wallet prompt when disconnected"
     },
     {
       "id": "E177",
@@ -1979,6 +1987,56 @@
       "priority": 3,
       "title": "TP/SL 百分比输入框联动价格验证",
       "description": "在 /trade 设置主价格后，验证 TP/SL 的「placeholder=0」百分比输入框是否可以输入正整数（如 5），并联动计算触发价格",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E180",
+      "area": "explorer",
+      "priority": 2,
+      "title": "/explorer/checkpoint/{id} 详情页 — 实现后验收路由可达性",
+      "description": "Issue #60 修复后，验收 /explorer/checkpoint/{id} 路由可访问并展示：tx hash、时间戳、操作类型、地址、金额等字段",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E181",
+      "area": "explorer",
+      "priority": 3,
+      "title": "/explorer 列表分页 — 加载更多或翻页功能",
+      "description": "Explorer 列表当前显示 82 条交易。验证是否有分页/无限滚动：滚动到底部是否加载更多，是否有页码控件",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E182",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "/api-keys 已连接钱包 — 创建/删除 API Key 完整流程",
+      "description": "连接钱包后访问 /api-keys，验证：1) 显示已有 key 列表或空态 2) 点击 Create/Add 按钮可生成新 key 3) 能复制 key 值 4) 能删除已有 key",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E183",
+      "area": "spot",
+      "priority": 4,
+      "title": "/spot Coming Soon 页 — UI 完整性检查",
+      "description": "验证 /spot Coming Soon 占位页的完整性：1) 是否有预期上线日期 2) 是否有订阅通知入口 3) 导航样式是否与其他页一致 4) 移动端 responsive",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E184",
+      "area": "markets",
+      "priority": 2,
+      "title": "/markets API 数据 — 直接调用后端验证价格/OI 来源",
+      "description": "直接 fetch staging 后端 /dex-api/meta 和 /dex-api/info，检查返回的 price、open_interest 字段是否为 0 或正常值，定位 E099/已知价格 bug 的根因层",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
