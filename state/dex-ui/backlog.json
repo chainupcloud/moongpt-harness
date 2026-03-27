@@ -2772,11 +2772,11 @@
       "priority": 3,
       "title": "'More' nav dropdown — verify all links are functional",
       "description": "Click the 'More' nav item and verify the dropdown opens with functional links (no 404, no broken routes).",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "Reset to pending after fix merged (PR #105)"
+      "result_summary": "PASS — More dropdown opens with API link; Portfolio/Explorer in main nav"
     },
     {
       "id": "E236",
@@ -2965,9 +2965,11 @@
       "priority": 3,
       "title": "TWAP order form: submit a TWAP order with 5m duration",
       "description": "Select TWAP order type, set size and 5m duration, click Buy/Long (wallet must be connected). Verify TWAP order appears in the TWAP tab in the open orders panel.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — same as E375: TWAP form lacks TWAP-specific parameter fields → Issue #109"
     },
     {
       "id": "E252",
@@ -2975,9 +2977,11 @@
       "priority": 3,
       "title": "Scale order type — verify form renders size distribution fields",
       "description": "Select Scale order type from dropdown. Verify the form shows price range (low/high) and order count fields, similar to Hyperliquid UI pattern.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — Scale order type not available on testnet"
     },
     {
       "id": "E253",
@@ -4271,12 +4275,12 @@
       "priority": 2,
       "title": "TWAP order — verify interval and parts fields are labeled/accessible",
       "description": "Click TWAP tab in trade form, verify dedicated interval and parts input fields exist with clear labels. Previous test found only generic '0' placeholders — need to confirm TWAP-specific fields are discoverable.",
-      "status": "pending",
+      "status": "failed",
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "Reset to pending after fix merged (PR #106)"
+      "result_summary": "FAIL — TWAP form missing interval/parts/duration fields → Issue #109"
     },
     {
       "id": "E376",
@@ -4526,6 +4530,56 @@
       "priority": 4,
       "title": "Leverage setting persists after page reload",
       "description": "Set leverage to 5x, reload the page, verify that the leverage remains at 5x (or resets to a documented default). Check if leverage is stored in localStorage/sessionStorage.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E400",
+      "area": "trade",
+      "priority": 2,
+      "title": "TWAP order form: TwapOrderForm.tsx — verify component renders with correct props",
+      "description": "After recent TwapOrderForm.tsx changes, verify the component receives and renders interval, parts, and duration props correctly. Check React DevTools/component output.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E401",
+      "area": "trade",
+      "priority": 3,
+      "title": "TWAP order: verify order book side (buy/sell) switches form correctly",
+      "description": "When switching between Buy/Sell while TWAP type is selected, check that the form remains in TWAP mode and fields don't reset unexpectedly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E402",
+      "area": "navigation",
+      "priority": 3,
+      "title": "More nav dropdown: verify API keys link navigates to /api-keys",
+      "description": "Click the API item in the More dropdown and verify it navigates to /api-keys page successfully (not 404).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E403",
+      "area": "trade",
+      "priority": 3,
+      "title": "TradeForm useOrderValidation: verify validation runs on TWAP type",
+      "description": "Recent changes to useOrderValidation.ts — check if validation logic covers TWAP order type or if TWAP bypasses validation silently.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E404",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order type selector: verify all available types are listed (Limit, Market, TWAP, Stop)",
+      "description": "Check the order type selector shows all expected types and none are missing. After recent TradeForm changes, confirm type list is complete.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"

@@ -879,6 +879,22 @@
       "labels": [
         "enhancement"
       ]
+    },
+    {
+      "id": "dex-ui-109",
+      "issue_number": 109,
+      "title": "[P3] TWAP order form missing interval/parts/duration fields — cannot configure TWAP parameters",
+      "status": "open",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "scenario_ids": [
+        "E375",
+        "E251"
+      ],
+      "created_date": "2026-03-27",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/109"
     }
   ],
   "last_updated": "2026-03-27",
