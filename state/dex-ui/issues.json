@@ -280,6 +280,26 @@
       "fix_attempts": 2,
       "pr_number": 42,
       "note": "PR #42 merged but acceptance failed — Order History button still overflows at 909px in 812×375 viewport"
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-44",
+      "github_number": 44,
+      "title": "[P4] Settings panel missing sound/audio effect toggle",
+      "status": "open",
+      "priority": "P4",
+      "scenario": "E029",
+      "created": "2026-03-27",
+      "fix_attempts": 0
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-45",
+      "github_number": 45,
+      "title": "[P3] Limit order submit shows no feedback toast",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E127",
+      "created": "2026-03-27",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-27"
