@@ -356,13 +356,14 @@
     },
     {
       "id": "issue-53",
-      "github_issue_number": 53,
+      "github_number": 53,
       "title": "[P3] Trade form: Buy/Long button not disabled for size=0 or invalid — no validation feedback on submit",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario_id": "E073",
       "created_date": "2026-03-27",
-      "fix_attempts": 0
+      "fix_attempts": 1,
+      "pr_number": 59
     },
     {
       "id": "issue-54",
