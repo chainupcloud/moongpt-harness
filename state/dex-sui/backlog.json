@@ -1,0 +1,170 @@
+{
+  "scenarios": [
+    {
+      "id": "B001",
+      "area": "market",
+      "track": "backend",
+      "priority": 1,
+      "title": "dex market list — verify markets returned, BTC-USDC present",
+      "description": "Run `dex market list -o json` and verify: response is valid JSON, perpetuals array is non-empty, BTC-USDC market is present in the list.",
+      "status": "pending",
+      "added_by": "plan-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "B002",
+      "area": "market",
+      "track": "backend",
+      "priority": 1,
+      "title": "dex market mids — verify mid price for BTC-USDC is non-zero",
+      "description": "Run `dex market mids -o json` and verify: response is valid JSON, mid price for BTC-USDC is a positive non-zero number.",
+      "status": "pending",
+      "added_by": "plan-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "B003",
+      "area": "market",
+      "track": "backend",
+      "priority": 1,
+      "title": "dex market book --perpetual-id 0 — verify bid/ask levels present",
+      "description": "Run `dex market book --perpetual-id 0 -o json` and verify: response is valid JSON, bids array is non-empty, asks array is non-empty, bid price < ask price.",
+      "status": "pending",
+      "added_by": "plan-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "B004",
+      "area": "market",
+      "track": "backend",
+      "priority": 2,
+      "title": "dex market trades --perpetual-id 0 — verify recent trades returned",
+      "description": "Run `dex market trades --perpetual-id 0 -o json` and verify: response is valid JSON, trades array is non-empty, each trade has price, size, and timestamp fields.",
+      "status": "pending",
+      "added_by": "plan-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "B005",
+      "area": "market",
+      "track": "backend",
+      "priority": 2,
+      "title": "dex market candles --perpetual-id 0 --resolution 1m — verify candle data",
+      "description": "Run `dex market candles --perpetual-id 0 --resolution 1m -o json` and verify: response is valid JSON, candles array is non-empty, each candle has open/high/low/close/volume fields.",
+      "status": "pending",
+      "added_by": "plan-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "B006",
+      "area": "account",
+      "track": "backend",
+      "priority": 2,
+      "title": "dex account info — verify account balance/margin data returned",
+      "description": "Run `dex account info -o json` with wallet configured and verify: response is valid JSON, account balance and margin fields are present and numeric.",
+      "status": "pending",
+      "added_by": "plan-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "B007",
+      "area": "order",
+      "track": "backend",
+      "priority": 2,
+      "title": "dex order list — verify open orders list returns without error",
+      "description": "Run `dex order list -o json` and verify: command exits without error (non-crash), response is valid JSON (may be empty array if no open orders).",
+      "status": "pending",
+      "added_by": "plan-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "B008",
+      "area": "position",
+      "track": "backend",
+      "priority": 2,
+      "title": "dex position list — verify positions returned without error",
+      "description": "Run `dex position list -o json` and verify: command exits without error (non-crash), response is valid JSON (may be empty array if no open positions).",
+      "status": "pending",
+      "added_by": "plan-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "B009",
+      "area": "system",
+      "track": "backend",
+      "priority": 1,
+      "title": "dex status — verify node connectivity and sync status",
+      "description": "Run `dex status -o json` and verify: response is valid JSON, node is connected, sync status is healthy (not lagging).",
+      "status": "pending",
+      "added_by": "plan-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "B010",
+      "area": "api",
+      "track": "backend",
+      "priority": 1,
+      "title": "/dex-api/info POST {\"type\":\"metaAndAssetCtxs\"} — verify HTTP 200, data non-empty",
+      "description": "POST to https://dex-api.hifo.one/info with body {\"type\":\"metaAndAssetCtxs\"} and verify: HTTP 200, response body is valid JSON, data arrays are non-empty.",
+      "status": "pending",
+      "added_by": "plan-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "B011",
+      "area": "api",
+      "track": "backend",
+      "priority": 2,
+      "title": "/dex-api/info POST {\"type\":\"webData2\"} — verify HTTP 200",
+      "description": "POST to https://dex-api.hifo.one/info with body {\"type\":\"webData2\"} and verify: HTTP 200, response body is valid JSON, response is not empty.",
+      "status": "pending",
+      "added_by": "plan-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "B012",
+      "area": "market",
+      "track": "backend",
+      "priority": 1,
+      "title": "dex market list -o json — verify JSON parseable, perpetuals array non-empty",
+      "description": "Run `dex market list -o json`, pipe through python3 -c 'import sys,json; d=json.load(sys.stdin); assert len(d[\"perpetuals\"]) > 0' and verify: exits zero, JSON parses successfully.",
+      "status": "pending",
+      "added_by": "plan-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "B013",
+      "area": "api",
+      "track": "backend",
+      "priority": 3,
+      "title": "/dex-api/info POST clearinghouseState with wallet address — verify response",
+      "description": "POST to https://dex-api.hifo.one/info with body {\"type\":\"clearinghouseState\",\"user\":\"<wallet_address>\"} and verify: HTTP 200, response is valid JSON, crossMarginSummary field present.",
+      "status": "pending",
+      "added_by": "plan-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "B014",
+      "area": "api",
+      "track": "backend",
+      "priority": 3,
+      "title": "WebSocket connection to dex-api — verify initial snapshot received",
+      "description": "Connect WebSocket to wss://dex-api.hifo.one/ws, subscribe to l2Book for perpetual-id 0, and verify: connection established, initial snapshot message received within 5s, message has bids and asks fields.",
+      "status": "pending",
+      "added_by": "plan-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "B015",
+      "area": "order",
+      "track": "backend",
+      "priority": 3,
+      "title": "dex order place limit (dry-run check) — verify validation works",
+      "description": "Run `dex order place --perpetual-id 0 --side buy --price 1 --size 0.001 --dry-run -o json` and verify: command does not crash (exit code 0 or known validation error), if no balance returns clear error message not a panic/stack trace.",
+      "status": "pending",
+      "added_by": "plan-agent",
+      "added_date": "2026-03-27"
+    }
+  ],
+  "last_updated": "2026-03-27"
+}

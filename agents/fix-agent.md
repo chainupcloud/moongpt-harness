@@ -19,6 +19,10 @@
 - `local_path` → 本地代码路径
 
 ### Step 2：选取目标 Issue
+
+**首先检查 fix_disabled 标志：**
+读取末尾【当前项目配置】中的 `fix_disabled` 字段。若 `fix_disabled = true`，立即打印 "fix disabled for this project — exiting." 并退出。此项目不允许 fix-agent 进行任何代码提交操作（例如 dex-sui 为纯后端只读项目）。
+
 读取 state/{project}/issues.json，按优先级（P1>P2>P3>P4）找到第一个满足以下条件的 issue：
 - status = "open"
 - fix_attempts < 3

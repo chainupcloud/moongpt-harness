@@ -1,0 +1,34 @@
+{
+  "name": "dex-sui",
+  "description": "Hermes DEX backend — Sui-based perpetuals backend (dex-api.hifo.one), backend CLI testing only",
+
+  "github": {
+    "owner": "chainupcloud",
+    "repo": "dex-sui",
+    "fix_base_branch": "main",
+    "fix_branch_prefix": "fix/issue-"
+  },
+
+  "vercel": null,
+
+  "test": {
+    "staging_url": null,
+    "active_env": "testnet"
+  },
+
+  "issue_tracker": {
+    "owner": "chainupcloud",
+    "repo": "dex-sui"
+  },
+
+  "backend_test": {
+    "cli": "dex",
+    "cli_repo": "https://github.com/chainupcloud/dex-cli",
+    "api_url": "https://dex-api.hifo.one",
+    "env": "testnet"
+  },
+
+  "local_path": "/home/ubuntu/chainup/dex-sui",
+
+  "fix_disabled": true
+}

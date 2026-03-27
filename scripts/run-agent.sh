@@ -80,6 +80,21 @@ git pull origin randd1024 --quiet 2>/dev/null || true
 # ── Pre-checks: skip Claude entirely when there is nothing to do ──────────────
 
 if [ "$AGENT" = "fix" ]; then
+  # Check fix_disabled flag in project config
+  FIX_DISABLED=$(python3 -c "
+import json, sys
+try:
+    d = json.load(open('$PROJECT_CONFIG'))
+    print('true' if d.get('fix_disabled', False) else 'false')
+except Exception:
+    print('false')
+" 2>/dev/null)
+  if [ "${FIX_DISABLED}" = "true" ]; then
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] fix: fix_disabled=true in project config — fix agent is disabled for $PROJECT. Skipping (0 tokens used)."
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] fix agent completed for $PROJECT."
+    exit 0
+  fi
+
   OPEN_COUNT=$(python3 -c "
 import json, sys
 try:
