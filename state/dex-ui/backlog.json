@@ -5581,11 +5581,9 @@
       "title": "TP/SL inputs validation — post-fix verification of #122",
       "description": "After issue #122 (TP/SL inputs not revealed) is fixed: (1) click TP/SL checkbox, (2) verify inputs appear, (3) for LONG enter TP < current price → expect error, (4) enter SL > current price → expect error. Verifies both reveal and validation.",
       "track": "frontend",
-      "status": "skipped",
+      "status": "pending",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27",
-      "last_run": "2026-03-27",
-      "result_summary": "SKIP — staging build broken (4 consecutive Vercel ERROR builds), TP/SL validation fix (PR #128/d3d6115) not deployed. TP/SL inputs reveal works."
+      "added_date": "2026-03-27"
     },
     {
       "id": "E487",

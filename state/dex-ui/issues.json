@@ -1166,12 +1166,14 @@
     {
       "issue_number": 132,
       "title": "[P4] TpSlPanel inputs missing aria-labels — TP/SL price and gain/loss fields inaccessible to screen readers",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P4",
       "scenario": "E486",
       "opened_date": "2026-03-27",
       "fix_attempts": 1,
-      "pr_number": 133
+      "pr_number": 133,
+      "closed_at": "2026-03-27",
+      "note": "Accepted via code review + SHA verification. Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully."
     }
   ],
   "last_updated": "2026-03-27",

@@ -675,11 +675,18 @@
     },
     {
       "pr_number": 133,
-      "issue_numbers": [132],
-      "status": "open",
+      "issue_numbers": [
+        132
+      ],
+      "status": "merged",
       "title": "fix: add aria-labels to TpSlPanel inputs (#132)",
       "branch": "fix/issue-132",
-      "created_date": "2026-03-27"
+      "created_date": "2026-03-27",
+      "commit_sha": "8de95694c1bc6b4072a90884598255985209f29c",
+      "merged_at": "2026-03-27",
+      "deployed": false,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
     }
   ]
 }
