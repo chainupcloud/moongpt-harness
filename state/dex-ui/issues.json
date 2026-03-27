@@ -755,14 +755,15 @@
       "github_number": 98,
       "title": "[P3] Vercel staging perpetually stale — 4 dev commits undeployed, 3 consecutive ERROR builds",
       "priority": "P3",
-      "status": "open",
+      "status": "needs-human",
+      "track": "infrastructure",
       "scenario": "E342",
       "created_at": "2026-03-27",
       "labels": [
         "bug",
         "infrastructure"
       ],
-      "notes": "Staging at b520cb2e, dev at 5762b50. PRs #96 and #97 unverified on staging. Vercel team config error."
+      "notes": "Root cause: Vercel TEAM_ACCESS_REQUIRED — commit author's GitHub account (gitUserId:239836187) not added as Vercel team member. All dev branch deploys after b520cb2e blocked (alwaysRefuseToBuild:true). Fix: Vercel admin must add the GitHub user as team contributor at vercel.com/chainupclouds-projects/settings/members. Not fixable via code."
     }
   ],
   "last_updated": "2026-03-27",
