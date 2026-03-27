@@ -1028,6 +1028,24 @@
       "notes": "src/components/trading/TradeForm/index.tsx line ~673: aria-label=\"Trigger price\" on limitPrice input for stop-limit",
       "fix_attempts": 1,
       "pr_number": 121
+    },
+    {
+      "github_number": 122,
+      "title": "[P3] TP/SL checkbox in trade form — clicking does not reveal Take Profit / Stop Loss input fields",
+      "status": "open",
+      "priority": "P3",
+      "area": "trade",
+      "scenario": "E304",
+      "created_date": "2026-03-27"
+    },
+    {
+      "github_number": 123,
+      "title": "[P4] Explorer checkpoint detail page — transactions listed as available but show \"not yet available\" message",
+      "status": "open",
+      "priority": "P4",
+      "area": "explorer",
+      "scenario": "E469",
+      "created_date": "2026-03-27"
     }
   ],
   "last_updated": "2026-03-27",
