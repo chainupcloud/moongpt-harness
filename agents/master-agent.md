@@ -24,6 +24,21 @@
 ### Step 2：读取 state，找待处理 PR
 读取 state/prs.json，找到所有 status="open" 的 PR。
 
+### Step 2b：同步 GitHub issue 关闭状态（每次必做）
+对 state/issues.json 中所有 status != "closed" 的 issue，查询 GitHub 实际状态：
+```bash
+curl -sf "https://api.github.com/repos/{issue_tracker.owner}/{issue_tracker.repo}/issues/{github_number}" \
+  -H "Authorization: token $GH_TOKEN" \
+  | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['state'], d.get('closed_at','')[:10])"
+```
+若 GitHub 返回 `closed` 但本地仍为 `fixing/open` → 更新为 `closed`，记录 `closed_at`，`note` 写 "Synced from GitHub"。
+同步完成后若有变更，立即提交：
+```bash
+git add state/issues.json
+git commit -m "state: sync closed issues from GitHub"
+git push origin randd1024
+```
+
 ### Step 3：检查每个 PR 的 review 状态
 ```bash
 curl -s "https://api.github.com/repos/{github.owner}/{github.repo}/pulls/{pr_number}/reviews" \

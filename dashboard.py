@@ -11,16 +11,48 @@ import argparse
 from datetime import datetime, timedelta
 from pathlib import Path
 from flask import Flask, jsonify, request, Response
+from croniter import croniter
 
 app = Flask(__name__)
 BASE = Path(__file__).parent
 
-# cron 调度（分钟间隔）
-AGENT_SCHEDULE = {
-    'test':   {'interval_min': 360,  'cron': '23 */6 * * *',  'label': '每 6h'},
-    'fix':    {'interval_min': 30,   'cron': '17,47 * * * *', 'label': '每 30min'},
-    'master': {'interval_min': 15,   'cron': '7,22,37,52 * * * *', 'label': '每 15min'},
-}
+
+def parse_crontab_schedules():
+    """Read crontab -l and extract cron expressions for each agent (single source of truth)."""
+    try:
+        output = subprocess.check_output(['crontab', '-l'], text=True)
+    except subprocess.CalledProcessError:
+        return {}
+    schedules = {}
+    cron_re = re.compile(r'^(\S+\s+\S+\s+\S+\s+\S+\s+\S+)\s+(.+)')
+    for line in output.splitlines():
+        line = line.strip()
+        if not line or line.startswith('#'):
+            continue
+        m = cron_re.match(line)
+        if not m:
+            continue
+        expr, cmd = m.group(1), m.group(2)
+        if 'run-scheduler.sh' in cmd:
+            schedules['test'] = expr
+        elif 'run-agent.sh fix' in cmd:
+            schedules['fix'] = expr
+        elif 'run-agent.sh master' in cmd:
+            schedules['master'] = expr
+    return schedules
+
+
+def cron_label(expr):
+    """Human-readable label derived from cron expression."""
+    parts = expr.split()
+    minute, hour = parts[0], parts[1]
+    if hour == '*':
+        return f'每 1h (:{minute.zfill(2)})'
+    if hour.startswith('*/'):
+        return f'每 {hour[2:]}h (:{minute.zfill(2)})'
+    if ',' in hour:
+        return f'每 2h (:{minute.zfill(2)})'
+    return expr
 
 HTML = """<!DOCTYPE html>
 <html lang="zh">
@@ -45,6 +77,8 @@ HTML = """<!DOCTYPE html>
   /* ── Stats bar (top, full width) ── */
   .stats-bar { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px;
                padding: 16px 28px; border-bottom: 1px solid #21262d; flex-shrink: 0; }
+  @media (max-width: 1100px) { .stats-bar { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 600px)  { .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 12px 16px; gap: 8px; } }
   .stat-card { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 12px 16px; }
   .stat-card .label { font-size: 11px; color: #7d8590; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .5px; }
   .stat-card .value { font-size: 24px; font-weight: 700; }
@@ -63,6 +97,16 @@ HTML = """<!DOCTYPE html>
 
   /* ── Content area ── */
   .content { flex: 1; overflow-y: auto; padding: 16px 20px; display: flex; flex-direction: column; gap: 14px; }
+
+  /* ── Responsive: stack on narrow screens ── */
+  @media (max-width: 900px) {
+    .main { flex-direction: column; overflow: auto; }
+    .sidebar { width: 100%; border-right: none; border-bottom: 1px solid #21262d;
+               overflow-y: visible; padding: 12px 16px; }
+    .content { overflow-y: visible; padding: 12px 16px; }
+    .header { padding: 10px 16px; }
+    .header h1 { font-size: 14px; }
+  }
 
   /* ── Shared section ── */
   .section { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 16px; }
@@ -93,9 +137,10 @@ HTML = """<!DOCTYPE html>
   .progress-bar { height: 2px; background: #21262d; border-radius: 2px; margin-top: 8px; overflow: hidden; }
   .progress-fill { height: 100%; background: #388bfd; border-radius: 2px; transition: width .3s; }
 
-  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 480px; }
   th { text-align: left; padding: 8px 12px; color: #7d8590; font-weight: 500;
-       font-size: 12px; border-bottom: 1px solid #21262d; }
+       font-size: 12px; border-bottom: 1px solid #21262d; white-space: nowrap; }
   td { padding: 10px 12px; border-bottom: 1px solid #161b22; vertical-align: middle; }
   tr:last-child td { border-bottom: none; }
   tr:hover td { background: #1c2128; }
@@ -166,7 +211,10 @@ HTML = """<!DOCTYPE html>
     <div class="section">
       <h2>Agent 日志（最近 30 行）</h2>
       <div class="log-tabs">
-        <button class="log-tab active" onclick="showLog('test',event)">test</button>
+        <button class="log-tab active" onclick="showLog('smoke',event)">smoke</button>
+        <button class="log-tab" onclick="showLog('coverage',event)">coverage</button>
+        <button class="log-tab" onclick="showLog('advanced',event)">advanced</button>
+        <button class="log-tab" onclick="showLog('scheduler',event)">scheduler</button>
         <button class="log-tab" onclick="showLog('fix',event)">fix</button>
         <button class="log-tab" onclick="showLog('master',event)">master</button>
       </div>
@@ -176,7 +224,7 @@ HTML = """<!DOCTYPE html>
 </div>
 
 <script>
-let currentLog = 'test';
+let currentLog = 'smoke';
 
 async function loadAll() {
   document.getElementById('ts').textContent = '更新于 ' + new Date().toLocaleTimeString('zh');
@@ -268,9 +316,9 @@ function renderIssues(issues) {
       <td>${i.resolution || '—'}</td>
     </tr>`).join('');
   document.getElementById('issues-wrap').innerHTML = `
-    <table><thead><tr>
+    <div class="table-wrap"><table><thead><tr>
       <th>#</th><th>标题</th><th>优先级</th><th>状态</th><th>PR</th><th>尝试次数</th><th>备注</th>
-    </tr></thead><tbody>${rows}</tbody></table>`;
+    </tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 
 function renderPRs(prs) {
@@ -285,9 +333,9 @@ function renderPRs(prs) {
       <td>${p.merged_at || '—'}</td>
     </tr>`).join('');
   document.getElementById('prs-wrap').innerHTML = `
-    <table><thead><tr>
+    <div class="table-wrap"><table><thead><tr>
       <th>PR</th><th>状态</th><th>commit</th><th>已部署</th><th>已验收</th><th>合并日期</th>
-    </tr></thead><tbody>${rows}</tbody></table>`;
+    </tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 
 function renderProjects(projects) {
@@ -348,28 +396,23 @@ def is_agent_running(agent: str) -> bool:
     except subprocess.CalledProcessError:
         return False
 
-def next_run_info(agent: str, last_start):
-    cfg = AGENT_SCHEDULE[agent]
-    now = datetime.now()
-    if last_start:
-        nxt = last_start + timedelta(minutes=cfg['interval_min'])
-        if nxt < now:
-            nxt = now + timedelta(minutes=1)
-    else:
-        nxt = now + timedelta(minutes=cfg['interval_min'])
-
-    delta = nxt - now
-    total_sec = cfg['interval_min'] * 60
-    elapsed_sec = total_sec - delta.total_seconds()
-    pct = max(0, min(100, int(elapsed_sec / total_sec * 100)))
-
-    mins = int(delta.total_seconds() // 60)
-    secs = int(delta.total_seconds() % 60)
-    if mins > 0:
-        label = f'{mins}m {secs}s 后'
-    else:
-        label = f'{secs}s 后'
-    return label, pct
+def next_run_info(cron_expr: str):
+    """Compute next-run label and progress % from a live cron expression."""
+    if not cron_expr:
+        return '—', 0
+    try:
+        now = datetime.now()
+        nxt = croniter(cron_expr, now).get_next(datetime)
+        prev = croniter(cron_expr, now).get_prev(datetime)
+        interval_sec = max((nxt - prev).total_seconds(), 1)
+        elapsed_sec = (now - prev).total_seconds()
+        pct = max(0, min(100, int(elapsed_sec / interval_sec * 100)))
+        delta = nxt - now
+        mins = int(delta.total_seconds() // 60)
+        secs = int(delta.total_seconds() % 60)
+        return (f'{mins}m {secs}s 后' if mins > 0 else f'{secs}s 后'), pct
+    except Exception:
+        return '—', 0
 
 @app.route('/')
 def index():
@@ -390,11 +433,13 @@ def api_state():
 
 @app.route('/api/agents')
 def api_agents():
+    schedules = parse_crontab_schedules()
     result = []
     for name in ('test', 'fix', 'master'):
         last_start, last_end, status = parse_log_times(name)
         running = is_agent_running(name)
-        nxt_label, pct = next_run_info(name, last_start)
+        cron_expr = schedules.get(name, '')
+        nxt_label, pct = next_run_info(cron_expr)
 
         duration = None
         if last_start and last_end and last_end >= last_start:
@@ -409,7 +454,8 @@ def api_agents():
             'last_duration': duration,
             'next_run': nxt_label,
             'next_run_pct': pct,
-            'schedule_label': AGENT_SCHEDULE[name]['label'],
+            'schedule_label': cron_label(cron_expr) if cron_expr else '未配置',
+            'cron': cron_expr,
         })
     return jsonify(result)
 
@@ -427,12 +473,18 @@ def api_projects():
 
 @app.route('/api/logs')
 def api_logs():
-    agent = request.args.get('agent', 'test')
-    log_file = BASE / 'logs' / f'{agent}-agent.log'
-    if not log_file.exists():
-        return jsonify({'content': f'日志文件不存在：logs/{agent}-agent.log'})
-    lines = log_file.read_text().splitlines()
-    return jsonify({'content': '\n'.join(lines[-30:])})
+    agent = request.args.get('agent', 'smoke')
+    # Map agent name to log file (scheduler writes to test-{module}.log)
+    candidates = [
+        BASE / 'logs' / f'test-{agent}.log',   # new: test-smoke.log, test-coverage.log
+        BASE / 'logs' / f'{agent}-agent.log',   # legacy: fix-agent.log, master-agent.log
+        BASE / 'logs' / f'{agent}.log',         # new: scheduler.log
+    ]
+    for log_file in candidates:
+        if log_file.exists():
+            lines = log_file.read_text().splitlines()
+            return jsonify({'content': '\n'.join(lines[-30:])})
+    return jsonify({'content': f'日志文件不存在（agent={agent}）'})
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
