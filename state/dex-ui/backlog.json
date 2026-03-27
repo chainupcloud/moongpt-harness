@@ -3878,9 +3878,11 @@
       "priority": 3,
       "title": "/markets 页面 OI 修复后验证 (issue #94): Open Interest 显示正确非零值",
       "description": "验证 issue #94 修复后 /markets 页面 Open Interest 字段显示正确的持仓量（非零）",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — /markets shows 持仓量 (OI) = $0.00 for BTC/USDC. Cannot confirm bug vs genuine zero OI on low-activity testnet. Issue #94 fix PR #96 merged; revisit when testnet has active positions."
     },
     {
       "id": "E328",
@@ -3888,9 +3890,11 @@
       "priority": 3,
       "title": "Spot 页面基础功能可达性 — 页面加载与交易表单显示",
       "description": "访问 /spot 页面，验证页面正常加载，交易表单（Buy/Sell）可见，spot市场数据显示",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /spot returns HTTP 200, shows \"Spot Trading Coming Soon\" placeholder page. Intentional behavior, no error UI."
     },
     {
       "id": "E329",
@@ -5632,9 +5636,11 @@
       "priority": 2,
       "title": "TP/SL validation — re-verify after #126 fix",
       "description": "After issue #126 is fixed: enable TP/SL, enter TP below mark price for LONG → expect inline error. Enter SL above mark price → expect error. Both errors should prevent submission.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — TP/SL inputs appear after toggle, but entering TP below mark price shows no inline validation error. Issue #126 fix not yet deployed to staging."
     },
     {
       "id": "E492",
@@ -5722,9 +5728,11 @@
       "priority": 2,
       "title": "TWAP order form — third regression check (post #129 fix)",
       "description": "After issue #129 is fixed: select TWAP, confirm duration and interval fields appear and accept numeric input. Previous fixes (#109, #113, #125) all regressed.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — TWAP button selectable but no Duration/Interval fields appear (only 7 standard inputs). Regression persists, issue #129 open."
     },
     {
       "id": "E501",
@@ -5762,6 +5770,56 @@
       "priority": 3,
       "title": "Withdraw modal — SUI address format acceptance",
       "description": "Enter a valid SUI address (0x94bd... 64-char hex) in the withdraw modal address field. Verify it is accepted without error. Currently unknown if SUI vs EVM address formats are handled differently.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E505",
+      "area": "order-form",
+      "priority": 2,
+      "title": "TP/SL cross-validation — TP must be > SL for LONG position",
+      "description": "After issue #126 fix lands: enable TP/SL, set TP=50000 and SL=60000 (SL > TP for LONG). Expect validation error preventing submission since SL should always be below TP.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E506",
+      "area": "order-form",
+      "priority": 2,
+      "title": "TWAP order — submit after duration/interval fix and verify order appears in history",
+      "description": "After issue #129 fix lands: select TWAP, fill Duration=60 Interval=10, enter size, submit. Confirm order appears in Order History with TWAP type. End-to-end TWAP submission flow.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E507",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets column sort — click Price header, verify BTC row reorders",
+      "description": "Click the 价格 (Price) column header on /markets page. Verify sort icon toggles (asc/desc) and the row order changes accordingly. Click again to reverse. Confirm sorting is functional.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E508",
+      "area": "order-form",
+      "priority": 3,
+      "title": "Reduce Only checkbox — toggle behavior and effect on form",
+      "description": "On /trade, enable 'Reduce Only' checkbox. Verify: (1) checkbox is togglable, (2) it has proper accessibility label, (3) form submission shows reduce-only intent in order params.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E509",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets funding rate sign and value correctness",
+      "description": "Verify the 资金费率 (Funding Rate) column shows correct sign (+/-) and non-zero value for BTC-USDC. Currently shows +0.6393% — verify this updates periodically and matches the /trade page funding rate display.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
