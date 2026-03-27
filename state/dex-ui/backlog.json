@@ -3363,9 +3363,11 @@
       "priority": 3,
       "title": "Connect Wallet 弹窗 — 点击后可选择钱包类型并完成连接流程",
       "description": "触发 Connect Wallet 弹窗后，验证弹窗内显示可用钱包选项（MetaMask/WalletConnect 等），点击选项后流程正常",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Connect Wallet button triggers W3M-MODAL overlay with wallet options"
     },
     {
       "id": "E285",
@@ -3373,9 +3375,11 @@
       "priority": 3,
       "title": "Sell/Short 按钮未连接钱包时同样弹出 Connect Wallet",
       "description": "验证 Sell/Short 按钮与 Buy/Long 行为一致：未连接钱包时点击触发 Connect Wallet 弹窗而非静默失败",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Sell/Short button without wallet triggers same W3M-MODAL overlay as Buy/Long"
     },
     {
       "id": "E286",
@@ -3403,9 +3407,11 @@
       "priority": 3,
       "title": "Explorer 搜索框 — tx hash (66 字符) 正确路由到交易详情页",
       "description": "输入一个真实 tx hash（66 字符）验证是否正确路由到 /explorer/tx/{hash} 并显示正确数据",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Explorer search routes 66-char tx hash to /explorer/tx/{hash} URL"
     },
     {
       "id": "E289",
@@ -5022,9 +5028,11 @@
       "priority": 2,
       "title": "Stop Market order — enter trigger price and place order",
       "description": "After confirming Stop Market is accessible (E435 pass): select Stop Market order type, enter a trigger price, enter size, click Place Order. Verify order appears in Open Orders tab as Stop Market type.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Stop Market accessible, form accepts trigger price+size, Place Order button enables; trigger field not distinctly labeled vs limit price"
     },
     {
       "id": "E443",
@@ -5042,6 +5050,56 @@
       "priority": 3,
       "title": "Order TypeLimit button — verify all order types available in dropdown",
       "description": "Click 'Order TypeLimit' button and capture all dropdown options. Verify presence of: Limit, Market, Stop Market, Stop Limit, Take Profit Market, Take Profit Limit. Document all available options.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E445",
+      "area": "trade",
+      "priority": 2,
+      "title": "Stop Market order — trigger price label vs limit price label UX clarity",
+      "description": "When Stop Market is selected, verify the price input has a 'Trigger Price' label distinct from the 'Limit Price' label on Limit orders. Checks that users can distinguish the field purpose from context/placeholder.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E446",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Market order — verify appears in Open Orders after placement",
+      "description": "With wallet connected and sufficient balance, place a Stop Market order and confirm it appears in the Open Orders tab with type=Stop Market and correct trigger price.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E447",
+      "area": "trade",
+      "priority": 3,
+      "title": "Connect Wallet modal — wallet options list (MetaMask, WalletConnect, etc.)",
+      "description": "After W3M-MODAL opens, verify it displays wallet options (MetaMask, WalletConnect, injected wallets). Check that at least 2 wallet types are shown.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E448",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — address (42-char 0x) routes to address detail page",
+      "description": "Enter a 42-character Ethereum address in the Explorer search bar and verify routing to /explorer/address/{addr}. Complements E288 (tx hash) and E289 (checkpoint).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E449",
+      "area": "explorer",
+      "priority": 4,
+      "title": "Explorer search — invalid input shows error or no-results state",
+      "description": "Enter a random string (not a valid hash/address/checkpoint) in Explorer search and verify the page shows a helpful 'not found' or 'invalid' message rather than blank page or silent failure.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
