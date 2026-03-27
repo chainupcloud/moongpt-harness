@@ -1014,9 +1014,10 @@
       "title": "[P4] Stop Limit form: limit price input has wrong aria-label (\"Trigger price\" instead of \"Limit price\")",
       "github_issue_number": 120,
       "github_repo": "chainupcloud/dex-ui",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P4",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "scenarios": [
         "E302"
       ],
