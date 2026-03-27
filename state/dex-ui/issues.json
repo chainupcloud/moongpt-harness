@@ -1185,6 +1185,20 @@
       "closed_at": null,
       "fix_attempts": 1,
       "scenario_id": "E333"
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-136",
+      "github_number": 136,
+      "title": "[P3] /portfolio?address= URL parameter ignored — always shows Connect wallet prompt",
+      "priority": "P3",
+      "status": "open",
+      "scenario_id": "E349",
+      "created_date": "2026-03-27",
+      "labels": [
+        "bug"
+      ],
+      "fix_attempts": 0,
+      "url": "https://github.com/chainupcloud/dex-ui/issues/136"
     }
   ],
   "last_updated": "2026-03-27",

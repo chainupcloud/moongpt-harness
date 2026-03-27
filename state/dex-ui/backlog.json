@@ -4078,9 +4078,11 @@
       "priority": 3,
       "title": "LocalStorage 注入方式测试 — 验证 wagmi localStorage 替代 cookie 实现钱包连接模拟",
       "description": "尝试通过 addInitScript 直接设置 wagmi localStorage（非 cookie）来模拟钱包连接态，测试 session key 授权流程",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — App uses wagmi cookie (not localStorage) for wallet state; localStorage injection has no effect"
     },
     {
       "id": "E345",
@@ -4122,9 +4124,11 @@
       "priority": 3,
       "title": "TWAP 订单表单 — 选择 TWAP 类型后表单结构验证",
       "description": "切换至 TWAP 订单类型，验证时间分段输入、间隔设置等 TWAP 专用字段显示正确",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — TWAP button found; clicking shows TWAP form with Orders field"
     },
     {
       "id": "E349",
@@ -4132,9 +4136,11 @@
       "priority": 3,
       "title": "Portfolio 页面 /portfolio?address= 参数加载数据",
       "description": "通过 URL 参数传入钱包地址访问 portfolio 页面，验证是否展示对应地址的持仓/历史数据（只读模式）",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — /portfolio?address= param ignored, shows Connect wallet prompt → Issue #136"
     },
     {
       "id": "E350",
@@ -4189,9 +4195,11 @@
       "priority": 3,
       "title": "Stop Limit 订单 — trigger price + limit price 双字段验证",
       "description": "切换至 Stop Limit，验证同时显示 Stop Price 和 Limit Price 两个输入框，两者可独立设置不同值",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Stop Limit form shows Stop Price + Limit Price dual fields"
     },
     {
       "id": "E355",
@@ -5997,6 +6005,56 @@
       "priority": 3,
       "title": "Portfolio Transaction History tab — verify empty state message renders after wallet connect",
       "description": "Connect wallet to portfolio, click Transaction History tab, verify proper empty-state message (not blank/broken) when no transactions exist.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E525",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio — 连接钱包后 ?address= 参数是否切换视图",
+      "description": "连接钱包后访问 /portfolio?address=OTHER_ADDR，验证是否显示 other address 的数据而非自己的",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E526",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Market 订单 — 仅需 Trigger Price 单字段验证",
+      "description": "选择 Stop Market 订单类型后，确认只显示 Stop/Trigger Price 字段（无 Limit Price）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E527",
+      "area": "trade",
+      "priority": 3,
+      "title": "TWAP 订单 — 必填字段验证（Orders 数量 + 间隔时间）",
+      "description": "选择 TWAP 类型后填写订单数量和间隔，验证提交前字段校验逻辑（空值、负值、超范围）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E528",
+      "area": "portfolio",
+      "priority": 2,
+      "title": "Portfolio — API Keys 页面可访问性和 key 列表加载",
+      "description": "访问 /api-keys 页面，验证页面结构和 API key 管理功能（列表、创建、撤销）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E529",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trailing Stop 订单 — 激活和 trailing offset 字段验证",
+      "description": "切换到 Trailing Stop 订单类型（Trailing标签），验证 trailing offset 输入框存在且可交互",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
