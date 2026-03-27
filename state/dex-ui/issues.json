@@ -569,6 +569,15 @@
       "scenario_id": "E135",
       "created_date": "2026-03-27",
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/77"
+    },
+    {
+      "github_number": 78,
+      "title": "[P2] Order book spread显示为负值 — 买卖盘价格倒置（asks < bids）",
+      "status": "open",
+      "priority": "P2",
+      "scenario": "E247",
+      "created": "2026-03-27",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-27",
