@@ -387,8 +387,14 @@
       "issue_numbers": [
         69
       ],
-      "status": "open",
-      "created_at": "2026-03-27"
+      "status": "merged",
+      "created_at": "2026-03-27",
+      "title": "fix: toast 通知消失过快且存在监听器重注册隐患 (#69)",
+      "commit_sha": "f958ab50fda9fe40a27853c501abc7f0b01e2e92",
+      "merged_at": "2026-03-27",
+      "deployed": false,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     }
   ]
 }

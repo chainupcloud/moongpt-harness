@@ -491,13 +491,17 @@
     {
       "github_issue_number": 69,
       "title": "[P3] Limit 订单提交后无 toast 反馈 — 点击 Buy/Long 按钮后页面无响应提示",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E127",
       "created_date": "2026-03-27",
       "fix_attempts": 1,
       "pr_number": 74,
-      "github_number": 69
+      "github_number": 69,
+      "closed_at": "2026-03-27",
+      "deployed_sha": "f958ab50fda9fe40a27853c501abc7f0b01e2e92",
+      "accepted": true,
+      "note": "PR #74 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification."
     },
     {
       "id": "issue-2026-03-27-dex-ui-72",
