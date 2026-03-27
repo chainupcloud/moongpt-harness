@@ -1282,11 +1282,11 @@
       "priority": 3,
       "title": "Withdraw 弹窗字段校验 — 负数/超余额/空值",
       "description": "打开 Withdraw 弹窗，测试：1) 负数金额不能提交；2) 超余额金额显示 Insufficient 提示；3) 空值时确认按钮禁用。与 Deposit 对称验证。",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — Withdraw modal accepts negative amounts without error; input type=text no min constraint; issue #66 filed"
+      "result_summary": "Reset after issue #66 fix merged. Re-test needed."
     },
     {
       "id": "E112",

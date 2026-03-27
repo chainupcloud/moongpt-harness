@@ -361,8 +361,13 @@
       "issue_numbers": [
         66
       ],
-      "status": "open",
-      "title": "fix: Withdraw modal adds client-side validation for negative/zero/over-balance input (#66)"
+      "status": "merged",
+      "title": "fix: Withdraw modal adds client-side validation for negative/zero/over-balance input (#66)",
+      "commit_sha": "bcdec20cbbb484fd96c105feb83040594947516e",
+      "merged_at": "2026-03-27",
+      "deployed": false,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     }
   ]
 }

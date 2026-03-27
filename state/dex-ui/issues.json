@@ -467,7 +467,7 @@
     {
       "github_number": 66,
       "title": "[P3] Withdraw modal accepts negative amounts without validation — no error feedback",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E111",
       "created_at": "2026-03-27",
@@ -476,7 +476,11 @@
       ],
       "fix_attempts": 1,
       "pr_number": 68,
-      "notes": "Input type=text, no min constraint. Deposit modal has validation (PR #43/issue #40). Withdraw modal does not."
+      "notes": "Input type=text, no min constraint. Deposit modal has validation (PR #43/issue #40). Withdraw modal does not.",
+      "closed_at": "2026-03-27",
+      "deployed_sha": "bcdec20cbbb484fd96c105feb83040594947516e",
+      "accepted": true,
+      "note": "PR #68 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification."
     },
     {
       "github_issue_number": 69,
