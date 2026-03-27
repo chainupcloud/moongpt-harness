@@ -17,17 +17,29 @@ app = Flask(__name__)
 BASE = Path(__file__).parent  # dashboard/
 HARNESS_DIR = BASE.parent     # repo root
 
-# Log file mapping: agent name → log filename (without .log)
-LOG_MAP = {
-    'explore':   'explore-loop',  # explore runs via run-loop.sh continuous loop
-    'plan':      'plan-agent',
-    'fix':       'fix-agent',
-    'master':    'master-agent',
+# Log file suffix per agent (prefix is {project}-)
+LOG_SUFFIX = {
+    'explore': 'explore-loop',
+    'plan':    'plan-agent',
+    'fix':     'fix-agent',
+    'master':  'master-agent',
 }
 
+def log_file(project: str, agent: str) -> Path:
+    """Return log file path for a given project+agent, trying new prefixed name first."""
+    suffix = LOG_SUFFIX.get(agent, f'{agent}-agent')
+    candidates = [
+        HARNESS_DIR / 'logs' / f'{project}-{suffix}.log',   # new: dex-ui-explore-loop.log
+        HARNESS_DIR / 'logs' / f'{suffix}.log',              # legacy: explore-loop.log
+    ]
+    for p in candidates:
+        if p.exists():
+            return p
+    return candidates[0]  # return new path even if doesn't exist yet
 
-def parse_crontab_schedules():
-    """Read crontab -l and extract cron expressions for each agent."""
+
+def parse_crontab_schedules(project: str = 'dex-ui'):
+    """Read crontab -l and extract cron expressions for each agent of a given project."""
     try:
         output = subprocess.check_output(['crontab', '-l'], text=True)
     except subprocess.CalledProcessError:
@@ -42,13 +54,14 @@ def parse_crontab_schedules():
         if not m:
             continue
         expr, cmd = m.group(1), m.group(2)
-        if 'run-loop.sh' in cmd or 'run-scheduler.sh' in cmd:
+        # Match project-specific entries
+        if (f'run-loop.sh {project}' in cmd or f'run-scheduler.sh {project}' in cmd):
             schedules['explore'] = expr
-        elif 'run-agent.sh fix' in cmd:
+        elif f'run-agent.sh fix {project}' in cmd:
             schedules['fix'] = expr
-        elif 'run-agent.sh master' in cmd:
+        elif f'run-agent.sh master {project}' in cmd:
             schedules['master'] = expr
-        elif 'run-agent.sh plan' in cmd:
+        elif f'run-agent.sh plan {project}' in cmd:
             schedules['plan'] = expr
     return schedules
 
@@ -194,6 +207,7 @@ HTML = """<!DOCTYPE html>
 <div class="header">
   <h1>moongpt-harness 任务面板</h1>
   <div style="display:flex;align-items:center;gap:12px;">
+    <div id="project-tabs" style="display:flex;gap:6px;"></div>
     <span class="updated" id="ts"></span>
     <button class="refresh-btn" onclick="loadAll()">↻ 刷新</button>
   </div>
@@ -239,16 +253,18 @@ HTML = """<!DOCTYPE html>
 
 <script>
 let currentLog = 'explore';
+let currentProject = 'dex-ui';
 
 async function loadAll() {
   document.getElementById('ts').textContent = '更新于 ' + new Date().toLocaleTimeString('zh');
   const [state, projects, agents, logs] = await Promise.all([
-    fetch('/api/state').then(r=>r.json()),
+    fetch(`/api/state?project=${currentProject}`).then(r=>r.json()),
     fetch('/api/projects').then(r=>r.json()),
-    fetch('/api/agents').then(r=>r.json()),
-    fetch('/api/logs?agent=' + currentLog).then(r=>r.json()),
+    fetch(`/api/agents?project=${currentProject}`).then(r=>r.json()),
+    fetch(`/api/logs?agent=${currentLog}&project=${currentProject}`).then(r=>r.json()),
   ]);
   renderStats(state);
+  renderProjectTabs(projects);
   renderAgents(agents);
   renderIssues(state.issues || []);
   renderPRs(state.prs || []);
@@ -260,9 +276,26 @@ function showLog(agent, e) {
   currentLog = agent;
   document.querySelectorAll('.log-tab').forEach(t => t.classList.remove('active'));
   e.target.classList.add('active');
-  fetch('/api/logs?agent=' + agent).then(r=>r.json()).then(d => {
+  fetch(`/api/logs?agent=${agent}&project=${currentProject}`).then(r=>r.json()).then(d => {
     document.getElementById('log-box').textContent = d.content || '（无日志）';
+    const title = document.querySelector('.section h2:last-of-type');
   });
+}
+
+function switchProject(name, e) {
+  currentProject = name;
+  document.querySelectorAll('.proj-tab').forEach(t => t.classList.remove('active'));
+  e.target.classList.add('active');
+  loadAll();
+}
+
+function renderProjectTabs(projects) {
+  const names = projects.map(p => p.name || p.github?.repo).filter(Boolean);
+  const wrap = document.getElementById('project-tabs');
+  if (names.length <= 1) { wrap.innerHTML = ''; return; }
+  wrap.innerHTML = names.map(n =>
+    `<button class="log-tab proj-tab${n===currentProject?' active':''}" onclick="switchProject('${n}',event)">${n}</button>`
+  ).join('');
 }
 
 const AGENT_LABELS = {
@@ -397,14 +430,13 @@ setInterval(loadAll, 15000);
 </html>
 """
 
-def parse_log_times(agent: str):
+def parse_log_times(agent: str, project: str = 'dex-ui'):
     """从日志文件解析最后一次运行的开始时间、结束时间、状态。"""
-    log_name = LOG_MAP.get(agent, f'{agent}-agent')
-    log_file = HARNESS_DIR / 'logs' / f'{log_name}.log'
-    if not log_file.exists():
+    lf = log_file(project, agent)
+    if not lf.exists():
         return None, None, None
 
-    lines = log_file.read_text().splitlines()
+    lines = lf.read_text().splitlines()
     start_re = re.compile(r'\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\] Starting')
     end_re   = re.compile(r'\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\] \S+ agent completed')
 
@@ -422,14 +454,14 @@ def parse_log_times(agent: str):
         status = 'error'
     return last_start, last_end, status
 
-def is_agent_running(agent: str) -> bool:
+def is_agent_running(agent: str, project: str = 'dex-ui') -> bool:
     patterns = {
-        'explore': 'run-loop.sh',
-        'plan':    'run-agent.sh plan',
-        'fix':     'run-agent.sh fix',
-        'master':  'run-agent.sh master',
+        'explore': f'run-loop.sh {project}',
+        'plan':    f'run-agent.sh plan {project}',
+        'fix':     f'run-agent.sh fix {project}',
+        'master':  f'run-agent.sh master {project}',
     }
-    pat = patterns.get(agent, f'run-agent.sh {agent}')
+    pat = patterns.get(agent, f'run-agent.sh {agent} {project}')
     try:
         out = subprocess.check_output(['pgrep', '-fa', pat], text=True)
         return bool(out.strip())
@@ -468,10 +500,13 @@ def index():
 
 @app.route('/api/state')
 def api_state():
+    project_filter = request.args.get('project')  # if set, show only this project
     data = {'issues': [], 'prs': [], 'last_explore_run': None}
     state_dir = HARNESS_DIR / 'state'
     for project_dir in sorted(state_dir.iterdir()):
         if not project_dir.is_dir():
+            continue
+        if project_filter and project_dir.name != project_filter:
             continue
         issues_file = project_dir / 'issues.json'
         prs_file    = project_dir / 'prs.json'
@@ -489,11 +524,12 @@ def api_state():
 
 @app.route('/api/agents')
 def api_agents():
-    schedules = parse_crontab_schedules()
+    project = request.args.get('project', 'dex-ui')
+    schedules = parse_crontab_schedules(project)
     result = []
     for name in ('explore', 'plan', 'fix', 'master'):
-        last_start, last_end, status = parse_log_times(name)
-        running = is_agent_running(name)
+        last_start, last_end, status = parse_log_times(name, project)
+        running = is_agent_running(name, project)
         cron_expr = schedules.get(name, '')
         # explore runs as a continuous loop, not on a fixed schedule
         if name == 'explore':
@@ -534,12 +570,12 @@ def api_projects():
 @app.route('/api/logs')
 def api_logs():
     agent = request.args.get('agent', 'explore')
-    log_name = LOG_MAP.get(agent, f'{agent}-agent')
-    log_file = HARNESS_DIR / 'logs' / f'{log_name}.log'
-    if log_file.exists():
-        lines = log_file.read_text().splitlines()
-        return jsonify({'content': '\n'.join(lines[-30:])})
-    return jsonify({'content': f'日志文件不存在（{log_file.name}）'})
+    project = request.args.get('project', 'dex-ui')
+    lf = log_file(project, agent)
+    if lf.exists():
+        lines = lf.read_text().splitlines()
+        return jsonify({'content': '\n'.join(lines[-30:]), 'file': lf.name})
+    return jsonify({'content': f'日志文件不存在（{lf.name}）', 'file': lf.name})
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

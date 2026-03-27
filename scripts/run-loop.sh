@@ -5,7 +5,7 @@
 
 PROJECT=${1:-dex-ui}
 HARNESS_DIR="/home/ubuntu/chainup/moongpt-harness"
-LOG="$HARNESS_DIR/logs/explore-loop.log"
+LOG="$HARNESS_DIR/logs/${PROJECT}-explore-loop.log"
 COOLDOWN=30       # seconds between runs (let git push settle, cleanup Playwright processes)
 API_RETRY=600     # seconds to wait when backend API is down (10 minutes)
 
