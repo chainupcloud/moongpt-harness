@@ -442,6 +442,15 @@
       "created_at": "2026-03-27",
       "title": "fix: /trade/BTC-USDC deep-link returns 404 — add catch-all redirect (#76)",
       "note": "No reviews yet. Mergeable but waiting for review."
+    },
+    {
+      "pr_number": 84,
+      "issue_numbers": [
+        77
+      ],
+      "status": "open",
+      "created_at": "2026-03-27",
+      "title": "fix: add aria-labels to trade form inputs (#77)"
     }
   ]
 }

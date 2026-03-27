@@ -576,13 +576,16 @@
     {
       "id": "E135-77",
       "github_issue_number": 77,
+      "github_number": 77,
       "title": "[P3] Trade form inputs missing aria-labels — 5 inputs have no accessible names",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "area": "accessibility",
       "scenario_id": "E135",
       "created_date": "2026-03-27",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/77"
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/77",
+      "fix_attempts": 1,
+      "pr_number": 84
     },
     {
       "github_number": 78,
