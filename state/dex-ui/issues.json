@@ -241,13 +241,15 @@
     },
     {
       "number": 38,
+      "github_number": 38,
       "title": "[P3] /markets 页面资金费率显示 NaN%",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "url": "https://github.com/chainupcloud/dex-ui/issues/38",
       "created": "2026-03-27",
       "scenario": "E048/E071",
-      "fix_attempts": 0
+      "fix_attempts": 1,
+      "pr_number": 39
     }
   ],
   "last_updated": "2026-03-27"

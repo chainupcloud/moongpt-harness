@@ -203,6 +203,14 @@
       "deployed": false,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully."
+    },
+    {
+      "pr_number": 39,
+      "issue_numbers": [
+        38
+      ],
+      "status": "open",
+      "title": "fix: /markets 资金费率显示 NaN% (#38)"
     }
   ]
 }
