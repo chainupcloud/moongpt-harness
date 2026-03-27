@@ -374,9 +374,13 @@
       "issue_numbers": [
         63
       ],
-      "status": "open",
+      "status": "merged",
       "title": "fix: /trade 24h 涨跌显示 +0.00% — K 线回补 prevDayPx + WS 防覆盖 (#63)",
-      "note": "Merge conflicts (dirty). Vercel preview status failure. Needs rebase onto dev."
+      "commit_sha": "a0a52185650d7dabc1d9e2faa4833449e4e58912",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Rebased onto dev to resolve CHANGELOG.md conflict, then squash merged. Vercel deploy READY (dpl_FTiJkc1ZQCi8MHe1c3BPoSHPSGev). SHA verified. Testnet candleSnapshot API returns 422; K-line backfill accepted via code review."
     },
     {
       "pr_number": 74,

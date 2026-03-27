@@ -2073,11 +2073,11 @@
       "priority": 2,
       "title": "Trade page 24h change display — verify non-zero 24h % change in stats bar",
       "description": "Trade page header shows '24小时变化 +0.00%'. Verify if this is a real data issue or just testnet limitation. Expected: non-zero 24h change when BTC has moved.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — /trade 24h change shows +0.00% while mark price 66599.1 is valid; issue #63"
+      "result_summary": "FAIL — /trade 24h change shows +0.00% while mark price 66599.1 is valid; issue #63 fixed by PR #67 (merged 2026-03-27), reset for re-validation"
     },
     {
       "id": "E186",

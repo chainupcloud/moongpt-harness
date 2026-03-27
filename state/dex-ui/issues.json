@@ -456,13 +456,19 @@
     {
       "github_issue_number": 63,
       "title": "[P3] /trade 页面 24h 涨跌显示 +0.00% — 标记价格正常但涨跌幅数据缺失",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E185",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
+      "fix_attempts": 1,
+      "pr_number": 67,
       "labels": [
         "bug"
-      ]
+      ],
+      "deployed_sha": "a0a52185650d7dabc1d9e2faa4833449e4e58912",
+      "accepted": true,
+      "note": "PR #67 merged to dev. Testnet backend does not support candleSnapshot API (422), K-line backfill UI verification not possible on testnet. Accepted via code review + SHA verification. Production human review recommended."
     },
     {
       "github_number": 66,
