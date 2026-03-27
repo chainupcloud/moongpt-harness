@@ -764,6 +764,20 @@
         "infrastructure"
       ],
       "notes": "Root cause: Vercel TEAM_ACCESS_REQUIRED — commit author's GitHub account (gitUserId:239836187) not added as Vercel team member. All dev branch deploys after b520cb2e blocked (alwaysRefuseToBuild:true). Fix: Vercel admin must add the GitHub user as team contributor at vercel.com/chainupclouds-projects/settings/members. Not fixable via code."
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-99",
+      "github_number": 99,
+      "title": "[P3] Withdraw modal — no address field validation (empty and invalid format accepted)",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E225 E226",
+      "created_date": "2026-03-27",
+      "labels": [
+        "bug"
+      ],
+      "fix_attempts": 0,
+      "url": "https://github.com/chainupcloud/dex-ui/issues/99"
     }
   ],
   "last_updated": "2026-03-27",
