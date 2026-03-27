@@ -467,14 +467,15 @@
     {
       "github_number": 66,
       "title": "[P3] Withdraw modal accepts negative amounts without validation — no error feedback",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E111",
       "created_at": "2026-03-27",
       "labels": [
         "bug"
       ],
-      "fix_attempts": 0,
+      "fix_attempts": 1,
+      "pr_number": 68,
       "notes": "Input type=text, no min constraint. Deposit modal has validation (PR #43/issue #40). Withdraw modal does not."
     }
   ],
