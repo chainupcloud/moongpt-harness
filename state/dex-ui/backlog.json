@@ -1976,9 +1976,11 @@
       "priority": 3,
       "title": "Stop Market/Stop Limit 订单类型 — trigger price 输入框显示与功能",
       "description": "切换到 Stop Market 或 Stop Limit 时，验证 trigger price 输入框是否出现，且填写后切换回 Limit 时 size/price 值保留。",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Stop Limit trigger price input appears (2x 0.00 inputs), size value preserved on type switch"
     },
     {
       "id": "E170",
@@ -1987,9 +1989,11 @@
       "title": "/trade error boundary timeout — 何时从骨架屏切换到 error UI？",
       "description": "测试 /trade 在 API 持续失败时，是否在 N 秒后（如 10s/30s）自动切换到 error 状态或显示 retry 按钮。验证超时阈值是否合理。",
       "track": "frontend",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — SSR-rendered Next.js app; Playwright browser-level route blocking cannot intercept server-side API calls; cannot test error timeout"
     },
     {
       "id": "E171",
@@ -1998,9 +2002,11 @@
       "title": "/explorer/checkpoints 页面 — 完整列表分页与数量",
       "description": "访问 /explorer/checkpoints 完整列表页：验证分页控件存在且可翻页，显示 checkpoint 总数，点击单条 checkpoint 进入详情。",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /explorer/checkpoints page works, 10 items/page, next/prev pagination functional (1-10 → 11-20 confirmed)"
     },
     {
       "id": "E172",
@@ -2009,9 +2015,11 @@
       "title": "/explorer checkpoint 详情页 — 点击 checkpoint 行展开交易列表",
       "description": "在 /explorer 或 /explorer/checkpoints 点击某个 checkpoint（如 #33458），验证跳转到详情页，显示该 checkpoint 内的交易列表和 metadata（时间、txs 数量、gas 等）。",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Checkpoint detail page at /explorer/checkpoint/{id} loads with timestamp, tx list, and metadata"
     },
     {
       "id": "E173",
@@ -3336,6 +3344,61 @@
       "description": "/markets 列表中 BTC-USDC 显示的未平仓合约数值，与 /dex-api/info 中 openInterest 字段应一致。",
       "status": "pending",
       "track": "backend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E298",
+      "area": "trade",
+      "priority": 3,
+      "title": "TWAP 订单类型 — 特有字段（duration/intervals）是否出现",
+      "description": "切换 Order Type 到 TWAP，验证 TWAP 特有配置字段（如 duration、intervals、time range）出现，且 Buy/Sell 可正常下单按钮可见。",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E299",
+      "area": "trade",
+      "priority": 3,
+      "title": "Scale 和 Scalp 订单类型 — 切换后 UI 字段差异",
+      "description": "切换 Order Type 到 Scale，验证与 Limit 的字段差异（如 price range、num orders 等）；再测 Scalp 类型的特有字段。",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E300",
+      "area": "explorer",
+      "priority": 3,
+      "title": "/explorer/checkpoints — 切换每页显示数（10→20→50）",
+      "description": "在 /explorer/checkpoints，通过 rows-per-page 下拉框切换显示数量（10→20→50），验证表格行数变化正确，分页范围随之更新（如 1-20, 1-50）。",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E301",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Checkpoint 详情页 — 点击单条 transaction hash 跳转详情",
+      "description": "在 /explorer/checkpoint/{id} 点击列表中的 transaction hash，验证跳转到对应 /explorer/tx/{hash} 页面，显示 tx 类型、gas、状态等字段。",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E302",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Market 订单 — 仅显示 trigger price（无 limit price）",
+      "description": "切换 Order Type 到 Stop Market，验证只显示 trigger price 输入框（没有 limit price），与 Stop Limit 的双价格输入区分。执行 Buy/Sell 按钮应 enable。",
+      "track": "frontend",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
     }
