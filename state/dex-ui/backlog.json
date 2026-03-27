@@ -2277,11 +2277,11 @@
       "priority": 3,
       "title": "/markets 页面行点击跳转 /trade?coin=BTC 验证",
       "description": "点击 BTC-USDC 行，验证页面跳转到 /trade?coin=BTC，且 trade 页面切换到 BTC-USDC 交易对",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — BTC-USDC row click on /markets does not navigate to /trade → Issue #92"
+      "result_summary": "Reset: Issue #92 fixed (PR #93 merged+deployed). Re-verify on next explore run."
     },
     {
       "id": "E195",

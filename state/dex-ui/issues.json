@@ -693,11 +693,14 @@
       "github_number": 92,
       "title": "[P3] /markets page BTC-USDC row click does not navigate to /trade?coin=BTC",
       "priority": "P3",
-      "status": "fixing",
+      "status": "closed",
       "scenario": "E194",
       "created_at": "2026-03-27",
+      "closed_at": "2026-03-27",
       "fix_attempts": 1,
-      "pr_number": 93
+      "pr_number": 93,
+      "deployed_sha": "b520cb2e6dc6ee6bbaed68157393d6227e2a3c06",
+      "accepted": true
     },
     {
       "github_number": 94,
