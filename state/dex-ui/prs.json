@@ -2,7 +2,9 @@
   "prs": [
     {
       "pr_number": 3,
-      "issue_numbers": [1],
+      "issue_numbers": [
+        1
+      ],
       "status": "merged",
       "commit_sha": "d4bdadc",
       "merged_at": "2026-03-26",
@@ -29,17 +31,20 @@
     },
     {
       "pr_number": 10,
-      "issue_numbers": [7],
+      "issue_numbers": [
+        7
+      ],
       "status": "merged",
       "commit_sha": "49c83a2",
       "merged_at": "2026-03-26",
       "deployed": true,
       "accepted": true
-    }
-    ,
+    },
     {
       "pr_number": 12,
-      "issue_numbers": [11],
+      "issue_numbers": [
+        11
+      ],
       "status": "merged",
       "commit_sha": "dd3adaa",
       "merged_at": "2026-03-26",
@@ -48,7 +53,9 @@
     },
     {
       "pr_number": 15,
-      "issue_numbers": [13],
+      "issue_numbers": [
+        13
+      ],
       "status": "merged",
       "commit_sha": "c75879c",
       "merged_at": "2026-03-26",
@@ -57,7 +64,9 @@
     },
     {
       "pr_number": 16,
-      "issue_numbers": [14],
+      "issue_numbers": [
+        14
+      ],
       "status": "merged",
       "commit_sha": "aaa0c240b15986a0ec8a7bb14623686cdf4826ee",
       "merged_at": "2026-03-26",
@@ -66,7 +75,9 @@
     },
     {
       "pr_number": 20,
-      "issue_numbers": [17],
+      "issue_numbers": [
+        17
+      ],
       "status": "merged",
       "commit_sha": "7ffca6301372781db64d82eec4cd5a937cbf7336",
       "merged_at": "2026-03-26",
@@ -76,7 +87,9 @@
     },
     {
       "pr_number": 21,
-      "issue_numbers": [18],
+      "issue_numbers": [
+        18
+      ],
       "status": "merged",
       "commit_sha": "71a1647f3a55e68b08402246529a66bbaa6757cc",
       "merged_at": "2026-03-26",
@@ -86,7 +99,9 @@
     },
     {
       "pr_number": 22,
-      "issue_numbers": [19],
+      "issue_numbers": [
+        19
+      ],
       "status": "merged",
       "commit_sha": "4e9367437c21524984392884b8cbb4c5f5723e20",
       "merged_at": "2026-03-26",
@@ -106,7 +121,9 @@
     },
     {
       "pr_number": 25,
-      "issue_numbers": [24],
+      "issue_numbers": [
+        24
+      ],
       "status": "merged",
       "title": "fix: TradingView study_templates 404 及 K 线时间违规 (#24)",
       "commit_sha": "e57204ad61d3d49307b93e55dfd7dc52c02e28d6",
@@ -116,7 +133,9 @@
     },
     {
       "pr_number": 30,
-      "issue_numbers": [26],
+      "issue_numbers": [
+        26
+      ],
       "status": "merged",
       "title": "fix: disable Buy/Long button when balance insufficient (#26)",
       "commit_sha": "bbd5b0a00e532fe8b0cf0891e36cd7ab972ff3b6",
@@ -126,7 +145,9 @@
     },
     {
       "pr_number": 31,
-      "issue_numbers": [27],
+      "issue_numbers": [
+        27
+      ],
       "status": "merged",
       "title": "fix: 交易表单 price/size 输入框过滤非法字符 (#27)",
       "commit_sha": "b8f208046e0a5107b69271d07b5926e451b7234d",
@@ -136,7 +157,9 @@
     },
     {
       "pr_number": 32,
-      "issue_numbers": [28],
+      "issue_numbers": [
+        28
+      ],
       "status": "merged",
       "title": "fix: /markets page showing $0 prices — coin key mismatch (#28)",
       "commit_sha": "261087acf6501d57d3320c2f5ab3f1fc4d998799",
@@ -146,9 +169,15 @@
     },
     {
       "pr_number": 33,
-      "issue_numbers": [29],
-      "status": "open",
-      "title": "fix: 交易表单下单按钮未感知钱包连接状态 (#29)"
+      "issue_numbers": [
+        29
+      ],
+      "status": "merged",
+      "title": "fix: 交易表单下单按钮未感知钱包连接状态 (#29)",
+      "commit_sha": "a5f31a4d8a66ec625aad2f24593c20a35db6dc98",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
     }
   ]
 }

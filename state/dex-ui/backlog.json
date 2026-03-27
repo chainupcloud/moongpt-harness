@@ -316,11 +316,9 @@
       "priority": 2,
       "title": "钱包未连接时，下单按钮显示 'Connect Wallet' 而非 'Long/Short'",
       "description": "未连接钱包访问 /trade，验证下单按钮显示引导连接钱包的文字（Connect Wallet），不显示 Long/Short",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27",
-      "last_run": "2026-03-27",
-      "result_summary": "FAIL — Buy/Long button shown without wallet, click has no effect, no connect modal triggered"
+      "added_date": "2026-03-27"
     },
     {
       "id": "E035",

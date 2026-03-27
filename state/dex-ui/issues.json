@@ -175,7 +175,7 @@
       "id": "issue-29",
       "github_number": 29,
       "title": "[P3] 交易表单下单按钮未感知钱包连接状态 — 未连接时应显示 Connect Wallet",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E034",
       "created_date": "2026-03-27",
@@ -183,7 +183,11 @@
       "pr_number": 33,
       "labels": [
         "bug"
-      ]
+      ],
+      "closed_at": "2026-03-27",
+      "deployed_sha": "a5f31a4d8a66ec625aad2f24593c20a35db6dc98",
+      "accepted": true,
+      "note": "Accepted via code review + SHA verification. Backend 502s prevented Playwright UI test."
     },
     {
       "id": "issue-2026-03-27-dex-sui-26",
