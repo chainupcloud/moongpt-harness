@@ -1366,9 +1366,11 @@
       "priority": 3,
       "title": "Explorer 搜索功能 — 按钱包地址搜索",
       "description": "在 Explorer Search 框中输入测试钱包地址，验证能返回相关交易记录或提示无记录，不应报错或白屏",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Explorer search finds wallet, redirects to /explorer/tx/{addr}"
     },
     {
       "id": "E119",
@@ -1376,9 +1378,11 @@
       "priority": 3,
       "title": "Orders 标签 — Open Orders 与 Order History 数据差异验证",
       "description": "未有未成交订单时，Open Orders 应为空并显示空状态提示；Order History 应有历史记录（如之前测试中的市价单）。验证两个标签状态符合预期",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — 8 tabs found (Open Orders, Order History, etc.), empty state shown correctly without wallet"
     },
     {
       "id": "E120",
@@ -1420,9 +1424,11 @@
       "priority": 3,
       "title": "TradingView 图表时间周期切换 — 键盘快捷键",
       "description": "TradingView 支持按数字键切换时间周期（1=1m, 2=5m, 3=15m 等）。在 blob iframe 中使用 keyboard shortcut 测试时间周期切换是否生效",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — TradingView in blob iframe, keyboard shortcuts not testable from Playwright"
     },
     {
       "id": "E124",
@@ -2496,9 +2502,11 @@
       "priority": 2,
       "title": "/trade/BTC-USDC deep link — redirect or 404 regression check",
       "description": "Verify /trade/BTC-USDC does not return 404. Should either load trade page or redirect to /trade. Issue #76.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — /trade/BTC-USDC still returns 404 (issue #76 open)"
     },
     {
       "id": "E225",
@@ -2536,6 +2544,56 @@
       "priority": 2,
       "title": "24h change display after prevDayPx fix — re-verify when dex-sui#27 deploys",
       "description": "After dex-sui#27 fix is deployed, verify /trade shows non-zero 24h change %. Regression check for E185.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E229",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail page — transaction data correctness",
+      "description": "After searching wallet address and landing on /explorer/tx/{addr}, verify transaction rows show correct amount, date, and status. Check pagination if >10 records.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E230",
+      "area": "trade",
+      "priority": 3,
+      "title": "Orders tab with connected wallet — Open Orders vs Order History count",
+      "description": "Connect wallet, place a limit order, verify it appears in Open Orders tab with correct count badge. Cancel it and verify it moves to Order History tab.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E231",
+      "area": "navigation",
+      "priority": 2,
+      "title": "/trade/BTC-USDC 404 — check if redirect rule needed in next.config.ts",
+      "description": "Verify whether next.config.ts has a redirect from /trade/:market to /trade?market=:market or similar. Inspect actual 404 page behavior and check if URL routing is handled in app/trade/[market]/page.tsx.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E232",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets page — market list loads and data is non-empty",
+      "description": "Navigate to /markets, verify the page loads correctly with at least one market listed. Check price, volume, and 24h change columns are populated (not all zeros or dashes).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E233",
+      "area": "spot",
+      "priority": 3,
+      "title": "Spot page — basic page load and content check",
+      "description": "Navigate to /spot, verify the page loads without 404 or white screen. Check if spot trading form is present or if it shows a 'coming soon' message. (app/spot/page.tsx recently changed)",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
