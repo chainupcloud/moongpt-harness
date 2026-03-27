@@ -123,6 +123,12 @@
       "merged_at": "2026-03-27",
       "deployed": true,
       "accepted": true
+    },
+    {
+      "pr_number": 31,
+      "issue_numbers": [27],
+      "status": "open",
+      "title": "fix: 交易表单 price/size 输入框过滤非法字符 (#27)"
     }
   ]
 }
