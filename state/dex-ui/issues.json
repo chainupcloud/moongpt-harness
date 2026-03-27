@@ -1166,11 +1166,12 @@
     {
       "issue_number": 132,
       "title": "[P4] TpSlPanel inputs missing aria-labels — TP/SL price and gain/loss fields inaccessible to screen readers",
-      "status": "open",
+      "status": "fixing",
       "priority": "P4",
       "scenario": "E486",
       "opened_date": "2026-03-27",
-      "fix_attempts": 0
+      "fix_attempts": 1,
+      "pr_number": 133
     }
   ],
   "last_updated": "2026-03-27",
