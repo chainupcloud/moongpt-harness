@@ -259,13 +259,15 @@
       "number": 40,
       "github_number": 40,
       "title": "[P4] Deposit modal: no client-side validation for negative/zero/over-balance input",
-      "status": "fixing",
+      "status": "open",
       "priority": "P4",
       "url": "https://github.com/chainupcloud/dex-ui/issues/40",
       "created": "2026-03-27",
       "scenario": "E022",
       "fix_attempts": 1,
-      "pr_number": 43
+      "pr_number": 43,
+      "deployed_sha": "d85511226ee5a5a45cd9ede7ce8b133aabd738cc",
+      "note": "PR #43 merged + deployed. P4 — awaiting human acceptance."
     },
     {
       "github_number": 41,

@@ -235,8 +235,13 @@
       "issue_numbers": [
         40
       ],
-      "status": "open",
-      "title": "fix: deposit modal add insufficient balance validation (#40)"
+      "status": "merged",
+      "title": "fix: deposit modal add insufficient balance validation (#40)",
+      "commit_sha": "d85511226ee5a5a45cd9ede7ce8b133aabd738cc",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": false,
+      "note": "P4 issue — awaiting human acceptance"
     }
   ]
 }
