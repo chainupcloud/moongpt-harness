@@ -1174,9 +1174,11 @@
       "priority": 3,
       "title": "未连接钱包时 Buy/Long 按钮视觉状态 — 是否有 disabled 样式",
       "description": "当前 Buy/Long 按钮无 wallet 时外观与已连接时相同，无 disabled 提示。检查是否应添加 visual disabled 状态以提升 UX",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Buy/Long button shown as active (green, cursor:pointer) when wallet disconnected; related to existing open issue (no disabled state)"
     },
     {
       "id": "E103",
@@ -1184,9 +1186,11 @@
       "priority": 3,
       "title": "/markets 页面点击 BTC-USDC 行 → 跳转 /trade?coin=BTC",
       "description": "点击 markets 页面市场行，验证是否跳转至对应交易对的 trade 页面",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — clicking BTC-USDC row navigates to /trade?coin=BTC-USDC correctly"
     },
     {
       "id": "E104",
@@ -2109,9 +2113,11 @@
       "priority": 2,
       "title": "24h 涨跌数据 API 溯源 — /dex-api/stats 或 /info 是否返回 price_change_pct",
       "description": "检查 /trade 页面发起的 API 请求中，是否包含 24h 涨跌所需字段（如 price_change_pct、open_price），并验证 API 实际返回值",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — 24h change column visible (+0.00% for BTC, +0.3020% funding); prevDayPx=0 in testnet explains +0.00%"
     },
     {
       "id": "E191",
@@ -2119,9 +2125,11 @@
       "priority": 2,
       "title": "/markets 价格列 API 数据流 — 验证 mark_price 字段是否被正确映射到价格列",
       "description": "在 /markets 页面拦截 network 请求，确认 API 返回的 mark_price 字段值，与页面显示的价格列进行对比，判断是 API 返回 $0 还是前端映射错误",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — midPx mapped to price column; testnet data has midPx=0 → $0 display (issue #57)"
     },
     {
       "id": "E192",
@@ -2149,6 +2157,56 @@
       "priority": 3,
       "title": "/markets 页面行点击跳转 /trade?coin=BTC 验证",
       "description": "点击 BTC-USDC 行，验证页面跳转到 /trade?coin=BTC，且 trade 页面切换到 BTC-USDC 交易对",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E195",
+      "area": "trade",
+      "priority": 2,
+      "title": "Buy/Long 按钮点击后弹出 Connect Wallet 提示（未连接钱包时）",
+      "description": "点击已启用但未连接钱包时的 Buy/Long 按钮，验证是否触发 Connect Wallet 弹窗（而非空 toast）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E196",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets 价格列 — midPx 为 0 时是否 fallback 到 lastPrice",
+      "description": "验证当 assetCtxs.midPx 为 '0' 时，useMarketData hook 是否 fallback 到 stats.lastPrice 显示正确价格",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E197",
+      "area": "trade",
+      "priority": 3,
+      "title": "/trade 页面价格 ticker — 标记价格数字是否实时刷新（WebSocket）",
+      "description": "在 /trade 页面等待 30s，观察价格数字是否有变化（WebSocket 实时推送验证）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E198",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets 排序功能 — 点击「价格」列头按升序/降序排列",
+      "description": "点击「价格」列头，验证排序图标切换，资产列表按价格升序/降序重新排列",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E199",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order book — 买卖盘价格/数量数据是否正常显示",
+      "description": "在 /trade 页面检查 Order Book 组件，验证是否展示 asks/bids 数据，价格和数量格式是否正确",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
