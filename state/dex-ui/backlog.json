@@ -1088,9 +1088,11 @@
       "priority": 3,
       "title": "导航栏 Explorer 入口链接跳转正常",
       "description": "从任意页面点击导航栏中的 'Explorer' 链接，验证正确跳转到 /explorer 且内容加载",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Explorer nav link found in all pages, /explorer loads correctly with content"
     },
     {
       "id": "E096",
@@ -1098,10 +1100,12 @@
       "priority": 3,
       "title": "/markets 24h 涨跌 +Infinity% 修复验证",
       "description": "验证 issue #34 修复后 /markets BTC-USDC 24h 涨跌列显示正常百分比（非 Infinity）",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "linked_issue": 34
+      "linked_issue": 34,
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — No Infinity% found; valid percentages (+0.00%, -0.0146%) displayed"
     },
     {
       "id": "E097",
@@ -1109,10 +1113,12 @@
       "priority": 3,
       "title": "/explorer checkpoint 详情 Time 修复验证",
       "description": "验证 issue #35 修复后 checkpoint 详情页时间戳正确显示，不再是 1970-01-01",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "linked_issue": 35
+      "linked_issue": 35,
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — No 1970-01-01 timestamps; 41 checkpoint links found in Latest Checkpoints"
     },
     {
       "id": "E098",
@@ -1140,9 +1146,11 @@
       "priority": 3,
       "title": "TP/SL 输入框同样拒绝非法字符",
       "description": "在 /trade 页面打开 TP/SL 选项，输入字母、负数、特殊符号，验证字段过滤行为与主价格/数量字段一致",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — TP/SL inputs reject letters and special chars; valid numbers accepted; one possible slider-linked input noted"
     },
     {
       "id": "E101",
@@ -1921,6 +1929,56 @@
       "title": "/explorer transaction 详情 — PlaceOrder 类型显示订单 side/size/price",
       "description": "点击 type=PlaceOrder 的交易，验证详情页是否显示订单相关信息（side: Buy/Sell, size, price, market）而不仅仅是原始 payload。",
       "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E175",
+      "area": "spot",
+      "priority": 2,
+      "title": "/spot 页面功能可达性 — 现货交易入口",
+      "description": "访问 /spot 页面（最近新增），验证页面正常加载、显示现货交易对列表或交易表单，无 500/404 错误",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E176",
+      "area": "api-keys",
+      "priority": 2,
+      "title": "/api-keys 页面功能可达性 — API 密钥管理入口",
+      "description": "访问 /api-keys 页面（最近新增），验证页面正常加载，显示 API 密钥列表/生成界面，无 500/404 错误",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E177",
+      "area": "explorer",
+      "priority": 3,
+      "title": "/explorer 交易 hash 搜索 — 详情页展示",
+      "description": "在 /explorer 搜索框输入一个真实的 tx hash（从 API 获取），验证能展示交易详情：类型、金额、时间戳（非 1970）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E178",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets 持仓量（OI）数据真实性验证",
+      "description": "对比 /markets 页面 OI 列数据与后端 /api/oi 接口原始值，确认显示值非 $0.01 占位数据",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E179",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL 百分比输入框联动价格验证",
+      "description": "在 /trade 设置主价格后，验证 TP/SL 的「placeholder=0」百分比输入框是否可以输入正整数（如 5），并联动计算触发价格",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
