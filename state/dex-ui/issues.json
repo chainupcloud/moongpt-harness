@@ -573,11 +573,12 @@
     {
       "github_number": 78,
       "title": "[P2] Order book spread显示为负值 — 买卖盘价格倒置（asks < bids）",
-      "status": "open",
+      "status": "fixing",
       "priority": "P2",
       "scenario": "E247",
       "created": "2026-03-27",
-      "fix_attempts": 0
+      "fix_attempts": 1,
+      "pr_number": 79
     }
   ],
   "last_updated": "2026-03-27",
