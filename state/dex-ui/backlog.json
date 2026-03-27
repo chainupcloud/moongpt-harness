@@ -679,9 +679,11 @@
       "title": "/spot page price and chart rendering — verify spot page still ok under API 500",
       "description": "E050 showed spot page PASS, but dex-api/info returns 500 consistently. Re-verify spot page price display, chart and K-lines still render correctly",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Spot page renders \"Spot Trading Coming Soon\" correctly"
     },
     {
       "id": "E067",
@@ -737,9 +739,11 @@
       "priority": 2,
       "title": "/markets 页面 BTC 价格回归验证 — API 修复后价格应正确显示",
       "description": "访问 /markets 页面，验证 BTC-USDC 价格显示正确（非 $0），与 API /dex-api/info 返回的数据一致。回归 issue #28",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — BTC price still $0 on /markets; issue #28 confirmed still open"
     },
     {
       "id": "E072",
@@ -747,9 +751,11 @@
       "priority": 2,
       "title": "点击 Connect 按钮 — 弹出钱包连接 Modal 且可选择钱包类型",
       "description": "点击导航栏的 Connect 按钮，验证是否弹出钱包选择 modal（MetaMask, WalletConnect 等），用户选择后能进入签名流程",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Wallet connect modal appears with wallet selector when Connect clicked"
     },
     {
       "id": "E073",
@@ -787,9 +793,11 @@
       "priority": 2,
       "title": "/markets price data rendering — investigate why API price not populating table row",
       "description": "API /dex-api/info returns lastPrice=67438.1 but table row shows $0. Check if frontend parsing/mapping is broken for lastPrice field.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Root cause found: assetInfoMap keyed by baseCoin(\"BTC\")  but useAssetList looks up \"BTC-USDC\" → always undefined → price=0. API works correctly."
     },
     {
       "id": "E077",
@@ -827,6 +835,58 @@
       "priority": 2,
       "title": "/markets price auto-refresh — prices update without manual page reload",
       "description": "Load /markets, wait 30s, check if BTC price changes (websocket/polling). Verify live data feed is active.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E081",
+      "area": "markets",
+      "priority": 2,
+      "title": "/markets 价格渲染 — baseCoin key mismatch 修复后回归验证",
+      "description": "assetInfoMap 使用 baseCoin('BTC-USDC')='BTC' 为 key，但 useAssetList 查 perp.coin='BTC-USDC' → undefined → $0。修复后验证 BTC-USDC 行显示真实价格",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27",
+      "linked_issue": 28
+    },
+    {
+      "id": "E082",
+      "area": "pages",
+      "priority": 2,
+      "title": "/api-keys 页面 — 加载与显示（新增页面）",
+      "description": "app/api-keys/page.tsx 最近新增。验证：页面加载不 404、title 正确、内容渲染（API key 管理 UI）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E083",
+      "area": "pages",
+      "priority": 2,
+      "title": "/explorer 页面 — 加载与显示（新增页面）",
+      "description": "app/explorer/page.tsx 最近新增。验证：页面加载不 404、title 正确、内容渲染正常",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E084",
+      "area": "trade",
+      "priority": 2,
+      "title": "未连接钱包时交易表单 Submit 按钮显示 'Connect Wallet'（issue #29 回归）",
+      "description": "打开 /trade 不连接钱包，交易表单 Buy/Long 按钮应显示 'Connect Wallet'，点击应触发钱包连接 modal",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27",
+      "linked_issue": 29
+    },
+    {
+      "id": "E085",
+      "area": "trade",
+      "priority": 3,
+      "title": "allMids WebSocket 数据 key 格式验证 — 'BTC' vs 'BTC-USDC'",
+      "description": "WS subscribeAllMids 推送的 mids 对象 key 是 'BTC' 还是 'BTC-USDC'？确认和 assetInfoMap 的 key 格式一致性",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
