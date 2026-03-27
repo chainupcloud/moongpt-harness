@@ -131,11 +131,12 @@
     {
       "number": 26,
       "title": "[P3] Market 订单余额不足时缺少前端验证 — Buy/Long 按钮未禁用",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E008",
       "created": "2026-03-27",
-      "fix_attempts": 0
+      "fix_attempts": 1,
+      "pr_number": 30
     },
     {
       "number": 27,
