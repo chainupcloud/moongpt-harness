@@ -1104,37 +1104,49 @@
       "id": "issue-2026-03-27-dex-ui-127",
       "github_number": 127,
       "title": "[P4] Withdraw modal — no inline validation error for negative or zero amount input",
-      "status": "open",
+      "status": "closed",
       "priority": "P4",
       "scenario_id": "E322",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "labels": [
         "bug"
-      ]
+      ],
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "WithdrawModal on dev: regex filter prevents negative input, amountValidation rejects <= 0 with inline error. Explore agent false positive — stale Vercel staging (issue #98)."
     },
     {
       "id": "issue-2026-03-27-dex-ui-129",
       "title": "[P3] TWAP order form — duration/interval fields still absent (regression after #125 closed)",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E490",
       "github_issue_number": 129,
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "labels": [
         "bug"
-      ]
+      ],
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "TwapPanel component exists on dev with full duration/interval/preview fields. 5th duplicate false positive (same as #109, #113, #117, #125) — stale Vercel staging (issue #98)."
     },
     {
       "id": "issue-2026-03-27-dex-ui-130",
       "title": "[P3] Withdraw modal — address format not validated (regression after #99 closed)",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E326",
       "github_issue_number": 130,
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "labels": [
         "bug"
-      ]
+      ],
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "WithdrawModal on dev has full address validation via isAddress() from viem. Explore agent false positive — stale Vercel staging (issue #98)."
     }
   ],
   "last_updated": "2026-03-27",
