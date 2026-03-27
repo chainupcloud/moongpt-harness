@@ -23,7 +23,7 @@ if [ ! -f "$PROJECT_CONFIG" ]; then
 fi
 
 case "$AGENT" in
-  test|smoke|fix|master|coverage|advanced) ;;
+  test|smoke|fix|master|coverage|advanced|explore) ;;
   *) echo "Unknown agent: $AGENT"; exit 1 ;;
 esac
 
@@ -35,6 +35,7 @@ case "$AGENT" in
   test)     MODEL="claude-sonnet-4-6" ;;
   coverage) MODEL="claude-sonnet-4-6" ;;
   advanced) MODEL="claude-sonnet-4-6" ;;
+  explore)  MODEL="claude-sonnet-4-6" ;;
   fix)      MODEL="claude-opus-4-6" ;;
   master)   MODEL="" ;;  # 默认模型
 esac

@@ -211,7 +211,8 @@ HTML = """<!DOCTYPE html>
     <div class="section">
       <h2>Agent 日志（最近 30 行）</h2>
       <div class="log-tabs">
-        <button class="log-tab active" onclick="showLog('smoke',event)">smoke</button>
+        <button class="log-tab active" onclick="showLog('explore',event)">explore</button>
+        <button class="log-tab" onclick="showLog('smoke',event)">smoke</button>
         <button class="log-tab" onclick="showLog('coverage',event)">coverage</button>
         <button class="log-tab" onclick="showLog('advanced',event)">advanced</button>
         <button class="log-tab" onclick="showLog('scheduler',event)">scheduler</button>
@@ -224,7 +225,7 @@ HTML = """<!DOCTYPE html>
 </div>
 
 <script>
-let currentLog = 'smoke';
+let currentLog = 'explore';
 
 async function loadAll() {
   document.getElementById('ts').textContent = '更新于 ' + new Date().toLocaleTimeString('zh');

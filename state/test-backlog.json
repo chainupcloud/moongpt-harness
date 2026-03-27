@@ -1,0 +1,246 @@
+{
+  "description": "探索测试背板 — explore-agent 每次从 pending 中取若干条执行，完成后标记 tested/failed",
+  "last_updated": "2026-03-27",
+  "scenarios": [
+    {
+      "id": "E001",
+      "area": "trade",
+      "priority": 1,
+      "title": "切换交易对（watchlist 点击 ETH/SOL）→ 订单簿更新",
+      "description": "点击 watchlist 中非 BTC 交易对，验证价格栏、订单簿、K线 coin 参数均切换",
+      "status": "pending"
+    },
+    {
+      "id": "E002",
+      "area": "trade",
+      "priority": 1,
+      "title": "深链接 /trade?coin=ETH 直接跳转 → 正确加载 ETH 交易对",
+      "description": "直接访问 /trade?coin=ETH，不通过 watchlist，验证页面加载的是 ETH 而非 BTC",
+      "status": "pending"
+    },
+    {
+      "id": "E003",
+      "area": "session",
+      "priority": 1,
+      "title": "钱包连接后刷新页面 → session key 持久，不重新弹签名提示",
+      "description": "wagmi cookie + localStorage session key 应在刷新后恢复，EnableTradingPrompt 不应再次出现",
+      "status": "pending"
+    },
+    {
+      "id": "E004",
+      "area": "trade",
+      "priority": 1,
+      "title": "杠杆调整后下单 → UI 显示新杠杆，保证金占用变化",
+      "description": "从默认杠杆改为 5x，提交，验证订单表单中 Required Margin 随之变化",
+      "status": "pending"
+    },
+    {
+      "id": "E005",
+      "area": "portfolio",
+      "priority": 1,
+      "title": "Portfolio 持仓 PnL 计算合理性检查",
+      "description": "读取页面上的 Entry Price、Current Price、Size，手动计算 PnL，与页面显示值比对误差 < 1%",
+      "status": "pending"
+    },
+    {
+      "id": "E006",
+      "area": "trade",
+      "priority": 2,
+      "title": "Open Orders 排序/筛选功能",
+      "description": "Open Orders tab 中按 Price/Size/Time 排序，验证顺序变化；若有筛选，测试筛选后结果集",
+      "status": "pending"
+    },
+    {
+      "id": "E007",
+      "area": "trade",
+      "priority": 2,
+      "title": "Order History tab — 显示历史成交记录",
+      "description": "点击 Order History 或 Fills tab，验证有历史数据行（不能空白），且包含时间/价格/数量字段",
+      "status": "pending"
+    },
+    {
+      "id": "E008",
+      "area": "trade",
+      "priority": 2,
+      "title": "Market 单余额不足 → 正确拒绝，显示错误提示",
+      "description": "市价单 size 设置为远超账户余额的值，验证 Long 按钮禁用或提交后显示余额不足 toast",
+      "status": "pending"
+    },
+    {
+      "id": "E009",
+      "area": "trade",
+      "priority": 2,
+      "title": "表单输入精度边界 — 0.00001 BTC",
+      "description": "price 输入极小值（0.01），size 输入 0.00001，验证表单接受或给出合理的最小订单提示",
+      "status": "pending"
+    },
+    {
+      "id": "E010",
+      "area": "trade",
+      "priority": 2,
+      "title": "表单输入非法字符 — 字母、负数、特殊符号",
+      "description": "price 字段输入 'abc'、'-100'、'1e5'，验证字段只接受合法数字，不崩溃，不 NaN",
+      "status": "pending"
+    },
+    {
+      "id": "E011",
+      "area": "settings",
+      "priority": 2,
+      "title": "设置保存后刷新 → 偏好持久化",
+      "description": "在设置面板切换主题/语言/输入框样式，刷新页面，验证设置仍生效",
+      "status": "pending"
+    },
+    {
+      "id": "E012",
+      "area": "settings",
+      "priority": 2,
+      "title": "主题切换 → 所有 UI 颜色跟随变化，无硬编码残留",
+      "description": "切换到每个可用主题，截图比对关键元素（背景色、文字色、按钮色）是否随主题变化",
+      "status": "pending"
+    },
+    {
+      "id": "E013",
+      "area": "navigation",
+      "priority": 2,
+      "title": "Trade → Portfolio → Explorer 跨页导航，无白屏",
+      "description": "依次点击导航栏三个页面，每次等待 4s，验证无空白页、无 JS 崩溃报错",
+      "status": "pending"
+    },
+    {
+      "id": "E014",
+      "area": "mobile",
+      "priority": 2,
+      "title": "手机端（375×812）/trade 下单流程完整可用",
+      "description": "移动端 viewport 下打开 /trade，验证：下单表单可见、输入框可点击、Long 按钮可点击",
+      "status": "pending"
+    },
+    {
+      "id": "E015",
+      "area": "mobile",
+      "priority": 3,
+      "title": "手机端横屏（812×375）布局不溢出",
+      "description": "横屏 viewport 访问 /trade，验证无横向滚动条，无元素超出视口",
+      "status": "pending"
+    },
+    {
+      "id": "E016",
+      "area": "wallet",
+      "priority": 2,
+      "title": "钱包下拉菜单 — 复制地址按钮功能",
+      "description": "点击 header 中钱包地址，打开下拉，点击 Copy Address，验证 clipboard 操作触发（toast 确认）",
+      "status": "pending"
+    },
+    {
+      "id": "E017",
+      "area": "trade",
+      "priority": 2,
+      "title": "WebSocket 断线重连 — 价格数据恢复",
+      "description": "页面加载后通过 evaluate 模拟断开 WebSocket（close()），等待 10s，验证价格数据重新出现",
+      "status": "pending"
+    },
+    {
+      "id": "E018",
+      "area": "portfolio",
+      "priority": 2,
+      "title": "Portfolio Positions tab — 已有持仓显示 Entry Price / Size / PnL",
+      "description": "钱包连接后访问 Portfolio，切到 Positions tab，验证存在至少 1 行数据（或空提示）且字段完整",
+      "status": "pending"
+    },
+    {
+      "id": "E019",
+      "area": "trade",
+      "priority": 3,
+      "title": "Watchlist 搜索/筛选 coin",
+      "description": "在 watchlist 搜索框输入 'ETH'，验证列表过滤只显示包含 ETH 的交易对",
+      "status": "pending"
+    },
+    {
+      "id": "E020",
+      "area": "pages",
+      "priority": 3,
+      "title": "/api-keys 页面可访问，不 404，有内容",
+      "description": "直接访问 /api-keys，验证 HTTP 200，页面有内容（不是空白或 404）",
+      "status": "pending"
+    },
+    {
+      "id": "E021",
+      "area": "pages",
+      "priority": 3,
+      "title": "未知路由 /xyz → 显示 404 页面，不白屏",
+      "description": "访问 /xyz-nonexistent，验证显示友好的 404 页面（有提示文字），不是空白页",
+      "status": "pending"
+    },
+    {
+      "id": "E022",
+      "area": "trade",
+      "priority": 3,
+      "title": "Transfer/Deposit 弹窗字段校验 — 负数/超额/空值",
+      "description": "打开 Transfer 弹窗，输入负数金额、空值、超过余额的金额，验证 Confirm 按钮禁用或显示错误",
+      "status": "pending"
+    },
+    {
+      "id": "E023",
+      "area": "trade",
+      "priority": 3,
+      "title": "Positions tab Close Position 按钮可见，点击触发确认",
+      "description": "Portfolio 或 trade 页 Positions tab 中，找到 Close 按钮，点击后应出现确认弹窗或直接平仓 toast",
+      "status": "pending"
+    },
+    {
+      "id": "E024",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer 分页 — 点击 Next Page 加载新数据",
+      "description": "Explorer 页面若有分页控件，点击下一页，验证数据变化（不是重复同一页）",
+      "status": "pending"
+    },
+    {
+      "id": "E025",
+      "area": "trade",
+      "priority": 3,
+      "title": "Limit 单以当前市价下单 → 立即成交，出现 Filled toast",
+      "description": "买入价格设置为当前 ask 价（市价），提交，验证订单立即成交（Filled toast 或订单从 Open→消失）",
+      "status": "pending"
+    },
+    {
+      "id": "E026",
+      "area": "navigation",
+      "priority": 3,
+      "title": "首页 Hero CTA 按钮 → 跳转到 /trade",
+      "description": "首页 Hero 区域的 Launch App / Trade Now 等 CTA 按钮，点击后正确跳转到 /trade",
+      "status": "pending"
+    },
+    {
+      "id": "E027",
+      "area": "trade",
+      "priority": 3,
+      "title": "订单百分比快速填充按钮（25% 50% 75% 100%）",
+      "description": "点击 25%/50%/75%/100% 按钮，验证 size 字段值 = 对应比例 × 可用余额，精度正确",
+      "status": "pending"
+    },
+    {
+      "id": "E028",
+      "area": "trade",
+      "priority": 3,
+      "title": "K线图时间周期切换（1m / 5m / 1h / 1d）",
+      "description": "点击 TradingView 图表时间周期按钮，验证图表数据随之刷新，无 JS 报错",
+      "status": "pending"
+    },
+    {
+      "id": "E029",
+      "area": "settings",
+      "priority": 3,
+      "title": "成交音效开关 — 下单后有/无声音（验证开关状态变化）",
+      "description": "进入 Settings → Sound，切换开/关，验证开关 UI 状态变化（无法直接验证音频，验证 localStorage 值）",
+      "status": "pending"
+    },
+    {
+      "id": "E030",
+      "area": "pages",
+      "priority": 4,
+      "title": "Markets 页面按 24h 涨跌幅排序",
+      "description": "/markets 页面点击 24h Change 列头，验证列表重新排序（第一行与最后一行涨跌幅大小关系正确）",
+      "status": "pending"
+    }
+  ]
+}

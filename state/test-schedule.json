@@ -1,14 +1,21 @@
 {
   "modules": [
+    "explore",
+    "smoke",
+    "explore",
     "smoke",
     "coverage",
+    "explore",
+    "smoke",
+    "explore",
     "advanced"
   ],
   "current_index": 1,
   "run_counts": {
     "smoke": 3,
     "coverage": 3,
-    "advanced": 0
+    "advanced": 0,
+    "explore": 0
   },
   "last_runs": {
     "smoke": "2026-03-26T22:02:23Z",
