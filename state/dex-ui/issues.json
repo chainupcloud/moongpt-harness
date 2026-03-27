@@ -779,6 +779,39 @@
       "fix_attempts": 1,
       "url": "https://github.com/chainupcloud/dex-ui/issues/99",
       "pr_number": 100
+    },
+    {
+      "id": "issue-2026-03-27-dex-sui-29",
+      "title": "[P3] Explorer checkpoint detail API returns empty transactions when list shows txCount=1",
+      "github_issue_number": 29,
+      "github_repo": "chainupcloud/dex-sui",
+      "status": "open",
+      "priority": "P3",
+      "created_date": "2026-03-27",
+      "scenarios": [
+        "E227"
+      ],
+      "labels": [
+        "bug",
+        "backend"
+      ],
+      "notes": "Backend /dex-api/explorer checkpoint detail returns transactions:[] and timestampMs:0 for all checkpoints, while list API shows txCount=1"
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-101",
+      "github_number": 101,
+      "title": "[P3] Explorer address search — EVM 地址触发后端 500 错误，未做地址格式校验",
+      "status": "open",
+      "priority": "P3",
+      "created_date": "2026-03-27",
+      "scenarios": [
+        "E229"
+      ],
+      "labels": [
+        "bug"
+      ],
+      "url": "https://github.com/chainupcloud/dex-ui/issues/101",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-27",

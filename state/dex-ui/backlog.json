@@ -2676,9 +2676,11 @@
       "priority": 3,
       "title": "Explorer checkpoint detail — transaction type and hash fields visible",
       "description": "In checkpoint detail page, verify each transaction row shows: tx hash (0x... format), timestamp, and tx type. Check data completeness.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Checkpoint detail shows Transactions:1 but table empty. Backend API returns transactions:[] for all checkpoints"
     },
     {
       "id": "E228",
@@ -2698,9 +2700,11 @@
       "priority": 3,
       "title": "Explorer tx detail page — transaction data correctness",
       "description": "After searching wallet address and landing on /explorer/tx/{addr}, verify transaction rows show correct amount, date, and status. Check pagination if >10 records.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Explorer address API 500: backend expects 64-hex SUI address, rejects EVM 40-hex. No client validation"
     },
     {
       "id": "E230",
@@ -2730,9 +2734,11 @@
       "priority": 3,
       "title": "Markets page — market list loads and data is non-empty",
       "description": "Navigate to /markets, verify the page loads correctly with at least one market listed. Check price, volume, and 24h change columns are populated (not all zeros or dashes).",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Markets page loads with BTC/USDC data. Price $66,821. 24h change +0.00% (known prevDayPx issue)"
     },
     {
       "id": "E233",
@@ -2740,9 +2746,11 @@
       "priority": 3,
       "title": "Spot page — basic page load and content check",
       "description": "Navigate to /spot, verify the page loads without 404 or white screen. Check if spot trading form is present or if it shows a 'coming soon' message. (app/spot/page.tsx recently changed)",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Spot page loads with \"Spot Trading Coming Soon\" message"
     },
     {
       "id": "E234",
@@ -4114,6 +4122,56 @@
       "priority": 3,
       "title": "API Keys page — Remove existing API wallet",
       "description": "Click Remove on existing API wallet entry, verify confirmation dialog or direct removal, confirm the entry disappears from list",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E365",
+      "area": "explorer",
+      "priority": 2,
+      "title": "Explorer checkpoint detail — 验证所有 checkpoint 的 transactions 字段一致性",
+      "description": "对比 /dex-api/explorer checkpoint列表(txCount)和详情(transactions[])是否一致。选取列表中txCount>0的最近5个checkpoint，逐一检查详情API是否返回正确数量的transactions。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E366",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — SUI 地址搜索功能验证（正确格式64 hex）",
+      "description": "在 Explorer 搜索框中输入一个合法的 SUI 地址（64 hex 字符）并搜索，验证地址活动页正确加载，显示交易记录、金额、时间戳。区别于 E229（EVM 地址），这测试正确格式。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E367",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — 直接访问 /explorer/tx/{txhash} 交易详情页",
+      "description": "从 Explorer 主页 Latest Transactions 列表点击一个 tx hash，进入 /explorer/tx/{hash} 页面，验证：tx hash、action type、sender/receiver、时间戳、summary 字段均正确显示，无空白或500错误。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E368",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets 页 — 24h 成交量和持仓量数据准确性（非零验证）",
+      "description": "访问 /markets 页，检查 BTC/USDC 市场行的 24h 成交量和持仓量是否为合理非零值（当前显示 $0.40 和 $0.00）。对比 /dex-api/info API 原始数据，判断是前端显示问题还是后端数据问题。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E369",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — 搜索框非法输入处理（空字符串、随机字符、过短哈希）",
+      "description": "在 Explorer 搜索框测试边界输入：(1) 空字符串回车，(2) 随机字符串 'abc123'，(3) 过短哈希 '0x1234'。验证每种情况是否显示友好错误提示，而非500或空白页。",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
