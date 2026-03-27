@@ -922,6 +922,33 @@
       "fix_attempts": 0,
       "resolution": "already-resolved",
       "note": "ScalePanel component already exists on dev with Price Range, Number of Orders, Distribution, and Order Preview. Explore agent false positive — likely observed stale staging (issue #98 Vercel deploy failures)."
+    },
+    {
+      "id": "issue-113",
+      "github_issue_number": 113,
+      "title": "[P3] TWAP order type missing TWAP-specific fields — form identical to Limit after type selection",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E272",
+      "created_date": "2026-03-27",
+      "labels": [
+        "bug"
+      ],
+      "url": "https://github.com/chainupcloud/dex-ui/issues/113"
+    },
+    {
+      "id": "issue-114",
+      "github_issue_number": 114,
+      "title": "[P4] Size slider (Order size %) — keyboard arrow keys have no effect on slider value",
+      "status": "open",
+      "priority": "P4",
+      "scenario_id": "E245",
+      "created_date": "2026-03-27",
+      "labels": [
+        "bug",
+        "accessibility"
+      ],
+      "url": "https://github.com/chainupcloud/dex-ui/issues/114"
     }
   ],
   "last_updated": "2026-03-27",

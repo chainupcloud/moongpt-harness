@@ -2892,11 +2892,11 @@
       "priority": 3,
       "title": "Leverage slider — verify aria-label and keyboard navigation",
       "description": "The leverage range input has no aria-label. Test keyboard navigation (arrow keys) on the leverage slider and verify screen reader announces current value.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — leverage slider missing aria-label (null), keyboard nav works; size slider unresponsive to keyboard/mouse"
+      "result_summary": "FAIL — size slider aria-label present, but keyboard ArrowRight/Left keys have no effect on value → Issue #114"
     },
     {
       "id": "E246",
@@ -3217,9 +3217,11 @@
       "priority": 3,
       "title": "TWAP order submission — end-to-end with valid inputs",
       "description": "Fill TWAP order form: set amount, duration, and price limit. Confirm wallet not connected shows connect prompt or error. Do not actually submit on testnet.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — TWAP selected from Order Type dropdown but no TWAP-specific fields shown; form identical to Limit → Issue #113"
     },
     {
       "id": "E273",
@@ -3238,9 +3240,11 @@
       "title": "TWAP 订单类型：字段显示和提交验证",
       "description": "在交易表单中选择 TWAP 订单类型，验证是否出现 TWAP 特有字段（时间段、子订单数量等），及提交前表单验证行为",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — same root cause as E272; TWAP form only shows Price/Amount, no Duration/Interval/sub-order fields → Issue #113"
     },
     {
       "id": "E275",
@@ -4772,9 +4776,11 @@
       "priority": 2,
       "title": "Scale order — verify price range fields and order count input are functional",
       "description": "After fixing E269: select Scale order type, confirm min/max price and number-of-orders fields appear and accept input. Submit a scale order and verify multiple orders created in order book.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Scale order accessible via Order Type dropdown; shows Start/End price range + Number of Orders presets"
     },
     {
       "id": "E421",
@@ -4812,6 +4818,56 @@
       "priority": 3,
       "title": "Session key — trade form accessibility with and without Enable Trading",
       "description": "E419 showed that with session cookie injected, Enable Trading btn=false and trade form=false. Verify whether wallet connection + Enable Trading unlocks the order form. Test the full Enable Trading flow.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E425",
+      "area": "trade-form",
+      "priority": 2,
+      "title": "TWAP order — verify TwapOrderForm component renders after type selection",
+      "description": "After E272/E274 FAIL: check if TwapOrderForm.tsx is actually mounted when TWAP selected. Inspect DOM for twap-form class or data attributes. Verify component renders with duration and interval inputs.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E426",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Scale order — fill Start/End price and Number of Orders, verify order preview",
+      "description": "After E420 PASS baseline: fill Scale form with Start=95000 USDC End=100000 USDC, select 5 orders. Check if order preview or breakdown appears showing individual order prices.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E427",
+      "area": "accessibility",
+      "priority": 4,
+      "title": "Size slider — mouse drag interaction and value display update",
+      "description": "After E245 FAIL on keyboard: test if size slider responds to mouse drag. Verify the percentage display updates when slider is moved via mouse. Check if React synthetic events are properly wired.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E428",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Order Type dropdown — list all available options and verify each switches form UI",
+      "description": "Open Order Type dropdown and enumerate all order types (Limit, Market, Stop, Scale, TWAP, etc.). Click each and verify the form UI changes appropriately. Catalog which types show distinct form fields.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E429",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Scale order Distribution selector — Uniform vs Geometric distribution effects",
+      "description": "Select Scale order type. Test the Distribution selector (Uni = Uniform visible in E420 test). Switch between distribution types if available and verify price allocation changes in Start/End range.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
