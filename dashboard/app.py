@@ -19,11 +19,10 @@ HARNESS_DIR = BASE.parent     # repo root
 
 # Log file mapping: agent name → log filename (without .log)
 LOG_MAP = {
-    'explore':   'scheduler',     # explore runs via run-scheduler.sh
+    'explore':   'explore-loop',  # explore runs via run-loop.sh continuous loop
     'plan':      'plan-agent',
     'fix':       'fix-agent',
     'master':    'master-agent',
-    'scheduler': 'scheduler',
 }
 
 
@@ -43,7 +42,7 @@ def parse_crontab_schedules():
         if not m:
             continue
         expr, cmd = m.group(1), m.group(2)
-        if 'run-scheduler.sh' in cmd:
+        if 'run-loop.sh' in cmd or 'run-scheduler.sh' in cmd:
             schedules['explore'] = expr
         elif 'run-agent.sh fix' in cmd:
             schedules['fix'] = expr
@@ -425,7 +424,7 @@ def parse_log_times(agent: str):
 
 def is_agent_running(agent: str) -> bool:
     patterns = {
-        'explore': 'run-scheduler.sh',
+        'explore': 'run-loop.sh',
         'plan':    'run-agent.sh plan',
         'fix':     'run-agent.sh fix',
         'master':  'run-agent.sh master',
@@ -496,7 +495,11 @@ def api_agents():
         last_start, last_end, status = parse_log_times(name)
         running = is_agent_running(name)
         cron_expr = schedules.get(name, '')
-        nxt_label, pct = next_run_info(cron_expr)
+        # explore runs as a continuous loop, not on a fixed schedule
+        if name == 'explore':
+            nxt_label, pct = ('持续运行', 100) if running else ('等待 watchdog', 0)
+        else:
+            nxt_label, pct = next_run_info(cron_expr)
 
         duration = None
         if last_start and last_end and last_end >= last_start:
@@ -511,7 +514,7 @@ def api_agents():
             'last_duration': duration,
             'next_run': nxt_label,
             'next_run_pct': pct,
-            'schedule_label': cron_label(cron_expr),
+            'schedule_label': '持续循环 (watchdog 5m)' if name == 'explore' else cron_label(cron_expr),
             'cron': cron_expr,
         })
     return jsonify(result)
