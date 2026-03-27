@@ -1330,11 +1330,11 @@
       "priority": 3,
       "title": "移动端竖屏（390×844）Trade 页面标签栏可访问性",
       "description": "竖屏手机 viewport（390×844）访问 /trade，检查底部标签栏（Positions/Orders/Order History/Trades）是否完整可见或支持水平滚动且有提示",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — 4 tabs clipped on portrait 390x844, issue #73"
+      "result_summary": "PASS — 移动端竖屏 390×844 无水平溢出，底部导航正常 (3 bottom items)"
     },
     {
       "id": "E116",
@@ -1568,11 +1568,11 @@
       "priority": 3,
       "title": "Trade form inputs accessibility — verify labels/aria-labels present",
       "description": "Check that price/size/leverage inputs in trade form have meaningful placeholder or aria-label, not just '0' or '0.00'. Screen reader accessibility check.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — 5 inputs lack accessible names: price(0.00), 3x amount(0), range slider — no aria-label/label"
+      "result_summary": "FAIL — 4 inputs missing accessible labels (3 checkboxes + Coins text input)"
     },
     {
       "id": "E136",
@@ -1891,11 +1891,11 @@
       "priority": 3,
       "title": "Explorer 搜索框功能 — 输入钱包地址或 tx hash 查询",
       "description": "在 /explorer 页面使用搜索框输入已知钱包地址（测试钱包），验证搜索结果正确显示该地址的交易历史",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — Explorer search routes wallet address to /explorer/tx/ instead of address view; Issue #85"
+      "result_summary": "PASS — Explorer 搜索框存在，钱包地址跳转 /explorer/address/{addr}"
     },
     {
       "id": "E163",
@@ -2028,9 +2028,11 @@
       "title": "/explorer search — 搜索 tx hash 返回正确交易详情",
       "description": "在 /explorer 搜索框输入已知 tx hash（从列表取一个），验证搜索后跳转到正确的交易详情页，显示 type/sender/status 等字段。",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — tx hash 搜索正常，Transaction Details 页展示完整信息"
     },
     {
       "id": "E174",
@@ -3398,6 +3400,56 @@
       "title": "Stop Market 订单 — 仅显示 trigger price（无 limit price）",
       "description": "切换 Order Type 到 Stop Market，验证只显示 trigger price 输入框（没有 limit price），与 Stop Limit 的双价格输入区分。执行 Buy/Sell 按钮应 enable。",
       "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E303",
+      "area": "explorer",
+      "priority": 3,
+      "title": "/explorer/address/{addr} — 钱包地址详情页数据展示验证",
+      "description": "搜索真实测试钱包地址后，/explorer/address/ 页面应展示该地址的历史订单/交易列表；验证数据加载、分页、空态提示",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E304",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade form checkbox 控件 — TP/SL 开关实际功能验证",
+      "description": "Trade 表单中 3 个无标签 checkbox 的实际用途（疑似 TP/SL 开关）；点击后 form 是否出现对应输入字段，确认功能是否正常",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E305",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade form — Coins... 搜索输入过滤市场列表功能",
+      "description": "输入 'BTC'、'ETH' 等关键词到 Coins 搜索框，验证市场列表是否实时过滤；输入无效字符是否显示 no results 状态",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E306",
+      "area": "explorer",
+      "priority": 3,
+      "title": "/explorer 搜索无效格式输入 — 错误处理和用户提示",
+      "description": "搜索随机字符串（非 address/hash 格式）时，页面应显示友好错误提示而非空白页或 JS 崩溃",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E307",
+      "area": "mobile",
+      "priority": 3,
+      "title": "移动端竖屏 — Explorer 页面搜索框可用性验证",
+      "description": "在 390×844 视口下访问 /explorer，验证搜索框可见且可点击输入；搜索结果列表在移动端正常滚动不溢出",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
