@@ -171,6 +171,24 @@
       "labels": [
         "bug"
       ]
+    },
+    {
+      "id": "issue-2026-03-27-dex-sui-26",
+      "title": "[P2] /dex-api/info 500 — column dex_perpetuals.owner_address does not exist — 交易页完全卡在骨架屏",
+      "github_issue_number": 26,
+      "github_repo": "chainupcloud/dex-sui",
+      "status": "open",
+      "priority": "P2",
+      "created_date": "2026-03-27",
+      "scenarios": [
+        "E041",
+        "E042",
+        "E046"
+      ],
+      "labels": [
+        "bug",
+        "backend"
+      ]
     }
   ],
   "last_updated": "2026-03-27"

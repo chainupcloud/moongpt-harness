@@ -394,9 +394,11 @@
       "priority": 2,
       "title": "Market 订单余额不足 → 点击 Buy 后 toast 和按钮状态",
       "description": "修复 #26 后验证：Available Funds 为 0 时，Buy/Long 按钮 disabled 或点击后显示明确的 insufficient balance 错误",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — Trade page stuck in skeleton state; /dex-api/info returns 500 (dex-sui#26)"
     },
     {
       "id": "E042",
@@ -404,9 +406,11 @@
       "priority": 2,
       "title": "Price 字段非法字符过滤验证（修复后）",
       "description": "修复 #27 后验证：price/size 输入 'abc'、'-100' 等非法值被即时过滤，字段仅显示合法数字",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — Trade page stuck in skeleton state; /dex-api/info returns 500 (dex-sui#26)"
     },
     {
       "id": "E043",
@@ -444,10 +448,12 @@
       "priority": 2,
       "title": "Portfolio Positions tab — connected wallet shows Entry Price / Size / PnL",
       "description": "Connect wallet via real EIP-6963 provider injection, navigate to Portfolio > Positions tab, verify each open position row shows Entry Price, Position Size, Unrealized PnL columns with correct numeric values",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — Portfolio shows only nav; /dex-api/info 500 prevents content load"
     },
     {
       "id": "E047",
@@ -490,10 +496,12 @@
       "priority": 2,
       "title": "Spot page (/spot) loads and shows spot trading interface",
       "description": "Recent git changes include app/spot/layout.tsx and app/spot/page.tsx. Navigate to /spot, verify the page loads without error and shows a spot trading form or market data (not a 404 or blank page)",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Spot page loads at /spot, shows 'Spot Trading Coming Soon' message"
     },
     {
       "id": "E051",
@@ -592,6 +600,57 @@
       "title": "钱包已连接后多标签页共享验证 — 第二个标签不重复弹签名",
       "description": "注入 session/agentApproval 后打开第二个标签，验证 tab2 不会再次弹出 approveAgent 签名请求（利用已有 localStorage session key）",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E061",
+      "area": "backend-api",
+      "priority": 2,
+      "title": "/dex-api/info 恢复后 trade 页骨架屏是否消失（回归验证）",
+      "description": "在 dex-sui#26 修复后，访问 /trade 页面确认骨架屏能在 10s 内消失，并正确显示市场数据、交易表单",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E062",
+      "area": "backend-api",
+      "priority": 2,
+      "title": "markets 页 BTC 价格在 API 修复后是否恢复正常（回归验证）",
+      "description": "在 dex-sui#26 修复后，访问 /markets 确认 BTC 价格不再是 $0，与实际市价一致（见 dex-ui#28）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E063",
+      "area": "spot",
+      "priority": 3,
+      "title": "Spot 页面 'Trade Perpetuals' 按钮点击是否跳转到 /trade",
+      "description": "spot 页显示 'Spot Trading Coming Soon'，点击 'Trade Perpetuals' 按钮应跳转到 /trade；验证链接有效",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E064",
+      "area": "portfolio",
+      "priority": 2,
+      "title": "Portfolio 页面连接钱包后 Positions/Orders/History tabs 显示正确数据",
+      "description": "在 API 修复后，使用测试钱包连接后访问 portfolio，验证 Positions tab 显示 Entry Price、Size、PnL；Orders tab 显示历史订单",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E065",
+      "area": "api-health",
+      "priority": 1,
+      "title": "dex-api/info 健康检查 — type=meta 返回 200 及合约列表",
+      "description": "直接调用 POST /dex-api/info {type:meta}，验证返回 HTTP 200 且包含 BTC-USDC 合约信息，作为前置条件检查",
+      "status": "pending",
+      "track": "backend",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
     }
