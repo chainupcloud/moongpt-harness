@@ -2892,9 +2892,11 @@
       "priority": 3,
       "title": "Leverage slider — verify aria-label and keyboard navigation",
       "description": "The leverage range input has no aria-label. Test keyboard navigation (arrow keys) on the leverage slider and verify screen reader announces current value.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — leverage slider missing aria-label (null), keyboard nav works; size slider unresponsive to keyboard/mouse"
     },
     {
       "id": "E246",
@@ -2902,9 +2904,11 @@
       "priority": 3,
       "title": "Open Orders tab — place and cancel order with connected wallet",
       "description": "With real wallet session key approved, place a limit BTC-USDC buy at $1 (far below market), verify it appears in Open Orders(N), then cancel and verify count resets.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Open Orders tab clickable, shows \"No open orders\" empty state; full order place/cancel SKIP (no wallet)"
     },
     {
       "id": "E247",
@@ -2925,9 +2929,11 @@
       "priority": 3,
       "title": "Trade form: Buy/Long button state without wallet — inline prompt vs modal",
       "description": "Click Buy/Long button without wallet connected. Verify inline 'Connect Wallet' prompt appears in form (not a blocking modal). Test that the prompt provides clear CTA to connect.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — clicking Buy/Long without wallet shows \"Please connect wallet\" inline prompt"
     },
     {
       "id": "E249",
@@ -4428,9 +4434,11 @@
       "priority": 2,
       "title": "Spot page — verify page loads after fix for /spot 404 regression",
       "description": "After fix for Issue #107, verify /spot page renders spot trading interface without 404",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /spot loads OK with \"Spot Trading Coming Soon\" placeholder, HTTP 200"
     },
     {
       "id": "E391",
@@ -4468,6 +4476,56 @@
       "priority": 3,
       "title": "Spot page — market selector shows only spot pairs (not perp/futures)",
       "description": "Once /spot is fixed, verify the market selector lists spot pairs (e.g., BTC/USDC spot) distinct from perp markets",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E395",
+      "area": "Accessibility",
+      "priority": 3,
+      "title": "Order size percentage slider — verify keyboard navigation (ArrowRight changes value)",
+      "description": "The order size slider (aria-label='Order size percentage') doesn't change value via keyboard ArrowRight or mouse drag. Verify if this is by design (requires wallet funds) or a keyboard interaction bug.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E396",
+      "area": "Leverage",
+      "priority": 3,
+      "title": "Leverage slider — verify aria-valuenow updates as value changes",
+      "description": "After fixing aria-label (#108), verify leverage slider also has aria-valuenow/aria-valuemin/aria-valuemax attributes that update correctly as slider moves.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E397",
+      "area": "Spot",
+      "priority": 3,
+      "title": "Spot page — verify 'Trade Perpetuals' CTA button navigates to /trade",
+      "description": "The /spot page shows 'Spot Trading Coming Soon' with a 'Trade Perpetuals' button. Verify the button navigates correctly to the /trade page.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E398",
+      "area": "Trade Form",
+      "priority": 3,
+      "title": "Open Orders tab — place limit order and verify it appears in tab with cancel button",
+      "description": "With wallet connected and funds, place a limit order below market price. Verify it appears in Open Orders tab with correct price/size and a cancel button that works.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E399",
+      "area": "Trade Form",
+      "priority": 4,
+      "title": "Leverage setting persists after page reload",
+      "description": "Set leverage to 5x, reload the page, verify that the leverage remains at 5x (or resets to a documented default). Check if leverage is stored in localStorage/sessionStorage.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"

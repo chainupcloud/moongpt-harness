@@ -1,5 +1,5 @@
 {
-  "last_test_run": "2026-03-27T18:20:00Z",
+  "last_test_run": "2026-03-27T20:05:00Z",
   "last_coverage_run": "2026-03-27T00:01:33Z",
   "issues": [
     {
@@ -864,6 +864,17 @@
       "scenario": "E241",
       "created": "2026-03-27",
       "fix_attempts": 0
+    },
+    {
+      "github_number": 108,
+      "title": "[P4] Leverage slider missing aria-label — keyboard-accessible but screen-reader unfriendly",
+      "priority": "P4",
+      "status": "open",
+      "scenario_id": "E245",
+      "created_at": "2026-03-27",
+      "labels": [
+        "enhancement"
+      ]
     }
   ],
   "last_updated": "2026-03-27",
