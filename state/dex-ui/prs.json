@@ -312,6 +312,14 @@
       ],
       "status": "open",
       "title": "fix: trade form Buy/Long button validation feedback for size=0 (#53)"
+    },
+    {
+      "pr_number": 61,
+      "issue_numbers": [
+        57
+      ],
+      "status": "open",
+      "title": "fix: /markets 价格列显示 $0 — midPx 回退链补全 markPx/oraclePx (#57)"
     }
   ]
 }

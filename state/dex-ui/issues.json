@@ -382,15 +382,17 @@
     {
       "id": "issue-2026-03-27-E160",
       "github_issue_number": 57,
+      "github_number": 57,
       "title": "[P3] /markets 价格列显示 $0 且 24h 涨跌显示 +0.00% — 价格历史数据源异常",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "labels": [
         "bug"
       ],
       "scenario_id": "E160",
       "created_date": "2026-03-27",
-      "fix_attempts": 0
+      "fix_attempts": 1,
+      "pr_number": 61
     },
     {
       "id": "issue-58",
