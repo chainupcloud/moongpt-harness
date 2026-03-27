@@ -2700,11 +2700,11 @@
       "priority": 3,
       "title": "Explorer tx detail page — transaction data correctness",
       "description": "After searching wallet address and landing on /explorer/tx/{addr}, verify transaction rows show correct amount, date, and status. Check pagination if >10 records.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "Reset to pending: issue #101 fixed (PR #103 merged, commit 5933da2). EVM address now shows friendly error. Re-run to verify fix."
+      "result_summary": "PASS — Explorer tx detail renders hash, action, user addr, checkpoint, time correctly"
     },
     {
       "id": "E230",
@@ -2796,9 +2796,11 @@
       "priority": 3,
       "title": "Connect Wallet button in order form — verify opens wallet modal",
       "description": "When wallet is not connected, the order form shows 'Connect Wallet' button. Verify clicking it opens the wallet connection modal (not silent fail per issue #72).",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Connect Wallet button in order form opens WalletConnect v3 modal (W3M shadow DOM)"
     },
     {
       "id": "E238",
@@ -2830,9 +2832,11 @@
       "priority": 3,
       "title": "Trade form — % buttons fill size based on available balance when wallet connected",
       "description": "Connect wallet with USDC balance, verify 25%/50%/75%/100% buttons on Buy/Long and Sell/Short correctly calculate and fill the size input field.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — % buttons exist (25/50/75/100) but wallet connection required to verify fill behavior"
     },
     {
       "id": "E241",
@@ -4314,9 +4318,11 @@
       "priority": 2,
       "title": "TWAP order — verify Interval input accepts custom value and sub-orders execute",
       "description": "After fixing TWAP field labels (Issue #104), verify user can set a custom interval (e.g. 10m), set parts (e.g. 5), and the order summary shows '5 orders × 10m = 50m duration'.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — TWAP Interval/Parts inputs not visible without wallet; existing issue #104 covers labels"
     },
     {
       "id": "E381",
@@ -4354,6 +4360,56 @@
       "priority": 3,
       "title": "TWAP vs Limit — order form state preserved when switching order types",
       "description": "Enter a price and size in Limit form, switch to TWAP, then switch back to Limit. Verify price/size values are preserved (not reset to 0).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E385",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — filter transactions by type (oracle updates vs user trades)",
+      "description": "On Explorer page, verify if there is a filter for tx type. Oracle price update txs dominate; user should be able to filter to see only trade-related txs.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E386",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — search transaction by hash",
+      "description": "Verify the Explorer search bar accepts a tx hash and navigates to that transaction's detail page correctly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E387",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade form — Connect Wallet modal shows expected wallet options (MetaMask, WalletConnect etc)",
+      "description": "After clicking Connect Wallet and opening the W3M modal, verify that wallet options are rendered inside the shadow DOM (MetaMask, WalletConnect, Coinbase, etc).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E388",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade form — % size buttons (25/50/75/100) with connected wallet fill correct amounts",
+      "description": "With wallet fully connected and balance available, click 25%/50% etc buttons and verify the Size input is filled with proportional amount of available USDC balance. Requires a connected wallet with funded testnet account.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E389",
+      "area": "trade",
+      "priority": 2,
+      "title": "TWAP form — Interval and Parts inputs visible and accept numeric input when wallet connected",
+      "description": "Connect wallet and switch order type to TWAP. Verify that Interval and Parts-specific form fields appear and accept numeric values. Relates to issue #104 (missing labels). This verifies the fields exist and work even if labels are missing.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
