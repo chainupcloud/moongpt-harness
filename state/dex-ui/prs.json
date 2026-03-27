@@ -273,8 +273,12 @@
       "issue_numbers": [
         47
       ],
-      "status": "open",
-      "title": "fix: preserve size when switching order types (#47)"
+      "status": "merged",
+      "title": "fix: preserve size when switching order types (#47)",
+      "commit_sha": "292bb53f46e1c8ae5d6ab4b58711c6a1be3617d9",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
     },
     {
       "pr_number": 52,

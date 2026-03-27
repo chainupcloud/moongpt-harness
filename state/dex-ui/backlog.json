@@ -474,11 +474,11 @@
       "priority": 3,
       "title": "订单类型切换保持 price/size 字段值不被清空",
       "description": "在 Limit 模式填入 price=70000, size=0.1，切换到 Market 再切回 Limit，验证 price/size 值保留或合理重置",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — price/size both cleared when switching Limit→Market→Limit (issue #47)"
+      "result_summary": ""
     },
     {
       "id": "E046",
