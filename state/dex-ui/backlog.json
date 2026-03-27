@@ -2772,11 +2772,11 @@
       "priority": 3,
       "title": "'More' nav dropdown — verify all links are functional",
       "description": "Click the 'More' nav item and verify the dropdown opens with functional links (no 404, no broken routes).",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — More nav dropdown button clicks but no dropdown content appears → issue #102"
+      "result_summary": "Reset to pending after fix merged (PR #105)"
     },
     {
       "id": "E236",

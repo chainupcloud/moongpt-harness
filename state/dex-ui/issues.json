@@ -825,7 +825,7 @@
       "github_issue_number": 102,
       "github_number": 102,
       "title": "[P3] Nav \"More\" dropdown — clicking button shows no content (chevron present but no menu appears)",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E235",
       "created_date": "2026-03-27",
@@ -834,7 +834,10 @@
         "bug"
       ],
       "fix_attempts": 1,
-      "pr_number": 105
+      "pr_number": 105,
+      "closed_at": "2026-03-27",
+      "accepted": true,
+      "deployed_sha": "b62dc339844b25785f427415a6217c631a64b24e"
     },
     {
       "id": "dex-ui-104",

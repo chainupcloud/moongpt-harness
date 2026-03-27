@@ -590,10 +590,15 @@
         102
       ],
       "title": "fix: nav More dropdown missing a11y attrs (#102)",
-      "status": "open",
+      "status": "merged",
       "base": "dev",
       "head": "fix/issue-102",
-      "created_at": "2026-03-27"
+      "created_at": "2026-03-27",
+      "commit_sha": "b62dc339844b25785f427415a6217c631a64b24e",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy READY (dpl_EKP35JDCrRrMEVNXaRyr5aRTbFoF). SHA verified. More button aria-haspopup+aria-expanded present and functional."
     },
     {
       "pr_number": 106,
