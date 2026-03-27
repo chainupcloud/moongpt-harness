@@ -680,12 +680,16 @@
     "number": 55,
     "github_number": 55,
     "title": "[P3] /markets page shows BTC-USDC price as $0 — while /trade displays correct mark price ~$66,821",
-    "status": "fixing",
+    "status": "closed",
     "priority": "P3",
     "scenario": "E088",
     "created": "2026-03-27",
+    "closed_at": "2026-03-27",
     "url": "https://github.com/chainupcloud/dex-ui/issues/55",
     "fix_attempts": 1,
-    "pr_number": 87
+    "pr_number": 87,
+    "deployed_sha": "c7b87eb1821367db74f38436222b9eedac1ba46f",
+    "accepted": true,
+    "note": "PR #87 merged + deployed (dpl_6ury4uKvkReSfLmn6H1bBKabvGfy). /markets shows $66,821.1. Acceptance passed."
   }
 }
