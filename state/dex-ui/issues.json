@@ -309,13 +309,15 @@
     },
     {
       "id": 47,
+      "github_number": 47,
       "title": "[P3] Trade form price/size values cleared when switching order types (Limit→Market→Limit)",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario_id": "E045",
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/47",
       "created_date": "2026-03-27",
-      "fix_attempts": 0
+      "fix_attempts": 1,
+      "pr_number": 50
     },
     {
       "id": "issue-2026-03-27-dex-ui-49",

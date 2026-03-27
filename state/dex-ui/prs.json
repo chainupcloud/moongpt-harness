@@ -262,6 +262,14 @@
       ],
       "status": "open",
       "title": "fix: 移动端横屏底部标签栏 Order History 按钮溢出视口 (#41)"
+    },
+    {
+      "pr_number": 50,
+      "issue_numbers": [
+        47
+      ],
+      "status": "open",
+      "title": "fix: preserve size when switching order types (#47)"
     }
   ]
 }
