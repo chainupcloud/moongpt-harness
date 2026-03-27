@@ -3387,9 +3387,11 @@
       "priority": 3,
       "title": "价格数据恢复后 stale 提示是否自动消失",
       "description": "断网后触发 stale 提示，再恢复网络，验证 UI 自动取消过期提示并恢复正常数据展示",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — CDP offline simulation did not trigger stale indicators; app data appears cached/SSR"
     },
     {
       "id": "E287",
@@ -3419,9 +3421,11 @@
       "priority": 3,
       "title": "Explorer 搜索框 — checkpoint 数字正确路由到 checkpoint 详情",
       "description": "在搜索框输入 checkpoint 数字（如 104830）验证路由和数据",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Checkpoint number search routes correctly to /explorer/checkpoint/{num} with data"
     },
     {
       "id": "E290",
@@ -3429,9 +3433,11 @@
       "priority": 3,
       "title": "Explorer /explorer/address/{addr} 路由 — 直接访问地址详情页",
       "description": "直接访问 /explorer/address/{wallet} 验证是否支持地址视图路由",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /explorer/address/{addr} route works, shows full address activity with txns"
     },
     {
       "id": "E291",
@@ -5060,9 +5066,11 @@
       "priority": 2,
       "title": "Stop Market order — trigger price label vs limit price label UX clarity",
       "description": "When Stop Market is selected, verify the price input has a 'Trigger Price' label distinct from the 'Limit Price' label on Limit orders. Checks that users can distinguish the field purpose from context/placeholder.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Stop Market shows \"Stop Price\" label (distinct from Limit \"Price\"); no \"Trigger Price\" used"
     },
     {
       "id": "E446",
@@ -5100,6 +5108,56 @@
       "priority": 4,
       "title": "Explorer search — invalid input shows error or no-results state",
       "description": "Enter a random string (not a valid hash/address/checkpoint) in Explorer search and verify the page shows a helpful 'not found' or 'invalid' message rather than blank page or silent failure.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E450",
+      "area": "trade",
+      "priority": 2,
+      "title": "Stop Limit order — verify both Trigger Price and Limit Price fields visible",
+      "description": "Select Stop Limit order type and confirm two separate price inputs exist: one for trigger/stop price and one for the limit price. Verify labels are distinct and clear.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E451",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint detail — Time field shows valid timestamp or '--'",
+      "description": "On checkpoint detail page (e.g., /explorer/checkpoint/104830), verify Time field shows a readable timestamp or '--' if unavailable. Previous test found Time='-' which may be a data issue.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E452",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address search — search box accepts Ethereum address and routes to address detail",
+      "description": "In explorer search box, input an Ethereum-format address (0x...) and verify it routes to /explorer/address/{addr}. Complements E290 (direct URL) by testing search-driven navigation.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E453",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Market order — price input accepts numeric entry and reflects in order preview",
+      "description": "After selecting Stop Market, enter a stop price value and verify it persists in the input, and the order summary/preview reflects the entered stop price correctly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E454",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — /explorer/tx/{digest} direct route loads transaction info",
+      "description": "Navigate directly to /explorer/tx/{a known tx digest} and verify transaction details page loads with type, account, time and summary fields.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
