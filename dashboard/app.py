@@ -341,7 +341,7 @@ function renderIssues(issues) {
   if (!issues.length) { document.getElementById('issues-wrap').innerHTML = '<p class="none-tip">暂无 issue</p>'; return; }
   const rows = issues.map(i => `
     <tr>
-      <td><a href="${issueUrl(i)}" target="_blank">#${i.github_number}</a></td>
+      <td>${i.github_number != null ? `<a href="${issueUrl(i)}" target="_blank">#${i.github_number}</a>` : '—'}</td>
       <td>${esc(i.title)}</td>
       <td>${badge(i.priority.toLowerCase(), i.priority)}</td>
       <td>${badge(i.status, i.status)}</td>
