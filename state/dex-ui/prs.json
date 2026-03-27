@@ -260,8 +260,13 @@
       "issue_numbers": [
         41
       ],
-      "status": "open",
-      "title": "fix: 移动端横屏底部标签栏 Order History 按钮溢出视口 (#41)"
+      "status": "merged",
+      "title": "fix: constrain AccountPanel width to prevent tab overflow in landscape mobile (#41) (#48)",
+      "commit_sha": "07e21780f0ca42e8bec02d13ffaf4e6cf7156062",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": false,
+      "note": "Acceptance FAILED: Order History button right=909 > 812px. Issue #41 → needs-human."
     },
     {
       "pr_number": 50,
@@ -270,6 +275,14 @@
       ],
       "status": "open",
       "title": "fix: preserve size when switching order types (#47)"
+    },
+    {
+      "pr_number": 52,
+      "issue_numbers": [
+        51
+      ],
+      "status": "open",
+      "title": "fix: /trade shows error message instead of infinite skeleton when API 500 (#51)"
     }
   ]
 }
