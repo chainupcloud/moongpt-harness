@@ -30,6 +30,28 @@ esac
 # smoke is an alias for test (uses test-agent.md)
 [ "$AGENT" = "smoke" ] && AGENT="test"
 
+# ── Task-level locks (per resource, not per agent) ────────────────────────────
+# fix and explore can run in parallel (different state files).
+# Two fix-agents or two master-agents can't operate on the same resource.
+LOCK_DIR="$HARNESS_DIR/state/$PROJECT"
+mkdir -p "$LOCK_DIR"
+case "$AGENT" in
+  fix)     LOCK_FILE="$LOCK_DIR/issues.json.lock" ;;
+  master)  LOCK_FILE="$LOCK_DIR/prs.json.lock" ;;
+  explore) LOCK_FILE="$LOCK_DIR/backlog.json.lock" ;;
+  plan)    LOCK_FILE="$LOCK_DIR/backlog.json.lock" ;;
+  *)       LOCK_FILE="" ;;
+esac
+
+if [ -n "$LOCK_FILE" ]; then
+  exec 200>"$LOCK_FILE"
+  flock --nonblock 200 || {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $AGENT: task lock busy ($LOCK_FILE) — another $AGENT is running on same resource, skipping."
+    exit 0
+  }
+fi
+# ─────────────────────────────────────────────────────────────────────────────
+
 # 各 Agent 使用的模型
 case "$AGENT" in
   test)    MODEL="claude-sonnet-4-6" ;;
