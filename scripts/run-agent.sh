@@ -207,7 +207,9 @@ MODEL_FLAG=""
 [ -n "$MODEL" ] && MODEL_FLAG="--model $MODEL"
 
 # master needs more turns for Vercel deployment polling + Playwright acceptance
+# fix needs more turns for codebase analysis + implementation
 MAX_TURNS=40
+[ "$AGENT" = "fix" ]    && MAX_TURNS=60
 [ "$AGENT" = "master" ] && MAX_TURNS=80
 
 $CLAUDE \
