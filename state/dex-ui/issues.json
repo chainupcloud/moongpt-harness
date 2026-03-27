@@ -1,5 +1,5 @@
 {
-  "last_test_run": "2026-03-27T10:00:00Z",
+  "last_test_run": "2026-03-27T11:40:00Z",
   "last_coverage_run": "2026-03-27T00:01:33Z",
   "issues": [
     {
@@ -265,6 +265,17 @@
       "created": "2026-03-27",
       "scenario": "E022",
       "fix_attempts": 0
+    },
+    {
+      "github_number": 41,
+      "title": "[P3] 移动端横屏（812×375）底部标签栏 Order History 按钮溢出视口",
+      "priority": "P3",
+      "status": "open",
+      "created_at": "2026-03-27",
+      "scenario": "E015",
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-27"

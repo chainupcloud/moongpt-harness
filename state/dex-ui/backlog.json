@@ -148,7 +148,9 @@
       "priority": 3,
       "title": "手机端横屏（812×375）布局不溢出",
       "description": "横屏 viewport 访问 /trade，验证无横向滚动条，无元素超出视口",
-      "status": "pending"
+      "status": "failed",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Order History tab button overflows viewport (right=909, vw=812) in 812×375 landscape mode → Issue #41"
     },
     {
       "id": "E016",
@@ -236,7 +238,9 @@
       "priority": 3,
       "title": "Explorer 分页 — 点击 Next Page 加载新数据",
       "description": "Explorer 页面若有分页控件，点击下一页，验证数据变化（不是重复同一页）",
-      "status": "pending"
+      "status": "tested",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Explorer checkpoints pagination works: rows-per-page selector (10/20/50) functional, Next/Prev icon buttons navigate to different data correctly"
     },
     {
       "id": "E025",
@@ -1198,9 +1202,11 @@
       "priority": 2,
       "title": "Positions tab — 有持仓时 Close 按钮交互流程",
       "description": "使用测试钱包在 testnet 开一个小仓位（BTC-USDC long 0.001），然后在 Positions tab 验证：1) 持仓行可见；2) Close 按钮存在；3) 点击 Close 出现确认弹窗或直接平仓 toast。",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — no open positions in testnet wallet, cannot verify Close button flow"
     },
     {
       "id": "E113",
@@ -1208,9 +1214,11 @@
       "priority": 2,
       "title": "approveAgent API 格式排查 — 修复测试 harness 中 422 错误",
       "description": "排查 approveAgent API 调用 422 原因：对比 dex-ui 代码中实际的 approveAgent 请求格式（typed data vs personal_sign），修复 harness 中的签名方式，确保后续 E107/E106 可正确执行。",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — approveAgent uses EIP-712 typed data (domain chainId=421614, type HyperliquidTransaction:ApproveAgent); action includes signatureChainId=0x66eee. Harness fix: use signTypedData not personal_sign."
     },
     {
       "id": "E114",
@@ -1218,6 +1226,56 @@
       "priority": 3,
       "title": "Order 提交后 Open Orders 计数实时更新",
       "description": "成功提交一笔限价单后，验证 trade 页底部 'Open Orders(N)' tab 计数从 0 变为 1，且订单出现在列表中（含价格、数量、方向）。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E115",
+      "area": "mobile",
+      "priority": 3,
+      "title": "移动端竖屏（390×844）Trade 页面标签栏可访问性",
+      "description": "竖屏手机 viewport（390×844）访问 /trade，检查底部标签栏（Positions/Orders/Order History/Trades）是否完整可见或支持水平滚动且有提示",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E116",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade 页面 Trades 历史标签 — 数据加载与显示",
+      "description": "点击 Trades 标签，验证最近成交记录可加载（列表不为空，有时间/价格/数量等字段），非空状态下验证数据格式正确",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E117",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer 单个 Checkpoint 详情页 — 交易列表展示",
+      "description": "从 Explorer 点击一个 checkpoint 链接，验证详情页正常加载，交易列表有数据，hash/time/type 等字段可见",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E118",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer 搜索功能 — 按钱包地址搜索",
+      "description": "在 Explorer Search 框中输入测试钱包地址，验证能返回相关交易记录或提示无记录，不应报错或白屏",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E119",
+      "area": "trade",
+      "priority": 3,
+      "title": "Orders 标签 — Open Orders 与 Order History 数据差异验证",
+      "description": "未有未成交订单时，Open Orders 应为空并显示空状态提示；Order History 应有历史记录（如之前测试中的市价单）。验证两个标签状态符合预期",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
