@@ -1330,9 +1330,11 @@
       "priority": 3,
       "title": "移动端竖屏（390×844）Trade 页面标签栏可访问性",
       "description": "竖屏手机 viewport（390×844）访问 /trade，检查底部标签栏（Positions/Orders/Order History/Trades）是否完整可见或支持水平滚动且有提示",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — 4 tabs clipped on portrait 390x844, issue #73"
     },
     {
       "id": "E116",
@@ -1340,9 +1342,11 @@
       "priority": 3,
       "title": "Trade 页面 Trades 历史标签 — 数据加载与显示",
       "description": "点击 Trades 标签，验证最近成交记录可加载（列表不为空，有时间/价格/数量等字段），非空状态下验证数据格式正确",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — Testnet has no recent trades (dayNtlVlm=0.402), headers visible but 0 data rows"
     },
     {
       "id": "E117",
@@ -2335,9 +2339,11 @@
       "priority": 2,
       "title": "Order submission error toast — 钱包未连接时点击 Buy/Long 应显示「请先连接钱包」提示",
       "description": "验证在钱包未连接状态下点击 Buy/Long 按钮时，UI 是否正确显示钱包未连接提示（非静默失败）",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Buy/Long silent failure without wallet, regression, issue #72"
     },
     {
       "id": "E211",
@@ -2355,10 +2361,12 @@
       "priority": 2,
       "title": "24h 涨跌幅数据 API 验证 — 直接检查 /info 接口返回的 24h 价格变化字段",
       "description": "通过 dex-api 后端接口验证 24h 价格变化数据是否正确返回（而非依赖前端显示），确认 issue #63 的数据源问题",
-      "status": "pending",
+      "status": "tested",
       "track": "backend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — prevDayPx=0.0 confirmed as root cause of issue #63 (backend data missing)"
     },
     {
       "id": "E213",
@@ -2376,6 +2384,57 @@
       "priority": 3,
       "title": "Market 订单与 Limit 订单的 UI 切换 — 验证两种订单类型的表单字段差异正确渲染",
       "description": "切换 Order Type 在 Market 和 Limit 之间：Limit 显示 Price 输入框，Market 隐藏价格输入。验证 UI 状态随类型切换正确更新",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E215",
+      "area": "trading",
+      "priority": 2,
+      "title": "钱包连接后 Buy/Long 按钮状态变化 — 回归验证",
+      "description": "验证钱包连接后 Buy/Long 按钮是否正确启用，且点击后有 toast 反馈。专门验证 issue #72 修复后的回归测试。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E216",
+      "area": "market_data",
+      "priority": 2,
+      "title": "prevDayPx 更新机制 — 24h 价格历史是否随时间更新",
+      "description": "监测 /info API 中 prevDayPx 字段是否在不同时间点更新（当前为 0.0）。若持续为 0.0 说明后端未实现 24h 价格历史追踪。后端测试。",
+      "status": "pending",
+      "track": "backend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E217",
+      "area": "mobile",
+      "priority": 3,
+      "title": "移动端竖屏（390×844）标签栏滚动提示 UX 验证",
+      "description": "验证底部面板标签栏溢出时是否有可见的滚动指示器（渐变、箭头或 '>' 符号），并验证横向滑动是否正常工作。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E218",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade 页面 Trades 标签 — 实时公共成交流（WebSocket）",
+      "description": "验证 Trades 标签是否通过 WebSocket 接收实时市场成交数据。检查 WS 连接是否建立，以及是否在有新成交时更新。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E219",
+      "area": "trading",
+      "priority": 3,
+      "title": "Market 订单提交后 toast 反馈 — 与 Limit 订单对比",
+      "description": "验证 Market 订单提交是否也缺少 toast 反馈（issue #69 记录了 Limit 订单问题）。对比 Market 与 Limit 订单的用户反馈机制。",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"

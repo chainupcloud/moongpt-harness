@@ -490,6 +490,28 @@
       "scenario_id": "E127",
       "created_date": "2026-03-27",
       "fix_attempts": 0
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-72",
+      "github_issue_number": 72,
+      "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
+      "status": "open",
+      "priority": "P3",
+      "area": "trading",
+      "scenario_id": "E210",
+      "created_date": "2026-03-27",
+      "fix_attempts": 0
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-73",
+      "github_issue_number": 73,
+      "title": "[P3] 移动端竖屏（390×844）底部面板标签栏水平溢出 — 4 个标签不可见",
+      "status": "open",
+      "priority": "P3",
+      "area": "mobile",
+      "scenario_id": "E115",
+      "created_date": "2026-03-27",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-27",
