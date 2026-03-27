@@ -908,15 +908,20 @@
     },
     {
       "number": 112,
+      "github_number": 112,
       "title": "[P3] Scale order type missing scale-specific fields (price range / number of orders)",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "labels": [
         "bug"
       ],
       "scenario": "E269",
       "created": "2026-03-27",
-      "url": "https://github.com/chainupcloud/dex-ui/issues/112"
+      "closed_at": "2026-03-27",
+      "url": "https://github.com/chainupcloud/dex-ui/issues/112",
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "ScalePanel component already exists on dev with Price Range, Number of Orders, Distribution, and Order Preview. Explore agent false positive — likely observed stale staging (issue #98 Vercel deploy failures)."
     }
   ],
   "last_updated": "2026-03-27",
