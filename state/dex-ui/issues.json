@@ -1,5 +1,5 @@
 {
-  "last_test_run": "2026-03-27T12:30:00Z",
+  "last_test_run": "2026-03-27T00:00:00Z",
   "last_coverage_run": "2026-03-27T00:01:33Z",
   "issues": [
     {
@@ -674,6 +674,14 @@
       "created_date": "2026-03-27",
       "fix_attempts": 1,
       "pr_number": 91
+    },
+    {
+      "github_issue_number": 92,
+      "title": "[P3] /markets page BTC-USDC row click does not navigate to /trade?coin=BTC",
+      "priority": "P3",
+      "status": "open",
+      "scenario": "E194",
+      "created_at": "2026-03-27"
     }
   ],
   "last_updated": "2026-03-27",

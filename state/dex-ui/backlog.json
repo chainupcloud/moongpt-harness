@@ -2135,9 +2135,11 @@
       "priority": 3,
       "title": "/api-keys 已连接钱包 — 创建/删除 API Key 完整流程",
       "description": "连接钱包后访问 /api-keys，验证：1) 显示已有 key 列表或空态 2) 点击 Create/Add 按钮可生成新 key 3) 能复制 key 值 4) 能删除已有 key",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — wallet not connected in UI; /api-keys requires connected wallet to show controls"
     },
     {
       "id": "E183",
@@ -2179,9 +2181,11 @@
       "priority": 3,
       "title": "Explorer checkpoint detail content — timestamp and transaction data accuracy",
       "description": "After route fix, verify checkpoint detail page shows: correct timestamp (not 1970), actual tx count, user addresses. Test with recent checkpoint ID from /explorer listing.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — overlaps with open issue #90 (Explorer detail page bugs)"
     },
     {
       "id": "E187",
@@ -2213,9 +2217,11 @@
       "priority": 3,
       "title": "Order type switch state persistence — price/size fields retain values on Market→Limit switch",
       "description": "When user fills in size (e.g. 0.1 BTC) in Market order and switches to Limit, does size persist? When switching back, does price clear correctly? Tests the order type tab switching behavior.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — size value (0.005 BTC) preserved across Limit→Market→Limit switch; USD notional auto-calculated correctly"
     },
     {
       "id": "E190",
@@ -2247,9 +2253,11 @@
       "priority": 3,
       "title": "TP/SL 价格输入后提交 — 验证 TP/SL 参数是否包含在下单请求中",
       "description": "连接钱包后，设置 TP/SL 价格，查看下单时 API 请求体是否包含 take_profit / stop_loss 字段",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — TP/SL inputs not interactable without wallet connection in UI"
     },
     {
       "id": "E193",
@@ -2257,9 +2265,11 @@
       "priority": 3,
       "title": "Order type 切换 Market/Limit — 价格输入框是否相应显示/隐藏",
       "description": "当 Order Type 从 Limit 切换到 Market 时，Price 输入框应被隐藏或 disabled；从 Market 切回 Limit 时应重新显示",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — in Market mode price field hidden; in Limit mode price field shown correctly"
     },
     {
       "id": "E194",
@@ -2267,9 +2277,11 @@
       "priority": 3,
       "title": "/markets 页面行点击跳转 /trade?coin=BTC 验证",
       "description": "点击 BTC-USDC 行，验证页面跳转到 /trade?coin=BTC，且 trade 页面切换到 BTC-USDC 交易对",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — BTC-USDC row click on /markets does not navigate to /trade → Issue #92"
     },
     {
       "id": "E195",
@@ -3509,6 +3521,46 @@
       "priority": 4,
       "title": "Explorer 搜索框输入钱包地址 — 地址相关交易过滤",
       "description": "在 /explorer 搜索框输入测试钱包地址，验证是否展示该地址相关的 tx 记录，或给出合适的 not-found 提示",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E313",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets page — /trade?coin=X navigation via Trade button/link (workaround for row click bug)",
+      "description": "Since row click doesn't navigate (#92), check if there's a 'Trade' button or link per row that navigates to /trade?coin=BTC. Verify alternative navigation paths exist.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E314",
+      "area": "order-form",
+      "priority": 3,
+      "title": "Order type TWAP — basic UI render and input fields",
+      "description": "Select TWAP from Order Type dropdown. Verify TWAP-specific fields appear (duration, intervals, price limit). Check that standard size/quantity input is still present.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E315",
+      "area": "order-form",
+      "priority": 4,
+      "title": "GTC button — verify it's an order duration selector and shows FOK/IOC options",
+      "description": "The trade form shows a 'GTC' button. Click it and verify a dropdown with GTC/FOK/IOC options appears. Verify selecting FOK/IOC updates the label. This tests order time-in-force controls.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E316",
+      "area": "order-form",
+      "priority": 3,
+      "title": "Leverage slider — drag to verify max leverage changes order margin calculation",
+      "description": "On /trade page, the Cross/10x button area likely has a leverage selector. Verify: clicking shows leverage options (1x-20x), changing leverage updates margin/liquidation price shown in the form.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
