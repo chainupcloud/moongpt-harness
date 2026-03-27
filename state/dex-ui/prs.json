@@ -368,6 +368,15 @@
       "deployed": false,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 67,
+      "issue_numbers": [
+        63
+      ],
+      "status": "open",
+      "title": "fix: /trade 24h 涨跌显示 +0.00% — K 线回补 prevDayPx + WS 防覆盖 (#63)",
+      "note": "Merge conflicts (dirty). Vercel preview status failure. Needs rebase onto dev."
     }
   ]
 }
