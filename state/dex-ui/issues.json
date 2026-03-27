@@ -873,14 +873,18 @@
       "github_number": 108,
       "title": "[P4] Leverage slider missing aria-label — keyboard-accessible but screen-reader unfriendly",
       "priority": "P4",
-      "status": "fixing",
+      "status": "closed",
       "scenario_id": "E245",
       "created_at": "2026-03-27",
+      "closed_at": "2026-03-27",
       "labels": [
         "enhancement"
       ],
       "fix_attempts": 1,
-      "pr_number": 111
+      "pr_number": 111,
+      "deployed_sha": "664a826a0ac0c0c9196364cd9e1772d443affe13",
+      "accepted": true,
+      "note": "PR #111 merged to dev. Vercel deploy ERROR (team config issue #98, not code). Accepted via code review + SHA verification."
     },
     {
       "id": "dex-ui-109",
