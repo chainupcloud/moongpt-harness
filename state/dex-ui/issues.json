@@ -520,12 +520,13 @@
       "id": "issue-2026-03-27-dex-ui-73",
       "github_issue_number": 73,
       "title": "[P3] 移动端竖屏（390×844）底部面板标签栏水平溢出 — 4 个标签不可见",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "area": "mobile",
       "scenario_id": "E115",
       "created_date": "2026-03-27",
-      "fix_attempts": 0
+      "fix_attempts": 1,
+      "pr_number": 82
     },
     {
       "title": "[P3] /info API prevDayPx always returns 0.0 — 24h price change unavailable",

@@ -418,6 +418,15 @@
       "status": "open",
       "created_at": "2026-03-27",
       "title": "fix: Buy/Long 侧切换按钮未连接钱包时无反馈 — 添加连接提示 (#72)"
+    },
+    {
+      "pr_number": 82,
+      "issue_numbers": [
+        73
+      ],
+      "status": "open",
+      "created_at": "2026-03-27",
+      "title": "fix: 移动端底部标签栏添加滚动渐变提示 (#73)"
     }
   ]
 }
