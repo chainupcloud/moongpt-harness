@@ -618,6 +618,15 @@
         "enhancement"
       ],
       "url": "https://github.com/chainupcloud/dex-ui/issues/80"
+    },
+    {
+      "number": 85,
+      "title": "[P3] Explorer 搜索框将钱包地址误路由到 /explorer/tx/ — 应区分 tx hash 和 address",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E162",
+      "created_date": "2026-03-27",
+      "url": "https://github.com/chainupcloud/dex-ui/issues/85"
     }
   ],
   "last_updated": "2026-03-27",
