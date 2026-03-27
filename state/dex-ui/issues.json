@@ -1032,11 +1032,15 @@
     {
       "github_number": 122,
       "title": "[P3] TP/SL checkbox in trade form — clicking does not reveal Take Profit / Stop Loss input fields",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "area": "trade",
       "scenario": "E304",
-      "created_date": "2026-03-27"
+      "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "Playwright verified on staging: TP/SL checkbox reveals TP price, Gain%, SL price, Loss% fields correctly. Explore agent false positive — likely stale staging (issue #98 Vercel deploy failures)."
     },
     {
       "github_number": 123,
