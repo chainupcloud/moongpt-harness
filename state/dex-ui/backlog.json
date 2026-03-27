@@ -1652,9 +1652,11 @@
       "priority": 3,
       "title": "Explorer page: verify table columns and data quality",
       "description": "Navigate to /explorer, verify the trade history data structure: confirm there are columns for time, market, side, price, size. Verify data is not empty and values are within expected ranges for testnet.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Explorer loads at /explorer; 20 live checkpoints (Checkpoint/Time/Txs cols), 20 transactions (hash/type/CP/sender/time cols); real-time data working"
     },
     {
       "id": "E143",
@@ -2845,9 +2847,11 @@
       "priority": 2,
       "title": "Stop Limit trigger price field — verify input appears and validates correctly",
       "description": "After selecting Stop Limit order type, a trigger price input should appear. Verify: (1) trigger field renders, (2) can enter a trigger price, (3) trigger price validates (must be > or < current price based on direction), (4) form submits with both trigger and limit price.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Stop Limit trigger price input exists but has no label; cannot distinguish from limit price field"
     },
     {
       "id": "E255",
@@ -2855,9 +2859,11 @@
       "priority": 2,
       "title": "Market order: USDC size auto-calculation accuracy",
       "description": "In Market mode, enter 0.1 BTC and verify the auto-calculated USDC value = size × mark price ± 0.1%. Confirm the reverse also works: enter USDC amount and verify BTC amount is recalculated.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Market order USDC auto-calc correct: 0.01 BTC → $668.21 at mark $66,821; BTC/USDC toggle, % buttons all work"
     },
     {
       "id": "E256",
@@ -2885,6 +2891,58 @@
       "priority": 2,
       "title": "Order book: verify top section (red) has higher prices than bottom section (teal) after fix",
       "description": "After the order book inversion bug is fixed, verify the corrected layout: red/ask prices at top should be numerically HIGHER than teal/bid prices at bottom, with mid price between them. This scenario re-validates E249 post-fix.",
+      "status": "failed",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Order book spread still -1,797.8 (-2.713%); issue #78 not yet fixed"
+    },
+    {
+      "id": "E259",
+      "area": "trade-form",
+      "priority": 2,
+      "title": "Stop Limit: trigger price validation — must be above/below current price",
+      "description": "When Stop Limit is selected, verify: (1) trigger price shows label or placeholder; (2) Buy Long trigger must be above current mark price; (3) Sell Short trigger must be below current mark price; (4) form gives clear error if wrong direction",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E260",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Market order slippage warning — 2.13% exceeds 1% max slippage threshold",
+      "description": "Market order for 0.01 BTC shows 'Slippage: 2.13% / Max 1%' warning. Verify: (1) slippage warning is visible to user; (2) order submit button shows warning or is disabled; (3) user can adjust slippage tolerance in settings",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E261",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer: checkpoint detail page — clicking a checkpoint shows transaction details",
+      "description": "From /explorer, click on a specific checkpoint number (e.g. #71517). Verify: (1) detail page loads; (2) shows checkpoint metadata (height, timestamp, validator); (3) lists transactions within that checkpoint; (4) each transaction is clickable",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E262",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer: transaction detail page — tx hash resolves to decoded transaction",
+      "description": "From /explorer, click a transaction hash. Verify: (1) page loads at /explorer/tx/{hash}; (2) shows decoded tx type (PlaceOrder/UpdateOraclePrices/etc); (3) shows sender address, checkpoint ref, timestamp; (4) shows raw params if applicable",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E263",
+      "area": "order-book",
+      "priority": 2,
+      "title": "Order book spread color coding — asks row color vs bids row color verification",
+      "description": "After issue #78 fix, verify color coding: (1) top section rows are red (asks); (2) bottom section rows are teal/green (bids); (3) spread value is positive; (4) best bid < best ask. Use CSS color extraction to verify.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"

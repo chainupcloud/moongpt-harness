@@ -583,6 +583,20 @@
       "deployed_sha": "8947f7483f296a4c1fe800d6ca992f8e7accb2ab",
       "accepted": true,
       "note": "Sorting fix correctly implemented (bids desc, asks asc). Remaining negative spread on staging is testnet crossed-book data anomaly."
+    },
+    {
+      "id": "issue-80",
+      "github_number": 80,
+      "title": "[P4] Stop Limit order form — trigger price input has no label, indistinguishable from limit price field",
+      "status": "open",
+      "priority": "P4",
+      "scenario_id": "E254",
+      "created_date": "2026-03-27",
+      "labels": [
+        "bug",
+        "enhancement"
+      ],
+      "url": "https://github.com/chainupcloud/dex-ui/issues/80"
     }
   ],
   "last_updated": "2026-03-27",
