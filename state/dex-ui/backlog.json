@@ -1628,9 +1628,11 @@
       "priority": 3,
       "title": "Order type dropdown shows all types: Limit / Market / Stop Limit / Stop Market",
       "description": "Open the Order Type dropdown and verify all 4 expected order types are listed and selectable. Verify Stop Limit and Stop Market types work correctly with extra trigger price field.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — All 4 order types present: Limit, Market, Stop Limit, Stop Market; Stop Limit adds trigger input"
     },
     {
       "id": "E141",
@@ -1638,9 +1640,11 @@
       "priority": 3,
       "title": "Market order: size field retained when switching Limit→Market",
       "description": "In Limit mode fill size=0.1, switch to Market — verify size is preserved in Market mode. This tests if the size value persists even though price is not applicable in Market.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Size 0.1 BTC retained after switching Limit→Market; price field removed in Market mode"
     },
     {
       "id": "E142",
@@ -2786,9 +2790,11 @@
       "priority": 2,
       "title": "Order book bid/ask side identification — verify color coding matches price side",
       "description": "Inspect order book HTML to confirm top section (lower prices ~65K) uses bid color and bottom section (higher prices ~67K) uses ask color, or vice versa. Check if bids/asks are correctly labeled per Hyperliquid convention.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Color coding inverted: red/short at 65k (below mid 66k), teal/long at 67k (above mid) — confirms order book inversion bug"
     },
     {
       "id": "E250",
@@ -2796,9 +2802,11 @@
       "priority": 2,
       "title": "Order book midprice vs oracle price consistency check",
       "description": "Midprice should be between best bid and best ask. Compare displayed midprice or last price (~66,821) against best bid (~67,158) and best ask (~65,461). If midprice is outside the spread, this confirms order book inversion.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Price spread 2.75% (65361-67159) normal, no extreme inversion"
     },
     {
       "id": "E251",
@@ -2826,6 +2834,56 @@
       "priority": 3,
       "title": "Scalp order type — verify form and quick-entry pattern",
       "description": "Select Scalp order type from dropdown. Verify the form renders correctly with any Scalp-specific fields. Check if it provides fast entry/exit interface.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E254",
+      "area": "trade",
+      "priority": 2,
+      "title": "Stop Limit trigger price field — verify input appears and validates correctly",
+      "description": "After selecting Stop Limit order type, a trigger price input should appear. Verify: (1) trigger field renders, (2) can enter a trigger price, (3) trigger price validates (must be > or < current price based on direction), (4) form submits with both trigger and limit price.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E255",
+      "area": "trade",
+      "priority": 2,
+      "title": "Market order: USDC size auto-calculation accuracy",
+      "description": "In Market mode, enter 0.1 BTC and verify the auto-calculated USDC value = size × mark price ± 0.1%. Confirm the reverse also works: enter USDC amount and verify BTC amount is recalculated.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E256",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order type: GTC/IOC/FOK time-in-force options",
+      "description": "Click the GTC button in the order form to see time-in-force options. Verify: (1) GTC, IOC, FOK options are available, (2) selecting IOC/FOK updates the button label, (3) time-in-force options are hidden for Market orders (they're always IOC).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E257",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL checkbox: take profit / stop loss inputs appear on enable",
+      "description": "Click the TP/SL checkbox in the order form. Verify: (1) TP and SL price inputs appear, (2) inputs accept numeric values, (3) TP price validates as above entry price for long, (4) unchecking hides the inputs again.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E258",
+      "area": "trade",
+      "priority": 2,
+      "title": "Order book: verify top section (red) has higher prices than bottom section (teal) after fix",
+      "description": "After the order book inversion bug is fixed, verify the corrected layout: red/ask prices at top should be numerically HIGHER than teal/bid prices at bottom, with mid price between them. This scenario re-validates E249 post-fix.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
