@@ -575,9 +575,14 @@
       "issue_numbers": [
         101
       ],
-      "status": "open",
+      "status": "merged",
       "branch": "fix/issue-101",
-      "title": "fix: Explorer address search — block EVM addresses with friendly error (#101)"
+      "title": "fix: Explorer address search — block EVM addresses with friendly error (#101)",
+      "commit_sha": "5933da2e97fb84f2a813616475a921b2c186327f",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy READY (dpl_3kLoxcy6EFH62fLGw1ZgBrdkZ6Z3). SHA verified. EVM address search now shows 'Explorer API error: 500' friendly error in red with Back to Explorer link."
     }
   ]
 }

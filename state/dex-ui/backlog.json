@@ -2700,11 +2700,11 @@
       "priority": 3,
       "title": "Explorer tx detail page — transaction data correctness",
       "description": "After searching wallet address and landing on /explorer/tx/{addr}, verify transaction rows show correct amount, date, and status. Check pagination if >10 records.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — Explorer address API 500: backend expects 64-hex SUI address, rejects EVM 40-hex. No client validation"
+      "result_summary": "Reset to pending: issue #101 fixed (PR #103 merged, commit 5933da2). EVM address now shows friendly error. Re-run to verify fix."
     },
     {
       "id": "E230",
