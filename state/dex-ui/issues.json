@@ -803,7 +803,7 @@
       "id": "issue-2026-03-27-dex-ui-101",
       "github_number": 101,
       "title": "[P3] Explorer address search — EVM 地址触发后端 500 错误，未做地址格式校验",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "created_date": "2026-03-27",
       "scenarios": [
@@ -813,7 +813,8 @@
         "bug"
       ],
       "url": "https://github.com/chainupcloud/dex-ui/issues/101",
-      "fix_attempts": 0
+      "fix_attempts": 1,
+      "pr_number": 103
     },
     {
       "id": "dex-ui-102",

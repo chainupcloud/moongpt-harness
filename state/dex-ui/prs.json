@@ -569,6 +569,15 @@
       "accepted": true,
       "title": "fix: withdraw modal address field validation (#99)",
       "note": "Vercel deploy READY (dpl_2nUPPkeUaUW7NwiHWcywjAigf6ZV). SHA verified. Address validation error shown for invalid input."
+    },
+    {
+      "pr_number": 103,
+      "issue_numbers": [
+        101
+      ],
+      "status": "open",
+      "branch": "fix/issue-101",
+      "title": "fix: Explorer address search — block EVM addresses with friendly error (#101)"
     }
   ]
 }
