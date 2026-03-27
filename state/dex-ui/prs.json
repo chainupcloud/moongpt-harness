@@ -555,6 +555,14 @@
       "deployed": false,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 100,
+      "issue_numbers": [
+        99
+      ],
+      "status": "open",
+      "branch": "fix/issue-99"
     }
   ]
 }
