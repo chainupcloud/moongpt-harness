@@ -22,6 +22,7 @@
 读取 state/{project}/issues.json，按优先级（P1>P2>P3>P4）找到第一个满足以下条件的 issue：
 - status = "open"
 - fix_attempts < 3
+- **track != "backend"**（后端 issue 由人工在对应仓库修复，fix-agent 不处理）
 
 若无符合条件的 issue → 打印 "No open issues to fix." 并退出。
 
@@ -90,6 +91,7 @@ git push origin randd1024
 
 ## 注意事项
 - 每次只处理一个 issue
+- **track = "backend" 的 issue 跳过**：后端问题由工程师在 dex-sui 仓库人工修复，PR 由 master-agent 验收
 - 禁止修改 .github/workflows/
 - 禁止 git push --force
 - fix_attempts >= 3 → status → "needs-human"
