@@ -191,11 +191,15 @@ fi
 MODEL_FLAG=""
 [ -n "$MODEL" ] && MODEL_FLAG="--model $MODEL"
 
+# master needs more turns for Vercel deployment polling + Playwright acceptance
+MAX_TURNS=40
+[ "$AGENT" = "master" ] && MAX_TURNS=80
+
 $CLAUDE \
   --print \
   $MODEL_FLAG \
   --allowedTools "Bash,Read,Write,Edit,Glob,Grep" \
-  --max-turns 40 \
+  --max-turns $MAX_TURNS \
   -p "$(cat "$PROMPT_FILE")
 
 ---
