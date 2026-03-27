@@ -388,25 +388,30 @@
       "github_issue_number": 57,
       "github_number": 57,
       "title": "[P3] /markets 价格列显示 $0 且 24h 涨跌显示 +0.00% — 价格历史数据源异常",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "labels": [
         "bug"
       ],
       "scenario_id": "E160",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "fix_attempts": 1,
-      "pr_number": 61
+      "pr_number": 61,
+      "deployed_sha": "02d720d40044df05946ee4b254e07ca2a421ecb0",
+      "accepted": true
     },
     {
       "id": "issue-58",
+      "github_number": 58,
       "github_issue_number": 58,
       "title": "[P3] /trade page shows infinite skeleton (70+ elements) with no error feedback when /dex-api/info returns 500",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario_id": "E067",
       "created_date": "2026-03-27",
-      "fix_attempts": 0,
+      "fix_attempts": 1,
+      "pr_number": 64,
       "labels": [
         "bug"
       ],
@@ -414,13 +419,17 @@
     },
     {
       "issue_number": 60,
+      "github_number": 60,
       "title": "[P3] /explorer 交易详情页返回 404 — checkpoint 路由未实现",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E098",
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/60",
       "created_date": "2026-03-27",
-      "fix_attempts": 0
+      "closed_at": "2026-03-27",
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "Route /explorer/checkpoint/[seq] already existed on dev. Staging returns 200. Closed without code change."
     },
     {
       "number": 62,

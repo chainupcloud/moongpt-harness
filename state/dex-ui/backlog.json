@@ -1789,11 +1789,11 @@
       "priority": 2,
       "title": "/markets 价格列空数据根因分析 — 检查 API 端点返回值与 trade 页面数据源差异",
       "description": "markets 页面价格 $0 但 trade 页面显示正确。需检查 /markets 使用的 API 端点（可能是 /dex-api/markets 或 allMids）与 trade 页面使用的数据源是否一致。抓取网络请求对比。",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — /markets 价格列 $0，24h变化 +0.00%，已建 issue #57"
+      "result_summary": "FAIL — /markets 价格列 $0，24h变化 +0.00%，已建 issue #57. Fix PR #61 merged+accepted, reset to pending for re-verification."
     },
     {
       "id": "E161",

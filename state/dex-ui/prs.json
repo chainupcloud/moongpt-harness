@@ -323,8 +323,12 @@
       "issue_numbers": [
         57
       ],
-      "status": "open",
-      "title": "fix: /markets 价格列显示 $0 — midPx 回退链补全 markPx/oraclePx (#57)"
+      "status": "merged",
+      "title": "fix: /markets 价格列显示 $0 — midPx 回退链补全 markPx/oraclePx (#57)",
+      "commit_sha": "02d720d40044df05946ee4b254e07ca2a421ecb0",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
     }
   ]
 }
