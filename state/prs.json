@@ -93,6 +93,13 @@
       "deployed": true,
       "accepted": false,
       "note": "P4 issue — awaiting human acceptance"
+    },
+    {
+      "pr_number": 23,
+      "issue_numbers": [],
+      "status": "open",
+      "title": "fix: correct spot navigation link to /spot",
+      "note": "No reviews yet — awaiting review"
     }
   ]
 }
