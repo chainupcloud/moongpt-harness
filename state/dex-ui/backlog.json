@@ -78,9 +78,9 @@
       "priority": 2,
       "title": "Market 单余额不足 → 正确拒绝，显示错误提示",
       "description": "市价单 size 设置为远超账户余额的值，验证 Long 按钮禁用或提交后显示余额不足 toast",
-      "status": "failed",
+      "status": "pending",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — Market order 999999999 size: Buy/Long button not disabled, no error toast (Issue #26)"
+      "result_summary": "Reset to pending — fix deployed via PR #30 (bbd5b0a), ready for re-verification"
     },
     {
       "id": "E009",

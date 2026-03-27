@@ -117,8 +117,12 @@
     {
       "pr_number": 30,
       "issue_numbers": [26],
-      "status": "open",
-      "title": "fix: disable Buy/Long button when balance insufficient (#26)"
+      "status": "merged",
+      "title": "fix: disable Buy/Long button when balance insufficient (#26)",
+      "commit_sha": "bbd5b0a00e532fe8b0cf0891e36cd7ab972ff3b6",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
     }
   ]
 }

@@ -130,14 +130,17 @@
     },
     {
       "number": 26,
+      "github_number": 26,
       "title": "[P3] Market 订单余额不足时缺少前端验证 — Buy/Long 按钮未禁用",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E008",
       "created": "2026-03-27",
+      "closed_at": "2026-03-27",
       "fix_attempts": 1,
       "pr_number": 30,
-      "github_number": 26
+      "deployed_sha": "bbd5b0a00e532fe8b0cf0891e36cd7ab972ff3b6",
+      "accepted": true
     },
     {
       "number": 27,
