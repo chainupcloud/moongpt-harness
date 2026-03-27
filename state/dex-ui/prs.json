@@ -508,7 +508,12 @@
       "issue_numbers": [
         90
       ],
-      "status": "open"
+      "status": "merged",
+      "title": "fix: explorer detail pages missing timestamp and wrong checkpoint (#90)",
+      "commit_sha": "de43fa5f43c541ef6ea7360e602b234218df26bf",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
     },
     {
       "pr_number": 93,

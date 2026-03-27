@@ -672,12 +672,16 @@
       "id": "issue-90",
       "github_issue_number": 90,
       "title": "[P3] Explorer detail pages show missing timestamp (Time: –) and wrong checkpoint (#0)",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E177",
       "created_date": "2026-03-27",
       "fix_attempts": 1,
-      "pr_number": 91
+      "pr_number": 91,
+      "closed_at": "2026-03-27",
+      "deployed_sha": "de43fa5f43c541ef6ea7360e602b234218df26bf",
+      "accepted": true,
+      "note": "PR #91 merged + deployed. Playwright verified: /explorer/checkpoint/1 HTTP 200, no 1970-01-01 timestamps."
     },
     {
       "github_issue_number": 92,
