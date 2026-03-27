@@ -3972,9 +3972,11 @@
       "priority": 3,
       "title": "Send 弹窗字段校验 — 已连接钱包后验证负数/超余额/空地址 (E208 重测)",
       "description": "使用已登录会话打开 Portfolio → Withdraw/Send 弹窗。测试: 金额负数显示错误提示; 金额超余额显示余额不足; 地址为空点击提交显示必填提示。",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — wallet has no assets, Send button only in asset row Actions, unreachable without balance"
     },
     {
       "id": "E336",
@@ -3982,9 +3984,11 @@
       "priority": 3,
       "title": "Explorer tx Events 区域 — 验证 PlaceOrder 事件字段完整展示",
       "description": "打开一个 PlaceOrder 类型的 tx 详情页，验证 Events 区域展示合约事件字段（side, price, size, status），而非 'No events found'。",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Explorer tx detail shows Events(20) with OrderPlacedEvent, type+time+trade details"
     },
     {
       "id": "E337",
@@ -4016,9 +4020,11 @@
       "priority": 3,
       "title": "/markets 页面 Open Interest 列 — 验证 $0.00 问题是否已修复",
       "description": "持仓量 (OI) 显示 $0.00，关联 issue #95 中的 Open Interest 数据映射错误，验证修复状态",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — /markets 持仓量 shows $0.00 (backend issue dex-sui #28)"
     },
     {
       "id": "E340",
@@ -4036,9 +4042,11 @@
       "priority": 3,
       "title": "/markets 24h 涨跌幅 +0.00% — prevDayPx API 数据缺失验证",
       "description": "markets 页面 24h 价格变化始终显示 +0.00%，关联 issue #27 (prevDayPx always 0.0)，确认 UI 层是否已有 fallback 处理",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — /markets 24h涨跌 shows +0.00% (backend prevDayPx issue dex-sui #27)"
     },
     {
       "id": "E342",
@@ -4611,9 +4619,11 @@
       "priority": 3,
       "title": "Spot page — market selector shows only spot pairs (not perp/futures)",
       "description": "Once /spot is fixed, verify the market selector lists spot pairs (e.g., BTC/USDC spot) distinct from perp markets",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Spot page renders \"Spot Trading Coming Soon\" placeholder correctly"
     },
     {
       "id": "E395",
@@ -5937,6 +5947,56 @@
       "priority": 4,
       "title": "Explorer — 搜索 checkpoint 序号（如 206923）是否直接跳转详情",
       "description": "在 /explorer 搜索框输入一个已知 checkpoint 序号（数字），验证是否路由到 /explorer/checkpoint/{seq}",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E520",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys page — verify page renders correctly after recent refactor",
+      "description": "Navigate to /api-keys without wallet connected, verify layout and 'Connect wallet' prompt. Then connect wallet and verify key management UI appears.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E521",
+      "area": "spot",
+      "priority": 4,
+      "title": "Spot page — 'Trade Perpetuals' CTA button navigates to /trade",
+      "description": "On /spot page, click 'Trade Perpetuals' button and verify navigation goes to /trade page successfully.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E522",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — verify 'Show details' toggle in OrderPlacedEvent expands raw BCS/JSON data",
+      "description": "On a tx detail page, click 'Show details' for an OrderPlacedEvent and verify full event data (BCS fields, prices, quantities) is revealed.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E523",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets — column sort by 24h Volume works correctly (asc/desc toggle)",
+      "description": "Click '24h 成交量' column header twice on /markets page, verify sort order changes correctly (descending then ascending). Currently only BTC-USDC visible on testnet.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E524",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio Transaction History tab — verify empty state message renders after wallet connect",
+      "description": "Connect wallet to portfolio, click Transaction History tab, verify proper empty-state message (not blank/broken) when no transactions exist.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
