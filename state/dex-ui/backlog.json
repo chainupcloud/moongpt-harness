@@ -3912,9 +3912,11 @@
       "priority": 3,
       "title": "API Keys 页面 — 未连接钱包时显示提示；连接后可生成API Key",
       "description": "访问 /api-keys 页面，验证未连接钱包时显示 Connect Wallet 提示；连接后页面显示 API Key 管理界面",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /api-keys shows \"Please connect your wallet to manage\" + Connect button for unauthenticated users"
     },
     {
       "id": "E331",
@@ -5579,11 +5581,11 @@
       "title": "TP/SL inputs validation — post-fix verification of #122",
       "description": "After issue #122 (TP/SL inputs not revealed) is fixed: (1) click TP/SL checkbox, (2) verify inputs appear, (3) for LONG enter TP < current price → expect error, (4) enter SL > current price → expect error. Verifies both reveal and validation.",
       "track": "frontend",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "Reset after issue #126 fix merged (PR #128)"
+      "result_summary": "SKIP — staging build broken (4 consecutive Vercel ERROR builds), TP/SL validation fix (PR #128/d3d6115) not deployed. TP/SL inputs reveal works."
     },
     {
       "id": "E487",
@@ -5636,11 +5638,11 @@
       "priority": 2,
       "title": "TP/SL validation — re-verify after #126 fix",
       "description": "After issue #126 is fixed: enable TP/SL, enter TP below mark price for LONG → expect inline error. Enter SL above mark price → expect error. Both errors should prevent submission.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "Reset after issue #126 fix merged (PR #128)"
+      "result_summary": "SKIP — same as E486: staging build broken, validation fix not deployed"
     },
     {
       "id": "E492",
@@ -5780,9 +5782,11 @@
       "priority": 2,
       "title": "TP/SL cross-validation — TP must be > SL for LONG position",
       "description": "After issue #126 fix lands: enable TP/SL, set TP=50000 and SL=60000 (SL > TP for LONG). Expect validation error preventing submission since SL should always be below TP.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — staging build broken. Code analysis: cross-validation (SL>TP without entry-price trigger) not implemented in d3d6115 either"
     },
     {
       "id": "E506",
@@ -5790,9 +5794,11 @@
       "priority": 2,
       "title": "TWAP order — submit after duration/interval fix and verify order appears in history",
       "description": "After issue #129 fix lands: select TWAP, fill Duration=60 Interval=10, enter size, submit. Confirm order appears in Order History with TWAP type. End-to-end TWAP submission flow.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — TWAP Duration/Interval fields still absent (confirmed issue #131 still open)"
     },
     {
       "id": "E507",
@@ -5821,6 +5827,61 @@
       "title": "/markets funding rate sign and value correctness",
       "description": "Verify the 资金费率 (Funding Rate) column shows correct sign (+/-) and non-zero value for BTC-USDC. Currently shows +0.6393% — verify this updates periodically and matches the /trade page funding rate display.",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E510",
+      "area": "order-form",
+      "priority": 3,
+      "title": "TP/SL inputs aria-labels — verify fix for #132 after deployment",
+      "description": "After issue #132 fix lands: enable TP/SL checkbox, inspect all 4 inputs (TP price, Gain%, SL price, Loss%) and verify each has a meaningful aria-label attribute. Use Playwright to check getAttribute('aria-label') on each input.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E511",
+      "area": "order-form",
+      "priority": 3,
+      "title": "TP/SL validation — re-verify E486/E491/E505 after staging build is fixed",
+      "description": "Once Vercel staging builds succeed (resolve #needs-human stale staging issue): test TP validation (TP < mark for LONG → error), SL validation (SL > mark for LONG → error), and cross-validation (SL > TP with SL below mark → should error). Verify submit is blocked.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E512",
+      "area": "order-form",
+      "priority": 3,
+      "title": "TP/SL entryPrice=0 edge case — validation disabled when no price entered",
+      "description": "In TpSlPanel, if entryPrice <= 0 validation is skipped. Test: enable TP/SL with Price input empty (0), enter invalid TP=1000. Expect: either validation uses mark price as fallback, or input is disabled until price is set.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E513",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys page — connected wallet shows key management UI",
+      "description": "Connect wallet (via mock auth), navigate to /api-keys. Verify page shows API key management interface: list of keys (possibly empty), 'Create Key' button, key permissions info. Verifies authenticated state of E330.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E514",
+      "area": "order-form",
+      "priority": 3,
+      "title": "TWAP order — verify Duration/Interval fields restored after #131 fix",
+      "description": "Reset scenario: after issue #131 fix is deployed, select TWAP order type, verify Duration input (minutes) and Interval input (seconds) are visible and functional. Enter Duration=60, Interval=10, verify order submits without field-absent error.",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
     }

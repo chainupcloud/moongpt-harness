@@ -1162,6 +1162,15 @@
       "fix_attempts": 0,
       "resolution": "already-resolved",
       "note": "6th duplicate false positive (same as #109, #113, #117, #125, #129). TwapPanel component exists on dev with full Duration/Interval/Randomize/Private fields. Root cause: stale Vercel staging (issue #98, needs-human)."
+    },
+    {
+      "issue_number": 132,
+      "title": "[P4] TpSlPanel inputs missing aria-labels — TP/SL price and gain/loss fields inaccessible to screen readers",
+      "status": "open",
+      "priority": "P4",
+      "scenario": "E486",
+      "opened_date": "2026-03-27",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-27",
