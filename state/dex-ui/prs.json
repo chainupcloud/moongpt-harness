@@ -137,8 +137,12 @@
     {
       "pr_number": 32,
       "issue_numbers": [28],
-      "status": "open",
-      "title": "fix: /markets page showing $0 prices — coin key mismatch (#28)"
+      "status": "merged",
+      "title": "fix: /markets page showing $0 prices — coin key mismatch (#28)",
+      "commit_sha": "261087acf6501d57d3320c2f5ab3f1fc4d998799",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
     },
     {
       "pr_number": 33,

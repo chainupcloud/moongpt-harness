@@ -159,14 +159,17 @@
     {
       "number": 28,
       "title": "[P3] /markets 页面 BTC 价格显示为 $0 — 实际价格 $68,107",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E048",
       "created_at": "2026-03-27",
+      "closed_at": "2026-03-27",
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/28",
       "fix_attempts": 1,
       "pr_number": 32,
-      "github_number": 28
+      "github_number": 28,
+      "deployed_sha": "261087acf6501d57d3320c2f5ab3f1fc4d998799",
+      "accepted": true
     },
     {
       "id": "issue-29",
