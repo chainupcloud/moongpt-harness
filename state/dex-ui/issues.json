@@ -859,11 +859,15 @@
       "id": "dex-ui-107",
       "title": "[P3] /spot page returns 404 — 页面不存在 (regression after recent spot/page.tsx change)",
       "github_issue_number": 107,
-      "status": "open",
+      "github_number": 107,
+      "status": "closed",
       "priority": "P3",
       "scenario": "E241",
       "created": "2026-03-27",
-      "fix_attempts": 0
+      "closed_at": "2026-03-27",
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "Staging /spot renders 'Spot Trading Coming Soon' correctly (commit b62dc33). Explore agent false positive — page was already fixed in PR #20."
     },
     {
       "github_number": 108,
