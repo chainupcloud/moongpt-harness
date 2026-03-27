@@ -3643,9 +3643,11 @@
       "priority": 3,
       "title": "移动端竖屏 — Explorer 页面搜索框可用性验证",
       "description": "在 390×844 视口下访问 /explorer，验证搜索框可见且可点击输入；搜索结果列表在移动端正常滚动不溢出",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — mobile 390x844 search box visible, typeable, no horizontal overflow"
     },
     {
       "id": "E308",
@@ -3653,9 +3655,11 @@
       "priority": 3,
       "title": "Explorer 搜索框支持 checkpoint 编号搜索",
       "description": "在 /explorer 搜索框输入纯数字 checkpoint 编号（如 112413），验证能直接跳转到 /explorer/checkpoint/112413 详情页",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — entering checkpoint number 190711 navigated to /explorer/checkpoint/190711"
     },
     {
       "id": "E309",
@@ -3663,9 +3667,11 @@
       "priority": 3,
       "title": "Explorer checkpoint 详情 — 有 transaction 的 checkpoint 内容验证",
       "description": "找到一个 transactions > 0 的 checkpoint（通过 API 查找），验证其详情页能正确展示 tx 列表、时间戳和用户地址",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — checkpoint 190703 shows 1 tx with hash, action, user addr, timestamp correctly"
     },
     {
       "id": "E310",
@@ -5429,9 +5435,11 @@
       "title": "TP/SL inputs — verify price validation (TP > current price for long, SL < current price)",
       "description": "Once TP/SL checkbox is fixed (#122), verify that entering invalid prices (TP below current price for long position) shows validation error. Also verify decimal precision constraints.",
       "track": "frontend",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — blocked by open issue #122 (TP/SL checkbox still not revealing inputs)"
     },
     {
       "id": "E477",
@@ -5461,6 +5469,61 @@
       "priority": 3,
       "title": "Reduce Only checkbox — effect on order form UI",
       "description": "Click the 'Reduce Only' checkbox (visible in trade form). Verify the UI responds: does it disable certain fields, change button text, or show a tooltip? Test that unchecking restores original state.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E480",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail page — verify transaction content (hash, type, user, timestamp)",
+      "description": "Navigate to a known tx detail page (e.g. /explorer/tx/0x4a609ce6023a552e0476c611a3cbe866461fc4ac0e35cefecaf38b0ba5fa05ae), verify it shows: tx hash, action type, user address, order summary, timestamp. Check no 404 or blank page.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E481",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint list — verify tx count column shows correct non-zero values",
+      "description": "On /explorer main page, inspect the checkpoint list table rows: verify the transaction count column shows >0 for checkpoints known to have transactions (e.g. 190703 has 1). Currently the list rows may render empty/blank.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E482",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — EVM address blocked with friendly error message",
+      "description": "In the Explorer search bar, enter a valid EVM address (0x70995982bd1C084A78602f755CA8B45a14A6de86). Since dex-sui uses Sui addresses, entering an EVM address should show a friendly error message (fix #101 merged). Verify the error message is visible and descriptive.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E483",
+      "area": "mobile",
+      "priority": 3,
+      "title": "Mobile /explorer checkpoint detail — tx list renders without overflow or truncation",
+      "description": "On 390x844 viewport, navigate to /explorer/checkpoint/190703 (has 1 transaction). Verify: tx row visible, not overflowed, tx hash truncated with ellipsis not cut off, all columns readable. Tap the tx link and verify navigation works.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E484",
+      "area": "trade",
+      "priority": 2,
+      "title": "TP/SL price validation re-verify after #122 fix — long position constraints",
+      "description": "After issue #122 (TP/SL checkbox not revealing inputs) is fixed, re-verify price validation: (1) For LONG: TP must be > current price, SL must be < current price. Enter reversed values and check for validation errors. (2) Verify decimal precision constraints (e.g. max 1 decimal for BTC).",
       "track": "frontend",
       "status": "pending",
       "added_by": "explore-agent",
