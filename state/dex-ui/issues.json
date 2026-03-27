@@ -843,13 +843,17 @@
       "id": "dex-ui-104",
       "github_issue_number": 104,
       "title": "[P3] TWAP order form — Interval and Parts inputs have no labels (placeholder=\"0\" only)",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "area": "TWAP",
       "scenario_id": "E375",
       "created_date": "2026-03-27",
       "fix_attempts": 1,
-      "pr_number": 106
+      "pr_number": 106,
+      "closed_at": "2026-03-27",
+      "accepted": true,
+      "deployed_sha": "b102dac62e1c390c4b361270d8aa444d0dc1beb7",
+      "github_number": 104
     },
     {
       "id": "dex-ui-107",

@@ -4265,12 +4265,12 @@
       "priority": 2,
       "title": "TWAP order — verify interval and parts fields are labeled/accessible",
       "description": "Click TWAP tab in trade form, verify dedicated interval and parts input fields exist with clear labels. Previous test found only generic '0' placeholders — need to confirm TWAP-specific fields are discoverable.",
-      "status": "failed",
+      "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — TWAP form missing Interval/Parts labels; only shows Duration presets (5m/30m/1h/4h); all inputs have placeholder=\"0\" with no labels → Issue #104"
+      "result_summary": "Reset to pending after fix merged (PR #106)"
     },
     {
       "id": "E376",

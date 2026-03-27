@@ -606,10 +606,15 @@
         104
       ],
       "title": "fix: TWAP order form inputs missing labels (#104)",
-      "status": "open",
+      "status": "merged",
       "base": "dev",
       "head": "fix/issue-104",
-      "created_at": "2026-03-27"
+      "created_at": "2026-03-27",
+      "commit_sha": "b102dac62e1c390c4b361270d8aa444d0dc1beb7",
+      "merged_at": "2026-03-27",
+      "deployed": false,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
     }
   ]
 }
