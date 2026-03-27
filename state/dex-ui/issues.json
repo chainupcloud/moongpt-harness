@@ -732,6 +732,22 @@
       "deployed_sha": "2925fde",
       "accepted": true,
       "note": "PR #97 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification."
+    },
+    {
+      "title": "[P3] /dex-api/info asset contexts returns [] — Open Interest data unavailable (backend)",
+      "status": "open",
+      "repo": "dex-sui",
+      "number": 28,
+      "github_number": 28,
+      "scenario": "E200",
+      "priority": "P3",
+      "created": "2026-03-27",
+      "url": "https://github.com/chainupcloud/dex-sui/issues/28",
+      "labels": [
+        "bug",
+        "backend"
+      ],
+      "notes": "E200 re-run 2026-03-27: Markets page OI shows $0.00. API asset contexts endpoint returns []. PR #96 (dex-ui) deployment also failed (Vercel ERROR). Backend fix needed first."
     }
   ],
   "last_updated": "2026-03-27",
