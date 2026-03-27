@@ -328,15 +328,20 @@
     {
       "id": "issue-2026-03-27-dex-ui-49",
       "issue_number": 49,
+      "github_number": 49,
       "title": "[P4] UI language hardcoded to Chinese — no language toggle available",
-      "status": "open",
+      "status": "closed",
       "priority": "P4",
       "labels": [
         "enhancement"
       ],
       "scenario": "E055",
       "created_at": "2026-03-27",
-      "repository": "chainupcloud/dex-ui"
+      "closed_at": "2026-03-27",
+      "repository": "chainupcloud/dex-ui",
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "Language toggle already exists in Settings → Language tab (LanguagePanel component) + mobile LanguageSelector. Full i18n stack (i18next + EN/ZH translations) in place. Explore agent missed nested UI."
     },
     {
       "id": "issue-2026-03-27-dex-ui-51",
