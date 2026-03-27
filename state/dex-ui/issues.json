@@ -212,13 +212,16 @@
       "number": 34,
       "github_number": 34,
       "title": "[P3] /markets 24h 涨跌幅显示 +Infinity%",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "area": "markets",
       "created_at": "2026-03-27",
+      "closed_at": "2026-03-27",
       "fix_attempts": 1,
       "pr_number": 36,
-      "linked_scenario": "E090-observation"
+      "linked_scenario": "E090-observation",
+      "deployed_sha": "04d7d8cf37ca7d98697ec20627ad1855d79b9960",
+      "accepted": true
     },
     {
       "number": 35,

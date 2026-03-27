@@ -184,8 +184,12 @@
       "issue_numbers": [
         34
       ],
-      "status": "open",
-      "title": "fix: /markets 24h 涨跌幅显示 +Infinity% (#34)"
+      "status": "merged",
+      "title": "fix: /markets 24h 涨跌幅显示 +Infinity% (#34)",
+      "commit_sha": "04d7d8cf37ca7d98697ec20627ad1855d79b9960",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
     }
   ]
 }
