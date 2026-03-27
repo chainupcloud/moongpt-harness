@@ -546,25 +546,32 @@
       "id": "issue-2026-03-27-dex-ui-75",
       "title": "[P3] Withdraw modal: no client-side validation for negative/zero/over-balance input",
       "github_issue_number": 75,
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E111",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "labels": [
         "bug"
-      ]
+      ],
+      "fix_attempts": 0,
+      "resolution": "duplicate",
+      "note": "Duplicate of #66 (fixed in PR #68). Validation already exists on dev."
     },
     {
       "id": "issue-2026-03-27-dex-ui-76",
       "title": "[P3] /trade/BTC-USDC URL returns 404 — deep-link to specific market broken",
       "github_issue_number": 76,
-      "status": "open",
+      "github_number": 76,
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E185-bonus",
       "created_date": "2026-03-27",
       "labels": [
         "bug"
-      ]
+      ],
+      "fix_attempts": 1,
+      "pr_number": 83
     },
     {
       "id": "E135-77",
