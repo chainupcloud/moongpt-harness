@@ -1568,11 +1568,11 @@
       "priority": 3,
       "title": "Trade form inputs accessibility — verify labels/aria-labels present",
       "description": "Check that price/size/leverage inputs in trade form have meaningful placeholder or aria-label, not just '0' or '0.00'. Screen reader accessibility check.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — 4 inputs missing accessible labels (3 checkboxes + Coins text input)"
+      "result_summary": "FAIL — 4 inputs missing accessible labels (3 checkboxes + Coins text input). Fixed in PR #89 (issue #88). Reset to pending for re-verification."
     },
     {
       "id": "E136",

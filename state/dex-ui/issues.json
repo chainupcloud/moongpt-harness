@@ -654,15 +654,19 @@
       "github_number": 88,
       "title": "[P4] Trade form checkboxes and Coins search input missing accessible labels (aria-label/for)",
       "priority": "P4",
-      "status": "fixing",
+      "status": "closed",
       "scenario": "E135",
       "created": "2026-03-27",
+      "closed_at": "2026-03-27",
       "labels": [
         "bug",
         "accessibility"
       ],
       "fix_attempts": 1,
-      "pr_number": 89
+      "pr_number": 89,
+      "deployed_sha": "d9d3591b53b235f04d66d8e964722a36db0861eb",
+      "accepted": true,
+      "note": "PR #89 merged + deployed (dpl_6bz8BHZdYoLKRqUV4y665MvWEJ8S). Checkboxes wrapped in label elements, search input aria-label added. Playwright verified."
     },
     {
       "id": "issue-90",

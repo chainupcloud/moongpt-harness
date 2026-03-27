@@ -494,9 +494,14 @@
       "issue_numbers": [
         88
       ],
-      "status": "open",
+      "status": "merged",
       "created_at": "2026-03-27",
-      "title": "fix: Trade form checkboxes and Coins search input missing accessible labels (#88)"
+      "title": "fix: Trade form checkboxes and Coins search input missing accessible labels (#88)",
+      "commit_sha": "d9d3591b53b235f04d66d8e964722a36db0861eb",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy READY (dpl_6bz8BHZdYoLKRqUV4y665MvWEJ8S). SHA verified. All checkboxes wrapped in label elements, search input has aria-label=Search coins."
     },
     {
       "pr_number": 91,
