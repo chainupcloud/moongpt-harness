@@ -116,14 +116,17 @@
       "github_number": 24,
       "title": "[P3] TradingView 图表初始化缺失 user/client 参数，导致 study_templates API 每次 404",
       "priority": "P3",
-      "status": "fixing",
+      "status": "closed",
       "pr_number": 25,
       "created_at": "2026-03-27",
+      "closed_at": "2026-03-27",
       "fix_attempts": 1,
       "labels": [
         "bug"
       ],
-      "note": "Also covers K-line time order violation errors. Found during E031/E006/E007 exploration."
+      "note": "Also covers K-line time order violation errors. Found during E031/E006/E007 exploration.",
+      "deployed_sha": "e57204ad61d3d49307b93e55dfd7dc52c02e28d6",
+      "accepted": true
     }
   ]
 }
