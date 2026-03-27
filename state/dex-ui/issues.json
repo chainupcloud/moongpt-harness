@@ -387,6 +387,20 @@
       "scenario_id": "E160",
       "created_date": "2026-03-27",
       "fix_attempts": 0
+    },
+    {
+      "id": "issue-58",
+      "github_issue_number": 58,
+      "title": "[P3] /trade page shows infinite skeleton (70+ elements) with no error feedback when /dex-api/info returns 500",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E067",
+      "created_date": "2026-03-27",
+      "fix_attempts": 0,
+      "labels": [
+        "bug"
+      ],
+      "github_repo": "chainupcloud/dex-ui"
     }
   ],
   "last_updated": "2026-03-27",

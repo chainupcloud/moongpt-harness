@@ -746,11 +746,11 @@
       "title": "API 500 user error message — trade/markets should show friendly error not infinite skeleton",
       "description": "When dex-api/info returns 500 consistently, /trade and /markets pages should show clear error message (e.g. service unavailable) rather than infinite skeleton loading state",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "Reset to pending — fix merged via PR #52 (2026-03-27)"
+      "result_summary": "FAIL — /trade shows 70 skeleton elements with no error UI when API returns 500. Issue #58 filed."
     },
     {
       "id": "E068",
@@ -1015,9 +1015,11 @@
       "priority": 3,
       "title": "/explorer 页面加载与显示",
       "description": "验证 /explorer 页面：加载不 404、title 正确、基础内容渲染（交易历史/区块浏览功能）",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "result_summary": "PASS — /explorer HTTP 200, title \"Explorer | Hermes DEX\", shows Latest Checkpoints + Transactions tables with live data.",
+      "last_run": "2026-03-27"
     },
     {
       "id": "E090",
@@ -1050,9 +1052,11 @@
       "priority": 3,
       "title": "/explorer 分页 — View All Checkpoints 链接可点击并加载更多",
       "description": "点击 'View All Checkpoints →' 链接，验证加载完整列表或分页正常工作",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "result_summary": "PASS — \"View All Checkpoints →\" link exists (href /explorer/checkpoints), click loads full transaction list with pagination.",
+      "last_run": "2026-03-27"
     },
     {
       "id": "E093",
@@ -1819,9 +1823,11 @@
       "priority": 2,
       "title": "/dex-api/info 响应格式验证 — 确认返回 JSON 是对象还是数组",
       "description": "直接 fetch /dex-api/info，检查 HTTP 响应：若为数组格式则前端需要 [0] 索引才能取 universe/mids；若为对象则直接取属性。记录实际响应结构。",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "result_summary": "PASS — POST /dex-api/info returns JSON object {universe:[...]}, not array. Frontend accesses .universe correctly.",
+      "last_run": "2026-03-27"
     },
     {
       "id": "E166",
@@ -1860,6 +1866,61 @@
       "priority": 3,
       "title": "Stop Market/Stop Limit 订单类型 — trigger price 输入框显示与功能",
       "description": "切换到 Stop Market 或 Stop Limit 时，验证 trigger price 输入框是否出现，且填写后切换回 Limit 时 size/price 值保留。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E170",
+      "area": "error-handling",
+      "priority": 3,
+      "title": "/trade error boundary timeout — 何时从骨架屏切换到 error UI？",
+      "description": "测试 /trade 在 API 持续失败时，是否在 N 秒后（如 10s/30s）自动切换到 error 状态或显示 retry 按钮。验证超时阈值是否合理。",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E171",
+      "area": "explorer",
+      "priority": 3,
+      "title": "/explorer/checkpoints 页面 — 完整列表分页与数量",
+      "description": "访问 /explorer/checkpoints 完整列表页：验证分页控件存在且可翻页，显示 checkpoint 总数，点击单条 checkpoint 进入详情。",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E172",
+      "area": "explorer",
+      "priority": 3,
+      "title": "/explorer checkpoint 详情页 — 点击 checkpoint 行展开交易列表",
+      "description": "在 /explorer 或 /explorer/checkpoints 点击某个 checkpoint（如 #33458），验证跳转到详情页，显示该 checkpoint 内的交易列表和 metadata（时间、txs 数量、gas 等）。",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E173",
+      "area": "explorer",
+      "priority": 3,
+      "title": "/explorer search — 搜索 tx hash 返回正确交易详情",
+      "description": "在 /explorer 搜索框输入已知 tx hash（从列表取一个），验证搜索后跳转到正确的交易详情页，显示 type/sender/status 等字段。",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E174",
+      "area": "explorer",
+      "priority": 4,
+      "title": "/explorer transaction 详情 — PlaceOrder 类型显示订单 side/size/price",
+      "description": "点击 type=PlaceOrder 的交易，验证详情页是否显示订单相关信息（side: Buy/Sell, size, price, market）而不仅仅是原始 payload。",
+      "track": "frontend",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
