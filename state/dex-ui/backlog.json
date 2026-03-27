@@ -1396,9 +1396,11 @@
       "priority": 3,
       "title": "Markets 页面可访问并展示合约列表",
       "description": "访问 /markets 页面（近期 app/markets/page.tsx 有改动），验证页面不 404，展示至少一个交易对",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Markets page loads with BTC-USDC (title=Markets|Hermes DEX, 1 pair visible)"
     },
     {
       "id": "E122",
@@ -1426,9 +1428,11 @@
       "priority": 3,
       "title": "API Keys 页面可访问并展示密钥管理 UI",
       "description": "访问 /api-keys 页面（近期 app/api-keys/ 有改动），验证已登录用户可看到 API key 管理界面",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /api-keys page loads: API description + \"Please connect your wallet to manage API keys\""
     },
     {
       "id": "E125",
@@ -2394,9 +2398,11 @@
       "priority": 2,
       "title": "钱包连接后 Buy/Long 按钮状态变化 — 回归验证",
       "description": "验证钱包连接后 Buy/Long 按钮是否正确启用，且点击后有 toast 反馈。专门验证 issue #72 修复后的回归测试。",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Buy/Long button enabled, click shows Connect Wallet toast (regression #72 confirmed fixed)"
     },
     {
       "id": "E216",
@@ -2404,10 +2410,12 @@
       "priority": 2,
       "title": "prevDayPx 更新机制 — 24h 价格历史是否随时间更新",
       "description": "监测 /info API 中 prevDayPx 字段是否在不同时间点更新（当前为 0.0）。若持续为 0.0 说明后端未实现 24h 价格历史追踪。后端测试。",
-      "status": "pending",
+      "status": "failed",
       "track": "backend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — prevDayPx=0.0 in /info API while markPx=66821.1; backend not tracking 24h price history → dex-sui#27"
     },
     {
       "id": "E217",
@@ -2436,6 +2444,47 @@
       "title": "Market 订单提交后 toast 反馈 — 与 Limit 订单对比",
       "description": "验证 Market 订单提交是否也缺少 toast 反馈（issue #69 记录了 Limit 订单问题）。对比 Market 与 Limit 订单的用户反馈机制。",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E220",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets 页面列表点击跳转 /trade — 正确切换交易对",
+      "description": "在 /markets 点击 BTC-USDC 行，验证跳转到 /trade?coin=BTC-USDC 且 Trade 页面的 coin 参数更新",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E221",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets 页面列资金费率数值合理性 — 与 /trade 页面一致",
+      "description": "对比 /markets 表格中 BTC-USDC 资金费率与 /trade 页面右上角的资金费率数值，应一致（允许 <0.001% 误差）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E222",
+      "area": "api_keys",
+      "priority": 3,
+      "title": "API Keys 页面已连接钱包 — 展示创建/删除密钥 UI",
+      "description": "注入 wagmi session cookie 模拟已连接钱包，验证 /api-keys 展示 API key 列表和 Create/Generate 按钮",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E223",
+      "area": "backend",
+      "priority": 2,
+      "title": "后端 /info prevDayPx 修复验证 — 24h 价格追踪回归",
+      "description": "验证 dex-sui#27 修复后，POST /info type:metaAndAssetCtxs 返回的 prevDayPx 不为 0.0，且合理接近 24h 前 BTC 价格",
+      "status": "pending",
+      "track": "backend",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
     }

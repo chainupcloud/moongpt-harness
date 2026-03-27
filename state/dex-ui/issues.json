@@ -520,6 +520,16 @@
       "scenario_id": "E115",
       "created_date": "2026-03-27",
       "fix_attempts": 0
+    },
+    {
+      "title": "[P3] /info API prevDayPx always returns 0.0 — 24h price change unavailable",
+      "status": "open",
+      "repo": "dex-sui",
+      "number": 27,
+      "scenario": "E216",
+      "priority": "P3",
+      "created": "2026-03-27",
+      "url": "https://github.com/chainupcloud/dex-sui/issues/27"
     }
   ],
   "last_updated": "2026-03-27",
