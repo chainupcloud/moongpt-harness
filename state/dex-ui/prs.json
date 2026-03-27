@@ -615,6 +615,15 @@
       "deployed": false,
       "accepted": true,
       "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 111,
+      "issue_numbers": [
+        108
+      ],
+      "status": "open",
+      "title": "fix: leverage slider missing aria-label (#108)",
+      "created_at": "2026-03-27"
     }
   ]
 }
