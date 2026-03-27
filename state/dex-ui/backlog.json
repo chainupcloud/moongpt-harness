@@ -1282,11 +1282,11 @@
       "priority": 3,
       "title": "Withdraw 弹窗字段校验 — 负数/超余额/空值",
       "description": "打开 Withdraw 弹窗，测试：1) 负数金额不能提交；2) 超余额金额显示 Insufficient 提示；3) 空值时确认按钮禁用。与 Deposit 对称验证。",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "Reset after issue #66 fix merged. Re-test needed."
+      "result_summary": "FAIL — Withdraw modal accepts empty/negative/over-balance with no validation (Issue #75)"
     },
     {
       "id": "E112",
@@ -1354,9 +1354,11 @@
       "priority": 3,
       "title": "Explorer 单个 Checkpoint 详情页 — 交易列表展示",
       "description": "从 Explorer 点击一个 checkpoint 链接，验证详情页正常加载，交易列表有数据，hash/time/type 等字段可见",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Explorer checkpoint detail page /explorer/checkpoint/56082 loads; 2 hash elements visible"
     },
     {
       "id": "E118",
@@ -2077,11 +2079,11 @@
       "priority": 2,
       "title": "Trade page 24h change display — verify non-zero 24h % change in stats bar",
       "description": "Trade page header shows '24小时变化 +0.00%'. Verify if this is a real data issue or just testnet limitation. Expected: non-zero 24h change when BTC has moved.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — /trade 24h change shows +0.00% while mark price 66599.1 is valid; issue #63 fixed by PR #67 (merged 2026-03-27), reset for re-validation"
+      "result_summary": "FAIL — 24h change still +0.00% (prevDayPx=0.0, issue still open); bonus: /trade/BTC-USDC → 404 (Issue #76)"
     },
     {
       "id": "E186",
@@ -2483,8 +2485,60 @@
       "priority": 2,
       "title": "后端 /info prevDayPx 修复验证 — 24h 价格追踪回归",
       "description": "验证 dex-sui#27 修复后，POST /info type:metaAndAssetCtxs 返回的 prevDayPx 不为 0.0，且合理接近 24h 前 BTC 价格",
-      "status": "pending",
+      "status": "failed",
       "track": "backend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — prevDayPx=0.0 still, dex-sui fix not yet effective"
+    },
+    {
+      "id": "E224",
+      "area": "navigation",
+      "priority": 2,
+      "title": "/trade/BTC-USDC deep link — redirect or 404 regression check",
+      "description": "Verify /trade/BTC-USDC does not return 404. Should either load trade page or redirect to /trade. Issue #76.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E225",
+      "area": "trade",
+      "priority": 3,
+      "title": "Withdraw modal — submit with empty address field",
+      "description": "Test Withdraw modal: leave 'Withdraw to' address field empty, enter valid amount, click Withdraw. Should show address validation error.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E226",
+      "area": "trade",
+      "priority": 3,
+      "title": "Withdraw modal — invalid address format validation",
+      "description": "Enter an invalid address (e.g. 'abc123') in 'Withdraw to' field. Should show format error.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E227",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint detail — transaction type and hash fields visible",
+      "description": "In checkpoint detail page, verify each transaction row shows: tx hash (0x... format), timestamp, and tx type. Check data completeness.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E228",
+      "area": "trade",
+      "priority": 2,
+      "title": "24h change display after prevDayPx fix — re-verify when dex-sui#27 deploys",
+      "description": "After dex-sui#27 fix is deployed, verify /trade shows non-zero 24h change %. Regression check for E185.",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
     }

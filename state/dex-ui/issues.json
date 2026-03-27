@@ -530,6 +530,30 @@
       "priority": "P3",
       "created": "2026-03-27",
       "url": "https://github.com/chainupcloud/dex-sui/issues/27"
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-75",
+      "title": "[P3] Withdraw modal: no client-side validation for negative/zero/over-balance input",
+      "github_issue_number": 75,
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E111",
+      "created_date": "2026-03-27",
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-76",
+      "title": "[P3] /trade/BTC-USDC URL returns 404 — deep-link to specific market broken",
+      "github_issue_number": 76,
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E185-bonus",
+      "created_date": "2026-03-27",
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-27",
