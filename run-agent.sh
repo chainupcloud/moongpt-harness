@@ -93,6 +93,68 @@ except:
     "https://api.github.com/repos/${OWNER}/${REPO}/pulls?state=open&base=${BASE_BRANCH}&per_page=1" \
     | python3 -c "import json,sys; print(len(json.load(sys.stdin)))" 2>/dev/null || echo "1")
 
+  # ── Shell-level issue state sync (no Claude tokens) ──────────────────────
+  # For every non-closed issue in state/issues.json, query GitHub and sync if closed.
+  ISSUE_TRACKER_OWNER=$(python3 -c "import json; d=json.load(open('$PROJECT_CONFIG')); print(d.get('issue_tracker',d['github'])['owner'])" 2>/dev/null)
+  ISSUE_TRACKER_REPO=$(python3 -c "import json; d=json.load(open('$PROJECT_CONFIG')); print(d.get('issue_tracker',d['github'])['repo'])" 2>/dev/null)
+  SYNCED=$(python3 - <<'PYEOF'
+import json, urllib.request, os, sys
+
+config_path = os.environ.get('HARNESS_PROJECT_CONFIG', '')
+harness_dir = '/home/ubuntu/chainup/moongpt-harness'
+token = os.environ.get('GH_TOKEN', '')
+issues_path = harness_dir + '/state/issues.json'
+
+try:
+    with open(config_path) as f:
+        cfg = json.load(f)
+    tracker = cfg.get('issue_tracker', cfg['github'])
+    owner, repo = tracker['owner'], tracker['repo']
+
+    with open(issues_path) as f:
+        data = json.load(f)
+
+    changed = 0
+    for issue in data.get('issues', []):
+        if issue.get('status') == 'closed':
+            continue
+        num = issue.get('github_number')
+        if not num:
+            continue
+        try:
+            req = urllib.request.Request(
+                f'https://api.github.com/repos/{owner}/{repo}/issues/{num}',
+                headers={'Authorization': f'token {token}', 'User-Agent': 'moongpt-harness'}
+            )
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                gh = json.loads(resp.read())
+            if gh.get('state') == 'closed':
+                issue['status'] = 'closed'
+                issue['closed_at'] = (gh.get('closed_at') or '')[:10]
+                issue.setdefault('note', '')
+                issue['note'] = 'Synced from GitHub (closed by human)'
+                changed += 1
+        except Exception as e:
+            pass
+
+    if changed:
+        with open(issues_path, 'w') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        print(changed)
+    else:
+        print(0)
+except Exception as e:
+    print(0)
+PYEOF
+)
+  if [ "${SYNCED:-0}" != "0" ]; then
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] master: synced ${SYNCED} issue(s) closed on GitHub → state updated."
+    git -C "$HARNESS_DIR" add state/issues.json
+    git -C "$HARNESS_DIR" commit -m "state: sync ${SYNCED} issue(s) closed on GitHub [$PROJECT]" 2>/dev/null || true
+    git -C "$HARNESS_DIR" push origin randd1024 2>/dev/null || true
+  fi
+  # ─────────────────────────────────────────────────────────────────────────
+
   if [ "${LOCAL_OPEN:-0}" = "0" ] && [ "${GH_OPEN:-0}" = "0" ]; then
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] master: no open PRs (local=0, github=0) — skipping (0 tokens used)."
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] master agent completed for $PROJECT."
