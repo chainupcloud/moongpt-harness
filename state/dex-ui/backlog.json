@@ -1498,9 +1498,11 @@
       "priority": 3,
       "title": "Order Book — 实时价格更新可见性",
       "description": "停留在 Order Book 面板 15 秒，观察买卖盘价格/数量是否实时刷新（行变化高亮或数字更新）",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Order book loaded with live prices (65,361...), data changed in 15s"
     },
     {
       "id": "E130",
@@ -1544,9 +1546,11 @@
       "priority": 3,
       "title": "Limit order — cancel from Open Orders tab",
       "description": "Place a limit order at far-off price, verify it shows in Open Orders, then cancel it and verify it disappears",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — Open Orders tab exists (tabs: Positions/Open Orders/TWAP/Trade History), price input not visible without wallet auth"
     },
     {
       "id": "E134",
@@ -1564,9 +1568,11 @@
       "priority": 3,
       "title": "Trade form inputs accessibility — verify labels/aria-labels present",
       "description": "Check that price/size/leverage inputs in trade form have meaningful placeholder or aria-label, not just '0' or '0.00'. Screen reader accessibility check.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — 5 inputs lack accessible names: price(0.00), 3x amount(0), range slider — no aria-label/label"
     },
     {
       "id": "E136",
@@ -2670,9 +2676,11 @@
       "priority": 2,
       "title": "WalletConnect modal auto-triggers on page load — blocks trade form",
       "description": "On page load, the W3M-MODAL (WalletConnect) sometimes appears at z-9999 blocking all trade form interactions. No dismiss button visible. Affects Buy/Long button clicks.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — W3M modal in DOM (opacity:0, z:9999) but not visually blocking on page load"
     },
     {
       "id": "E240",
@@ -2710,6 +2718,56 @@
       "priority": 3,
       "title": "API Keys page — renders without wallet connection",
       "description": "Navigate to /api-keys page. Verify the page renders without errors. Check if it requires wallet connection or shows a connect prompt, and that no JS errors appear.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E244",
+      "area": "trade",
+      "priority": 3,
+      "title": "Limit order form — price input visibility after clicking Limit tab",
+      "description": "Click the Limit order type, verify the price input field becomes visible and accepts numeric input. Currently price input invisible even on Limit tab.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E245",
+      "area": "accessibility",
+      "priority": 3,
+      "title": "Leverage slider — verify aria-label and keyboard navigation",
+      "description": "The leverage range input has no aria-label. Test keyboard navigation (arrow keys) on the leverage slider and verify screen reader announces current value.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E246",
+      "area": "trade",
+      "priority": 3,
+      "title": "Open Orders tab — place and cancel order with connected wallet",
+      "description": "With real wallet session key approved, place a limit BTC-USDC buy at $1 (far below market), verify it appears in Open Orders(N), then cancel and verify count resets.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E247",
+      "area": "trade",
+      "priority": 2,
+      "title": "Order book spread calculation — verify spread value correctness",
+      "description": "Order book shows Spread value (e.g. -1,797.8 (-2.713%)). Verify this is calculated as (best_ask - best_bid) / best_bid * 100. Negative spread is suspicious and may indicate a display bug.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E248",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade form: Buy/Long button state without wallet — inline prompt vs modal",
+      "description": "Click Buy/Long button without wallet connected. Verify inline 'Connect Wallet' prompt appears in form (not a blocking modal). Test that the prompt provides clear CTA to connect.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
