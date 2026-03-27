@@ -78,7 +78,9 @@
       "priority": 2,
       "title": "Market 单余额不足 → 正确拒绝，显示错误提示",
       "description": "市价单 size 设置为远超账户余额的值，验证 Long 按钮禁用或提交后显示余额不足 toast",
-      "status": "pending"
+      "status": "failed",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Market order 999999999 size: Buy/Long button not disabled, no error toast (Issue #26)"
     },
     {
       "id": "E009",
@@ -86,7 +88,9 @@
       "priority": 2,
       "title": "表单输入精度边界 — 0.00001 BTC",
       "description": "price 输入极小值（0.01），size 输入 0.00001，验证表单接受或给出合理的最小订单提示",
-      "status": "pending"
+      "status": "tested",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — price 0.01 and size 0.00001 both accepted correctly, no NaN"
     },
     {
       "id": "E010",
@@ -94,7 +98,9 @@
       "priority": 2,
       "title": "表单输入非法字符 — 字母、负数、特殊符号",
       "description": "price 字段输入 'abc'、'-100'、'1e5'，验证字段只接受合法数字，不崩溃，不 NaN",
-      "status": "pending"
+      "status": "failed",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — All invalid chars (abc, -100, 1e5, !@#$, 1.2.3) accepted in price field (Issue #27)"
     },
     {
       "id": "E011",
@@ -102,7 +108,9 @@
       "priority": 2,
       "title": "设置保存后刷新 → 偏好持久化",
       "description": "在设置面板切换主题/语言/输入框样式，刷新页面，验证设置仍生效",
-      "status": "pending"
+      "status": "tested",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — dex-layout-settings persists in localStorage after page reload"
     },
     {
       "id": "E012",
@@ -354,6 +362,56 @@
       "priority": 3,
       "title": "Trade 页 Buy/Sell 按钮在钱包未连接时显示 'Connect Wallet' 文字",
       "description": "无钱包连接访问 /trade，验证 Long/Short 按钮显示 'Connect Wallet' 或类似引导文字（E034 覆盖整体，此场景更精确）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E041",
+      "area": "trade",
+      "priority": 2,
+      "title": "Market 订单余额不足 → 点击 Buy 后 toast 和按钮状态",
+      "description": "修复 #26 后验证：Available Funds 为 0 时，Buy/Long 按钮 disabled 或点击后显示明确的 insufficient balance 错误",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E042",
+      "area": "trade",
+      "priority": 2,
+      "title": "Price 字段非法字符过滤验证（修复后）",
+      "description": "修复 #27 后验证：price/size 输入 'abc'、'-100' 等非法值被即时过滤，字段仅显示合法数字",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E043",
+      "area": "trade",
+      "priority": 3,
+      "title": "Limit 订单 TP/SL 设置 → 订单创建后确认字段正确",
+      "description": "设置 TP=75000, SL=65000，提交 Limit 订单，通过 Open Orders 或 Trade History 确认 TP/SL 值已附加",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E044",
+      "area": "trade",
+      "priority": 3,
+      "title": "订单百分比按钮（25%/50%/75%/100%）计算正确性",
+      "description": "连接钱包后点击 50% 按钮，验证 size 字段值 = available balance * 50% / current price，计算结果合理",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E045",
+      "area": "trade",
+      "priority": 3,
+      "title": "订单类型切换保持 price/size 字段值不被清空",
+      "description": "在 Limit 模式填入 price=70000, size=0.1，切换到 Market 再切回 Limit，验证 price/size 值保留或合理重置",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"

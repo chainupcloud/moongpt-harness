@@ -127,6 +127,24 @@
       "note": "Also covers K-line time order violation errors. Found during E031/E006/E007 exploration.",
       "deployed_sha": "e57204ad61d3d49307b93e55dfd7dc52c02e28d6",
       "accepted": true
+    },
+    {
+      "number": 26,
+      "title": "[P3] Market 订单余额不足时缺少前端验证 — Buy/Long 按钮未禁用",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E008",
+      "created": "2026-03-27",
+      "fix_attempts": 0
+    },
+    {
+      "number": 27,
+      "title": "[P3] 交易表单 price/size 输入框未过滤非法字符 — 字母、特殊符号可被输入",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E010",
+      "created": "2026-03-27",
+      "fix_attempts": 0
     }
   ]
 }
