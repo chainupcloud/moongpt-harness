@@ -769,7 +769,7 @@
       "id": "issue-2026-03-27-dex-ui-99",
       "github_number": 99,
       "title": "[P3] Withdraw modal — no address field validation (empty and invalid format accepted)",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E225 E226",
       "created_date": "2026-03-27",
@@ -778,7 +778,9 @@
       ],
       "fix_attempts": 1,
       "url": "https://github.com/chainupcloud/dex-ui/issues/99",
-      "pr_number": 100
+      "pr_number": 100,
+      "closed_at": "2026-03-27",
+      "note": " Staging acceptance passed (commit 035e763). Invalid address validation confirmed."
     },
     {
       "id": "issue-2026-03-27-dex-sui-29",

@@ -561,8 +561,14 @@
       "issue_numbers": [
         99
       ],
-      "status": "open",
-      "branch": "fix/issue-99"
+      "status": "merged",
+      "branch": "fix/issue-99",
+      "commit_sha": "035e76317a2c5c1e263e48aa9285568786754575",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "title": "fix: withdraw modal address field validation (#99)",
+      "note": "Vercel deploy READY (dpl_2nUPPkeUaUW7NwiHWcywjAigf6ZV). SHA verified. Address validation error shown for invalid input."
     }
   ]
 }
