@@ -1664,9 +1664,11 @@
       "priority": 3,
       "title": "Leverage slider value persists across order type switches",
       "description": "Set leverage to 5x in Limit mode, switch to Market and back to Limit. Verify the leverage setting is retained. Leverage is a per-account setting that should not reset on order type change.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — leverage 10x persists across Limit→Market→Limit switch"
     },
     {
       "id": "E144",
@@ -1698,9 +1700,11 @@
       "priority": 3,
       "title": "Stop Market order type：触发价格字段验证",
       "description": "选择 Stop Market 订单类型，验证是否出现 Stop Price 字段（无 Limit Price），且触发价格可以填写并提交",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Stop Market shows trigger price field, no limit price field"
     },
     {
       "id": "E147",
@@ -1708,9 +1712,11 @@
       "priority": 3,
       "title": "TWAP 订单：时间间隔和拆分数量字段验证",
       "description": "选择 TWAP 订单类型，验证时间间隔、分批次数字段是否出现并可输入，提交按钮是否响应",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — TWAP mode shows duration/interval/parts fields; submit button visible"
     },
     {
       "id": "E148",
@@ -2959,9 +2965,11 @@
       "priority": 2,
       "title": "Order type selector — all types accessible (Limit/Market/Stop/TWAP)",
       "description": "Navigate to /trade with fully connected wallet. Verify all order type buttons are visible: Limit, Market, Stop Limit, Stop Market, TWAP. Currently only TWAP shown in cookie-injected session — investigate if other types need different wallet state.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — all order types accessible via dropdown: Limit/Market/Stop Limit/Stop Market/TWAP/Scale/Scalp"
     },
     {
       "id": "E265",
@@ -2999,6 +3007,56 @@
       "priority": 3,
       "title": "Stop Limit issue #80 verification — trigger price label present after fix",
       "description": "Issue #80 reports Stop Limit trigger price input has no label. After fix is deployed, verify: (1) trigger price field has visible label; (2) placeholder text describes expected format; (3) ARIA label present for accessibility. Use proper order type navigation.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E269",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Order type dropdown — Scale order fields validation",
+      "description": "Select Scale order type. Verify scale-specific fields appear (price range, number of orders). Confirm form behaves correctly and Buy/Sell button is enabled.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E270",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Order type dropdown — Scalp order fields validation",
+      "description": "Select Scalp order type. Verify scalp-specific fields appear. Confirm form is usable.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E271",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Stop Limit order — both stop price and limit price fields present",
+      "description": "Select Stop Limit order type. Verify two price fields exist: Stop Price (trigger) and Limit Price (execution). Both should be fillable and distinct.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E272",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "TWAP order submission — end-to-end with valid inputs",
+      "description": "Fill TWAP order form: set amount, duration, and price limit. Confirm wallet not connected shows connect prompt or error. Do not actually submit on testnet.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E273",
+      "area": "trade-form",
+      "priority": 4,
+      "title": "Order type selection persists on page refresh",
+      "description": "Switch to Stop Limit order type, then refresh the page. Check if the order type selection is remembered (localStorage/URL param) or resets to default Limit.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
