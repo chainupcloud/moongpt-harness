@@ -996,11 +996,13 @@
       "github_number": 117,
       "title": "[P3] TWAP order form — missing time interval and chunks configuration fields",
       "priority": "P3",
-      "status": "open",
+      "status": "closed",
       "scenario": "E280",
       "area": "trade",
       "opened_date": "2026-03-27",
-      "fix_attempts": 0
+      "fix_attempts": 0,
+      "closed_at": "2026-03-27",
+      "note": "Synced from GitHub (closed by human)"
     }
   ],
   "last_updated": "2026-03-27",
