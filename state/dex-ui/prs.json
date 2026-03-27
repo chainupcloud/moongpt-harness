@@ -594,6 +594,17 @@
       "base": "dev",
       "head": "fix/issue-102",
       "created_at": "2026-03-27"
+    },
+    {
+      "pr_number": 106,
+      "issue_numbers": [
+        104
+      ],
+      "title": "fix: TWAP order form inputs missing labels (#104)",
+      "status": "open",
+      "base": "dev",
+      "head": "fix/issue-104",
+      "created_at": "2026-03-27"
     }
   ]
 }
