@@ -635,9 +635,11 @@
       "priority": 3,
       "title": "/spot 页面 'Trade Perpetuals' 按钮跳转验证",
       "description": "Spot Coming Soon 页面有一个 'Trade Perpetuals' 按钮，验证点击后是否正确跳转到 /trade 页面",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /spot Trade Perpetuals button navigates correctly to /trade"
     },
     {
       "id": "E059",
@@ -645,9 +647,11 @@
       "priority": 3,
       "title": "价格数据加载方式验证 — HTTP polling vs SSE",
       "description": "E017 发现 app 不使用 WebSocket，确认实际数据更新机制（轮询间隔、SSE stream），并验证断网后数据是否停止更新、恢复后数据是否自动刷新",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — HTTP polling confirmed: /dex-api/info called ~7x/8s, no WebSocket/SSE"
     },
     {
       "id": "E060",
@@ -691,9 +695,11 @@
       "priority": 3,
       "title": "Spot 页面 'Trade Perpetuals' 按钮点击是否跳转到 /trade",
       "description": "spot 页显示 'Spot Trading Coming Soon'，点击 'Trade Perpetuals' 按钮应跳转到 /trade；验证链接有效",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — Duplicate of E058, same test"
     },
     {
       "id": "E064",
@@ -740,9 +746,11 @@
       "title": "API 500 user error message — trade/markets should show friendly error not infinite skeleton",
       "description": "When dex-api/info returns 500 consistently, /trade and /markets pages should show clear error message (e.g. service unavailable) rather than infinite skeleton loading state",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — /trade shows 70 skeleton loaders instead of error message on API 500 → Issue #51"
     },
     {
       "id": "E068",
@@ -751,9 +759,11 @@
       "title": "/api-keys page load and content — new page basic validation",
       "description": "Visit /api-keys page, verify it loads correctly, shows API key related content, no white screen or 404",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /api-keys page loads, shows API wallet description and connect prompt"
     },
     {
       "id": "E069",
@@ -1624,6 +1634,61 @@
       "priority": 3,
       "title": "Scale 和 Scalp 订单类型：字段和行为验证",
       "description": "选择 Scale 或 Scalp 订单类型，验证是否出现特有字段（价格范围、数量分配等），及基本的提交流程",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E150",
+      "area": "error-handling",
+      "priority": 3,
+      "title": "/markets 页面 API 500 时是否显示错误提示",
+      "description": "E067 测试了 /trade，此场景专门测 /markets 在 API 500 时是否有友好错误消息，而不是空白或骨架屏",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E151",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "/api-keys 页面连接钱包后可创建 API Key",
+      "description": "E068 验证了页面基础加载，此场景测试已连接钱包状态下是否可以成功创建和查看 API Key",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E152",
+      "area": "trade",
+      "priority": 3,
+      "title": "价格数据轮询停止后 UI 是否提示数据过期",
+      "description": "E059 确认 /dex-api/info 每秒轮询一次。此场景：断网后 10s，验证 UI 是否有数据过时提示或重连状态",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E153",
+      "area": "navigation",
+      "priority": 3,
+      "title": "/spot 页面深层链接 — 直接访问 URL 是否正常渲染",
+      "description": "E058 通过点击导航，此场景直接访问 /spot URL 验证 SSR/CSR 路由行为，以及 SEO 相关 meta 标签是否存在",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E154",
+      "area": "api-keys",
+      "priority": 4,
+      "title": "/api-keys 页面标题和 meta description 正确性",
+      "description": "验证新增的 /api-keys 页面是否有正确的 <title>、meta description、og:title 等 SEO 标签",
+      "track": "frontend",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
