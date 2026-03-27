@@ -823,15 +823,18 @@
     {
       "id": "dex-ui-102",
       "github_issue_number": 102,
+      "github_number": 102,
       "title": "[P3] Nav \"More\" dropdown — clicking button shows no content (chevron present but no menu appears)",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario_id": "E235",
       "created_date": "2026-03-27",
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/102",
       "labels": [
         "bug"
-      ]
+      ],
+      "fix_attempts": 1,
+      "pr_number": 105
     },
     {
       "id": "dex-ui-104",
