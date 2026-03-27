@@ -663,6 +663,16 @@
       ],
       "fix_attempts": 1,
       "pr_number": 89
+    },
+    {
+      "id": "issue-90",
+      "github_issue_number": 90,
+      "title": "[P3] Explorer detail pages show missing timestamp (Time: –) and wrong checkpoint (#0)",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E177",
+      "created_date": "2026-03-27",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-27",

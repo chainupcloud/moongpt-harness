@@ -3461,6 +3461,57 @@
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
+    },
+    {
+      "id": "E308",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer 搜索框支持 checkpoint 编号搜索",
+      "description": "在 /explorer 搜索框输入纯数字 checkpoint 编号（如 112413），验证能直接跳转到 /explorer/checkpoint/112413 详情页",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E309",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint 详情 — 有 transaction 的 checkpoint 内容验证",
+      "description": "找到一个 transactions > 0 的 checkpoint（通过 API 查找），验证其详情页能正确展示 tx 列表、时间戳和用户地址",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E310",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets 持仓量显示 $0.00 — 与后端 API 数据对比",
+      "description": "用 dex-cli 或 curl 调用后端 /summary 或 /meta 接口查询 BTC-USDC 的 openInterest 值，与 /markets 页面显示的 $0.00 对比，确认是否为显示 bug",
+      "status": "pending",
+      "track": "backend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E311",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL 触发价格精确计算验证",
+      "description": "在 /trade 输入入场价 50000，设置 TP 百分比 5%，验证 TP 触发价计算结果 = 52500；设置 SL 百分比 2%，验证 SL 触发价 = 49000",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E312",
+      "area": "explorer",
+      "priority": 4,
+      "title": "Explorer 搜索框输入钱包地址 — 地址相关交易过滤",
+      "description": "在 /explorer 搜索框输入测试钱包地址，验证是否展示该地址相关的 tx 记录，或给出合适的 not-found 提示",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
     }
   ]
 }
