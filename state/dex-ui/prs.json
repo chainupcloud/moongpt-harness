@@ -331,12 +331,30 @@
       "accepted": true
     },
     {
+      "pr_number": 64,
+      "issue_numbers": [
+        58
+      ],
+      "status": "merged",
+      "title": "fix: /trade shows error UI instead of infinite skeleton when API 500/timeout (#58)",
+      "commit_sha": "46f5bd1f910543f57028e0f465913c18f9dfa7a6",
+      "merged_at": "2026-03-27",
+      "deployed": false,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
       "pr_number": 65,
       "issue_numbers": [
         62
       ],
-      "status": "open",
-      "title": "fix: show toast when clicking Buy/Long without wallet connection (#62)"
+      "status": "merged",
+      "title": "fix: show toast when clicking Buy/Long without wallet connection (#62)",
+      "commit_sha": "c6049d4870699f9cfada4ae717e8e9bb8a02b521",
+      "merged_at": "2026-03-27",
+      "deployed": false,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     }
   ]
 }

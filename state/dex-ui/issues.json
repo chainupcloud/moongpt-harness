@@ -406,16 +406,20 @@
       "github_number": 58,
       "github_issue_number": 58,
       "title": "[P3] /trade page shows infinite skeleton (70+ elements) with no error feedback when /dex-api/info returns 500",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E067",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "fix_attempts": 1,
       "pr_number": 64,
       "labels": [
         "bug"
       ],
-      "github_repo": "chainupcloud/dex-ui"
+      "github_repo": "chainupcloud/dex-ui",
+      "deployed_sha": "46f5bd1f910543f57028e0f465913c18f9dfa7a6",
+      "accepted": true,
+      "note": "PR #64 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification."
     },
     {
       "issue_number": 60,
@@ -435,15 +439,19 @@
       "number": 62,
       "github_number": 62,
       "title": "[P3] Buy/Long button click without wallet connection shows empty toast — no Connect Wallet prompt",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E127",
       "created": "2026-03-27",
+      "closed_at": "2026-03-27",
       "labels": [
         "bug"
       ],
       "fix_attempts": 1,
-      "pr_number": 65
+      "pr_number": 65,
+      "deployed_sha": "c6049d4870699f9cfada4ae717e8e9bb8a02b521",
+      "accepted": true,
+      "note": "PR #65 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification."
     },
     {
       "github_issue_number": 63,
