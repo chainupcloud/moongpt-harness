@@ -2349,9 +2349,11 @@
       "priority": 3,
       "title": "Markets 页面持仓量（Open Interest）显示 $0.00 — 数据映射验证",
       "description": "markets 表格中 BTC-USDC 持仓量列显示 $0.00，检查 API 是否提供该字段，前端映射是否正确",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Open Interest shows $0.00 (1 occurrence). Issue #94 created."
     },
     {
       "id": "E201",
@@ -2381,9 +2383,11 @@
       "priority": 3,
       "title": "/markets 页面多市场行数 — 验证是否只显示 BTC-USDC",
       "description": "testnet 限制下 markets 表格只显示 1 行(BTC-USDC)，确认是环境限制还是数据加载问题",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Only BTC market visible on /markets page, consistent with testnet"
     },
     {
       "id": "E204",
@@ -2415,9 +2419,11 @@
       "priority": 3,
       "title": "Withdraw modal — 地址字段验证 (无效地址格式)",
       "description": "Withdraw 弹窗的 Withdraw to 地址输入框：输入无效地址（如 'abc', '0x123'），验证是否有 invalid address 提示且 Withdraw 按钮禁用。",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Address validation works; invalid addresses disable submit button"
     },
     {
       "id": "E207",
@@ -3665,9 +3671,11 @@
       "priority": 2,
       "title": "资金费率倒计时是否真实递减 — 3次采样验证",
       "description": "E320发现资金费率标签'1.3441% / 11:44'存在但未捕获单独倒计时元素。在页面上采样3次（间隔5秒），验证时间部分是否真实递减（如11:44 → 11:39 → 11:34），排除静态渲染",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Countdown decrements correctly. S1=04:17, S2=04:12, S3=04:07"
     },
     {
       "id": "E326",
@@ -3675,6 +3683,56 @@
       "priority": 3,
       "title": "Withdraw modal — 目标地址格式验证（无效地址）",
       "description": "在Withdraw modal输入无效地址格式（如'0xinvalid', '123abc', 空白），验证是否显示地址格式错误提示，submit按钮是否禁用",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E327",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets 页面 OI 修复后验证 (issue #94): Open Interest 显示正确非零值",
+      "description": "验证 issue #94 修复后 /markets 页面 Open Interest 字段显示正确的持仓量（非零）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E328",
+      "area": "spot",
+      "priority": 3,
+      "title": "Spot 页面基础功能可达性 — 页面加载与交易表单显示",
+      "description": "访问 /spot 页面，验证页面正常加载，交易表单（Buy/Sell）可见，spot市场数据显示",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E329",
+      "area": "explorer",
+      "priority": 4,
+      "title": "Explorer 页面 /explorer — 交易历史记录加载与显示",
+      "description": "访问 /explorer 页面，验证交易列表加载，点击一条记录跳转到 /explorer/tx/{digest} 详情页",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E330",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys 页面 — 未连接钱包时显示提示；连接后可生成API Key",
+      "description": "访问 /api-keys 页面，验证未连接钱包时显示 Connect Wallet 提示；连接后页面显示 API Key 管理界面",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E331",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade 页面 24h 价格变动 — 验证涨跌幅数据非零且与 mark price 一致",
+      "description": "在 /trade/BTC-USDC 验证 24h 价格涨跌幅数据（不为 +0.00%），与标记价格数据来源一致（关联 issue #63）",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"

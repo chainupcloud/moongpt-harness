@@ -698,6 +698,17 @@
       "created_at": "2026-03-27",
       "fix_attempts": 1,
       "pr_number": 93
+    },
+    {
+      "github_number": 94,
+      "title": "[P3] /markets 页面 Open Interest 显示 $0.00 — 持仓量数据映射错误",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E200",
+      "created_date": "2026-03-27",
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-27",
