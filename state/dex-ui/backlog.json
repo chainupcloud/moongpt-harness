@@ -118,7 +118,9 @@
       "priority": 2,
       "title": "主题切换 → 所有 UI 颜色跟随变化，无硬编码残留",
       "description": "切换到每个可用主题，截图比对关键元素（背景色、文字色、按钮色）是否随主题变化",
-      "status": "pending"
+      "status": "skipped",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — App uses fixed \"basedOrange\" theme, no theme toggle button present"
     },
     {
       "id": "E013",
@@ -126,7 +128,9 @@
       "priority": 2,
       "title": "Trade → Portfolio → Explorer 跨页导航，无白屏",
       "description": "依次点击导航栏三个页面，每次等待 4s，验证无空白页、无 JS 崩溃报错",
-      "status": "pending"
+      "status": "tested",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — All routes load correctly, no white screens; in-app nav links work"
     },
     {
       "id": "E014",
@@ -150,7 +154,9 @@
       "priority": 2,
       "title": "钱包下拉菜单 — 复制地址按钮功能",
       "description": "点击 header 中钱包地址，打开下拉，点击 Copy Address，验证 clipboard 操作触发（toast 确认）",
-      "status": "pending"
+      "status": "skipped",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — Wallet not connected, cannot test wallet dropdown copy address"
     },
     {
       "id": "E017",
@@ -166,7 +172,9 @@
       "priority": 2,
       "title": "Portfolio Positions tab — 已有持仓显示 Entry Price / Size / PnL",
       "description": "钱包连接后访问 Portfolio，切到 Positions tab，验证存在至少 1 行数据（或空提示）且字段完整",
-      "status": "pending"
+      "status": "skipped",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — Portfolio positions tab requires connected wallet to display"
     },
     {
       "id": "E019",
@@ -413,6 +421,61 @@
       "title": "订单类型切换保持 price/size 字段值不被清空",
       "description": "在 Limit 模式填入 price=70000, size=0.1，切换到 Market 再切回 Limit，验证 price/size 值保留或合理重置",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E046",
+      "area": "Portfolio",
+      "priority": 2,
+      "title": "Portfolio Positions tab — connected wallet shows Entry Price / Size / PnL",
+      "description": "Connect wallet via real EIP-6963 provider injection, navigate to Portfolio > Positions tab, verify each open position row shows Entry Price, Position Size, Unrealized PnL columns with correct numeric values",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E047",
+      "area": "Navigation",
+      "priority": 3,
+      "title": "Explorer page loads and shows trade history data",
+      "description": "Navigate to /explorer (or equivalent), verify the page shows recent trade history table with columns (time, market, side, price, size), no white screen or error state",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E048",
+      "area": "Markets",
+      "priority": 2,
+      "title": "Markets page displays market list with price and 24h change",
+      "description": "Navigate to /markets page, verify it loads a list of tradeable markets showing each market's current price and 24h percentage change, verify BTC-USDC is present",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E049",
+      "area": "Theme",
+      "priority": 3,
+      "title": "Fixed theme 'basedOrange' — verify all UI elements use CSS variables not hardcoded colors",
+      "description": "Since the app uses a fixed 'basedOrange' theme (no toggle), audit that major UI components (nav, buttons, trade form, charts) use CSS variables rather than hardcoded hex colors. Look for inline style with hardcoded colors as a regression risk.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E050",
+      "area": "Trade",
+      "priority": 2,
+      "title": "Spot page (/spot) loads and shows spot trading interface",
+      "description": "Recent git changes include app/spot/layout.tsx and app/spot/page.tsx. Navigate to /spot, verify the page loads without error and shows a spot trading form or market data (not a 404 or blank page)",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
     }
