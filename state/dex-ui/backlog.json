@@ -3772,9 +3772,11 @@
       "priority": 3,
       "title": "/markets 排序 — 实际数据重排（需多资产环境或 mock）",
       "description": "当前 testnet 只有 BTC-USDC，无法验证排序后数据重排。此场景标记为未来多资产环境测试，或通过 API mock 测试排序逻辑",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — testnet only has BTC-USDC, multi-asset sort cannot be tested"
     },
     {
       "id": "E319",
@@ -4148,9 +4150,11 @@
       "priority": 3,
       "title": "Balances 标签 — 无钱包时显示状态验证",
       "description": "在未连接钱包的情况下点击 Balances 标签，验证是否显示空状态/连接提示，而非报错",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Balances tab shows no errors without wallet, connect prompt displayed"
     },
     {
       "id": "E351",
@@ -4280,9 +4284,11 @@
       "priority": 3,
       "title": "Withdraw modal — pre-fill 'Withdraw to' with user's own wallet address by default",
       "description": "When user opens Withdraw modal with wallet connected, check if 'Withdraw to' field is pre-filled with the connected wallet address or left blank",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — code confirms pre-fill logic implemented (WithdrawModal.tsx:82), cannot verify with real wallet in test env"
     },
     {
       "id": "E362",
@@ -6073,9 +6079,11 @@
       "priority": 2,
       "title": "API Keys — 已连接钱包下创建新 API Key 完整流程",
       "description": "连接真实钱包后访问 /api-keys，点击 Create/Add 按钮，填写名称和权限，验证新 key 出现在列表中（有 key ID 和 secret 显示）",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — /api-keys page correctly gates behind isConnected; wagmi cookie insufficient for AppKit auth"
     },
     {
       "id": "E531",
@@ -6113,6 +6121,56 @@
       "priority": 3,
       "title": "Markets 排序箭头状态 — 当前排序列高亮显示",
       "description": "在 /markets 页面点击一个列头（如 24h成交量），验证该列排序箭头变为实心/高亮（↓/↑），其他列箭头变为非激活状态（↕）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E535",
+      "area": "trade",
+      "priority": 3,
+      "title": "Withdraw modal — pre-fill 'Withdraw to' with wallet address (runtime verify with connected wallet)",
+      "description": "Code confirms pre-fill logic (WithdrawModal.tsx line 82: walletAddress || ''). Verify at runtime: open Withdraw modal with properly connected wallet, confirm 'Withdraw to' field shows wallet address automatically",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E536",
+      "area": "portfolio",
+      "priority": 2,
+      "title": "API Keys — 页面加载时已存在的 API wallets 列表展示",
+      "description": "无需完整创建流程，检查 /api-keys 页面在有已授权 agent wallets 时的展示：列表是否正确显示 wallet 地址、名称、剩余天数和 Revoke 按钮",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E537",
+      "area": "trade",
+      "priority": 3,
+      "title": "Withdraw modal — Send mode vs Withdraw mode: destination field behavior",
+      "description": "WithdrawModal has two modes: 'withdraw' (pre-fills wallet addr) and 'send' (empty). Verify Send mode keeps destination blank and Withdraw mode pre-fills. Verify mode toggle resets field correctly (line 95 in WithdrawModal.tsx)",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E538",
+      "area": "trade",
+      "priority": 4,
+      "title": "Balances tab — 无钱包时显示内容完整性验证",
+      "description": "无钱包连接时 Balances tab 内容：应有空状态提示或 'Connect wallet' CTA，确认不显示空白区域或无内容状态",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E539",
+      "area": "markets",
+      "priority": 4,
+      "title": "/markets 页面 — 排序按钮 UI 交互状态（单资产环境）",
+      "description": "即使 testnet 只有 BTC-USDC，可验证排序按钮的 UI 状态：点击后图标是否切换（asc/desc），激活状态是否正确高亮，即便只有一行数据",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
