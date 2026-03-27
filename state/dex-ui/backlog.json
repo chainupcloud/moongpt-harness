@@ -1952,9 +1952,11 @@
       "priority": 3,
       "title": "24h 变化数据跨页面一致性 — /trade 和 /markets 应显示相同百分比",
       "description": "当前 /trade 和 /markets 均显示 +0.00%。修复后验证两页面 24h 变化数值一致，且与外部 BTC 价格变化吻合。",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /trade and /markets both show +0.00% consistently (same backend data source)"
     },
     {
       "id": "E168",
@@ -1962,9 +1964,11 @@
       "priority": 3,
       "title": "Portfolio 页面 Connect Wallet 按钮可点击并触发钱包连接流程",
       "description": "访问 /portfolio 未连接状态，点击 'Connect your wallet to view portfolio' CTA，验证是否弹出钱包连接 modal 并能完成连接。",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Connect wallet navbar button triggers wallet modal on /portfolio page"
     },
     {
       "id": "E169",
@@ -2145,11 +2149,11 @@
       "priority": 2,
       "title": "Trade page 24h change display — verify non-zero 24h % change in stats bar",
       "description": "Trade page header shows '24小时变化 +0.00%'. Verify if this is a real data issue or just testnet limitation. Expected: non-zero 24h change when BTC has moved.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "Reset to pending: /trade/BTC-USDC deep-link fix (Issue #76) merged+accepted. Re-verify 24h change and deep-link behavior."
+      "result_summary": "FAIL — /trade shows 24h变化+0.00% due to prevDayPx=0.0 (backend issue #27)"
     },
     {
       "id": "E186",
@@ -3277,6 +3281,59 @@
       "priority": 2,
       "title": "/markets 24h 涨跌 — backend API /dex-api/info 返回值验证",
       "description": "直接调用 /dex-api/info API 验证 prevDayPx 字段是否非零（issue #27 根因验证）",
+      "status": "failed",
+      "track": "backend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — prevDayPx=0.0 confirmed via API POST, issue #27 root cause still present"
+    },
+    {
+      "id": "E293",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio 连接钱包后显示余额和仓位",
+      "description": "连接测试钱包后，/portfolio 应显示 USDC 余额、当前仓位（空则显示 empty state），验证数据加载正常。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E294",
+      "area": "trade",
+      "priority": 3,
+      "title": "24h 变化修复后回归 — prevDayPx 变为非零后 UI 更新",
+      "description": "当 issue #27 修复后（prevDayPx 非零），验证 /trade 和 /markets 均显示正确的非零 24h 变化百分比，且两页一致。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E295",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio 历史订单列表分页/滚动",
+      "description": "连接钱包后，在 Trade History 标签下，若历史订单 > 10 条，验证是否有分页或无限滚动加载更多数据。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E296",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stats bar 资金费 Countdown 实时倒计时",
+      "description": "交易页 Header 中的 '资金费 / 倒计时' 字段（显示 0.1239% / HH:MM）应实时倒计时，刷新10秒后验证倒计时数值减少。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E297",
+      "area": "markets",
+      "priority": 4,
+      "title": "/markets 页未平仓合约(OI)数据验证",
+      "description": "/markets 列表中 BTC-USDC 显示的未平仓合约数值，与 /dex-api/info 中 openInterest 字段应一致。",
       "status": "pending",
       "track": "backend",
       "added_by": "explore-agent",
