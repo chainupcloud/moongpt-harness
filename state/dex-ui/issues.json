@@ -227,13 +227,17 @@
       "number": 35,
       "github_number": 35,
       "title": "[P3] /explorer checkpoint 详情页 Time 显示 1970-01-01 00:00:00",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "area": "explorer",
       "created_at": "2026-03-27",
+      "closed_at": "2026-03-27",
       "fix_attempts": 1,
       "pr_number": 37,
-      "linked_scenario": "E091-observation"
+      "linked_scenario": "E091-observation",
+      "deployed_sha": "23df6db0e87e6bedfb8f3086e7b0df6f1b13d68e",
+      "accepted": true,
+      "note": "PR merged to dev. Vercel deploy failed (team config error, not code). Accepted via code review + SHA verification."
     }
   ],
   "last_updated": "2026-03-27"

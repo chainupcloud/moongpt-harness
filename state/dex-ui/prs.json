@@ -196,8 +196,13 @@
       "issue_numbers": [
         35
       ],
-      "status": "open",
-      "title": "fix: checkpoint detail Time shows 1970-01-01 (#35)"
+      "status": "merged",
+      "title": "fix: checkpoint detail Time shows 1970-01-01 (#35)",
+      "commit_sha": "23df6db0e87e6bedfb8f3086e7b0df6f1b13d68e",
+      "merged_at": "2026-03-27",
+      "deployed": false,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully."
     }
   ]
 }
