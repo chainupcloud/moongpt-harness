@@ -635,9 +635,14 @@
       "issue_numbers": [
         114
       ],
-      "status": "open",
+      "status": "merged",
       "title": "fix: size slider keyboard arrow keys not responding (#114)",
-      "created_at": "2026-03-27"
+      "created_at": "2026-03-27",
+      "commit_sha": "df84b4c6f8b9638cf76c150e2edf7bc5b6ef3163",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": false,
+      "note": "P4 issue — awaiting human acceptance. Vercel deploy READY (dpl_27kteYovUemHqT6hF36SyN61tV3T). SHA verified."
     }
   ]
 }
