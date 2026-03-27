@@ -229,6 +229,14 @@
       "deployed": true,
       "accepted": false,
       "note": "Acceptance failed: Order History button still overflows viewport in 812×375 landscape"
+    },
+    {
+      "pr_number": 43,
+      "issue_numbers": [
+        40
+      ],
+      "status": "open",
+      "title": "fix: deposit modal add insufficient balance validation (#40)"
     }
   ]
 }
