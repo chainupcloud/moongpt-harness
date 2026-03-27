@@ -438,10 +438,14 @@
       "issue_numbers": [
         76
       ],
-      "status": "open",
+      "status": "merged",
       "created_at": "2026-03-27",
       "title": "fix: /trade/BTC-USDC deep-link returns 404 — add catch-all redirect (#76)",
-      "note": "No reviews yet. Mergeable but waiting for review."
+      "commit_sha": "9e7ea6cae6da788696091b5d1a3a07d1c68ff095",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy READY (dpl_8Du1NGTknDcXMkLSbDkw7wLCAtPs). SHA verified. /trade/BTC-USDC redirects to /trade?coin=BTC (HTTP 200)."
     },
     {
       "pr_number": 84,

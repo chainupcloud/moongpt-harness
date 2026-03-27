@@ -2137,11 +2137,11 @@
       "priority": 2,
       "title": "Trade page 24h change display — verify non-zero 24h % change in stats bar",
       "description": "Trade page header shows '24小时变化 +0.00%'. Verify if this is a real data issue or just testnet limitation. Expected: non-zero 24h change when BTC has moved.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — 24h change still +0.00% (prevDayPx=0.0, issue still open); bonus: /trade/BTC-USDC → 404 (Issue #76)"
+      "result_summary": "Reset to pending: /trade/BTC-USDC deep-link fix (Issue #76) merged+accepted. Re-verify 24h change and deep-link behavior."
     },
     {
       "id": "E186",

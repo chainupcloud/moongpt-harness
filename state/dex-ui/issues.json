@@ -563,15 +563,19 @@
       "title": "[P3] /trade/BTC-USDC URL returns 404 — deep-link to specific market broken",
       "github_issue_number": 76,
       "github_number": 76,
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E185-bonus",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "labels": [
         "bug"
       ],
       "fix_attempts": 1,
-      "pr_number": 83
+      "pr_number": 83,
+      "deployed_sha": "9e7ea6cae6da788696091b5d1a3a07d1c68ff095",
+      "accepted": true,
+      "note": "PR #83 merged + deployed (dpl_8Du1NGTknDcXMkLSbDkw7wLCAtPs). /trade/BTC-USDC now redirects to /trade?coin=BTC (HTTP 200). Acceptance passed."
     },
     {
       "id": "E135-77",
