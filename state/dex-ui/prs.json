@@ -242,6 +242,14 @@
       "deployed": true,
       "accepted": false,
       "note": "P4 issue — awaiting human acceptance"
+    },
+    {
+      "pr_number": 46,
+      "issue_numbers": [
+        45
+      ],
+      "status": "open",
+      "title": "fix: limit order submit shows no feedback toast (#45)"
     }
   ]
 }
