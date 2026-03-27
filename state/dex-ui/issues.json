@@ -225,12 +225,14 @@
     },
     {
       "number": 35,
+      "github_number": 35,
       "title": "[P3] /explorer checkpoint 详情页 Time 显示 1970-01-01 00:00:00",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "area": "explorer",
       "created_at": "2026-03-27",
-      "fix_attempts": 0,
+      "fix_attempts": 1,
+      "pr_number": 37,
       "linked_scenario": "E091-observation"
     }
   ],
