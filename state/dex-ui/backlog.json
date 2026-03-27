@@ -631,9 +631,11 @@
       "priority": 2,
       "title": "markets 页 BTC 价格在 API 修复后是否恢复正常（回归验证）",
       "description": "在 dex-sui#26 修复后，访问 /markets 确认 BTC 价格不再是 $0，与实际市价一致（见 dex-ui#28）",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — API returns $67438.1 but /markets UI shows $0 for all prices; issue #28 confirmed still open"
     },
     {
       "id": "E063",
@@ -651,9 +653,11 @@
       "priority": 2,
       "title": "Portfolio 页面连接钱包后 Positions/Orders/History tabs 显示正确数据",
       "description": "在 API 修复后，使用测试钱包连接后访问 portfolio，验证 Positions tab 显示 Entry Price、Size、PnL；Orders tab 显示历史订单",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Portfolio page loads, tabs (positions/orders/history) visible, no error state"
     },
     {
       "id": "E065",
@@ -708,9 +712,11 @@
       "title": "Trade Buy/Long button state after API recovery — wallet connected button should be clickable",
       "description": "After dex-api/info fix: connect wallet then verify Buy/Long button transitions from disabled/Connect Wallet state to active order-ready state",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Trade Buy/Long button enabled after API recovery; no skeleton state"
     },
     {
       "id": "E070",
@@ -719,9 +725,11 @@
       "title": "/markets price columns completeness — post-fix verify Name/Price/24h Change/Volume all populate",
       "description": "After issue #28 fix and API recovery: /markets table shows all 4 columns with real data; BTC price matches /trade mark price; 24h change has +/- sign; volume is non-zero",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — All price columns show $0 despite API returning real data; same root cause as #28"
     },
     {
       "id": "E071",
@@ -769,6 +777,56 @@
       "priority": 2,
       "title": "杠杆倍数调整 — 切换 10x 后 size 和 margin 计算是否同步更新",
       "description": "在交易表单切换杠杆（10x → 5x → 20x），验证 margin 显示、最大可开仓 size 随杠杆实时更新",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E076",
+      "area": "markets",
+      "priority": 2,
+      "title": "/markets price data rendering — investigate why API price not populating table row",
+      "description": "API /dex-api/info returns lastPrice=67438.1 but table row shows $0. Check if frontend parsing/mapping is broken for lastPrice field.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E077",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order book bid/ask data present and non-zero on trade page",
+      "description": "Navigate to /trade, verify order book shows real bid/ask prices (not $0). Confirm market depth table has entries.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E078",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio Positions tab shows correct account data for connected wallet",
+      "description": "After connecting wallet, click Positions tab and verify correct account data appears (or \"no positions\" message), not loading/error state.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E079",
+      "area": "pages",
+      "priority": 3,
+      "title": "/explorer page accessible and renders transaction list",
+      "description": "Navigate to /explorer, verify page loads with transaction/event data, not 404 or blank.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E080",
+      "area": "markets",
+      "priority": 2,
+      "title": "/markets price auto-refresh — prices update without manual page reload",
+      "description": "Load /markets, wait 30s, check if BTC price changes (websocket/polling). Verify live data feed is active.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
