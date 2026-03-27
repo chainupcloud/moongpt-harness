@@ -509,9 +509,11 @@
       "priority": 2,
       "title": "/markets 价格数据 API 调试 — 验证价格获取是否使用正确 endpoint",
       "description": "修复 #28 后验证：/markets 页面的 BTC 价格显示正确（与 /trade 标记价格一致），不再为 $0",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — /markets no prices at all; dex-api/info 500 blocks data. Issue #28 still open."
     },
     {
       "id": "E052",
@@ -519,9 +521,11 @@
       "priority": 2,
       "title": "手机端（375×812）导航栏 Tab 切换 — Trade/Portfolio/Explorer 均可访问",
       "description": "移动端 viewport 下依次点击底部/顶部导航 Trade、Portfolio、Explorer，验证每个页面正确加载，无白屏",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Mobile 375x812: Trade/Portfolio/Explorer all accessible, nav items found."
     },
     {
       "id": "E053",
@@ -539,9 +543,11 @@
       "priority": 2,
       "title": "TradingView K线图实际渲染 — 等待 15s 后验证 candles 可见",
       "description": "访问 /trade，等待 15s 让图表完全加载，截图验证 TradingView 区域有可见的 K 线蜡烛图，不是空白 iframe",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — 0 canvas/chart elements after 15s, 70 skeleton elements, dex-api/info 500 is root cause."
     },
     {
       "id": "E055",
@@ -649,8 +655,65 @@
       "priority": 1,
       "title": "dex-api/info 健康检查 — type=meta 返回 200 及合约列表",
       "description": "直接调用 POST /dex-api/info {type:meta}，验证返回 HTTP 200 且包含 BTC-USDC 合约信息，作为前置条件检查",
-      "status": "pending",
+      "status": "failed",
       "track": "backend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — /info type=meta→404, allMids→500 (dex_perpetuals.owner_address). Existing P2 issue."
+    },
+    {
+      "id": "E066",
+      "area": "pages",
+      "priority": 2,
+      "title": "/spot page price and chart rendering — verify spot page still ok under API 500",
+      "description": "E050 showed spot page PASS, but dex-api/info returns 500 consistently. Re-verify spot page price display, chart and K-lines still render correctly",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E067",
+      "area": "error-handling",
+      "priority": 3,
+      "title": "API 500 user error message — trade/markets should show friendly error not infinite skeleton",
+      "description": "When dex-api/info returns 500 consistently, /trade and /markets pages should show clear error message (e.g. service unavailable) rather than infinite skeleton loading state",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E068",
+      "area": "pages",
+      "priority": 3,
+      "title": "/api-keys page load and content — new page basic validation",
+      "description": "Visit /api-keys page, verify it loads correctly, shows API key related content, no white screen or 404",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E069",
+      "area": "trade",
+      "priority": 2,
+      "title": "Trade Buy/Long button state after API recovery — wallet connected button should be clickable",
+      "description": "After dex-api/info fix: connect wallet then verify Buy/Long button transitions from disabled/Connect Wallet state to active order-ready state",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E070",
+      "area": "markets",
+      "priority": 2,
+      "title": "/markets price columns completeness — post-fix verify Name/Price/24h Change/Volume all populate",
+      "description": "After issue #28 fix and API recovery: /markets table shows all 4 columns with real data; BTC price matches /trade mark price; 24h change has +/- sign; volume is non-zero",
+      "track": "frontend",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
     }
