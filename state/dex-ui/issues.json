@@ -1,5 +1,5 @@
 {
-  "last_test_run": "2026-03-27T08:15:00Z",
+  "last_test_run": "2026-03-27T10:00:00Z",
   "last_coverage_run": "2026-03-27T00:01:33Z",
   "issues": [
     {
@@ -191,7 +191,8 @@
       "labels": [
         "bug",
         "backend"
-      ]
+      ],
+      "notes": "E061 2026-03-27: API /dex-api/info POST returns 200 with market data. Skeleton gone on trade page. GitHub issue still open - may need manual close by backend team."
     }
   ],
   "last_updated": "2026-03-27"
