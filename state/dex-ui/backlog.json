@@ -474,11 +474,11 @@
       "priority": 3,
       "title": "订单类型切换保持 price/size 字段值不被清空",
       "description": "在 Limit 模式填入 price=70000, size=0.1，切换到 Market 再切回 Limit，验证 price/size 值保留或合理重置",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": ""
+      "result_summary": "PASS — Limit/Market/Stop切换后 price/size 字段值均保留"
     },
     {
       "id": "E046",
@@ -746,11 +746,11 @@
       "title": "API 500 user error message — trade/markets should show friendly error not infinite skeleton",
       "description": "When dex-api/info returns 500 consistently, /trade and /markets pages should show clear error message (e.g. service unavailable) rather than infinite skeleton loading state",
       "track": "frontend",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — /trade shows 70 skeleton loaders instead of error message on API 500 → Issue #51"
+      "result_summary": "Reset to pending — fix merged via PR #52 (2026-03-27)"
     },
     {
       "id": "E068",
@@ -881,9 +881,11 @@
       "priority": 3,
       "title": "Portfolio Positions tab shows correct account data for connected wallet",
       "description": "After connecting wallet, click Positions tab and verify correct account data appears (or \"no positions\" message), not loading/error state.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — 钱包注入未建立真实连接，无法验证 Portfolio Positions"
     },
     {
       "id": "E079",
@@ -965,9 +967,11 @@
       "priority": 3,
       "title": "allMids WebSocket 数据 key 格式验证 — 'BTC' vs 'BTC-USDC'",
       "description": "WS subscribeAllMids 推送的 mids 对象 key 是 'BTC' 还是 'BTC-USDC'？确认和 assetInfoMap 的 key 格式一致性",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — WS 消息未能拦截；/trade mark price 正确但 24h change +0.00%（疑为同 issue #57）"
     },
     {
       "id": "E086",
@@ -1763,9 +1767,11 @@
       "priority": 2,
       "title": "/markets 价格列空数据根因分析 — 检查 API 端点返回值与 trade 页面数据源差异",
       "description": "markets 页面价格 $0 但 trade 页面显示正确。需检查 /markets 使用的 API 端点（可能是 /dex-api/markets 或 allMids）与 trade 页面使用的数据源是否一致。抓取网络请求对比。",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — /markets 价格列 $0，24h变化 +0.00%，已建 issue #57"
     },
     {
       "id": "E161",
@@ -1803,6 +1809,57 @@
       "priority": 3,
       "title": "/markets 24h 涨跌幅 +0.00% 验证 — 对比 /trade 页面同一字段",
       "description": "markets 页面 BTC-USDC 24h change 显示 +0.00%。验证是否与 /trade 页面的 24h change 一致。若 /trade 也显示 0% 则为 testnet 正常；若 /trade 有真实数据则 /markets 存在 bug",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E165",
+      "area": "markets",
+      "priority": 2,
+      "title": "/dex-api/info 响应格式验证 — 确认返回 JSON 是对象还是数组",
+      "description": "直接 fetch /dex-api/info，检查 HTTP 响应：若为数组格式则前端需要 [0] 索引才能取 universe/mids；若为对象则直接取属性。记录实际响应结构。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E166",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets 24h 涨跌修复验证 — issue #57 修复后验收",
+      "description": "issue #57 修复后，验证 /markets 价格列显示真实 BTC 价格，24h 涨跌显示真实百分比。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27",
+      "linked_issue": 57
+    },
+    {
+      "id": "E167",
+      "area": "trade",
+      "priority": 3,
+      "title": "24h 变化数据跨页面一致性 — /trade 和 /markets 应显示相同百分比",
+      "description": "当前 /trade 和 /markets 均显示 +0.00%。修复后验证两页面 24h 变化数值一致，且与外部 BTC 价格变化吻合。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E168",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio 页面 Connect Wallet 按钮可点击并触发钱包连接流程",
+      "description": "访问 /portfolio 未连接状态，点击 'Connect your wallet to view portfolio' CTA，验证是否弹出钱包连接 modal 并能完成连接。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E169",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Market/Stop Limit 订单类型 — trigger price 输入框显示与功能",
+      "description": "切换到 Stop Market 或 Stop Limit 时，验证 trigger price 输入框是否出现，且填写后切换回 Limit 时 size/price 值保留。",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
