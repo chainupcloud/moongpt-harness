@@ -3679,10 +3679,12 @@
       "priority": 3,
       "title": "/markets 持仓量显示 $0.00 — 与后端 API 数据对比",
       "description": "用 dex-cli 或 curl 调用后端 /summary 或 /meta 接口查询 BTC-USDC 的 openInterest 值，与 /markets 页面显示的 $0.00 对比，确认是否为显示 bug",
-      "status": "pending",
+      "status": "tested",
       "track": "backend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — backend openInterest=0.0 matches UI $0.00; testnet data correct"
     },
     {
       "id": "E311",
@@ -3690,9 +3692,11 @@
       "priority": 3,
       "title": "TP/SL 触发价格精确计算验证",
       "description": "在 /trade 输入入场价 50000，设置 TP 百分比 5%，验证 TP 触发价计算结果 = 52500；设置 SL 百分比 2%，验证 SL 触发价 = 49000",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — TP/SL toggle visible but no input fields revealed (same root cause as #122)"
     },
     {
       "id": "E312",
@@ -3710,9 +3714,11 @@
       "priority": 3,
       "title": "/markets page — /trade?coin=X navigation via Trade button/link (workaround for row click bug)",
       "description": "Since row click doesn't navigate (#92), check if there's a 'Trade' button or link per row that navigates to /trade?coin=BTC. Verify alternative navigation paths exist.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Trade button href=\"#\", clicking does not navigate to /trade → Issue #124"
     },
     {
       "id": "E314",
@@ -5524,6 +5530,63 @@
       "priority": 2,
       "title": "TP/SL price validation re-verify after #122 fix — long position constraints",
       "description": "After issue #122 (TP/SL checkbox not revealing inputs) is fixed, re-verify price validation: (1) For LONG: TP must be > current price, SL must be < current price. Enter reversed values and check for validation errors. (2) Verify decimal precision constraints (e.g. max 1 decimal for BTC).",
+      "track": "frontend",
+      "status": "failed",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — TP/SL inputs still not revealed after clicking toggle; issue #122 still open"
+    },
+    {
+      "id": "E485",
+      "area": "markets",
+      "priority": 2,
+      "title": "/markets Trade button navigation — verify coin param passed to /trade",
+      "description": "After #124 is fixed, verify clicking Trade button for BTC-USDC navigates to /trade?coin=BTC (with correct coin param). Check that the trade form pre-selects BTC-USDC market.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E486",
+      "area": "trade",
+      "priority": 2,
+      "title": "TP/SL inputs validation — post-fix verification of #122",
+      "description": "After issue #122 (TP/SL inputs not revealed) is fixed: (1) click TP/SL checkbox, (2) verify inputs appear, (3) for LONG enter TP < current price → expect error, (4) enter SL > current price → expect error. Verifies both reveal and validation.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E487",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets page keyboard navigation — tab through rows, enter to navigate to trade",
+      "description": "Test keyboard accessibility: tab through market rows, press Enter on BTC-USDC row to see if it navigates to /trade. Checks both mouse and keyboard navigation paths.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E488",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order book depth — verify bid/ask levels display correctly and update on price change",
+      "description": "Open /trade, check order book section: (1) verify bid/ask prices shown, (2) verify spread calculation displayed, (3) refresh page and compare order book to confirm data updates.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E489",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade form — switching between Long/Short resets or preserves form values",
+      "description": "Enter size=0.01, price=65000 in Long form. Switch to Short. Check if values are preserved or reset. Then switch back to Long. Document behavior — either behavior could be intentional.",
       "track": "frontend",
       "status": "pending",
       "added_by": "explore-agent",

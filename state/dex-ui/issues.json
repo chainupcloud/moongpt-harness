@@ -1045,11 +1045,25 @@
     {
       "github_number": 123,
       "title": "[P4] Explorer checkpoint detail page — transactions listed as available but show \"not yet available\" message",
-      "status": "open",
+      "status": "closed",
       "priority": "P4",
       "area": "explorer",
       "scenario": "E469",
-      "created_date": "2026-03-27"
+      "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
+      "fix_attempts": 0,
+      "resolution": "not-actionable",
+      "note": "Backend issue — checkpoint detail API returns empty transactions (dex-sui#29). Frontend correctly shows 'not yet available'. Not fixable on frontend."
+    },
+    {
+      "id": "E313-124",
+      "issue_number": 124,
+      "title": "[P3] /markets Trade button has href=\"#\" — clicking does not navigate to /trade",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E313",
+      "created_date": "2026-03-27",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/124"
     }
   ],
   "last_updated": "2026-03-27",
