@@ -474,9 +474,11 @@
       "priority": 3,
       "title": "订单类型切换保持 price/size 字段值不被清空",
       "description": "在 Limit 模式填入 price=70000, size=0.1，切换到 Market 再切回 Limit，验证 price/size 值保留或合理重置",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — price/size both cleared when switching Limit→Market→Limit (issue #47)"
     },
     {
       "id": "E046",
@@ -497,10 +499,12 @@
       "priority": 3,
       "title": "Explorer page loads and shows trade history data",
       "description": "Navigate to /explorer (or equivalent), verify the page shows recent trade history table with columns (time, market, side, price, size), no white screen or error state",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /explorer route returns 200, shows trade data in list/grid format"
     },
     {
       "id": "E048",
@@ -521,10 +525,12 @@
       "priority": 3,
       "title": "Fixed theme 'basedOrange' — verify all UI elements use CSS variables not hardcoded colors",
       "description": "Since the app uses a fixed 'basedOrange' theme (no toggle), audit that major UI components (nav, buttons, trade form, charts) use CSS variables rather than hardcoded hex colors. Look for inline style with hardcoded colors as a regression risk.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — basedOrange theme uses CSS variables (7 vars), 0 hardcoded hex colors"
     },
     {
       "id": "E050",
@@ -1478,9 +1484,11 @@
       "priority": 2,
       "title": "TP/SL inputs show correct placeholders after toggle enable",
       "description": "After enabling TP/SL checkbox in trade form, verify the expanded inputs have 'Take Profit Price' and 'Stop Loss Price' placeholders (not empty). Currently inputs appear with empty placeholders.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — TP/SL feature not present on trade form (no TP/SL UI found)"
     },
     {
       "id": "E137",
@@ -1508,6 +1516,56 @@
       "priority": 3,
       "title": "TWAP order type — form renders and accepts duration input",
       "description": "Switch to TWAP order type tab (seen in Open Orders row: TWAP tab). Verify the form shows duration/interval fields and they accept numeric input.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E140",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order type dropdown shows all types: Limit / Market / Stop Limit / Stop Market",
+      "description": "Open the Order Type dropdown and verify all 4 expected order types are listed and selectable. Verify Stop Limit and Stop Market types work correctly with extra trigger price field.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E141",
+      "area": "trade",
+      "priority": 3,
+      "title": "Market order: size field retained when switching Limit→Market",
+      "description": "In Limit mode fill size=0.1, switch to Market — verify size is preserved in Market mode. This tests if the size value persists even though price is not applicable in Market.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E142",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer page: verify table columns and data quality",
+      "description": "Navigate to /explorer, verify the trade history data structure: confirm there are columns for time, market, side, price, size. Verify data is not empty and values are within expected ranges for testnet.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E143",
+      "area": "trade",
+      "priority": 3,
+      "title": "Leverage slider value persists across order type switches",
+      "description": "Set leverage to 5x in Limit mode, switch to Market and back to Limit. Verify the leverage setting is retained. Leverage is a per-account setting that should not reset on order type change.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E144",
+      "area": "trade",
+      "priority": 2,
+      "title": "Stop Limit order: trigger price field appears and accepts input",
+      "description": "Switch order type to Stop Limit, verify a 'Trigger Price' or 'Stop Price' input appears in addition to Limit Price and Size. Fill all three fields and verify values are accepted.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"

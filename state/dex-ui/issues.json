@@ -279,9 +279,9 @@
       "labels": [
         "bug"
       ],
-      "fix_attempts": 2,
-      "pr_number": 42,
-      "note": "PR #42 merged but acceptance failed — Order History button still overflows at 909px in 812×375 viewport"
+      "fix_attempts": 3,
+      "pr_number": 48,
+      "note": "Attempt 3: PR #48 — added w-full overflow-hidden to Tabs.Root to constrain width (prev fix only reduced padding/font)"
     },
     {
       "id": "issue-2026-03-27-dex-ui-44",
@@ -303,6 +303,16 @@
       "created": "2026-03-27",
       "fix_attempts": 1,
       "pr_number": 46
+    },
+    {
+      "id": 47,
+      "title": "[P3] Trade form price/size values cleared when switching order types (Limit→Market→Limit)",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E045",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/47",
+      "created_date": "2026-03-27",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-27"
