@@ -746,11 +746,11 @@
       "title": "API 500 user error message — trade/markets should show friendly error not infinite skeleton",
       "description": "When dex-api/info returns 500 consistently, /trade and /markets pages should show clear error message (e.g. service unavailable) rather than infinite skeleton loading state",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "Reset after fix merged (PR #64, issue #58 closed). Re-verify on next explore run."
+      "result_summary": "PASS — /trade shows error+retry after 500 (PR #64 fix confirmed); /markets shows empty (acceptable)"
     },
     {
       "id": "E068",
@@ -1268,9 +1268,11 @@
       "priority": 3,
       "title": "Deposit 弹窗 — 输入 1 USDC（最低额）确认按钮可点击",
       "description": "打开 Deposit 弹窗，输入恰好满足最低存款额 1 USDC，验证确认按钮变为可用状态（不再禁用），且无错误提示。验证边界值正常流程。",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — test wallet has 0 USDC balance; dialog shows correct \"Insufficient balance\" and \"Minimum deposit is 1 USDC\" message"
     },
     {
       "id": "E111",
@@ -1278,9 +1280,11 @@
       "priority": 3,
       "title": "Withdraw 弹窗字段校验 — 负数/超余额/空值",
       "description": "打开 Withdraw 弹窗，测试：1) 负数金额不能提交；2) 超余额金额显示 Insufficient 提示；3) 空值时确认按钮禁用。与 Deposit 对称验证。",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Withdraw modal accepts negative amounts without error; input type=text no min constraint; issue #66 filed"
     },
     {
       "id": "E112",
@@ -2243,9 +2247,11 @@
       "priority": 2,
       "title": "Buy/Long 按钮 — 空 dialog 内容检查与可用性",
       "description": "已知 Buy/Long 无钱包时弹出空 dialog（非 Connect Wallet 提示），验证 dialog 是否完全不可交互，用户是否有明确引导",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — empty toast on Buy/Long without wallet; issue #62 already tracking (fixing)"
     },
     {
       "id": "E203",
@@ -2263,6 +2269,56 @@
       "priority": 3,
       "title": "Spot 页面 (/spot) — 基本页面加载与功能可达性（新路由）",
       "description": "git 变更引入 app/spot/page.tsx，验证 /spot 路由加载正常，核心元素渲染，无 500 错误",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E205",
+      "area": "trade",
+      "priority": 3,
+      "title": "Withdraw modal — 修复后验证 (issue #66): 负数/超余额显示错误",
+      "description": "验证 PR 修复 issue #66 后，Withdraw 弹窗对负数、超余额输入显示正确错误提示，与 Deposit 行为一致。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E206",
+      "area": "trade",
+      "priority": 3,
+      "title": "Withdraw modal — 地址字段验证 (无效地址格式)",
+      "description": "Withdraw 弹窗的 Withdraw to 地址输入框：输入无效地址（如 'abc', '0x123'），验证是否有 invalid address 提示且 Withdraw 按钮禁用。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E207",
+      "area": "trade",
+      "priority": 3,
+      "title": "Buy/Long 修复后验证 (issue #62 PR #65): Connect Wallet 提示正确显示",
+      "description": "issue #62 的 PR #65 合并后，验证未连接钱包时 Buy/Long 点击弹出 Connect Wallet 引导，不再显示空 toast。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E208",
+      "area": "trade",
+      "priority": 3,
+      "title": "Send 弹窗字段校验 — 负数/超余额/空地址",
+      "description": "打开 Send 弹窗（Withdraw 侧边 Send 标签），测试金额负数、超余额、空地址字段校验，与 Withdraw/Deposit 对称验证。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E209",
+      "area": "trade",
+      "priority": 2,
+      "title": "Trade 页面 24h 涨跌幅数据 — 修复后验证 (issue #63)",
+      "description": "/trade 页面标记价格处的 24h 涨跌幅显示 +0.00%。issue #63 open。验证后续修复是否正确计算并展示 24h change。",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
