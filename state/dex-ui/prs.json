@@ -287,6 +287,14 @@
       ],
       "status": "open",
       "title": "fix: /trade shows error message instead of infinite skeleton when API 500 (#51)"
+    },
+    {
+      "pr_number": 56,
+      "issue_numbers": [
+        54
+      ],
+      "status": "open",
+      "title": "fix: limit order submit shows no toast with session key (#54)"
     }
   ]
 }
