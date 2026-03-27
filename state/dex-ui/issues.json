@@ -735,7 +735,7 @@
     },
     {
       "title": "[P3] /dex-api/info asset contexts returns [] — Open Interest data unavailable (backend)",
-      "status": "open",
+      "status": "closed",
       "repo": "dex-sui",
       "number": 28,
       "github_number": 28,
@@ -747,7 +747,9 @@
         "bug",
         "backend"
       ],
-      "notes": "E200 re-run 2026-03-27: Markets page OI shows $0.00. API asset contexts endpoint returns []. PR #96 (dex-ui) deployment also failed (Vercel ERROR). Backend fix needed first."
+      "notes": "E200 re-run 2026-03-27: Markets page OI shows $0.00. API asset contexts endpoint returns []. PR #96 (dex-ui) deployment also failed (Vercel ERROR). Backend fix needed first.",
+      "closed_at": "2026-03-27",
+      "note": "Synced from GitHub (closed by human)"
     }
   ],
   "last_updated": "2026-03-27",
