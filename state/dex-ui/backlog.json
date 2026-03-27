@@ -2712,9 +2712,11 @@
       "priority": 3,
       "title": "Orders tab with connected wallet — Open Orders vs Order History count",
       "description": "Connect wallet, place a limit order, verify it appears in Open Orders tab with correct count badge. Cancel it and verify it moves to Order History tab.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Orders tabs visible: Balances, Positions, Open Orders, TWAP, Trailing, Trade History, Funding History, Order History"
     },
     {
       "id": "E231",
@@ -2758,9 +2760,11 @@
       "priority": 3,
       "title": "Spot page CTA — 'Trade Perpetuals' button navigates to /trade",
       "description": "On /spot 'Coming Soon' page, verify the 'Trade Perpetuals' CTA button is present and clicking it navigates to /trade page.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /spot \"Trade Perpetuals\" CTA correctly navigates to /trade"
     },
     {
       "id": "E235",
@@ -2768,9 +2772,11 @@
       "priority": 3,
       "title": "'More' nav dropdown — verify all links are functional",
       "description": "Click the 'More' nav item and verify the dropdown opens with functional links (no 404, no broken routes).",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — More nav dropdown button clicks but no dropdown content appears → issue #102"
     },
     {
       "id": "E236",
@@ -4132,9 +4138,11 @@
       "priority": 2,
       "title": "Explorer checkpoint detail — 验证所有 checkpoint 的 transactions 字段一致性",
       "description": "对比 /dex-api/explorer checkpoint列表(txCount)和详情(transactions[])是否一致。选取列表中txCount>0的最近5个checkpoint，逐一检查详情API是否返回正确数量的transactions。",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — txCount=1 in checkpoint header but 0 transactions shown (duplicate of issue #29)"
     },
     {
       "id": "E366",
@@ -4173,6 +4181,61 @@
       "title": "Explorer — 搜索框非法输入处理（空字符串、随机字符、过短哈希）",
       "description": "在 Explorer 搜索框测试边界输入：(1) 空字符串回车，(2) 随机字符串 'abc123'，(3) 过短哈希 '0x1234'。验证每种情况是否显示友好错误提示，而非500或空白页。",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E370",
+      "area": "navigation",
+      "priority": 3,
+      "title": "More nav dropdown — verify dropdown content items after fix",
+      "description": "After fix for issue #102, verify that clicking 'More' opens a dropdown with expected items (Docs, Blog, About, Discord, etc.) and each item is a working link.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E371",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — checkpoint with txCount=0 shows empty state gracefully",
+      "description": "Navigate to a checkpoint that has txCount=0. Verify that the detail page shows a proper 'No transactions' empty state rather than an error or loading spinner.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E372",
+      "area": "trade",
+      "priority": 3,
+      "title": "Orders tabs — verify tab counts update after placing a limit order",
+      "description": "Connect wallet, place a limit order, then verify Open Orders(0) count increments to Open Orders(1). After cancelling, verify count returns to 0.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E373",
+      "area": "trade",
+      "priority": 3,
+      "title": "TWAP tab content — verify TWAP tab renders form or list (not blank)",
+      "description": "On /trade, click the TWAP tab in the orders section. Verify it shows either a TWAP order creation form or an empty-state message, not a blank/broken panel.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E374",
+      "area": "navigation",
+      "priority": 4,
+      "title": "API Keys page — verify page loads and shows key management UI",
+      "description": "Navigate to /api-keys (recently added to codebase). Verify page loads without error and shows API key management interface (create key, list keys, copy/delete).",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
     }
