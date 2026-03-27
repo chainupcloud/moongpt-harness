@@ -954,10 +954,12 @@
       "priority": 2,
       "title": "未连接钱包时交易表单 Submit 按钮显示 'Connect Wallet'（issue #29 回归）",
       "description": "打开 /trade 不连接钱包，交易表单 Buy/Long 按钮应显示 'Connect Wallet'，点击应触发钱包连接 modal",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "linked_issue": 29
+      "linked_issue": 29,
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Connect Wallet prompt shown when Buy/Long clicked without wallet connection"
     },
     {
       "id": "E085",
@@ -1732,9 +1734,11 @@
       "priority": 3,
       "title": "Scale 和 Scalp 订单类型：字段和行为验证",
       "description": "选择 Scale 或 Scalp 订单类型，验证是否出现特有字段（价格范围、数量分配等），及基本的提交流程",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — Scale/Scalp order types not available on testnet build; TWAP is available instead"
     },
     {
       "id": "E150",
@@ -1754,9 +1758,11 @@
       "title": "/api-keys 页面连接钱包后可创建 API Key",
       "description": "E068 验证了页面基础加载，此场景测试已连接钱包状态下是否可以成功创建和查看 API Key",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /api-keys page loads correctly, shows \"Please connect wallet\" prompt"
     },
     {
       "id": "E152",
@@ -1776,9 +1782,11 @@
       "title": "/spot 页面深层链接 — 直接访问 URL 是否正常渲染",
       "description": "E058 通过点击导航，此场景直接访问 /spot URL 验证 SSR/CSR 路由行为，以及 SEO 相关 meta 标签是否存在",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /spot deep-link renders Coming Soon page; nav link goes to /trade?type=spot"
     },
     {
       "id": "E154",
@@ -3051,6 +3059,50 @@
       "priority": 4,
       "title": "Order type selection persists on page refresh",
       "description": "Switch to Stop Limit order type, then refresh the page. Check if the order type selection is remembered (localStorage/URL param) or resets to default Limit.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E274",
+      "area": "trade",
+      "priority": 3,
+      "title": "TWAP 订单类型：字段显示和提交验证",
+      "description": "在交易表单中选择 TWAP 订单类型，验证是否出现 TWAP 特有字段（时间段、子订单数量等），及提交前表单验证行为",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E275",
+      "area": "trade",
+      "priority": 3,
+      "title": "/trade?type=spot URL 参数行为验证",
+      "description": "直接访问 /trade?type=spot（Spot 导航链接目标），验证页面是否正确渲染，type 参数是否影响订单类型选择器或表单内容",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E276",
+      "area": "trade",
+      "priority": 3,
+      "title": "Account Mode 切换功能验证",
+      "description": "交易表单中发现 Account Mode 按钮，测试点击后是否切换账户模式（Cross/Isolated），UI 是否正确更新，杠杆选择是否联动",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E277",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "/api-keys 页面内容完整性验证 — 未连接钱包状态",
+      "description": "验证 /api-keys 页面在未连接钱包时的 UI 完整性：提示文案是否清晰、是否有快速 Connect Wallet 按钮、页面是否有未预期的空白区域",
+      "track": "frontend",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
