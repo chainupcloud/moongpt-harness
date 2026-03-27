@@ -661,12 +661,17 @@
     {
       "number": 128,
       "title": "fix: TP/SL inputs — add inline validation for invalid prices (#126)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         126
       ],
       "branch": "fix/issue-126",
-      "created_date": "2026-03-27"
+      "created_date": "2026-03-27",
+      "commit_sha": "a6f67e18542e3e94d957de476c8b3cb7b0b2bc49",
+      "merged_at": "2026-03-27",
+      "deployed": false,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     }
   ]
 }

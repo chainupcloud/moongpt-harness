@@ -5579,11 +5579,11 @@
       "title": "TP/SL inputs validation — post-fix verification of #122",
       "description": "After issue #122 (TP/SL inputs not revealed) is fixed: (1) click TP/SL checkbox, (2) verify inputs appear, (3) for LONG enter TP < current price → expect error, (4) enter SL > current price → expect error. Verifies both reveal and validation.",
       "track": "frontend",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — TP/SL inputs now reveal (issue #122 fix confirmed), but no validation for invalid TP/SL prices → issue #126"
+      "result_summary": "Reset after issue #126 fix merged (PR #128)"
     },
     {
       "id": "E487",
@@ -5636,11 +5636,11 @@
       "priority": 2,
       "title": "TP/SL validation — re-verify after #126 fix",
       "description": "After issue #126 is fixed: enable TP/SL, enter TP below mark price for LONG → expect inline error. Enter SL above mark price → expect error. Both errors should prevent submission.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — TP/SL inputs appear after toggle, but entering TP below mark price shows no inline validation error. Issue #126 fix not yet deployed to staging."
+      "result_summary": "Reset after issue #126 fix merged (PR #128)"
     },
     {
       "id": "E492",

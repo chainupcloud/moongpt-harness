@@ -1090,7 +1090,7 @@
       "id": "issue-2026-03-27-dex-ui-126",
       "github_number": 126,
       "title": "[P3] TP/SL inputs — no validation when TP < mark price (LONG) or SL > mark price (LONG)",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E486",
       "created_date": "2026-03-27",
@@ -1098,7 +1098,8 @@
         "bug"
       ],
       "pr_number": 128,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "closed_at": "2026-03-27"
     },
     {
       "id": "issue-2026-03-27-dex-ui-127",
