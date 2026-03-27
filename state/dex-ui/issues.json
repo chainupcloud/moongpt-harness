@@ -1,5 +1,5 @@
 {
-  "last_test_run": "2026-03-27T20:05:00Z",
+  "last_test_run": "2026-03-27T21:25:00Z",
   "last_coverage_run": "2026-03-27T00:01:33Z",
   "issues": [
     {
@@ -926,15 +926,20 @@
     {
       "id": "issue-113",
       "github_issue_number": 113,
+      "github_number": 113,
       "title": "[P3] TWAP order type missing TWAP-specific fields — form identical to Limit after type selection",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E272",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "labels": [
         "bug"
       ],
-      "url": "https://github.com/chainupcloud/dex-ui/issues/113"
+      "url": "https://github.com/chainupcloud/dex-ui/issues/113",
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "TwapPanel component already exists on dev with Duration presets, Hour(s)/Minute(s) inputs, Randomize/Private checkboxes, and TWAP Order Preview. Explore agent false positive — likely observed stale staging (issue #98 Vercel deploy failures)."
     },
     {
       "id": "issue-114",
@@ -953,26 +958,46 @@
     {
       "id": "issue-2026-03-27-dex-ui-115",
       "number": 115,
+      "github_number": 115,
       "title": "[P3] /trade?type=spot URL parameter ignored — page stays on perps instead of activating spot mode",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E275",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "labels": [
         "bug"
-      ]
+      ],
+      "fix_attempts": 0,
+      "resolution": "not-actionable",
+      "note": "By design: /trade is a dedicated perps page. Spot has its own /spot route (Coming Soon). The ?type=spot param was never designed to exist."
     },
     {
       "id": "issue-2026-03-27-dex-ui-116",
       "number": 116,
+      "github_number": 116,
       "title": "[P3] Market order — slippage tolerance not displayed in order form",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E278",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "labels": [
         "bug"
-      ]
+      ],
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "OrderSummary component already displays 'Slippage: X.XX% / Max 1%' when orderType=market. estSlippage calculated from order book depth. Explore agent false positive."
+    },
+    {
+      "github_number": 117,
+      "title": "[P3] TWAP order form — missing time interval and chunks configuration fields",
+      "priority": "P3",
+      "status": "open",
+      "scenario": "E280",
+      "area": "trade",
+      "opened_date": "2026-03-27",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-27",

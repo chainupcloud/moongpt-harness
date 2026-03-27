@@ -3315,9 +3315,11 @@
       "priority": 3,
       "title": "TWAP order — time interval and chunks display",
       "description": "Select TWAP order type, configure time interval and number of chunks. Verify the form shows expected execution schedule and total duration calculation",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — TWAP form shows 4 unlabeled inputs, missing time interval/chunks fields → Issue #117"
     },
     {
       "id": "E281",
@@ -3325,9 +3327,11 @@
       "priority": 3,
       "title": "Open Orders tab — Cancel All button appears when orders exist",
       "description": "With connected wallet that has open orders: verify Cancel All button appears in Open Orders tab, and clicking it prompts confirmation before cancelling all orders",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS (conditional) — 0 open orders via API; Cancel All correctly absent"
     },
     {
       "id": "E282",
@@ -3347,9 +3351,11 @@
       "priority": 3,
       "title": "Explorer /explorer/checkpoint/{id} — 详情页交易列表内容验证",
       "description": "访问 /explorer/checkpoint/103785，验证详情页显示正确的交易列表（tx hash、类型、时间戳），字段不为空",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Checkpoint detail shows \"Transaction details not yet available\" (duplicate of existing issue)"
     },
     {
       "id": "E284",
@@ -4944,9 +4950,11 @@
       "priority": 2,
       "title": "Stop Market / Stop Limit order type — locate in order type dropdown",
       "description": "Stop order types appear to be hidden behind Order Type dropdown. Click 'Limit' button to open order type selector and verify Stop Market and Stop Limit options are accessible",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Stop Market and Stop Limit found after clicking Order TypeLimit button"
     },
     {
       "id": "E436",
@@ -4984,6 +4992,56 @@
       "priority": 3,
       "title": "TWAP order — submit and verify order appears in Open Orders with TWAP status",
       "description": "With TWAP enabled, fill in valid duration/interval/size and submit. Verify TWAP order appears in Open Orders tab with correct type label and status indicator",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E440",
+      "area": "trade",
+      "priority": 3,
+      "title": "TWAP order — verify fields (Amount, intervals) are labeled and functional",
+      "description": "After E280 fail: navigate to TWAP tab again and inspect DOM for input labels. Check if inputs are: amount, number of intervals, interval duration, and limit price. Verify they accept user input and display execution summary.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E441",
+      "area": "orders",
+      "priority": 3,
+      "title": "Open Orders tab — Cancel All button visible when orders exist (with placed order)",
+      "description": "Place a limit order first (via API or UI), then verify Cancel All button appears in Open Orders tab. Confirm clicking it shows confirmation dialog before executing.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E442",
+      "area": "trade",
+      "priority": 2,
+      "title": "Stop Market order — enter trigger price and place order",
+      "description": "After confirming Stop Market is accessible (E435 pass): select Stop Market order type, enter a trigger price, enter size, click Place Order. Verify order appears in Open Orders tab as Stop Market type.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E443",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint detail — verify tx list loads for high-tx checkpoint",
+      "description": "From explorer page, find a checkpoint with txCount > 5 (not just 1), navigate to its detail page. Verify transaction list shows tx hash, action type, user account, and timestamp for multiple rows.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E444",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order TypeLimit button — verify all order types available in dropdown",
+      "description": "Click 'Order TypeLimit' button and capture all dropdown options. Verify presence of: Limit, Market, Stop Market, Stop Limit, Take Profit Market, Take Profit Limit. Document all available options.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
