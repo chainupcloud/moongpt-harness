@@ -415,9 +415,13 @@
       "issue_numbers": [
         72
       ],
-      "status": "open",
+      "status": "merged",
       "created_at": "2026-03-27",
-      "title": "fix: Buy/Long 侧切换按钮未连接钱包时无反馈 — 添加连接提示 (#72)"
+      "title": "fix: Buy/Long 侧切换按钮未连接钱包时无反馈 — 添加连接提示 (#72)",
+      "commit_sha": "bd668027710055ad606a544d2f60d17067aac043",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
     },
     {
       "pr_number": 82,
