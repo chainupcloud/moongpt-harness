@@ -476,14 +476,5 @@
       "deployed": true,
       "accepted": true
     },
-    {
-      "pr_number": 86,
-      "issue_numbers": [
-        85
-      ],
-      "status": "open",
-      "created_at": "2026-03-27",
-      "title": "fix: Explorer search routes wallet address to /explorer/address/ (#85)"
-    }
   ]
 }
