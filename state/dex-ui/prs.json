@@ -216,6 +216,14 @@
       "deployed": false,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 42,
+      "issue_numbers": [
+        41
+      ],
+      "status": "open",
+      "title": "fix: 移动端横屏底部标签栏 Order History 按钮溢出视口 (#41)"
     }
   ]
 }
