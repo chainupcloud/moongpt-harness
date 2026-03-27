@@ -238,6 +238,16 @@
       "deployed_sha": "23df6db0e87e6bedfb8f3086e7b0df6f1b13d68e",
       "accepted": true,
       "note": "PR merged to dev. Vercel deploy failed (team config error, not code). Accepted via code review + SHA verification."
+    },
+    {
+      "number": 38,
+      "title": "[P3] /markets 页面资金费率显示 NaN%",
+      "status": "open",
+      "priority": "P3",
+      "url": "https://github.com/chainupcloud/dex-ui/issues/38",
+      "created": "2026-03-27",
+      "scenario": "E048/E071",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-27"

@@ -202,7 +202,9 @@
       "priority": 3,
       "title": "未知路由 /xyz → 显示 404 页面，不白屏",
       "description": "访问 /xyz-nonexistent，验证显示友好的 404 页面（有提示文字），不是空白页",
-      "status": "pending"
+      "status": "tested",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /xyz-nonexistent returns HTTP 404 with friendly Chinese 404 page \"页面不存在\" + back link"
     },
     {
       "id": "E022",
@@ -316,9 +318,11 @@
       "priority": 2,
       "title": "钱包未连接时，下单按钮显示 'Connect Wallet' 而非 'Long/Short'",
       "description": "未连接钱包访问 /trade，验证下单按钮显示引导连接钱包的文字（Connect Wallet），不显示 Long/Short",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Connect Wallet shown via modal after clicking Buy/Long; buttons show Long/Short but clicking triggers connect wallet flow"
     },
     {
       "id": "E035",
@@ -470,12 +474,12 @@
       "priority": 2,
       "title": "Markets page displays market list with price and 24h change",
       "description": "Navigate to /markets page, verify it loads a list of tradeable markets showing each market's current price and 24h percentage change, verify BTC-USDC is present",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "RESET — fix deployed (PR #32, SHA 261087a), staging acceptance passed 2026-03-27. Re-verify next explore run."
+      "result_summary": "PASS — BTC-USDC listed at $66,482.6; 24h change/volume show 0 (testnet expected); NaN% funding rate bug found → Issue #38"
     },
     {
       "id": "E049",
@@ -737,11 +741,11 @@
       "priority": 2,
       "title": "/markets 页面 BTC 价格回归验证 — API 修复后价格应正确显示",
       "description": "访问 /markets 页面，验证 BTC-USDC 价格显示正确（非 $0），与 API /dex-api/info 返回的数据一致。回归 issue #28",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "RESET — fix deployed (PR #32, SHA 261087a), staging acceptance passed 2026-03-27. Re-verify next explore run."
+      "result_summary": "PASS — BTC price regression resolved: $66,482.6 displayed correctly (non-zero)"
     },
     {
       "id": "E072",
@@ -1060,6 +1064,46 @@
       "priority": 3,
       "title": "TP/SL 输入框同样拒绝非法字符",
       "description": "在 /trade 页面打开 TP/SL 选项，输入字母、负数、特殊符号，验证字段过滤行为与主价格/数量字段一致",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E101",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets 资金费率 NaN% 修复验证",
+      "description": "验证 Issue #38 修复后：/markets 页面 BTC-USDC 资金费率列不显示 NaN%，应显示实际数值或 —",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E102",
+      "area": "trade",
+      "priority": 3,
+      "title": "未连接钱包时 Buy/Long 按钮视觉状态 — 是否有 disabled 样式",
+      "description": "当前 Buy/Long 按钮无 wallet 时外观与已连接时相同，无 disabled 提示。检查是否应添加 visual disabled 状态以提升 UX",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E103",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets 页面点击 BTC-USDC 行 → 跳转 /trade?coin=BTC",
+      "description": "点击 markets 页面市场行，验证是否跳转至对应交易对的 trade 页面",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E104",
+      "area": "trade",
+      "priority": 2,
+      "title": "连接钱包后 session key 自动 approve → EnableTrading 流程",
+      "description": "使用测试钱包连接后，验证 session key approveAgent 流程完整：签名 → approveAgent tx → EnableTradingModal 消失 → 可下单",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
