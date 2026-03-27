@@ -103,6 +103,12 @@
       "merged_at": "2026-03-27",
       "deployed": true,
       "accepted": true
+    },
+    {
+      "pr_number": 25,
+      "issue_numbers": [24],
+      "status": "open",
+      "title": "fix: TradingView study_templates 404 及 K 线时间违规 (#24)"
     }
   ]
 }
