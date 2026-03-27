@@ -1111,6 +1111,30 @@
       "labels": [
         "bug"
       ]
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-129",
+      "title": "[P3] TWAP order form — duration/interval fields still absent (regression after #125 closed)",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E490",
+      "github_issue_number": 129,
+      "created_date": "2026-03-27",
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-130",
+      "title": "[P3] Withdraw modal — address format not validated (regression after #99 closed)",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E326",
+      "github_issue_number": 130,
+      "created_date": "2026-03-27",
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-27",

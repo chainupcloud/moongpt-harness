@@ -3830,9 +3830,11 @@
       "priority": 3,
       "title": "/spot 页面 'Coming Soon' — API Keys 和 Explorer 新路由加载验证",
       "description": "git变更引入app/api-keys/page.tsx和app/explorer/layout.tsx，验证/api-keys和/explorer路由是否正常加载（HTTP 200），无500错误，核心元素渲染",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /spot HTTP 200 Coming Soon page, /api-keys HTTP 200, /explorer HTTP 200"
     },
     {
       "id": "E324",
@@ -3840,9 +3842,11 @@
       "priority": 3,
       "title": "Order book WebSocket重连 — 断网后重新加载数据验证",
       "description": "E199确认order book通过WebSocket加载数据（需等待8秒）。验证页面刷新或网络切断后，order book是否能自动重连并重新展示数据，不卡在空白状态",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — Orderbook rows not identifiable by standard CSS selectors; WebSocket connected but cannot evaluate reconnect"
     },
     {
       "id": "E325",
@@ -3862,9 +3866,11 @@
       "priority": 3,
       "title": "Withdraw modal — 目标地址格式验证（无效地址）",
       "description": "在Withdraw modal输入无效地址格式（如'0xinvalid', '123abc', 空白），验证是否显示地址格式错误提示，submit按钮是否禁用",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — Withdraw modal accepts invalid/short addresses with no inline error (regression after #99 closed)"
     },
     {
       "id": "E327",
@@ -5614,9 +5620,11 @@
       "priority": 2,
       "title": "TWAP order form — regression E314 re-verify after fix",
       "description": "After issue #125 (TWAP fields missing) is fixed: select TWAP, verify duration input and interval count fields appear and accept numeric input.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — TWAP duration/interval fields still absent after #125 closed (regression)"
     },
     {
       "id": "E491",
@@ -5704,6 +5712,56 @@
       "priority": 4,
       "title": "Order book — spread display for inverted book (bids > asks)",
       "description": "When testnet order book is crossed (bids > asks), verify spread shows as negative value correctly and UI does not error/crash. Check if there is a visual indicator warning users about the inverted state.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E500",
+      "area": "order-form",
+      "priority": 2,
+      "title": "TWAP order form — third regression check (post #129 fix)",
+      "description": "After issue #129 is fixed: select TWAP, confirm duration and interval fields appear and accept numeric input. Previous fixes (#109, #113, #125) all regressed.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E501",
+      "area": "withdraw",
+      "priority": 3,
+      "title": "Withdraw modal — address validation re-verify after #130 fix",
+      "description": "After issue #130 is fixed: enter non-hex string and too-short hex in address field. Expect inline error before submission.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E502",
+      "area": "spot",
+      "priority": 3,
+      "title": "/api-keys page — API wallet creation flow",
+      "description": "On /api-keys page: click 'Create API wallet' (or equivalent CTA), verify the flow opens a creation dialog, shows a generated key/address, and allows copy.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E503",
+      "area": "orderbook",
+      "priority": 3,
+      "title": "Order book DOM structure — identify correct selectors for ask/bid rows",
+      "description": "Inspect /trade page orderbook DOM to identify correct CSS selectors for ask and bid rows. Document selector patterns for future E324 WebSocket reconnect test.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E504",
+      "area": "withdraw",
+      "priority": 3,
+      "title": "Withdraw modal — SUI address format acceptance",
+      "description": "Enter a valid SUI address (0x94bd... 64-char hex) in the withdraw modal address field. Verify it is accepted without error. Currently unknown if SUI vs EVM address formats are handled differently.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
