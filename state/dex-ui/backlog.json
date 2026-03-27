@@ -821,11 +821,11 @@
       "priority": 3,
       "title": "交易表单输入校验 — size 为负数/零时按钮是否禁用",
       "description": "在 size 输入框分别输入 -1, 0, 0.00000001，验证 Buy/Long 按钮禁用状态和错误提示",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — Buy/Long button not disabled for size=0/-1, no validation feedback on submit → Issue #53"
+      "result_summary": "Reset after fix merged (PR #59, issue #53 closed)"
     },
     {
       "id": "E074",

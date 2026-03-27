@@ -358,12 +358,16 @@
       "id": "issue-53",
       "github_number": 53,
       "title": "[P3] Trade form: Buy/Long button not disabled for size=0 or invalid — no validation feedback on submit",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E073",
       "created_date": "2026-03-27",
       "fix_attempts": 1,
-      "pr_number": 59
+      "pr_number": 59,
+      "closed_at": "2026-03-27",
+      "deployed_sha": "a9e0479ebbc21ee9ec0ba292631f105b0c4f6e7d",
+      "accepted": true,
+      "note": "PR #59 merged to dev. Vercel deploy ERROR (team config). Accepted via code review + SHA verification."
     },
     {
       "id": "issue-54",
