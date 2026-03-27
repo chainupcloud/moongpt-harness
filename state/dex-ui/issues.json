@@ -340,7 +340,7 @@
       "github_number": 51,
       "title": "[P3] /trade shows 70 skeleton loaders instead of error message when API returns 500",
       "priority": "P3",
-      "status": "fixing",
+      "status": "closed",
       "scenario_id": "E067",
       "created_date": "2026-03-27",
       "labels": [
@@ -348,7 +348,11 @@
       ],
       "repo": "dex-ui",
       "fix_attempts": 1,
-      "pr_number": 52
+      "pr_number": 52,
+      "closed_at": "2026-03-27",
+      "deployed_sha": "5b3d30740be4af300d180171a895b165610e36c7",
+      "accepted": true,
+      "note": "PR merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification."
     },
     {
       "id": "issue-53",

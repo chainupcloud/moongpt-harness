@@ -285,8 +285,13 @@
       "issue_numbers": [
         51
       ],
-      "status": "open",
-      "title": "fix: /trade shows error message instead of infinite skeleton when API 500 (#51)"
+      "status": "merged",
+      "title": "fix: /trade shows error message instead of infinite skeleton when API 500 (#51)",
+      "commit_sha": "5b3d30740be4af300d180171a895b165610e36c7",
+      "merged_at": "2026-03-27",
+      "deployed": false,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
     {
       "pr_number": 56,
