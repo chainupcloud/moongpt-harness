@@ -1002,7 +1002,8 @@
       "opened_date": "2026-03-27",
       "fix_attempts": 0,
       "closed_at": "2026-03-27",
-      "note": "Synced from GitHub (closed by human)"
+      "resolution": "already-resolved",
+      "note": "TwapPanel component already exists on dev with Duration presets, Hour(s)/Minute(s) inputs, Randomize/Private checkboxes, and TWAP Order Preview. Same false positive as #109 and #113 — stale Vercel staging (issue #98)."
     }
   ],
   "last_updated": "2026-03-27",
