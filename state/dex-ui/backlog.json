@@ -2806,9 +2806,11 @@
       "priority": 3,
       "title": "/markets page — verify renders and shows market list",
       "description": "Visit /markets page (recently changed: app/markets/page.tsx), verify page returns 200, shows market listing, prices/volumes are populated.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /markets page loads (200), shows BTC-USDC market with price/volume data (Chinese UI labels)"
     },
     {
       "id": "E239",
@@ -2858,9 +2860,11 @@
       "priority": 3,
       "title": "API Keys page — renders without wallet connection",
       "description": "Navigate to /api-keys page. Verify the page renders without errors. Check if it requires wallet connection or shows a connect prompt, and that no JS errors appear.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /api-keys page loads (200), shows Connect Wallet prompt, no JS errors"
     },
     {
       "id": "E244",
@@ -4251,10 +4255,12 @@
       "priority": 2,
       "title": "TWAP order — verify interval and parts fields are labeled/accessible",
       "description": "Click TWAP tab in trade form, verify dedicated interval and parts input fields exist with clear labels. Previous test found only generic '0' placeholders — need to confirm TWAP-specific fields are discoverable.",
-      "status": "pending",
+      "status": "failed",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — TWAP form missing Interval/Parts labels; only shows Duration presets (5m/30m/1h/4h); all inputs have placeholder=\"0\" with no labels → Issue #104"
     },
     {
       "id": "E376",
@@ -4262,10 +4268,12 @@
       "priority": 2,
       "title": "Vercel staging build status — verify latest dev commit is deployed",
       "description": "Check via Vercel API that the latest commit on dev branch has a successful deployment. Previous issue noted perpetually stale staging with ERROR builds.",
-      "status": "pending",
+      "status": "tested",
       "track": "backend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Vercel staging has BUILDING deployment for latest dev commit (5933da2e); actively deploying"
     },
     {
       "id": "E377",
@@ -4297,6 +4305,56 @@
       "description": "Place a limit order at far-from-market price (won't fill), verify order appears in Open Orders tab with a cancel button. Click cancel, verify order disappears from list.",
       "status": "pending",
       "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E380",
+      "area": "TWAP",
+      "priority": 2,
+      "title": "TWAP order — verify Interval input accepts custom value and sub-orders execute",
+      "description": "After fixing TWAP field labels (Issue #104), verify user can set a custom interval (e.g. 10m), set parts (e.g. 5), and the order summary shows '5 orders × 10m = 50m duration'.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E381",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets page — sorting by volume column changes order",
+      "description": "On /markets page, click '24h 成交量' column header, verify markets re-sort by descending volume. Click again to reverse sort.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E382",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys — create key flow after wallet connect",
+      "description": "Connect wallet on /api-keys page, verify a 'Create Key' or 'Generate API Key' button appears, and clicking it either shows a form or triggers a signing prompt.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E383",
+      "area": "navigation",
+      "priority": 3,
+      "title": "Markets page — clicking market row navigates to /trade?coin=BTC",
+      "description": "On /markets page, click the BTC-USDC row, verify navigation to /trade with correct coin parameter and trade form loads.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E384",
+      "area": "trade",
+      "priority": 3,
+      "title": "TWAP vs Limit — order form state preserved when switching order types",
+      "description": "Enter a price and size in Limit form, switch to TWAP, then switch back to Limit. Verify price/size values are preserved (not reset to 0).",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
     }
