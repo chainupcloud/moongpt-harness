@@ -346,6 +346,26 @@
       "repo": "dex-ui",
       "fix_attempts": 1,
       "pr_number": 52
+    },
+    {
+      "id": "issue-53",
+      "github_issue_number": 53,
+      "title": "[P3] Trade form: Buy/Long button not disabled for size=0 or invalid — no validation feedback on submit",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E073",
+      "created_date": "2026-03-27",
+      "fix_attempts": 0
+    },
+    {
+      "id": "issue-54",
+      "github_issue_number": 54,
+      "title": "[P2] Limit 订单提交后无 toast/反馈通知 — session key 已授权",
+      "status": "open",
+      "priority": "P2",
+      "scenario_id": "E127",
+      "created_date": "2026-03-27",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-27"
