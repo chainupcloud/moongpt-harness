@@ -629,6 +629,15 @@
       "deployed": false,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue #98). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 118,
+      "issue_numbers": [
+        114
+      ],
+      "status": "open",
+      "title": "fix: size slider keyboard arrow keys not responding (#114)",
+      "created_at": "2026-03-27"
     }
   ]
 }
