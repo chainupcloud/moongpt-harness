@@ -3948,7 +3948,7 @@
       "priority": 3,
       "title": "Explorer 地址搜索 — wallet address 路由到 /explorer/address/ (issue #85)",
       "description": "在 /explorer 搜索框输入钱包地址（0x开头 32字节），验证是否路由到 /explorer/address/ 而非 /tx/。issue #85 修复后验证。",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
