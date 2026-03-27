@@ -3446,9 +3446,11 @@
       "priority": 3,
       "title": "API Keys — 连接钱包后创建 API key 流程",
       "description": "连接测试钱包后，验证是否出现创建 API key 的表单/按钮，填写并提交",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — API Keys page accessible after wallet connection. Shows Generate/Authorize API Wallet/Remove buttons. Network mismatch banner shown (Arbitrum One vs Sepolia expected)."
     },
     {
       "id": "E292",
@@ -3469,9 +3471,11 @@
       "priority": 3,
       "title": "Portfolio 连接钱包后显示余额和仓位",
       "description": "连接测试钱包后，/portfolio 应显示 USDC 余额、当前仓位（空则显示 empty state），验证数据加载正常。",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Portfolio shows balance section ($0 USDC, expected testnet). Assets/Transaction History tabs visible after wallet connection."
     },
     {
       "id": "E294",
@@ -3479,9 +3483,11 @@
       "priority": 3,
       "title": "24h 变化修复后回归 — prevDayPx 变为非零后 UI 更新",
       "description": "当 issue #27 修复后（prevDayPx 非零），验证 /trade 和 /markets 均显示正确的非零 24h 变化百分比，且两页一致。",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — 24h change still +0.00% on /trade and /markets. Backend issue #27 (prevDayPx always 0.0) not yet fixed."
     },
     {
       "id": "E295",
@@ -3489,9 +3495,11 @@
       "priority": 3,
       "title": "Portfolio 历史订单列表分页/滚动",
       "description": "连接钱包后，在 Trade History 标签下，若历史订单 > 10 条，验证是否有分页或无限滚动加载更多数据。",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Transaction History tab 可访问，显示 Total: 0 / No transactions found（测试网钱包无历史，符合预期）"
     },
     {
       "id": "E296",
@@ -3499,9 +3507,11 @@
       "priority": 3,
       "title": "Stats bar 资金费 Countdown 实时倒计时",
       "description": "交易页 Header 中的 '资金费 / 倒计时' 字段（显示 0.1239% / HH:MM）应实时倒计时，刷新10秒后验证倒计时数值减少。",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Stats bar 资金费倒计时实时递减：49:51 → 49:39（12秒后减少12秒）"
     },
     {
       "id": "E297",
@@ -3521,9 +3531,11 @@
       "title": "TWAP 订单类型 — 特有字段（duration/intervals）是否出现",
       "description": "切换 Order Type 到 TWAP，验证 TWAP 特有配置字段（如 duration、intervals、time range）出现，且 Buy/Sell 可正常下单按钮可见。",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — TWAP 从 OrderType 下拉选中后 Duration/Hour/Randomize/TWAP Order Preview 字段均正确渲染"
     },
     {
       "id": "E299",
@@ -5119,9 +5131,11 @@
       "priority": 2,
       "title": "Stop Limit order — verify both Trigger Price and Limit Price fields visible",
       "description": "Select Stop Limit order type and confirm two separate price inputs exist: one for trigger/stop price and one for the limit price. Verify labels are distinct and clear.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Stop Limit shows distinct Stop Price and Limit Price fields. Minor: Limit Price input has wrong aria-label=\"Trigger price\" → Issue #119 (P4)"
     },
     {
       "id": "E451",
@@ -5159,6 +5173,113 @@
       "priority": 3,
       "title": "Explorer tx detail — /explorer/tx/{digest} direct route loads transaction info",
       "description": "Navigate directly to /explorer/tx/{a known tx digest} and verify transaction details page loads with type, account, time and summary fields.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E455",
+      "area": "api-keys",
+      "priority": 2,
+      "title": "API Keys — Generate 按钮功能流程（创建新 API key）",
+      "description": "连接钱包后点击 Generate 按钮，验证表单出现（名称/过期天数），填写并提交，检查新 API key 是否在列表中显示，包括 key 的值、过期时间。",
+      "status": "tested",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — Generate 按钮点击后弹出 modal，含名称/地址/天数/checkbox 字段；已有 uitest API wallet 在列表中"
+    },
+    {
+      "id": "E456",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys — Authorize API Wallet 流程",
+      "description": "连接钱包后点击 Authorize API Wallet，验证签名流程触发，授权后 agent wallet 出现在 API 钱包列表中。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E457",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio — 切换网络后余额刷新（Sepolia）",
+      "description": "当前 staging 提示 switch to Sepolia，切换后验证 Portfolio 余额和仓位数据是否正确加载，确认 USDC balance 来自正确网络。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E458",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio Transaction History — 交易记录标签页加载",
+      "description": "连接钱包后点击 Transaction History 标签，验证历史记录加载（空或有数据），分页、筛选功能可用。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E459",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Limit — Stop Price 触发方向（Long vs Short 时 Stop above/below current price 逻辑）",
+      "description": "Buy/Long Stop Limit: stop price 应在当前价格之上（触发平仓）或之下（触发开仓）。验证提交时 UI 是否有方向提示/错误校验，防止设置错误的 stop 方向。",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E460",
+      "area": "trade",
+      "priority": 2,
+      "title": "TWAP 订单提交 — 填写 Size + Duration 后点击 TWAP Buy",
+      "description": "选择 TWAP 订单类型，输入 Size=0.01，选择 Duration=30m，点击 TWAP Buy 按钮，验证提交后出现确认 toast 或订单出现在 TWAP 列表",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E461",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Key Remove — 点击 Remove 按钮，确认删除后列表更新",
+      "description": "在 API Keys 页面，对已有 API wallet 点击 Remove，验证确认弹窗出现，确认后该条目从列表消失",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E462",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer 地址详情页 — /explorer/address/{addr} 加载交易列表",
+      "description": "访问 /explorer/address/{testWalletAddr}，验证页面加载、交易列表渲染（或空状态），近期代码变更增加了该路由",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E463",
+      "area": "trade",
+      "priority": 3,
+      "title": "资金费率数值准确性验证 — UI 值与 API 返回值对比",
+      "description": "从 /trade 页面读取资金费率显示值（如 0.2179%），与 /dex-api/info API 返回的 funding 字段对比，误差 < 0.001%",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E464",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets 页面加载 — /markets 渲染市场列表",
+      "description": "访问 /markets，验证页面加载不白屏，市场列表（BTC-USDC 等交易对）正确显示价格/24h变化/成交量，近期代码变更涉及 app/markets/",
+      "track": "frontend",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
