@@ -2,13 +2,13 @@
 
 ## 你是谁
 
-你是 moongpt-harness 的执行 Agent，通过 `run-agent.sh` 以 Claude Code CLI 方式被调用。
+你是 moongpt-harness 的执行 Agent，通过 `scripts/run-agent.sh` 以 Claude Code CLI 方式被调用。
 
 ---
 
 ## 必读：当前运行上下文
 
-每次被调用时，`run-agent.sh` 会在 prompt 末尾附加当前项目配置（JSON）。**所有项目相关值必须从该配置读取，禁止使用硬编码值。**
+每次被调用时，`scripts/run-agent.sh` 会在 prompt 末尾附加当前项目配置（JSON）。**所有项目相关值必须从该配置读取，禁止使用硬编码值。**
 
 关键配置字段速查：
 - `github.owner` / `github.repo` — 目标仓库
@@ -22,12 +22,12 @@
 
 ## 状态文件操作规范
 
-`state/issues.json` 和 `state/prs.json` 是唯一数据源。
+`state/{project}/issues.json` 和 `state/{project}/prs.json` 是唯一数据源（每个项目独立子目录，如 `state/dex-ui/`）。
 
 **每次修改 state 后必须立即提交：**
 ```bash
 cd /home/ubuntu/chainup/moongpt-harness
-git add state/
+git add state/{project}/
 git commit -m "state: <描述变更>"
 git push origin randd1024
 ```
@@ -72,13 +72,19 @@ closed → open（验收失败时回滚，fix_attempts += 1）
 - Playwright：`/tmp/pw-test/node_modules/playwright`
 - 截图输出：`/tmp/screenshots/{project}/`
 - Agent prompt：`agents/{name}-agent.md`
+- 状态文件：`state/{project}/issues.json`, `state/{project}/prs.json`, `state/{project}/backlog.json`
+- スケジュール：`state/{project}/schedule.json`
 - 规则文件：`rules/{test,fix,acceptance}-rules.md`
+- Shell 入口：`scripts/run-agent.sh`, `scripts/run-scheduler.sh`, `scripts/run-all.sh`
+- 面板：`dashboard/app.py`
+- 文档：`docs/architecture.md`, `docs/setup.md`
 
 ---
 
 ## 各 Agent 入口
 
 被调用时读取对应 prompt 文件并执行：
-- `test-agent.md` — 测试，发现 bug，开 Issue
+- `explore-agent.md` — 探索测试，从背板取 pending 场景执行，发现 bug，开 Issue
+- `plan-agent.md` — 分析功能覆盖，生成新测试场景写入背板
 - `fix-agent.md` — 选取最高优先级 open issue，实施修复，提 PR
 - `master-agent.md` — 检查 PR review，merge，部署，验收，关闭 Issue

@@ -18,7 +18,7 @@
 ### Step 2：读取背板，选取本轮场景
 
 ```bash
-cat /home/ubuntu/chainup/moongpt-harness/state/test-backlog.json
+cat /home/ubuntu/chainup/moongpt-harness/state/{project}/backlog.json
 ```
 
 **选取规则：**
@@ -107,7 +107,7 @@ TEST_URL="{staging_url}" TEST_WALLET_PRIVATE_KEY="{wallet_pk}" \
 - 有明显缺陷/异常 → P3
 - 轻微体验问题 → P4（enhancement label）
 
-去重：`state/issues.json` 中 status != "closed" 且标题关键词重叠 > 60% → 跳过。
+去重：`state/{project}/issues.json` 中 status != "closed" 且标题关键词重叠 > 60% → 跳过。
 
 ```bash
 curl -s -X POST "https://api.github.com/repos/{owner}/{repo}/issues" \
@@ -122,7 +122,7 @@ curl -s -X POST "https://api.github.com/repos/{owner}/{repo}/issues" \
 
 ### Step 6：更新背板状态（本轮场景）
 
-用 Python 读取 `state/test-backlog.json`，将本轮执行的场景状态更新：
+用 Python 读取 `state/{project}/backlog.json`，将本轮执行的场景状态更新：
 - PASS → `"status": "tested"`, `"last_run": "{date}"`, `"result_summary": "PASS — {brief}"`
 - FAIL → `"status": "failed"`, `"last_run": "{date}"`, `"result_summary": "FAIL — {brief}"`
 - SKIP → `"status": "skipped"`, `"last_run": "{date}"`, `"result_summary": "SKIP — {reason}"`
@@ -146,7 +146,7 @@ curl -s -X POST "https://api.github.com/repos/{owner}/{repo}/issues" \
 ```python
 import json, datetime
 
-backlog_path = '/home/ubuntu/chainup/moongpt-harness/state/test-backlog.json'
+backlog_path = '/home/ubuntu/chainup/moongpt-harness/state/{project}/backlog.json'
 with open(backlog_path) as f:
     data = json.load(f)
 
@@ -174,13 +174,13 @@ with open(backlog_path, 'w') as f:
     json.dump(data, f, indent=2, ensure_ascii=False)
 ```
 
-### Step 8：更新 state/issues.json 并提交
+### Step 8：更新 state/{project}/issues.json 并提交
 
-追加新建 issue 到 `state/issues.json`（status: "open"）。
+追加新建 issue 到 `state/{project}/issues.json`（status: "open"）。
 
 ```bash
 cd /home/ubuntu/chainup/moongpt-harness
-git add state/test-backlog.json state/issues.json
+git add state/{project}/backlog.json state/{project}/issues.json
 git commit -m "explore: [{project}] {scenario_ids} — {pass}P {fail}F {skip}S, +{new_count} scenarios"
 git push origin randd1024
 ```

@@ -24,7 +24,7 @@
 ### Step 2：读取当前覆盖状态
 
 ```bash
-cat /home/ubuntu/chainup/moongpt-harness/state/test-backlog.json
+cat /home/ubuntu/chainup/moongpt-harness/state/{project}/backlog.json
 ```
 
 统计：
@@ -136,7 +136,7 @@ DEX_API_URL={api_url} dex market list -o json 2>/dev/null | head -50
 ```python
 import json, datetime
 
-path = '/home/ubuntu/chainup/moongpt-harness/state/test-backlog.json'
+path = '/home/ubuntu/chainup/moongpt-harness/state/{project}/backlog.json'
 with open(path) as f:
     data = json.load(f)
 
@@ -152,7 +152,7 @@ with open(path, 'w') as f:
 
 ```bash
 cd /home/ubuntu/chainup/moongpt-harness
-git add state/test-backlog.json projects/
+git add state/{project}/backlog.json projects/
 git commit -m "plan: coverage analysis — {new_count} scenarios added, {area_list}"
 git push origin randd1024
 ```

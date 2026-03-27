@@ -3,7 +3,7 @@
 # Usage: ./run-scheduler.sh [project]
 #
 # Add new test modules:
-#   1. Edit state/test-schedule.json → add to "modules" array and "run_counts"
+#   1. Edit state/{project}/schedule.json → add to "modules" array and "run_counts"
 #   2. Create tests/xxx.spec.js + agents/xxx-agent.md
 # No changes to cron or this script needed.
 
@@ -11,7 +11,7 @@ set -e
 
 PROJECT=${1:-dex-ui}
 HARNESS_DIR="/home/ubuntu/chainup/moongpt-harness"
-SCHEDULE_FILE="$HARNESS_DIR/state/test-schedule.json"
+SCHEDULE_FILE="$HARNESS_DIR/state/$PROJECT/schedule.json"
 LOG_DIR="$HARNESS_DIR/logs"
 
 # Load secrets
@@ -42,7 +42,7 @@ if [ "$RUN_COUNT" -ge "$MAX_RUNS" ]; then
 else
   SKIP=0
   # Run the selected module
-  bash "$HARNESS_DIR/run-agent.sh" "$CURRENT_MODULE" "$PROJECT" \
+  bash "$HARNESS_DIR/scripts/run-agent.sh" "$CURRENT_MODULE" "$PROJECT" \
     >> "$LOG_DIR/test-${CURRENT_MODULE}.log" 2>&1
   EXIT=$?
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] $CURRENT_MODULE done (exit: $EXIT)"
@@ -66,8 +66,8 @@ NEXT_MODULE=$(python3 -c "import json; d=json.load(open('$SCHEDULE_FILE')); prin
 NEW_COUNT=$(python3 -c "import json; d=json.load(open('$SCHEDULE_FILE')); print(d['run_counts'].get('$CURRENT_MODULE', 0))")
 
 # Commit updated schedule
-git add state/test-schedule.json
+git add state/$PROJECT/schedule.json
 git commit -m "test-schedule: $CURRENT_MODULE run_count=${NEW_COUNT} (skip=$SKIP) → next: ${NEXT_MODULE}" --quiet
 git push origin randd1024 --quiet
 
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] Updated test-schedule.json ($CURRENT_MODULE run_count=${NEW_COUNT}). Next: $NEXT_MODULE"
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Updated state/$PROJECT/schedule.json ($CURRENT_MODULE run_count=${NEW_COUNT}). Next: $NEXT_MODULE"

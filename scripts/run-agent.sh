@@ -61,7 +61,7 @@ if [ "$AGENT" = "fix" ]; then
   OPEN_COUNT=$(python3 -c "
 import json, sys
 try:
-    d = json.load(open('$HARNESS_DIR/state/issues.json'))
+    d = json.load(open('$HARNESS_DIR/state/$PROJECT/issues.json'))
     n = sum(1 for i in d.get('issues', []) if i.get('status') == 'open' and i.get('fix_attempts', 0) < 3)
     print(n)
 except Exception as e:
@@ -83,7 +83,7 @@ if [ "$AGENT" = "master" ]; then
   LOCAL_OPEN=$(python3 -c "
 import json
 try:
-    d = json.load(open('$HARNESS_DIR/state/prs.json'))
+    d = json.load(open('$HARNESS_DIR/state/$PROJECT/prs.json'))
     print(sum(1 for p in d.get('prs', []) if p.get('status') == 'open'))
 except:
     print(1)
@@ -103,7 +103,8 @@ import json, urllib.request, os, sys
 config_path = os.environ.get('HARNESS_PROJECT_CONFIG', '')
 harness_dir = '/home/ubuntu/chainup/moongpt-harness'
 token = os.environ.get('GH_TOKEN', '')
-issues_path = harness_dir + '/state/issues.json'
+project = os.environ.get('HARNESS_PROJECT', 'dex-ui')
+issues_path = harness_dir + '/state/' + project + '/issues.json'
 
 try:
     with open(config_path) as f:
@@ -149,7 +150,7 @@ PYEOF
 )
   if [ "${SYNCED:-0}" != "0" ]; then
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] master: synced ${SYNCED} issue(s) closed on GitHub → state updated."
-    git -C "$HARNESS_DIR" add state/issues.json
+    git -C "$HARNESS_DIR" add state/$PROJECT/issues.json
     git -C "$HARNESS_DIR" commit -m "state: sync ${SYNCED} issue(s) closed on GitHub [$PROJECT]" 2>/dev/null || true
     git -C "$HARNESS_DIR" push origin randd1024 2>/dev/null || true
   fi

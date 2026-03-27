@@ -1,7 +1,7 @@
 #!/usr/bin/env -S uv run
 """
 moongpt-harness 任务面板
-用法: uv run dashboard.py [--port 8080]
+用法: uv run dashboard/app.py [--port 8080]
 """
 
 import json
@@ -14,7 +14,8 @@ from flask import Flask, jsonify, request, Response
 from croniter import croniter
 
 app = Flask(__name__)
-BASE = Path(__file__).parent
+BASE = Path(__file__).parent  # dashboard/
+HARNESS_DIR = BASE.parent     # repo root
 
 
 def parse_crontab_schedules():
@@ -363,7 +364,7 @@ setInterval(loadAll, 15000);
 
 def parse_log_times(agent: str):
     """从日志文件解析最后一次运行的开始时间、结束时间、状态。"""
-    log_file = BASE / 'logs' / f'{agent}-agent.log'
+    log_file = HARNESS_DIR / 'logs' / f'{agent}-agent.log'
     if not log_file.exists():
         return None, None, None
 
@@ -419,15 +420,21 @@ def index():
 
 @app.route('/api/state')
 def api_state():
-    issues_file = BASE / 'state' / 'issues.json'
-    prs_file    = BASE / 'state' / 'prs.json'
-    data = {}
-    if issues_file.exists():
-        d = json.loads(issues_file.read_text())
-        data['issues'] = d.get('issues', [])
-        data['last_test_run'] = d.get('last_test_run')
-    if prs_file.exists():
-        data['prs'] = json.loads(prs_file.read_text()).get('prs', [])
+    # Aggregate state across all projects (state/{project}/issues.json, prs.json)
+    data = {'issues': [], 'prs': [], 'last_test_run': None}
+    state_dir = HARNESS_DIR / 'state'
+    for project_dir in sorted(state_dir.iterdir()):
+        if not project_dir.is_dir():
+            continue
+        issues_file = project_dir / 'issues.json'
+        prs_file    = project_dir / 'prs.json'
+        if issues_file.exists():
+            d = json.loads(issues_file.read_text())
+            data['issues'].extend(d.get('issues', []))
+            if d.get('last_test_run'):
+                data['last_test_run'] = d.get('last_test_run')
+        if prs_file.exists():
+            data['prs'].extend(json.loads(prs_file.read_text()).get('prs', []))
     return jsonify(data)
 
 @app.route('/api/agents')
@@ -461,7 +468,7 @@ def api_agents():
 @app.route('/api/projects')
 def api_projects():
     projects = []
-    for f in sorted((BASE / 'projects').glob('*.json')):
+    for f in sorted((HARNESS_DIR / 'projects').glob('*.json')):
         if f.stem == 'template':
             continue
         try:
@@ -475,9 +482,9 @@ def api_logs():
     agent = request.args.get('agent', 'smoke')
     # Map agent name to log file (scheduler writes to test-{module}.log)
     candidates = [
-        BASE / 'logs' / f'test-{agent}.log',   # new: test-smoke.log, test-coverage.log
-        BASE / 'logs' / f'{agent}-agent.log',   # legacy: fix-agent.log, master-agent.log
-        BASE / 'logs' / f'{agent}.log',         # new: scheduler.log
+        HARNESS_DIR / 'logs' / f'test-{agent}.log',   # new: test-smoke.log, test-coverage.log
+        HARNESS_DIR / 'logs' / f'{agent}-agent.log',   # legacy: fix-agent.log, master-agent.log
+        HARNESS_DIR / 'logs' / f'{agent}.log',         # new: scheduler.log
     ]
     for log_file in candidates:
         if log_file.exists():

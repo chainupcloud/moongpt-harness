@@ -17,7 +17,7 @@ for AGENT in "${TEST_AGENTS[@]}"; do
   echo "════════════════════════════════════════"
   echo "Running: $AGENT"
   echo "════════════════════════════════════════"
-  bash "$HARNESS_DIR/run-agent.sh" "$AGENT" "$PROJECT" \
+  bash "$HARNESS_DIR/scripts/run-agent.sh" "$AGENT" "$PROJECT" \
     >> "$LOG_DIR/${AGENT}-agent.log" 2>&1
   EXIT=$?
   if [ $EXIT -ne 0 ]; then

@@ -19,7 +19,7 @@
 - `local_path` → 本地代码路径
 
 ### Step 2：选取目标 Issue
-读取 state/issues.json，按优先级（P1>P2>P3>P4）找到第一个满足以下条件的 issue：
+读取 state/{project}/issues.json，按优先级（P1>P2>P3>P4）找到第一个满足以下条件的 issue：
 - status = "open"
 - fix_attempts < 3
 
@@ -78,12 +78,12 @@ curl -s -X POST \
 ```
 
 ### Step 7：更新状态文件并提交
-更新 state/issues.json：status → "fixing", pr_number → PR_NUMBER, fix_attempts += 1
-更新 state/prs.json：添加新 PR 条目（status: "open", issue_numbers: [github_number]）
+更新 state/{project}/issues.json：status → "fixing", pr_number → PR_NUMBER, fix_attempts += 1
+更新 state/{project}/prs.json：添加新 PR 条目（status: "open", issue_numbers: [github_number]）
 
 ```bash
 cd /home/ubuntu/chainup/moongpt-harness
-git add state/
+git add state/{project}/
 git commit -m "state: issue #{github_number} → fixing, PR #{PR_NUMBER}"
 git push origin randd1024
 ```
