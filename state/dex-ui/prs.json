@@ -409,6 +409,15 @@
       "deployed": true,
       "accepted": true,
       "note": "Vercel deploy READY (dpl_A7hTgKvLYMyL2Auq1SJNBzTT5j4z). SHA verified. Negative spread on staging is testnet crossed-book data anomaly, not code issue. Sorting fix correctly implemented."
+    },
+    {
+      "pr_number": 81,
+      "issue_numbers": [
+        72
+      ],
+      "status": "open",
+      "created_at": "2026-03-27",
+      "title": "fix: Buy/Long 侧切换按钮未连接钱包时无反馈 — 添加连接提示 (#72)"
     }
   ]
 }

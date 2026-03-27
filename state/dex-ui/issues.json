@@ -506,13 +506,15 @@
     {
       "id": "issue-2026-03-27-dex-ui-72",
       "github_issue_number": 72,
+      "github_number": 72,
       "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "area": "trading",
       "scenario_id": "E210",
       "created_date": "2026-03-27",
-      "fix_attempts": 0
+      "fix_attempts": 1,
+      "pr_number": 81
     },
     {
       "id": "issue-2026-03-27-dex-ui-73",
