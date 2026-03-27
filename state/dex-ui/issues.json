@@ -297,12 +297,15 @@
       "id": "issue-2026-03-27-dex-ui-45",
       "github_number": 45,
       "title": "[P3] Limit order submit shows no feedback toast",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E127",
       "created": "2026-03-27",
       "fix_attempts": 1,
-      "pr_number": 46
+      "pr_number": 46,
+      "closed_at": "2026-03-27",
+      "deployed_sha": "9b9bc5811588734efe53ef5ab44bb4fe621bc35e",
+      "accepted": true
     },
     {
       "id": 47,

@@ -248,8 +248,12 @@
       "issue_numbers": [
         45
       ],
-      "status": "open",
-      "title": "fix: limit order submit shows no feedback toast (#45)"
+      "status": "merged",
+      "title": "fix: limit order submit shows no feedback toast (#45) (#46)",
+      "commit_sha": "9b9bc5811588734efe53ef5ab44bb4fe621bc35e",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
     },
     {
       "pr_number": 48,
