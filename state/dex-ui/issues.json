@@ -905,6 +905,18 @@
       "resolution": "already-resolved",
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/109",
       "note": "TwapPanel already has Duration presets, Hour(s)/Minute(s) inputs, Randomize/Private checkboxes, and TWAP Order Preview. Explore agent false positive — likely observed stale staging (issue #98 Vercel deploy failures)."
+    },
+    {
+      "number": 112,
+      "title": "[P3] Scale order type missing scale-specific fields (price range / number of orders)",
+      "status": "open",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "scenario": "E269",
+      "created": "2026-03-27",
+      "url": "https://github.com/chainupcloud/dex-ui/issues/112"
     }
   ],
   "last_updated": "2026-03-27",
