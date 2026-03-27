@@ -428,10 +428,13 @@
       "issue_numbers": [
         73
       ],
-      "status": "open",
+      "status": "merged",
       "created_at": "2026-03-27",
       "title": "fix: 移动端底部标签栏添加滚动渐变提示 (#73)",
-      "note": "Merge conflict (dirty state) — needs rebase onto dev. Copilot review COMMENTED (mergeable once rebased)."
+      "commit_sha": "85db72c",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
     },
     {
       "pr_number": 83,
@@ -452,9 +455,26 @@
       "issue_numbers": [
         77
       ],
-      "status": "open",
+      "status": "merged",
       "created_at": "2026-03-27",
-      "title": "fix: add aria-labels to trade form inputs (#77)"
+      "title": "fix: add aria-labels to trade form inputs (#77)",
+      "commit_sha": "219bc496cdbae00859fd576fecd1dd0196629483",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 86,
+      "issue_numbers": [
+        85
+      ],
+      "status": "merged",
+      "created_at": "2026-03-27",
+      "title": "fix: Explorer search routes wallet address to /explorer/address/ (#85)",
+      "commit_sha": "dff467061710fb1b220fc6210146316fb44e9145",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
     },
     {
       "pr_number": 86,

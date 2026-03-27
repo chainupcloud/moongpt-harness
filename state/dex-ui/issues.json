@@ -523,14 +523,18 @@
     {
       "id": "issue-2026-03-27-dex-ui-73",
       "github_issue_number": 73,
+      "github_number": 73,
       "title": "[P3] 移动端竖屏（390×844）底部面板标签栏水平溢出 — 4 个标签不可见",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "area": "mobile",
       "scenario_id": "E115",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "fix_attempts": 1,
-      "pr_number": 82
+      "pr_number": 82,
+      "deployed_sha": "85db72c",
+      "accepted": true
     },
     {
       "title": "[P3] /info API prevDayPx always returns 0.0 — 24h price change unavailable",
@@ -582,14 +586,18 @@
       "github_issue_number": 77,
       "github_number": 77,
       "title": "[P3] Trade form inputs missing aria-labels — 5 inputs have no accessible names",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "area": "accessibility",
       "scenario_id": "E135",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/77",
       "fix_attempts": 1,
-      "pr_number": 84
+      "pr_number": 84,
+      "deployed_sha": "219bc496cdbae00859fd576fecd1dd0196629483",
+      "accepted": true,
+      "note": "Playwright verified: 5 inputs with aria-labels (Price, Size, Total, Order size percentage x2)."
     },
     {
       "github_number": 78,
@@ -623,13 +631,17 @@
       "number": 85,
       "github_number": 85,
       "title": "[P3] Explorer 搜索框将钱包地址误路由到 /explorer/tx/ — 应区分 tx hash 和 address",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E162",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "url": "https://github.com/chainupcloud/dex-ui/issues/85",
       "fix_attempts": 1,
-      "pr_number": 86
+      "pr_number": 86,
+      "deployed_sha": "dff467061710fb1b220fc6210146316fb44e9145",
+      "accepted": true,
+      "note": "Playwright verified: /explorer page accessible, search input present."
     }
   ],
   "last_updated": "2026-03-27",
