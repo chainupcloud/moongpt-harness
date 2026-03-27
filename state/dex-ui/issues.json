@@ -949,6 +949,30 @@
         "accessibility"
       ],
       "url": "https://github.com/chainupcloud/dex-ui/issues/114"
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-115",
+      "number": 115,
+      "title": "[P3] /trade?type=spot URL parameter ignored — page stays on perps instead of activating spot mode",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E275",
+      "created_date": "2026-03-27",
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-116",
+      "number": 116,
+      "title": "[P3] Market order — slippage tolerance not displayed in order form",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E278",
+      "created_date": "2026-03-27",
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-27",

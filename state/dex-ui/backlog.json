@@ -3253,9 +3253,11 @@
       "title": "/trade?type=spot URL 参数行为验证",
       "description": "直接访问 /trade?type=spot（Spot 导航链接目标），验证页面是否正确渲染，type 参数是否影响订单类型选择器或表单内容",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — /trade?type=spot URL param ignored, page shows perps; issue #115 created"
     },
     {
       "id": "E276",
@@ -3275,9 +3277,11 @@
       "title": "/api-keys 页面内容完整性验证 — 未连接钱包状态",
       "description": "验证 /api-keys 页面在未连接钱包时的 UI 完整性：提示文案是否清晰、是否有快速 Connect Wallet 按钮、页面是否有未预期的空白区域",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /api-keys loads correctly, shows connect-wallet prompt with proper description"
     },
     {
       "id": "E278",
@@ -3285,9 +3289,11 @@
       "priority": 3,
       "title": "Market order — slippage tolerance display and confirmation",
       "description": "When Market order type is selected, verify slippage tolerance is shown/configurable and a confirmation dialog appears before submission to prevent accidental fills at bad prices",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — No slippage tolerance displayed for Market orders; issue #116 created"
     },
     {
       "id": "E279",
@@ -4828,9 +4834,11 @@
       "priority": 2,
       "title": "TWAP order — verify TwapOrderForm component renders after type selection",
       "description": "After E272/E274 FAIL: check if TwapOrderForm.tsx is actually mounted when TWAP selected. Inspect DOM for twap-form class or data attributes. Verify component renders with duration and interval inputs.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — TwapOrderForm still not rendered after TWAP selection; issue #113 still open"
     },
     {
       "id": "E426",
@@ -4868,6 +4876,56 @@
       "priority": 3,
       "title": "Scale order Distribution selector — Uniform vs Geometric distribution effects",
       "description": "Select Scale order type. Test the Distribution selector (Uni = Uniform visible in E420 test). Switch between distribution types if available and verify price allocation changes in Start/End range.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E430",
+      "area": "trade",
+      "priority": 3,
+      "title": "/spot 路由直接访问 — 现货交易页面完整性验证",
+      "description": "直接访问 /spot 路由，验证现货交易页面正确渲染，包含市场选择、订单表单、资产余额等组件",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E431",
+      "area": "trade",
+      "priority": 3,
+      "title": "Market order — Settings gear icon opens slippage configuration panel",
+      "description": "点击市价单旁的设置齿轮图标，验证是否弹出滑点配置面板，能否修改默认滑点值",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E432",
+      "area": "trade",
+      "priority": 2,
+      "title": "TWAP order — form fields after fix verification (re-test issue #113)",
+      "description": "当 issue #113 修复后重新验证：选择 TWAP 订单类型后，表单应显示 Interval、Duration、Slices 等 TWAP 专属字段",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E433",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API keys page — create/list/delete API key flow (wallet connected)",
+      "description": "连接钱包后，验证 /api-keys 页面完整功能：创建新 API key、查看已有 key 列表、删除 key",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E434",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Market order — trigger price input validation and order submission",
+      "description": "在止损市价单（Stop Market）中输入触发价格，验证：高于/低于市价的校验逻辑、表单提交行为",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
