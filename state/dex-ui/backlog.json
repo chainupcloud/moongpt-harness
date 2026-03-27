@@ -48,7 +48,9 @@
       "priority": 1,
       "title": "Portfolio 持仓 PnL 计算合理性检查",
       "description": "读取页面上的 Entry Price、Current Price、Size，手动计算 PnL，与页面显示值比对误差 < 1%",
-      "status": "pending"
+      "status": "skipped",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — Portfolio page loads, PnL Calendar tab visible, no open positions on testnet wallet (expected)"
     },
     {
       "id": "E006",
@@ -56,7 +58,9 @@
       "priority": 2,
       "title": "Open Orders 排序/筛选功能",
       "description": "Open Orders tab 中按 Price/Size/Time 排序，验证顺序变化；若有筛选，测试筛选后结果集",
-      "status": "pending"
+      "status": "skipped",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — Open Orders tab accessible (\"Open Orders(0)\"), no open orders on testnet wallet (expected)"
     },
     {
       "id": "E007",
@@ -64,7 +68,9 @@
       "priority": 2,
       "title": "Order History tab — 显示历史成交记录",
       "description": "点击 Order History 或 Fills tab，验证有历史数据行（不能空白），且包含时间/价格/数量字段",
-      "status": "pending"
+      "status": "skipped",
+      "last_run": "2026-03-27",
+      "result_summary": "SKIP — Trade History tab accessible, no history data for testnet wallet (expected)"
     },
     {
       "id": "E008",
@@ -256,9 +262,11 @@
       "priority": 1,
       "title": "深链接 /trade?coin=BTC → 正确加载 BTC 交易对",
       "description": "测试网有 BTC-USDC，访问 /trade?coin=BTC，验证页面加载 BTC 交易对且 URL coin 参数保留",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — /trade?coin=BTC loads correctly, URL preserved, BTC content shown (false 404 detection in prior check was textContent artifact)"
     },
     {
       "id": "E032",
@@ -296,6 +304,56 @@
       "priority": 2,
       "title": "多标签页 session 共享 — 第二个标签不重复弹签名",
       "description": "先在 tab1 完成 session 初始化，打开 tab2 同 URL，验证 tab2 不再弹出 EnableTrading 签名提示",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E036",
+      "area": "trade",
+      "priority": 2,
+      "title": "TradingView study_templates API — 验证 client/user 参数非 undefined",
+      "description": "访问 /trade 后，检查 network 请求中 study_templates URL 不含 undefined/undefined，验证图表初始化参数正确传入",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E037",
+      "area": "trade",
+      "priority": 2,
+      "title": "K 线数据时间顺序 — 无 time order violation 错误",
+      "description": "访问 /trade，监听 console errors，验证无 'putToCacheNewBar: time violation' 错误，K 线数据按时间升序接收",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E038",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade History 列头完整性 — 有订单时显示 Side/Size/Price/Time 等字段",
+      "description": "连接钱包后（或模拟有订单状态），切到 Trade History tab，验证表头包含关键字段（时间、方向、价格、数量）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E039",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio PnL Calendar 展开 — 可点击日期查看当日收益",
+      "description": "访问 Portfolio → PnL Calendar tab，验证日历组件可交互（能点击日期格子），无 JS 崩溃",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E040",
+      "area": "navigation",
+      "priority": 3,
+      "title": "Trade 页 Buy/Sell 按钮在钱包未连接时显示 'Connect Wallet' 文字",
+      "description": "无钱包连接访问 /trade，验证 Long/Short 按钮显示 'Connect Wallet' 或类似引导文字（E034 覆盖整体，此场景更精确）",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"

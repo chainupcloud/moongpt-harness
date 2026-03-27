@@ -1,5 +1,5 @@
 {
-  "last_test_run": "2026-03-27T06:40:10Z",
+  "last_test_run": "2026-03-27T08:15:00Z",
   "last_coverage_run": "2026-03-27T00:01:33Z",
   "issues": [
     {
@@ -111,6 +111,19 @@
       "fix_attempts": 1,
       "deployed_sha": "4e9367437c21524984392884b8cbb4c5f5723e20",
       "note": "Manually closed by human after acceptance."
+    },
+    {
+      "github_number": 24,
+      "title": "[P3] TradingView 图表初始化缺失 user/client 参数，导致 study_templates API 每次 404",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 0,
+      "labels": [
+        "bug"
+      ],
+      "note": "Also covers K-line time order violation errors. Found during E031/E006/E007 exploration."
     }
   ]
 }
