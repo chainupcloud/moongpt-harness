@@ -127,8 +127,12 @@
     {
       "pr_number": 31,
       "issue_numbers": [27],
-      "status": "open",
-      "title": "fix: 交易表单 price/size 输入框过滤非法字符 (#27)"
+      "status": "merged",
+      "title": "fix: 交易表单 price/size 输入框过滤非法字符 (#27)",
+      "commit_sha": "b8f208046e0a5107b69271d07b5926e451b7234d",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
     },
     {
       "pr_number": 32,

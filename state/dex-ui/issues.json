@@ -145,13 +145,16 @@
     {
       "number": 27,
       "title": "[P3] 交易表单 price/size 输入框未过滤非法字符 — 字母、特殊符号可被输入",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E010",
       "created": "2026-03-27",
+      "closed_at": "2026-03-27",
       "fix_attempts": 1,
       "pr_number": 31,
-      "github_number": 27
+      "github_number": 27,
+      "deployed_sha": "b8f208046e0a5107b69271d07b5926e451b7234d",
+      "accepted": true
     },
     {
       "number": 28,

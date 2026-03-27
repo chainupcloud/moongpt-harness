@@ -98,9 +98,9 @@
       "priority": 2,
       "title": "表单输入非法字符 — 字母、负数、特殊符号",
       "description": "price 字段输入 'abc'、'-100'、'1e5'，验证字段只接受合法数字，不崩溃，不 NaN",
-      "status": "failed",
+      "status": "pending",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — All invalid chars (abc, -100, 1e5, !@#$, 1.2.3) accepted in price field (Issue #27)"
+      "result_summary": "RESET — fix deployed (PR #31, SHA b8f2080), staging acceptance passed 2026-03-27. Re-verify next explore run."
     },
     {
       "id": "E011",
