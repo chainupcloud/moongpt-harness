@@ -3924,9 +3924,11 @@
       "priority": 3,
       "title": "Trade 页面 24h 价格变动 — 验证涨跌幅数据非零且与 mark price 一致",
       "description": "在 /trade/BTC-USDC 验证 24h 价格涨跌幅数据（不为 +0.00%），与标记价格数据来源一致（关联 issue #63）",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — 24h change shows +0.00%; /dex-api/info returns 405; prevDayPx API still broken"
     },
     {
       "id": "E332",
@@ -3934,9 +3936,11 @@
       "priority": 3,
       "title": "Explorer checkpoint — 验证所有 checkpoint 的 tx 列表与 count 一致性",
       "description": "随机抽取 5 个 checkpoint，对比 header tx count 与列表行数。记录不一致的 checkpoint 序号用于 bug 定位。",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — 5/5 checkpoints: header shows 44-55 txs but only 0-1 tx links visible; matches open issue"
     },
     {
       "id": "E333",
@@ -3944,9 +3948,11 @@
       "priority": 3,
       "title": "Explorer 地址搜索 — wallet address 路由到 /explorer/address/ (issue #85)",
       "description": "在 /explorer 搜索框输入钱包地址（0x开头 32字节），验证是否路由到 /explorer/address/ 而非 /tx/。issue #85 修复后验证。",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "FAIL — SUI addr routes to /tx/ (wrong), EVM addr no navigation; issue #134 opened"
     },
     {
       "id": "E334",
@@ -5581,9 +5587,11 @@
       "title": "TP/SL inputs validation — post-fix verification of #122",
       "description": "After issue #122 (TP/SL inputs not revealed) is fixed: (1) click TP/SL checkbox, (2) verify inputs appear, (3) for LONG enter TP < current price → expect error, (4) enter SL > current price → expect error. Verifies both reveal and validation.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-27",
+      "result_summary": "PASS — TP/SL inputs correctly revealed after checkbox click (4 new inputs: TP price, TP %, SL price, SL %)"
     },
     {
       "id": "E487",
@@ -5880,6 +5888,56 @@
       "description": "Reset scenario: after issue #131 fix is deployed, select TWAP order type, verify Duration input (minutes) and Interval input (seconds) are visible and functional. Enter Duration=60, Interval=10, verify order submits without field-absent error.",
       "status": "pending",
       "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E515",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — SUI address detail page content验证",
+      "description": "导航到 /explorer/address/{SUI_addr} 验证地址详情页显示账户交易历史、余额信息，而非空白或错误页",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E516",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint — 验证分页加载更多 tx（txCount > 1 时）",
+      "description": "选取 header 显示 txCount > 1 的 checkpoint 详情页，点击「加载更多」或等待懒加载，验证 tx 列表最终与 header count 一致",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E517",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL validation — 输入无效值后是否显示错误提示",
+      "description": "E486 验证了 TP/SL 输入框可见（issue #122 修复）；本场景专门验证 validation：LONG 仓位下，TP < 当前价格 → 应报错；SL > 当前价格 → 应报错",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E518",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade 页 — TP/SL 联动 Buy/Sell 方向切换后验证",
+      "description": "先点击 Buy/Long 设置 TP/SL 值，再切换到 Sell/Short，验证 TP/SL 值是否被清空或重新计算方向约束",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-27"
+    },
+    {
+      "id": "E519",
+      "area": "explorer",
+      "priority": 4,
+      "title": "Explorer — 搜索 checkpoint 序号（如 206923）是否直接跳转详情",
+      "description": "在 /explorer 搜索框输入一个已知 checkpoint 序号（数字），验证是否路由到 /explorer/checkpoint/{seq}",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
     }
