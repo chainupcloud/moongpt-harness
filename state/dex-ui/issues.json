@@ -884,7 +884,7 @@
       "id": "dex-ui-109",
       "issue_number": 109,
       "title": "[P3] TWAP order form missing interval/parts/duration fields — cannot configure TWAP parameters",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "labels": [
         "bug"
@@ -894,7 +894,11 @@
         "E251"
       ],
       "created_date": "2026-03-27",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/109"
+      "closed_at": "2026-03-27",
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/109",
+      "note": "TwapPanel already has Duration presets, Hour(s)/Minute(s) inputs, Randomize/Private checkboxes, and TWAP Order Preview. Explore agent false positive — likely observed stale staging (issue #98 Vercel deploy failures)."
     }
   ],
   "last_updated": "2026-03-27",
