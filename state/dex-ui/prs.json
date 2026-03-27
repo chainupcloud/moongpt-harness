@@ -646,7 +646,9 @@
     },
     {
       "pr_number": 121,
-      "issue_numbers": [120],
+      "issue_numbers": [
+        120
+      ],
       "status": "merged",
       "title": "fix: Stop Limit form limit price input aria-label (#120)",
       "created_at": "2026-03-27",
@@ -655,6 +657,16 @@
       "deployed": false,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "number": 128,
+      "title": "fix: TP/SL inputs — add inline validation for invalid prices (#126)",
+      "status": "open",
+      "issue_numbers": [
+        126
+      ],
+      "branch": "fix/issue-126",
+      "created_date": "2026-03-27"
     }
   ]
 }
