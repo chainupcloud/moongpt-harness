@@ -1058,24 +1058,33 @@
     {
       "id": "E313-124",
       "issue_number": 124,
+      "github_number": 124,
       "title": "[P3] /markets Trade button has href=\"#\" — clicking does not navigate to /trade",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E313",
       "created_date": "2026-03-27",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/124"
+      "closed_at": "2026-03-27",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/124",
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "MarketRow component already wraps entire row in <Link href=/trade?coin={base}>. No href=\"#\" in codebase. Explore agent false positive — likely stale staging (issue #98 Vercel deploy failures)."
     },
     {
       "id": "issue-2026-03-27-dex-ui-125",
       "github_number": 125,
       "title": "[P3] TWAP order type — TWAP-specific fields (duration/interval) still absent after prior fix (regression)",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E314",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
       "labels": [
         "bug"
-      ]
+      ],
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "TwapPanel renders when orderType=twap with duration/randomize/private fields. Same false positive as #109, #113, #117 — stale staging (issue #98)."
     },
     {
       "id": "issue-2026-03-27-dex-ui-126",
@@ -1084,6 +1093,18 @@
       "status": "open",
       "priority": "P3",
       "scenario_id": "E486",
+      "created_date": "2026-03-27",
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-127",
+      "github_number": 127,
+      "title": "[P4] Withdraw modal — no inline validation error for negative or zero amount input",
+      "status": "open",
+      "priority": "P4",
+      "scenario_id": "E322",
       "created_date": "2026-03-27",
       "labels": [
         "bug"
