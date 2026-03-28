@@ -7050,11 +7050,11 @@
       "priority": 3,
       "title": "More nav dropdown — verify all links present (API Keys, Privacy, Terms)",
       "description": "Open the More dropdown in navigation and verify it contains all expected links: API Keys, Privacy Policy, Terms of Service. Check each link is clickable and non-404.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — More dropdown missing API Keys, Privacy, Terms links → Issue #195"
+      "result_summary": "PASS — More dropdown has API (→API Keys), Privacy Policy, Terms of Service links present"
     },
     {
       "id": "E589",
@@ -7986,9 +7986,11 @@
       "priority": 3,
       "title": "Explorer tx detail — status badge (success/failed) displayed",
       "description": "Verify each tx detail page shows a clear status indicator (success/failed badge). Previous run found timestamp+gas but status field regex didn't match.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer TX detail shows Status: Success badge with proper display"
     },
     {
       "id": "E667",
@@ -7996,9 +7998,11 @@
       "priority": 3,
       "title": "API Keys — page renders key list table after authorization",
       "description": "After Authorize API Wallet flow completes (with signed message), verify the new key appears in a table/list with permissions, created-at date, and revoke button.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — API Keys page requires actual wallet signing; localStorage injection insufficient. Security by design."
     },
     {
       "id": "E668",
@@ -8006,9 +8010,11 @@
       "priority": 3,
       "title": "Transfer modal — MAX button fills correct balance",
       "description": "Open Transfer/Withdraw dialog, click MAX button, verify the amount field is populated with the user's actual USDC balance (not 0 or blank).",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — MAX button in Transfer modal fills amount field correctly"
     },
     {
       "id": "E669",
@@ -10651,6 +10657,56 @@
       "priority": 3,
       "title": "Explorer checkpoint tx detail — clicking transaction hash navigates to tx detail page",
       "description": "On /explorer/checkpoint/{seq}, click a transaction hash link (e.g. 0x1e351e...ab4c). Verify it navigates to /explorer/tx/{digest} and shows tx details correctly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E921",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — clicking tx hash in checkpoint detail navigates to tx detail page",
+      "description": "From checkpoint detail page, clicking a transaction hash link should navigate to the individual transaction detail page at /explorer/tx/{hash}",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E922",
+      "area": "navigation",
+      "priority": 3,
+      "title": "More dropdown — API link label consistency (shows 'API' vs 'API Keys')",
+      "description": "The More dropdown shows 'API' but the page is titled 'API Keys'. Check if label is consistent with other navigation contexts and documentation",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E923",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — Event log expand/collapse for multi-event transactions",
+      "description": "On a TX detail page with multiple events, verify the 'Show details' toggle expands/collapses event log entries correctly",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E924",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — search by wallet address returns related transactions",
+      "description": "Using the Explorer search bar with a known wallet address should return a filtered list of transactions for that address",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E925",
+      "area": "trade",
+      "priority": 3,
+      "title": "Transfer modal — Withdraw tab MAX button fills correct withdrawal balance",
+      "description": "In the Transfer modal, switch to the Withdraw tab and verify MAX button fills the correct available balance (not the deposit balance)",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
