@@ -1333,12 +1333,17 @@
     {
       "pr_number": 250,
       "title": "fix: Explorer tx detail — hide Fee field when unavailable (#216)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         216
       ],
       "branch": "fix/issue-216",
-      "created_at": "2026-03-28"
+      "created_at": "2026-03-28",
+      "commit_sha": "5594ddb",
+      "merged_at": "2026-03-28",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged to dev. Vercel build ERROR — staging not updated. Acceptance deferred until Vercel issue #98 resolved."
     }
   ],
   "pull_requests": [
