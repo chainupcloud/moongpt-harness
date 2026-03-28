@@ -1282,7 +1282,7 @@
       "gh_number": 146,
       "github_number": 146,
       "title": "[P3] TP/SL inputs missing client-side validation — invalid prices accepted silently",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "labels": [
         "bug"
@@ -1290,15 +1290,18 @@
       "scenario_id": "E408",
       "scenario": "E408",
       "created_date": "2026-03-28",
+      "closed_at": "2026-03-28",
       "fix_attempts": 0,
-      "url": "https://github.com/chainupcloud/dex-ui/issues/146"
+      "resolution": "duplicate",
+      "url": "https://github.com/chainupcloud/dex-ui/issues/146",
+      "note": "Duplicate of #126 (fixed in PR #128, commit a6f67e1). Inline validation already on dev. Staging stale due to Vercel deploy failures (#98)."
     },
     {
       "id": "issue-147",
       "gh_number": 147,
       "github_number": 147,
       "title": "[P4] Explorer: missing filter by transaction type (oracle updates vs user trades)",
-      "status": "open",
+      "status": "closed",
       "priority": "P4",
       "labels": [
         "enhancement"
@@ -1306,8 +1309,11 @@
       "scenario_id": "E385",
       "scenario": "E385",
       "created_date": "2026-03-28",
+      "closed_at": "2026-03-28",
       "fix_attempts": 0,
-      "url": "https://github.com/chainupcloud/dex-ui/issues/147"
+      "resolution": "duplicate",
+      "url": "https://github.com/chainupcloud/dex-ui/issues/147",
+      "note": "Duplicate of #142 (fixed in PR #143, commit f11633a). Transaction type filter already on dev. Staging stale due to Vercel deploy failures (#98)."
     }
   ],
   "last_updated": "2026-03-28",
