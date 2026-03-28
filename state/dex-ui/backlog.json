@@ -6201,11 +6201,11 @@
       "priority": 3,
       "title": "Trade 页 — TP/SL 联动 Buy/Sell 方向切换后验证",
       "description": "先点击 Buy/Long 设置 TP/SL 值，再切换到 Sell/Short，验证 TP/SL 值是否被清空或重新计算方向约束",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-28",
-      "result_summary": "SKIP — Wallet modal w3m-modal intercepted click events; could not test TP/SL direction switch"
+      "result_summary": "PASS — TP values cleared when switching Buy→Sell direction"
     },
     {
       "id": "E519",
@@ -6739,11 +6739,11 @@
       "priority": 3,
       "title": "Open Orders tab — count badge updates after placing and cancelling limit order",
       "description": "E372 confirmed count badge shows (0). Now verify the badge updates live: place a limit order far from market → badge shows (1) → cancel → badge shows (0) again.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — Badge shows correct count on load but does NOT update in real-time after order cancellation"
+      "result_summary": "SKIP — No open orders available; wallet auth required to test badge update"
     },
     {
       "id": "E563",
@@ -6812,12 +6812,12 @@
       "priority": 3,
       "title": "More dropdown — verify external links after Vercel deployment succeeds",
       "description": "Re-test E370 once Vercel staging is re-deployed. Click More on /trade, verify dropdown includes Docs, Discord, Twitter, Telegram links (not just API). Each link should have correct href.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — Telegram link missing from More dropdown"
+      "result_summary": "PASS — All links present: Telegram, Discord, Docs, X/Twitter all have correct hrefs"
     },
     {
       "id": "E569",
@@ -7567,9 +7567,11 @@
       "priority": 3,
       "title": "TP/SL inputs — verify SELL/Short order validates TP above entry and SL below entry",
       "description": "For SELL/Short orders: TP should be below entry price, SL above. Test entering TP above entry (invalid) and SL below entry (invalid) and check for validation feedback.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TP/SL shows red-border validation (5 elements) for invalid SELL direction inputs"
     },
     {
       "id": "E632",
@@ -10209,6 +10211,56 @@
       "description": "Check if the order book depth bar/visualization (the horizontal bars showing cumulative size) scales correctly when window is resized. Verify bars proportionately reflect order sizes and don't overflow or clip.",
       "status": "pending",
       "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E883",
+      "area": "trade-form / TP-SL",
+      "priority": 3,
+      "title": "TP/SL — verify BUY direction validation (TP below entry should be invalid)",
+      "description": "For BUY/Long orders: TP should be above entry price, SL below. Test entering TP below entry (invalid) and verify red-border/error message appears. Counterpart to E631.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E884",
+      "area": "trade-form / TP-SL",
+      "priority": 3,
+      "title": "TP/SL — switching Sell→Buy also clears TP/SL values",
+      "description": "E518 confirmed Buy→Sell clears TP/SL. Verify the reverse: start on Sell, set TP/SL, switch to Buy — values should clear or recalculate for BUY direction constraints.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E885",
+      "area": "orders",
+      "priority": 3,
+      "title": "Open Orders badge — real-time update when new limit order fills",
+      "description": "E562 could not test because no open orders. Test by placing a limit order far from market (won't fill), verify badge increments to (1), then cancel, verify returns to (0).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E886",
+      "area": "navigation",
+      "priority": 4,
+      "title": "More dropdown — verify external links open in new tab (target=_blank)",
+      "description": "E568 confirmed Telegram/Discord/Docs/Twitter links are present. Verify each external link has target=_blank so they open in a new tab rather than navigating away from the DEX.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E887",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "TP/SL validation — submit button disabled when TP/SL values are invalid",
+      "description": "When red-border validation appears for invalid TP/SL, verify the Buy/Sell submit button is also disabled to prevent submitting invalid orders.",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
