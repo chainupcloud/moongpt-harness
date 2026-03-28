@@ -1102,6 +1102,17 @@
       "merged_at": "2026-03-28",
       "deployed": true,
       "accepted": true
+    },
+    {
+      "number": 217,
+      "title": "fix: explorer transactions pagination — stale fetch race condition (#214)",
+      "status": "open",
+      "issue_numbers": [
+        214
+      ],
+      "created_date": "2026-03-28",
+      "branch": "fix/issue-214",
+      "base": "dev"
     }
   ]
 }

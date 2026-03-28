@@ -1948,14 +1948,16 @@
       "id": "issue-214",
       "github_issue_number": 214,
       "title": "[P2] Explorer transactions pagination — page 2 returns empty list",
-      "status": "open",
+      "status": "fixing",
       "priority": "P2",
       "scenario_id": "E960",
       "created_date": "2026-03-28",
       "labels": [
         "bug"
       ],
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/214"
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/214",
+      "pr_number": 217,
+      "fix_attempts": 1
     },
     {
       "github_number": 215,
