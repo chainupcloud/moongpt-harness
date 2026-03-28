@@ -8318,9 +8318,11 @@
       "priority": 3,
       "title": "Explorer tx detail — User Address link navigates to address page",
       "description": "In /explorer/tx/{hash}, verify User Address field is clickable and navigates to /explorer/address/{addr} page showing account details/history.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — User Address link navigates correctly to /explorer/address/ page with transaction history"
     },
     {
       "id": "E694",
@@ -8338,10 +8340,12 @@
       "priority": 3,
       "title": "Explorer tx detail — Status field shows correct value (Success/Failure) after fix",
       "description": "After issue #163 fix deployed: verify /explorer/tx/{hash} shows Status field with correct value. Test with a known successful PlaceOrder tx and verify Status = Success.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "note": "Unblock after issue #163 (Status field missing) is fixed"
+      "note": "Unblock after issue #163 (Status field missing) is fixed",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Status field present and shows 'Success' for PlaceOrder tx"
     },
     {
       "id": "E696",
@@ -8349,9 +8353,11 @@
       "priority": 3,
       "title": "Order Type dropdown — verify all order types available (Limit, Market, Scale, Scalp, TWAP)",
       "description": "Open Order Type dropdown on /trade/BTC-USDC and enumerate all available order types. Document which are present and which are missing vs. product spec.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Dropdown has Market/Limit/Stop Market/Stop Limit/TWAP/Scale/Scalp; only Take Profit missing (issue #208)"
     },
     {
       "id": "E697",
@@ -11214,9 +11220,11 @@
       "priority": 2,
       "title": "Explorer transactions More button — fix verification after repair",
       "description": "Verify that after issue #215 fix, clicking More loads next 10 transactions and either updates URL query param or preserves scroll state via cursor/offset.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — More button still does not load additional transactions (issue #215 open, fix not deployed)"
     },
     {
       "id": "E967",
@@ -11254,6 +11262,56 @@
       "priority": 3,
       "title": "Explorer address page — shows transaction history for a known address",
       "description": "Navigate to /explorer/address/0x73a6b3c3...80adc0 (oracle keeper address visible in transactions). Verify address page loads and shows transactions, not empty.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E971",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — transaction type filtering",
+      "description": "On /explorer/address/{addr} page, verify if there is a filter for transaction types (FillEvent, FundingPaymentEvent, etc.) and that filtering works correctly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E972",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — Fee field shows actual value (not dash)",
+      "description": "For PlaceOrder and other user action txs, verify Fee field shows actual fee amount with units, not '–'. Currently Fee shows '–' for PlaceOrder transactions.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E973",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade — Stop Market order type selection and form fields",
+      "description": "After selecting Stop Market from order type dropdown, verify the form shows trigger price field and that the order can be placed (or shows appropriate validation).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E974",
+      "area": "explorer",
+      "priority": 2,
+      "title": "Explorer transactions — More button network request inspection",
+      "description": "Intercept network requests when clicking More button on /explorer/transactions. Verify if API request is made, check request params (cursor/offset), and diagnose why response doesn't update the list.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E975",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade — Scale order type fields and validation",
+      "description": "After selecting Scale from order type dropdown, verify the form shows scale-specific fields (price range, number of orders), and validate the fields work correctly.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
