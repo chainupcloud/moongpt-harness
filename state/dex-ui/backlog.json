@@ -9832,9 +9832,11 @@
       "priority": 3,
       "title": "Withdraw modal — network selector shows correct chain options",
       "description": "E564 found Sepolia network pre-selected in withdraw modal (step 3). Verify dropdown shows correct withdrawal network options and selecting different networks updates the withdrawal address format.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — wallet connection required for withdraw modal access"
     },
     {
       "id": "E818",
@@ -9842,9 +9844,11 @@
       "priority": 3,
       "title": "Explorer — checkpoint search routes to /explorer/checkpoint/{seq}",
       "description": "Verify checkpoint number search (e.g., enter '12345') routes to /explorer/checkpoint/12345 and shows checkpoint detail. Complements E574 (address) and E571 (tx hash) explorer search coverage.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — checkpoint search routes to /explorer/checkpoint/{seq}"
     },
     {
       "id": "E819",
@@ -9852,10 +9856,12 @@
       "priority": 3,
       "title": "More dropdown — verify Telegram link href and target",
       "description": "After E568 fix: verify Telegram link appears in More dropdown with correct href (t.me or telegram) and target=_blank",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Telegram link href=https://t.me/HermesX target=_blank (not in More dropdown, accessible on page)"
     },
     {
       "id": "E820",
@@ -9863,10 +9869,12 @@
       "priority": 3,
       "title": "Limit TIF — FOK option behavior: order immediately filled or cancelled",
       "description": "After E575 fix: switch TIF to FOK, submit an order at market price. Verify the order is either fully filled or immediately cancelled (no resting order). Check Open Orders remains empty.",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — trade form Limit tab requires wallet auth"
     },
     {
       "id": "E821",
@@ -13035,6 +13043,60 @@
       "title": "Markets page — 最高杠杆 column values: verify 20x shown for BTC matches /trade leverage selector max",
       "description": "Markets page shows BTC max leverage as 20x. Navigate to /trade/BTC-USDC and check max leverage in the Cross/Isolated selector or leverage slider. Verify values are consistent.",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1120",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint detail — shows block hash, timestamp, and tx count",
+      "description": "After navigating to /explorer/checkpoint/12345, verify the detail page shows checkpoint sequence number, block hash, creation timestamp, and transaction count fields.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1121",
+      "area": "navigation",
+      "priority": 3,
+      "title": "Social links — Discord and Twitter icons open correct URLs in new tab",
+      "description": "Verify Discord and Twitter/X social links in header/footer have correct hrefs and target=_blank. Complements E819 (Telegram) coverage.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1122",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — transaction hash search routes to /explorer/tx/{hash}",
+      "description": "Enter a 32-byte tx hash in explorer search. Verify URL becomes /explorer/tx/{hash} and detail page loads. Complements E818 (checkpoint) and E574 (address) coverage.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1123",
+      "area": "explorer",
+      "priority": 4,
+      "title": "Explorer — invalid checkpoint number shows error or empty state",
+      "description": "Enter an extremely large checkpoint number (e.g., 99999999999) and verify the page shows a not-found error or empty state rather than a blank page.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1124",
+      "area": "navigation",
+      "priority": 3,
+      "title": "More dropdown — verify all social links present: Telegram, Discord, Twitter/X",
+      "description": "Open More/social dropdown and enumerate all social links. Verify Telegram (t.me/HermesX), Discord, and Twitter/X are all present with correct hrefs and target=_blank.",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
