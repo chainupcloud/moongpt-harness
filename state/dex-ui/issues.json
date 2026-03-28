@@ -2036,14 +2036,16 @@
       "issue_id": "218",
       "github_issue_number": 218,
       "title": "[P3] TP/SL toggle silently reset when switching order type — not restored on Limit→Market→Limit roundtrip",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario_id": "E707",
       "created_date": "2026-03-28",
       "labels": [
         "bug"
       ],
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/218"
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/218",
+      "pr_number": 251,
+      "fix_attempts": 1
     },
     {
       "github_number": 219,
