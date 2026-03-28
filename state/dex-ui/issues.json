@@ -1687,13 +1687,14 @@
     {
       "github_number": 190,
       "title": "[P2] 盘口价格点击自动填入下单价格框",
-      "status": "open",
+      "status": "fixing",
       "priority": "P2",
       "created_at": "2026-03-28",
-      "fix_attempts": 0,
+      "fix_attempts": 1,
       "labels": [
         "enhancement"
-      ]
+      ],
+      "pr_number": 191
     }
   ],
   "last_updated": "2026-03-28",
