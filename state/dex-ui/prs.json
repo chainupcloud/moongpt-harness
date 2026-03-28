@@ -944,6 +944,17 @@
       "title": "fix: funding rate sign/value mismatch between /markets and /trade pages (#176)",
       "branch": "fix/issue-176",
       "base": "dev"
+    },
+    {
+      "pr_number": 179,
+      "issue_numbers": [
+        178
+      ],
+      "status": "open",
+      "created_at": "2026-03-28",
+      "title": "fix: checkpoint detail — transaction list always empty (#178)",
+      "branch": "fix/issue-178",
+      "base": "dev"
     }
   ]
 }
