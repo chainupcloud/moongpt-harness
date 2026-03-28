@@ -5341,7 +5341,7 @@
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — 42-char Eth addr search stays on /explorer, no routing, no error feedback; related to issue #85"
+      "result_summary": "FAIL — 42-char EVM addr search stays on /explorer. Fix merged in PR #156 (issue #155) but Vercel staging stale (issue #98). Retest after deploy."
     },
     {
       "id": "E449",
@@ -5387,7 +5387,7 @@
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — Same as E448: 42-char Eth addr search gives no feedback; related to issue #85"
+      "result_summary": "FAIL — Same as E448: EVM addr search broken on staging. Fix in PR #156 undeployed due to issue #98."
     },
     {
       "id": "E453",
