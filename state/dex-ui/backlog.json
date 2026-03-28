@@ -4561,9 +4561,11 @@
       "priority": 3,
       "title": "Markets page — clicking market row navigates to /trade?coin=BTC",
       "description": "On /markets page, click the BTC-USDC row, verify navigation to /trade with correct coin parameter and trade form loads.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — BTC row click navigated to /trade?coin=BTC"
     },
     {
       "id": "E384",
@@ -4571,9 +4573,11 @@
       "priority": 3,
       "title": "TWAP vs Limit — order form state preserved when switching order types",
       "description": "Enter a price and size in Limit form, switch to TWAP, then switch back to Limit. Verify price/size values are preserved (not reset to 0).",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Order Type dropdown disabled without wallet connection"
     },
     {
       "id": "E385",
@@ -4581,9 +4585,11 @@
       "priority": 3,
       "title": "Explorer — filter transactions by type (oracle updates vs user trades)",
       "description": "On Explorer page, verify if there is a filter for tx type. Oracle price update txs dominate; user should be able to filter to see only trade-related txs.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — No transaction type filter on Explorer page"
     },
     {
       "id": "E386",
@@ -4591,9 +4597,11 @@
       "priority": 3,
       "title": "Explorer — search transaction by hash",
       "description": "Verify the Explorer search bar accepts a tx hash and navigates to that transaction's detail page correctly.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — tx hash search navigates to detail page (fix #139 verified)"
     },
     {
       "id": "E387",
@@ -6539,6 +6547,56 @@
       "description": "Place a BTC limit buy order far from market price ($1000). Verify it appears in Open Orders(1) tab with a Cancel button. Click Cancel, confirm cancellation dialog if any, verify order disappears.",
       "status": "pending",
       "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E570",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — tx list shows only user trades when oracle updates filtered out",
+      "description": "If a filter is added, verify that filtering by PlaceOrder/CancelOrder hides UpdateOraclePrices entries and shows only user transactions.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E571",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — search with partial tx hash shows error not empty page",
+      "description": "Enter a partial/short tx hash (< 64 chars). Verify that an appropriate error message is shown, not an empty detail page (fix #139 validation).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E572",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order Type dropdown — all types available: Limit, Market, Stop Limit, Stop Market, TWAP",
+      "description": "With wallet connected, open the Order Type dropdown and verify all expected order types are listed. Switch to each type and confirm the form updates correctly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E573",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets page — all columns sortable (price, 24h change, volume, OI, funding rate)",
+      "description": "Click each column header on the markets page. Verify ascending/descending sort works for each column.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E574",
+      "area": "navigation",
+      "priority": 3,
+      "title": "Explorer — address search routes to /explorer/address/{addr} page",
+      "description": "In the Explorer search bar, enter a known Sui address. Verify navigation to /explorer/address/{addr} and address detail page loads correctly.",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
