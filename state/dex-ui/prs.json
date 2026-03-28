@@ -1269,6 +1269,14 @@
       "deployed": false,
       "accepted": false,
       "note": "Merged successfully. Vercel deployment blocked: commit author lacks contributor access + daily API limit (100/day) hit. Deployment pending until 2026-03-29 19:32 UTC."
+    },
+    {
+      "pr_number": 246,
+      "issue_numbers": [
+        208
+      ],
+      "status": "open",
+      "created_at": "2026-03-28"
     }
   ]
 }

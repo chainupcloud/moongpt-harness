@@ -1906,14 +1906,16 @@
     {
       "number": 208,
       "title": "[P3] Order type dropdown missing Take Profit Market and Take Profit Limit options",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E653",
       "created_at": "2026-03-28",
       "labels": [
         "bug"
       ],
-      "url": "https://github.com/chainupcloud/dex-ui/issues/208"
+      "url": "https://github.com/chainupcloud/dex-ui/issues/208",
+      "pr_number": 246,
+      "fix_attempts": 1
     },
     {
       "id": "issue-E661-2026-03-28",
