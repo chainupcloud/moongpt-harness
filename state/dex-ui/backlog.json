@@ -5934,9 +5934,11 @@
       "priority": 3,
       "title": "Withdraw modal — amount exceeds available balance",
       "description": "In withdraw modal, enter amount greater than available balance → verify inline error appears (e.g. 'Insufficient balance') and submit is disabled.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — withdraw modal requires authenticated wallet session; cannot open without real wallet connection"
     },
     {
       "id": "E497",
@@ -5944,9 +5946,11 @@
       "priority": 3,
       "title": "Order book — ask/bid side rendering correctness",
       "description": "Verify that asks (sell orders) are rendered above the spread and bids (buy orders) below. Colors should match convention (red=asks, green=bids). Check row count and cumulative total column accuracy.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — order book ask/bid prices inverted: asks (65K) below market (~66K), bids (67K) above market → Issue #173"
     },
     {
       "id": "E498",
@@ -5988,9 +5992,11 @@
       "priority": 3,
       "title": "Withdraw modal — address validation re-verify after #130 fix",
       "description": "After issue #130 is fixed: enter non-hex string and too-short hex in address field. Expect inline error before submission.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — withdraw modal requires authenticated wallet session; cannot open without real wallet connection"
     },
     {
       "id": "E502",
@@ -6010,9 +6016,11 @@
       "priority": 3,
       "title": "Order book DOM structure — identify correct selectors for ask/bid rows",
       "description": "Inspect /trade page orderbook DOM to identify correct CSS selectors for ask and bid rows. Document selector patterns for future E324 WebSocket reconnect test.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — DOM selectors documented: text-short (red, ask side, flex-col-reverse), text-long (green, bid side); Spread label found"
     },
     {
       "id": "E504",
@@ -8472,6 +8480,56 @@
       "priority": 4,
       "title": "Markets page — funding rate label clarity (current vs next)",
       "description": "Verify markets page labels funding rate column as current rate. Trade page shows next funding rate with countdown. Check if both pages have labels clarifying which timeframe is shown to prevent user confusion.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E735",
+      "area": "orderbook",
+      "priority": 2,
+      "title": "Order book — verify ask prices are above bid prices (no crossed market)",
+      "description": "Navigate to /trade. Compare lowest ask price with highest bid price. Expect: lowest ask > highest bid (positive spread). Also verify both sides relative to current ticker price. This directly re-tests the E497 bug after fix.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E736",
+      "area": "orderbook",
+      "priority": 3,
+      "title": "Order book — spread value display accuracy",
+      "description": "Find the 'Spread' label in the order book panel. Read the displayed spread value. Verify it equals (lowest ask - highest bid) as a price and percentage of mid price.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E737",
+      "area": "orderbook",
+      "priority": 3,
+      "title": "Order book — price ordering within ask and bid sections",
+      "description": "Verify asks are ordered with lowest ask at bottom of the asks section (closest to spread) and highest ask at top. Bids should be ordered with highest bid at top (closest to spread) and lowest bid at bottom.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E738",
+      "area": "withdraw",
+      "priority": 3,
+      "title": "Withdraw flow with authenticated session — full happy path",
+      "description": "Using smoke test wallet injection pattern with approveAgent, open portfolio page and trigger withdraw. Verify: modal opens, amount input accepts valid value, address field accepts SUI address, submit button is enabled with valid inputs.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E739",
+      "area": "orderbook",
+      "priority": 3,
+      "title": "Order book — cumulative size column accuracy",
+      "description": "In the order book, check if there is a cumulative size column. If present, verify that each row's cumulative value equals the sum of all sizes from that row to the spread side. Test a few rows manually.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"

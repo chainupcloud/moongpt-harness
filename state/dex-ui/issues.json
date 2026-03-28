@@ -1555,6 +1555,17 @@
         "bug"
       ],
       "note": "False positive: explore agent clicked TWAP tab in AccountPanel instead of OrderTypeSelector dropdown. TWAP form renders correctly."
+    },
+    {
+      "number": 173,
+      "title": "[P3] Order book ask/bid prices inverted — asks show below market price, bids above",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E497",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-28",
