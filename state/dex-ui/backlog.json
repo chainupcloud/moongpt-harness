@@ -7038,9 +7038,11 @@
       "priority": 3,
       "title": "TWAP order — verify interval and duration fields appear when TWAP selected",
       "description": "On /trade, click order type and select TWAP. Verify that TWAP-specific fields (e.g. interval, duration, number of orders) appear in the form.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — TWAP button selectable but no Interval/Duration fields appear (Issue #183 existing)"
     },
     {
       "id": "E588",
@@ -7048,9 +7050,11 @@
       "priority": 3,
       "title": "More nav dropdown — verify all links present (API Keys, Privacy, Terms)",
       "description": "Open the More dropdown in navigation and verify it contains all expected links: API Keys, Privacy Policy, Terms of Service. Check each link is clickable and non-404.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — More dropdown missing API Keys, Privacy, Terms links → Issue #195"
     },
     {
       "id": "E589",
@@ -7068,9 +7072,11 @@
       "priority": 3,
       "title": "TIF selection — verify ALO (Add Liquidity Only) option works and persists",
       "description": "Select Limit order type, open TIF dropdown, pick ALO, verify button shows ALO and order is submitted with ALO flag",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — ALO option present in TIF dropdown (GTC button at x=1198)"
     },
     {
       "id": "E591",
@@ -9627,6 +9633,58 @@
       "priority": 2,
       "title": "Leverage slider — drag to extreme values (1x and max) and verify UI stability",
       "description": "Test leverage slider at min (1x) and max (e.g. 50x) positions: verify the leverage display updates, no UI overflow/crash, and order form adjusts margin accordingly.",
+      "status": "tested",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — leverage slider min/max settable, no UI overflow or JS crash"
+    },
+    {
+      "id": "E833",
+      "area": "navigation",
+      "priority": 3,
+      "title": "API Keys page — verify page renders and shows key management UI",
+      "description": "Navigate directly to /api-keys. Verify the page renders without 404, shows API key list or creation form. Test creating an API key if possible without wallet connection.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E834",
+      "area": "navigation",
+      "priority": 3,
+      "title": "Privacy and Terms pages — verify content renders correctly",
+      "description": "Navigate to /privacy and /terms. Verify each page renders its full content (not empty/404), has appropriate headings, and is styled consistently with the rest of the app.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E835",
+      "area": "TradeForm / TWAP",
+      "priority": 2,
+      "title": "TWAP order — verify total order count / amount splitting logic",
+      "description": "After Issue #183 is fixed and TWAP fields appear: enter a TWAP order, set interval and duration, verify the order is split into expected number of sub-orders and total size equals the original.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E836",
+      "area": "TradeForm / TIF",
+      "priority": 3,
+      "title": "TIF — IOC order placed and immediately cancels unfilled portion",
+      "description": "Select Limit order type, open TIF dropdown, pick IOC. Submit an order with price far from market. Verify that any unfilled portion is immediately cancelled (not resting in order book).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E837",
+      "area": "leverage",
+      "priority": 3,
+      "title": "Leverage change — verify margin and liquidation price recalculate correctly",
+      "description": "On /trade, change leverage from default to a specific value (e.g. 10x). Verify that Available Margin and estimated Liquidation Price update to reflect new leverage, and the values are mathematically consistent.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
