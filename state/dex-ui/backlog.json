@@ -5759,9 +5759,11 @@
       "title": "Explorer search — EVM address blocked with friendly error message",
       "description": "In the Explorer search bar, enter a valid EVM address (0x70995982bd1C084A78602f755CA8B45a14A6de86). Since dex-sui uses Sui addresses, entering an EVM address should show a friendly error message (fix #101 merged). Verify the error message is visible and descriptive.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — EVM address blocked with friendly message: \"EVM addresses are not supported. Please enter a valid SUI address\""
     },
     {
       "id": "E483",
@@ -5770,9 +5772,11 @@
       "title": "Mobile /explorer checkpoint detail — tx list renders without overflow or truncation",
       "description": "On 390x844 viewport, navigate to /explorer/checkpoint/190703 (has 1 transaction). Verify: tx row visible, not overflowed, tx hash truncated with ellipsis not cut off, all columns readable. Tap the tx link and verify navigation works.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Mobile 390x844: no horizontal overflow, tx hash link rendered truncated (0x436141...1e04) and clickable; navigates to TX detail"
     },
     {
       "id": "E484",
@@ -5820,9 +5824,11 @@
       "title": "/markets page keyboard navigation — tab through rows, enter to navigate to trade",
       "description": "Test keyboard accessibility: tab through market rows, press Enter on BTC-USDC row to see if it navigates to /trade. Checks both mouse and keyboard navigation paths.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Tab x14 reaches BTC/USDC row, Enter navigates to /trade?coin=BTC; mouse click also works"
     },
     {
       "id": "E488",
@@ -8186,9 +8192,11 @@
       "title": "Leverage dialog: confirm button saves new leverage value persistently",
       "description": "After opening leverage dialog and moving slider to new value (e.g. 20x), click Confirm. Verify: (1) leverage button text updates to 20x, (2) refreshing page retains 20x setting, (3) closing without confirming keeps original value.",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Confirm button does not update leverage value after slider move; button stays at 10x; issue #169"
     },
     {
       "id": "E711",
@@ -8229,6 +8237,61 @@
       "priority": 3,
       "title": "Leverage slider: max/min boundary behavior",
       "description": "In the leverage dialog, drag slider to maximum (100x). Verify: (1) value shows 100x not higher, (2) confirm saves 100x to leverage button, (3) drag to minimum (1x) and confirm — verify 1x shows.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E715",
+      "area": "trade",
+      "priority": 2,
+      "title": "Leverage dialog: slider drag via mouse events (not DOM property) — verify React state updates",
+      "description": "Use Playwright mouse drag on the leverage slider to simulate real user interaction (mousedown, mousemove, mouseup). Verify the displayed leverage value in dialog updates in real time, and Confirm saves the new value. Tests whether the bug is React state not receiving DOM-only changes.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E716",
+      "area": "trade",
+      "priority": 3,
+      "title": "Leverage dialog: clicking tick labels (1x, 13x, 25x etc) selects leverage",
+      "description": "In the leverage dialog, click one of the tick labels (e.g. 25x) directly instead of dragging slider. Verify: (1) slider moves to that position, (2) Confirm saves 25x, (3) leverage button updates.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E717",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — partial Sui address (less than 64 chars) shows validation hint",
+      "description": "Enter a partial Sui address (e.g. 32 chars) in the Explorer search. Expect either: (a) a validation hint while typing, or (b) a clear error on submit saying the address must be 64 hex characters.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E718",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — full valid Sui address navigates to address detail page",
+      "description": "Enter a complete 64-char Sui address in Explorer search, press Enter. Verify navigation to /explorer/address/{address} detail page with correct data.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E719",
+      "area": "markets",
+      "priority": 4,
+      "title": "/markets page search/filter — filter by market name works",
+      "description": "On /markets, use the search input (Tab 13 in keyboard nav) to filter. Type 'BTC', verify only BTC-USDC row visible. Clear the filter, verify all markets return.",
       "track": "frontend",
       "status": "pending",
       "added_by": "explore-agent",
