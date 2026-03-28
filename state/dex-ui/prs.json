@@ -83,7 +83,7 @@
       "merged_at": "2026-03-26",
       "deployed": true,
       "accepted": false,
-      "note": "P4 issue — awaiting human acceptance"
+      "note": "P4 issue \u2014 awaiting human acceptance"
     },
     {
       "pr_number": 21,
@@ -95,7 +95,7 @@
       "merged_at": "2026-03-26",
       "deployed": true,
       "accepted": false,
-      "note": "P4 issue — awaiting human acceptance"
+      "note": "P4 issue \u2014 awaiting human acceptance"
     },
     {
       "pr_number": 22,
@@ -107,7 +107,7 @@
       "merged_at": "2026-03-26",
       "deployed": true,
       "accepted": false,
-      "note": "P4 issue — awaiting human acceptance"
+      "note": "P4 issue \u2014 awaiting human acceptance"
     },
     {
       "pr_number": 23,
@@ -125,7 +125,7 @@
         24
       ],
       "status": "merged",
-      "title": "fix: TradingView study_templates 404 及 K 线时间违规 (#24)",
+      "title": "fix: TradingView study_templates 404 \u53ca K \u7ebf\u65f6\u95f4\u8fdd\u89c4 (#24)",
       "commit_sha": "e57204ad61d3d49307b93e55dfd7dc52c02e28d6",
       "merged_at": "2026-03-27",
       "deployed": true,
@@ -149,7 +149,7 @@
         27
       ],
       "status": "merged",
-      "title": "fix: 交易表单 price/size 输入框过滤非法字符 (#27)",
+      "title": "fix: \u4ea4\u6613\u8868\u5355 price/size \u8f93\u5165\u6846\u8fc7\u6ee4\u975e\u6cd5\u5b57\u7b26 (#27)",
       "commit_sha": "b8f208046e0a5107b69271d07b5926e451b7234d",
       "merged_at": "2026-03-27",
       "deployed": true,
@@ -161,7 +161,7 @@
         28
       ],
       "status": "merged",
-      "title": "fix: /markets page showing $0 prices — coin key mismatch (#28)",
+      "title": "fix: /markets page showing $0 prices \u2014 coin key mismatch (#28)",
       "commit_sha": "261087acf6501d57d3320c2f5ab3f1fc4d998799",
       "merged_at": "2026-03-27",
       "deployed": true,
@@ -173,7 +173,7 @@
         29
       ],
       "status": "merged",
-      "title": "fix: 交易表单下单按钮未感知钱包连接状态 (#29)",
+      "title": "fix: \u4ea4\u6613\u8868\u5355\u4e0b\u5355\u6309\u94ae\u672a\u611f\u77e5\u94b1\u5305\u8fde\u63a5\u72b6\u6001 (#29)",
       "commit_sha": "a5f31a4d8a66ec625aad2f24593c20a35db6dc98",
       "merged_at": "2026-03-27",
       "deployed": true,
@@ -185,7 +185,7 @@
         34
       ],
       "status": "merged",
-      "title": "fix: /markets 24h 涨跌幅显示 +Infinity% (#34)",
+      "title": "fix: /markets 24h \u6da8\u8dcc\u5e45\u663e\u793a +Infinity% (#34)",
       "commit_sha": "04d7d8cf37ca7d98697ec20627ad1855d79b9960",
       "merged_at": "2026-03-27",
       "deployed": true,
@@ -210,7 +210,7 @@
         38
       ],
       "status": "merged",
-      "title": "fix: /markets 资金费率显示 NaN% (#38)",
+      "title": "fix: /markets \u8d44\u91d1\u8d39\u7387\u663e\u793a NaN% (#38)",
       "commit_sha": "48df86b12047f8e38656ec5a2f93457314f3ba8e",
       "merged_at": "2026-03-27",
       "deployed": false,
@@ -223,12 +223,12 @@
         41
       ],
       "status": "merged",
-      "title": "fix: 移动端横屏底部标签栏 Order History 按钮溢出视口 (#41)",
+      "title": "fix: \u79fb\u52a8\u7aef\u6a2a\u5c4f\u5e95\u90e8\u6807\u7b7e\u680f Order History \u6309\u94ae\u6ea2\u51fa\u89c6\u53e3 (#41)",
       "commit_sha": "dd607dba85a55938bafa4b35c090c2bff9e21ff3",
       "merged_at": "2026-03-27",
       "deployed": true,
       "accepted": false,
-      "note": "Acceptance failed: Order History button still overflows viewport in 812×375 landscape"
+      "note": "Acceptance failed: Order History button still overflows viewport in 812\u00d7375 landscape"
     },
     {
       "pr_number": 43,
@@ -241,7 +241,7 @@
       "merged_at": "2026-03-27",
       "deployed": true,
       "accepted": false,
-      "note": "P4 issue — awaiting human acceptance"
+      "note": "P4 issue \u2014 awaiting human acceptance"
     },
     {
       "pr_number": 46,
@@ -266,7 +266,7 @@
       "merged_at": "2026-03-27",
       "deployed": true,
       "accepted": false,
-      "note": "Acceptance FAILED: Order History button right=909 > 812px. Issue #41 → needs-human."
+      "note": "Acceptance FAILED: Order History button right=909 > 812px. Issue #41 \u2192 needs-human."
     },
     {
       "pr_number": 50,
@@ -324,7 +324,7 @@
         57
       ],
       "status": "merged",
-      "title": "fix: /markets 价格列显示 $0 — midPx 回退链补全 markPx/oraclePx (#57)",
+      "title": "fix: /markets \u4ef7\u683c\u5217\u663e\u793a $0 \u2014 midPx \u56de\u9000\u94fe\u8865\u5168 markPx/oraclePx (#57)",
       "commit_sha": "02d720d40044df05946ee4b254e07ca2a421ecb0",
       "merged_at": "2026-03-27",
       "deployed": true,
@@ -375,7 +375,7 @@
         63
       ],
       "status": "merged",
-      "title": "fix: /trade 24h 涨跌显示 +0.00% — K 线回补 prevDayPx + WS 防覆盖 (#63)",
+      "title": "fix: /trade 24h \u6da8\u8dcc\u663e\u793a +0.00% \u2014 K \u7ebf\u56de\u8865 prevDayPx + WS \u9632\u8986\u76d6 (#63)",
       "commit_sha": "a0a52185650d7dabc1d9e2faa4833449e4e58912",
       "merged_at": "2026-03-27",
       "deployed": true,
@@ -389,7 +389,7 @@
       ],
       "status": "merged",
       "created_at": "2026-03-27",
-      "title": "fix: toast 通知消失过快且存在监听器重注册隐患 (#69)",
+      "title": "fix: toast \u901a\u77e5\u6d88\u5931\u8fc7\u5feb\u4e14\u5b58\u5728\u76d1\u542c\u5668\u91cd\u6ce8\u518c\u9690\u60a3 (#69)",
       "commit_sha": "f958ab50fda9fe40a27853c501abc7f0b01e2e92",
       "merged_at": "2026-03-27",
       "deployed": false,
@@ -403,7 +403,7 @@
       ],
       "status": "merged",
       "created_at": "2026-03-27",
-      "title": "fix: Order book spread显示为负值 — 排序 bids/asks (#78)",
+      "title": "fix: Order book spread\u663e\u793a\u4e3a\u8d1f\u503c \u2014 \u6392\u5e8f bids/asks (#78)",
       "commit_sha": "8947f7483f296a4c1fe800d6ca992f8e7accb2ab",
       "merged_at": "2026-03-27",
       "deployed": true,
@@ -417,7 +417,7 @@
       ],
       "status": "merged",
       "created_at": "2026-03-27",
-      "title": "fix: Buy/Long 侧切换按钮未连接钱包时无反馈 — 添加连接提示 (#72)",
+      "title": "fix: Buy/Long \u4fa7\u5207\u6362\u6309\u94ae\u672a\u8fde\u63a5\u94b1\u5305\u65f6\u65e0\u53cd\u9988 \u2014 \u6dfb\u52a0\u8fde\u63a5\u63d0\u793a (#72)",
       "commit_sha": "bd668027710055ad606a544d2f60d17067aac043",
       "merged_at": "2026-03-27",
       "deployed": true,
@@ -430,7 +430,7 @@
       ],
       "status": "merged",
       "created_at": "2026-03-27",
-      "title": "fix: 移动端底部标签栏添加滚动渐变提示 (#73)",
+      "title": "fix: \u79fb\u52a8\u7aef\u5e95\u90e8\u6807\u7b7e\u680f\u6dfb\u52a0\u6eda\u52a8\u6e10\u53d8\u63d0\u793a (#73)",
       "commit_sha": "85db72c",
       "merged_at": "2026-03-27",
       "deployed": true,
@@ -443,7 +443,7 @@
       ],
       "status": "merged",
       "created_at": "2026-03-27",
-      "title": "fix: /trade/BTC-USDC deep-link returns 404 — add catch-all redirect (#76)",
+      "title": "fix: /trade/BTC-USDC deep-link returns 404 \u2014 add catch-all redirect (#76)",
       "commit_sha": "9e7ea6cae6da788696091b5d1a3a07d1c68ff095",
       "merged_at": "2026-03-27",
       "deployed": true,
@@ -483,7 +483,7 @@
       ],
       "status": "merged",
       "created_at": "2026-03-27",
-      "title": "fix: /markets price shows $0 — protect price fields from WS zero overwrite (#55)",
+      "title": "fix: /markets price shows $0 \u2014 protect price fields from WS zero overwrite (#55)",
       "commit_sha": "c7b87eb1821367db74f38436222b9eedac1ba46f",
       "merged_at": "2026-03-27",
       "deployed": true,
@@ -534,7 +534,7 @@
       ],
       "status": "merged",
       "branch": "fix/issue-94",
-      "title": "fix: /markets Open Interest 显示 $0.00 — 币单位未转 USD 名义值 (#94)",
+      "title": "fix: /markets Open Interest \u663e\u793a $0.00 \u2014 \u5e01\u5355\u4f4d\u672a\u8f6c USD \u540d\u4e49\u503c (#94)",
       "commit_sha": "5762b5049e14a2330cbd089933124ce8a6320048",
       "merged_at": "2026-03-27",
       "deployed": false,
@@ -577,7 +577,7 @@
       ],
       "status": "merged",
       "branch": "fix/issue-101",
-      "title": "fix: Explorer address search — block EVM addresses with friendly error (#101)",
+      "title": "fix: Explorer address search \u2014 block EVM addresses with friendly error (#101)",
       "commit_sha": "5933da2e97fb84f2a813616475a921b2c186327f",
       "merged_at": "2026-03-27",
       "deployed": true,
@@ -642,7 +642,7 @@
       "merged_at": "2026-03-27",
       "deployed": true,
       "accepted": false,
-      "note": "P4 issue — awaiting human acceptance. Vercel deploy READY (dpl_27kteYovUemHqT6hF36SyN61tV3T). SHA verified."
+      "note": "P4 issue \u2014 awaiting human acceptance. Vercel deploy READY (dpl_27kteYovUemHqT6hF36SyN61tV3T). SHA verified."
     },
     {
       "pr_number": 121,
@@ -660,7 +660,7 @@
     },
     {
       "number": 128,
-      "title": "fix: TP/SL inputs — add inline validation for invalid prices (#126)",
+      "title": "fix: TP/SL inputs \u2014 add inline validation for invalid prices (#126)",
       "status": "merged",
       "issue_numbers": [
         126
@@ -767,7 +767,7 @@
       ],
       "status": "merged",
       "created_at": "2026-03-28",
-      "title": "fix: TIF selection not persistent — portal click-outside race (#144)",
+      "title": "fix: TIF selection not persistent \u2014 portal click-outside race (#144)",
       "commit_sha": "677c390089a2cc77a7760e3c9abbc30b5f9c863d",
       "merged_at": "2026-03-28",
       "deployed": true,
@@ -840,7 +840,7 @@
       ],
       "status": "merged",
       "created_at": "2026-03-28",
-      "title": "fix: Stop Limit order — add direction hint for Stop/Trigger Price field (#159)",
+      "title": "fix: Stop Limit order \u2014 add direction hint for Stop/Trigger Price field (#159)",
       "commit_sha": "99860d181fadccb32f13b8398a6dba9ce8831558",
       "merged_at": "2026-03-28",
       "deployed": false,
@@ -957,7 +957,7 @@
       ],
       "status": "merged",
       "created_at": "2026-03-28",
-      "title": "fix: checkpoint detail — transaction list always empty (#178)",
+      "title": "fix: checkpoint detail \u2014 transaction list always empty (#178)",
       "branch": "fix/issue-178",
       "base": "dev",
       "commit_sha": "d56d401",
@@ -996,7 +996,7 @@
       "merged_at": "2026-03-28",
       "deployed": false,
       "accepted": false,
-      "note": "Vercel rate limit hit (100/day) — acceptance deferred"
+      "note": "Vercel rate limit hit (100/day) \u2014 acceptance deferred"
     },
     {
       "pr_number": 184,
@@ -1041,7 +1041,8 @@
       "branch": "fix/issue-186",
       "base": "dev",
       "created_date": "2026-03-28",
-      "url": "https://github.com/chainupcloud/dex-ui/pull/188"
+      "url": "https://github.com/chainupcloud/dex-ui/pull/188",
+      "pr_number": 188
     }
   ]
 }
