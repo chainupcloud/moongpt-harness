@@ -5629,9 +5629,11 @@
       "title": "Explorer checkpoint detail — 不同 checkpoint 的交易数据一致性（多检查点抽样）",
       "description": "随机抽取 5 个不同 checkpoint（包括 txCount>0 的），验证是否所有都显示 'not yet available'，还是部分能正常加载交易列表。（关联 issue #123）",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "result_summary": "FAIL — partial regression of #123: 2/5 checkpoints still show \"not yet available\" despite txCount=1 → Issue #164",
+      "last_run": "2026-03-28"
     },
     {
       "id": "E473",
@@ -5640,9 +5642,11 @@
       "title": "Explorer checkpoints — 下一页/上一页分页导航功能",
       "description": "在 /explorer/checkpoints 页面，测试分页导航按钮（下一页、上一页、跳转到末页）。验证点击后 URL 参数更新，页面展示对应范围的 checkpoint 数据。",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "result_summary": "PASS — Next/prev page buttons work, rows-per-page selector works (10/20/50)",
+      "last_run": "2026-03-28"
     },
     {
       "id": "E474",
@@ -5651,9 +5655,11 @@
       "title": "GTC 时间有效性选项 — 点击 GTC 标签是否可切换 (IOC/FOK 等)",
       "description": "Trade 表单中 'GTC' 显示在 TP/SL 旁边，测试点击 GTC 是否能切换订单有效期类型（IOC、FOK 等）。已知 issue #110 报告 FOK 缺失，确认 GTC 标签自身是否可交互。",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "result_summary": "PASS — GTC is clickable, shows IOC option; FOK still missing (related to #110)",
+      "last_run": "2026-03-28"
     },
     {
       "id": "E475",
@@ -8040,10 +8046,67 @@
       "priority": 2,
       "title": "TP/SL modal — set take profit and stop loss on Limit order",
       "description": "Click TP/SL button on trade form, verify modal opens with Take Profit Price and Stop Loss Price inputs. Enter valid values and verify they are accepted. Check order summary shows TP/SL.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "track": "frontend"
+      "track": "frontend",
+      "result_summary": "PASS — TP/SL inline fields appear after toggle, accept values, % auto-calculates",
+      "last_run": "2026-03-28"
+    },
+    {
+      "id": "E700",
+      "area": "trade",
+      "priority": 2,
+      "title": "TP/SL values persist across order type switches (Market ↔ Limit)",
+      "description": "Set TP/SL values on Limit order, then switch to Market order. Verify TP/SL toggle and values are appropriately reset or preserved. Check no stale data carries over.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E701",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint — prev page navigation and first/last page buttons",
+      "description": "On /explorer/checkpoints, click Next to go to page 2, then click Prev to return to page 1. Verify content reverts correctly. Also test jump-to-last-page button if present.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E702",
+      "area": "trade",
+      "priority": 3,
+      "title": "IOC order submission — verify order placed with IOC time-in-force",
+      "description": "After clicking GTC to switch to IOC, fill in order details and attempt submission. Verify the order is sent with IOC TIF. Check order history shows IOC flag.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E703",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL — SL % field does not auto-calculate (potential bug)",
+      "description": "When TP/SL is enabled, enter TP price — TP% auto-calculates. Then enter SL price — verify SL% also auto-calculates. Previous test showed SL% remained empty after entering SL price.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E704",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint tx detail — working checkpoints show correct tx fields",
+      "description": "For checkpoints that do show transaction data (e.g. #296405), verify all fields are present: Hash, Action, User Account, Summary, Time. Check if Status field is shown (related to issue #163).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
     }
   ]
 }
