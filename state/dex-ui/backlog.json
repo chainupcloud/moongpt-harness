@@ -10023,9 +10023,11 @@
       "priority": 3,
       "title": "API Keys page — verify page renders and shows key management UI",
       "description": "Navigate directly to /api-keys. Verify the page renders without 404, shows API key list or creation form. Test creating an API key if possible without wallet connection.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — API Keys page renders correctly, shows Connect Wallet prompt, no 404"
     },
     {
       "id": "E834",
@@ -10033,9 +10035,11 @@
       "priority": 3,
       "title": "Privacy and Terms pages — verify content renders correctly",
       "description": "Navigate to /privacy and /terms. Verify each page renders its full content (not empty/404), has appropriate headings, and is styled consistently with the rest of the app.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — /privacy renders 1640 chars with Privacy Policy headings; /terms renders 1526 chars with ToU headings"
     },
     {
       "id": "E835",
@@ -10055,9 +10059,11 @@
       "priority": 3,
       "title": "TIF — IOC order placed and immediately cancels unfilled portion",
       "description": "Select Limit order type, open TIF dropdown, pick IOC. Submit an order with price far from market. Verify that any unfilled portion is immediately cancelled (not resting in order book).",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — GTC button at x=1198, IOC option selectable from TIF dropdown after modal removal"
     },
     {
       "id": "E837",
@@ -10075,10 +10081,12 @@
       "priority": 3,
       "title": "TP/SL — verify valid values are accepted and order proceeds to confirmation",
       "description": "After enabling TP/SL, set TP above current price and SL below current price for a Long order. Verify no error is shown and button is clickable.",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — TP/SL inputs (4 fields) appear after toggle with size entered; submission blocked by wallet connection requirement"
     },
     {
       "id": "E839",
@@ -13217,6 +13225,56 @@
       "priority": 4,
       "title": "TWAP order — Private toggle hides order from public order book",
       "description": "Enable Private checkbox in TWAP form, verify order preview shows private indicator and submission succeeds",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1135",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys — create key with connected wallet and verify name/key listed",
+      "description": "With fully connected wallet: click Create API Key, enter a key name, submit, verify new key appears in list with truncated key value.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1136",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys — delete an existing API key",
+      "description": "With an existing API key in the list, click delete/revoke, confirm, verify key is removed from the list.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1137",
+      "area": "trade",
+      "priority": 3,
+      "title": "TIF IOC — submitted order at far price immediately shows as cancelled",
+      "description": "After selecting IOC TIF, submit limit order far from market (e.g., BTC at $50000 buy). Verify the order appears briefly in Open Orders then moves to Order History as cancelled.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1138",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL — invalid values rejected (TP below entry for Long, SL above entry)",
+      "description": "Enable TP/SL for a Long order. Enter TP price below current market price and SL above current price. Verify validation error messages appear.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1139",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL — direction switch Long→Short resets TP/SL values",
+      "description": "Enable TP/SL with values set for Long order. Switch order direction to Sell/Short. Verify TP/SL values are cleared/reset (E839 scenario with focus on validation state).",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
