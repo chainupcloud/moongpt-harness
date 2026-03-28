@@ -824,8 +824,14 @@
       "issue_numbers": [
         157
       ],
-      "status": "open",
-      "created_at": "2026-03-28"
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: add Status and Fee fields to explorer tx detail page (#157) (#158)",
+      "commit_sha": "9bda65f24b6e7bc9ad4b1e3a6692ddc429162493",
+      "merged_at": "2026-03-28",
+      "deployed": false,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
     }
   ]
 }

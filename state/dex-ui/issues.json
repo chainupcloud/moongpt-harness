@@ -1418,12 +1418,15 @@
       "github_issue_number": 157,
       "title": "[P3] Explorer tx detail page missing Status and Fee fields",
       "scenario_id": "E665",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "created_date": "2026-03-28",
       "area": "explorer",
       "fix_attempts": 1,
-      "pr_number": 158
+      "pr_number": 158,
+      "github_number": 157,
+      "closed_at": "2026-03-28",
+      "note": "PR #158 merged. Vercel deploy limit. Accepted via code review + SHA verification."
     },
     {
       "id": "issue-92",
@@ -1437,7 +1440,8 @@
       "labels": [
         "bug"
       ],
-      "url": "https://github.com/chainupcloud/dex-ui/issues/159"
+      "url": "https://github.com/chainupcloud/dex-ui/issues/159",
+      "github_number": 159
     },
     {
       "id": "issue-93",
@@ -1451,7 +1455,8 @@
       "labels": [
         "bug"
       ],
-      "url": "https://github.com/chainupcloud/dex-ui/issues/160"
+      "url": "https://github.com/chainupcloud/dex-ui/issues/160",
+      "github_number": 160
     }
   ],
   "last_updated": "2026-03-28",

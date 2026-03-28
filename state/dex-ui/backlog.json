@@ -1126,11 +1126,12 @@
       "priority": 3,
       "title": "/explorer 交易详情 — 点击 tx hash 查看详情",
       "description": "在 /explorer 搜索一个 transaction hash（如从 /api-tx 获取），验证能正确展示交易详情页",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — /explorer/checkpoint/{id} returns 404, detail route not implemented → Issue #60"
+      "result_summary": "FAIL — /explorer/checkpoint/{id} returns 404, detail route not implemented → Issue #60",
+      "note": "Reset after issue #157 fix merged (PR #158). "
     },
     {
       "id": "E099",
@@ -2676,11 +2677,12 @@
       "priority": 3,
       "title": "Explorer checkpoint detail — transaction type and hash fields visible",
       "description": "In checkpoint detail page, verify each transaction row shows: tx hash (0x... format), timestamp, and tx type. Check data completeness.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — Checkpoint detail shows Transactions:1 but table empty. Backend API returns transactions:[] for all checkpoints"
+      "result_summary": "FAIL — Checkpoint detail shows Transactions:1 but table empty. Backend API returns transactions:[] for all checkpoints",
+      "note": "Reset after issue #157 fix merged (PR #158). "
     },
     {
       "id": "E228",
@@ -3352,11 +3354,12 @@
       "priority": 3,
       "title": "Explorer /explorer/checkpoint/{id} — 详情页交易列表内容验证",
       "description": "访问 /explorer/checkpoint/103785，验证详情页显示正确的交易列表（tx hash、类型、时间戳），字段不为空",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — Checkpoint detail shows \"Transaction details not yet available\" (duplicate of existing issue)"
+      "result_summary": "FAIL — Checkpoint detail shows \"Transaction details not yet available\" (duplicate of existing issue)",
+      "note": "Reset after issue #157 fix merged (PR #158). "
     },
     {
       "id": "E284",
@@ -3570,11 +3573,12 @@
       "title": "Checkpoint 详情页 — 点击单条 transaction hash 跳转详情",
       "description": "在 /explorer/checkpoint/{id} 点击列表中的 transaction hash，验证跳转到对应 /explorer/tx/{hash} 页面，显示 tx 类型、gas、状态等字段。",
       "track": "frontend",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — Checkpoint detail shows no tx links (root cause: backend issue #29 in dex-sui)"
+      "result_summary": "FAIL — Checkpoint detail shows no tx links (root cause: backend issue #29 in dex-sui)",
+      "note": "Reset after issue #157 fix merged (PR #158). "
     },
     {
       "id": "E302",
@@ -7663,11 +7667,12 @@
       "priority": 2,
       "title": "Explorer tx detail — sender/receiver address fields visibility",
       "description": "On /explorer/tx/{hash}, verify 'From' and 'To' address fields are explicitly labeled and displayed. Currently 3/5 fields pass but sender/status labels may be missing.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — tx detail missing Status and Fee fields → Issue #157"
+      "result_summary": "FAIL — tx detail missing Status and Fee fields → Issue #157",
+      "note": "Reset after issue #157 fix merged (PR #158). "
     },
     {
       "id": "E666",
