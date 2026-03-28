@@ -1316,6 +1316,19 @@
       "resolution": "duplicate",
       "url": "https://github.com/chainupcloud/dex-ui/issues/147",
       "note": "Duplicate of #142 (fixed in PR #143, commit f11633a). Transaction type filter already on dev. Staging stale due to Vercel deploy failures (#98)."
+    },
+    {
+      "github_number": 148,
+      "title": "[P3] TP/SL inputs accept invalid values — no validation for long order (TP below entry, SL above entry)",
+      "priority": "P3",
+      "status": "open",
+      "track": "frontend",
+      "scenario": "E609",
+      "created_at": "2026-03-28",
+      "labels": [
+        "bug"
+      ],
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-28",
