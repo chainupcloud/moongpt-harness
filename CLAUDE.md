@@ -88,3 +88,18 @@ closed → open（验收失败时回滚，fix_attempts += 1）
 - `plan-agent.md` — 分析功能覆盖，生成新测试场景写入背板
 - `fix-agent.md` — 选取最高优先级 open issue，实施修复，提 PR
 - `master-agent.md` — 检查 PR review，merge，部署，验收，关闭 Issue
+
+---
+
+## 系统 Crontab 调度（dex-ui）
+
+所有 agent 调度通过系统 crontab 管理，**不使用 Claude session cron**，重启后自动恢复。
+
+| Agent | 频率 | cron 表达式 |
+|-------|------|-------------|
+| explore loop watchdog | 每5分钟检查进程 | `*/5 * * * *` |
+| fix | 每30分钟 | `*/30 * * * *` |
+| master | 每10分钟（:05偏移） | `5,15,25,35,45,55 * * * *` |
+| plan | 每周一 03:00 | `0 3 * * 1` |
+
+修改调度频率请直接编辑系统 crontab（`crontab -e`），并同步更新此表。
