@@ -7168,9 +7168,11 @@
       "priority": 3,
       "title": "Explorer — transaction detail page shows correct tx data",
       "description": "Click on a transaction hash in /explorer/transactions, verify the detail page loads at /explorer/tx/{digest} and shows correct sender, type, checkpoint, and timestamp.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer tx detail page loads correctly with Transaction Hash, Action, User Address, Checkpoint, Time, Events"
     },
     {
       "id": "E599",
@@ -7226,9 +7228,11 @@
       "priority": 3,
       "title": "TIF options availability in Market order — GTC/IOC not available, only Market",
       "description": "Switch order type to Market, verify that TIF selector is hidden or shows only allowed options (Market orders typically don't have GTC/IOC).",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TIF options (GTC/IOC/FOK) correctly hidden in Market order mode"
     },
     {
       "id": "E604",
@@ -7248,9 +7252,11 @@
       "priority": 3,
       "title": "API key authorize flow — enter wallet address and days, click Authorize, verify key appears in list",
       "description": "Fill in the \"API Wallet Address\" and validity days fields, submit the Authorize API Wallet form, and verify the new key is added to the list with correct name and expiry.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — requires wallet connection; page shows connect prompt"
     },
     {
       "id": "E606",
@@ -7258,9 +7264,11 @@
       "priority": 3,
       "title": "API key remove — click Remove on an existing key, verify it disappears from list",
       "description": "Click the Remove button on an existing API key entry and verify it is removed from the list (confirmation dialog if any, then gone).",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — requires wallet connection and existing keys"
     },
     {
       "id": "E607",
@@ -9812,6 +9820,56 @@
       "description": "In the explorer search box, enter a random 66-char hex string that is not a real address. Verify the UI shows a not-found or empty state rather than an error page or crash.",
       "status": "pending",
       "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E848",
+      "area": "Explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — 'Show details' expander reveals raw event JSON",
+      "description": "On the /explorer/tx/{digest} page, click 'Show details' button under an OrderPlacedEvent, verify the event raw JSON data expands and shows correct fields (e.g. market, side, price, size).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E849",
+      "area": "TradeForm",
+      "priority": 3,
+      "title": "Stop Market order — form fields and TIF behavior",
+      "description": "Select Stop Market order type, verify the form shows a Trigger Price field, and that TIF options reflect stop-market semantics (no GTC/IOC, or appropriate default).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E850",
+      "area": "TradeForm",
+      "priority": 3,
+      "title": "Scalp order type — UI renders without errors and shows trade parameters",
+      "description": "Select Scalp order type from the dropdown, verify the form renders with appropriate fields (spread, size, etc.) and no console errors.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E851",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API key page structure — title, description, and connect prompt visible to unauthenticated user",
+      "description": "Navigate to /api-keys without wallet connection, verify the page shows the 'API wallets' title, feature description, and 'Please connect your wallet' prompt (not a blank or error page).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E852",
+      "area": "Markets",
+      "priority": 3,
+      "title": "Markets page — BTC-USDC row shows correct Mark Price, 24h Change, and Open Interest",
+      "description": "Navigate to /markets, verify the BTC-USDC row displays Mark Price (non-zero), 24h Change (± % format), and Open Interest ($ value). Compare mark price to /trade page for consistency.",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
