@@ -9032,9 +9032,11 @@
       "priority": 3,
       "title": "API Keys page — generate and revoke an API key with connected wallet",
       "description": "With wallet properly connected via UI, attempt to generate a new API key and verify it appears in the list, then revoke it. Verifies full CRUD flow of API key management.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Wallet auth required; cookie injection insufficient; existing issue tracked"
     },
     {
       "id": "E752",
@@ -9042,9 +9044,11 @@
       "priority": 3,
       "title": "Explorer address page — verify transaction list pagination",
       "description": "On /explorer/address/{SUI_ADDR}, check if the transaction list shows items and if Load More / pagination works when more than one page of txs exists.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — All Transactions pagination works (1-10→11-20); address page <10 txs on testnet"
     },
     {
       "id": "E753",
@@ -9062,9 +9066,11 @@
       "priority": 3,
       "title": "Explorer transaction detail — verify OrderPlacedEvent 'Show details' toggle",
       "description": "Navigate to a transaction with OrderPlacedEvent at /explorer/tx/{digest}, click 'Show details' toggle and verify it expands to show raw BCS/JSON data inline without page reload.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — 'Show details' toggle works, expands JSON, toggles to 'Hide details'"
     },
     {
       "id": "E755",
@@ -12004,10 +12010,12 @@
       "priority": 2,
       "title": "/markets funding rate tooltip — clarify 4h vs hourly rate",
       "description": "Hover over the funding rate column on /markets. Check if there is a tooltip explaining whether the rate shown is per-8h, per-4h, or annualized. Compare with /trade page label which says '预测资金费'. Both pages should have clear tooltips or labels explaining the rate period.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "track": "frontend"
+      "track": "frontend",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — No tooltip on funding rate cell/header to clarify rate period (4h vs hourly)"
     },
     {
       "id": "E1032",
@@ -12052,6 +12060,46 @@
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "track": "frontend"
+    },
+    {
+      "id": "E1036",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets funding rate — compare displayed value with raw API response",
+      "description": "Fetch /api/v1/markets or equivalent endpoint, compare raw fundingRate field with displayed value in /markets table. Verify if displayed is 1h, 4h, or 8h rate. Expected: should match Hyperliquid convention (8h).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1037",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — verify all tx types shown (system vs user actions)",
+      "description": "Oracle price updater (0x73a6b3c3...80adc0) appears many times on All Transactions but shows only 1 tx on its address page. Verify if the address page intentionally filters out system transactions (UpdateOraclePrices) and only shows user actions.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1038",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — 'Show details' JSON for OrderPlacedEvent completeness",
+      "description": "For an OrderPlacedEvent, click Show details and verify JSON fields are complete and correct (perpetualId, coin, orderId, side, price, quantity, status). Compare with what's shown in the Summary column.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1039",
+      "area": "explorer",
+      "priority": 4,
+      "title": "Explorer search — verify tx hash (0x+64hex) search routes to /explorer/tx/ (regression test for #186)",
+      "description": "Issue #186 was about tx hash search always routing to /explorer/address/ instead of /explorer/tx/. Verify if this is fixed by entering a known full tx hash in the explorer search bar.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
     }
   ]
 }
