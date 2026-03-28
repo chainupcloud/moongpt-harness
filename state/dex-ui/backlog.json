@@ -7348,9 +7348,11 @@
       "priority": 3,
       "title": "TWAP tab — column layout: verify expected columns (Symbol, Side, Total Size, Duration, Status, Action)",
       "description": "Click TWAP tab in bottom panel. Verify the table/list shows expected column headers or fields when orders exist or empty state is meaningful.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — TWAP tab shows \"No TWAP orders\" empty state (meaningful). Column layout unverifiable without actual TWAP orders."
     },
     {
       "id": "E614",
@@ -7358,9 +7360,11 @@
       "priority": 3,
       "title": "Limit order TIF: Market order hides TIF selector (market always IOC)",
       "description": "Switch to Market order type. Verify that the GTC/IOC/ALO TIF selector is hidden or disabled, since market orders are always IOC by protocol design.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TIF (GTC) selector visible for Limit, absent for Market orders. Correct behavior."
     },
     {
       "id": "E615",
@@ -7368,10 +7372,12 @@
       "priority": 3,
       "title": "TP/SL validation clears on valid input — verify error disappears after correcting invalid price",
       "description": "Enable TP/SL on BUY Limit order. Enter invalid TP (below entry) to trigger error 'TP must be above entry price'. Then update TP to a valid price (above entry). Verify the validation error disappears and the form is submittable.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "track": "frontend"
+      "track": "frontend",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — TP/SL toggle visible on form but interaction requires active wallet session."
     },
     {
       "id": "E616",
@@ -7392,10 +7398,12 @@
       "priority": 3,
       "title": "TWAP order form field validation — duration, interval, and price fields accept and validate input",
       "description": "Select TWAP order type. Verify: (1) duration/interval inputs render; (2) entering 0 or negative values shows validation; (3) entering valid values (e.g. duration=30min, interval=5min) enables form submission. Check for console errors. (TwapOrderForm.tsx recently changed)",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "track": "frontend"
+      "track": "frontend",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — TWAP order type form not accessible without wallet connection in test environment."
     },
     {
       "id": "E618",
@@ -9927,6 +9935,56 @@
       "priority": 3,
       "title": "TP/SL — invalid values show validation errors",
       "description": "Enable TP/SL on a long order. Enter a TP value BELOW current price (invalid for long). Verify validation error appears. Enter SL ABOVE current price (invalid for long). Verify error. Then fix values and verify errors clear.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E858",
+      "area": "trade-form / TWAP",
+      "priority": 3,
+      "title": "TWAP order type form accessibility — verify TWAP appears in order type selector with wallet connected",
+      "description": "With wallet connected, click 'Order Type' button in trade form. Verify TWAP appears as an option. Select it and confirm duration/interval fields render. No console errors.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E859",
+      "area": "bottom-panel",
+      "priority": 4,
+      "title": "Bottom panel tab consistency — Open Orders(0) vs TWAP: do tabs show column headers when empty?",
+      "description": "Compare column header rendering across bottom panel tabs when empty: Open Orders(0), Positions(0), TWAP, Trailing. Verify consistent UX — either all show headers or all hide them in empty state.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E860",
+      "area": "trade-form / TIF",
+      "priority": 3,
+      "title": "TIF selector behavior for Stop and Scale order types",
+      "description": "For Stop Market and Scale order types: verify whether GTC/IOC/ALO TIF selector appears or is hidden. Stop Market should be IOC (hidden TIF); Scale/Limit should show TIF.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E861",
+      "area": "trade-form / TP-SL",
+      "priority": 3,
+      "title": "TP/SL toggle and field rendering with wallet connected",
+      "description": "With wallet connected: click TP/SL text/switch in Limit order form. Verify TP and SL input fields render. Enter invalid values (TP below entry for BUY) and verify validation error appears. Correct values and verify error clears.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E862",
+      "area": "trade-form",
+      "priority": 4,
+      "title": "Order type selector persistence across page navigation",
+      "description": "Select 'Stop Market' order type. Navigate away to Portfolio page and back to Trade. Verify if the last used order type is remembered (persisted in localStorage or reset to default Limit).",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
