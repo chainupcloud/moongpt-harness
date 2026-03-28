@@ -1469,12 +1469,16 @@
       "github_number": 163,
       "title": "[P3] Explorer tx detail 缺少 Status 字段 — 仅显示 Action/Checkpoint/Time 但无交易状态",
       "priority": "P3",
-      "status": "open",
+      "status": "closed",
       "created_at": "2026-03-28",
+      "closed_at": "2026-03-28",
       "scenario": "E690",
       "labels": [
         "bug"
-      ]
+      ],
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "Status field already added in PR #158 (commit 9bda65f) on dev. Backend doesn't return status/gasFee but UI handles gracefully (defaults to Success/–)."
     },
     {
       "github_number": 164,
