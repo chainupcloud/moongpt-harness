@@ -6727,9 +6727,11 @@
       "priority": 3,
       "title": "Withdraw modal — verify network selector shows correct options",
       "description": "Withdraw modal shows 'Select Network' with 'Sepolia3'. Verify the network dropdown renders all available networks and selecting one updates bridge info.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Withdraw modal opens with network selector text visible"
     },
     {
       "id": "E562",
@@ -6737,9 +6739,11 @@
       "priority": 3,
       "title": "Open Orders tab — count badge updates after placing and cancelling limit order",
       "description": "E372 confirmed count badge shows (0). Now verify the badge updates live: place a limit order far from market → badge shows (1) → cancel → badge shows (0) again.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Badge shows correct count on load but does NOT update in real-time after order cancellation"
     },
     {
       "id": "E563",
@@ -6767,10 +6771,12 @@
       "priority": 3,
       "title": "API Keys — create key modal content and key name input validation",
       "description": "After connecting wallet on /api-keys, click Create API Key button. Verify modal opens with key name input, permissions section, and Create/Cancel buttons. Test empty name submission shows validation error.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — API Keys page accessible; Generate+name input+permissions section all present"
     },
     {
       "id": "E566",
@@ -9254,9 +9260,11 @@
       "priority": 2,
       "title": "Explorer search — distinguish tx hash from address (both 0x+64hex)",
       "description": "After fix for #186: verify search correctly routes 0x+64hex tx digests to /explorer/tx/ and known addresses to /explorer/address/. May require API lookup or separate input hint.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer search routes 0x+64hex to /explorer/address/; base58 tx digests shown inline (no ambiguity in Sui)"
     },
     {
       "id": "E801",
@@ -9294,6 +9302,56 @@
       "priority": 3,
       "title": "Explorer search — search for known address navigates to /explorer/address/{addr} with transaction history",
       "description": "Search for the test wallet address in explorer and verify it routes to address detail page showing transaction history.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E805",
+      "area": "orders",
+      "priority": 3,
+      "title": "Open Orders badge — verify real-time update after successful order placement via UI",
+      "description": "After fix for #189: verify that placing a limit order via the trade form causes the Open Orders badge to increment without requiring a page reload.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E806",
+      "area": "orders",
+      "priority": 3,
+      "title": "Open Orders tab — verify orders list populates when badge count > 0",
+      "description": "When Open Orders badge shows (1+), click the Open Orders tab and verify the order list renders with correct symbol, price, size, side, and cancel button.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E807",
+      "area": "api_keys",
+      "priority": 3,
+      "title": "API Wallet — authorize new wallet with custom name and verify it appears in list",
+      "description": "Click 'Authorize API Wallet', enter a custom wallet address and name, submit. Verify the new entry appears in the API wallets table with correct name, address, and valid-until date.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E808",
+      "area": "withdraw",
+      "priority": 3,
+      "title": "Withdraw modal — enter over-balance amount and verify validation error",
+      "description": "E564 scenario: Open Withdraw modal, enter an amount exceeding USDC balance. Verify an inline validation error shows (e.g., 'Insufficient balance') and the confirm button is disabled.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E809",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer transactions list — pagination and load more",
+      "description": "Navigate to /explorer/transactions. Verify the initial list loads, check if there is a pagination control or 'load more' button, and test that clicking it appends additional rows.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"

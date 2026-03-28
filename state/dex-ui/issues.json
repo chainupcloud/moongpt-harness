@@ -1670,6 +1670,18 @@
       ],
       "fix_attempts": 1,
       "pr_number": 188
+    },
+    {
+      "github_number": 189,
+      "title": "[P3] Open Orders badge does not update in real-time after order cancellation",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E562",
+      "created_at": "2026-03-28",
+      "fix_attempts": 0,
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-28",
