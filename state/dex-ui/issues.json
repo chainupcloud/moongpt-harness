@@ -1368,14 +1368,16 @@
     {
       "github_number": 151,
       "title": "[P3] TP/SL inputs lack validation: invalid values (TP below entry / SL above entry) accepted without error on BUY order",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E626",
       "created_date": "2026-03-28",
       "labels": [
         "bug"
       ],
-      "url": "https://github.com/chainupcloud/dex-ui/issues/151"
+      "url": "https://github.com/chainupcloud/dex-ui/issues/151",
+      "pr_number": 152,
+      "fix_attempts": 1
     }
   ],
   "last_updated": "2026-03-28",
