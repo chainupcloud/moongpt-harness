@@ -1217,6 +1217,15 @@
       "labels": [
         "bug"
       ]
+    },
+    {
+      "issue_number": 139,
+      "title": "[P3] Explorer search accepts invalid/short hashes — shows empty tx detail instead of not-found error",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E369",
+      "created_date": "2026-03-28",
+      "url": "https://github.com/chainupcloud/dex-ui/issues/139"
     }
   ],
   "last_updated": "2026-03-28",

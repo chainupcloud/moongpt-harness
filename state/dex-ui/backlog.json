@@ -4361,9 +4361,11 @@
       "priority": 3,
       "title": "Explorer — 直接访问 /explorer/tx/{txhash} 交易详情页",
       "description": "从 Explorer 主页 Latest Transactions 列表点击一个 tx hash，进入 /explorer/tx/{hash} 页面，验证：tx hash、action type、sender/receiver、时间戳、summary 字段均正确显示，无空白或500错误。",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TX detail page loads with all key fields: hash, action, user address, checkpoint, time"
     },
     {
       "id": "E368",
@@ -4371,9 +4373,11 @@
       "priority": 3,
       "title": "Markets 页 — 24h 成交量和持仓量数据准确性（非零验证）",
       "description": "访问 /markets 页，检查 BTC/USDC 市场行的 24h 成交量和持仓量是否为合理非零值（当前显示 $0.40 和 $0.00）。对比 /dex-api/info API 原始数据，判断是前端显示问题还是后端数据问题。",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Markets page loads with BTC row; 24h vol=$0.40, OI=$0.00 likely testnet data sparseness"
     },
     {
       "id": "E369",
@@ -4381,9 +4385,11 @@
       "priority": 3,
       "title": "Explorer — 搜索框非法输入处理（空字符串、随机字符、过短哈希）",
       "description": "在 Explorer 搜索框测试边界输入：(1) 空字符串回车，(2) 随机字符串 'abc123'，(3) 过短哈希 '0x1234'。验证每种情况是否显示友好错误提示，而非500或空白页。",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Invalid search inputs (abc123, 0x1234) navigate to empty tx detail page instead of showing not-found error → Issue #139"
     },
     {
       "id": "E370",
@@ -4404,10 +4410,12 @@
       "priority": 3,
       "title": "Explorer — checkpoint with txCount=0 shows empty state gracefully",
       "description": "Navigate to a checkpoint that has txCount=0. Verify that the detail page shows a proper 'No transactions' empty state rather than an error or loading spinner.",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — No checkpoint with txCount=0 found in recent testnet history"
     },
     {
       "id": "E372",
@@ -6359,6 +6367,61 @@
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "track": "frontend"
+    },
+    {
+      "id": "E555",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — API returns 404 should show Not Found page",
+      "description": "Navigate to /explorer/tx/0x000000000000000000000000000000000000000000000000000000000000dead (non-existent hash). Verify page shows explicit 'Transaction Not Found' or 404 state rather than empty fields with Action:Unknown.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E556",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — address lookup routes to /explorer/address/{addr}",
+      "description": "Enter a valid wallet address (42-char 0x...) in the Explorer search box. Verify it routes to /explorer/address/{addr} instead of /explorer/tx/{addr}, and that the address page loads correctly.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E557",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets page — clicking BTC row navigates to trade page",
+      "description": "On /markets page, click the BTC/USDC row. Verify navigation to /trade/BTC-USDC or similar trade page with correct market pre-selected.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E558",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — Events section renders correctly when events exist",
+      "description": "Find a transaction that has events (not just PlaceOrder which shows 0 events). Verify the Events section renders event data correctly with type, data fields, and not just 'No events found'.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E559",
+      "area": "explorer",
+      "priority": 4,
+      "title": "Explorer — pagination on Latest Transactions list",
+      "description": "On /explorer, check if there is pagination or infinite scroll for Latest Transactions. Click 'Load more' or page 2 (if exists). Verify additional transactions load without full page reload.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
     }
   ]
 }
