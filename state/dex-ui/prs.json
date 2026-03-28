@@ -997,6 +997,17 @@
       "deployed": false,
       "accepted": false,
       "note": "Vercel rate limit hit (100/day) — acceptance deferred"
+    },
+    {
+      "pr_number": 184,
+      "issue_numbers": [
+        183
+      ],
+      "status": "open",
+      "created_at": "2026-03-28",
+      "title": "fix: add Interval field to TWAP order form (#183)",
+      "branch": "fix/issue-183",
+      "base": "dev"
     }
   ]
 }
