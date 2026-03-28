@@ -6189,9 +6189,11 @@
       "priority": 3,
       "title": "TP/SL validation — 输入无效值后是否显示错误提示",
       "description": "E486 验证了 TP/SL 输入框可见（issue #122 修复）；本场景专门验证 validation：LONG 仓位下，TP < 当前价格 → 应报错；SL > 当前价格 → 应报错",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — validation errors shown: TP must be above entry price (Long), SL must be below entry price (Long)"
     },
     {
       "id": "E518",
@@ -6199,9 +6201,11 @@
       "priority": 3,
       "title": "Trade 页 — TP/SL 联动 Buy/Sell 方向切换后验证",
       "description": "先点击 Buy/Long 设置 TP/SL 值，再切换到 Sell/Short，验证 TP/SL 值是否被清空或重新计算方向约束",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — TP/SL values not cleared on Buy→Sell switch, issue #181 opened"
     },
     {
       "id": "E519",
@@ -8726,9 +8730,11 @@
       "priority": 2,
       "title": "Explorer checkpoint — verify tx list loads after fix #178",
       "description": "Re-verify checkpoint detail page shows transaction list once fix for issue #178 is deployed. Test checkpoint with Transactions: 1 in header shows the actual tx row.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — checkpoint detail shows tx data, no \"not yet available\" message"
     },
     {
       "id": "E756",
@@ -8746,9 +8752,11 @@
       "priority": 2,
       "title": "Orderbook — re-verify ask/bid order after Vercel staging fix deployed",
       "description": "Re-run E750 once Vercel staging is unblocked and fix #173 is deployed. Verify: min ask > max bid, asks (red) are above mid price, bids (green) below mid price.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — orderbook position correct: bids (65k) below mark (66,821), asks (67k) above; min ask 67,013 > max bid 65,417"
     },
     {
       "id": "E758",
@@ -8766,6 +8774,56 @@
       "priority": 3,
       "title": "Explorer address page — shows order history and position info for known address",
       "description": "Navigate to /explorer/address/{addr} for the test wallet address. Verify: order history list, positions, or relevant activity is shown (not empty page).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E760",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL — Sell/Short 方向：TP > 入场价显示错误，SL < 入场价显示错误",
+      "description": "E517 验证了 Long 方向的 validation；本场景专门验证 Short 方向：TP 输入大于当前价格应报错；SL 输入小于当前价格应报错",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E761",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL — 切换方向后值清空验证（issue #181 修复后回归）",
+      "description": "E518 发现切换 Buy→Sell 时 TP/SL 值不清空（issue #181）。此场景用于 issue #181 修复后回归验证：切换方向后 TP/SL 应被清空或重新计算",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E762",
+      "area": "orderbook",
+      "priority": 3,
+      "title": "Orderbook 颜色编码 — bids (买单) 应显示绿色，asks (卖单) 应显示红色",
+      "description": "E757 验证了价格位置正确（bids 在 mid 以下，asks 在 mid 以上），但发现所有价格行颜色相同 rgb(255,82,82)。本场景专门验证颜色编码：bid 行应为绿色，ask 行应为红色",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E763",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — checkpoint 显示多笔交易时列表渲染正确",
+      "description": "E755 验证了单笔交易的 checkpoint。本场景验证 Transactions > 1 的 checkpoint：所有交易行均显示，分页或滚动正常工作",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E764",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade — Reduce Only 和 TP/SL 同时启用后的交互行为",
+      "description": "验证 Reduce Only checkbox 和 TP/SL checkbox 同时勾选时的行为：两者是否互斥？同时启用时表单是否正常提交？",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
