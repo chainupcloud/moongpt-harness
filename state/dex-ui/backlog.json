@@ -8547,9 +8547,11 @@
       "title": "Reduce Only checkbox — visible only for Limit orders (not Market)",
       "description": "Verify that Reduce Only checkbox appears for Limit order type but is hidden or disabled for Market orders. Switch between Market/Limit tabs and confirm checkbox visibility changes accordingly.",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Reduce Only checkbox visible on Market orders → Issue #219"
     },
     {
       "id": "E712",
@@ -8558,9 +8560,11 @@
       "title": "Explorer tx list — filter by type (PlaceOrder) reduces results correctly",
       "description": "On /explorer page, use the transaction type filter dropdown to select PlaceOrder. Verify the transaction list shows only PlaceOrder entries and the count updates accordingly.",
       "track": "frontend",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Transactions page has filter UI but no data in staging to verify"
     },
     {
       "id": "E713",
@@ -8569,9 +8573,11 @@
       "title": "Explorer checkpoint detail — tx list links navigate to correct tx detail pages",
       "description": "On a checkpoint detail page (e.g. /explorer/checkpoint/302824), click on a transaction hash in the tx list. Verify it navigates to the correct /explorer/tx/{hash} page with matching data.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Checkpoint tx link navigates to correct tx detail page"
     },
     {
       "id": "E714",
@@ -11457,11 +11463,13 @@
       "priority": 2,
       "title": "TP/SL toggle state restoration — verify behavior when switching order types with TP/SL enabled",
       "description": "Pre-enable TP/SL on Limit form, set TP=55000 SL=45000. Switch to Stop Limit (which also should support TP/SL). Verify toggle remains on. Switch to Market. Verify toggle goes off with visible warning/message. Switch back to Limit. Verify toggle is restored. Tests issue #218 fix.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "related_issue": "218",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TP/SL correctly hidden on Market, toggle available on Limit"
     },
     {
       "id": "E987",
@@ -11502,6 +11510,62 @@
       "priority": 3,
       "title": "Order Type Stop Market — verify trigger price and execution behavior",
       "description": "Select Stop Market order type. Verify: (1) only Trigger Price + Amount fields shown (no Price), (2) can submit order (test if submission triggers expected behavior). Related to existing issue about Stop Market BUY trigger price validation.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E991",
+      "area": "trade",
+      "priority": 3,
+      "title": "Reduce Only checkbox — toggleable and affects order submission",
+      "description": "On Limit order form, click the Reduce Only checkbox. Verify it becomes checked. Then submit a limit order with Reduce Only checked. Verify the order submission includes reduce_only=true in the API payload.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E992",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer transactions page — pagination works correctly",
+      "description": "On /explorer/transactions, load the page and verify that pagination controls (next/prev or infinite scroll) work. Navigate to page 2 and verify different transactions are shown.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E993",
+      "area": "trade",
+      "priority": 2,
+      "title": "TP/SL inputs — enter values and verify they appear in order confirmation",
+      "description": "On Limit form, enable TP/SL toggle. Enter TP=55000 SL=45000. Click Buy/Long. Verify order confirmation dialog shows the TP/SL values. Related to issue #218 fix verification.",
+      "status": "pending",
+      "track": "frontend",
+      "related_issue": "218",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E994",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — shows correct user transaction history",
+      "description": "Navigate to /explorer/address/{WALLET_ADDR} for the test wallet. Verify the page loads and shows transaction history. Check that transaction types (PlaceOrder, CancelOrder etc.) are correctly labeled.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E995",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Limit order type — form shows correct fields (trigger price + limit price)",
+      "description": "Select Stop Limit order type from the trade form. Verify the form shows both a Trigger Price field and a Limit Price field (distinct from Market which shows only price). Verify both inputs accept numeric values.",
       "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
