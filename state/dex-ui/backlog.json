@@ -6678,10 +6678,12 @@
       "priority": 3,
       "title": "Markets page — clicking BTC row navigates to trade page",
       "description": "On /markets page, click the BTC/USDC row. Verify navigation to /trade/BTC-USDC or similar trade page with correct market pre-selected.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — BTC row click navigates to /trade?coin=BTC"
     },
     {
       "id": "E558",
@@ -6689,10 +6691,12 @@
       "priority": 3,
       "title": "Explorer tx detail — Events section renders correctly when events exist",
       "description": "Find a transaction that has events (not just PlaceOrder which shows 0 events). Verify the Events section renders event data correctly with type, data fields, and not just 'No events found'.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TX detail page renders with Events section (20 events for PlaceOrder tx)"
     },
     {
       "id": "E559",
@@ -6711,9 +6715,11 @@
       "priority": 3,
       "title": "Withdraw modal — submit zero amount should show explicit validation error",
       "description": "When user enters 0 in withdrawal amount and clicks Withdraw, verify a clear validation error message is shown (not silent). Currently button is enabled for zero amount.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — wallet not connected, overlay blocks withdraw button interaction"
     },
     {
       "id": "E561",
@@ -9236,6 +9242,58 @@
       "priority": 2,
       "title": "Explorer search — tx hash with 0x prefix routes to /explorer/tx/{digest}",
       "description": "Enter a valid SUI tx digest (66-char 0x...) in explorer search. Verify it routes to /explorer/tx/ page and loads transaction details correctly (not the address page).",
+      "status": "failed",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — 0x+64hex tx hash routes to /explorer/address/ instead of /explorer/tx/"
+    },
+    {
+      "id": "E800",
+      "area": "explorer",
+      "priority": 2,
+      "title": "Explorer search — distinguish tx hash from address (both 0x+64hex)",
+      "description": "After fix for #186: verify search correctly routes 0x+64hex tx digests to /explorer/tx/ and known addresses to /explorer/address/. May require API lookup or separate input hint.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E801",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — searching by checkpoint number routes to /explorer/checkpoint/{seq}",
+      "description": "Enter a numeric checkpoint sequence number (e.g. 339780) in the explorer search and verify it routes to the correct checkpoint detail page.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E802",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — Events section shows correct event type and data for PlaceOrder transactions",
+      "description": "Navigate to a PlaceOrder tx detail page and verify that each event in the Events section shows event type, emitter, and parsed fields correctly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E803",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets page — /trade?coin=BTC loads BTC-USDC pair by default",
+      "description": "After clicking BTC row from markets page, verify /trade?coin=BTC correctly pre-selects BTC-USDC pair in the trade form, showing correct price and order book.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E804",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — search for known address navigates to /explorer/address/{addr} with transaction history",
+      "description": "Search for the test wallet address in explorer and verify it routes to address detail page showing transaction history.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"

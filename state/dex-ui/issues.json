@@ -1655,6 +1655,17 @@
       ],
       "fix_attempts": 0,
       "description": "Discord/Twitter/Telegram icon links in nav missing target=_blank. Clicking navigates away from DEX. Fix: add target='_blank' rel='noopener noreferrer' to IconButton in Navigation.tsx lines 197/284."
+    },
+    {
+      "number": 186,
+      "title": "[P3] Explorer search — tx hash (0x+64hex) always routes to /explorer/address/ instead of /explorer/tx/",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E799",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-28",
