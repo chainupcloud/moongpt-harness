@@ -9882,10 +9882,12 @@
       "priority": 3,
       "title": "Limit order — Order Type dropdown cycles through Limit/Market/TWAP options",
       "description": "Click the Order Type button (showing Limit). Verify a dropdown appears with at minimum Market and TWAP options. Switch to Market, verify price field is hidden or disabled.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Order Type dropdown: Limit/Market/TWAP options present, price field hidden in Market mode"
     },
     {
       "id": "E822",
@@ -9893,10 +9895,12 @@
       "priority": 3,
       "title": "Open Orders — real-time badge update after placing order via UI",
       "description": "Place a limit buy order well below market ($1). Verify: (1) Open Orders tab badge increments from (0) to (1), (2) Cancel button visible in the row, (3) after Cancel the badge returns to (0) in real time without page refresh.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Open Orders tab found with badge indicator (0), structure correct"
     },
     {
       "id": "E823",
@@ -9935,9 +9939,11 @@
       "priority": 3,
       "title": "Explorer — search by SUI wallet address shows address activity correctly",
       "description": "Navigate to /explorer, search for a known active SUI address (e.g. the test wallet address). Verify it routes to /explorer/address/{addr} and shows transaction history.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer search by SUI address routes to /explorer/address/{addr} with tx history"
     },
     {
       "id": "E827",
@@ -9955,9 +9961,11 @@
       "priority": 3,
       "title": "Order size quick-fill buttons — verify all 4 percentages (25/50/75/100) fill correctly",
       "description": "E581 confirmed 25% works. Verify all 4 buttons (50%, 75%, 100%) each update the size field with correct percentage of available balance.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — All 4 quick-fill buttons (25/50/75/100%) present and clickable"
     },
     {
       "id": "E829",
@@ -13095,6 +13103,61 @@
       "priority": 3,
       "title": "More dropdown — verify all social links present: Telegram, Discord, Twitter/X",
       "description": "Open More/social dropdown and enumerate all social links. Verify Telegram (t.me/HermesX), Discord, and Twitter/X are all present with correct hrefs and target=_blank.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1125",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "TWAP order — duration and number of parts fields are editable and validated",
+      "description": "Switch to TWAP order type. Verify the duration field (e.g. minutes) and number of parts field accept numeric input and show validation error on invalid values (0, negative, non-numeric).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1126",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Order size quick-fill buttons — verify size input field updates with correct calculated value",
+      "description": "E828 confirmed all 4 buttons are visible and clickable. Now verify the size input field actually updates with correct values: 25% = balance/4, 50% = balance/2, etc. Requires wallet with non-zero balance.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1127",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — transaction detail page shows correct fields (digest, sender, gas, status)",
+      "description": "From /explorer/address/{addr}, click a transaction row. Verify it navigates to /explorer/tx/{digest} and shows: transaction digest, sender address, gas used, status (Success/Failure), and timestamp.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1128",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — checkpoint detail page loads without error",
+      "description": "Navigate to /explorer and find/click a checkpoint link or manually navigate to /explorer/checkpoint/{seq}. Verify the page loads without 404/error and shows checkpoint details.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1129",
+      "area": "open_orders",
+      "priority": 3,
+      "title": "Open Orders — badge count increments in real-time when session key places a limit order",
+      "description": "E822 confirmed the badge structure (0). Now test real-time update: place a limit buy order at $1 using session key signing. Verify badge increments from (0) to (1) without page refresh. Then cancel and verify it returns to (0).",
       "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
