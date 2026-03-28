@@ -1401,7 +1401,7 @@
       "github_number": 155,
       "title": "[P3] Explorer search bar does not route when entering 0x address",
       "priority": "P3",
-      "status": "fixing",
+      "status": "closed",
       "pr_number": 156,
       "created_at": "2026-03-28",
       "scenario": "E448",
@@ -1409,7 +1409,9 @@
         "bug"
       ],
       "fix_attempts": 1,
-      "url": "https://github.com/chainupcloud/dex-ui/issues/155"
+      "url": "https://github.com/chainupcloud/dex-ui/issues/155",
+      "closed_at": "2026-03-28",
+      "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
     {
       "id": "issue-91",
