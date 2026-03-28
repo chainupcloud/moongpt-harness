@@ -1627,6 +1627,18 @@
       "created_date": "2026-03-28",
       "fix_attempts": 1,
       "pr_number": 182
+    },
+    {
+      "id": "issue-183",
+      "github_number": 183,
+      "title": "[P3] TWAP order form missing Interval/Duration field — cannot set time between sub-orders",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E527",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-28",
