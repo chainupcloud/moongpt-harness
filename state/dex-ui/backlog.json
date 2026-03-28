@@ -7217,11 +7217,11 @@
       "priority": 2,
       "title": "TP/SL BUY order inputs — locate correct selectors and test invalid TP (below entry)",
       "description": "E620 found TP/SL toggle but could not locate input fields via placeholder selectors. Inspect the DOM after toggle to find actual input selectors, then re-test BUY order: TP below entry should show validation error.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — TP/SL inputs exist (aria: Take Profit price, Stop Loss price) but no validation for invalid values; TP<entry and SL>entry on BUY accepted without error → Issue #151"
+      "result_summary": "Reset for re-verification after fix PR #152 merged (86446ad). Previous: FAIL — no validation. Fix adds role=alert + aria-invalid."
     },
     {
       "id": "E627",

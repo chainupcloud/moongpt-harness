@@ -1368,16 +1368,18 @@
     {
       "github_number": 151,
       "title": "[P3] TP/SL inputs lack validation: invalid values (TP below entry / SL above entry) accepted without error on BUY order",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E626",
       "created_date": "2026-03-28",
+      "closed_at": "2026-03-28",
       "labels": [
         "bug"
       ],
       "url": "https://github.com/chainupcloud/dex-ui/issues/151",
       "pr_number": 152,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "note": "Staging acceptance passed: TP=1.00 shows 'TP must be above entry price' alert, aria-invalid set. PR #152 merged (86446ad), deployed dpl_8epmjpwdFqrddu1faY2nt9b7cVi1."
     },
     {
       "number": 117,
