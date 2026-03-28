@@ -1673,16 +1673,16 @@
     {
       "number": 186,
       "title": "[P3] Explorer search — tx hash (0x+64hex) always routes to /explorer/address/ instead of /explorer/tx/",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E799",
       "created_date": "2026-03-28",
       "labels": [
         "bug"
       ],
-      "fix_attempts": 2,
-      "pr_number": 188,
-      "note": "Staging acceptance failed (2026-03-28) — tx hash still routes to /explorer/address/, fix_attempts=2",
+      "fix_attempts": 3,
+      "pr_number": 238,
+      "note": "Fix attempt 3: route 0x+64hex to /explorer/tx/ by default (no async API call)",
       "github_number": 186
     },
     {

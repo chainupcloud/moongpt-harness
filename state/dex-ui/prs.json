@@ -1223,6 +1223,16 @@
       "accepted": false,
       "title": "fix: TWAP interval validation (#183)",
       "note": "Merged OK. Vercel deploy ERROR (rate limit 100/day). Acceptance pending next successful deploy."
+    },
+    {
+      "number": 238,
+      "title": "fix: explorer search routes tx hash to /explorer/tx/ (#186)",
+      "status": "open",
+      "issue_numbers": [
+        186
+      ],
+      "created_date": "2026-03-28",
+      "branch": "fix/issue-186"
     }
   ]
 }
