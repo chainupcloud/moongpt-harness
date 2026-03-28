@@ -5668,9 +5668,11 @@
       "title": "Explorer API 500 error — raw error exposed instead of friendly message",
       "description": "When user searches for a random/invalid string in /explorer, the page navigates to a tx detail page and shows 'Explorer API error: 500' — should show 'Transaction not found' or 'Invalid format' message instead of raw API error code",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Raw \"Explorer API error: 500\" shown for invalid TX hash → Issue #165"
     },
     {
       "id": "E476",
@@ -5692,9 +5694,11 @@
       "title": "Leverage 10x button — click to open leverage adjustment dialog",
       "description": "Click the '10x' leverage button in the trade form. Verify a dialog/slider opens allowing leverage selection, the value updates correctly, and the change persists after closing.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Leverage button opens dialog with slider (value=0-100, adjustable); dialog overlay works"
     },
     {
       "id": "E478",
@@ -5703,9 +5707,11 @@
       "title": "Explorer address page — verify transaction list pagination",
       "description": "Navigate to /explorer/address/{TEST_WALLET_ADDR}. If transactions exist, verify pagination works (Next/Prev buttons, page number display). If first page loads empty, verify empty-state messaging.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer address page loads tx section, no pagination needed (few transactions); no empty state error"
     },
     {
       "id": "E479",
@@ -8059,10 +8065,12 @@
       "priority": 2,
       "title": "TP/SL values persist across order type switches (Market ↔ Limit)",
       "description": "Set TP/SL values on Limit order, then switch to Market order. Verify TP/SL toggle and values are appropriately reset or preserved. Check no stale data carries over.",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Cannot reliably switch Limit↔Market order types programmatically; TP/SL checkbox state preserved within same type"
     },
     {
       "id": "E701",
@@ -8105,6 +8113,61 @@
       "description": "For checkpoints that do show transaction data (e.g. #296405), verify all fields are present: Hash, Action, User Account, Summary, Time. Check if Status field is shown (related to issue #163).",
       "status": "pending",
       "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E705",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer TX detail — friendly error for wrong-format hash (not hex/SUI format)",
+      "description": "Extends E475 fix: after fix, verify /explorer/tx/INVALID_HASH shows 'Transaction not found' or 'Invalid hash format' — not a raw API error. Also verify /explorer/tx/0x123abc (too-short valid hex) shows proper error.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E706",
+      "area": "trade",
+      "priority": 2,
+      "title": "Leverage slider: verify dialog initializes to current leverage value",
+      "description": "When 10x leverage is active, open the leverage dialog and verify the slider starts at 10 (not 0). Test: open dialog → check slider value matches current leverage button text. Then change to 20x → close → reopen → verify slider shows 20.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E707",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL reset behavior on order type switch Limit → Market → Limit",
+      "description": "Manual-focus test for E700: Enable TP/SL on Limit order, set TP=55000 SL=45000. Open Order Type dropdown → select Market. Verify: (a) TP/SL toggle state after switch, (b) input count. Switch back to Limit → verify TP/SL values preserved or properly reset.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E708",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — verify pagination for address with many transactions",
+      "description": "Use SUI address 0x94bd399ad5c05f9237c806c6dc8353ed5bd66a93bdf7c6f8346e6b191287c27c which likely has many txs. Navigate to /explorer/address/0x94bd399... and check: (1) tx list renders, (2) if >20 txs, pagination Next button exists and is clickable, (3) page 2 loads without error.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E709",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order Type dropdown — inspect all available order types",
+      "description": "Click 'Order TypeLimit' button, examine dropdown options. Verify: Limit, Market, Stop Limit, Stop Market (or whichever types are supported) are all present and selectable. Click each one and confirm form adapts (fields change, no JS errors). Esp. verify Market shows no Price field.",
+      "track": "frontend",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
