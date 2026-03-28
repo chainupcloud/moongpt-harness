@@ -1966,6 +1966,17 @@
       "created_at": "2026-03-28",
       "closed_at": null,
       "scenario": "E961"
+    },
+    {
+      "id": 216,
+      "title": "[P3] Explorer tx detail: Fee field shows dash (–) instead of numeric value",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E698",
+      "created": "2026-03-28",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/216",
+      "fix_branch": null,
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-28",
