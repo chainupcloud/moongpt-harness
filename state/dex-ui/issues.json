@@ -1972,10 +1972,14 @@
     {
       "title": "[P3] Stop Market BUY — trigger price below mark price accepted without blocking validation",
       "github_issue": 212,
-      "status": "open",
+      "github_number": 212,
+      "status": "closed",
       "priority": "P3",
       "scenario": "E675",
-      "opened_date": "2026-03-28"
+      "opened_date": "2026-03-28",
+      "closed_at": "2026-03-28",
+      "fix_attempts": 0,
+      "note": "Already fixed by PR #229 (commit 08af9e6) — TriggerPriceInput inline error + useOrderValidation direction check. Explore agent false positive — stale Vercel staging (issue #98)."
     },
     {
       "id": "issue-213",
