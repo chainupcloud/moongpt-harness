@@ -1416,10 +1416,12 @@
       "github_issue_number": 157,
       "title": "[P3] Explorer tx detail page missing Status and Fee fields",
       "scenario_id": "E665",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "created_date": "2026-03-28",
-      "area": "explorer"
+      "area": "explorer",
+      "fix_attempts": 1,
+      "pr_number": 158
     }
   ],
   "last_updated": "2026-03-28",
