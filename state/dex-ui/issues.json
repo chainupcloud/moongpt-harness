@@ -1526,6 +1526,19 @@
       "scenario": "E710",
       "created": "2026-03-28",
       "url": "https://github.com/chainupcloud/dex-ui/issues/169"
+    },
+    {
+      "id": "explore-e492-170",
+      "issue_number": 170,
+      "title": "[P3] TWAP order type selected but no TWAP-specific fields rendered",
+      "scenario_id": "E492",
+      "priority": "P3",
+      "status": "open",
+      "created_date": "2026-03-28",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/170",
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-28",
