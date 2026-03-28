@@ -881,7 +881,8 @@
       "issue_numbers": [
         165
       ],
-      "created": "2026-03-28"
+      "created": "2026-03-28",
+      "note": "Merge conflict (dirty) after PR #166 merged — fix branch needs rebase on dev"
     }
   ]
 }
