@@ -1661,13 +1661,15 @@
     {
       "number": 186,
       "title": "[P3] Explorer search — tx hash (0x+64hex) always routes to /explorer/address/ instead of /explorer/tx/",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E799",
       "created_date": "2026-03-28",
       "labels": [
         "bug"
-      ]
+      ],
+      "fix_attempts": 1,
+      "pr_number": 188
     }
   ],
   "last_updated": "2026-03-28",

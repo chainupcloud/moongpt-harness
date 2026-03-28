@@ -1030,6 +1030,18 @@
       "deployed": false,
       "accepted": false,
       "note": "Merged successfully. Vercel build ERROR (deployment quota/build issue, see #98). Staging not updated."
+    },
+    {
+      "number": 188,
+      "title": "fix: explorer search routes tx hash to /explorer/tx/ (#186)",
+      "status": "open",
+      "issue_numbers": [
+        186
+      ],
+      "branch": "fix/issue-186",
+      "base": "dev",
+      "created_date": "2026-03-28",
+      "url": "https://github.com/chainupcloud/dex-ui/pull/188"
     }
   ]
 }
