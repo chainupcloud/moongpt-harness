@@ -1276,6 +1276,38 @@
       "fix_attempts": 1,
       "pr_number": 145,
       "url": "https://github.com/chainupcloud/dex-ui/issues/144"
+    },
+    {
+      "id": "issue-146",
+      "gh_number": 146,
+      "github_number": 146,
+      "title": "[P3] TP/SL inputs missing client-side validation — invalid prices accepted silently",
+      "status": "open",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "scenario_id": "E408",
+      "scenario": "E408",
+      "created_date": "2026-03-28",
+      "fix_attempts": 0,
+      "url": "https://github.com/chainupcloud/dex-ui/issues/146"
+    },
+    {
+      "id": "issue-147",
+      "gh_number": 147,
+      "github_number": 147,
+      "title": "[P4] Explorer: missing filter by transaction type (oracle updates vs user trades)",
+      "status": "open",
+      "priority": "P4",
+      "labels": [
+        "enhancement"
+      ],
+      "scenario_id": "E385",
+      "scenario": "E385",
+      "created_date": "2026-03-28",
+      "fix_attempts": 0,
+      "url": "https://github.com/chainupcloud/dex-ui/issues/147"
     }
   ],
   "last_updated": "2026-03-28",

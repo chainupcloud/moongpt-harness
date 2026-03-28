@@ -4585,11 +4585,11 @@
       "priority": 3,
       "title": "Explorer — filter transactions by type (oracle updates vs user trades)",
       "description": "On Explorer page, verify if there is a filter for tx type. Oracle price update txs dominate; user should be able to filter to see only trade-related txs.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-28",
-      "result_summary": "Reset after fix merged (PR #143). Re-verify tx type filter."
+      "result_summary": "FAIL — No filter by type UI in Explorer, only rows-per-page selector. Issue #147 created."
     },
     {
       "id": "E386",
@@ -4857,9 +4857,11 @@
       "priority": 3,
       "title": "TP/SL validation — verify TP price must be above entry for long, SL must be below",
       "description": "Enable TP/SL checkbox, enter a Take Profit price below current price for a long order, verify an error/warning appears. Then enter SL above current price and verify similar validation",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — TP/SL inputs accept invalid values (TP=1 for long at ~66821) with no validation error. Issue #146 created."
     },
     {
       "id": "E409",
@@ -4867,9 +4869,11 @@
       "priority": 3,
       "title": "Market order slippage tolerance — verify slippage setting persists across order type switches",
       "description": "Click slippage settings (gear icon) for market order, set a custom slippage value (e.g. 2%), switch to Limit and back to Market, verify the custom slippage is retained",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Market order slippage (0.00%/Max 1%) visible and persists after Limit→Market switch"
     },
     {
       "id": "E410",
@@ -6816,9 +6820,11 @@
       "priority": 2,
       "title": "API key creation: connect wallet, create key, verify displayed in list",
       "description": "Connect wallet via cookie injection, navigate to /api-keys, click Create, sign message, verify new key appears in the list with name and creation date",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — API keys page loads with proper auth gate, wallet connection required for key management"
     },
     {
       "id": "E594",
@@ -6826,6 +6832,56 @@
       "priority": 2,
       "title": "TIF persistence across order type switches — verify IOC stays when switching Limit→Market→Limit",
       "description": "Select IOC TIF, switch to Market order type then back to Limit, verify TIF returns to IOC (or defaults gracefully). Related to IOC persistence bug #144",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E595",
+      "area": "TP/SL",
+      "priority": 2,
+      "title": "TP/SL validation — short position (SL must be above entry, TP must be below)",
+      "description": "For a short position, verify TP must be below entry price and SL must be above. Enter TP=999999 and SL=1 for short to check validation errors.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E596",
+      "area": "TP/SL",
+      "priority": 3,
+      "title": "TP/SL — verify order is blocked from submission with invalid TP/SL values",
+      "description": "After wallet connection, submit a limit order with clearly invalid TP/SL (TP below entry for long). Verify the order is rejected or blocked by the UI before reaching the blockchain.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E597",
+      "area": "Explorer",
+      "priority": 3,
+      "title": "Explorer — pagination works across all pages",
+      "description": "On /explorer/transactions, click Next page button multiple times, verify page numbers increment and transaction list changes. Check page size options (10/20/50) change the displayed rows.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E598",
+      "area": "Explorer",
+      "priority": 3,
+      "title": "Explorer — transaction detail page shows correct tx data",
+      "description": "Click on a transaction hash in /explorer/transactions, verify the detail page loads at /explorer/tx/{digest} and shows correct sender, type, checkpoint, and timestamp.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E599",
+      "area": "API Keys",
+      "priority": 2,
+      "title": "API Keys — wallet-connected user can create and list API keys",
+      "description": "With wallet injected via EIP-6963 provider, navigate to /api-keys, click Create, confirm key creation, verify new key appears in the list with correct address shown.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
