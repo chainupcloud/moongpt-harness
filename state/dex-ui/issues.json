@@ -1784,6 +1784,34 @@
       "labels": [
         "bug"
       ]
+    },
+    {
+      "id": "issue-200",
+      "github_number": 200,
+      "title": "[P3] Footer social icon links (Discord, Telegram) missing target=_blank — partial regression after fix #185",
+      "status": "open",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "scenario_id": "E552",
+      "created_date": "2026-03-28",
+      "fix_attempts": 0,
+      "url": "https://github.com/chainupcloud/dex-ui/issues/200"
+    },
+    {
+      "id": "issue-201",
+      "github_number": 201,
+      "title": "[P3] Order book — no visual warning when ask < bid (crossed book)",
+      "status": "open",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "scenario_id": "E873",
+      "created_date": "2026-03-28",
+      "fix_attempts": 0,
+      "url": "https://github.com/chainupcloud/dex-ui/issues/201"
     }
   ],
   "last_updated": "2026-03-28",

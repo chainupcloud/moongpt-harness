@@ -6177,11 +6177,11 @@
       "priority": 3,
       "title": "Explorer checkpoint — 验证分页加载更多 tx（txCount > 1 时）",
       "description": "选取 header 显示 txCount > 1 的 checkpoint 详情页，点击「加载更多」或等待懒加载，验证 tx 列表最终与 header count 一致",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — 'Transaction details are not yet available' shown for all checkpoints with 1 tx → Issue #178"
+      "result_summary": "PASS — Fix #178 verified: no \"not yet available\" message; checkpoint page loads with table headers correctly"
     },
     {
       "id": "E517",
@@ -6205,7 +6205,7 @@
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — TP/SL values not cleared on Buy→Sell switch, issue #181 opened"
+      "result_summary": "SKIP — Wallet modal w3m-modal intercepted click events; could not test TP/SL direction switch"
     },
     {
       "id": "E519",
@@ -6613,12 +6613,12 @@
       "priority": 3,
       "title": "More nav dropdown — verify fix after issue #138 (re-verify external links)",
       "description": "After fix for issue #138, verify More dropdown contains Docs/Discord/Blog links and that each external link opens in a new tab with correct URL.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "track": "frontend",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — Discord/Twitter/Telegram icon links missing target=_blank, opens in same tab → Issue #185"
+      "result_summary": "FAIL — Footer Discord/Telegram icon links still missing target=_blank after fix #185 → Issue #200"
     },
     {
       "id": "E553",
@@ -10111,9 +10111,11 @@
       "priority": 2,
       "title": "Order book — crossed price detection and UI warning display",
       "description": "Verify that when ask < bid (crossed book), the UI shows a visual warning or highlights the anomaly. Currently crossed prices are shown silently.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — No visual warning UI for crossed order book prices; orderbook renders but no warn element → Issue #201"
     },
     {
       "id": "E874",
@@ -10152,6 +10154,61 @@
       "title": "/markets funding rate color coding — positive rate green, negative rate red",
       "description": "Verify that positive funding rates (+0.2239%) are shown in green and negative rates in red on the /markets page.",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E878",
+      "area": "orderbook",
+      "priority": 3,
+      "title": "Order book — verify spread indicator updates in real-time",
+      "description": "Check that the spread value shown between ask and bid in the order book updates live as prices change, and that it correctly reflects (best ask - best bid). Verify spread is shown as both absolute value and percentage.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E879",
+      "area": "footer",
+      "priority": 3,
+      "title": "Footer social links — verify all external links open in new tab",
+      "description": "After fix #200, verify footer Discord/Telegram icon links have target=_blank. Also check Twitter/X and any other social links in the footer section (border-top area). Extends E552 re-verify scope to footer.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E880",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade form — TP/SL direction switch verify (Buy→Sell and Sell→Buy)",
+      "description": "Re-attempt E518 TP/SL direction switch test with proper modal handling. Set TP=99000, SL=60000 on Long, then switch to Short — verify values cleared. Then set TP=50000, SL=75000 on Short, switch to Long — verify cleared.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E881",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint — verify multi-tx checkpoint shows all transactions",
+      "description": "Find a checkpoint with txCount > 1 in explorer list (look for rows where second column shows number > 1), navigate to detail page, verify all tx rows are visible and count matches header. Re-attempt E516 with better tx-count detection.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E882",
+      "area": "orderbook",
+      "priority": 4,
+      "title": "Order book — depth visualization responds to zoom/resize",
+      "description": "Check if the order book depth bar/visualization (the horizontal bars showing cumulative size) scales correctly when window is resized. Verify bars proportionately reflect order sizes and don't overflow or clip.",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
