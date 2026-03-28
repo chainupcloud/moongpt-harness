@@ -1126,11 +1126,11 @@
       "priority": 3,
       "title": "/explorer 交易详情 — 点击 tx hash 查看详情",
       "description": "在 /explorer 搜索一个 transaction hash（如从 /api-tx 获取），验证能正确展示交易详情页",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-27",
-      "result_summary": "FAIL — /explorer/checkpoint/{id} returns 404, detail route not implemented → Issue #60",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — /explorer tx hash links navigate correctly to /explorer/tx/{hash}, page loads with Transaction Hash, Action, User Address, Checkpoint, Time fields",
       "note": "Reset after issue #157 fix merged (PR #158). "
     },
     {
@@ -2677,11 +2677,11 @@
       "priority": 3,
       "title": "Explorer checkpoint detail — transaction type and hash fields visible",
       "description": "In checkpoint detail page, verify each transaction row shows: tx hash (0x... format), timestamp, and tx type. Check data completeness.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-27",
-      "result_summary": "FAIL — Checkpoint detail shows Transactions:1 but table empty. Backend API returns transactions:[] for all checkpoints",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Checkpoint detail API returns transactions:[] despite txCount=1 in page metadata. Already tracked: dex-sui#29. No new issue filed.",
       "note": "Reset after issue #157 fix merged (PR #158). "
     },
     {
@@ -7669,11 +7669,11 @@
       "priority": 2,
       "title": "Explorer tx detail — sender/receiver address fields visibility",
       "description": "On /explorer/tx/{hash}, verify 'From' and 'To' address fields are explicitly labeled and displayed. Currently 3/5 fields pass but sender/status labels may be missing.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — tx detail missing Status and Fee fields → Issue #157",
+      "result_summary": "SKIP — Vercel staging stale (issue #98); PR #158 merged Status+Fee fix but not deployed yet",
       "note": "Reset after issue #157 fix merged (PR #158). "
     },
     {
@@ -7852,9 +7852,11 @@
       "title": "Funding rate formula audit — verify UI transform: 8h rate vs display rate",
       "description": "Inspect source code funding rate display logic. API returns raw fraction 0.002758 (= 0.2758% per 8h). UI shows 0.0365%. Verify if UI applies wrong divisor or wrong time base conversion.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Formula correct: predictedFunding*100=0.0365%. UI intentionally shows predicted (next period) rate, not current 8h rate (0.2758%). Issue #160 comparison was predicted vs current (apples/oranges)."
     },
     {
       "id": "E683",
@@ -7872,6 +7874,57 @@
       "priority": 3,
       "title": "Scale order type — fill price range low/high and step count, verify form validation",
       "description": "Select Scale from Order Type dropdown. Fill in: low price, high price, number of steps, size. Verify the form shows computed step size and the Buy button is enabled.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E685",
+      "area": "explorer",
+      "priority": 2,
+      "title": "Explorer tx detail — Status field still missing after PR #158",
+      "description": "After PR #158 was merged (adds Status+Fee to tx detail), verify Status field appears once Vercel staging is re-deployed. Currently showing: Hash, Action, User Address, Checkpoint, Time — no Status or Fee.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "note": "Depends on Vercel staging being fixed (issue #98). Re-test after deployment succeeds."
+    },
+    {
+      "id": "E686",
+      "area": "trade",
+      "priority": 3,
+      "title": "Funding rate label clarity — distinguish predicted vs current rate",
+      "description": "UI shows predicted funding rate (0.0365%) in header labeled \"资金费 / 倒计时\". Current 8h rate is 0.2758%. Check if label should clarify \"Predicted\" to avoid user confusion. Compare with HyperLiquid and dYdX label conventions.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E687",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — User Address truncation format consistency",
+      "description": "Tx detail shows User Address as truncated \"0x73a6b3c3...80adc0\". Verify: (1) full address shows on hover/click, (2) copy button works, (3) address links to /explorer/address/{addr}.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E688",
+      "area": "explorer",
+      "priority": 2,
+      "title": "Explorer checkpoint — timestampMs=0 from API causes display issue",
+      "description": "API returns timestampMs:0 for checkpoint detail but checkpoint list page shows correct time. Verify if this causes \"Time: 1970-01-01\" display or correct time in the detail page. Check if API route /dex-api/explorer?checkpoint={seq} returns correct timestamp.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E689",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search bar — search by wallet address navigates correctly",
+      "description": "Use the Explorer search bar to search for a known wallet address. Verify: (1) navigates to /explorer/address/{addr}, (2) shows address activity (positions, tx history), (3) invalid address shows helpful error.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
