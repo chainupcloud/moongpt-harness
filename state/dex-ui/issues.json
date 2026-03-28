@@ -1265,7 +1265,7 @@
       "gh_number": 144,
       "github_number": 144,
       "title": "[P3] TIF selection not persistent — IOC selected but GTC displayed in order form",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "labels": [
         "bug"
@@ -1273,7 +1273,8 @@
       "scenario_id": "E405",
       "scenario": "E405",
       "created_date": "2026-03-28",
-      "fix_attempts": 0,
+      "fix_attempts": 1,
+      "pr_number": 145,
       "url": "https://github.com/chainupcloud/dex-ui/issues/144"
     }
   ],
