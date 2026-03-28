@@ -1329,6 +1329,16 @@
       "accepted": false,
       "review_status": "approved",
       "note": "Merged to dev. Vercel build ERROR (known issue #98 TEAM_ACCESS_REQUIRED). Staging not updated. Acceptance pending next successful deploy."
+    },
+    {
+      "pr_number": 250,
+      "title": "fix: Explorer tx detail — hide Fee field when unavailable (#216)",
+      "status": "open",
+      "issue_numbers": [
+        216
+      ],
+      "branch": "fix/issue-216",
+      "created_at": "2026-03-28"
     }
   ],
   "pull_requests": [
