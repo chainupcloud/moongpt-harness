@@ -1233,13 +1233,15 @@
       "issue_number": 139,
       "github_number": 139,
       "title": "[P3] Explorer search accepts invalid/short hashes — shows empty tx detail instead of not-found error",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E369",
       "created_date": "2026-03-28",
       "url": "https://github.com/chainupcloud/dex-ui/issues/139",
       "fix_attempts": 1,
-      "pr_number": 141
+      "pr_number": 141,
+      "closed_at": "2026-03-28",
+      "note": "PR #141 merged to dev. Vercel deploy ERROR (daily limit). Accepted via code review + SHA verification."
     },
     {
       "id": "issue-142",

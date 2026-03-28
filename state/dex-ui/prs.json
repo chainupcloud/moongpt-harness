@@ -737,9 +737,14 @@
       "issue_numbers": [
         139
       ],
-      "status": "open",
+      "status": "merged",
       "created_at": "2026-03-28",
-      "title": "fix: Explorer search validates invalid/short hashes (#139)"
+      "title": "fix: Explorer search validates invalid/short hashes (#139)",
+      "commit_sha": "1548d11b46ddc27b96e57ad5f22de5faeb9cf0e1",
+      "merged_at": "2026-03-28",
+      "deployed": false,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
     }
   ]
 }
