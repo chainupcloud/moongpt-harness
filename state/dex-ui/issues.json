@@ -1696,6 +1696,26 @@
         "enhancement"
       ],
       "pr_number": 191
+    },
+    {
+      "id": "issue-192",
+      "github_issue_number": 192,
+      "title": "[P3] More dropdown missing Telegram link — only Docs, Discord, Twitter, API visible",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E568",
+      "created_date": "2026-03-28",
+      "fix_attempts": 0
+    },
+    {
+      "id": "issue-193",
+      "github_issue_number": 193,
+      "title": "[P3] Limit order TIF dropdown (GTC) has chevron but does not open — IOC/FOK unselectable",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E575",
+      "created_date": "2026-03-28",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-28",

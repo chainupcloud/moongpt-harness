@@ -6812,10 +6812,12 @@
       "priority": 3,
       "title": "More dropdown — verify external links after Vercel deployment succeeds",
       "description": "Re-test E370 once Vercel staging is re-deployed. Click More on /trade, verify dropdown includes Docs, Discord, Twitter, Telegram links (not just API). Each link should have correct href.",
-      "status": "pending",
+      "status": "failed",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Telegram link missing from More dropdown"
     },
     {
       "id": "E569",
@@ -6823,10 +6825,12 @@
       "priority": 3,
       "title": "Open Orders — place limit order then verify cancel button appears",
       "description": "Place a BTC limit buy order far from market price ($1000). Verify it appears in Open Orders(1) tab with a Cancel button. Click Cancel, confirm cancellation dialog if any, verify order disappears.",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — No open orders in testnet wallet"
     },
     {
       "id": "E570",
@@ -6894,9 +6898,11 @@
       "priority": 3,
       "title": "Limit order TIF — IOC option selected changes form behavior",
       "description": "After switching TIF to IOC, verify that the form indicates IOC mode (e.g. label change or post-only toggle hidden) and submit button still works",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — GTC TIF dropdown has chevron but does not open"
     },
     {
       "id": "E576",
@@ -6904,9 +6910,11 @@
       "priority": 3,
       "title": "W3M modal — wallet selection triggers signature request",
       "description": "After W3M modal opens and user clicks MetaMask option, verify browser wallet prompt appears (or injected provider's sign method is called)",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — W3M modal opens with wallet options (MetaMask, WalletConnect, Binance in shadow DOM)"
     },
     {
       "id": "E577",
@@ -9459,6 +9467,61 @@
       "title": "Explorer — checkpoint search routes to /explorer/checkpoint/{seq}",
       "description": "Verify checkpoint number search (e.g., enter '12345') routes to /explorer/checkpoint/12345 and shows checkpoint detail. Complements E574 (address) and E571 (tx hash) explorer search coverage.",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E819",
+      "area": "navigation",
+      "priority": 3,
+      "title": "More dropdown — verify Telegram link href and target",
+      "description": "After E568 fix: verify Telegram link appears in More dropdown with correct href (t.me or telegram) and target=_blank",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E820",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Limit TIF — FOK option behavior: order immediately filled or cancelled",
+      "description": "After E575 fix: switch TIF to FOK, submit an order at market price. Verify the order is either fully filled or immediately cancelled (no resting order). Check Open Orders remains empty.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E821",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Limit order — Order Type dropdown cycles through Limit/Market/TWAP options",
+      "description": "Click the Order Type button (showing Limit). Verify a dropdown appears with at minimum Market and TWAP options. Switch to Market, verify price field is hidden or disabled.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E822",
+      "area": "open_orders",
+      "priority": 3,
+      "title": "Open Orders — real-time badge update after placing order via UI",
+      "description": "Place a limit buy order well below market ($1). Verify: (1) Open Orders tab badge increments from (0) to (1), (2) Cancel button visible in the row, (3) after Cancel the badge returns to (0) in real time without page refresh.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E823",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "W3M modal — keyboard navigation and Escape key closes modal",
+      "description": "Open W3M modal via Connect button. Press Escape key, verify modal closes. Reopen and press Tab multiple times, verify wallet options receive keyboard focus in order.",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
