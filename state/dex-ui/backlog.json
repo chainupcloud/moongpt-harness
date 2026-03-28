@@ -5451,9 +5451,11 @@
       "priority": 3,
       "title": "Portfolio Transaction History — 交易记录标签页加载",
       "description": "连接钱包后点击 Transaction History 标签，验证历史记录加载（空或有数据），分页、筛选功能可用。",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — wagmi cookie injection not effective, wallet not connected"
     },
     {
       "id": "E459",
@@ -5485,9 +5487,11 @@
       "title": "API Key Remove — 点击 Remove 按钮，确认删除后列表更新",
       "description": "在 API Keys 页面，对已有 API wallet 点击 Remove，验证确认弹窗出现，确认后该条目从列表消失",
       "track": "frontend",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — wagmi cookie injection not effective, wallet not connected"
     },
     {
       "id": "E462",
@@ -5496,9 +5500,11 @@
       "title": "Explorer 地址详情页 — /explorer/address/{addr} 加载交易列表",
       "description": "访问 /explorer/address/{testWalletAddr}，验证页面加载、交易列表渲染（或空状态），近期代码变更增加了该路由",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — address detail page loads with transaction list correctly"
     },
     {
       "id": "E463",
@@ -7651,9 +7657,11 @@
       "priority": 2,
       "title": "Explorer tx detail — sender/receiver address fields visibility",
       "description": "On /explorer/tx/{hash}, verify 'From' and 'To' address fields are explicitly labeled and displayed. Currently 3/5 fields pass but sender/status labels may be missing.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — tx detail missing Status and Fee fields → Issue #157"
     },
     {
       "id": "E666",
@@ -7691,6 +7699,56 @@
       "priority": 3,
       "title": "Portfolio balance value — matches API account equity",
       "description": "Navigate to /portfolio with Sepolia wallet. Compare displayed USDC balance against GET /api/account?address={addr} equity field. Values should match within 1%.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E670",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — Event log展开/折叠交互",
+      "description": "在 /explorer/tx/{hash} 页面，若 Events > 0，点击 [+] 展开事件详情，验证展开/折叠动画与内容显示正确",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E671",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address detail — 分页加载更多交易",
+      "description": "在 /explorer/address/{addr} 页面，若交易数量 > 一页，验证分页按钮或滚动加载下一页数据",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E672",
+      "area": "explorer",
+      "priority": 2,
+      "title": "Explorer tx detail — 地址截断显示可点击跳转",
+      "description": "在 /explorer/tx/{hash} 的 User Address 字段（截断为 0x73a6...80adc0），点击应跳转到 /explorer/address/{full_addr}",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E673",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio — 连接钱包后标签页切换（Positions/Orders/History）",
+      "description": "通过 EIP-6963 provider 注入方式完成钱包连接，验证 Portfolio 页面标签页 Positions、Orders、Transaction History 均可切换且内容正常加载",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E674",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys — 添加新 API Wallet 流程",
+      "description": "连接钱包后在 /api-keys 页面，点击 Add API Wallet，完成签名授权流程，验证新 wallet 出现在列表中",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"

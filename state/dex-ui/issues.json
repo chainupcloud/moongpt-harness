@@ -1410,6 +1410,16 @@
       ],
       "fix_attempts": 1,
       "url": "https://github.com/chainupcloud/dex-ui/issues/155"
+    },
+    {
+      "id": "issue-91",
+      "github_issue_number": 157,
+      "title": "[P3] Explorer tx detail page missing Status and Fee fields",
+      "scenario_id": "E665",
+      "status": "open",
+      "priority": "P3",
+      "created_date": "2026-03-28",
+      "area": "explorer"
     }
   ],
   "last_updated": "2026-03-28",
