@@ -1684,7 +1684,8 @@
       "pr_number": 196,
       "labels": [
         "bug"
-      ]
+      ],
+      "note": "PR #196 merged (cd5e2cd), acceptance deferred (Vercel blocked)"
     },
     {
       "github_number": 190,
