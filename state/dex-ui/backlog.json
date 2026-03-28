@@ -6425,9 +6425,11 @@
       "priority": 3,
       "title": "Withdraw modal — Send mode vs Withdraw mode: destination field behavior",
       "description": "WithdrawModal has two modes: 'withdraw' (pre-fills wallet addr) and 'send' (empty). Verify Send mode keeps destination blank and Withdraw mode pre-fills. Verify mode toggle resets field correctly (line 95 in WithdrawModal.tsx)",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — WithdrawModal Send/Withdraw modes both visible; Withdraw mode pre-fills addr, Send mode empty; toggle resets correctly"
     },
     {
       "id": "E538",
@@ -6455,10 +6457,12 @@
       "priority": 3,
       "title": "Explorer search — tx hash (64 hex chars) routes to /explorer/tx/ correctly",
       "description": "Enter a known transaction digest (64-char hex) in the Explorer search, verify it routes to /explorer/tx/ and shows transaction detail. Complement to E333.",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Sui tx digests are base58 not 64-hex; 64-char hex is a valid Sui address so routes to /explorer/address/ (expected). Scenario premise incorrect for Sui."
     },
     {
       "id": "E541",
@@ -6466,10 +6470,12 @@
       "priority": 3,
       "title": "Explorer search — checkpoint number routes to /explorer/checkpoint/",
       "description": "Enter a checkpoint number (e.g., 4123741) in Explorer search, verify it routes to /explorer/checkpoint/{seq} and shows checkpoint detail.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Checkpoint number 4123741 routes to /explorer/checkpoint/4123741 correctly"
     },
     {
       "id": "E542",
@@ -6490,10 +6496,12 @@
       "priority": 3,
       "title": "Trades tab — verify real-time trade entries update periodically via WS",
       "description": "On /trade, wait 30s on Trades tab, count visible rows at t=0 and t=30s. Verify rows update (new trades appear) confirming live WS data feed works.",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — No trade rows visible on testnet (no trading activity); cannot verify WS live updates"
     },
     {
       "id": "E544",
@@ -9000,6 +9008,61 @@
       "title": "Withdraw modal — MAX button fills full available balance",
       "description": "Open Withdraw modal, click MAX button — verify amount field fills with full available balance (500 USDC), submit button becomes enabled",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E780",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — Sui base58 tx digest routes to /explorer/tx/",
+      "description": "Enter a known Sui transaction digest (base58 format, ~44 chars, e.g. from a recent testnet tx) in Explorer search. Verify it routes to /explorer/tx/{digest} and shows transaction details. Fixes E540 which used wrong format.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E781",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint detail page — shows epoch, timestamp, and tx count",
+      "description": "After navigating to /explorer/checkpoint/4123741 (verified routing in E541), verify the page content: epoch number, timestamp, transaction count, and list of transactions are rendered correctly.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E782",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trades tab — empty state message when no recent trades",
+      "description": "On /trade, click Trades tab. When no trades are available (testnet low activity), verify a proper empty state message is shown (not a broken layout or JS error). Check console for errors.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E783",
+      "area": "trade",
+      "priority": 3,
+      "title": "Withdraw modal — amount validation: exceeds balance shows error",
+      "description": "Open WithdrawModal (Withdraw mode). Enter an amount exceeding available balance. Verify an inline error message appears and the Submit button is disabled. Follow-up to E537.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E784",
+      "area": "trade",
+      "priority": 3,
+      "title": "Withdraw modal — Send mode: invalid address format shows validation error",
+      "description": "Open WithdrawModal in Send mode. Enter an invalid address (e.g. 'notanaddress'). Verify validation error is shown inline before submission. Follow-up to E537.",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
