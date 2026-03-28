@@ -4609,9 +4609,11 @@
       "priority": 3,
       "title": "Trade form — Connect Wallet modal shows expected wallet options (MetaMask, WalletConnect etc)",
       "description": "After clicking Connect Wallet and opening the W3M modal, verify that wallet options are rendered inside the shadow DOM (MetaMask, WalletConnect, Coinbase, etc).",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — W3M modal shadow DOM shows MetaMask, WalletConnect, Binance Wallet options"
     },
     {
       "id": "E388",
@@ -4619,9 +4621,11 @@
       "priority": 3,
       "title": "Trade form — % size buttons (25/50/75/100) with connected wallet fill correct amounts",
       "description": "With wallet fully connected and balance available, click 25%/50% etc buttons and verify the Size input is filled with proportional amount of available USDC balance. Requires a connected wallet with funded testnet account.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — blocking modal when wallet not connected prevents test; % buttons exist (4 found) but require connected state"
     },
     {
       "id": "E389",
@@ -4653,9 +4657,11 @@
       "priority": 3,
       "title": "Markets page — clickable market row navigates to /trade/{pair}",
       "description": "On /markets, click the BTC/USDC row and verify navigation to /trade/BTC-USDC or equivalent",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — clicking BTC row on /markets navigates to /trade?coin=BTC"
     },
     {
       "id": "E392",
@@ -4663,9 +4669,11 @@
       "priority": 3,
       "title": "Limit order form — TIF (Time in Force) selector visible and has GTC/IOC options",
       "description": "After clicking Limit tab, verify TIF/time-in-force dropdown exists and offers GTC, IOC options",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TIF GTC button opens dropdown with IOC option visible"
     },
     {
       "id": "E393",
@@ -6596,6 +6604,56 @@
       "priority": 3,
       "title": "Explorer — address search routes to /explorer/address/{addr} page",
       "description": "In the Explorer search bar, enter a known Sui address. Verify navigation to /explorer/address/{addr} and address detail page loads correctly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E575",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Limit order TIF — IOC option selected changes form behavior",
+      "description": "After switching TIF to IOC, verify that the form indicates IOC mode (e.g. label change or post-only toggle hidden) and submit button still works",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E576",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "W3M modal — wallet selection triggers signature request",
+      "description": "After W3M modal opens and user clicks MetaMask option, verify browser wallet prompt appears (or injected provider's sign method is called)",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E577",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets page — all rows are clickable and navigate to correct pair",
+      "description": "Click each market row (not just BTC) and verify navigation to correct /trade?coin=X URL",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E578",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Trade form — Limit order post-only toggle visibility",
+      "description": "After clicking Limit tab, verify there is a Post-Only checkbox or toggle visible, and it can be toggled on/off",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E579",
+      "area": "markets",
+      "priority": 4,
+      "title": "Markets page — sort by 24h change column",
+      "description": "Click the 24h change column header and verify rows reorder by that value (ascending/descending toggle)",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
