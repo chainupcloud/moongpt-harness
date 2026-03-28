@@ -1771,14 +1771,17 @@
       "id": "issue-197",
       "github_issue_number": 197,
       "title": "[P3] TP/SL inputs accept invalid values without validation — order submission not blocked",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "labels": [
         "bug"
       ],
       "scenario_id": "E596",
       "created_date": "2026-03-28",
-      "fix_attempts": 0
+      "closed_at": "2026-03-28",
+      "fix_attempts": 0,
+      "resolution": "already-fixed",
+      "note": "Fixed by PR #151/#152 (86446ad). Red borders + error messages + submit disabled all confirmed on staging."
     },
     {
       "id": "issue-199",
@@ -1940,6 +1943,19 @@
       "scenario_id": "E951",
       "created_date": "2026-03-28",
       "fix_attempts": 0
+    },
+    {
+      "id": "issue-214",
+      "github_issue_number": 214,
+      "title": "[P2] Explorer transactions pagination — page 2 returns empty list",
+      "status": "open",
+      "priority": "P2",
+      "scenario_id": "E960",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ],
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/214"
     }
   ],
   "last_updated": "2026-03-28",
