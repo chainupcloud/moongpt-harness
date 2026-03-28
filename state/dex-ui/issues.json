@@ -1844,7 +1844,8 @@
       "created": "2026-03-28",
       "url": "https://github.com/chainupcloud/dex-ui/issues/202",
       "pr_number": 229,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "note": "PR #229 merged (2026-03-28). Deployment blocked by Vercel rate limit. Acceptance pending."
     },
     {
       "id": "issue-203",
