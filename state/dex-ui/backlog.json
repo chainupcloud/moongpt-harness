@@ -7769,9 +7769,11 @@
       "priority": 3,
       "title": "API Keys — Remove existing API wallet and verify it disappears from list",
       "description": "On /api-keys page, click Remove on an existing API wallet, confirm the action, and verify the wallet is no longer in the list. Check that the uitest session key agent is still functional after removal.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — API Keys page requires real wallet connection; \"Please connect your wallet\" shown"
     },
     {
       "id": "E649",
@@ -7779,9 +7781,11 @@
       "priority": 3,
       "title": "TWAP order — Randomize toggle behavior and effect on sub-order execution",
       "description": "In TWAP form, toggle the \"Randomize\" checkbox on and off. Verify UI reflects the change (checkbox state). Check if any description or tooltip explains what Randomize does.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — TWAP tab accessible but no wallet connection; cannot test order form Randomize toggle"
     },
     {
       "id": "E650",
@@ -7789,9 +7793,11 @@
       "priority": 3,
       "title": "TP/SL SELL order — Stop Loss above entry price should show validation error",
       "description": "For SELL order with TP/SL enabled: enter Stop Loss value ABOVE entry price (invalid for SELL — SL should be above, TP below). Verify aria-invalid=true and role=alert error message appear. Counterpart to E626.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TP/SL SELL SL validation works: SL below entry shows \"SL must be above entry price\"; BUY SL above entry shows \"SL must be below entry price\". Submit button not disabled (existing issue)."
     },
     {
       "id": "E651",
@@ -7809,9 +7815,11 @@
       "priority": 3,
       "title": "Explorer checkpoint detail — column headers presence and labeling",
       "description": "Navigate to a checkpoint detail page and verify transaction table has labeled column headers (th elements or equivalent). Check for: Tx Hash/Digest, Type/Action, Sender/Account, Timestamp. Previous run found tx rows but could not detect header labels.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Checkpoint detail page loads correctly with headers: Transaction Hash, Action, User Account, Summary, Time. Summary empty for oracle price updates (expected)."
     },
     {
       "id": "E653",
@@ -10439,6 +10447,46 @@
       "priority": 3,
       "title": "Cross vs Isolated — switching back from Isolated to Cross resets margin state correctly",
       "description": "After switching to Isolated (with any leverage set), switch back to Cross. Verify the form reflects Cross state properly — no residual isolated margin values, leverage shows correct Cross value.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E903",
+      "area": "trade-form / TP-SL",
+      "priority": 2,
+      "title": "TP/SL submit button should be disabled when validation error is active",
+      "description": "When TP/SL validation error is shown (e.g. 'SL must be below entry price'), the Buy/Sell submit button should be disabled to prevent order placement with invalid parameters. Currently button remains enabled.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E904",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint — Summary column content for non-oracle transactions",
+      "description": "Verify Summary column in checkpoint transaction table shows meaningful content for trade/transfer transactions (not just oracle price updates). Test with a checkpoint that has DEX trade transactions.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E905",
+      "area": "trade-form / TP-SL",
+      "priority": 3,
+      "title": "TP/SL BUY order — Take Profit below entry price should show validation error",
+      "description": "For BUY order, TP should be ABOVE entry price. Test that entering TP below entry shows validation error 'TP must be above entry price'. Symmetric test to E650 for TP direction.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E906",
+      "area": "trade",
+      "priority": 3,
+      "title": "TWAP order tab — empty state UI when no TWAP orders",
+      "description": "Check the TWAP tab in the bottom order panel shows a proper empty state message (e.g. 'No TWAP orders') rather than a blank panel when no TWAP orders have been placed.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
