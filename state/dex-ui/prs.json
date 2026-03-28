@@ -869,20 +869,24 @@
       "status": "merged",
       "created_at": "2026-03-28",
       "merged_at": "2026-03-28",
-      "commit_sha": "2faaa00c",
+      "commit_sha": "2faaa00",
       "deployed": false,
       "accepted": false,
-      "note": "Merged OK; Vercel build failing (pre-existing error since 04:42) + API daily limit reached; staging unverified"
+      "note": "Merged to dev. Staging deploy pending (Vercel builds ERROR, see #98)"
     },
     {
       "number": 167,
       "title": "fix: show friendly error for invalid tx hash (#165)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         165
       ],
       "created": "2026-03-28",
-      "note": "Merge conflict (dirty) after PR #166 merged — fix branch needs rebase on dev"
+      "note": "Merged to dev. Staging deploy pending (Vercel builds ERROR, see #98)",
+      "commit_sha": "f3aac1a",
+      "merged_at": "2026-03-28",
+      "deployed": false,
+      "accepted": false
     },
     {
       "number": 171,
