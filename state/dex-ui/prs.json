@@ -1061,6 +1061,14 @@
       "deployed": false,
       "accepted": false,
       "note": "Merged successfully. Vercel deploy blocked (issue #98 TEAM_ACCESS_REQUIRED + API rate limit). Acceptance deferred."
+    },
+    {
+      "pr_number": 196,
+      "issue_numbers": [
+        189
+      ],
+      "status": "open",
+      "created_at": "2026-03-28"
     }
   ]
 }
