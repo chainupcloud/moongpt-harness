@@ -8760,9 +8760,11 @@
       "priority": 3,
       "title": "TWAP tab in bottom panel — content renders when no TWAP orders exist",
       "description": "Click TWAP tab in bottom order panel. Verify empty state renders (no JS error, shows message like 'No TWAP orders').",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TWAP tab clickable, empty state renders correctly, no JS errors"
     },
     {
       "id": "E729",
@@ -8794,9 +8796,11 @@
       "priority": 3,
       "title": "Leverage modal — Close button dismisses without saving",
       "description": "Open leverage modal, move slider to a new value, then click Close. Verify modal closes and leverage on form remains unchanged at original value.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Leverage modal Close button dismisses without saving (initial slider val was 0 - worth noting)"
     },
     {
       "id": "E732",
@@ -8804,9 +8808,11 @@
       "priority": 3,
       "title": "API Keys — Remove wallet confirmation dialog and re-creation",
       "description": "On /api-keys page: click Remove button on existing API wallet, confirm removal in dialog. Verify wallet is removed from list. Then create a new API wallet to confirm round-trip works.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Full API key remove/create flow requires wallet signing not available in test env"
     },
     {
       "id": "E733",
@@ -11804,9 +11810,11 @@
       "priority": 2,
       "title": "Cross to Isolated margin switch — confirm isolated margin fields appear",
       "description": "E729 confirmed Cross/Isolated toggle exists and clicking Cross activates Isolated. Now verify when Isolated mode is active: specific isolated margin fields appear (e.g. margin allocation input), leverage restriction notice, and switching back to Cross restores original form.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Cross/Isolated margin toggle not visible on testnet"
     },
     {
       "id": "E1015",
@@ -11814,6 +11822,56 @@
       "priority": 3,
       "title": "Explorer address page — OrderPlaced cancelled tx Show Details expander",
       "description": "E816 found OrderPlacedEvent with [+] expand button. Click [+] to expand 'Show details' for the cancelled BTC-USDC Buy order, verify raw event data is displayed (JSON or formatted event fields like price=50000, size=0.001, isBuy=true).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1016",
+      "area": "order-form",
+      "priority": 3,
+      "title": "Leverage slider default value — verify initial value matches displayed leverage",
+      "description": "Open leverage modal from trade form. Immediately check the range slider value before any interaction. It should match the displayed leverage (e.g. if '10x' button shows, slider should be at 10, not 0). Regression from E731 observation where slider showed 0.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1017",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API keys page — authorize agent wallet with connected wallet signature",
+      "description": "Navigate to /api-keys with approveAgent pre-authorized. Check if the 'Add' button appears and triggers signing flow. After adding, verify the session wallet address appears in the list and can be toggled on/off.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1018",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer /explorer/transactions page — pagination and row count",
+      "description": "Navigate to /explorer/transactions. Verify the page loads a table of transactions, pagination controls are present, and navigating to page 2 loads different rows without JS error. Explorer area had recent git changes.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1019",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — /explorer/address/{addr} renders account data",
+      "description": "Navigate to /explorer/address/{WALLET_ADDR}. Verify the page renders the address header, shows balance/perp/portfolio sections, no JS errors. Explorer address page had recent git changes.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1020",
+      "area": "trade",
+      "priority": 3,
+      "title": "Leverage slider — confirm Confirm button saves new value",
+      "description": "Complement to E731: open leverage modal, move slider from 10x to 20x, click Confirm (not Close). Verify the trade form now shows '20x' and the value persists when order form re-renders.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
