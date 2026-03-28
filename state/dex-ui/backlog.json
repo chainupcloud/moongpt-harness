@@ -9166,9 +9166,11 @@
       "priority": 3,
       "title": "Orderbook 颜色编码 — bids (买单) 应显示绿色，asks (卖单) 应显示红色",
       "description": "E757 验证了价格位置正确（bids 在 mid 以下，asks 在 mid 以上），但发现所有价格行颜色相同 rgb(255,82,82)。本场景专门验证颜色编码：bid 行应为绿色，ask 行应为红色",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Bids green rgb(41,171,135), asks red rgb(255,82,82). Correct color coding."
     },
     {
       "id": "E763",
@@ -9176,9 +9178,11 @@
       "priority": 3,
       "title": "Explorer — checkpoint 显示多笔交易时列表渲染正确",
       "description": "E755 验证了单笔交易的 checkpoint。本场景验证 Transactions > 1 的 checkpoint：所有交易行均显示，分页或滚动正常工作",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Testnet checkpoints always have 1 tx; multi-tx scenario not applicable on testnet"
     },
     {
       "id": "E764",
@@ -9196,9 +9200,11 @@
       "priority": 3,
       "title": "Explorer — OrderPlacedEvent Show details: verify BCS data is valid JSON or hex string",
       "description": "After Show details is clicked on an OrderPlacedEvent, verify the expanded content contains valid BCS/hex data (non-empty, structured format)",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Show details reveals JSON event data; button changes to Hide details. Data includes perpetualId, coin, orderId fields."
     },
     {
       "id": "E766",
@@ -9206,9 +9212,11 @@
       "priority": 3,
       "title": "/markets — sort by Price column (价格) toggles asc/desc indicator",
       "description": "Click the Price column header on /markets, verify sort arrow toggles ↑/↓. Testnet has 1 market so verify by arrow direction change, not row order",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Price column sort toggles correctly: ↕ → ↓ → ↑ on successive clicks"
     },
     {
       "id": "E767",
@@ -12212,6 +12220,56 @@
       "priority": 3,
       "title": "Markets page post-update — all columns render and sort correctly",
       "description": "Navigate to /markets page (app/markets/page.tsx recently changed). Verify: table renders with correct columns (Symbol, Price, 24h Change, Volume, Funding Rate, OI), sorting by column works, no blank cells.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1050",
+      "area": "orderbook",
+      "priority": 3,
+      "title": "Orderbook — bid/ask background fill color proportional to order size",
+      "description": "The orderbook rows show bid/ask colored bars indicating volume depth. Verify the background fill width is proportional to the quantity of each row (larger qty = wider bar). E762 confirmed color coding is correct; this verifies depth visualization.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1051",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — PlaceOrder tx: all 20 OrderPlacedEvents render with correct price/direction",
+      "description": "E765 confirmed Show details works. Now verify: (1) all 20 events are listed, (2) Buy/Sell direction labels match the price direction (Buy < mid, Sell > mid), (3) event index #0 #2 #4... are shown correctly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1052",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets — sort by 24h 涨跌 (change) column toggles asc/desc",
+      "description": "E766 verified Price sort. Now verify 24h 涨跌 column: initial state ↕, first click → ↓ or ↑, second click toggles direction. Currently shows +0.00% so direction may not be visually apparent but arrow should change.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1053",
+      "area": "markets",
+      "priority": 4,
+      "title": "/markets — 持仓量 (OI) column sort toggle works correctly",
+      "description": "Verify 持仓量 column sort: ↕ → ↓ → ↑. E766 confirmed price sort works; verify OI sort as parallel test for market table sorting completeness.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1054",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — UpdateOraclePrices tx: verify event data expanded correctly",
+      "description": "Most testnet txs are UpdateOraclePrices. Navigate to such a tx and check: (1) events section lists oracle price events, (2) Show details reveals price update data, (3) data is non-empty and parseable.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
