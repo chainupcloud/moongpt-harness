@@ -10520,9 +10520,11 @@
       "priority": 3,
       "title": "Order book mid-price indicator accuracy vs mark price",
       "description": "Verify that the mid-price row in the order book matches the mark price shown elsewhere on the trade page (chart, position panel).",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Mid-price row visible in orderbook (66,219.2 ↑Spread0.2), mark price at 66,219.42; values differ slightly as expected"
     },
     {
       "id": "E875",
@@ -10530,9 +10532,11 @@
       "priority": 3,
       "title": "Leverage persistence across page reload — leverageconfirm survives refresh",
       "description": "After confirming a leverage change (e.g. 10x→20x), reload the /trade/BTC-USDC page and verify leverage button still shows 20x (persisted via localStorage/cookies).",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Modal overlay (wallet connect dialog) blocked leverage button interaction; could not test persistence"
     },
     {
       "id": "E876",
@@ -10540,9 +10544,11 @@
       "priority": 3,
       "title": "Reduce Only checkbox interaction with Market order type",
       "description": "Switch to Market order type and check if Reduce Only checkbox is visible/enabled. For market orders, Reduce Only should still be toggleable to close existing positions.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Modal overlay blocked order type switch; pre-existing issue #219 covers Reduce Only visibility on Market"
     },
     {
       "id": "E877",
@@ -10550,9 +10556,11 @@
       "priority": 3,
       "title": "/markets funding rate color coding — positive rate green, negative rate red",
       "description": "Verify that positive funding rates (+0.2239%) are shown in green and negative rates in red on the /markets page.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Funding rates color-coded correctly: positive rates use text-long (teal-green rgb 41,171,135), negative rates use text-short (red rgb 255,82,82)"
     },
     {
       "id": "E878",
@@ -13766,6 +13774,56 @@
       "priority": 3,
       "title": "GTC vs IOC order type impact on form — verify IOC disables TP/SL",
       "description": "When TIF is set to IOC, TP/SL should be disabled (IOC orders fill immediately or cancel, so TP/SL is irrelevant). Verify that after selecting IOC, the TP/SL toggle is hidden or disabled.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1179",
+      "area": "orderbook",
+      "priority": 3,
+      "title": "Orderbook mid-price row real-time update on new trades",
+      "description": "After the page loads, wait 10s and verify that the mid-price row in the orderbook updates its price value as new trades occur (price changes visible).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1180",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Leverage dialog — wallet connected flow with slider and confirm",
+      "description": "After dismissing any onboarding modal, open the leverage dialog, use the slider to change leverage (e.g. 5x→20x), click Confirm, verify the button updates. Requires dismissing the connect wallet overlay first.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1181",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Market order type — Price field hidden/readonly vs Limit",
+      "description": "Switch to Market order type on /trade/BTC-USDC and verify the Price input field is replaced by 'Market Price' text (not editable). Compare with Limit where Price is an editable input.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1182",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets funding rate countdown timer accuracy",
+      "description": "On the /markets page, capture the funding rate countdown (e.g. '19:08') and verify it decrements over 2-3 seconds. Also verify it shows next funding time in HH:MM format.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1183",
+      "area": "orderbook",
+      "priority": 4,
+      "title": "Orderbook depth percentage indicator — bar width proportional to size",
+      "description": "In the orderbook, verify that the depth bars behind bid/ask rows are proportionally sized (larger size = wider bar). Check that the largest visible row has the widest bar.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
