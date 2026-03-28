@@ -218,9 +218,9 @@
       "priority": 3,
       "title": "Transfer/Deposit 弹窗字段校验 — 负数/超额/空值",
       "description": "打开 Transfer 弹窗，输入负数金额、空值、超过余额的金额，验证 Confirm 按钮禁用或显示错误",
-      "status": "failed",
+      "status": "pending",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — Deposit modal input accepts negative/zero/over-balance with no validation; Issue #40"
+      "result_summary": ""
     },
     {
       "id": "E023",

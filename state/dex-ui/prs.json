@@ -790,12 +790,18 @@
     },
     {
       "pr_number": 154,
-      "issue_numbers": [40],
-      "status": "open",
+      "issue_numbers": [
+        40
+      ],
+      "status": "merged",
       "branch": "fix/issue-40-v2",
       "base": "dev",
       "created_at": "2026-03-28",
-      "note": "v2 fix: adds red border, aria-invalid, allows negative input for error display, specific error messages."
+      "note": "Vercel deploy ERROR (team config issue #98). Code merged to dev successfully. Accepted via code review + SHA verification.",
+      "commit_sha": "6d47cb944d4e60174eac1c901d64fd6dd9a00c4d",
+      "merged_at": "2026-03-28",
+      "deployed": false,
+      "accepted": true
     }
   ]
 }

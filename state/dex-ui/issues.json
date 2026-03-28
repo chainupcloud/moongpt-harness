@@ -261,14 +261,15 @@
       "number": 40,
       "github_number": 40,
       "title": "[P4] Deposit modal: no client-side validation for negative/zero/over-balance input",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P4",
       "url": "https://github.com/chainupcloud/dex-ui/issues/40",
       "created": "2026-03-27",
       "scenario": "E022",
       "fix_attempts": 2,
       "pr_number": 154,
-      "note": "PR #43 (v1) merged but lacked visual feedback. PR #154 (v2) adds red border, aria-invalid, specific error messages."
+      "note": "PR #154 merged (v2 fix). Vercel deploy ERROR (team config issue #98). Accepted via code review + SHA verification.",
+      "closed_at": "2026-03-28"
     },
     {
       "github_number": 41,
