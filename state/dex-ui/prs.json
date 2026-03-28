@@ -1227,12 +1227,17 @@
     {
       "number": 238,
       "title": "fix: explorer search routes tx hash to /explorer/tx/ (#186)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         186
       ],
       "created_date": "2026-03-28",
-      "branch": "fix/issue-186"
+      "branch": "fix/issue-186",
+      "merged_at": "2026-03-28",
+      "merge_sha": "dbf9490f227cdd82979720bd9098da1e6e8055e9",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged. Vercel rate limit hit — deployment pending (resets 2026-03-29 17:16 UTC)"
     }
   ]
 }

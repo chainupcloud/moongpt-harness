@@ -1682,7 +1682,7 @@
       ],
       "fix_attempts": 3,
       "pr_number": 238,
-      "note": "Fix attempt 3: route 0x+64hex to /explorer/tx/ by default (no async API call)",
+      "note": "Fix attempt 3: route 0x+64hex to /explorer/tx/ by default (no async API call) | PR #238 merged 2026-03-28, acceptance pending (Vercel rate limit)",
       "github_number": 186
     },
     {
