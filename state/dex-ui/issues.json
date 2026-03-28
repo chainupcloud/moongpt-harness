@@ -1484,12 +1484,14 @@
       "github_number": 164,
       "title": "[P3] Explorer checkpoint tx detail — \"not yet available\" persists for subset of checkpoints (regression of #123)",
       "priority": "P3",
-      "status": "open",
+      "status": "fixing",
       "created_at": "2026-03-28",
       "scenario": "E472",
       "labels": [
         "bug"
-      ]
+      ],
+      "pr_number": 166,
+      "fix_attempts": 1
     }
   ],
   "last_updated": "2026-03-28",
