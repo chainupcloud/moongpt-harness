@@ -1900,7 +1900,8 @@
         "bug"
       ],
       "pr_number": 245,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "note": " | PR #245 merged (2d80516), awaiting Vercel staging deployment verification. Deployment blocked by contributor access + rate limit."
     },
     {
       "number": 208,
