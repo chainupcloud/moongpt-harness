@@ -1247,14 +1247,16 @@
       "id": "issue-142",
       "gh_number": 142,
       "title": "[P4] Explorer — no transaction type filter (oracle updates dominate tx list)",
-      "status": "open",
+      "status": "fixing",
       "priority": "P4",
       "labels": [
         "enhancement"
       ],
       "scenario_id": "E385",
       "created_date": "2026-03-28",
-      "fix_attempts": 0
+      "fix_attempts": 1,
+      "pr_number": 143,
+      "github_number": 142
     }
   ],
   "last_updated": "2026-03-28",
