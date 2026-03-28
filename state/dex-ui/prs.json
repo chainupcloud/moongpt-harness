@@ -914,8 +914,8 @@
       "base": "dev",
       "merged_at": "2026-03-28",
       "merge_sha": "7687fde5e7ae29c37794713a4d20d38f9f952376",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "note": "Merged (7687fde). Vercel staging deploy blocked: all recent dev builds ERROR due to TEAM_ACCESS_REQUIRED (issue #98). Acceptance deferred until Vercel fixed."
     },
     {
@@ -930,8 +930,8 @@
       "base": "dev",
       "commit_sha": "895f51addafee8e29ac2bfafefd1d12f02ed7fe9",
       "merged_at": "2026-03-28",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "note": "PR #175 merged (895f51a). Staging deploy blocked by Vercel TEAM_ACCESS_REQUIRED (issue #98). Acceptance deferred."
     },
     {
@@ -946,8 +946,8 @@
       "base": "dev",
       "merged_at": "2026-03-28",
       "merge_sha": "2818e10",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "note": "Merged (2818e10), acceptance deferred (Vercel blocked by #98)"
     },
     {
@@ -962,8 +962,8 @@
       "base": "dev",
       "commit_sha": "d56d401",
       "merged_at": "2026-03-28",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "note": "Merged but Vercel deploy limit reached (issue #98). Acceptance deferred."
     },
     {
@@ -978,8 +978,8 @@
       "base": "dev",
       "commit_sha": "c384dc5",
       "merged_at": "2026-03-28",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "note": "Merged but Vercel deploy limit reached (issue #98). Acceptance deferred."
     },
     {
@@ -994,8 +994,8 @@
       "base": "dev",
       "commit_sha": "8020bdc",
       "merged_at": "2026-03-28",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "note": "Vercel rate limit hit (100/day) — acceptance deferred"
     },
     {
@@ -1058,8 +1058,8 @@
       "created_at": "2026-03-28",
       "commit_sha": "2cbfcf9",
       "merged_at": "2026-03-28",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "note": "Merged successfully. Vercel deploy blocked (issue #98 TEAM_ACCESS_REQUIRED + API rate limit). Acceptance deferred."
     },
     {
@@ -1071,8 +1071,8 @@
       "commit_sha": "cd5e2cd",
       "merged_at": "2026-03-28",
       "created_at": "2026-03-28",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "note": "Vercel blocked: commit author lacks contributing access"
     },
     {

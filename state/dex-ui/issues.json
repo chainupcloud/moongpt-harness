@@ -1537,7 +1537,7 @@
       "url": "https://github.com/chainupcloud/dex-ui/issues/169",
       "fix_attempts": 1,
       "pr_number": 172,
-      "note": "PR #172 merged (7687fde). Staging deploy blocked by Vercel TEAM_ACCESS_REQUIRED (issue #98). Acceptance deferred.",
+      "note": "Staging acceptance passed (2026-03-28), PR merged and deployed",
       "closed_at": "2026-03-28"
     },
     {
@@ -1570,7 +1570,7 @@
       ],
       "fix_attempts": 1,
       "pr_number": 175,
-      "note": "PR #175 merged (895f51a). Staging deploy blocked by Vercel TEAM_ACCESS_REQUIRED (issue #98). Acceptance deferred.",
+      "note": "Staging acceptance passed (2026-03-28), PR merged and deployed",
       "closed_at": "2026-03-28"
     },
     {
@@ -1585,7 +1585,8 @@
       ],
       "fix_attempts": 1,
       "pr_number": 180,
-      "closed_at": "2026-03-28"
+      "closed_at": "2026-03-28",
+      "note": "Staging acceptance passed (2026-03-28), PR merged and deployed"
     },
     {
       "number": 176,
@@ -1600,7 +1601,7 @@
       ],
       "pr_number": 177,
       "fix_attempts": 1,
-      "note": "PR #177 merged (2818e10), acceptance deferred (Vercel blocked by #98)",
+      "note": "Staging acceptance passed (2026-03-28), PR merged and deployed",
       "closed_at": "2026-03-28"
     },
     {
@@ -1617,7 +1618,8 @@
       "url": "https://github.com/chainupcloud/dex-ui/issues/178",
       "pr_number": 179,
       "fix_attempts": 1,
-      "closed_at": "2026-03-28"
+      "closed_at": "2026-03-28",
+      "note": "Staging acceptance passed (2026-03-28), PR merged and deployed"
     },
     {
       "number": 181,
@@ -1632,13 +1634,14 @@
       "created_date": "2026-03-28",
       "fix_attempts": 1,
       "pr_number": 182,
-      "closed_at": "2026-03-28"
+      "closed_at": "2026-03-28",
+      "note": "Staging acceptance passed (2026-03-28), PR merged and deployed"
     },
     {
       "id": "issue-183",
       "github_number": 183,
       "title": "[P3] TWAP order form missing Interval/Duration field — cannot set time between sub-orders",
-      "status": "fixing",
+      "status": "open",
       "priority": "P3",
       "scenario_id": "E527",
       "created_date": "2026-03-28",
@@ -1646,7 +1649,8 @@
         "bug"
       ],
       "pr_number": 184,
-      "fix_attempts": 1
+      "fix_attempts": 2,
+      "note": "Staging acceptance failed (2026-03-28), fix_attempts=2"
     },
     {
       "id": "issue-2026-03-28-E552",
@@ -1662,23 +1666,24 @@
       "fix_attempts": 1,
       "description": "Discord/Twitter/Telegram icon links in nav missing target=_blank. Clicking navigates away from DEX. Fix: add target='_blank' rel='noopener noreferrer' to IconButton in Navigation.tsx lines 197/284.",
       "pr_number": 187,
-      "note": "PR #187 merged (eb60966). Vercel deploy ERROR - cannot verify on staging. Pending next successful build.",
+      "note": "Staging acceptance passed (2026-03-28), PR merged and deployed",
       "github_number": 185,
       "closed_at": "2026-03-28"
     },
     {
       "number": 186,
       "title": "[P3] Explorer search — tx hash (0x+64hex) always routes to /explorer/address/ instead of /explorer/tx/",
-      "status": "fixing",
+      "status": "open",
       "priority": "P3",
       "scenario": "E799",
       "created_date": "2026-03-28",
       "labels": [
         "bug"
       ],
-      "fix_attempts": 1,
+      "fix_attempts": 2,
       "pr_number": 188,
-      "note": "PR #188 merged (92dc494). Staging deploy blocked by Vercel TEAM_ACCESS_REQUIRED (issue #98). Acceptance deferred."
+      "note": "Staging acceptance failed (2026-03-28) — tx hash still routes to /explorer/address/, fix_attempts=2",
+      "github_number": 186
     },
     {
       "github_number": 189,
@@ -1692,7 +1697,7 @@
       "labels": [
         "bug"
       ],
-      "note": "PR #196 merged (cd5e2cd), acceptance deferred (Vercel blocked)",
+      "note": "Staging acceptance passed (2026-03-28), PR merged and deployed",
       "closed_at": "2026-03-28"
     },
     {
@@ -1706,7 +1711,7 @@
         "enhancement"
       ],
       "pr_number": 191,
-      "note": "PR #191 merged (2cbfcf9). Staging deploy blocked by Vercel TEAM_ACCESS_REQUIRED (issue #98) + API rate limit. Acceptance deferred.",
+      "note": "Staging acceptance passed (2026-03-28), PR merged and deployed",
       "closed_at": "2026-03-28"
     },
     {
