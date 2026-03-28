@@ -1314,11 +1314,17 @@
       "issue_numbers": [
         209
       ],
-      "status": "open",
+      "status": "merged",
       "title": "fix: Stop Market order type visibility in order type selector (#209)",
       "base": "dev",
       "head": "fix/issue-209",
-      "created_at": "2026-03-28"
+      "created_at": "2026-03-28",
+      "commit_sha": "4deeece",
+      "merged_at": "2026-03-28",
+      "deployed": false,
+      "accepted": false,
+      "review_status": "approved",
+      "note": "Merged to dev. Vercel build ERROR (known issue #98 TEAM_ACCESS_REQUIRED). Staging not updated. Acceptance pending next successful deploy."
     }
   ],
   "pull_requests": [
