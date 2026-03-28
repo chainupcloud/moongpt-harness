@@ -2153,13 +2153,15 @@
       "id": "issue-144",
       "github_issue_number": 239,
       "title": "[P2] TP/SL toggle click does not reveal TP/SL input fields",
-      "status": "open",
+      "status": "fixing",
       "priority": "P2",
       "scenario_id": "E1148",
       "created_date": "2026-03-28",
       "labels": [
         "bug"
-      ]
+      ],
+      "pr_number": 248,
+      "fix_attempts": 1
     },
     {
       "id": "issue-145",

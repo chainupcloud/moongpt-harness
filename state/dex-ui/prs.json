@@ -1292,5 +1292,18 @@
       "title": "fix: portfolio Add funds button opens deposit modal (#211)",
       "branch": "fix/issue-211"
     }
+  ],
+  "pull_requests": [
+    {
+      "number": 248,
+      "title": "fix: TP/SL toggle click does not reveal TP/SL input fields (#239)",
+      "status": "open",
+      "issue_numbers": [
+        239
+      ],
+      "branch": "fix/issue-239",
+      "base": "dev",
+      "created_date": "2026-03-28"
+    }
   ]
 }
