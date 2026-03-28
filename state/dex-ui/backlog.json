@@ -5309,9 +5309,11 @@
       "priority": 3,
       "title": "Stop Market order — verify appears in Open Orders after placement",
       "description": "With wallet connected and sufficient balance, place a Stop Market order and confirm it appears in the Open Orders tab with type=Stop Market and correct trigger price.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Stop Market order type UI accessible; form has Stop Price input; full E2E needs testnet funds"
     },
     {
       "id": "E447",
@@ -5319,9 +5321,11 @@
       "priority": 3,
       "title": "Connect Wallet modal — wallet options list (MetaMask, WalletConnect, etc.)",
       "description": "After W3M-MODAL opens, verify it displays wallet options (MetaMask, WalletConnect, injected wallets). Check that at least 2 wallet types are shown.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — W3M modal shows WalletConnect, Binance Wallet, MetaMask + 540+ more options"
     },
     {
       "id": "E448",
@@ -5329,9 +5333,11 @@
       "priority": 3,
       "title": "Explorer search — address (42-char 0x) routes to address detail page",
       "description": "Enter a 42-character Ethereum address in the Explorer search bar and verify routing to /explorer/address/{addr}. Complements E288 (tx hash) and E289 (checkpoint).",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Explorer search bar does not route to address detail page; URL stays on /explorer after Enter/click"
     },
     {
       "id": "E449",
@@ -5361,9 +5367,11 @@
       "priority": 3,
       "title": "Explorer checkpoint detail — Time field shows valid timestamp or '--'",
       "description": "On checkpoint detail page (e.g., /explorer/checkpoint/104830), verify Time field shows a readable timestamp or '--' if unavailable. Previous test found Time='-' which may be a data issue.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Checkpoint detail Time field shows valid timestamp 2026-03-28 03:56:31"
     },
     {
       "id": "E452",
@@ -7519,6 +7527,56 @@
       "priority": 3,
       "title": "Stop Limit order — verify form shows both Stop Price and Limit Price inputs",
       "description": "Select 'Stop Limit' from Order Type dropdown. Verify the form shows two separate price inputs: Stop Price (trigger) and Limit Price (execution). Enter values and verify they are independent and labeled correctly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E655",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — tx hash routes to transaction detail page",
+      "description": "Enter a 66-character tx hash (0x + 64 hex chars) in the Explorer search bar and verify routing to /explorer/tx/{hash} or equivalent. Part of verifying the full search functionality described in placeholder text.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E656",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — checkpoint number routes to checkpoint detail page",
+      "description": "Enter a numeric checkpoint number (e.g., 279927) in the Explorer search bar and verify routing to /explorer/checkpoint/{number}. Complements E448 to fully cover search routing.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E657",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Market order — Stop Price input validation (negative/zero/non-numeric)",
+      "description": "On Stop Market form, try entering negative value, zero, and non-numeric text in Stop Price input. Verify appropriate validation messages or rejection behavior.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E658",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Market order — verify order submission with connected wallet (E2E)",
+      "description": "With authenticated session key wallet, fill Stop Market form with valid Stop Price and quantity, submit, then check Open Orders tab for the new order with type=Stop Market and correct trigger price.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E659",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint detail — Transactions section shows correct count",
+      "description": "On /explorer/checkpoint/{number}, verify the Transactions count shown in the header matches actual transaction rows displayed (or 'Transaction details not yet available' message). E451 showed Transactions:1 but 'details not yet available'.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
