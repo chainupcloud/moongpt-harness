@@ -1205,6 +1205,18 @@
       "accepted": true,
       "url": "https://github.com/chainupcloud/dex-ui/issues/136",
       "note": "Vercel deploy ERROR (daily limit 100/day + team config issue #98). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "id": "issue-2026-03-28-E370",
+      "scenario_id": "E370",
+      "github_issue_number": 138,
+      "title": "[P3] More nav dropdown missing external links — Docs, Discord, Blog, FAQ all hidden",
+      "status": "open",
+      "priority": "P3",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-28",
