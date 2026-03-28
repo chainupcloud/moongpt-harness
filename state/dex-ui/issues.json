@@ -1884,6 +1884,18 @@
         "bug"
       ],
       "url": "https://github.com/chainupcloud/dex-ui/issues/208"
+    },
+    {
+      "id": "issue-E661-2026-03-28",
+      "github_issue_number": 209,
+      "title": "[P3] Stop Market order type not visible in order type selector — only Limit and TWAP tabs shown",
+      "scenario": "E661",
+      "status": "open",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "created_date": "2026-03-28"
     }
   ],
   "last_updated": "2026-03-28",
