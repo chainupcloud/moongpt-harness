@@ -765,9 +765,14 @@
       "issue_numbers": [
         144
       ],
-      "status": "open",
+      "status": "merged",
       "created_at": "2026-03-28",
-      "title": "fix: TIF selection not persistent — portal click-outside race (#144)"
+      "title": "fix: TIF selection not persistent — portal click-outside race (#144)",
+      "commit_sha": "677c390089a2cc77a7760e3c9abbc30b5f9c863d",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy READY (dpl_8HWGsoJs6jhfUM8NdYAMJkRj14kX). SHA verified. Acceptance passed."
     }
   ]
 }
