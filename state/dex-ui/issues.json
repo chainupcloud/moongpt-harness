@@ -1348,6 +1348,18 @@
       "resolution": "already-fixed",
       "url": "https://github.com/chainupcloud/dex-ui/issues/149",
       "note": "Already fixed by PR #128 (commit a6f67e1) — TpSlPanel.tsx has inline validation for both buy and sell sides. Explore test E616 ran against stale staging (issue #98 Vercel deploy failures)."
+    },
+    {
+      "id": "issue-87",
+      "github_issue_number": 150,
+      "title": "[P3] /api-keys page renders 404 component despite HTTP 200",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E433",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-28",
