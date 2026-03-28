@@ -1353,13 +1353,17 @@
       "id": "issue-87",
       "github_issue_number": 150,
       "title": "[P3] /api-keys page renders 404 component despite HTTP 200",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E433",
       "created_date": "2026-03-28",
+      "closed_at": "2026-03-28",
+      "fix_attempts": 0,
+      "resolution": "not-a-bug",
       "labels": [
         "bug"
-      ]
+      ],
+      "note": "False positive — screenshots from E433 test show page rendering correctly. Explore agent's cookie injection to simulate wallet connection caused misreport."
     }
   ],
   "last_updated": "2026-03-28",
