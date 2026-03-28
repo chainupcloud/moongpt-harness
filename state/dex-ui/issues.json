@@ -1332,6 +1332,19 @@
       "fix_attempts": 0,
       "resolution": "already-fixed",
       "note": "Already fixed by PR #128 (commit a6f67e1) — inline TP/SL validation in TpSlPanel.tsx. Explore test E609 likely ran before deploy completed."
+    },
+    {
+      "github_number": 149,
+      "title": "[P2] TP/SL SELL order: no validation error when Take Profit is set above entry price",
+      "priority": "P2",
+      "status": "open",
+      "created_at": "2026-03-28",
+      "scenario": "E616",
+      "labels": [
+        "bug"
+      ],
+      "fix_attempts": 0,
+      "url": "https://github.com/chainupcloud/dex-ui/issues/149"
     }
   ],
   "last_updated": "2026-03-28",
