@@ -5105,9 +5105,11 @@
       "priority": 3,
       "title": "Scale order Distribution selector — Uniform vs Geometric distribution effects",
       "description": "Select Scale order type. Test the Distribution selector (Uni = Uniform visible in E420 test). Switch between distribution types if available and verify price allocation changes in Start/End range.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Scale order available via dropdown; Uniform/Top Heavy/Bottom Heavy distribution buttons present"
     },
     {
       "id": "E430",
@@ -5127,9 +5129,11 @@
       "priority": 3,
       "title": "Market order — Settings gear icon opens slippage configuration panel",
       "description": "点击市价单旁的设置齿轮图标，验证是否弹出滑点配置面板，能否修改默认滑点值",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PARTIAL — Slippage text shown inline for Market order; no dedicated gear icon/configuration panel found"
     },
     {
       "id": "E432",
@@ -7249,9 +7253,11 @@
       "priority": 2,
       "title": "TWAP order type — verify button label updates after selection and TWAP-specific fields appear",
       "description": "After clicking TWAP in Order Type dropdown, the button should display 'TWAP', not the previous selection. Also verify TWAP-specific fields (interval, duration) appear.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TWAP selectable via Order Type dropdown; label updates to \"Order TypeTWAP\"; Hour(s)/Minute(s)/Randomize/Private fields appear"
     },
     {
       "id": "E631",
@@ -7289,6 +7295,58 @@
       "priority": 2,
       "title": "API Keys page — connect wallet and sign to unlock content, verify API key creation flow",
       "description": "After verifying the page loads (E625), test the full flow: connect wallet → sign message → API key management UI unlocks → can create/view/delete API keys.",
+      "status": "failed",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — API Keys page blank when session cookies set; no API key UI or sign prompt shown → Issue #153"
+    },
+    {
+      "id": "E635",
+      "area": "api-keys",
+      "priority": 2,
+      "title": "API Keys page — sign-to-unlock flow works end-to-end after wallet fully connected",
+      "description": "With full wallet connection (not just cookies), verify the API Keys page shows sign button, completes signing, then displays key management UI with create/revoke options.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E636",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "TWAP order — submit TWAP order and verify it appears in TWAP Orders tab",
+      "description": "After configuring TWAP (size, price range, duration hours/minutes), submit the order and verify it appears in the TWAP orders bottom panel with correct parameters.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E637",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Scale order — verify Top Heavy vs Bottom Heavy vs Uniform affects price distribution in order preview",
+      "description": "Switch between distribution options (Uniform/Top Heavy/Bottom Heavy) and verify the order price distribution visually changes in the form.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E638",
+      "area": "trade",
+      "priority": 3,
+      "title": "Market order — slippage tolerance configurable via settings (if feature exists)",
+      "description": "Investigate whether market order slippage can be configured. Check for gear icon in sidebar, settings modal, or any slippage input. Document actual UI pattern.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E639",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "TWAP order — Randomize and Private toggles effect on order behavior",
+      "description": "Test TWAP Randomize toggle (randomizes order timing) and Private toggle (hides order from public). Verify toggles are functional and reflect in order submission.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"

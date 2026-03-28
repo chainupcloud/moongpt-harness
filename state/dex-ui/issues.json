@@ -1378,6 +1378,20 @@
       "url": "https://github.com/chainupcloud/dex-ui/issues/151",
       "pr_number": 152,
       "fix_attempts": 1
+    },
+    {
+      "number": 117,
+      "github_number": 153,
+      "title": "[P3] API Keys page renders blank content when wallet session cookies are set",
+      "status": "open",
+      "priority": "P3",
+      "url": "https://github.com/chainupcloud/dex-ui/issues/153",
+      "created": "2026-03-28",
+      "scenario": "E634",
+      "fix_attempts": 0,
+      "pr_number": null,
+      "deployed_sha": null,
+      "note": "api-keys page blank when session cookies set; unauthenticated shows connect prompt correctly"
     }
   ],
   "last_updated": "2026-03-28",
