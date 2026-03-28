@@ -9146,9 +9146,11 @@
       "priority": 3,
       "title": "TP/SL — Sell/Short 方向：TP > 入场价显示错误，SL < 入场价显示错误",
       "description": "E517 验证了 Long 方向的 validation；本场景专门验证 Short 方向：TP 输入大于当前价格应报错；SL 输入小于当前价格应报错",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Short TP/SL validation works: TP > entry and SL < entry both show errors"
     },
     {
       "id": "E761",
@@ -9156,9 +9158,11 @@
       "priority": 3,
       "title": "TP/SL — 切换方向后值清空验证（issue #181 修复后回归）",
       "description": "E518 发现切换 Buy→Sell 时 TP/SL 值不清空（issue #181）。此场景用于 issue #181 修复后回归验证：切换方向后 TP/SL 应被清空或重新计算",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TP/SL values cleared (TP=\"\", SL=\"\") after Buy→Sell switch; regression #181 fixed"
     },
     {
       "id": "E762",
@@ -9190,9 +9194,11 @@
       "priority": 3,
       "title": "Trade — Reduce Only 和 TP/SL 同时启用后的交互行为",
       "description": "验证 Reduce Only checkbox 和 TP/SL checkbox 同时勾选时的行为：两者是否互斥？同时启用时表单是否正常提交？",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Reduce Only and TP/SL are mutually exclusive; TP/SL cannot be enabled when Reduce Only is on"
     },
     {
       "id": "E765",
@@ -9224,9 +9230,11 @@
       "priority": 3,
       "title": "/markets — 24h Volume sort indicator: verify toggle from ↓ to ↑ on second click",
       "description": "Currently 24h Volume is sorted desc (↓). After clicking once it should toggle to asc (↑). After clicking again should return to desc (↓). Verify the indicator actually changes direction.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — 24h Volume sort indicator stuck at ↓, does not toggle to ↑ on click"
     },
     {
       "id": "E768",
@@ -12270,6 +12278,56 @@
       "priority": 3,
       "title": "Explorer — UpdateOraclePrices tx: verify event data expanded correctly",
       "description": "Most testnet txs are UpdateOraclePrices. Navigate to such a tx and check: (1) events section lists oracle price events, (2) Show details reveals price update data, (3) data is non-empty and parseable.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1055",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets — Other columns (Price, 24h Change, OI) sort toggle works correctly",
+      "description": "Verify that clicking Price, 24h Change, and Open Interest column headers properly toggles ↕ → ↓ → ↑ sort direction. E767 showed Volume is broken; test adjacent columns.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1056",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets — sort order persists after page navigation and return",
+      "description": "Navigate away from /markets (e.g. to /trade) then back. Verify sort column and direction are preserved (or reset to default consistently).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1057",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL — entering 0 or negative value shows validation error",
+      "description": "On trade form with TP/SL enabled, enter 0 or negative number in TP or SL field. Expect validation error. Tests boundary values beyond direction-specific validation.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1058",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL — values persist after switching order type (Market ↔ Limit)",
+      "description": "Enable TP/SL on Market order, enter values, switch to Limit. Verify TP/SL values either persist correctly or are reset. Switch back to Market and verify consistent behavior.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1059",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys page — create new API key flow end-to-end",
+      "description": "With connected wallet session, navigate to /api-keys. Verify the page renders key list and create UI. Click 'Create Key', fill in name, confirm. Verify newly created key appears in list.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"

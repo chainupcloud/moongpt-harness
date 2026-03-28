@@ -2083,6 +2083,15 @@
       "pr_number": null,
       "created_at": "2026-03-28",
       "closed_at": null
+    },
+    {
+      "github_number": 230,
+      "title": "[P3] /markets — 24h Volume sort indicator does not toggle on click (stuck at ↓)",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-28",
+      "closed_at": null
     }
   ],
   "last_updated": "2026-03-28",
