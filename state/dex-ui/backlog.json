@@ -9243,9 +9243,11 @@
       "title": "Portfolio — transaction history API call returns correct data for connected wallet",
       "description": "With connected wallet, call /portfolio page and verify transaction history tab loads without 401/500 errors. Use API directly with wallet signature.",
       "track": "backend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Portfolio history tab loads without API errors"
     },
     {
       "id": "E769",
@@ -9253,9 +9255,11 @@
       "priority": 3,
       "title": "API Keys — page renders list/create UI elements with connected wallet session",
       "description": "Navigate to /api-keys with properly authenticated session (wagmi + session key). Verify Create API Key button and empty-state/list renders correctly.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — API Keys page renders with Generate button and existing wallet list"
     },
     {
       "id": "E770",
@@ -9273,9 +9277,11 @@
       "priority": 3,
       "title": "Stop Limit 订单 — 同时需要 Stop Price 和 Limit Price 字段",
       "description": "选择 Stop Limit 订单类型，验证表单显示两个价格字段：Stop/Trigger Price 和 Limit Price（两者均必填）",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Stop Limit order shows 2 price fields: trigger price (ariaLabel=null) + limit price (ariaLabel=Limit price)"
     },
     {
       "id": "E772",
@@ -9283,9 +9289,11 @@
       "priority": 3,
       "title": "Order Type 下拉菜单 — Market 订单只需 Amount（无价格字段）",
       "description": "选择 Market 订单类型，验证表单中价格输入框隐藏（因为 market order 按市价成交），只保留 Amount",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Market order form shows only Size/Total inputs; \"Price\" label in page is order book column header, not form field"
     },
     {
       "id": "E773",
@@ -12328,6 +12336,56 @@
       "priority": 3,
       "title": "API Keys page — create new API key flow end-to-end",
       "description": "With connected wallet session, navigate to /api-keys. Verify the page renders key list and create UI. Click 'Create Key', fill in name, confirm. Verify newly created key appears in list.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1060",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Market order — trigger price field only (no limit price)",
+      "description": "Select Stop Market order type. Verify only one price field is shown (trigger/stop price), not two. Market executes at market price once trigger hits.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1061",
+      "area": "trade",
+      "priority": 3,
+      "title": "TWAP order form — interval and number of parts fields visible",
+      "description": "Select TWAP order type. Verify form shows interval duration input and number-of-parts/splits input in addition to amount.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1062",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys — Remove button removes wallet from list",
+      "description": "With existing API wallet in list, click Remove. Verify confirmation prompt or direct removal. After removal, wallet should no longer appear in list.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1063",
+      "area": "trade",
+      "priority": 3,
+      "title": "Scale order — price range and parts fields visible",
+      "description": "Select Scale order type. Verify form shows min price, max price, and number of orders fields to define the scaling range.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1064",
+      "area": "trade",
+      "priority": 4,
+      "title": "Order Type selector — Scalp order type renders correctly",
+      "description": "Select Scalp order type from order type dropdown. Verify form renders without JS errors and shows expected fields (price + amount at minimum).",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
