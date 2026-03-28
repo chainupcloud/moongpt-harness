@@ -891,11 +891,16 @@
     {
       "number": 171,
       "title": "fix: leverage dialog slider initializes at 0x instead of current value (#168)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         168
       ],
-      "created": "2026-03-28"
+      "created": "2026-03-28",
+      "merged_at": "2026-03-28",
+      "merge_sha": "8ada0828beafa3977d2bd4b21ea59cddf0091099",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged; Vercel deploy limit hit, deployment+acceptance pending"
     },
     {
       "pr_number": 172,
