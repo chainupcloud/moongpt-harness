@@ -1281,6 +1281,16 @@
       "merged_at": "2026-03-28",
       "deployed": true,
       "accepted": true
+    },
+    {
+      "pr_number": 247,
+      "issue_numbers": [
+        211
+      ],
+      "status": "open",
+      "created_at": "2026-03-28",
+      "title": "fix: portfolio Add funds button opens deposit modal (#211)",
+      "branch": "fix/issue-211"
     }
   ]
 }

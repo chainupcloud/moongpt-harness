@@ -1950,10 +1950,12 @@
     {
       "title": "[P3] Portfolio \"+Add funds\" button non-functional — click does not open deposit modal",
       "github_issue": 211,
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E927",
-      "opened_date": "2026-03-28"
+      "opened_date": "2026-03-28",
+      "pr_number": 247,
+      "fix_attempts": 1
     },
     {
       "title": "[P3] Stop Market BUY — trigger price below mark price accepted without blocking validation",
