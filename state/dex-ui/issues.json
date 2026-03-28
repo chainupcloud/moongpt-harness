@@ -2052,13 +2052,14 @@
       "github_number": 219,
       "title": "[P3] Reduce Only checkbox visible on Market orders (should be hidden)",
       "priority": "P3",
-      "status": "open",
+      "status": "fixing",
       "scenario_id": "E711",
       "labels": [
         "bug"
       ],
       "created_date": "2026-03-28",
-      "fix_attempts": 0
+      "fix_attempts": 1,
+      "pr_number": 252
     },
     {
       "id": "issue-220",

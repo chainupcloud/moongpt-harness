@@ -1360,6 +1360,17 @@
       "accepted": false,
       "review_status": "approved",
       "note": "Merged to dev. Vercel build ERROR (known issue #98 TEAM_ACCESS_REQUIRED). Staging not updated. Acceptance deferred."
+    },
+    {
+      "pr_number": 252,
+      "title": "fix: hide Reduce Only checkbox on Market orders (#219)",
+      "status": "open",
+      "issue_numbers": [
+        219
+      ],
+      "branch": "fix/issue-219",
+      "base": "dev",
+      "created_at": "2026-03-28"
     }
   ],
   "pull_requests": [
