@@ -5898,9 +5898,11 @@
       "priority": 3,
       "title": "Leverage change — margin and liquidation price update verification",
       "description": "Change leverage from 10x to 1x: verify that margin required and liquidation price shown in order form change accordingly. Tests that leverage selector drives recalculation.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Leverage modal Confirm blocked by backdrop overlay (pointer-events:auto, aria-hidden); modal stays open. Related: #168 #169"
     },
     {
       "id": "E494",
@@ -5908,9 +5910,11 @@
       "priority": 3,
       "title": "Scale order type — fields render check",
       "description": "Select Scale from Order Type dropdown. Verify Scale-specific fields appear: lower price, upper price, number of orders. Check that submit is disabled without required fields.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Scale order type not available on testnet build"
     },
     {
       "id": "E495",
@@ -5918,9 +5922,11 @@
       "priority": 3,
       "title": "Withdraw modal — zero amount inline validation",
       "description": "After #127 fix: enter 0 in withdraw amount field → expect inline error 'Amount must be greater than 0'. Enter negative value → expect inline error with text feedback (not silent clear).",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Zero amount correctly blocked by inline validation message in withdraw modal"
     },
     {
       "id": "E496",
@@ -8312,9 +8318,11 @@
       "title": "TWAP order — verify only TWAP tab shown (other order types hidden?) vs all types",
       "description": "When TWAP is selected, check if Limit/Market/Scale tabs still appear. If only TWAP is visible, investigate whether other types are being hidden by a routing/state bug. Check DOM for hidden/display:none elements for other order type buttons.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TWAP tab present in bottom panel, other order types (TWAP shown alongside existing tabs)"
     },
     {
       "id": "E721",
@@ -8356,6 +8364,56 @@
       "title": "Order book — Trades tab content verification",
       "description": "The order book panel has 'Order Book' and 'Trades' tabs. Click the Trades tab and verify recent trades are shown with time, price, and size. Check if the tab switch works without page reload.",
       "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E725",
+      "area": "order-form",
+      "priority": 2,
+      "title": "Leverage modal — verify Confirm saves new leverage after slider change",
+      "description": "Open leverage modal (click 10x), move slider to 20x, click Confirm. Verify modal closes and leverage label updates to 20x on trade form. Related to issue #169.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E726",
+      "area": "order-form",
+      "priority": 2,
+      "title": "Leverage modal — slider initial value should reflect current leverage",
+      "description": "Open leverage modal when account has set leverage (e.g. 20x). Verify slider starts at 20x not 0x. Related to issue #168.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E727",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Withdraw modal — amount exceeds available balance shows error",
+      "description": "Open withdraw modal, enter amount larger than available balance. Verify inline error shown and submit blocked.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E728",
+      "area": "order-form",
+      "priority": 3,
+      "title": "TWAP tab in bottom panel — content renders when no TWAP orders exist",
+      "description": "Click TWAP tab in bottom order panel. Verify empty state renders (no JS error, shows message like 'No TWAP orders').",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E729",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order form — Cross/Isolated margin toggle functionality",
+      "description": "Click Cross button on trade form to toggle to Isolated margin mode. Verify UI updates to show isolated margin fields, and switching back to Cross works.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
