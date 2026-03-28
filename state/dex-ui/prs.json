@@ -1017,14 +1017,19 @@
     {
       "number": 187,
       "title": "fix: add target=_blank to social icon links (#185)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         185
       ],
       "branch": "fix/issue-185",
       "base": "dev",
       "created_date": "2026-03-28",
-      "url": "https://github.com/chainupcloud/dex-ui/pull/187"
+      "url": "https://github.com/chainupcloud/dex-ui/pull/187",
+      "commit_sha": "eb60966",
+      "merged_at": "2026-03-28",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged successfully. Vercel build ERROR (deployment quota/build issue, see #98). Staging not updated."
     }
   ]
 }

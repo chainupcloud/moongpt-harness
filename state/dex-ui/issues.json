@@ -1655,7 +1655,8 @@
       ],
       "fix_attempts": 1,
       "description": "Discord/Twitter/Telegram icon links in nav missing target=_blank. Clicking navigates away from DEX. Fix: add target='_blank' rel='noopener noreferrer' to IconButton in Navigation.tsx lines 197/284.",
-      "pr_number": 187
+      "pr_number": 187,
+      "note": "PR #187 merged (eb60966). Vercel deploy ERROR - cannot verify on staging. Pending next successful build."
     },
     {
       "number": 186,
