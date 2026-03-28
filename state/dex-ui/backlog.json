@@ -8962,9 +8962,11 @@
       "priority": 3,
       "title": "/markets funding rate — confirm if 4h vs hourly rate discrepancy (or same endpoint different calc)",
       "description": "Investigate the API endpoint used by /markets funding rate column vs /trade page. Intercept network requests to compare the raw API responses. Check if one shows 'current' rate (realized) vs 'predicted' rate.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "result_summary": "PASS — /markets shows current rate (+0.2516%), /trade shows predicted rate (-0.9937%); known discrepancy tracked in issue #225",
+      "last_run": "2026-03-28"
     },
     {
       "id": "E746",
@@ -8998,10 +9000,12 @@
       "priority": 3,
       "title": "Trade page stats bar — oracle price vs mark price divergence display",
       "description": "Current data: mark price=66,821.1, oracle price=66,349.8 — difference of ~471 (~0.7%). Verify if the UI highlights or warns when oracle diverges significantly from mark. Also check if oracle price updates in real-time.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "result_summary": "FAIL — mark=66219.4, oracle=66793.7 (divergence 0.87%), no warning/highlight shown; UI labels are Chinese (标记价格/预言机价格) not English",
+      "last_run": "2026-03-28"
     },
     {
       "id": "E749",
@@ -9112,9 +9116,11 @@
       "priority": 3,
       "title": "Explorer tx detail — Events section shows event data when available",
       "description": "On /explorer/tx/{hash} for a PlaceOrder/CancelOrder tx, verify Events section shows non-zero count and event details are expandable. Recent test found UpdateOraclePrices tx with Events(0) - test with user-action txs.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "result_summary": "PARTIAL — PlaceOrder tx shows Events(0); contract appears to not emit Sui Move events; OrderPlacedEvent visible only in address activity (backend sourced)",
+      "last_run": "2026-03-28"
     },
     {
       "id": "E759",
@@ -9122,9 +9128,11 @@
       "priority": 3,
       "title": "Explorer address page — shows order history and position info for known address",
       "description": "Navigate to /explorer/address/{addr} for the test wallet address. Verify: order history list, positions, or relevant activity is shown (not empty page).",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "result_summary": "PASS — /explorer/address/ shows \"Address Activity\" with OrderPlacedEvent, BalanceUpdateEvent, BridgeDepositEvent for test wallet",
+      "last_run": "2026-03-28"
     },
     {
       "id": "E760",
@@ -12098,6 +12106,56 @@
       "priority": 4,
       "title": "Explorer search — verify tx hash (0x+64hex) search routes to /explorer/tx/ (regression test for #186)",
       "description": "Issue #186 was about tx hash search always routing to /explorer/address/ instead of /explorer/tx/. Verify if this is fixed by entering a known full tx hash in the explorer search bar.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1040",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — filter/pagination for address activity list",
+      "description": "On /explorer/address/{addr}, verify if the activity list supports pagination or filtering by event type (OrderPlacedEvent, BalanceUpdateEvent, BridgeDepositEvent). Check if 'View All' or Load More works.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1041",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — PlaceOrder tx shows order details (side, price, size, pair)",
+      "description": "On /explorer/tx/{PlaceOrderHash}, verify that order details (Buy/Sell, BTC-USDC, price, size) are shown in Transaction Details section, not just 'PlaceOrder' action label.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1042",
+      "area": "trade",
+      "priority": 3,
+      "title": "Oracle/mark price divergence threshold — UI behavior at 1%+ divergence",
+      "description": "Currently oracle=66793.7 vs mark=66219.4 (0.87% diverge). Monitor over time to see if UI adds any warning when divergence exceeds 1%. Also check if the oracle price value refreshes in real-time (should update without page reload).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1043",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint detail — shows all transactions in the checkpoint",
+      "description": "Navigate to /explorer/checkpoint/{N}. Verify: checkpoint metadata (time, tx count, sequence), list of transactions with type+hash links, ability to click through to tx details.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1044",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets vs /trade funding rate discrepancy — verify after issue #225 fix",
+      "description": "Regression test for issue #225. After fix is deployed, verify /markets 资金费率 and /trade 预测资金费 show consistent values (or clearly labeled as current vs predicted with explanation).",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
