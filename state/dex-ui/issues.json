@@ -1787,13 +1787,15 @@
       "id": "issue-199",
       "github_issue_id": 199,
       "title": "[P3] Order book shows crossed prices — ask side (~$64,566) significantly below mark price (~$67,882)",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E497",
       "created_date": "2026-03-28",
       "labels": [
         "bug"
-      ]
+      ],
+      "pr_number": 221,
+      "fix_attempts": 1
     },
     {
       "id": "issue-200",

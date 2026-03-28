@@ -1117,6 +1117,17 @@
       "deployed": true,
       "accepted": true,
       "merged_at": "2026-03-28"
+    },
+    {
+      "pr_number": 221,
+      "title": "fix: order book crossed prices ��� use mark price to reclassify sides (#199)",
+      "status": "open",
+      "issue_numbers": [
+        199
+      ],
+      "created_date": "2026-03-28",
+      "branch": "fix/issue-199",
+      "base": "dev"
     }
   ]
 }
