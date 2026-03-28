@@ -1641,6 +1641,20 @@
       ],
       "pr_number": 184,
       "fix_attempts": 1
+    },
+    {
+      "id": "issue-2026-03-28-E552",
+      "github_issue_number": 185,
+      "title": "[P3] Social icon links (Discord, Twitter, Telegram) missing target=_blank — navigate away from DEX",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E552",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ],
+      "fix_attempts": 0,
+      "description": "Discord/Twitter/Telegram icon links in nav missing target=_blank. Clicking navigates away from DEX. Fix: add target='_blank' rel='noopener noreferrer' to IconButton in Navigation.tsx lines 197/284."
     }
   ],
   "last_updated": "2026-03-28",

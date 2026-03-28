@@ -6561,10 +6561,12 @@
       "priority": 3,
       "title": "Markets page — funding rate sign and display precision",
       "description": "Verify funding rate displays with correct sign (+ for positive, - for negative) and 4 decimal places. API returns 0.004504 = +0.4504%. Check both positive and display formatting matches trade page PriceBar.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "track": "frontend"
+      "track": "frontend",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — funding rate -0.1266% shows correct sign (-) and 4 decimal places, colored red"
     },
     {
       "id": "E549",
@@ -6611,10 +6613,12 @@
       "priority": 3,
       "title": "More nav dropdown — verify fix after issue #138 (re-verify external links)",
       "description": "After fix for issue #138, verify More dropdown contains Docs/Discord/Blog links and that each external link opens in a new tab with correct URL.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "track": "frontend"
+      "track": "frontend",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Discord/Twitter/Telegram icon links missing target=_blank, opens in same tab → Issue #185"
     },
     {
       "id": "E553",
@@ -6648,10 +6652,12 @@
       "priority": 3,
       "title": "Explorer tx detail — API returns 404 should show Not Found page",
       "description": "Navigate to /explorer/tx/0x000000000000000000000000000000000000000000000000000000000000dead (non-existent hash). Verify page shows explicit 'Transaction Not Found' or 404 state rather than empty fields with Action:Unknown.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — non-existent tx shows clear \"Transaction not found\" message with explanation"
     },
     {
       "id": "E556",
@@ -6659,10 +6665,12 @@
       "priority": 3,
       "title": "Explorer search — address lookup routes to /explorer/address/{addr}",
       "description": "Enter a valid wallet address (42-char 0x...) in the Explorer search box. Verify it routes to /explorer/address/{addr} instead of /explorer/tx/{addr}, and that the address page loads correctly.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — SUI address search routes to /explorer/address/{addr} correctly; EVM addresses show helpful rejection message"
     },
     {
       "id": "E557",
@@ -9178,6 +9186,56 @@
       "priority": 3,
       "title": "Portfolio — Transaction History tab pagination and date filter",
       "description": "Portfolio has a Transaction History tab. Navigate to it and check: (1) transactions load correctly, (2) if there are multiple pages, pagination controls work, (3) date/type filter options render and function. Verify no empty-state bug where transactions exist but show blank.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E795",
+      "area": "navigation",
+      "priority": 3,
+      "title": "Nav social icons — accessibility: missing aria-label on icon-only buttons",
+      "description": "IconButton social links (Discord, Twitter, Telegram) have no aria-label or title attribute. Screen readers cannot identify these links. Check that each icon button has aria-label='Discord' etc.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E796",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — transaction count and pagination",
+      "description": "After routing to /explorer/address/{addr}, verify that the transaction list shows correct count, has pagination if >10 txs, and each row links to /explorer/tx/{digest}.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E797",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — Events section renders when events exist",
+      "description": "Navigate to a known valid tx with events (use 0xa699af...1ac9 from address page). Verify Events section shows event type, data, and is expandable. Related to E558.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E798",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets page — positive funding rate shows + sign (verify when rate is positive)",
+      "description": "Current funding rate is negative (-0.1266%). This scenario should be re-run when funding rate turns positive to verify the + sign is displayed (complement to E548). Poll /api/markets for positive rate period.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E799",
+      "area": "explorer",
+      "priority": 2,
+      "title": "Explorer search — tx hash with 0x prefix routes to /explorer/tx/{digest}",
+      "description": "Enter a valid SUI tx digest (66-char 0x...) in explorer search. Verify it routes to /explorer/tx/ page and loads transaction details correctly (not the address page).",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
