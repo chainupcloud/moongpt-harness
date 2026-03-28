@@ -1558,14 +1558,17 @@
     },
     {
       "number": 173,
+      "github_number": 173,
       "title": "[P3] Order book ask/bid prices inverted — asks show below market price, bids above",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E497",
       "created_date": "2026-03-28",
       "labels": [
         "bug"
-      ]
+      ],
+      "fix_attempts": 1,
+      "pr_number": 175
     },
     {
       "github_number": 174,

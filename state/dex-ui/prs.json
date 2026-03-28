@@ -917,6 +917,17 @@
       "deployed": false,
       "accepted": false,
       "note": "Merged; Vercel deploy pending (API rate limit). Acceptance deferred."
+    },
+    {
+      "pr_number": 175,
+      "issue_numbers": [
+        173
+      ],
+      "status": "open",
+      "title": "fix: order book ask/bid prices inverted (#173)",
+      "created_at": "2026-03-28",
+      "branch": "fix/issue-173",
+      "base": "dev"
     }
   ]
 }
