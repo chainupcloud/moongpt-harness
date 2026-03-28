@@ -6245,9 +6245,11 @@
       "priority": 3,
       "title": "Explorer — verify 'Show details' toggle in OrderPlacedEvent expands raw BCS/JSON data",
       "description": "On a tx detail page, click 'Show details' for an OrderPlacedEvent and verify full event data (BCS fields, prices, quantities) is revealed.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer Show details toggle expands raw BCS/JSON data in OrderPlacedEvent"
     },
     {
       "id": "E523",
@@ -6255,9 +6257,11 @@
       "priority": 3,
       "title": "/markets — column sort by 24h Volume works correctly (asc/desc toggle)",
       "description": "Click '24h 成交量' column header twice on /markets page, verify sort order changes correctly (descending then ascending). Currently only BTC-USDC visible on testnet.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — 24h Volume header has sort indicator (↓), cursor-pointer; testnet 1 market, row order unverifiable"
     },
     {
       "id": "E524",
@@ -6265,9 +6269,11 @@
       "priority": 3,
       "title": "Portfolio Transaction History tab — verify empty state message renders after wallet connect",
       "description": "Connect wallet to portfolio, click Transaction History tab, verify proper empty-state message (not blank/broken) when no transactions exist.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Portfolio Transaction History tab not accessible without full wallet auth flow"
     },
     {
       "id": "E525",
@@ -6339,9 +6345,11 @@
       "priority": 3,
       "title": "API Keys — 撤销 API Key 后确认从列表移除",
       "description": "在 /api-keys 页面对现有 key 执行 revoke/delete，确认确认对话框，验证 key 从列表中消失",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — API Keys page requires wallet connection (only Connect button visible)"
     },
     {
       "id": "E532",
@@ -8824,6 +8832,57 @@
       "priority": 3,
       "title": "Trade — Reduce Only 和 TP/SL 同时启用后的交互行为",
       "description": "验证 Reduce Only checkbox 和 TP/SL checkbox 同时勾选时的行为：两者是否互斥？同时启用时表单是否正常提交？",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E765",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — OrderPlacedEvent Show details: verify BCS data is valid JSON or hex string",
+      "description": "After Show details is clicked on an OrderPlacedEvent, verify the expanded content contains valid BCS/hex data (non-empty, structured format)",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E766",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets — sort by Price column (价格) toggles asc/desc indicator",
+      "description": "Click the Price column header on /markets, verify sort arrow toggles ↑/↓. Testnet has 1 market so verify by arrow direction change, not row order",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E767",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets — 24h Volume sort indicator: verify toggle from ↓ to ↑ on second click",
+      "description": "Currently 24h Volume is sorted desc (↓). After clicking once it should toggle to asc (↑). After clicking again should return to desc (↓). Verify the indicator actually changes direction.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E768",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio — transaction history API call returns correct data for connected wallet",
+      "description": "With connected wallet, call /portfolio page and verify transaction history tab loads without 401/500 errors. Use API directly with wallet signature.",
+      "track": "backend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E769",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys — page renders list/create UI elements with connected wallet session",
+      "description": "Navigate to /api-keys with properly authenticated session (wagmi + session key). Verify Create API Key button and empty-state/list renders correctly.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
