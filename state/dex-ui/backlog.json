@@ -1,6 +1,6 @@
 {
   "description": "探索测试背板 — explore-agent 每次从 pending 中取若干条执行，完成后标记 tested/failed",
-  "last_updated": "2026-03-27",
+  "last_updated": "2026-03-28",
   "scenarios": [
     {
       "id": "E001",
@@ -3950,11 +3950,11 @@
       "priority": 3,
       "title": "Explorer 地址搜索 — wallet address 路由到 /explorer/address/ (issue #85)",
       "description": "在 /explorer 搜索框输入钱包地址（0x开头 32字节），验证是否路由到 /explorer/address/ 而非 /tx/。issue #85 修复后验证。",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-27",
-      "result_summary": "FAIL — SUI addr routes to /tx/ (wrong), EVM addr no navigation; issue #134 opened"
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Sui 64-char address routes to /explorer/tx/ instead of /explorer/address/ (issue #85 still open)"
     },
     {
       "id": "E334",
@@ -4034,9 +4034,11 @@
       "priority": 3,
       "title": "Trades 标签 WebSocket 断线重连 — 标签再次点击后数据恢复",
       "description": "切换到其他标签（Order Book）后再切回 Trades，WebSocket 应重新订阅并恢复显示实时成交",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Trades tab visually maintains data after Order Book → Trades switch"
     },
     {
       "id": "E341",
@@ -4307,9 +4309,11 @@
       "priority": 3,
       "title": "API Keys page — authorize new API wallet (fill name + address + days, submit)",
       "description": "Fill 'Authorize API Wallet' form: name='test_api', address=SESSION_ADDR, days=1. Click submit and verify the wallet appears in the list",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — /api-keys requires real wallet connection; wagmi localStorage injection insufficient"
     },
     {
       "id": "E364",
@@ -6141,9 +6145,11 @@
       "priority": 2,
       "title": "API Keys — 页面加载时已存在的 API wallets 列表展示",
       "description": "无需完整创建流程，检查 /api-keys 页面在有已授权 agent wallets 时的展示：列表是否正确显示 wallet 地址、名称、剩余天数和 Revoke 按钮",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — /api-keys requires real wallet connection; wagmi localStorage injection insufficient"
     },
     {
       "id": "E537",
@@ -6174,6 +6180,61 @@
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27"
+    },
+    {
+      "id": "E540",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — tx hash (64 hex chars) routes to /explorer/tx/ correctly",
+      "description": "Enter a known transaction digest (64-char hex) in the Explorer search, verify it routes to /explorer/tx/ and shows transaction detail. Complement to E333.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E541",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — checkpoint number routes to /explorer/checkpoint/",
+      "description": "Enter a checkpoint number (e.g., 4123741) in Explorer search, verify it routes to /explorer/checkpoint/{seq} and shows checkpoint detail.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E542",
+      "area": "api-keys",
+      "priority": 2,
+      "title": "API Keys page — full flow test with Playwright browser wallet injection via EIP-6963",
+      "description": "Use Playwright's addInitScript to inject a full EIP-6963 provider mock that triggers wagmi connection, bypassing the localStorage-only approach. Test the /api-keys page showing Authorize form and submitting it.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E543",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trades tab — verify real-time trade entries update periodically via WS",
+      "description": "On /trade, wait 30s on Trades tab, count visible rows at t=0 and t=30s. Verify rows update (new trades appear) confirming live WS data feed works.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E544",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order Book — bid/ask depth renders correctly and updates live",
+      "description": "On /trade Order Book tab, verify bids (green) and asks (red) render with price + size columns. Wait 10s and confirm at least one row updates price/size (live data).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
     }
   ]
 }
