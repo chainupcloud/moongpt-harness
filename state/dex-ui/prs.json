@@ -1178,6 +1178,17 @@
       "deployed": false,
       "accepted": false,
       "note": "Merged OK. Vercel deployment rate-limited (100/day exhausted), resets 2026-03-29 14:47 UTC. Acceptance pending next deploy."
+    },
+    {
+      "pr_number": 231,
+      "title": "fix: Stop Market trigger price — zero value not validated client-side (#204)",
+      "status": "open",
+      "issue_numbers": [
+        204
+      ],
+      "created_date": "2026-03-28",
+      "branch": "fix/issue-204",
+      "base": "dev"
     }
   ]
 }
