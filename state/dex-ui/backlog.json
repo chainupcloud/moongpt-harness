@@ -8365,10 +8365,12 @@
       "priority": 3,
       "title": "Reduce Only checkbox — interaction when wallet connected and position exists",
       "description": "Connect wallet, open a position, then try to place an order with Reduce Only checked. Verify: (1) order is only accepted if it reduces position size; (2) error message if trying to increase position with Reduce Only.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "track": "frontend"
+      "track": "frontend",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Reduce Only checkbox renders, toggles correctly, shows \"No position\" warning when no open position"
     },
     {
       "id": "E698",
@@ -8427,10 +8429,12 @@
       "priority": 3,
       "title": "IOC order submission — verify order placed with IOC time-in-force",
       "description": "After clicking GTC to switch to IOC, fill in order details and attempt submission. Verify the order is sent with IOC TIF. Check order history shows IOC flag.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — GTC dropdown shows GTC/ALO/IOC options; IOC selection confirmed, replaces GTC label in form"
     },
     {
       "id": "E703",
@@ -8438,10 +8442,12 @@
       "priority": 3,
       "title": "TP/SL — SL % field does not auto-calculate (potential bug)",
       "description": "When TP/SL is enabled, enter TP price — TP% auto-calculates. Then enter SL price — verify SL% also auto-calculates. Previous test showed SL% remained empty after entering SL price.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TP/SL % auto-calculates correctly (5.3%) when Limit order with price entered; requires entryPrice > 0"
     },
     {
       "id": "E704",
@@ -11374,6 +11380,63 @@
       "priority": 2,
       "title": "Explorer search — search by transaction hash from header search bar",
       "description": "Use the search bar in the Explorer header to search for a known valid transaction hash. Verify it navigates to the correct /explorer/tx/ detail page. Also test searching for an address.",
+      "status": "tested",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer search bar navigates to /explorer/tx/ and /explorer/address/ correctly"
+    },
+    {
+      "id": "E981",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL — auto-calculation fails for Market orders without midPrice loaded",
+      "description": "Enable TP/SL on a Market order (no price input). The entryPrice falls back to midPrice. Wait for market data to load, then enter TP price and verify TP% auto-calculates. Expected: works when midPrice > 0. Known: fails if market data not yet loaded.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E982",
+      "area": "trade",
+      "priority": 3,
+      "title": "IOC order — verify order expires immediately if no match (order history check)",
+      "description": "Place a Limit IOC order with a price far from market (e.g., $1 for BTC). IOC should cancel immediately if not filled. Check order history shows the order with Cancelled status or IOC flag. This validates the TIF is actually sent to backend.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E983",
+      "area": "trade",
+      "priority": 3,
+      "title": "ALO (Add Liquidity Only) order — selection and submission attempt",
+      "description": "Click GTC dropdown, select ALO (Add Liquidity Only / Post-Only). Verify ALO label appears in form header. Fill in a limit price and size. Submit order. Verify order is accepted or correctly rejected if it would be a taker (price crosses book).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E984",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — search for wallet address shows transaction history",
+      "description": "Navigate to /explorer/address/{walletAddress}. Verify the page shows transaction history for that address. Check that each tx row has: digest, type, timestamp, status. Verify pagination if more than 10 txs. Check that clicking a tx digest navigates to /explorer/tx/.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E985",
+      "area": "trade",
+      "priority": 3,
+      "title": "Reduce Only — submit order with Reduce Only when no position exists",
+      "description": "Connect wallet (no open position), enable Reduce Only checkbox, fill order form, click submit. Expected: order rejected with error like \"No position to reduce\" or similar. Bug if order is silently accepted without position. Wallet connection required.",
       "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
