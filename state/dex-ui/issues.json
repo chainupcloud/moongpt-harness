@@ -2045,7 +2045,8 @@
       ],
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/218",
       "pr_number": 251,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "note": "PR #251 merged to dev (sha 97fa43c). Vercel build ERROR — staging not updated. Acceptance deferred until Vercel issue #98 resolved."
     },
     {
       "github_number": 219,
