@@ -1424,6 +1424,34 @@
       "area": "explorer",
       "fix_attempts": 1,
       "pr_number": 158
+    },
+    {
+      "id": "issue-92",
+      "github_issue_number": 159,
+      "title": "[P3] Stop Limit order — no direction hint for Stop/Trigger Price field",
+      "scenario_id": "E459",
+      "status": "open",
+      "priority": "P3",
+      "created_date": "2026-03-28",
+      "area": "trade",
+      "labels": [
+        "bug"
+      ],
+      "url": "https://github.com/chainupcloud/dex-ui/issues/159"
+    },
+    {
+      "id": "issue-93",
+      "github_issue_number": 160,
+      "title": "[P3] Funding rate display mismatch — UI shows ~0.07% but API returns 0.2758%",
+      "scenario_id": "E463",
+      "status": "open",
+      "priority": "P3",
+      "created_date": "2026-03-28",
+      "area": "trade",
+      "labels": [
+        "bug"
+      ],
+      "url": "https://github.com/chainupcloud/dex-ui/issues/160"
     }
   ],
   "last_updated": "2026-03-28",
