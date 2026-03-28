@@ -6113,10 +6113,12 @@
       "priority": 3,
       "title": "TP/SL validation — re-verify E486/E491/E505 after staging build is fixed",
       "description": "Once Vercel staging builds succeed (resolve #needs-human stale staging issue): test TP validation (TP < mark for LONG → error), SL validation (SL > mark for LONG → error), and cross-validation (SL > TP with SL below mark → should error). Verify submit is blocked.",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — cannot test TP/SL validation without connected wallet; 'Please connect wallet' blocks validation"
     },
     {
       "id": "E512",
@@ -6124,10 +6126,12 @@
       "priority": 3,
       "title": "TP/SL entryPrice=0 edge case — validation disabled when no price entered",
       "description": "In TpSlPanel, if entryPrice <= 0 validation is skipped. Test: enable TP/SL with Price input empty (0), enter invalid TP=1000. Expect: either validation uses mark price as fallback, or input is disabled until price is set.",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — cannot test entryPrice=0 edge case without connected wallet session"
     },
     {
       "id": "E513",
@@ -6173,9 +6177,11 @@
       "priority": 3,
       "title": "Explorer checkpoint — 验证分页加载更多 tx（txCount > 1 时）",
       "description": "选取 header 显示 txCount > 1 的 checkpoint 详情页，点击「加载更多」或等待懒加载，验证 tx 列表最终与 header count 一致",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — 'Transaction details are not yet available' shown for all checkpoints with 1 tx → Issue #178"
     },
     {
       "id": "E517",
@@ -8668,9 +8674,11 @@
       "priority": 2,
       "title": "Orderbook — verify mid price display between ask and bid sections",
       "description": "Check that the mid/mark price shown between ask and bid rows is numerically between the best ask and best bid prices. Current issue: best ask ~65k < best bid ~67k suggests data inversion.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — asks(~65k) below bids(~67k), confirms #173 not deployed on staging"
     },
     {
       "id": "E751",
@@ -8708,6 +8716,56 @@
       "priority": 3,
       "title": "Explorer transaction detail — verify OrderPlacedEvent 'Show details' toggle",
       "description": "Navigate to a transaction with OrderPlacedEvent at /explorer/tx/{digest}, click 'Show details' toggle and verify it expands to show raw BCS/JSON data inline without page reload.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E755",
+      "area": "explorer",
+      "priority": 2,
+      "title": "Explorer checkpoint — verify tx list loads after fix #178",
+      "description": "Re-verify checkpoint detail page shows transaction list once fix for issue #178 is deployed. Test checkpoint with Transactions: 1 in header shows the actual tx row.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E756",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL validation with connected wallet — LONG TP < mark should error",
+      "description": "With wallet connected: enable TP/SL, enter TP below current mark price for LONG position, verify error message appears and submit is blocked. Requires authenticated session.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E757",
+      "area": "orderbook",
+      "priority": 2,
+      "title": "Orderbook — re-verify ask/bid order after Vercel staging fix deployed",
+      "description": "Re-run E750 once Vercel staging is unblocked and fix #173 is deployed. Verify: min ask > max bid, asks (red) are above mid price, bids (green) below mid price.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E758",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — Events section shows event data when available",
+      "description": "On /explorer/tx/{hash} for a PlaceOrder/CancelOrder tx, verify Events section shows non-zero count and event details are expandable. Recent test found UpdateOraclePrices tx with Events(0) - test with user-action txs.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E759",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — shows order history and position info for known address",
+      "description": "Navigate to /explorer/address/{addr} for the test wallet address. Verify: order history list, positions, or relevant activity is shown (not empty page).",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
