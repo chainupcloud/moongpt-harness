@@ -1544,12 +1544,16 @@
       "title": "[P3] TWAP order type selected but no TWAP-specific fields rendered",
       "scenario_id": "E492",
       "priority": "P3",
-      "status": "open",
+      "status": "closed",
       "created_date": "2026-03-28",
+      "closed_date": "2026-03-28",
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/170",
+      "resolution": "not-a-bug",
+      "fix_attempts": 0,
       "labels": [
         "bug"
-      ]
+      ],
+      "note": "False positive: explore agent clicked TWAP tab in AccountPanel instead of OrderTypeSelector dropdown. TWAP form renders correctly."
     }
   ],
   "last_updated": "2026-03-28",
