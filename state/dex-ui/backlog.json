@@ -8171,9 +8171,11 @@
       "priority": 3,
       "title": "TWAP order type — verify availability as order form option vs only history tab",
       "description": "Check if TWAP order submission is planned/gated or genuinely accessible. Inspect Order Type dropdown fully (all options). If TWAP is listed as planned feature, document expected behavior.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TWAP accessible via dedicated TWAP management/placement tab (not in order type dropdown by design)"
     },
     {
       "id": "E682",
@@ -10905,9 +10907,11 @@
       "title": "Explorer address page — tx list items are clickable and navigate to tx detail",
       "description": "From /explorer/address/{addr}, click on a tx digest link (e.g. 0xb6e97f...b5c3) and verify it navigates to /explorer/tx/{digest} with full transaction detail.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer address tx links clickable, navigate to /explorer/tx/{digest}"
     },
     {
       "id": "E942",
@@ -10927,9 +10931,11 @@
       "title": "Order type selector — TWAP option navigates to TWAP configuration panel",
       "description": "Click Order TypeLimit, select TWAP from dropdown. Verify the trade form transforms to show TWAP-specific fields (duration, intervals, price range). Not just the tab at bottom.",
       "track": "frontend",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — TWAP removed from order type dropdown by design; accessible via dedicated TWAP tab; existing issues #183/#203 cover TWAP form fields"
     },
     {
       "id": "E944",
@@ -10938,9 +10944,11 @@
       "title": "Order type selector — Scale order shows price range and step fields",
       "description": "Select Scale from order type dropdown. Verify the form shows Low Price, High Price, and Number of Orders (steps) fields and validates input.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Scale form shows Price Range (combined low/high) and Number of Orders fields; functionally correct"
     },
     {
       "id": "E945",
@@ -10948,6 +10956,61 @@
       "priority": 3,
       "title": "Explorer address page — tx type badges render correctly (OrderPlaced, BalanceUpdate, BridgeDeposit)",
       "description": "On /explorer/address/{addr}, verify each event type (OrderPlacedEvent, BalanceUpdateEvent, BridgeDepositEvent) shows correct type badge and summary text. Check no raw JSON or undefined labels.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E946",
+      "area": "explorer",
+      "priority": 2,
+      "title": "Explorer tx detail page — shows all transaction fields (type, digest, sender, timestamp, gas)",
+      "description": "After navigating to /explorer/tx/{digest}, verify the page renders: transaction type, full digest, sender address, timestamp, gas used, and status. All fields should be populated, not empty/zero.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E947",
+      "area": "trading",
+      "priority": 2,
+      "title": "Scale order — submit with valid price range and verify order placed",
+      "description": "After selecting Scale order type, fill in a valid Price Range (Low=60000, High=70000) and Number of Orders=5, set a size, then attempt to submit. Verify the order is placed or an appropriate error shown (not a JS crash).",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E948",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — shows correct account summary (balance, positions count)",
+      "description": "On /explorer/address/{addr}, verify the account summary shows: wallet balance (USDC), number of active positions, and recent transaction count. Check data accuracy against known test wallet state.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E949",
+      "area": "trading",
+      "priority": 2,
+      "title": "TWAP tab — can submit a new TWAP order with size and duration",
+      "description": "Click the TWAP tab in the bottom panel. Verify there is an input form to place a new TWAP order (size, duration). Fill in size=0.001 BTC, duration=1h and verify the submit button is present and enabled.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E950",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search bar — search by wallet address navigates to address page",
+      "description": "Find the search bar on /explorer or /explorer/transactions. Enter the test wallet address and verify it navigates to /explorer/address/{addr} with correct account data.",
       "track": "frontend",
       "status": "pending",
       "added_by": "explore-agent",
