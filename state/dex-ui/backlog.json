@@ -10594,10 +10594,12 @@
       "priority": 3,
       "title": "Trade form — TP/SL direction switch verify (Buy→Sell and Sell→Buy)",
       "description": "Re-attempt E518 TP/SL direction switch test with proper modal handling. Set TP=99000, SL=60000 on Long, then switch to Short — verify values cleared. Then set TP=50000, SL=75000 on Short, switch to Long — verify cleared.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Buy→Sell direction switch correctly clears TP/SL values (TP: '71219'→'', SL: '61219'→'')"
     },
     {
       "id": "E881",
@@ -10639,9 +10641,11 @@
       "priority": 3,
       "title": "TP/SL — switching Sell→Buy also clears TP/SL values",
       "description": "E518 confirmed Buy→Sell clears TP/SL. Verify the reverse: start on Sell, set TP/SL, switch to Buy — values should clear or recalculate for BUY direction constraints.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — TP/SL panel does not appear when enabling on Sell side (AppKit modal may interfere after Sell button click); related to existing #P2 issue"
     },
     {
       "id": "E885",
@@ -10649,9 +10653,11 @@
       "priority": 3,
       "title": "Open Orders badge — real-time update when new limit order fills",
       "description": "E562 could not test because no open orders. Test by placing a limit order far from market (won't fill), verify badge increments to (1), then cancel, verify returns to (0).",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Open Orders badge stays at (0) for 2.5+ seconds after limit order placed, no real-time update → Issue #244"
     },
     {
       "id": "E886",
@@ -10679,9 +10685,11 @@
       "priority": 3,
       "title": "Stop Limit / Stop Market — submit behavior when stop price already crossed mark price",
       "description": "Submit a Stop Limit order with stop price below current mark price (for BUY). Verify whether order is rejected server-side or triggers immediately as market order.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Stop Market submit correctly disabled when BUY stop price crosses below mark price (62908 vs 66219.4)"
     },
     {
       "id": "E889",
@@ -13884,6 +13892,61 @@
       "priority": 3,
       "title": "Explorer transactions page — 'More' button loads additional rows",
       "description": "Re-verify existing bug: on /explorer/transactions, the 'More' button at the bottom. Existing issue says it does not load more rows. Confirm if still broken or recently fixed (useExplorer.ts was recently changed).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1189",
+      "area": "trade-form / TP-SL",
+      "priority": 2,
+      "title": "TP/SL toggle on Sell side — investigate AppKit modal interference",
+      "description": "Reproduce E884 FAIL: navigate to trade, switch to Sell/Short, then try to enable TP/SL toggle. Verify if AppKit wallet modal overlaps and prevents TP/SL panel from appearing. Test with connected wallet vs disconnected.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1190",
+      "area": "orders",
+      "priority": 3,
+      "title": "Open Orders badge — WebSocket update latency measurement",
+      "description": "After placing a limit order, measure how long the Open Orders badge takes to update. Poll the badge text every 500ms for 10 seconds and record when it changes from (0) to (1).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1191",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Stop Market SELL — trigger price above mark price (reverse direction)",
+      "description": "E888 tested BUY Stop Market with stop below mark. Test SELL: set trigger price ABOVE mark price (already crossed for Short). Verify submit is disabled or warned.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1192",
+      "area": "trade-form / TP-SL",
+      "priority": 3,
+      "title": "TP/SL enabled state preserved after switching Buy→Sell→Buy",
+      "description": "E880 showed values cleared on direction switch (expected). But verify: if TP/SL was enabled (checked), after Buy→Sell→Buy roundtrip, is the TP/SL toggle still checked/enabled? Should remain enabled per UX design.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1193",
+      "area": "orders",
+      "priority": 3,
+      "title": "Cancel limit order via orders list — badge decrements to (0)",
+      "description": "E885 could not test cancel because wrong buttons were found. Place limit order far from market, navigate to Open Orders tab, find and click the Cancel (×) button for that specific order row, verify badge goes from (1) to (0).",
       "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",

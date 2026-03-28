@@ -2184,6 +2184,18 @@
       "pr_number": null,
       "created_at": "2026-03-28",
       "closed_at": null
+    },
+    {
+      "number": 244,
+      "title": "[P3] Open Orders badge does not update in real-time after limit order placed",
+      "status": "open",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "scenario": "E885",
+      "created_date": "2026-03-28",
+      "url": "https://github.com/chainupcloud/dex-ui/issues/244"
     }
   ],
   "last_updated": "2026-03-28",
