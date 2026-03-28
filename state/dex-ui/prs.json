@@ -1078,12 +1078,16 @@
     {
       "pr_number": 198,
       "title": "fix: add Telegram link to More dropdown (#192)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         192
       ],
       "branch": "fix/issue-192",
-      "created_date": "2026-03-28"
+      "created_date": "2026-03-28",
+      "commit_sha": "2b8cdce",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true
     }
   ]
 }

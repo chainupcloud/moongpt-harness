@@ -6812,7 +6812,7 @@
       "priority": 3,
       "title": "More dropdown — verify external links after Vercel deployment succeeds",
       "description": "Re-test E370 once Vercel staging is re-deployed. Click More on /trade, verify dropdown includes Docs, Discord, Twitter, Telegram links (not just API). Each link should have correct href.",
-      "status": "failed",
+      "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",

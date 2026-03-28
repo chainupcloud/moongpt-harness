@@ -1704,12 +1704,14 @@
       "id": "issue-192",
       "github_issue_number": 192,
       "title": "[P3] More dropdown missing Telegram link — only Docs, Discord, Twitter, API visible",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E568",
       "created_date": "2026-03-28",
       "fix_attempts": 1,
-      "pr_number": 198
+      "pr_number": 198,
+      "closed_at": "2026-03-28",
+      "note": "PR #198 merged (2b8cdce), staging verified — Telegram link present in More dropdown"
     },
     {
       "id": "issue-193",
