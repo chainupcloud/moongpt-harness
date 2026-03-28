@@ -1754,11 +1754,13 @@
       "id": "issue-195",
       "github_number": 195,
       "title": "[P3] More nav dropdown missing API Keys, Privacy, Terms links — pages exist but not linked",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E588",
       "created_date": "2026-03-28",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/195"
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/195",
+      "pr_number": 207,
+      "fix_attempts": 1
     },
     {
       "id": "issue-197",
