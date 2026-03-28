@@ -2138,6 +2138,42 @@
       "labels": [
         "bug"
       ]
+    },
+    {
+      "id": "issue-144",
+      "github_issue_number": 239,
+      "title": "[P2] TP/SL toggle click does not reveal TP/SL input fields",
+      "status": "open",
+      "priority": "P2",
+      "scenario_id": "E1148",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "issue-145",
+      "github_issue_number": 240,
+      "title": "[P3] Stop Market order type — Trigger Price field missing from form",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E849",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "issue-146",
+      "github_issue_number": 241,
+      "title": "[P3] Explorer tx detail — expanding Events row triggers blocking overlay (z-[9998])",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E853",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-28",

@@ -10225,9 +10225,11 @@
       "priority": 3,
       "title": "Stop Market order — form fields and TIF behavior",
       "description": "Select Stop Market order type, verify the form shows a Trigger Price field, and that TIF options reflect stop-market semantics (no GTC/IOC, or appropriate default).",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Stop Market selected but Trigger Price field not rendered"
     },
     {
       "id": "E850",
@@ -10235,9 +10237,11 @@
       "priority": 3,
       "title": "Scalp order type — UI renders without errors and shows trade parameters",
       "description": "Select Scalp order type from the dropdown, verify the form renders with appropriate fields (spread, size, etc.) and no console errors.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Scalp order type not in dropdown (testnet build)"
     },
     {
       "id": "E851",
@@ -10269,9 +10273,11 @@
       "priority": 3,
       "title": "Explorer tx detail — Events list expand/collapse and detail rendering",
       "description": "On a tx detail page that has events (e.g. PlaceOrder has OrderPlacedEvent), click 'Show details' to expand an event row. Verify event details render (price, size, side). Verify collapse works.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Events chevron expand triggers blocking z-9998 overlay"
     },
     {
       "id": "E854",
@@ -13397,10 +13403,12 @@
       "priority": 2,
       "title": "TP/SL — verify toggle enables TP/SL fields and values persist on form",
       "description": "On /trade, look for TP/SL toggle/checkbox (may be labeled 'TP/SL' or 'Take Profit / Stop Loss'). Enable it, fill in TP and SL values, then change order size. Verify TP/SL fields remain filled and do not reset.",
-      "status": "pending",
+      "status": "failed",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — TP/SL toggle clicked but no TP/SL input fields appeared"
     },
     {
       "id": "E1149",
@@ -13460,6 +13468,50 @@
       "title": "Markets page — search/filter market by name input",
       "description": "If markets page has a search input, type 'BTC' and verify only BTC-USDC row shows; clear and verify all markets return",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1155",
+      "area": "TP/SL",
+      "priority": 2,
+      "title": "TP/SL — verify inputs appear after toggle (inspect DOM for hidden elements)",
+      "description": "After clicking the TP/SL toggle, inspect the DOM to find if TP/SL inputs exist but are hidden (display:none / visibility:hidden), or if they truly don't render. Check parent container class toggling.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1156",
+      "area": "TradeForm",
+      "priority": 3,
+      "title": "Stop Market — verify Trigger Price field renders (check input placeholders broadly)",
+      "description": "After selecting Stop Market, search all visible input placeholders/labels more broadly (not just 'Trigger'). Also check if the form re-renders at all — compare input count before/after selection.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1157",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — Events blocking overlay: can it be dismissed via Escape or close button",
+      "description": "After the z-[9998] overlay appears from clicking an Events chevron, try pressing Escape key or finding a close button to dismiss it. Verify if there is a way out, or if the page requires reload.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1158",
+      "area": "explorer",
+      "priority": 4,
+      "title": "Explorer address page — filter transactions by type dropdown",
+      "description": "Navigate to /explorer/address/[addr], look for a transaction type filter dropdown. Select a specific type (e.g. PlaceOrder) and verify the list filters correctly.",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
