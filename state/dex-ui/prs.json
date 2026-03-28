@@ -1034,7 +1034,7 @@
     {
       "number": 188,
       "title": "fix: explorer search routes tx hash to /explorer/tx/ (#186)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         186
       ],
@@ -1042,7 +1042,12 @@
       "base": "dev",
       "created_date": "2026-03-28",
       "url": "https://github.com/chainupcloud/dex-ui/pull/188",
-      "pr_number": 188
+      "pr_number": 188,
+      "commit_sha": "92dc494",
+      "merged_at": "2026-03-28",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged. Vercel deploy blocked by TEAM_ACCESS_REQUIRED (issue #98). Acceptance deferred."
     },
     {
       "pr_number": 191,

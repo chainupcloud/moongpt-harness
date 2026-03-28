@@ -1670,7 +1670,8 @@
         "bug"
       ],
       "fix_attempts": 1,
-      "pr_number": 188
+      "pr_number": 188,
+      "note": "PR #188 merged (92dc494). Staging deploy blocked by Vercel TEAM_ACCESS_REQUIRED (issue #98). Acceptance deferred."
     },
     {
       "github_number": 189,
