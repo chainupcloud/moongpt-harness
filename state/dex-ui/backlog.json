@@ -7156,9 +7156,11 @@
       "priority": 3,
       "title": "Explorer — pagination works across all pages",
       "description": "On /explorer/transactions, click Next page button multiple times, verify page numbers increment and transaction list changes. Check page size options (10/20/50) change the displayed rows.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — pagination works via SVG arrow buttons, list changes on click"
     },
     {
       "id": "E598",
@@ -7200,9 +7202,11 @@
       "priority": 3,
       "title": "Explorer transaction detail — /explorer/tx/[digest] shows full tx breakdown",
       "description": "From the explorer address page, click a transaction digest link, navigate to /explorer/tx/[digest], verify page shows type, events, timestamp and related addresses.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — tx detail page shows hash, action, address, checkpoint, time, events"
     },
     {
       "id": "E602",
@@ -7232,9 +7236,11 @@
       "priority": 3,
       "title": "Explorer search — search by address returns address page",
       "description": "Use the explorer search box, enter a known address (e.g. test wallet SUI address), verify it navigates to /explorer/address/[addr] page.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — search by address navigates to /explorer/address/[addr]"
     },
     {
       "id": "E605",
@@ -9725,10 +9731,12 @@
       "priority": 2,
       "title": "TWAP order — verify form shows sub-order count display after fix",
       "description": "After issue #? TWAP fix is deployed, verify that interval/duration fields appear and the UI shows how many sub-orders will be placed.",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — duplicate of issue #183 (TWAP fix in progress, PR #184)"
     },
     {
       "id": "E841",
@@ -9747,6 +9755,61 @@
       "priority": 3,
       "title": "More dropdown — verify API Keys, Privacy, Terms links appear after fix",
       "description": "Issue #? says More nav dropdown missing API Keys/Privacy/Terms links. After fix, verify all 3 links appear and navigate to correct pages.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E843",
+      "area": "Explorer",
+      "priority": 3,
+      "title": "Explorer pagination — prev button works and page 1 has prev disabled",
+      "description": "On /explorer/transactions, navigate to page 2 via the Next arrow button, then verify: (1) Prev button is now enabled, (2) clicking Prev returns to page 1 with the original transactions, (3) on page 1 the Prev button is disabled.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E844",
+      "area": "Explorer",
+      "priority": 3,
+      "title": "Explorer — type filter dropdown filters transactions correctly",
+      "description": "On /explorer/transactions, click the 'Filter: All Types' dropdown and select 'PlaceOrder'. Verify the transaction list only shows PlaceOrder type entries. Then switch to 'Deposit' and verify filtering changes.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E845",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — 'Show details' toggle reveals raw event data",
+      "description": "Navigate to /explorer/tx/[digest] for a known tx. Click the 'Show details' button in the Events section. Verify it expands to show raw event fields (amounts, market, etc.).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E846",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — transaction list loads and links to tx detail",
+      "description": "Navigate to /explorer/address/[addr] for the test wallet SUI address. Verify transaction list renders with at least 1 entry. Click a transaction link and confirm it navigates to /explorer/tx/[digest].",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E847",
+      "area": "explorer",
+      "priority": 4,
+      "title": "Explorer search — invalid/unknown address shows not-found state",
+      "description": "In the explorer search box, enter a random 66-char hex string that is not a real address. Verify the UI shows a not-found or empty state rather than an error page or crash.",
       "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
