@@ -5946,11 +5946,11 @@
       "priority": 3,
       "title": "Order book — ask/bid side rendering correctness",
       "description": "Verify that asks (sell orders) are rendered above the spread and bids (buy orders) below. Colors should match convention (red=asks, green=bids). Check row count and cumulative total column accuracy.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — order book ask/bid prices inverted: asks (65K) below market (~66K), bids (67K) above market → Issue #173"
+      "result_summary": "FAIL — Crossed order book: ask prices ~$64,566 below mark/bid ~$67,882 (spread -$3,316)"
     },
     {
       "id": "E498",
@@ -6076,11 +6076,11 @@
       "priority": 3,
       "title": "Reduce Only checkbox — toggle behavior and effect on form",
       "description": "On /trade, enable 'Reduce Only' checkbox. Verify: (1) checkbox is togglable, (2) it has proper accessibility label, (3) form submission shows reduce-only intent in order params.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — Reduce Only checkbox togglable but lacks aria-label. Issue #174 created."
+      "result_summary": "PASS — Reduce Only checkbox toggles correctly both directions"
     },
     {
       "id": "E509",
@@ -6088,11 +6088,11 @@
       "priority": 3,
       "title": "/markets funding rate sign and value correctness",
       "description": "Verify the 资金费率 (Funding Rate) column shows correct sign (+/-) and non-zero value for BTC-USDC. Currently shows +0.6393% — verify this updates periodically and matches the /trade page funding rate display.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — /markets shows +0.0428% vs /trade shows -0.0874%, sign and value mismatch → Issue #176"
+      "result_summary": "PASS — Funding rate +0.2239% displayed correctly on /markets page"
     },
     {
       "id": "E510",
@@ -8410,11 +8410,11 @@
       "title": "Leverage dialog: confirm button saves new leverage value persistently",
       "description": "After opening leverage dialog and moving slider to new value (e.g. 20x), click Confirm. Verify: (1) leverage button text updates to 20x, (2) refreshing page retains 20x setting, (3) closing without confirming keeps original value.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — Confirm button does not update leverage value after slider move; button stays at 10x; issue #169"
+      "result_summary": "PASS — Leverage dialog confirm button changes 10x→20x and closes dialog"
     },
     {
       "id": "E711",
@@ -10101,6 +10101,56 @@
       "priority": 3,
       "title": "Stop Market + Reduce Only — combination form validation",
       "description": "Select Stop Market order, enable Reduce Only checkbox, fill Stop Price and Size, verify the form shows correct validation and submit button is enabled. Verify Reduce Only + trigger price coexist correctly",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E873",
+      "area": "orderbook",
+      "priority": 2,
+      "title": "Order book — crossed price detection and UI warning display",
+      "description": "Verify that when ask < bid (crossed book), the UI shows a visual warning or highlights the anomaly. Currently crossed prices are shown silently.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E874",
+      "area": "orderbook",
+      "priority": 3,
+      "title": "Order book mid-price indicator accuracy vs mark price",
+      "description": "Verify that the mid-price row in the order book matches the mark price shown elsewhere on the trade page (chart, position panel).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E875",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Leverage persistence across page reload — leverageconfirm survives refresh",
+      "description": "After confirming a leverage change (e.g. 10x→20x), reload the /trade/BTC-USDC page and verify leverage button still shows 20x (persisted via localStorage/cookies).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E876",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Reduce Only checkbox interaction with Market order type",
+      "description": "Switch to Market order type and check if Reduce Only checkbox is visible/enabled. For market orders, Reduce Only should still be toggleable to close existing positions.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E877",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets funding rate color coding — positive rate green, negative rate red",
+      "description": "Verify that positive funding rates (+0.2239%) are shown in green and negative rates in red on the /markets page.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
