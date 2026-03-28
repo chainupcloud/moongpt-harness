@@ -6509,10 +6509,12 @@
       "priority": 3,
       "title": "Order Book — bid/ask depth renders correctly and updates live",
       "description": "On /trade Order Book tab, verify bids (green) and asks (red) render with price + size columns. Wait 10s and confirm at least one row updates price/size (live data).",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Order book renders with bid/ask depth rows (text-short/text-long classes), prices e.g. 65319.8, depth bars visible"
     },
     {
       "id": "E545",
@@ -6533,10 +6535,12 @@
       "priority": 3,
       "title": "API Keys page — expired API wallet display and renewal",
       "description": "Check if an expired API wallet (past Valid Until date) shows any visual indicator (expired badge, greyed out). Check if there is a renewal/extend option or only Remove.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "track": "frontend"
+      "track": "frontend",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — No expired API wallet in test account; testnet wallet has no expired keys to verify"
     },
     {
       "id": "E547",
@@ -6577,10 +6581,12 @@
       "priority": 3,
       "title": "API Keys page — verify dialog content and form fields on Generate click",
       "description": "After clicking Generate, verify the dialog shows: name input field, wallet address display, expiry date picker, and a confirmation/sign button. Validate form validation (empty name → error).",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "track": "frontend"
+      "track": "frontend",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Generate click immediately creates key and shows Save Your API Private Key dialog with private key + I have saved this key checkbox; no pre-form modal (inline label/days fields on page)"
     },
     {
       "id": "E551",
@@ -6610,10 +6616,12 @@
       "priority": 3,
       "title": "Explorer — address page direct navigation shows activity list",
       "description": "Visit /explorer/address/{sui_address} directly with a known active SUI address. Verify the page shows a list of transactions/events with amounts, timestamps, action types. Compare with tx page behavior.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "track": "frontend"
+      "track": "frontend",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer address page loads and shows Activity table with transactions (BalanceUpdateEvent, BridgeDepositEvent etc.)"
     },
     {
       "id": "E554",
@@ -9063,6 +9071,56 @@
       "description": "Open WithdrawModal in Send mode. Enter an invalid address (e.g. 'notanaddress'). Verify validation error is shown inline before submission. Follow-up to E537.",
       "status": "pending",
       "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E785",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys — Remove API wallet flow shows confirmation and succeeds",
+      "description": "Click Remove on an existing API wallet entry, verify confirmation dialog appears, confirm removal, and check the wallet disappears from the list.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E786",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys — I have saved this key checkbox enables Close button",
+      "description": "After generating an API key, verify that the Close button in the Save Private Key dialog is disabled until the 'I have saved this key' checkbox is checked.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E787",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — address page transaction rows are clickable and navigate to tx detail",
+      "description": "From the explorer address activity page, click a transaction digest link and verify it navigates to the tx detail page with correct data.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E788",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order Book — clicking ask/bid row pre-fills trade form price",
+      "description": "Click a specific price row in the order book, verify that the limit price input in the trade form gets pre-filled with that price.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E789",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order Book — switch between Order Book and Trades tab works",
+      "description": "Click the Trades tab next to Order Book, verify recent trades list renders with price, size, and time. Switch back to Order Book and verify data returns.",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
