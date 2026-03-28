@@ -1819,7 +1819,7 @@
       "id": "issue-201",
       "github_number": 201,
       "title": "[P3] Order book — no visual warning when ask < bid (crossed book)",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "labels": [
         "bug"
@@ -1828,7 +1828,9 @@
       "created_date": "2026-03-28",
       "fix_attempts": 1,
       "pr_number": 224,
-      "url": "https://github.com/chainupcloud/dex-ui/issues/201"
+      "url": "https://github.com/chainupcloud/dex-ui/issues/201",
+      "closed_at": "2026-03-28",
+      "note": "Staging acceptance passed, PR #224 merged"
     },
     {
       "number": 202,

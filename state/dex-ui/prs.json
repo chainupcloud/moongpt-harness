@@ -1151,13 +1151,17 @@
     {
       "pr_number": 224,
       "title": "fix: add crossed order book visual warning (#201)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         201
       ],
       "created_date": "2026-03-28",
       "branch": "fix/issue-201",
-      "base": "dev"
+      "base": "dev",
+      "merged_at": "2026-03-28",
+      "commit_sha": "f3d65fb",
+      "deployed": true,
+      "accepted": true
     }
   ]
 }
