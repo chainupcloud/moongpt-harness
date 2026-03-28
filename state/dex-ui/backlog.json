@@ -4094,9 +4094,11 @@
       "priority": 3,
       "title": "Markets 页面 — 部署修复后 OI 数据验证（backend + frontend 双修复后）",
       "description": "在 dex-sui issue #28（asset contexts 返回空）修复并重新部署后，验证 Markets 页面 OI 显示正确非零值",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — OI shows $0.00 on testnet; API returns openInterest=\"0.0\" likely due to no active positions in testnet env"
     },
     {
       "id": "E346",
@@ -4299,9 +4301,11 @@
       "title": "Markets page funding rate — verify exact data source matches /trade page (same API endpoint)",
       "description": "Check network requests on /markets vs /trade pages to verify funding rate comes from same API endpoint and same field, ruling out data source divergence",
       "track": "backend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Both /markets and /trade use same data source (metaAndAssetCtxs → useMarketStore.assetInfoMap); funding=\"0.004504\" from same endpoint"
     },
     {
       "id": "E363",
@@ -4321,9 +4325,11 @@
       "priority": 3,
       "title": "API Keys page — Remove existing API wallet",
       "description": "Click Remove on existing API wallet entry, verify confirmation dialog or direct removal, confirm the entry disappears from list",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Remove flow: button → window.confirm(\"Revoke agent?\") → eth_signTypedData_v4 → POST /dex-api/exchange. UI flow correct."
     },
     {
       "id": "E365",
@@ -6209,10 +6215,12 @@
       "priority": 2,
       "title": "API Keys page — full flow test with Playwright browser wallet injection via EIP-6963",
       "description": "Use Playwright's addInitScript to inject a full EIP-6963 provider mock that triggers wagmi connection, bypassing the localStorage-only approach. Test the /api-keys page showing Authorize form and submitting it.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — API Keys page shows Authorize form with EIP-6963 wallet injection, buttons: Generate/Authorize/Remove visible"
     },
     {
       "id": "E543",
@@ -6235,6 +6243,61 @@
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
+    },
+    {
+      "id": "E545",
+      "area": "api-keys",
+      "priority": 2,
+      "title": "API Keys page — Generate new API wallet full flow with real signing",
+      "description": "Click Generate button to create a new API wallet, sign the authorize transaction with real ethers wallet (not mock), verify new entry appears in the API wallets list with name and address",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
+    },
+    {
+      "id": "E546",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys page — expired API wallet display and renewal",
+      "description": "Check if an expired API wallet (past Valid Until date) shows any visual indicator (expired badge, greyed out). Check if there is a renewal/extend option or only Remove.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
+    },
+    {
+      "id": "E547",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets page — OI and Volume data after opening a position",
+      "description": "Open a BTC-USDC position via /trade, then navigate to /markets and verify OI shows non-zero value. This validates OI data pipeline end-to-end.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
+    },
+    {
+      "id": "E548",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets page — funding rate sign and display precision",
+      "description": "Verify funding rate displays with correct sign (+ for positive, - for negative) and 4 decimal places. API returns 0.004504 = +0.4504%. Check both positive and display formatting matches trade page PriceBar.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
+    },
+    {
+      "id": "E549",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys page — multiple API wallets in list (pagination or scrolling)",
+      "description": "If account has >3 API wallets, verify the list shows all entries. Check if there is pagination, scrolling, or a \"show more\" control. Test with accounts that have multiple authorized agents.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
     }
   ]
 }
