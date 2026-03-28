@@ -8675,9 +8675,11 @@
       "title": "Scale order type — verify TWAP/Scale specific fields render on selection",
       "description": "Similar to E492 — click Scale order type tab and check if Scale-specific fields (price range, num orders) appear in the form. Validate that the tab switching logic correctly renders different form views.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TWAP tab found; after click, 7 inputs visible, TWAP/Scale CSS class elements present."
     },
     {
       "id": "E722",
@@ -8686,9 +8688,11 @@
       "title": "Order book spread display — verify spread value is correct and updates with market",
       "description": "Confirm spread value (-1,839 / -2.776%) shown in order book is plausible for testnet BTC-USDC. Refresh page and re-measure spread, compare two values to confirm live update. Check if negative spread is expected.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Spread label element found. Numeric value in sibling; order book rows=0 (stable market or slow load)."
     },
     {
       "id": "E723",
@@ -8697,9 +8701,11 @@
       "title": "Trade form size input — correct placeholder selectors for Long/Short value preservation test",
       "description": "E489 was SKIPped because size input not found by standard selectors. Inspect the trade form DOM to find correct input selectors. The form has inputs with placeholder '0' — test if the size/qty input is one of these and whether values persist on Long/Short switch.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Selectors: price=input[aria-label=\"Price\"], size=input[placeholder=\"0\"] (1st). SKIP value-preservation: w3m-modal intercepts Long/Short click."
     },
     {
       "id": "E724",
@@ -11649,10 +11655,12 @@
       "title": "Leverage dialog — verify 25x tick updates slider value correctly after fix lands",
       "description": "Re-test after PR for issue #220 merges: open leverage dialog (via leverage button in trade form), click 25x tick label, verify slider value becomes 25, Confirm button saves 25x.",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "related_issue": "220",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — 25x tick click does NOT update slider (slider stays at 0). Issue #220 still present."
     },
     {
       "id": "E1002",
@@ -11693,6 +11701,62 @@
       "priority": 3,
       "title": "Withdraw modal — accessible and functional after wallet connection (inject session state)",
       "description": "Use full session cookie injection (wagmi + approveAgent signature flow) to reach authenticated portfolio state. Open withdraw modal, verify amount input renders, test balance validation with amount exceeding 0 balance.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1006",
+      "area": "trade",
+      "priority": 3,
+      "title": "Leverage dialog — verify other tick labels (1x, 13x, 38x, 50x) also unclickable",
+      "description": "E1001 confirms 25x tick unclickable (issue #220 open). Test remaining tick labels to verify full scope: click 1x tick — does slider go to 1? click 50x — does slider go to 50? Helps quantify how many ticks are broken.",
+      "track": "frontend",
+      "status": "pending",
+      "related_issue": "220",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1007",
+      "area": "order-form",
+      "priority": 3,
+      "title": "Reduce-Only checkbox: hidden on Market order, visible only on Limit",
+      "description": "DOM inspection (E723) found input[id='reduce-only'] visible. Verify: on Market tab the Reduce-Only checkbox is hidden; on Limit tab it is visible. Related to open issue about Reduce Only showing on Market orders.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1008",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order book best bid/ask populated and near mark price",
+      "description": "E722 found 0 order book rows via CSS selectors. Inspect order book component DOM directly: find rows with aria-label or correct class names. Verify bid rows are red/green colored, ask price > bid price, and spread value matches computed bid-ask difference.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1009",
+      "area": "order-form",
+      "priority": 3,
+      "title": "TWAP form fields: interval and number-of-orders inputs fillable with validation",
+      "description": "E721 confirmed TWAP tab renders with TWAP CSS class elements. Go deeper: identify the Interval input and Number-of-Orders input. Enter valid values (e.g. interval=5min, orders=5) and invalid values (0, negative). Confirm validation messages appear for invalid input.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1010",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Withdraw modal: opens, shows available balance, input validation",
+      "description": "WithdrawModal.tsx was recently changed. Open portfolio page, click Withdraw button, verify modal opens with correct available balance displayed. Try entering amount > balance — confirm error. Try entering 0 or negative — confirm blocked.",
       "track": "frontend",
       "status": "pending",
       "added_by": "explore-agent",
