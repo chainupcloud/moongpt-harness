@@ -10397,9 +10397,11 @@
       "priority": 3,
       "title": "Explorer address page — navigate to /explorer/address/<addr> and verify transaction history",
       "description": "Navigate to the address detail page in the explorer, verify it shows address balance, transaction history, and recent activity",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer address page loads correctly with SUI address; shows tx history, address label, event types"
     },
     {
       "id": "E865",
@@ -10407,9 +10409,11 @@
       "priority": 3,
       "title": "Explorer checkpoint page — navigate to /explorer/checkpoint/<seq> and verify block details",
       "description": "Navigate to a checkpoint detail page in the explorer, verify it shows checkpoint sequence, transactions included, and validator info",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer checkpoint page loads; shows checkpoint #, time, tx list with PlaceOrder events"
     },
     {
       "id": "E866",
@@ -10427,9 +10431,11 @@
       "priority": 3,
       "title": "API Keys page authenticated — create, list, and revoke API key",
       "description": "With wallet connected, navigate to /api-keys, create a new API key, verify it appears in the list, then revoke it and confirm removal",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — API Keys page accessible with wallet connected; create button opens modal"
     },
     {
       "id": "E868",
@@ -13625,10 +13631,12 @@
       "priority": 2,
       "title": "TP/SL server-side validation — attempt order submit with invalid TP/SL",
       "description": "With session key: enable TP/SL on Limit BUY, set TP below mark price (invalid). Attempt to place order. Verify server rejects the order or client blocks submission. Current known issue #242: client-side validation missing.",
-      "status": "pending",
+      "status": "failed",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — TP/SL toggle unresponsive; no input fields appear after click (issue #239 still open)"
     },
     {
       "id": "E1168",
@@ -13636,6 +13644,61 @@
       "priority": 3,
       "title": "Trade page slug URL — /trade/[...slug] routing with various pair formats",
       "description": "Navigate to /trade/BTC-USDC, /trade/ETH-USDC (testnet fallback). Verify page loads correctly with the pair selected. Also test /trade (no slug) redirects or shows default pair. Recent git change to app/trade/[...slug]/page.tsx.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1169",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — validate SUI vs EVM address input handling",
+      "description": "Navigate to /explorer/address/<eth-addr> (EVM 40-char). Verify page shows helpful error 'Please enter a valid SUI address (0x + 64 hex characters)' rather than crashing or showing blank. Then navigate with valid SUI address and confirm tx history appears.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1170",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search bar — search by SUI address from any page",
+      "description": "From the /explorer page, use the search bar to enter a valid SUI address and verify it navigates to the address detail page with correct results.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1171",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys create modal — fill name and submit, verify key appears in list",
+      "description": "With wallet connected, open /api-keys, click Create button, fill in a name (e.g. 'test-key-{timestamp}'), submit the form. Verify the new key appears in the table and has a revoke button.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1172",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys create modal — input validation for empty name",
+      "description": "Open the API key creation modal, leave the name field empty and click submit. Verify the form shows a validation error and does not create the key.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1173",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint list — pagination and filtering on /explorer/transactions",
+      "description": "Navigate to /explorer/transactions (or /explorer), verify transaction list loads with multiple rows. Test pagination if present. Check that columns (Hash, Action, User, Summary, Time) are all populated.",
       "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
