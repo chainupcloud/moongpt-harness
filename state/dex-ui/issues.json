@@ -1496,13 +1496,15 @@
     {
       "number": 165,
       "title": "[P3] Explorer TX detail shows raw \"Explorer API error: 500\" for invalid hash",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E475",
       "created": "2026-03-28",
       "labels": [
         "bug"
-      ]
+      ],
+      "pr_number": 167,
+      "fix_attempts": 1
     }
   ],
   "last_updated": "2026-03-28",

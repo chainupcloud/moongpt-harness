@@ -868,6 +868,15 @@
       ],
       "status": "open",
       "created_at": "2026-03-28"
+    },
+    {
+      "number": 167,
+      "title": "fix: show friendly error for invalid tx hash (#165)",
+      "status": "open",
+      "issue_numbers": [
+        165
+      ],
+      "created": "2026-03-28"
     }
   ]
 }
