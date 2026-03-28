@@ -1812,6 +1812,18 @@
       "created_date": "2026-03-28",
       "fix_attempts": 0,
       "url": "https://github.com/chainupcloud/dex-ui/issues/201"
+    },
+    {
+      "number": 202,
+      "title": "[P3] Stop Limit trigger price validation — hint disappears on input, submit not blocked for invalid stop price",
+      "status": "open",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "scenario": "E633",
+      "created": "2026-03-28",
+      "url": "https://github.com/chainupcloud/dex-ui/issues/202"
     }
   ],
   "last_updated": "2026-03-28",

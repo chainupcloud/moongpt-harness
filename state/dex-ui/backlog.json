@@ -7579,9 +7579,11 @@
       "priority": 3,
       "title": "Scale order Number of Orders preset buttons — clicking 3/5/7/10 updates order preview",
       "description": "Scale order has preset buttons for Number of Orders (3,5,7,10). Clicking each should update the 'Orders: X ($Y)' counter and order preview. Verify each preset produces correct number of orders.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Scale order preset buttons 3/5/7/10 work, update order count correctly"
     },
     {
       "id": "E633",
@@ -7589,9 +7591,11 @@
       "priority": 3,
       "title": "Stop Limit / Stop Market — trigger price input validation (trigger above/below mark price)",
       "description": "Stop Limit and Stop Market have trigger price inputs. Verify: For BUY stop, trigger above mark price shows correct UI; for SELL stop, trigger below mark. Test edge cases.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Stop Limit trigger price hint disappears on input, no blocking validation → Issue #202"
     },
     {
       "id": "E634",
@@ -7633,9 +7637,11 @@
       "priority": 3,
       "title": "Scale order — verify Top Heavy vs Bottom Heavy vs Uniform affects price distribution in order preview",
       "description": "Switch between distribution options (Uniform/Top Heavy/Bottom Heavy) and verify the order price distribution visually changes in the form.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Top Heavy/Bottom Heavy/Uniform distribution buttons toggle selection correctly"
     },
     {
       "id": "E638",
@@ -7643,9 +7649,11 @@
       "priority": 3,
       "title": "Market order — slippage tolerance configurable via settings (if feature exists)",
       "description": "Investigate whether market order slippage can be configured. Check for gear icon in sidebar, settings modal, or any slippage input. Document actual UI pattern.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Market order slippage visible in gear settings (0.00% / Max 1%)"
     },
     {
       "id": "E639",
@@ -10260,6 +10268,56 @@
       "priority": 3,
       "title": "TP/SL validation — submit button disabled when TP/SL values are invalid",
       "description": "When red-border validation appears for invalid TP/SL, verify the Buy/Sell submit button is also disabled to prevent submitting invalid orders.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E888",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Stop Limit / Stop Market — submit behavior when stop price already crossed mark price",
+      "description": "Submit a Stop Limit order with stop price below current mark price (for BUY). Verify whether order is rejected server-side or triggers immediately as market order.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E889",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Scale order — verify price distribution differs between Top Heavy, Bottom Heavy, Uniform modes",
+      "description": "With a filled scale order (price range 63000-70000, 5 orders), switch between Top/Bottom/Uniform and verify the price levels in the order preview show different distributions.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E890",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Market order slippage tolerance — verify Max 1% is configurable and enforced",
+      "description": "Open market order gear settings showing 'Slippage: 0.00% / Max 1%'. Check if Max can be changed. Place a market order and verify slippage protection triggers if price moves > max.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E891",
+      "area": "trade-form",
+      "priority": 4,
+      "title": "Scale order — Number of Orders input accepts direct typing (bypass preset buttons)",
+      "description": "In Scale order form, type a custom number of orders directly (e.g. 8) instead of using preset buttons. Verify order preview updates to show 8 price levels.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E892",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Stop Market sell — trigger price should be below mark price",
+      "description": "For SELL Stop Market, trigger price should be below current mark price. Test that entering a trigger above mark for sell stop shows appropriate hint/warning.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
