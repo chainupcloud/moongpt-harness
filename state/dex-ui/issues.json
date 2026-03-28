@@ -1210,13 +1210,16 @@
       "id": "issue-2026-03-28-E370",
       "scenario_id": "E370",
       "github_issue_number": 138,
+      "github_number": 138,
       "title": "[P3] More nav dropdown missing external links — Docs, Discord, Blog, FAQ all hidden",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "created_date": "2026-03-28",
       "labels": [
         "bug"
-      ]
+      ],
+      "fix_attempts": 1,
+      "pr_number": 140
     },
     {
       "issue_number": 139,
