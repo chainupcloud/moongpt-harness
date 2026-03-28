@@ -8208,9 +8208,11 @@
       "priority": 3,
       "title": "Scale order type — fill price range low/high and step count, verify form validation",
       "description": "Select Scale from Order Type dropdown. Fill in: low price, high price, number of steps, size. Verify the form shows computed step size and the Buy button is enabled.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Scale form fully functional: Start/End price range, Number of Orders, shows computed Order Preview"
     },
     {
       "id": "E685",
@@ -11030,10 +11032,12 @@
       "priority": 2,
       "title": "Explorer tx detail — 'User Address' label should be 'Sender' for consistency",
       "description": "TX detail page shows 'User Address' label; verify whether it should be labeled 'Sender' or 'From' as per Hyperliquid explorer conventions",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "track": "frontend"
+      "track": "frontend",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — \"User Address\" label on tx detail; should be \"From\" or \"Sender\" (issue #213)"
     },
     {
       "id": "E952",
@@ -11041,10 +11045,12 @@
       "priority": 2,
       "title": "Order Type dropdown — verify Scale and TWAP options visible with connected wallet",
       "description": "After wallet connect + enable trading, open Order Type dropdown and verify Scale and TWAP are available alongside Market/Limit/Stop",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "track": "frontend"
+      "track": "frontend",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Scale and TWAP options visible in order type dropdown with connected wallet"
     },
     {
       "id": "E953",
@@ -11063,10 +11069,12 @@
       "priority": 2,
       "title": "Explorer checkpoint detail page — loads with block/cp data",
       "description": "Navigate to /explorer/checkpoint/{seq} for a known checkpoint number; verify the page loads with timestamp, tx count, and validator info",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "track": "frontend"
+      "track": "frontend",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Checkpoint detail page loads with timestamp, tx count and tx list"
     },
     {
       "id": "E955",
@@ -11078,6 +11086,61 @@
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "track": "frontend"
+    },
+    {
+      "id": "E956",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — label consistency: 'User Account' in checkpoint vs 'User Address' in tx detail",
+      "description": "After fixing E951 (User Address → From/Sender), verify label is consistent across explorer pages: checkpoint tx list, tx detail page, and address page all use the same field name.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E957",
+      "area": "scale-order",
+      "priority": 3,
+      "title": "Scale order — Distribution mode: verify Top Heavy and Bottom Heavy produce different order size distributions",
+      "description": "Select Scale order type, fill price range, switch Distribution between Uniform/Top Heavy/Bottom Heavy and verify Order Preview shows different BTC amounts per order step.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E958",
+      "area": "scale-order",
+      "priority": 3,
+      "title": "Scale order — invalid range validation: Start price >= End price should show error",
+      "description": "Set Scale Start price higher than End price (e.g., Start=68000, End=64000) and verify UI shows a validation error or disables the submit button.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E959",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — loads transaction history for a known wallet address",
+      "description": "Navigate to /explorer/address/{addr} for a known active wallet address, verify the page loads with transaction list and correct address display.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E960",
+      "area": "explorer",
+      "priority": 2,
+      "title": "Explorer — pagination: navigate to page 2 of transactions list",
+      "description": "On /explorer/transactions, if there are multiple pages, click Next/page 2 and verify a different set of transactions loads without errors.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
     }
   ]
 }

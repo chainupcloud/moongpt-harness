@@ -1731,11 +1731,14 @@
       "id": "issue-193",
       "github_issue_number": 193,
       "title": "[P3] Limit order TIF dropdown (GTC) has chevron but does not open — IOC/FOK unselectable",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E575",
       "created_date": "2026-03-28",
-      "fix_attempts": 0
+      "closed_at": "2026-03-28",
+      "fix_attempts": 0,
+      "resolution": "not-reproducible",
+      "note": "Dropdown works correctly on staging — ALO/GTC/IOC all selectable. Verified 2026-03-28."
     },
     {
       "id": "issue-112",
@@ -1927,6 +1930,16 @@
       "priority": "P3",
       "scenario": "E675",
       "opened_date": "2026-03-28"
+    },
+    {
+      "id": "issue-213",
+      "github_issue_number": 213,
+      "title": "[P4] Explorer tx detail — 'User Address' label should be 'From' for consistency",
+      "status": "open",
+      "priority": "P4",
+      "scenario_id": "E951",
+      "created_date": "2026-03-28",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-28",
