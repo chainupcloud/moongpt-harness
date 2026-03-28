@@ -1594,7 +1594,8 @@
         "bug"
       ],
       "pr_number": 177,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "note": "PR #177 merged (2818e10), acceptance deferred (Vercel blocked by #98)"
     },
     {
       "number": 178,
