@@ -1878,13 +1878,15 @@
       "id": "issue-E643-2026-03-28",
       "title": "[P3] Isolated margin leverage slider resets to 0x after Cross→Isolated switch",
       "github_issue_number": 205,
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario_id": "E643",
       "created_date": "2026-03-28",
       "labels": [
         "bug"
-      ]
+      ],
+      "pr_number": 233,
+      "fix_attempts": 1
     },
     {
       "id": "issue-E647-2026-03-28",
