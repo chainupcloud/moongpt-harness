@@ -2114,6 +2114,18 @@
       "labels": [
         "enhancement"
       ]
+    },
+    {
+      "id": "issue_235",
+      "github_number": 235,
+      "title": "[P4] /markets — 资金费率 and 最高杠杆 columns not sortable (missing sort indicators)",
+      "status": "open",
+      "priority": "P4",
+      "scenario": "E815",
+      "created_date": "2026-03-28",
+      "labels": [
+        "enhancement"
+      ]
     }
   ],
   "last_updated": "2026-03-28",

@@ -9762,9 +9762,11 @@
       "priority": 3,
       "title": "Explorer — filter by specific type (PlaceOrder only) shows no other tx types",
       "description": "Select PlaceOrder from the type filter dropdown, verify all visible rows are PlaceOrder type and no CancelOrder or oracle updates appear",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Explorer type filter present but no tx data to test filtering"
     },
     {
       "id": "E812",
@@ -9772,9 +9774,11 @@
       "priority": 3,
       "title": "Stop Limit order — fill trigger price and limit price, verify form validation",
       "description": "Select Stop Limit from order type dropdown, enter trigger price lower than current, enter limit price, verify both fields are labeled correctly and form accepts submission",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Stop Limit order type available with stop price and limit price fields"
     },
     {
       "id": "E813",
@@ -9792,9 +9796,11 @@
       "priority": 3,
       "title": "Withdraw modal — MAX button fills withdrawable balance (not total balance)",
       "description": "Click MAX button in withdraw modal. Verify it fills the withdrawable amount (e.g., 0 if all locked, or actual available). E564 confirmed error shows for 600; now verify MAX button behavior when withdrawable=0 or partial.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Withdraw modal not accessible without wallet connection"
     },
     {
       "id": "E815",
@@ -9802,9 +9808,11 @@
       "priority": 3,
       "title": "Markets page — funding rate and max leverage columns add sort support",
       "description": "E573 found 资金费率 (funding rate) and 最高杠杆 (max leverage) lack sort indicators. Verify if this is intentional or a missing feature. Check if clicking those headers has any effect.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Funding rate and max leverage columns not sortable → Issue #235"
     },
     {
       "id": "E816",
@@ -12976,6 +12984,56 @@
       "priority": 3,
       "title": "Explorer — clicking a transaction row navigates to tx detail page",
       "description": "On /explorer/transactions, click on a transaction hash or row. Verify navigation to /explorer/tx/[digest] detail page showing transaction details (type, sender, checkpoint, actions).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1115",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets page — 资金费率 column sort after E815 fix: verify ↕ indicator appears and data reorders",
+      "description": "After #235 is fixed, click 资金费率 column header and verify: (1) ↕ indicator appears, (2) first click sorts ascending, (3) second click sorts descending, (4) BTC row moves accordingly",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1116",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Limit order — trigger price vs current price validation: submit with trigger > current for short",
+      "description": "Select Stop Limit, set trigger price above current market price for a short order. Verify form validation shows appropriate error or allows submission. Check if trigger/limit price relationship is validated.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1117",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Market order — form fields differ from Stop Limit (no limit price field)",
+      "description": "Select Stop Market from order type dropdown. Verify form shows only trigger price (no limit price field, unlike Stop Limit). Confirms UI differentiates the two order types correctly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1118",
+      "area": "explorer",
+      "priority": 4,
+      "title": "Explorer — type filter with active data: navigate to explorer page with a fresh deposit then filter by Deposit",
+      "description": "E811 found no tx data. After making a deposit transaction, revisit explorer and filter by Deposit type. Verify only Deposit rows appear and CancelOrder/PlaceOrder rows are hidden.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1119",
+      "area": "markets",
+      "priority": 4,
+      "title": "Markets page — 最高杠杆 column values: verify 20x shown for BTC matches /trade leverage selector max",
+      "description": "Markets page shows BTC max leverage as 20x. Navigate to /trade/BTC-USDC and check max leverage in the Cross/Isolated selector or leverage slider. Verify values are consistent.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
