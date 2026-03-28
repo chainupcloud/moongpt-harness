@@ -194,7 +194,7 @@
       "title": "[P2] /dex-api/info 500 — column dex_perpetuals.owner_address does not exist — 交易页完全卡在骨架屏",
       "github_issue_number": 26,
       "github_repo": "chainupcloud/dex-sui",
-      "status": "open",
+      "status": "closed",
       "priority": "P2",
       "created_date": "2026-03-27",
       "scenarios": [
@@ -206,7 +206,9 @@
         "bug",
         "backend"
       ],
-      "notes": "E061 2026-03-27: API /dex-api/info POST returns 200 with market data. Skeleton gone on trade page. GitHub issue still open - may need manual close by backend team."
+      "notes": "E061 2026-03-27: API /dex-api/info POST returns 200 with market data. Skeleton gone on trade page. GitHub issue still open - may need manual close by backend team.",
+      "closed_at": "2026-03-27",
+      "note": "Synced from GitHub"
     },
     {
       "number": 34,
@@ -546,13 +548,15 @@
     },
     {
       "title": "[P3] /info API prevDayPx always returns 0.0 — 24h price change unavailable",
-      "status": "open",
+      "status": "closed",
       "repo": "dex-sui",
       "number": 27,
       "scenario": "E216",
       "priority": "P3",
       "created": "2026-03-27",
-      "url": "https://github.com/chainupcloud/dex-sui/issues/27"
+      "url": "https://github.com/chainupcloud/dex-sui/issues/27",
+      "closed_at": "2026-03-27",
+      "note": "Synced from GitHub"
     },
     {
       "id": "issue-2026-03-27-dex-ui-75",
@@ -787,7 +791,7 @@
       "title": "[P3] Explorer checkpoint detail API returns empty transactions when list shows txCount=1",
       "github_issue_number": 29,
       "github_repo": "chainupcloud/dex-sui",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "created_date": "2026-03-27",
       "scenarios": [
@@ -797,7 +801,9 @@
         "bug",
         "backend"
       ],
-      "notes": "Backend /dex-api/explorer checkpoint detail returns transactions:[] and timestampMs:0 for all checkpoints, while list API shows txCount=1"
+      "notes": "Backend /dex-api/explorer checkpoint detail returns transactions:[] and timestampMs:0 for all checkpoints, while list API shows txCount=1",
+      "closed_at": "2026-03-27",
+      "note": "Synced from GitHub"
     },
     {
       "id": "issue-2026-03-27-dex-ui-101",
