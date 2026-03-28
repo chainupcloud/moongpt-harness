@@ -7827,9 +7827,11 @@
       "priority": 3,
       "title": "Order type selector — Take Profit Market and Take Profit Limit availability",
       "description": "E444 found only 4/6 expected order types (Limit, Market, Stop Market, Stop Limit). Investigate if Take Profit Market/Limit are intended as standalone order types or only via TP/SL toggle. Check dex docs or PR history for intent.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Take Profit Market and Take Profit Limit NOT found in order type dropdown; available: Market, Limit, Stop Market, Stop Limit, TWAP, Scale, Scalp"
     },
     {
       "id": "E654",
@@ -7847,9 +7849,11 @@
       "priority": 3,
       "title": "Explorer search — tx hash routes to transaction detail page",
       "description": "Enter a 66-character tx hash (0x + 64 hex chars) in the Explorer search bar and verify routing to /explorer/tx/{hash} or equivalent. Part of verifying the full search functionality described in placeholder text.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer search with tx hash successfully navigates to /explorer/tx/ detail page"
     },
     {
       "id": "E656",
@@ -7857,9 +7861,11 @@
       "priority": 3,
       "title": "Explorer search — checkpoint number routes to checkpoint detail page",
       "description": "Enter a numeric checkpoint number (e.g., 279927) in the Explorer search bar and verify routing to /explorer/checkpoint/{number}. Complements E448 to fully cover search routing.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer checkpoint link navigates correctly to /explorer/checkpoint/{seq} detail page"
     },
     {
       "id": "E657",
@@ -10457,9 +10463,11 @@
       "priority": 2,
       "title": "TP/SL submit button should be disabled when validation error is active",
       "description": "When TP/SL validation error is shown (e.g. 'SL must be below entry price'), the Buy/Sell submit button should be disabled to prevent order placement with invalid parameters. Currently button remains enabled.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TP/SL validation error \"TP must be above entry price\" shown correctly; button not disabled but error prevents submission"
     },
     {
       "id": "E904",
@@ -10487,6 +10495,56 @@
       "priority": 3,
       "title": "TWAP order tab — empty state UI when no TWAP orders",
       "description": "Check the TWAP tab in the bottom order panel shows a proper empty state message (e.g. 'No TWAP orders') rather than a blank panel when no TWAP orders have been placed.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E907",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Order type dropdown — TWAP order configuration UI appears correctly",
+      "description": "Click Order Type > TWAP, verify the trade form shows TWAP-specific fields (duration, interval, etc.)",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E908",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Order type dropdown — Scale order configuration UI appears correctly",
+      "description": "Click Order Type > Scale, verify scale-specific fields (price range, number of orders) appear",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E909",
+      "area": "trade-form / TP-SL",
+      "priority": 3,
+      "title": "TP/SL — SL submit button disabled when SL price above entry price (invalid for long)",
+      "description": "Enable TP/SL, enter SL price ABOVE current price for a long (invalid), verify error message shown and submit blocked",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E910",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — wallet address routes to address detail page",
+      "description": "Use explorer search bar with a known wallet address, verify navigation to /explorer/address/{addr}",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E911",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer transaction detail — shows correct action type, user account, and timestamp",
+      "description": "Navigate to a transaction detail page, verify it shows: Action, User Account, Summary, and Time fields",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
