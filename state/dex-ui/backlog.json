@@ -8022,9 +8022,11 @@
       "priority": 3,
       "title": "Portfolio balance value — matches API account equity",
       "description": "Navigate to /portfolio with Sepolia wallet. Compare displayed USDC balance against GET /api/account?address={addr} equity field. Values should match within 1%.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — API 404 for account endpoint, wallet cookie injection not auto-connecting"
     },
     {
       "id": "E670",
@@ -8032,9 +8034,11 @@
       "priority": 3,
       "title": "Explorer tx detail — Event log展开/折叠交互",
       "description": "在 /explorer/tx/{hash} 页面，若 Events > 0，点击 [+] 展开事件详情，验证展开/折叠动画与内容显示正确",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — explorer tx detail expand/collapse works, content expanded on click"
     },
     {
       "id": "E671",
@@ -8042,9 +8046,11 @@
       "priority": 3,
       "title": "Explorer address detail — 分页加载更多交易",
       "description": "在 /explorer/address/{addr} 页面，若交易数量 > 一页，验证分页按钮或滚动加载下一页数据",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — EVM address rejected by SUI explorer (expected behavior, need SUI format address)"
     },
     {
       "id": "E672",
@@ -8064,9 +8070,11 @@
       "priority": 3,
       "title": "Portfolio — 连接钱包后标签页切换（Positions/Orders/History）",
       "description": "通过 EIP-6963 provider 注入方式完成钱包连接，验证 Portfolio 页面标签页 Positions、Orders、Transaction History 均可切换且内容正常加载",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Portfolio Positions/Orders tabs missing, only Assets/History tabs present → Issue #210"
     },
     {
       "id": "E674",
@@ -10707,6 +10715,56 @@
       "priority": 3,
       "title": "Transfer modal — Withdraw tab MAX button fills correct withdrawal balance",
       "description": "In the Transfer modal, switch to the Withdraw tab and verify MAX button fills the correct available balance (not the deposit balance)",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E926",
+      "area": "portfolio",
+      "priority": 2,
+      "title": "Portfolio Assets tab — USDC balance display after wallet connect",
+      "description": "连接钱包后，Portfolio > Assets tab 显示 USDC 余额；验证余额数值与 API /api/account 返回的 equity 字段一致（误差 < 1%）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E927",
+      "area": "portfolio",
+      "priority": 2,
+      "title": "Portfolio — Add funds 流程（Deposit）",
+      "description": "点击 Portfolio > Total Balance 区域的 '+ Add funds' 按钮，验证存款弹窗/流程可正常打开",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E928",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio PnL Calendar — 展示历史盈亏热力图",
+      "description": "访问 Portfolio > PnL Calendar tab，验证日历热力图正常渲染，月份切换功能正常",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E929",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address detail — SUI 格式地址正常显示交易列表",
+      "description": "使用 SUI 格式地址（0x94bd399ad5c05f9237c806c6dc8353ed5bd66a93bdf7c6f8346e6b191287c27c）访问 /explorer/address/{addr}，验证交易列表正常展示",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E930",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio Transaction History tab — 历史成交记录展示",
+      "description": "连接钱包后访问 Portfolio > Transaction History tab，验证历史成交记录正常加载，每行显示时间、类型、资产、金额等信息",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
