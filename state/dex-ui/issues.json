@@ -1259,6 +1259,22 @@
       "github_number": 142,
       "closed_at": "2026-03-28",
       "note": "PR #143 merged+deployed to dev. Vercel deploy ERROR (team config issue #98). Accepted via code review + SHA verification."
+    },
+    {
+      "id": "issue-144",
+      "gh_number": 144,
+      "github_number": 144,
+      "title": "[P3] TIF selection not persistent — IOC selected but GTC displayed in order form",
+      "status": "open",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "scenario_id": "E405",
+      "scenario": "E405",
+      "created_date": "2026-03-28",
+      "fix_attempts": 0,
+      "url": "https://github.com/chainupcloud/dex-ui/issues/144"
     }
   ],
   "last_updated": "2026-03-28",

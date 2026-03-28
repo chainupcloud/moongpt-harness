@@ -4799,9 +4799,11 @@
       "priority": 3,
       "title": "TradeForm useOrderValidation: verify validation runs on TWAP type",
       "description": "Recent changes to useOrderValidation.ts — check if validation logic covers TWAP order type or if TWAP bypasses validation silently.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — TWAP button targeting ambiguous; TWAP tab in orders panel vs TWAP order type option not differentiated"
     },
     {
       "id": "E404",
@@ -4809,9 +4811,11 @@
       "priority": 3,
       "title": "Order type selector: verify all available types are listed (Limit, Market, TWAP, Stop)",
       "description": "Check the order type selector shows all expected types and none are missing. After recent TradeForm changes, confirm type list is complete.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Order types: Limit, Market, Stop Market, Stop Limit, TWAP, Scale, Scalp all present"
     },
     {
       "id": "E405",
@@ -4819,9 +4823,11 @@
       "priority": 3,
       "title": "IOC order execution — verify order placed with IOC TIF and cancels unfilled portion",
       "description": "Select Limit order type, switch TIF to IOC, place a limit order at a non-marketable price, verify the order is cancelled (not resting) after partial or no fill",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — IOC TIF selection not persistent; button shows GTC after IOC selected → Issue #144"
     },
     {
       "id": "E406",
@@ -4891,9 +4897,11 @@
       "priority": 3,
       "title": "API key creation flow — connect wallet, create new API key, verify it appears in list",
       "description": "On /api-keys page with wallet connected: click create API key button, complete any required signing step, verify new key appears with permissions shown.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — API key page requires wallet connection; expected behavior"
     },
     {
       "id": "E413",
@@ -6768,6 +6776,56 @@
       "priority": 4,
       "title": "API Keys page — verify redirect/prompt when wallet not connected",
       "description": "Without wallet connected, navigate to /api-keys. Verify the page shows a connect wallet prompt rather than erroring out or showing empty state without guidance.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E590",
+      "area": "TradeForm / TIF",
+      "priority": 3,
+      "title": "TIF selection — verify ALO (Add Liquidity Only) option works and persists",
+      "description": "Select Limit order type, open TIF dropdown, pick ALO, verify button shows ALO and order is submitted with ALO flag",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E591",
+      "area": "TradeForm / OrderType",
+      "priority": 3,
+      "title": "TWAP order: verify duration/interval fields appear and accept input",
+      "description": "After selecting TWAP order type from the dropdown (not the TWAP tab in bottom panel), confirm the form shows TWAP-specific fields like duration and interval",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E592",
+      "area": "TradeForm / OrderType",
+      "priority": 3,
+      "title": "Scale order type: verify price range and steps fields visible",
+      "description": "Select Scale order type, verify the form shows price range start/end and number of steps fields",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E593",
+      "area": "API Keys",
+      "priority": 2,
+      "title": "API key creation: connect wallet, create key, verify displayed in list",
+      "description": "Connect wallet via cookie injection, navigate to /api-keys, click Create, sign message, verify new key appears in the list with name and creation date",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E594",
+      "area": "TradeForm / TIF",
+      "priority": 2,
+      "title": "TIF persistence across order type switches — verify IOC stays when switching Limit→Market→Limit",
+      "description": "Select IOC TIF, switch to Market order type then back to Limit, verify TIF returns to IOC (or defaults gracefully). Related to IOC persistence bug #144",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
