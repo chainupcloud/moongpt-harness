@@ -1695,7 +1695,8 @@
       "labels": [
         "enhancement"
       ],
-      "pr_number": 191
+      "pr_number": 191,
+      "note": "PR #191 merged (2cbfcf9). Staging deploy blocked by Vercel TEAM_ACCESS_REQUIRED (issue #98) + API rate limit. Acceptance deferred."
     },
     {
       "id": "issue-192",
