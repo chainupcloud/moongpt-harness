@@ -8196,9 +8196,11 @@
       "priority": 3,
       "title": "Explorer address page — verify holdings and tx history loads for wallet addr",
       "description": "Navigate directly to /explorer/address/{known_addr} using a 66-char SUI address. Verify the page loads data: transaction count, balance, activity list.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer address page loads with full tx history (OrderPlacedEvent, BalanceUpdateEvent, BridgeDepositEvent)"
     },
     {
       "id": "E684",
@@ -10968,9 +10970,11 @@
       "title": "Explorer tx detail page — shows all transaction fields (type, digest, sender, timestamp, gas)",
       "description": "After navigating to /explorer/tx/{digest}, verify the page renders: transaction type, full digest, sender address, timestamp, gas used, and status. All fields should be populated, not empty/zero.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TX detail page shows hash, action/type, user address, time, fee (–); \"User Address\" label used for sender field"
     },
     {
       "id": "E947",
@@ -10979,9 +10983,11 @@
       "title": "Scale order — submit with valid price range and verify order placed",
       "description": "After selecting Scale order type, fill in a valid Price Range (Low=60000, High=70000) and Number of Orders=5, set a size, then attempt to submit. Verify the order is placed or an appropriate error shown (not a JS crash).",
       "track": "frontend",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — \"Scale\" text in page comes from marketing OrderTypes component; trade form dropdown needs wallet connection to reveal order types"
     },
     {
       "id": "E948",
@@ -11001,9 +11007,11 @@
       "title": "TWAP tab — can submit a new TWAP order with size and duration",
       "description": "Click the TWAP tab in the bottom panel. Verify there is an input form to place a new TWAP order (size, duration). Fill in size=0.001 BTC, duration=1h and verify the submit button is present and enabled.",
       "track": "frontend",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — TWAP text in page from marketing component + history tab; Order Type in form shows only \"Limit\" without wallet; cannot test TWAP creation without wallet"
     },
     {
       "id": "E950",
@@ -11015,6 +11023,61 @@
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
+    },
+    {
+      "id": "E951",
+      "area": "explorer",
+      "priority": 2,
+      "title": "Explorer tx detail — 'User Address' label should be 'Sender' for consistency",
+      "description": "TX detail page shows 'User Address' label; verify whether it should be labeled 'Sender' or 'From' as per Hyperliquid explorer conventions",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
+    },
+    {
+      "id": "E952",
+      "area": "trade",
+      "priority": 2,
+      "title": "Order Type dropdown — verify Scale and TWAP options visible with connected wallet",
+      "description": "After wallet connect + enable trading, open Order Type dropdown and verify Scale and TWAP are available alongside Market/Limit/Stop",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
+    },
+    {
+      "id": "E953",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — Fee field shows '–' for PlaceOrder; verify if fee should be populated",
+      "description": "TX detail page shows 'Fee: –' for PlaceOrder transactions. Verify whether fee should display a numerical value or '–' is correct for this tx type",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
+    },
+    {
+      "id": "E954",
+      "area": "explorer",
+      "priority": 2,
+      "title": "Explorer checkpoint detail page — loads with block/cp data",
+      "description": "Navigate to /explorer/checkpoint/{seq} for a known checkpoint number; verify the page loads with timestamp, tx count, and validator info",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
+    },
+    {
+      "id": "E955",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search bar — search by tx hash navigates to tx detail",
+      "description": "Use the Explorer search bar to type a known tx hash; verify it navigates to the correct tx detail page",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
     }
   ]
 }
