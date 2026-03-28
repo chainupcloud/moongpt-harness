@@ -1505,6 +1505,18 @@
       ],
       "pr_number": 167,
       "fix_attempts": 1
+    },
+    {
+      "github_number": 168,
+      "title": "[P2] Leverage dialog slider initializes at 0x regardless of current leverage value",
+      "priority": "P2",
+      "status": "open",
+      "created_at": "2026-03-28",
+      "scenario": "E706",
+      "labels": [
+        "bug"
+      ],
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-28",
