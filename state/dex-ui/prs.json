@@ -981,6 +981,17 @@
       "deployed": false,
       "accepted": false,
       "note": "Merged but Vercel deploy limit reached (issue #98). Acceptance deferred."
+    },
+    {
+      "pr_number": 182,
+      "issue_numbers": [
+        181
+      ],
+      "status": "open",
+      "created_at": "2026-03-28",
+      "title": "fix: clear TP/SL values when switching Buy/Long to Sell/Short (#181)",
+      "branch": "fix/issue-181",
+      "base": "dev"
     }
   ]
 }

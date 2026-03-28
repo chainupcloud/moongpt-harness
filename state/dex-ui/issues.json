@@ -1618,14 +1618,15 @@
       "number": 181,
       "github_number": 181,
       "title": "[P3] Trade page — TP/SL values not cleared when switching Buy/Long to Sell/Short direction",
-      "status": "open",
+      "status": "fixing",
       "scenario_id": "E518",
       "priority": "P3",
       "labels": [
         "bug"
       ],
       "created_date": "2026-03-28",
-      "fix_attempts": 0
+      "fix_attempts": 1,
+      "pr_number": 182
     }
   ],
   "last_updated": "2026-03-28",
