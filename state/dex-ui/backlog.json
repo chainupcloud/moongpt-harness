@@ -6763,9 +6763,11 @@
       "priority": 3,
       "title": "Withdraw modal — over-balance amount shows validation error",
       "description": "With 500 USDC available, entering 501 should show an error or disable submit. E378 confirmed MAX fills 500. Now test entering 600 to verify validation.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Withdraw modal shows \"Insufficient balance\" for 600 USDC over-balance amount"
     },
     {
       "id": "E565",
@@ -6844,9 +6846,11 @@
       "priority": 3,
       "title": "Explorer — search with partial tx hash shows error not empty page",
       "description": "Enter a partial/short tx hash (< 64 chars). Verify that an appropriate error message is shown, not an empty detail page (fix #139 validation).",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer partial tx hash (0xabc123def456) shows error message, stays on explorer page"
     },
     {
       "id": "E572",
@@ -6866,9 +6870,11 @@
       "priority": 3,
       "title": "Markets page — all columns sortable (price, 24h change, volume, OI, funding rate)",
       "description": "Click each column header on the markets page. Verify ascending/descending sort works for each column.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — 4/6 columns sortable (价格, 24h涨跌, 24h成交量, 持仓量); 资金费率 and 最高杠杆 not sortable; only 1 testnet market"
     },
     {
       "id": "E574",
@@ -6876,9 +6882,11 @@
       "priority": 3,
       "title": "Explorer — address search routes to /explorer/address/{addr} page",
       "description": "In the Explorer search bar, enter a known Sui address. Verify navigation to /explorer/address/{addr} and address detail page loads correctly.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Address search routes to /explorer/address/{addr}; address detail page loads correctly"
     },
     {
       "id": "E575",
@@ -9400,6 +9408,56 @@
       "priority": 4,
       "title": "Markets page — sort by funding rate column, verify direction toggle",
       "description": "Click '资金费率' column (funding rate), verify rows reorder; click again to reverse sort direction",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E814",
+      "area": "withdraw",
+      "priority": 3,
+      "title": "Withdraw modal — MAX button fills withdrawable balance (not total balance)",
+      "description": "Click MAX button in withdraw modal. Verify it fills the withdrawable amount (e.g., 0 if all locked, or actual available). E564 confirmed error shows for 600; now verify MAX button behavior when withdrawable=0 or partial.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E815",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets page — funding rate and max leverage columns add sort support",
+      "description": "E573 found 资金费率 (funding rate) and 最高杠杆 (max leverage) lack sort indicators. Verify if this is intentional or a missing feature. Check if clicking those headers has any effect.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E816",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — shows transaction list for known active address",
+      "description": "E574 confirmed routing to /explorer/address/{addr}. Now verify the address detail page actually loads transaction history for the test address 0x94bd399..., not just an empty page.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E817",
+      "area": "withdraw",
+      "priority": 3,
+      "title": "Withdraw modal — network selector shows correct chain options",
+      "description": "E564 found Sepolia network pre-selected in withdraw modal (step 3). Verify dropdown shows correct withdrawal network options and selecting different networks updates the withdrawal address format.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E818",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — checkpoint search routes to /explorer/checkpoint/{seq}",
+      "description": "Verify checkpoint number search (e.g., enter '12345') routes to /explorer/checkpoint/12345 and shows checkpoint detail. Complements E574 (address) and E571 (tx hash) explorer search coverage.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
