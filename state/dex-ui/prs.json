@@ -787,6 +787,15 @@
       "deployed": true,
       "accepted": true,
       "note": "Vercel deploy READY (dpl_8epmjpwdFqrddu1faY2nt9b7cVi1). SHA verified. Acceptance passed: TP validation alert + aria-invalid present."
+    },
+    {
+      "pr_number": 154,
+      "issue_numbers": [40],
+      "status": "open",
+      "branch": "fix/issue-40-v2",
+      "base": "dev",
+      "created_at": "2026-03-28",
+      "note": "v2 fix: adds red border, aria-invalid, allows negative input for error display, specific error messages."
     }
   ]
 }
