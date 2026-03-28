@@ -7050,7 +7050,7 @@
       "priority": 3,
       "title": "More nav dropdown — verify all links present (API Keys, Privacy, Terms)",
       "description": "Open the More dropdown in navigation and verify it contains all expected links: API Keys, Privacy Policy, Terms of Service. Check each link is clickable and non-404.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-28",

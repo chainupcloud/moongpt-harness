@@ -1092,12 +1092,16 @@
     {
       "number": 207,
       "title": "fix: add Privacy Policy and Terms of Service links to More dropdown (#195)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         195
       ],
       "branch": "fix/issue-195",
-      "created_date": "2026-03-28"
+      "created_date": "2026-03-28",
+      "commit_sha": "d9b5d00",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true
     }
   ]
 }
