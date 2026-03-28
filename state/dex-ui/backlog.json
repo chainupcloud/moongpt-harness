@@ -6028,9 +6028,11 @@
       "priority": 3,
       "title": "Withdraw modal — SUI address format acceptance",
       "description": "Enter a valid SUI address (0x94bd... 64-char hex) in the withdraw modal address field. Verify it is accepted without error. Currently unknown if SUI vs EVM address formats are handled differently.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — SUI address (0x94bd...) accepted in withdraw modal without validation error"
     },
     {
       "id": "E505",
@@ -6062,9 +6064,11 @@
       "priority": 3,
       "title": "/markets column sort — click Price header, verify BTC row reorders",
       "description": "Click the 价格 (Price) column header on /markets page. Verify sort icon toggles (asc/desc) and the row order changes accordingly. Click again to reverse. Confirm sorting is functional.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Price column sort works: icon toggles ↕→↓→↑ on successive clicks"
     },
     {
       "id": "E508",
@@ -6072,9 +6076,11 @@
       "priority": 3,
       "title": "Reduce Only checkbox — toggle behavior and effect on form",
       "description": "On /trade, enable 'Reduce Only' checkbox. Verify: (1) checkbox is togglable, (2) it has proper accessibility label, (3) form submission shows reduce-only intent in order params.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Reduce Only checkbox togglable but lacks aria-label. Issue #174 created."
     },
     {
       "id": "E509",
@@ -8490,9 +8496,11 @@
       "priority": 2,
       "title": "Order book — verify ask prices are above bid prices (no crossed market)",
       "description": "Navigate to /trade. Compare lowest ask price with highest bid price. Expect: lowest ask > highest bid (positive spread). Also verify both sides relative to current ticker price. This directly re-tests the E497 bug after fix.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Order book still crossed: minAsk(65319.8) < maxBid(67158.8), spread=-1839. Existing issue #173."
     },
     {
       "id": "E736",
@@ -8530,6 +8538,56 @@
       "priority": 3,
       "title": "Order book — cumulative size column accuracy",
       "description": "In the order book, check if there is a cumulative size column. If present, verify that each row's cumulative value equals the sum of all sizes from that row to the spread side. Test a few rows manually.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E740",
+      "area": "order-form",
+      "priority": 3,
+      "title": "Reduce Only checkbox — submit order with Reduce Only enabled",
+      "description": "Enable Reduce Only checkbox on /trade, fill in order size, submit. Verify order params include reduce_only=true in the signed order payload or API request.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E741",
+      "area": "order-form",
+      "priority": 3,
+      "title": "TPSL inputs — verify aria-labels fixed for TP and SL inputs",
+      "description": "On /trade, inspect Take Profit and Stop Loss inputs. Verify each has a proper aria-label (re-validates fix for issue #132 after latest deployment). Check id, name, or aria-label attributes.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E742",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets — funding rate sign and value matches /trade ticker",
+      "description": "On /markets page, note the BTC funding rate value. Navigate to /trade and check the funding rate shown in the ticker/stats bar. Both should show the same value with consistent sign (+ for positive, - for negative).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E743",
+      "area": "withdraw",
+      "priority": 3,
+      "title": "Withdraw modal — invalid address format shows error",
+      "description": "In the withdraw modal, enter an obviously invalid address like 'notanaddress' or '0xabc'. Verify a validation error message appears and the submit button is disabled. Ensures client-side validation is present.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E744",
+      "area": "orderbook",
+      "priority": 2,
+      "title": "Order book — spread display value matches computed ask-bid",
+      "description": "If a spread indicator is shown in the orderbook UI, verify its displayed value matches (lowestAsk - highestBid). With the current crossed-book bug, this may show negative. Track whether UI hides or shows the crossed spread.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
