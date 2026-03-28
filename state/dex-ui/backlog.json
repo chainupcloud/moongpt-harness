@@ -5337,11 +5337,11 @@
       "priority": 3,
       "title": "Explorer search — address (42-char 0x) routes to address detail page",
       "description": "Enter a 42-character Ethereum address in the Explorer search bar and verify routing to /explorer/address/{addr}. Complements E288 (tx hash) and E289 (checkpoint).",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — Explorer search bar does not route to address detail page; URL stays on /explorer after Enter/click"
+      "result_summary": "FAIL — 42-char Eth addr search stays on /explorer, no routing, no error feedback; related to issue #85"
     },
     {
       "id": "E449",
@@ -5383,11 +5383,11 @@
       "priority": 3,
       "title": "Explorer address search — search box accepts Ethereum address and routes to address detail",
       "description": "In explorer search box, input an Ethereum-format address (0x...) and verify it routes to /explorer/address/{addr}. Complements E290 (direct URL) by testing search-driven navigation.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — search bar does not route to address detail; existing issue open"
+      "result_summary": "FAIL — Same as E448: 42-char Eth addr search gives no feedback; related to issue #85"
     },
     {
       "id": "E453",
@@ -5544,9 +5544,11 @@
       "priority": 3,
       "title": "TWAP 订单提交验证 — 填写 Size + Duration 后实际提交",
       "description": "选择 TWAP 订单类型，填入 Size 和 Duration 预设，点击 Buy / Long，验证提交响应（需 session key）",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — TWAP not available as order type in dropdown; TWAP tab in bottom panel is history view only"
     },
     {
       "id": "E466",
@@ -7806,9 +7808,11 @@
       "title": "资金费率数据源核查 — UI 与 WS 推送对比",
       "description": "打开 /trade 页面，通过 WebSocket 监听实时推送，对比 WebSocket 推送的 funding 值与页面 text-long 元素显示值是否一致，排查 4x mismatch 根因。",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Funding rate mismatch confirmed: UI shows 0.0365% vs API returns 0.2758% (7.5x); duplicate of issue #160"
     },
     {
       "id": "E679",
@@ -7817,6 +7821,57 @@
       "title": "Explorer address 页面 — 地址详情和交易历史",
       "description": "访问 /explorer/address/{addr}，验证页面加载后显示地址信息（余额/PnL）和该地址的历史交易列表，链接可点击跳转到各 tx detail。",
       "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E680",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — invalid address shows error/hint message",
+      "description": "Enter a 42-char Ethereum-format address in Explorer search (not a valid SUI address) and verify the UI shows a helpful error or 'invalid address format' hint instead of silently doing nothing.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E681",
+      "area": "trade",
+      "priority": 3,
+      "title": "TWAP order type — verify availability as order form option vs only history tab",
+      "description": "Check if TWAP order submission is planned/gated or genuinely accessible. Inspect Order Type dropdown fully (all options). If TWAP is listed as planned feature, document expected behavior.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E682",
+      "area": "trade",
+      "priority": 2,
+      "title": "Funding rate formula audit — verify UI transform: 8h rate vs display rate",
+      "description": "Inspect source code funding rate display logic. API returns raw fraction 0.002758 (= 0.2758% per 8h). UI shows 0.0365%. Verify if UI applies wrong divisor or wrong time base conversion.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E683",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — verify holdings and tx history loads for wallet addr",
+      "description": "Navigate directly to /explorer/address/{known_addr} using a 66-char SUI address. Verify the page loads data: transaction count, balance, activity list.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E684",
+      "area": "trade",
+      "priority": 3,
+      "title": "Scale order type — fill price range low/high and step count, verify form validation",
+      "description": "Select Scale from Order Type dropdown. Fill in: low price, high price, number of steps, size. Verify the form shows computed step size and the Buy button is enabled.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
