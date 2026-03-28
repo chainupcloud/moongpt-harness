@@ -1321,14 +1321,17 @@
       "github_number": 148,
       "title": "[P3] TP/SL inputs accept invalid values — no validation for long order (TP below entry, SL above entry)",
       "priority": "P3",
-      "status": "open",
+      "status": "closed",
       "track": "frontend",
       "scenario": "E609",
       "created_at": "2026-03-28",
+      "closed_at": "2026-03-28",
       "labels": [
         "bug"
       ],
-      "fix_attempts": 0
+      "fix_attempts": 0,
+      "resolution": "already-fixed",
+      "note": "Already fixed by PR #128 (commit a6f67e1) — inline TP/SL validation in TpSlPanel.tsx. Explore test E609 likely ran before deploy completed."
     }
   ],
   "last_updated": "2026-03-28",
