@@ -9908,10 +9908,12 @@
       "priority": 3,
       "title": "W3M modal — keyboard navigation and Escape key closes modal",
       "description": "Open W3M modal via Connect button. Press Escape key, verify modal closes. Reopen and press Tab multiple times, verify wallet options receive keyboard focus in order.",
-      "status": "pending",
+      "status": "failed",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — W3M modal does not close on Escape key press"
     },
     {
       "id": "E824",
@@ -9919,9 +9921,11 @@
       "priority": 3,
       "title": "Limit order TIF — IOC and FOK options accessible via GTC dropdown",
       "description": "Open trade page, select Limit order type, click GTC TIF dropdown. Verify IOC and FOK options appear and selecting them updates the TIF display. Related to existing issue #195 about dropdown not opening.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TIF dropdown shows ALO/GTC/IOC; FOK not a Hyperliquid order type by design"
     },
     {
       "id": "E825",
@@ -9929,9 +9933,11 @@
       "priority": 3,
       "title": "TWAP order — Randomize and Private toggles visible and togglable",
       "description": "With TWAP order type selected, verify the Randomize and Private checkboxes are visible, can be checked/unchecked, and their state is reflected in the form.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TWAP form shows Randomize+Private checkboxes (via Order Type dropdown)"
     },
     {
       "id": "E826",
@@ -9973,9 +9979,11 @@
       "priority": 3,
       "title": "Leverage slider accessibility — verify aria-valuenow reflects current leverage value",
       "description": "E582 revealed leverage slider uses opacity-0 native input with no aria-valuenow. The custom slider track has no ARIA role or valuenow — accessibility concern. Test with screen reader scenario.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Leverage slider aria-valuenow=10, updates on keyboard nav; accessible via 10x button"
     },
     {
       "id": "E830",
@@ -13160,6 +13168,56 @@
       "description": "E822 confirmed the badge structure (0). Now test real-time update: place a limit buy order at $1 using session key signing. Verify badge increments from (0) to (1) without page refresh. Then cancel and verify it returns to (0).",
       "status": "pending",
       "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1130",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "W3M modal — click outside modal overlay closes modal",
+      "description": "After W3M modal opens, click outside the modal content area (on the overlay) should close the modal",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1131",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "TWAP order — Randomize checkbox toggles and affects suborder interval variation",
+      "description": "Enable Randomize checkbox in TWAP form, verify order preview shows randomized intervals (not uniform)",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1132",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Leverage slider — Cross vs Isolated margin mode affects max leverage",
+      "description": "Switch between Cross and Isolated margin modes, verify max leverage value in slider changes accordingly",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1133",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "TIF dropdown — ALO (Post Only) disables market orders and shows tooltip",
+      "description": "Select ALO in TIF dropdown, verify Market order type becomes unavailable or shows warning",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1134",
+      "area": "trade-form",
+      "priority": 4,
+      "title": "TWAP order — Private toggle hides order from public order book",
+      "description": "Enable Private checkbox in TWAP form, verify order preview shows private indicator and submission succeeds",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
