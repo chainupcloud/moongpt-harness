@@ -1526,12 +1526,15 @@
     },
     {
       "number": 169,
+      "github_number": 169,
       "title": "[P3] Leverage dialog Confirm button does not save new leverage value",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E710",
       "created": "2026-03-28",
-      "url": "https://github.com/chainupcloud/dex-ui/issues/169"
+      "url": "https://github.com/chainupcloud/dex-ui/issues/169",
+      "fix_attempts": 1,
+      "pr_number": 172
     },
     {
       "id": "explore-e492-170",

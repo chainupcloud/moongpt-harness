@@ -896,6 +896,17 @@
         168
       ],
       "created": "2026-03-28"
+    },
+    {
+      "pr_number": 172,
+      "issue_numbers": [
+        169
+      ],
+      "status": "open",
+      "title": "fix: leverage dialog Confirm button saves value locally without wallet (#169)",
+      "created_at": "2026-03-28",
+      "branch": "fix/issue-169",
+      "base": "dev"
     }
   ]
 }
