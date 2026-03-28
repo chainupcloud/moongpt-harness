@@ -5566,9 +5566,11 @@
       "priority": 3,
       "title": "Scale 订单类型 — 验证价格区间输入和阶梯数量设置",
       "description": "选择 Scale 订单，检查 Price Range（Min/Max）和 Number of Orders 字段是否正确显示",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Scale order type not in UI, only Limit available in testnet"
     },
     {
       "id": "E468",
@@ -5576,9 +5578,11 @@
       "priority": 3,
       "title": "Scalp 订单类型 — 同时设置多空入场订单字段验证",
       "description": "选择 Scalp 订单，检查 Long Entry Price + Short Entry Price 字段是否同时显示，TP/SL 支持",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Scalp order type not in UI, only Limit available in testnet"
     },
     {
       "id": "E469",
@@ -5612,9 +5616,11 @@
       "title": "Reduce Only checkbox — 勾选后对订单实际行为的影响验证",
       "description": "连接钱包后，勾选 Reduce Only checkbox，验证：(1) 下单按钮文案是否变化；(2) 是否仅允许减仓方向操作；(3) 无持仓时勾选是否给出提示。",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Reduce Only checkbox present and renders correctly with/without wallet"
     },
     {
       "id": "E472",
@@ -7939,10 +7945,12 @@
       "priority": 2,
       "title": "Explorer tx detail — Status and Fee fields after staging re-deploy (unblock E685)",
       "description": "Re-verify Status and Fee fields in /explorer/tx/{hash} once Vercel staging issue #98 is resolved and PR #158 is deployed. Currently staging is running pre-PR#158 code.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "note": "Unblock after issue #98 (Vercel staging stale) is resolved. E685 was SKIP for this reason."
+      "note": "Unblock after issue #98 (Vercel staging stale) is resolved. E685 was SKIP for this reason.",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Status field missing from tx detail page, only Fee present"
     },
     {
       "id": "E691",
@@ -7983,6 +7991,59 @@
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
+    },
+    {
+      "id": "E695",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — Status field shows correct value (Success/Failure) after fix",
+      "description": "After issue #163 fix deployed: verify /explorer/tx/{hash} shows Status field with correct value. Test with a known successful PlaceOrder tx and verify Status = Success.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "note": "Unblock after issue #163 (Status field missing) is fixed"
+    },
+    {
+      "id": "E696",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order Type dropdown — verify all order types available (Limit, Market, Scale, Scalp, TWAP)",
+      "description": "Open Order Type dropdown on /trade/BTC-USDC and enumerate all available order types. Document which are present and which are missing vs. product spec.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E697",
+      "area": "trade",
+      "priority": 3,
+      "title": "Reduce Only checkbox — interaction when wallet connected and position exists",
+      "description": "Connect wallet, open a position, then try to place an order with Reduce Only checked. Verify: (1) order is only accepted if it reduces position size; (2) error message if trying to increase position with Reduce Only.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
+    },
+    {
+      "id": "E698",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — Fee field format and units validation",
+      "description": "Verify the Fee field in /explorer/tx/{hash} shows correct units (SUI? USDC?) and the amount is reasonable (not zero, not null). Compare with on-chain data.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E699",
+      "area": "trade",
+      "priority": 2,
+      "title": "TP/SL modal — set take profit and stop loss on Limit order",
+      "description": "Click TP/SL button on trade form, verify modal opens with Take Profit Price and Stop Loss Price inputs. Enter valid values and verify they are accepted. Check order summary shows TP/SL.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
     }
   ]
 }
