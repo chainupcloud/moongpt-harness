@@ -7084,9 +7084,11 @@
       "priority": 3,
       "title": "TWAP order: verify duration/interval fields appear and accept input",
       "description": "After selecting TWAP order type from the dropdown (not the TWAP tab in bottom panel), confirm the form shows TWAP-specific fields like duration and interval",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — TWAP selected but no duration/interval fields appear; TWAP issue already tracked"
     },
     {
       "id": "E592",
@@ -7094,9 +7096,11 @@
       "priority": 3,
       "title": "Scale order type: verify price range and steps fields visible",
       "description": "Select Scale order type, verify the form shows price range start/end and number of steps fields",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Scale order type not present in UI; feature appears unimplemented"
     },
     {
       "id": "E593",
@@ -7140,9 +7144,11 @@
       "priority": 3,
       "title": "TP/SL — verify order is blocked from submission with invalid TP/SL values",
       "description": "After wallet connection, submit a limit order with clearly invalid TP/SL (TP below entry for long). Verify the order is rejected or blocked by the UI before reaching the blockchain.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — TP/SL invalid values not validated, submit button not disabled → Issue #197"
     },
     {
       "id": "E597",
@@ -9665,9 +9671,11 @@
       "priority": 2,
       "title": "TWAP order — verify total order count / amount splitting logic",
       "description": "After Issue #183 is fixed and TWAP fields appear: enter a TWAP order, set interval and duration, verify the order is split into expected number of sub-orders and total size equals the original.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — TWAP form missing duration/interval/order-count fields (duplicate of existing TWAP issue)"
     },
     {
       "id": "E836",
@@ -9686,6 +9694,61 @@
       "title": "Leverage change — verify margin and liquidation price recalculate correctly",
       "description": "On /trade, change leverage from default to a specific value (e.g. 10x). Verify that Available Margin and estimated Liquidation Price update to reflect new leverage, and the values are mathematically consistent.",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E838",
+      "area": "TP/SL",
+      "priority": 3,
+      "title": "TP/SL — verify valid values are accepted and order proceeds to confirmation",
+      "description": "After enabling TP/SL, set TP above current price and SL below current price for a Long order. Verify no error is shown and button is clickable.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E839",
+      "area": "TP/SL",
+      "priority": 3,
+      "title": "TP/SL — verify values are cleared/reset when order direction switches Long→Short",
+      "description": "Related to issue #181: confirm existing behavior — set TP/SL values, switch from Long to Short, check if fields are cleared or inverted.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E840",
+      "area": "TradeForm / TWAP",
+      "priority": 2,
+      "title": "TWAP order — verify form shows sub-order count display after fix",
+      "description": "After issue #? TWAP fix is deployed, verify that interval/duration fields appear and the UI shows how many sub-orders will be placed.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E841",
+      "area": "OrderType",
+      "priority": 3,
+      "title": "Limit order — verify IOC/FOK TIF options selectable after GTC dropdown fix",
+      "description": "Issue #193 reports GTC dropdown does not open. After fix deployed, verify IOC and FOK can be selected and their behavior differs (IOC fills partial, FOK all-or-nothing).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E842",
+      "area": "Navigation",
+      "priority": 3,
+      "title": "More dropdown — verify API Keys, Privacy, Terms links appear after fix",
+      "description": "Issue #? says More nav dropdown missing API Keys/Privacy/Terms links. After fix, verify all 3 links appear and navigate to correct pages.",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }

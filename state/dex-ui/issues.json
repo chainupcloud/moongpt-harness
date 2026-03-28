@@ -1742,6 +1742,19 @@
       "scenario": "E588",
       "created_date": "2026-03-28",
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/195"
+    },
+    {
+      "id": "issue-197",
+      "github_issue_number": 197,
+      "title": "[P3] TP/SL inputs accept invalid values without validation — order submission not blocked",
+      "status": "open",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "scenario_id": "E596",
+      "created_date": "2026-03-28",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-28",
