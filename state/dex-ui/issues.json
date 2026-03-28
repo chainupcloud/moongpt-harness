@@ -1824,6 +1824,26 @@
       "scenario": "E633",
       "created": "2026-03-28",
       "url": "https://github.com/chainupcloud/dex-ui/issues/202"
+    },
+    {
+      "id": "issue-203",
+      "number": 203,
+      "title": "[P3] TWAP order form missing Randomize and Private toggles",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E639",
+      "created_at": "2026-03-28",
+      "url": "https://github.com/chainupcloud/dex-ui/issues/203"
+    },
+    {
+      "id": "issue-204",
+      "number": 204,
+      "title": "[P3] Stop Market trigger price — zero value not validated client-side",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E641",
+      "created_at": "2026-03-28",
+      "url": "https://github.com/chainupcloud/dex-ui/issues/204"
     }
   ],
   "last_updated": "2026-03-28",

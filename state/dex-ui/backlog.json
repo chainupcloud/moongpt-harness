@@ -7627,9 +7627,11 @@
       "priority": 3,
       "title": "TWAP order — submit TWAP order and verify it appears in TWAP Orders tab",
       "description": "After configuring TWAP (size, price range, duration hours/minutes), submit the order and verify it appears in the TWAP orders bottom panel with correct parameters.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — TWAP form missing interval/duration fields (issue-183 related); bottom TWAP panel tab exists as \"TWAP\""
     },
     {
       "id": "E637",
@@ -7661,9 +7663,11 @@
       "priority": 3,
       "title": "TWAP order — Randomize and Private toggles effect on order behavior",
       "description": "Test TWAP Randomize toggle (randomizes order timing) and Private toggle (hides order from public). Verify toggles are functional and reflect in order submission.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Randomize and Private toggles absent from TWAP form → Issue #203"
     },
     {
       "id": "E640",
@@ -7683,9 +7687,11 @@
       "priority": 3,
       "title": "Stop Market — submit with zero trigger price should show validation error or be blocked",
       "description": "Enter 0 as trigger price in Stop Market order, click Buy/Long, verify error message appears and order is not submitted",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Stop Market zero trigger price not validated client-side → Issue #204"
     },
     {
       "id": "E642",
@@ -7693,9 +7699,11 @@
       "priority": 3,
       "title": "Isolated margin — leverage slider value persists after reopening trade panel",
       "description": "Switch to Isolated mode, set leverage to 25x via slider, navigate away and back, verify slider still shows 25x",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — leverage dialog requires wallet connection to apply; cannot test persistence without auth"
     },
     {
       "id": "E643",
@@ -10319,6 +10327,61 @@
       "title": "Stop Market sell — trigger price should be below mark price",
       "description": "For SELL Stop Market, trigger price should be below current mark price. Test that entering a trigger above mark for sell stop shows appropriate hint/warning.",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E893",
+      "area": "TWAP",
+      "priority": 3,
+      "title": "TWAP order — verify bottom panel TWAP tab shows active TWAP orders after submit",
+      "description": "Once TWAP form has all required fields (size, interval, duration), submit a TWAP order and verify the bottom panel 'TWAP' tab shows the order with correct status and parameters.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E894",
+      "area": "TWAP",
+      "priority": 3,
+      "title": "TWAP order — cancel active TWAP order from bottom panel",
+      "description": "With an active TWAP order in the bottom TWAP panel, click the cancel button and verify the order is removed/cancelled and the panel updates accordingly.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E895",
+      "area": "Leverage",
+      "priority": 3,
+      "title": "Leverage dialog — preset buttons (1x, 13x, 25x, 38x, 50x) update slider position",
+      "description": "In the leverage adjust dialog, click each preset button (x1, x13, x25, x38, x50) and verify the slider moves to the corresponding position and the leverage value updates visually.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E896",
+      "area": "Stop Market",
+      "priority": 3,
+      "title": "Stop Market — submit valid order (non-zero trigger, valid size) with connected wallet",
+      "description": "With a wallet connected, enter a valid trigger price (above current market) and valid size for Stop Market order, submit and verify the order appears in Open Orders.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E897",
+      "area": "Stop Market",
+      "priority": 3,
+      "title": "Stop Market — negative trigger price should be blocked",
+      "description": "Enter a negative number (e.g., -100) as trigger price in Stop Market order. Verify the input is either rejected or shows a validation error, and order is not submitted.",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
