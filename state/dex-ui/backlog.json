@@ -4585,11 +4585,11 @@
       "priority": 3,
       "title": "Explorer — filter transactions by type (oracle updates vs user trades)",
       "description": "On Explorer page, verify if there is a filter for tx type. Oracle price update txs dominate; user should be able to filter to see only trade-related txs.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — No transaction type filter on Explorer page"
+      "result_summary": "Reset after fix merged (PR #143). Re-verify tx type filter."
     },
     {
       "id": "E386",

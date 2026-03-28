@@ -751,8 +751,14 @@
       "issue_numbers": [
         142
       ],
-      "status": "open",
-      "created_at": "2026-03-28"
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: add transaction type filter to Explorer (#142)",
+      "commit_sha": "f11633a97aedc763df679e973c533df7e1c508c5",
+      "merged_at": "2026-03-28",
+      "deployed": false,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue #98). Code merged to dev successfully. Accepted via code review + SHA verification."
     }
   ]
 }

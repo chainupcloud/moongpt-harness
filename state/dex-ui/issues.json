@@ -1247,7 +1247,7 @@
       "id": "issue-142",
       "gh_number": 142,
       "title": "[P4] Explorer — no transaction type filter (oracle updates dominate tx list)",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P4",
       "labels": [
         "enhancement"
@@ -1256,7 +1256,9 @@
       "created_date": "2026-03-28",
       "fix_attempts": 1,
       "pr_number": 143,
-      "github_number": 142
+      "github_number": 142,
+      "closed_at": "2026-03-28",
+      "note": "PR #143 merged+deployed to dev. Vercel deploy ERROR (team config issue #98). Accepted via code review + SHA verification."
     }
   ],
   "last_updated": "2026-03-28",
