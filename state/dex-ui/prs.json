@@ -708,10 +708,15 @@
       "issue_numbers": [
         136
       ],
-      "status": "open",
+      "status": "merged",
       "title": "fix: /portfolio?address= URL parameter ignored (#136)",
       "branch": "fix/issue-136",
-      "created_date": "2026-03-28"
+      "created_date": "2026-03-28",
+      "commit_sha": "1568af3a72bb583a6e2c8f033308fc5f9bc667a9",
+      "merged_at": "2026-03-28",
+      "deployed": false,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day + team config issue #98). Code merged to dev successfully. Accepted via code review + SHA verification."
     }
   ]
 }

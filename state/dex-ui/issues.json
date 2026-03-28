@@ -1192,18 +1192,22 @@
       "github_number": 136,
       "title": "[P3] /portfolio?address= URL parameter ignored — always shows Connect wallet prompt",
       "priority": "P3",
-      "status": "fixing",
+      "status": "closed",
       "scenario_id": "E349",
       "created_date": "2026-03-27",
+      "closed_at": "2026-03-28",
       "labels": [
         "bug"
       ],
       "fix_attempts": 1,
       "pr_number": 137,
-      "url": "https://github.com/chainupcloud/dex-ui/issues/136"
+      "deployed_sha": "1568af3a72bb583a6e2c8f033308fc5f9bc667a9",
+      "accepted": true,
+      "url": "https://github.com/chainupcloud/dex-ui/issues/136",
+      "note": "Vercel deploy ERROR (daily limit 100/day + team config issue #98). Code merged to dev successfully. Accepted via code review + SHA verification."
     }
   ],
-  "last_updated": "2026-03-27",
+  "last_updated": "2026-03-28",
   "issue_55": {
     "number": 55,
     "github_number": 55,

@@ -4142,11 +4142,11 @@
       "priority": 3,
       "title": "Portfolio 页面 /portfolio?address= 参数加载数据",
       "description": "通过 URL 参数传入钱包地址访问 portfolio 页面，验证是否展示对应地址的持仓/历史数据（只读模式）",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
       "last_run": "2026-03-27",
-      "result_summary": "FAIL — /portfolio?address= param ignored, shows Connect wallet prompt → Issue #136"
+      "result_summary": "Reset to pending — fix merged in PR #137 (2026-03-28), awaiting re-verification"
     },
     {
       "id": "E350",
