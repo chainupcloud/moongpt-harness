@@ -1275,8 +1275,12 @@
       "issue_numbers": [
         208
       ],
-      "status": "open",
-      "created_at": "2026-03-28"
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "commit_sha": "ddbfcc58",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true
     }
   ]
 }
