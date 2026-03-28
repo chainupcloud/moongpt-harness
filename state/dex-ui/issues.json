@@ -1433,7 +1433,7 @@
       "github_issue_number": 159,
       "title": "[P3] Stop Limit order — no direction hint for Stop/Trigger Price field",
       "scenario_id": "E459",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "created_date": "2026-03-28",
       "area": "trade",
@@ -1443,7 +1443,8 @@
       "url": "https://github.com/chainupcloud/dex-ui/issues/159",
       "github_number": 159,
       "fix_attempts": 1,
-      "pr_number": 161
+      "pr_number": 161,
+      "closed_at": "2026-03-28"
     },
     {
       "id": "issue-93",

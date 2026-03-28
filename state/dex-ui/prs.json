@@ -838,8 +838,14 @@
       "issue_numbers": [
         159
       ],
-      "status": "open",
-      "created_at": "2026-03-28"
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: Stop Limit order — add direction hint for Stop/Trigger Price field (#159)",
+      "commit_sha": "99860d181fadccb32f13b8398a6dba9ce8831558",
+      "merged_at": "2026-03-28",
+      "deployed": false,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
     }
   ]
 }
