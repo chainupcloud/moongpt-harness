@@ -9606,9 +9606,11 @@
       "priority": 3,
       "title": "Markets page — positive funding rate shows + sign (verify when rate is positive)",
       "description": "Current funding rate is negative (-0.1266%). This scenario should be re-run when funding rate turns positive to verify the + sign is displayed (complement to E548). Poll /api/markets for positive rate period.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Funding column (资金费率) found, current rate -1.0390%, no positive rates in testnet to verify + sign"
     },
     {
       "id": "E799",
@@ -9640,9 +9642,11 @@
       "priority": 3,
       "title": "Explorer search — searching by checkpoint number routes to /explorer/checkpoint/{seq}",
       "description": "Enter a numeric checkpoint sequence number (e.g. 339780) in the explorer search and verify it routes to the correct checkpoint detail page.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Checkpoint search routes to /explorer/checkpoint/1"
     },
     {
       "id": "E802",
@@ -9650,9 +9654,11 @@
       "priority": 3,
       "title": "Explorer tx detail — Events section shows correct event type and data for PlaceOrder transactions",
       "description": "Navigate to a PlaceOrder tx detail page and verify that each event in the Events section shows event type, emitter, and parsed fields correctly.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Events section visible on tx detail page"
     },
     {
       "id": "E803",
@@ -9660,9 +9666,11 @@
       "priority": 3,
       "title": "Markets page — /trade?coin=BTC loads BTC-USDC pair by default",
       "description": "After clicking BTC row from markets page, verify /trade?coin=BTC correctly pre-selects BTC-USDC pair in the trade form, showing correct price and order book.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — /trade?coin=BTC shows BTC-USDC pair"
     },
     {
       "id": "E804",
@@ -12802,6 +12810,56 @@
       "priority": 3,
       "title": "Explorer address page — user address link from TX detail navigates back to address",
       "description": "On TX detail page, the 'User Address' field shows a truncated address (0x73a6b3c3...80adc0). Verify it is clickable and routes to /explorer/address/{full_addr}. This tests bidirectional linking between TX and address pages.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1100",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint detail — shows transaction list with correct count",
+      "description": "Navigate to /explorer/checkpoint/1 and verify it shows the checkpoint detail page with a list of transactions and their count badge.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1101",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — shows transaction history for known wallet address",
+      "description": "Navigate to /explorer/address/{known_addr} and verify the page shows transaction history rows, not empty state.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1102",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets page — funding rate negative values show '-' sign correctly",
+      "description": "On /markets, verify that negative funding rates are displayed with a '-' prefix and red color indicator.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1103",
+      "area": "trade",
+      "priority": 2,
+      "title": "Trade page slug routing — /trade/BTC-USDC loads correct pair",
+      "description": "Navigate to /trade/BTC-USDC (slug path) and verify chart and order form load with BTC-USDC selected.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1104",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — PlaceOrder event shows maker/taker fields",
+      "description": "Find a PlaceOrder transaction in explorer and verify the Events section shows maker, taker, price, quantity fields.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
