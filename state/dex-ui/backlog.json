@@ -8625,9 +8625,11 @@
       "title": "Explorer search — partial Sui address (less than 64 chars) shows validation hint",
       "description": "Enter a partial Sui address (e.g. 32 chars) in the Explorer search. Expect either: (a) a validation hint while typing, or (b) a clear error on submit saying the address must be 64 hex characters.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Partial address shows validation hint, form stays on explorer page"
     },
     {
       "id": "E718",
@@ -8636,9 +8638,11 @@
       "title": "Explorer search — full valid Sui address navigates to address detail page",
       "description": "Enter a complete 64-char Sui address in Explorer search, press Enter. Verify navigation to /explorer/address/{address} detail page with correct data.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Full valid Sui address navigates to /explorer/address/{addr} with data"
     },
     {
       "id": "E719",
@@ -8738,9 +8742,11 @@
       "priority": 3,
       "title": "Withdraw modal — amount exceeds available balance shows error",
       "description": "Open withdraw modal, enter amount larger than available balance. Verify inline error shown and submit blocked.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Withdraw button not accessible without wallet authentication"
     },
     {
       "id": "E728",
@@ -11583,11 +11589,13 @@
       "priority": 2,
       "title": "Leverage tick labels: verify fix — clicking 25x actually sets 25x",
       "description": "After fix for E716: open leverage dialog, click 25x tick label, verify slider moves to 25 (range 1-50), Confirm saves 25x to leverage button.",
-      "status": "pending",
+      "status": "failed",
       "track": "frontend",
       "related_issue": "220",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Slider stays at 0 after clicking 25x tick, fix for #220 not yet deployed"
     },
     {
       "id": "E997",
@@ -11631,6 +11639,62 @@
       "description": "On /explorer/transactions, select 'PlaceOrder' from the Filter dropdown. Verify all visible transaction rows show Type='PlaceOrder'. Navigate to page 2 and verify filter persists.",
       "status": "pending",
       "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1001",
+      "area": "trade",
+      "priority": 2,
+      "title": "Leverage dialog — verify 25x tick updates slider value correctly after fix lands",
+      "description": "Re-test after PR for issue #220 merges: open leverage dialog (via leverage button in trade form), click 25x tick label, verify slider value becomes 25, Confirm button saves 25x.",
+      "track": "frontend",
+      "status": "pending",
+      "related_issue": "220",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1002",
+      "area": "trade",
+      "priority": 3,
+      "title": "Leverage dialog — verify all tick labels (1x/13x/38x/50x) update slider correctly",
+      "description": "In leverage dialog, sequentially click each tick label (1x, 13x, 38x, 50x) and verify slider moves to correct value each time. Tests complete tick label functionality.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1003",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — address with mixed case characters normalizes and navigates correctly",
+      "description": "Enter a valid Sui address with some uppercase hex characters. Verify search normalizes (lowercases) the address and navigates to correct address detail page.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1004",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address detail page — balance and transactions load correctly",
+      "description": "After navigating to /explorer/address/{addr} via search, verify: (a) address displayed in header, (b) SUI balance field shows numeric value or zero, (c) transactions list renders or shows empty state.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1005",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Withdraw modal — accessible and functional after wallet connection (inject session state)",
+      "description": "Use full session cookie injection (wagmi + approveAgent signature flow) to reach authenticated portfolio state. Open withdraw modal, verify amount input renders, test balance validation with amount exceeding 0 balance.",
+      "track": "frontend",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
