@@ -9498,9 +9498,11 @@
       "priority": 3,
       "title": "Order Book — switch between Order Book and Trades tab works",
       "description": "Click the Trades tab next to Order Book, verify recent trades list renders with price, size, and time. Switch back to Order Book and verify data returns.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Order Book ↔ Trades tab switching works correctly; data preserved on switch back"
     },
     {
       "id": "E790",
@@ -9508,9 +9510,11 @@
       "priority": 3,
       "title": "API Keys — Remove wallet without confirmation dialog (UX safety check)",
       "description": "Clicking Remove on an API wallet immediately removes it without any confirmation dialog. Test whether this is by design or a missing safety confirmation. Steps: go to /api-keys, verify an API wallet exists, click Remove, check if any confirmation modal/popover appears before the wallet is removed.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — API Keys page requires wallet connection to show Remove buttons"
     },
     {
       "id": "E791",
@@ -9530,9 +9534,11 @@
       "priority": 3,
       "title": "Portfolio — PnL Calendar month navigation (prev/next month)",
       "description": "PnL Calendar shows March 2026 by default. Test if there are prev/next month navigation controls. Click to go to February 2026 and verify either historical data loads or empty state is shown appropriately. Ensure no crash or infinite loading.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Portfolio PnL Calendar requires wallet connection"
     },
     {
       "id": "E793",
@@ -12685,8 +12691,60 @@
       "priority": 2,
       "title": "Withdraw modal — Send: actual address input field visible and functional after Send tab click",
       "description": "Verify the full Send tab UI after clicking: 1) address input (0x... placeholder) visible, 2) amount input visible, 3) coin selector shows USDC/ETH options. Regression test since WithdrawModal.tsx was recently changed.",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — Cannot test Withdraw/Send modal without DEX Account balance; Deposit modal only accessible"
+    },
+    {
+      "id": "E1090",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order Book — rapid tab switching does not cause data flicker or blank state",
+      "description": "Switch between Order Book and Trades tabs 5 times rapidly (< 500ms each). Verify no blank flicker, no JS errors in console, and final state shows correct data.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1091",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer — /explorer page loads and shows recent transactions list",
+      "description": "Navigate to /explorer/transactions. Verify: 1) page loads without error, 2) transaction list renders with digest/type/time columns, 3) clicking a transaction row navigates to /explorer/tx/[digest]. Recently changed in git.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1092",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets page — /markets loads and displays available trading pairs",
+      "description": "Navigate to /markets. Verify: 1) page loads (recently changed), 2) trading pairs list renders, 3) each row shows pair name, price, 24h change. Test sorting by change %.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1093",
+      "area": "spot",
+      "priority": 3,
+      "title": "Spot trading page — /spot loads and renders spot trading interface",
+      "description": "Navigate to /spot (recently changed file: app/spot/page.tsx). Verify: 1) page loads without blank/error, 2) spot trading UI visible (order form or market selector), 3) no console errors.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1094",
+      "area": "navigation",
+      "priority": 4,
+      "title": "Privacy and Terms pages — /privacy and /terms render correctly",
+      "description": "Recently changed files: app/privacy/page.tsx, app/terms/page.tsx. Navigate to both. Verify: 1) pages load without error, 2) content renders (not blank), 3) back navigation works.",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
