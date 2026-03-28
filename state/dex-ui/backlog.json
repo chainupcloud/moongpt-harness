@@ -5946,11 +5946,9 @@
       "priority": 3,
       "title": "Order book — ask/bid side rendering correctness",
       "description": "Verify that asks (sell orders) are rendered above the spread and bids (buy orders) below. Colors should match convention (red=asks, green=bids). Check row count and cumulative total column accuracy.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — Crossed order book: ask prices ~$64,566 below mark/bid ~$67,882 (spread -$3,316)"
+      "added_date": "2026-03-27"
     },
     {
       "id": "E498",
