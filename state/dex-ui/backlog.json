@@ -10285,9 +10285,11 @@
       "priority": 3,
       "title": "Explorer address page — filter transactions by type",
       "description": "Navigate to /explorer/address/[sui_addr]. Verify transaction list loads. If a filter or pagination exists, test filtering or paging through results.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Explorer address page loads transactions (3 rows), Type column present, More button exists; no filter UI (not a bug)"
     },
     {
       "id": "E855",
@@ -10295,9 +10297,11 @@
       "priority": 3,
       "title": "TWAP order submission with connected wallet — verify order appears in TWAP tab",
       "description": "With a session-key-authenticated wallet, place a TWAP order (size=0.001 BTC, duration=5m). Verify order appears in the TWAP tab in the bottom panel with Active or Pending status.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — TWAP bottom tab found but form missing Interval/Duration fields; existing issue #183 still open, cannot test placement"
     },
     {
       "id": "E856",
@@ -10315,9 +10319,11 @@
       "priority": 3,
       "title": "TP/SL — invalid values show validation errors",
       "description": "Enable TP/SL on a long order. Enter a TP value BELOW current price (invalid for long). Verify validation error appears. Enter SL ABOVE current price (invalid for long). Verify error. Then fix values and verify errors clear.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — TP/SL accepts invalid TP below mark and SL above mark for long with no inline validation; issue #242 filed"
     },
     {
       "id": "E858",
@@ -13477,10 +13483,12 @@
       "priority": 2,
       "title": "TP/SL — verify inputs appear after toggle (inspect DOM for hidden elements)",
       "description": "After clicking the TP/SL toggle, inspect the DOM to find if TP/SL inputs exist but are hidden (display:none / visibility:hidden), or if they truly don't render. Check parent container class toggling.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TP/SL toggle reveals 4 inputs (TP price, TP %, SL price, SL %) after click; issue #239 likely fixed in staging"
     },
     {
       "id": "E1156",
@@ -13510,6 +13518,61 @@
       "priority": 4,
       "title": "Explorer address page — filter transactions by type dropdown",
       "description": "Navigate to /explorer/address/[addr], look for a transaction type filter dropdown. Select a specific type (e.g. PlaceOrder) and verify the list filters correctly.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1159",
+      "area": "TP/SL",
+      "priority": 2,
+      "title": "TP/SL toggle with connected wallet — verify TP/SL inputs appear (regression check for #239)",
+      "description": "With a session-key-authenticated wallet, enable TP/SL toggle on Limit order. Verify TP price and SL price inputs appear. Place a buy order with valid TP above mark and SL below mark. Verify order confirms with TP/SL attached.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1160",
+      "area": "TP/SL",
+      "priority": 3,
+      "title": "TP/SL submit-time validation — connected wallet, submit long with TP below mark price",
+      "description": "With connected wallet on Limit Buy order, enable TP/SL, enter TP below current mark price. Attempt to submit the order. Verify either: (a) client-side blocks submission with error, or (b) backend returns error and UI shows it. Currently no inline validation shown.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1161",
+      "area": "TWAP",
+      "priority": 3,
+      "title": "TWAP order type in trade form — verify TWAP appears as order type option (not just bottom tab)",
+      "description": "On the trade form, check if there is a TWAP order type selectable in the order type buttons (alongside Limit/Market/Stop/Scale). If TWAP is not an order type option, verify there is a separate TWAP form section accessible from the UI.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1162",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page 'More' button — load additional transactions for high-volume address",
+      "description": "Find a high-volume Sui address (from recent transactions on /explorer/transactions). Navigate to its address page. If there are > 10 transactions, click 'More' button and verify additional rows load (checking row count increases).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1163",
+      "area": "TP/SL",
+      "priority": 3,
+      "title": "TP/SL gain/loss % fields — verify % auto-calculates from price and vice versa",
+      "description": "Enable TP/SL on Limit order. Enter a TP price value. Verify the adjacent % field auto-calculates the gain percentage. Then edit the % field and verify the price field updates accordingly. Same for SL loss %.",
       "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
