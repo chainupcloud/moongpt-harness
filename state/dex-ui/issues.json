@@ -1537,7 +1537,7 @@
       "url": "https://github.com/chainupcloud/dex-ui/issues/169",
       "fix_attempts": 1,
       "pr_number": 172,
-      "note": "PR #172 merged (7687fde). Deploy pending, acceptance deferred."
+      "note": "PR #172 merged (7687fde). Staging deploy blocked by Vercel TEAM_ACCESS_REQUIRED (issue #98). Acceptance deferred."
     },
     {
       "id": "explore-e492-170",

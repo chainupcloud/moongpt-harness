@@ -916,7 +916,7 @@
       "merge_sha": "7687fde5e7ae29c37794713a4d20d38f9f952376",
       "deployed": false,
       "accepted": false,
-      "note": "Merged; Vercel deploy pending (API rate limit). Acceptance deferred."
+      "note": "Merged (7687fde). Vercel staging deploy blocked: all recent dev builds ERROR due to TEAM_ACCESS_REQUIRED (issue #98). Acceptance deferred until Vercel fixed."
     },
     {
       "pr_number": 175,
