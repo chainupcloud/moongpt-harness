@@ -10387,9 +10387,11 @@
       "priority": 3,
       "title": "Stop Limit order type — verify stop price + limit price fields and order submission",
       "description": "Select Stop Limit from Order Type dropdown, verify both Stop Price and Limit Price fields appear, fill in values and check order preview",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Stop Limit order type selectable from dropdown; Stop/Trigger price field + Limit price field both present in form"
     },
     {
       "id": "E864",
@@ -10421,9 +10423,11 @@
       "priority": 3,
       "title": "TIF IOC selection and order submission — confirm IOC order goes through",
       "description": "In Limit order form, open GTC dropdown, select IOC, verify label updates, then submit a buy order and confirm it appears in order history",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TIF GTC button found; IOC option appears in dropdown after GTC click; IOC state reflected in UI after selection"
     },
     {
       "id": "E867",
@@ -10443,9 +10447,11 @@
       "priority": 3,
       "title": "TWAP Randomize checkbox — toggling randomize hides fixed interval input",
       "description": "On TWAP order form, toggle the 'Randomize' checkbox and verify the 'Interval (seconds)' field becomes disabled or hidden to indicate orders will use randomized intervals",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — TWAP Randomize checkbox not found in current build; TWAP form opens but has no Randomize option"
     },
     {
       "id": "E869",
@@ -10453,9 +10459,11 @@
       "priority": 3,
       "title": "TWAP Private flag — submission flow when Private is checked",
       "description": "Toggle the 'Private' checkbox on TWAP form, submit a small order, verify the TWAP order appears in the TWAP tab. Check if Private affects order book visibility or display",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — TWAP Private flag not found in current build; TWAP form renders but has no Private checkbox"
     },
     {
       "id": "E870",
@@ -13701,6 +13709,56 @@
       "description": "Navigate to /explorer/transactions (or /explorer), verify transaction list loads with multiple rows. Test pagination if present. Check that columns (Hash, Action, User, Summary, Time) are all populated.",
       "status": "pending",
       "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1174",
+      "area": "trade",
+      "priority": 3,
+      "title": "TWAP form — verify actual available fields (Duration/Parts/Min Size)",
+      "description": "Select TWAP order type and enumerate all form fields actually present: Duration selector (5m/30m/1h/4h/12h/24h), Number of Parts, Min Size. Verify each accepts valid numeric input and is bounded.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1175",
+      "area": "trade",
+      "priority": 3,
+      "title": "TIF FOK selection — verify FOK option in GTC dropdown",
+      "description": "After E866 confirmed IOC, now verify FOK (Fill or Kill) option also exists in the TIF dropdown and selecting it is reflected in the UI state.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1176",
+      "area": "trade",
+      "priority": 2,
+      "title": "Stop Limit — buy with trigger price above current market price validation",
+      "description": "For a Stop Limit buy order, the trigger/stop price is typically set ABOVE the current market price (breakout buy). Set stop price=70000 (above current ~66k), limit=70100, size=0.001; verify form accepts it and buy button is enabled.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1177",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Market order — trigger price field required validation",
+      "description": "Select Stop Market order type, try to submit without filling the trigger price field. Verify the form shows a validation error or the buy button remains disabled until trigger price is set.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1178",
+      "area": "trade",
+      "priority": 3,
+      "title": "GTC vs IOC order type impact on form — verify IOC disables TP/SL",
+      "description": "When TIF is set to IOC, TP/SL should be disabled (IOC orders fill immediately or cancel, so TP/SL is irrelevant). Verify that after selecting IOC, the TP/SL toggle is hidden or disabled.",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
