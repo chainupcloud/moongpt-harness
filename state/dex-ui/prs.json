@@ -1182,13 +1182,18 @@
     {
       "pr_number": 231,
       "title": "fix: Stop Market trigger price — zero value not validated client-side (#204)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         204
       ],
       "created_date": "2026-03-28",
       "branch": "fix/issue-204",
-      "base": "dev"
+      "base": "dev",
+      "commit_sha": "0f1dcce",
+      "merged_at": "2026-03-28",
+      "deployed": false,
+      "accepted": false,
+      "note": "Vercel build ERROR + rate limit (100/day). Deployment pending."
     }
   ]
 }
