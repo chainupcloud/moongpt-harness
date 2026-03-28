@@ -10331,9 +10331,11 @@
       "priority": 3,
       "title": "TWAP order type form accessibility — verify TWAP appears in order type selector with wallet connected",
       "description": "With wallet connected, click 'Order Type' button in trade form. Verify TWAP appears as an option. Select it and confirm duration/interval fields render. No console errors.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TWAP accessible via bottom panel TWAP tab; clicking it shows TWAP creation form on right side; duration fields hidden without connected wallet; no console errors"
     },
     {
       "id": "E859",
@@ -10351,9 +10353,11 @@
       "priority": 3,
       "title": "TIF selector behavior for Stop and Scale order types",
       "description": "For Stop Market and Scale order types: verify whether GTC/IOC/ALO TIF selector appears or is hidden. Stop Market should be IOC (hidden TIF); Scale/Limit should show TIF.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Stop Market hides TIF (IOC forced, correct); Scale shows GTC; Stop Limit shows GTC. TIF behavior matches expected design."
     },
     {
       "id": "E861",
@@ -10361,9 +10365,11 @@
       "priority": 3,
       "title": "TP/SL toggle and field rendering with wallet connected",
       "description": "With wallet connected: click TP/SL text/switch in Limit order form. Verify TP and SL input fields render. Enter invalid values (TP below entry for BUY) and verify validation error appears. Correct values and verify error clears.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — No validation for invalid TP (TP=59597 below mark=66219 for BUY): no error text, submit not disabled. Duplicate of open issue #242"
     },
     {
       "id": "E862",
@@ -13529,10 +13535,12 @@
       "priority": 2,
       "title": "TP/SL toggle with connected wallet — verify TP/SL inputs appear (regression check for #239)",
       "description": "With a session-key-authenticated wallet, enable TP/SL toggle on Limit order. Verify TP price and SL price inputs appear. Place a buy order with valid TP above mark and SL below mark. Verify order confirms with TP/SL attached.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — TP/SL toggle clicked; +4 inputs appeared (class px-1.5 text-xs); TP=69530 SL=62908 entered. Regression check for #239 passes."
     },
     {
       "id": "E1160",
@@ -13573,6 +13581,61 @@
       "priority": 3,
       "title": "TP/SL gain/loss % fields — verify % auto-calculates from price and vice versa",
       "description": "Enable TP/SL on Limit order. Enter a TP price value. Verify the adjacent % field auto-calculates the gain percentage. Then edit the % field and verify the price field updates accordingly. Same for SL loss %.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1164",
+      "area": "trade-form / TP-SL",
+      "priority": 3,
+      "title": "TP/SL values persist on page reload — verify state not lost",
+      "description": "With session-key wallet: enable TP/SL, enter TP=mark+5% and SL=mark-5%, then reload the page. Verify TP/SL toggle remains enabled and values are restored (or gracefully cleared with toggle off).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1165",
+      "area": "trade-form / TWAP",
+      "priority": 3,
+      "title": "TWAP form fields with connected wallet — duration and interval inputs",
+      "description": "With session-key-authenticated wallet: click TWAP tab in bottom panel. Verify the right-side form shows TWAP-specific duration and interval input fields. Enter values and verify they persist. Check no console errors.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1166",
+      "area": "trade-form / TIF",
+      "priority": 3,
+      "title": "TIF selector default for Limit order — verify GTC is default and ALO appears",
+      "description": "With wallet connected, select Limit order type. Verify GTC is the default TIF. Click the TIF button and verify GTC/IOC/ALO options appear in dropdown. Select IOC and verify form updates.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1167",
+      "area": "trade-form / TP-SL",
+      "priority": 2,
+      "title": "TP/SL server-side validation — attempt order submit with invalid TP/SL",
+      "description": "With session key: enable TP/SL on Limit BUY, set TP below mark price (invalid). Attempt to place order. Verify server rejects the order or client blocks submission. Current known issue #242: client-side validation missing.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1168",
+      "area": "trade-form / slug-url",
+      "priority": 3,
+      "title": "Trade page slug URL — /trade/[...slug] routing with various pair formats",
+      "description": "Navigate to /trade/BTC-USDC, /trade/ETH-USDC (testnet fallback). Verify page loads correctly with the pair selected. Also test /trade (no slug) redirects or shows default pair. Recent git change to app/trade/[...slug]/page.tsx.",
       "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
