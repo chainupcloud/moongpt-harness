@@ -6365,9 +6365,11 @@
       "priority": 3,
       "title": "Withdraw modal — 地址格式校验：SUI 格式地址是否被接受",
       "description": "在 Withdraw 表单输入 SUI 格式地址（0x 开头 64字符十六进制），验证是否通过校验或给出明确提示",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — SUI-format address (64-char hex) correctly triggers \"Invalid Ethereum address format\" error and disables submit button"
     },
     {
       "id": "E533",
@@ -6375,9 +6377,11 @@
       "priority": 3,
       "title": "Withdraw modal — 选择不同网络后 Withdraw to 地址格式要求变化",
       "description": "打开 Withdraw 弹窗，依次选择不同 network（Sepolia / Mainnet），验证地址输入提示文字和校验规则随网络变化",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — testnet only has Sepolia network; cannot test multi-network address format changes"
     },
     {
       "id": "E534",
@@ -6385,9 +6389,11 @@
       "priority": 3,
       "title": "Markets 排序箭头状态 — 当前排序列高亮显示",
       "description": "在 /markets 页面点击一个列头（如 24h成交量），验证该列排序箭头变为实心/高亮（↓/↑），其他列箭头变为非激活状态（↕）",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Sort indicator correctly switches: clicked column shows ↑/↓, previously active column resets to ↕"
     },
     {
       "id": "E535",
@@ -6395,9 +6401,11 @@
       "priority": 3,
       "title": "Withdraw modal — pre-fill 'Withdraw to' with wallet address (runtime verify with connected wallet)",
       "description": "Code confirms pre-fill logic (WithdrawModal.tsx line 82: walletAddress || ''). Verify at runtime: open Withdraw modal with properly connected wallet, confirm 'Withdraw to' field shows wallet address automatically",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-27"
+      "added_date": "2026-03-27",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Withdraw to field pre-filled with connected wallet address (0x70995982...)"
     },
     {
       "id": "E536",
@@ -8941,6 +8949,56 @@
       "priority": 4,
       "title": "Order Type 下拉菜单 — 切换订单类型后表单字段重置清空",
       "description": "在 Limit 订单填入 Price 和 Amount，然后切换到 Market 订单，验证 Price 字段是否清空或隐藏（防止旧数据污染新订单）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E775",
+      "area": "trade",
+      "priority": 3,
+      "title": "Withdraw modal — submit with empty amount field",
+      "description": "Open Withdraw modal with valid address, leave amount empty, verify submit button disabled or shows validation error",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E776",
+      "area": "trade",
+      "priority": 3,
+      "title": "Withdraw modal — submit with amount exceeding available balance",
+      "description": "Enter amount > available balance (500 USDC), verify error message and disabled submit or clear rejection",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E777",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets sort — sort direction persists after page refresh",
+      "description": "Sort /markets by Price (click header), then reload page — verify sort state is restored or resets to default",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E778",
+      "area": "trade",
+      "priority": 3,
+      "title": "Withdraw modal — Send tab address field behavior",
+      "description": "Open Withdraw modal, click 'Send' tab — verify address field placeholder and pre-fill behavior in Send mode vs Withdraw mode",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E779",
+      "area": "trade",
+      "priority": 3,
+      "title": "Withdraw modal — MAX button fills full available balance",
+      "description": "Open Withdraw modal, click MAX button — verify amount field fills with full available balance (500 USDC), submit button becomes enabled",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
