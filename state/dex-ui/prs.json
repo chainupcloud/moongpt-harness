@@ -1162,6 +1162,17 @@
       "commit_sha": "f3d65fb",
       "deployed": true,
       "accepted": true
+    },
+    {
+      "pr_number": 229,
+      "title": "fix: Stop Limit trigger price validation — inline error for invalid direction (#202)",
+      "status": "open",
+      "issue_numbers": [
+        202
+      ],
+      "created_date": "2026-03-28",
+      "branch": "fix/issue-202",
+      "base": "dev"
     }
   ]
 }
