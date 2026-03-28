@@ -1295,6 +1295,19 @@
       "merged_at": "2026-03-28",
       "deployed": true,
       "accepted": true
+    },
+    {
+      "pr_number": 248,
+      "issue_numbers": [
+        239
+      ],
+      "status": "open",
+      "title": "fix: TP/SL toggle click does not reveal TP/SL input fields (#239)",
+      "base": "dev",
+      "head": "fix/issue-239",
+      "review_status": "approved",
+      "note": "Copilot reviewed (COMMENTED). Merge blocked: mergeable_state=dirty (conflicts with dev). Fix-agent must rebase.",
+      "created_at": "2026-03-28"
     }
   ],
   "pull_requests": [
