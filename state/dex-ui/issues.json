@@ -1717,6 +1717,19 @@
       "scenario_id": "E575",
       "created_date": "2026-03-28",
       "fix_attempts": 0
+    },
+    {
+      "id": "issue-112",
+      "title": "[P4] Limit order form missing Post-Only toggle — maker-only order placement unavailable",
+      "status": "open",
+      "priority": "P4",
+      "github_issue": 194,
+      "scenario": "E578",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug",
+        "enhancement"
+      ]
     }
   ],
   "last_updated": "2026-03-28",
