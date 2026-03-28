@@ -1802,7 +1802,7 @@
       "id": "issue-200",
       "github_number": 200,
       "title": "[P3] Footer social icon links (Discord, Telegram) missing target=_blank — partial regression after fix #185",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "labels": [
         "bug"
@@ -1811,7 +1811,9 @@
       "created_date": "2026-03-28",
       "fix_attempts": 1,
       "pr_number": 222,
-      "url": "https://github.com/chainupcloud/dex-ui/issues/200"
+      "url": "https://github.com/chainupcloud/dex-ui/issues/200",
+      "closed_at": "2026-03-28",
+      "note": "Staging acceptance passed — all social links verified with target=_blank"
     },
     {
       "id": "issue-201",

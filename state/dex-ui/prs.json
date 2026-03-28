@@ -1136,13 +1136,17 @@
     {
       "pr_number": 222,
       "title": "fix: add target=_blank to footer social icon links (#200)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         200
       ],
       "created_date": "2026-03-28",
       "branch": "fix/issue-200",
-      "base": "dev"
+      "base": "dev",
+      "commit_sha": "e7c3e6de",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true
     }
   ]
 }

@@ -6613,7 +6613,7 @@
       "priority": 3,
       "title": "More nav dropdown — verify fix after issue #138 (re-verify external links)",
       "description": "After fix for issue #138, verify More dropdown contains Docs/Discord/Blog links and that each external link opens in a new tab with correct URL.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "track": "frontend",
