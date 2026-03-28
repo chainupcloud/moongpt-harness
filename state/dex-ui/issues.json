@@ -1218,14 +1218,16 @@
       "github_issue_number": 138,
       "github_number": 138,
       "title": "[P3] More nav dropdown missing external links — Docs, Discord, Blog, FAQ all hidden",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "created_date": "2026-03-28",
       "labels": [
         "bug"
       ],
       "fix_attempts": 1,
-      "pr_number": 140
+      "pr_number": 140,
+      "closed_at": "2026-03-28",
+      "note": "PR #140 merged. Vercel deploy ERROR (daily limit 100/day). Accepted via code review + SHA verification."
     },
     {
       "issue_number": 139,

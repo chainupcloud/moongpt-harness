@@ -4397,7 +4397,7 @@
       "priority": 3,
       "title": "More nav dropdown — verify dropdown content items after fix",
       "description": "After fix for issue #102, verify that clicking 'More' opens a dropdown with expected items (Docs, Blog, About, Discord, etc.) and each item is a working link.",
-      "status": "failed",
+      "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
