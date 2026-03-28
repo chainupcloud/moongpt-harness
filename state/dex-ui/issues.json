@@ -2036,6 +2036,28 @@
       "labels": [
         "bug"
       ]
+    },
+    {
+      "number": 225,
+      "title": "[P3] /markets vs /trade funding rate sign/value mismatch — +0.2516% vs -1.0705%",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E742",
+      "created": "2026-03-28",
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "number": 226,
+      "title": "[P4] Footer Docs link missing target=_blank — opens in same tab",
+      "status": "open",
+      "priority": "P4",
+      "scenario": "E552",
+      "created": "2026-03-28",
+      "labels": [
+        "enhancement"
+      ]
     }
   ],
   "last_updated": "2026-03-28",

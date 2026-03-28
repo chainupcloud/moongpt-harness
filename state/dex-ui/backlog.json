@@ -6613,12 +6613,12 @@
       "priority": 3,
       "title": "More nav dropdown — verify fix after issue #138 (re-verify external links)",
       "description": "After fix for issue #138, verify More dropdown contains Docs/Discord/Blog links and that each external link opens in a new tab with correct URL.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "track": "frontend",
       "last_run": "2026-03-28",
-      "result_summary": "FAIL — Footer Discord/Telegram icon links still missing target=_blank after fix #185 → Issue #200"
+      "result_summary": "PASS — Discord/Telegram icon links now have target=_blank (issue #200 fix verified); new finding: Docs text link missing target=_blank → Issue #226"
     },
     {
       "id": "E553",
@@ -8902,9 +8902,11 @@
       "priority": 3,
       "title": "Reduce Only checkbox — submit order with Reduce Only enabled",
       "description": "Enable Reduce Only checkbox on /trade, fill in order size, submit. Verify order params include reduce_only=true in the signed order payload or API request.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Reduce Only checkbox present and toggleable (checked successfully); could not verify API payload due to 0 USDC balance"
     },
     {
       "id": "E741",
@@ -8924,9 +8926,11 @@
       "priority": 3,
       "title": "/markets — funding rate sign and value matches /trade ticker",
       "description": "On /markets page, note the BTC funding rate value. Navigate to /trade and check the funding rate shown in the ticker/stats bar. Both should show the same value with consistent sign (+ for positive, - for negative).",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — /markets funding rate +0.2516% vs /trade predicted -1.0705%, sign and magnitude mismatch → Issue #225"
     },
     {
       "id": "E743",
@@ -8934,9 +8938,11 @@
       "priority": 3,
       "title": "Withdraw modal — invalid address format shows error",
       "description": "In the withdraw modal, enter an obviously invalid address like 'notanaddress' or '0xabc'. Verify a validation error message appears and the submit button is disabled. Ensures client-side validation is present.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Invalid address shows \"Invalid Ethereum address format\" error and disables Withdraw submit button"
     },
     {
       "id": "E744",
@@ -11991,6 +11997,61 @@
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1031",
+      "area": "markets",
+      "priority": 2,
+      "title": "/markets funding rate tooltip — clarify 4h vs hourly rate",
+      "description": "Hover over the funding rate column on /markets. Check if there is a tooltip explaining whether the rate shown is per-8h, per-4h, or annualized. Compare with /trade page label which says '预测资金费'. Both pages should have clear tooltips or labels explaining the rate period.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
+    },
+    {
+      "id": "E1032",
+      "area": "navigation",
+      "priority": 3,
+      "title": "Footer Docs link — verify fix after issue #226",
+      "description": "After fix for issue #226, verify footer Docs link has target=_blank and opens in a new tab. Also verify all other footer text links (Privacy, Terms) open correctly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
+    },
+    {
+      "id": "E1033",
+      "area": "order-form",
+      "priority": 3,
+      "title": "Reduce Only order — verify API payload contains reduce_only flag",
+      "description": "With an open position, enable Reduce Only checkbox, fill order size less than open position, submit. Intercept the network request to /exchange and verify the order payload contains reduce_only=true or equivalent field.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
+    },
+    {
+      "id": "E1034",
+      "area": "withdraw",
+      "priority": 3,
+      "title": "Withdraw modal — valid address submission flow",
+      "description": "Enter a valid Ethereum address in the withdraw modal, enter a small USDC amount, click Withdraw. Verify: (1) no premature error message, (2) transaction confirmation or error from backend appears, (3) Withdraw History tab shows the pending withdrawal.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
+    },
+    {
+      "id": "E1035",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets page — spot markets tab presence and data",
+      "description": "Recent git changes added app/spot/page.tsx. Check if /markets or /spot shows a spot markets section. Navigate to /spot and verify: page loads, shows spot pairs or appropriate empty state, no console errors.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28",
+      "track": "frontend"
     }
   ]
 }
