@@ -923,11 +923,16 @@
       "issue_numbers": [
         173
       ],
-      "status": "open",
+      "status": "merged",
       "title": "fix: order book ask/bid prices inverted (#173)",
       "created_at": "2026-03-28",
       "branch": "fix/issue-173",
-      "base": "dev"
+      "base": "dev",
+      "commit_sha": "895f51addafee8e29ac2bfafefd1d12f02ed7fe9",
+      "merged_at": "2026-03-28",
+      "deployed": false,
+      "accepted": false,
+      "note": "PR #175 merged (895f51a). Staging deploy blocked by Vercel TEAM_ACCESS_REQUIRED (issue #98). Acceptance deferred."
     },
     {
       "pr_number": 177,
@@ -935,7 +940,10 @@
         176
       ],
       "status": "open",
-      "created_at": "2026-03-28"
+      "created_at": "2026-03-28",
+      "title": "fix: funding rate sign/value mismatch between /markets and /trade pages (#176)",
+      "branch": "fix/issue-176",
+      "base": "dev"
     }
   ]
 }
