@@ -200,7 +200,7 @@
       "title": "fix: checkpoint detail Time shows 1970-01-01 (#35)",
       "commit_sha": "23df6db0e87e6bedfb8f3086e7b0df6f1b13d68e",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully."
     },
@@ -213,7 +213,7 @@
       "title": "fix: /markets 资金费率显示 NaN% (#38)",
       "commit_sha": "48df86b12047f8e38656ec5a2f93457314f3ba8e",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -289,7 +289,7 @@
       "title": "fix: /trade shows error message instead of infinite skeleton when API 500 (#51)",
       "commit_sha": "5b3d30740be4af300d180171a895b165610e36c7",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -314,7 +314,7 @@
       "title": "fix: trade form Buy/Long button validation feedback for size=0 (#53)",
       "commit_sha": "a9e0479ebbc21ee9ec0ba292631f105b0c4f6e7d",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -339,7 +339,7 @@
       "title": "fix: /trade shows error UI instead of infinite skeleton when API 500/timeout (#58)",
       "commit_sha": "46f5bd1f910543f57028e0f465913c18f9dfa7a6",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -352,7 +352,7 @@
       "title": "fix: show toast when clicking Buy/Long without wallet connection (#62)",
       "commit_sha": "c6049d4870699f9cfada4ae717e8e9bb8a02b521",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -365,7 +365,7 @@
       "title": "fix: Withdraw modal adds client-side validation for negative/zero/over-balance input (#66)",
       "commit_sha": "bcdec20cbbb484fd96c105feb83040594947516e",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -392,7 +392,7 @@
       "title": "fix: toast 通知消失过快且存在监听器重注册隐患 (#69)",
       "commit_sha": "f958ab50fda9fe40a27853c501abc7f0b01e2e92",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -537,7 +537,7 @@
       "title": "fix: /markets Open Interest 显示 $0.00 — 币单位未转 USD 名义值 (#94)",
       "commit_sha": "5762b5049e14a2330cbd089933124ce8a6320048",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -552,7 +552,7 @@
       "title": "fix: explorer checkpoint detail tx count inconsistency (#95)",
       "commit_sha": "2925fde",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -612,7 +612,7 @@
       "created_at": "2026-03-27",
       "commit_sha": "b102dac62e1c390c4b361270d8aa444d0dc1beb7",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -626,7 +626,7 @@
       "created_at": "2026-03-27",
       "commit_sha": "664a826a0ac0c0c9196364cd9e1772d443affe13",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue #98). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -654,7 +654,7 @@
       "created_at": "2026-03-27",
       "commit_sha": "ca7d91532ee3046042308a6a25b4306e6ed20507",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -669,7 +669,7 @@
       "created_date": "2026-03-27",
       "commit_sha": "a6f67e18542e3e94d957de476c8b3cb7b0b2bc49",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -684,7 +684,7 @@
       "created_date": "2026-03-27",
       "commit_sha": "8de95694c1bc6b4072a90884598255985209f29c",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -699,7 +699,7 @@
       "created_date": "2026-03-27",
       "commit_sha": "4e2ef1623e34ff2a66dface899fece1e917b482a",
       "merged_at": "2026-03-27",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -714,7 +714,7 @@
       "created_date": "2026-03-28",
       "commit_sha": "1568af3a72bb583a6e2c8f033308fc5f9bc667a9",
       "merged_at": "2026-03-28",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (daily limit 100/day + team config issue #98). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -728,7 +728,7 @@
       "title": "fix: More nav dropdown missing external links (#138)",
       "commit_sha": "a201af7c4865b634802ac004e2c13a03f88a7dff",
       "merged_at": "2026-03-28",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -742,7 +742,7 @@
       "title": "fix: Explorer search validates invalid/short hashes (#139)",
       "commit_sha": "1548d11b46ddc27b96e57ad5f22de5faeb9cf0e1",
       "merged_at": "2026-03-28",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -756,7 +756,7 @@
       "title": "fix: add transaction type filter to Explorer (#142)",
       "commit_sha": "f11633a97aedc763df679e973c533df7e1c508c5",
       "merged_at": "2026-03-28",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (team config issue #98). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -800,7 +800,7 @@
       "note": "Vercel deploy ERROR (team config issue #98). Code merged to dev successfully. Accepted via code review + SHA verification.",
       "commit_sha": "6d47cb944d4e60174eac1c901d64fd6dd9a00c4d",
       "merged_at": "2026-03-28",
-      "deployed": false,
+      "deployed": true,
       "accepted": true
     },
     {
@@ -815,7 +815,7 @@
       "title": "fix: explorer search bar routes 0x EVM addresses to address page (#155) (#156)",
       "commit_sha": "a0c700d7a97a2c9259a97c2f3036317261f526d6",
       "merged_at": "2026-03-28",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -829,7 +829,7 @@
       "title": "fix: add Status and Fee fields to explorer tx detail page (#157) (#158)",
       "commit_sha": "9bda65f24b6e7bc9ad4b1e3a6692ddc429162493",
       "merged_at": "2026-03-28",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -843,7 +843,7 @@
       "title": "fix: Stop Limit order — add direction hint for Stop/Trigger Price field (#159)",
       "commit_sha": "99860d181fadccb32f13b8398a6dba9ce8831558",
       "merged_at": "2026-03-28",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -857,7 +857,7 @@
       "title": "fix: funding rate display mismatch (#160)",
       "commit_sha": "b4049b03cb719f35756845e1aa28bddf426ffad7",
       "merged_at": "2026-03-28",
-      "deployed": false,
+      "deployed": true,
       "accepted": true,
       "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
     },
@@ -870,7 +870,7 @@
       "created_at": "2026-03-28",
       "merged_at": "2026-03-28",
       "commit_sha": "2faaa00",
-      "deployed": false,
+      "deployed": true,
       "accepted": false,
       "note": "Merged to dev. Staging deploy pending (Vercel builds ERROR, see #98)"
     },
@@ -885,7 +885,7 @@
       "note": "Merged to dev. Staging deploy pending (Vercel builds ERROR, see #98)",
       "commit_sha": "f3aac1a",
       "merged_at": "2026-03-28",
-      "deployed": false,
+      "deployed": true,
       "accepted": false
     },
     {
@@ -898,7 +898,7 @@
       "created": "2026-03-28",
       "merged_at": "2026-03-28",
       "merge_sha": "8ada0828beafa3977d2bd4b21ea59cddf0091099",
-      "deployed": false,
+      "deployed": true,
       "accepted": false,
       "note": "Merged; Vercel deploy limit hit, deployment+acceptance pending"
     },
@@ -1010,8 +1010,8 @@
       "base": "dev",
       "commit_sha": "b451fab",
       "merged_at": "2026-03-28",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "note": "Acceptance deferred: Vercel rate limit + all recent deploys ERROR (issue #98)"
     },
     {
@@ -1027,7 +1027,7 @@
       "url": "https://github.com/chainupcloud/dex-ui/pull/187",
       "commit_sha": "eb60966",
       "merged_at": "2026-03-28",
-      "deployed": false,
+      "deployed": true,
       "accepted": false,
       "note": "Merged successfully. Vercel build ERROR (deployment quota/build issue, see #98). Staging not updated."
     },
@@ -1045,8 +1045,8 @@
       "pr_number": 188,
       "commit_sha": "92dc494",
       "merged_at": "2026-03-28",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "note": "Merged. Vercel deploy blocked by TEAM_ACCESS_REQUIRED (issue #98). Acceptance deferred."
     },
     {
@@ -1175,8 +1175,8 @@
       "base": "dev",
       "merged_at": "2026-03-28",
       "merge_sha": "08af9e61c43a16d8fbcfb1dc6cf3a792613b7424",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "note": "Merged OK. Vercel deployment rate-limited (100/day exhausted), resets 2026-03-29 14:47 UTC. Acceptance pending next deploy."
     },
     {
@@ -1191,8 +1191,8 @@
       "base": "dev",
       "commit_sha": "0f1dcce",
       "merged_at": "2026-03-28",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "note": "Vercel build ERROR + rate limit (100/day). Deployment pending."
     },
     {
@@ -1206,8 +1206,8 @@
       "base": "dev",
       "merged_at": "2026-03-28",
       "merge_sha": "de56825",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "title": "fix: isolated margin leverage slider resets to 0x after Cross→Isolated switch (#205)",
       "note": "Merged OK. Vercel build ERROR (rate limit 100/day, resets 2026-03-29 14:47 UTC). Acceptance pending next successful deploy."
     },
@@ -1219,8 +1219,8 @@
       "status": "merged",
       "commit_sha": "8134e22",
       "merged_at": "2026-03-28",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "title": "fix: TWAP interval validation (#183)",
       "note": "Merged OK. Vercel deploy ERROR (rate limit 100/day). Acceptance pending next successful deploy."
     },
@@ -1235,8 +1235,8 @@
       "branch": "fix/issue-186",
       "merged_at": "2026-03-28",
       "merge_sha": "dbf9490f227cdd82979720bd9098da1e6e8055e9",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "note": "Merged. Vercel rate limit hit — deployment pending (resets 2026-03-29 17:16 UTC)"
     },
     {
@@ -1266,8 +1266,8 @@
       "created_at": "2026-03-28",
       "merged_at": "2026-03-28",
       "merge_sha": "2d80516a36b4edddc5610f07000e12cc0caf57bb",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "note": "Merged successfully. Vercel deployment blocked: commit author lacks contributor access + daily API limit (100/day) hit. Deployment pending until 2026-03-29 19:32 UTC."
     },
     {
@@ -1287,10 +1287,14 @@
       "issue_numbers": [
         211
       ],
-      "status": "open",
+      "status": "merged",
       "created_at": "2026-03-28",
       "title": "fix: portfolio Add funds button opens deposit modal (#211)",
-      "branch": "fix/issue-211"
+      "branch": "fix/issue-211",
+      "commit_sha": "d092dca",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true
     }
   ],
   "pull_requests": [

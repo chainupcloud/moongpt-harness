@@ -1641,7 +1641,7 @@
       "id": "issue-183",
       "github_number": 183,
       "title": "[P3] TWAP order form missing Interval/Duration field — cannot set time between sub-orders",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E527",
       "created_date": "2026-03-28",
@@ -1650,7 +1650,8 @@
       ],
       "pr_number": 236,
       "fix_attempts": 3,
-      "note": "Attempt 3: added interval validation (PR #236). PR #184 fields confirmed on staging."
+      "note": "Staging acceptance passed (d092dca). Closed by Agent 4.",
+      "closed_at": "2026-03-28"
     },
     {
       "id": "issue-2026-03-28-E552",
@@ -1673,7 +1674,7 @@
     {
       "number": 186,
       "title": "[P3] Explorer search — tx hash (0x+64hex) always routes to /explorer/address/ instead of /explorer/tx/",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E799",
       "created_date": "2026-03-28",
@@ -1682,8 +1683,9 @@
       ],
       "fix_attempts": 3,
       "pr_number": 238,
-      "note": "Fix attempt 3: route 0x+64hex to /explorer/tx/ by default (no async API call) | PR #238 merged 2026-03-28, acceptance pending (Vercel rate limit)",
-      "github_number": 186
+      "note": "Staging acceptance passed (d092dca). Closed by Agent 4.",
+      "github_number": 186,
+      "closed_at": "2026-03-28"
     },
     {
       "github_number": 189,
@@ -1835,7 +1837,7 @@
     {
       "number": 202,
       "title": "[P3] Stop Limit trigger price validation — hint disappears on input, submit not blocked for invalid stop price",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "labels": [
         "bug"
@@ -1845,7 +1847,8 @@
       "url": "https://github.com/chainupcloud/dex-ui/issues/202",
       "pr_number": 229,
       "fix_attempts": 1,
-      "note": "PR #229 merged (2026-03-28). Deployment blocked by Vercel rate limit. Acceptance pending."
+      "note": "Staging acceptance passed (d092dca). Closed by Agent 4.",
+      "closed_at": "2026-03-28"
     },
     {
       "id": "issue-203",
@@ -1865,20 +1868,21 @@
       "number": 204,
       "github_number": 204,
       "title": "[P3] Stop Market trigger price — zero value not validated client-side",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E641",
       "created_at": "2026-03-28",
       "url": "https://github.com/chainupcloud/dex-ui/issues/204",
       "pr_number": 231,
       "fix_attempts": 1,
-      "note": "PR #231 merged (2026-03-28), Vercel build ERROR — awaiting successful staging deploy for acceptance"
+      "note": "Staging acceptance passed (d092dca). Closed by Agent 4.",
+      "closed_at": "2026-03-28"
     },
     {
       "id": "issue-E643-2026-03-28",
       "title": "[P3] Isolated margin leverage slider resets to 0x after Cross→Isolated switch",
       "github_issue_number": 205,
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E643",
       "created_date": "2026-03-28",
@@ -1886,13 +1890,15 @@
         "bug"
       ],
       "pr_number": 233,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "closed_at": "2026-03-28",
+      "note": "Staging acceptance passed (d092dca). Closed by Agent 4."
     },
     {
       "id": "issue-E647-2026-03-28",
       "title": "[P3] API Keys page — Generate button and name/date inputs missing from UI",
       "github_issue_number": 206,
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E647",
       "created_date": "2026-03-28",
@@ -1901,7 +1907,8 @@
       ],
       "pr_number": 245,
       "fix_attempts": 1,
-      "note": " | PR #245 merged (2d80516), awaiting Vercel staging deployment verification. Deployment blocked by contributor access + rate limit."
+      "note": "Staging acceptance passed (d092dca). Closed by Agent 4.",
+      "closed_at": "2026-03-28"
     },
     {
       "number": 208,
@@ -1950,12 +1957,14 @@
     {
       "title": "[P3] Portfolio \"+Add funds\" button non-functional — click does not open deposit modal",
       "github_issue": 211,
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E927",
       "opened_date": "2026-03-28",
       "pr_number": 247,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "closed_at": "2026-03-28",
+      "note": "PR #247 merged (d092dca), staging acceptance passed"
     },
     {
       "title": "[P3] Stop Market BUY — trigger price below mark price accepted without blocking validation",
