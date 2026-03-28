@@ -1641,16 +1641,16 @@
       "id": "issue-183",
       "github_number": 183,
       "title": "[P3] TWAP order form missing Interval/Duration field — cannot set time between sub-orders",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario_id": "E527",
       "created_date": "2026-03-28",
       "labels": [
         "bug"
       ],
-      "pr_number": 184,
-      "fix_attempts": 2,
-      "note": "Staging acceptance failed (2026-03-28), fix_attempts=2"
+      "pr_number": 236,
+      "fix_attempts": 3,
+      "note": "Attempt 3: added interval validation (PR #236). PR #184 fields confirmed on staging."
     },
     {
       "id": "issue-2026-03-28-E552",

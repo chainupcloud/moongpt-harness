@@ -1210,6 +1210,17 @@
       "accepted": false,
       "title": "fix: isolated margin leverage slider resets to 0x after Cross→Isolated switch (#205)",
       "note": "Merged OK. Vercel build ERROR (rate limit 100/day, resets 2026-03-29 14:47 UTC). Acceptance pending next successful deploy."
+    },
+    {
+      "pr_number": 236,
+      "issue_numbers": [
+        183
+      ],
+      "status": "open",
+      "commit_sha": "7fffa3b",
+      "merged_at": null,
+      "deployed": false,
+      "accepted": false
     }
   ]
 }
