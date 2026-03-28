@@ -1074,6 +1074,16 @@
       "deployed": false,
       "accepted": false,
       "note": "Vercel blocked: commit author lacks contributing access"
+    },
+    {
+      "pr_number": 198,
+      "title": "fix: add Telegram link to More dropdown (#192)",
+      "status": "open",
+      "issue_numbers": [
+        192
+      ],
+      "branch": "fix/issue-192",
+      "created_date": "2026-03-28"
     }
   ]
 }
