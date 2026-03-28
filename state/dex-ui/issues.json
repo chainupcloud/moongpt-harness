@@ -1,5 +1,5 @@
 {
-  "last_test_run": "2026-03-28T00:00:00Z",
+  "last_test_run": "2026-03-28T12:20:31Z",
   "last_coverage_run": "2026-03-27T00:01:33Z",
   "issues": [
     {
@@ -1956,6 +1956,16 @@
         "bug"
       ],
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/214"
+    },
+    {
+      "github_number": 215,
+      "title": "[P3] Explorer transactions — \"More\" button does not load additional rows",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-28",
+      "closed_at": null,
+      "scenario": "E961"
     }
   ],
   "last_updated": "2026-03-28",

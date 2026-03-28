@@ -8233,9 +8233,11 @@
       "priority": 3,
       "title": "Funding rate label clarity — distinguish predicted vs current rate",
       "description": "UI shows predicted funding rate (0.0365%) in header labeled \"资金费 / 倒计时\". Current 8h rate is 0.2758%. Check if label should clarify \"Predicted\" to avoid user confusion. Compare with HyperLiquid and dYdX label conventions.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Label reads '预测资金费 / 倒计时' (Predicted Funding Rate / Countdown), distinction already present"
     },
     {
       "id": "E687",
@@ -8304,9 +8306,11 @@
       "priority": 3,
       "title": "Explorer checkpoint detail — multiple transactions rendering",
       "description": "Verify checkpoint detail with multiple transactions (>5) renders a complete list. Check pagination if present. Confirm all rows show Hash, Action, User Account, Summary, Time correctly.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — Checkpoint detail renders all required columns (Hash, Action, User Account, Summary, Time); testnet single-tx only"
     },
     {
       "id": "E693",
@@ -11156,9 +11160,11 @@
       "priority": 2,
       "title": "Explorer transactions — verify URL query param updates on page change",
       "description": "When paginating, check if URL updates to ?page=2 or similar. If URL doesn't change, browser back button won't work correctly.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — More button does not load additional transactions (stays at 10, no network requests)"
     },
     {
       "id": "E962",
@@ -11166,9 +11172,11 @@
       "priority": 2,
       "title": "Explorer transactions — last page shows partial/complete results correctly",
       "description": "Navigate to the last page of transactions (e.g. page 11) and verify it loads valid transactions, not an empty list.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "PASS — 10 transactions shown with valid hashes, times, addresses; More button non-functional (E961)"
     },
     {
       "id": "E963",
@@ -11196,6 +11204,56 @@
       "priority": 3,
       "title": "Explorer search — invalid/non-existent address shows helpful error",
       "description": "Search with a syntactically valid but non-existent address (0x0000...0001). Expect a helpful 'address not found' or 'no activity' message rather than blank page.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E966",
+      "area": "explorer",
+      "priority": 2,
+      "title": "Explorer transactions More button — fix verification after repair",
+      "description": "Verify that after issue #215 fix, clicking More loads next 10 transactions and either updates URL query param or preserves scroll state via cursor/offset.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E967",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer transactions — filter by type (PlaceOrder) shows only filtered results",
+      "description": "Click the 'Filter: All Types' dropdown and select 'PlaceOrder'. Verify the transaction list only shows PlaceOrder type transactions.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E968",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint detail — verify 'Transactions' count matches actual list length",
+      "description": "On a checkpoint detail page, the header shows 'Transactions: N'. Verify the number N matches the actual number of transaction rows displayed below.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E969",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade header stats — mark price matches oracle price within 1% tolerance",
+      "description": "On /trade page, read '标记价格' (mark price) and '预言机价格' (oracle price). Verify |mark - oracle| / oracle < 1%. Large divergence could indicate stale data.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E970",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — shows transaction history for a known address",
+      "description": "Navigate to /explorer/address/0x73a6b3c3...80adc0 (oracle keeper address visible in transactions). Verify address page loads and shows transactions, not empty.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
