@@ -883,6 +883,15 @@
       ],
       "created": "2026-03-28",
       "note": "Merge conflict (dirty) after PR #166 merged — fix branch needs rebase on dev"
+    },
+    {
+      "number": 171,
+      "title": "fix: leverage dialog slider initializes at 0x instead of current value (#168)",
+      "status": "open",
+      "issue_numbers": [
+        168
+      ],
+      "created": "2026-03-28"
     }
   ]
 }
