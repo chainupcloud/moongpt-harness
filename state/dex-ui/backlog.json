@@ -7711,9 +7711,11 @@
       "priority": 3,
       "title": "Isolated margin — slider starts at 0x after switching from Cross (should default to 1x or previous)",
       "description": "After switching Cross→Isolated, verify leverage slider does not start at 0x (invalid) but at a valid minimum like 1x or previous Cross value",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Leverage slider resets to 0x after Cross→Isolated switch → Issue #205"
     },
     {
       "id": "E644",
@@ -7731,9 +7733,11 @@
       "priority": 3,
       "title": "TWAP order — submit button remains enabled with 0-duration; verify server-side rejection or client-side gate",
       "description": "After setting duration=0h 0m in TWAP form and clicking Buy/Long, check if order submission is blocked by client validation or if it reaches the server. The submit button is not disabled even with inline validation errors.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — TWAP duration fields missing (overlaps existing open issue: TWAP missing Interval/Duration)"
     },
     {
       "id": "E646",
@@ -7741,9 +7745,11 @@
       "priority": 3,
       "title": "TWAP order — Number of Orders preview updates when changing duration",
       "description": "With TWAP selected, verify that the \"Number of Orders\" preview count updates dynamically as Hour/Minute duration values change. E.g., 1h duration shows different sub-order count than 30m.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "SKIP — TWAP duration fields not present, cannot test dynamic order count update"
     },
     {
       "id": "E647",
@@ -7751,9 +7757,11 @@
       "priority": 3,
       "title": "API Keys — Generate new API wallet with name and valid-until date",
       "description": "On /api-keys page, enter a wallet name and set valid-until date, then click Generate. Verify the new wallet appears in the API Wallet Address list. Check if name/expiry are shown correctly.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-28",
+      "result_summary": "FAIL — Generate button and name/date inputs missing on API Keys page → Issue #206"
     },
     {
       "id": "E648",
@@ -10382,6 +10390,56 @@
       "description": "Enter a negative number (e.g., -100) as trigger price in Stop Market order. Verify the input is either rejected or shows a validation error, and order is not submitted.",
       "status": "pending",
       "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E898",
+      "area": "trade",
+      "priority": 3,
+      "title": "Isolated margin — verify minimum leverage is 1x and slider range is valid",
+      "description": "After the Cross→Isolated 0x slider bug fix, re-verify that slider min=1x, value defaults to 1x or last used, and max reflects symbol's max leverage. Also verify slider value is sent correctly with order.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E899",
+      "area": "trade",
+      "priority": 3,
+      "title": "Isolated margin — leverage slider updates P&L preview in real time",
+      "description": "With Isolated mode active and a valid leverage (e.g. 5x), change size or leverage and verify the margin required / liquidation price preview updates accordingly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E900",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys page — wallet connection required state and reconnect flow",
+      "description": "Access /api-keys without wallet connected. Verify a connect-wallet prompt/button is shown. Connect wallet and verify the API wallet management UI (generate, list, remove) becomes visible.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E901",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys — Remove existing API wallet and verify disappears from list",
+      "description": "After at least one API wallet exists, click the Remove/Delete button. Confirm a dialog appears, confirm removal, and verify the wallet is removed from the list without page reload errors.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-28"
+    },
+    {
+      "id": "E902",
+      "area": "trade",
+      "priority": 3,
+      "title": "Cross vs Isolated — switching back from Isolated to Cross resets margin state correctly",
+      "description": "After switching to Isolated (with any leverage set), switch back to Cross. Verify the form reflects Cross state properly — no residual isolated margin values, leverage shows correct Cross value.",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
     }
