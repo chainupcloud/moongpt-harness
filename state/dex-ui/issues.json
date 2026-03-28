@@ -1580,6 +1580,18 @@
       "labels": [
         "enhancement"
       ]
+    },
+    {
+      "number": 176,
+      "github_number": 176,
+      "title": "[P3] Funding rate sign/value mismatch between /markets and /trade pages",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E509",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ]
     }
   ],
   "last_updated": "2026-03-28",
