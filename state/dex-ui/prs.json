@@ -1935,8 +1935,13 @@
       "issue_numbers": [
         307
       ],
-      "status": "open",
-      "created_at": "2026-03-29"
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "commit_sha": "56a6e18",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "note": "deploy blocked #98 (build error)"
     }
   ],
   "pull_requests": [

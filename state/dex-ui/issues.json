@@ -2707,7 +2707,8 @@
       "closed_at": null,
       "scenario": "E1380",
       "fix_attempts": 1,
-      "github_number": 307
+      "github_number": 307,
+      "note": "PR #326 merged, deploy blocked #98"
     },
     {
       "number": 308,
