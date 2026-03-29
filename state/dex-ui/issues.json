@@ -2370,6 +2370,18 @@
       "scenario": "E767",
       "created": "2026-03-29",
       "url": "https://github.com/chainupcloud/dex-ui/issues/272"
+    },
+    {
+      "number": 273,
+      "title": "[P3] /trade?coin=INVALID 接受无效 coin 参数，显示虚假市场 INVALID-USDC（无重定向或错误提示）",
+      "status": "open",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "created_at": "2026-03-29",
+      "scenario_id": "E1105",
+      "description": "访问 /trade?coin=INVALID 时，显示 INVALID-USDC 假市场，所有价格为 0，无重定向或错误"
     }
   ],
   "last_updated": "2026-03-29",

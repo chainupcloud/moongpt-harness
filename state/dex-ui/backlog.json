@@ -7925,11 +7925,11 @@
       "priority": 3,
       "title": "Stop Market order — visibility in order type selector",
       "description": "Open trade page, look inside order type dropdown/selector for Stop Market. If not present, confirm whether it's under Trigger/Stop Limit section. Test whether conditional (trigger) orders are accessible at all.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — Stop Market not visible in order type selector; only Limit and TWAP tabs shown → Issue #209"
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Stop Market visible in order type dropdown (Market/Limit/Stop Market/Stop Limit/Take Profit Market/Take Profit Limit/TWAP/Scale/Scalp all present)"
     },
     {
       "id": "E662",
@@ -8495,11 +8495,11 @@
       "title": "TP/SL reset behavior on order type switch Limit → Market → Limit",
       "description": "Manual-focus test for E700: Enable TP/SL on Limit order, set TP=55000 SL=45000. Open Order Type dropdown → select Market. Verify: (a) TP/SL toggle state after switch, (b) input count. Switch back to Limit → verify TP/SL values preserved or properly reset.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — TP/SL toggle silently reset to OFF when switching Limit→Market. Not restored when switching back to Limit. Issue #218 filed."
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — TP/SL toggle persists across Limit→Market→Limit switch; toggle visible in both modes; value persistence not testable without wallet"
     },
     {
       "id": "E708",
@@ -13011,9 +13011,11 @@
       "priority": 3,
       "title": "Trade page invalid coin param — /trade?coin=INVALID fallback behavior",
       "description": "Navigate to /trade?coin=INVALID and verify the page falls back to default pair or shows an error, not a broken UI",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — /trade?coin=INVALID silently renders \"INVALID-USDC\" fake market with all-zero prices instead of redirect/error → Issue #273"
     },
     {
       "id": "E1106",
@@ -14266,9 +14268,11 @@
       "priority": 2,
       "title": "/spot page — verify spot trading UI elements (pair selector, order form, or coming-soon state)",
       "description": "E1219 confirmed /spot loads and has trading elements (3). Deep dive: check for pair selector, buy/sell buttons, price input, or alternatively a 'coming soon' / testnet notice. Document what spot UI actually shows.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — /spot page loads (HTTP 200), shows \"Spot Trading Coming Soon\", CTA \"Trade Perpetuals\" button found, no JS errors"
     },
     {
       "id": "E1222",
@@ -14306,6 +14310,56 @@
       "priority": 4,
       "title": "/markets — clicking on a market row navigates to /trade/[pair]",
       "description": "Verify that clicking on the BTC/USDC row in markets table navigates to /trade or /trade/BTC-USDC. Check URL changes correctly and the trade page loads for the selected pair.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1226",
+      "area": "trade",
+      "priority": 2,
+      "title": "/trade?coin=BTC redirect — verify valid coin param loads correct market (not INVALID-USDC fallback)",
+      "description": "Regression: since /trade?coin=INVALID renders a fake market, verify /trade?coin=BTC still loads BTC-USDC correctly and does not silently fallback to a wrong market name",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1227",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL — verify input values are preserved when TP/SL toggled off then on again",
+      "description": "Enable TP/SL, enter TP=80000, toggle TP/SL off, then toggle back on — verify TP value is restored (or correctly cleared). Tests persistence of TP/SL state across toggle cycles.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1228",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order type selector — Take Profit Market and Take Profit Limit order types available",
+      "description": "E661 found 9 order types including Take Profit Market and Take Profit Limit. Verify these new order types show the correct form fields (trigger price, limit price) when selected.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1229",
+      "area": "trade",
+      "priority": 2,
+      "title": "/trade?coin=NONEXISTENT with no matching market — verify error state or default redirect",
+      "description": "Related to Issue #273: test additional invalid coin params (/trade?coin=FOOBAR, /trade?coin=ABC123) to confirm consistent behavior and determine if all params are accepted without validation",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1230",
+      "area": "spot",
+      "priority": 3,
+      "title": "/spot page SEO meta tags — verify title, description, og:title present",
+      "description": "E1221 confirmed /spot page loads. Verify it has correct meta tags: <title>Spot | Hermes DEX</title> (already confirmed), plus meta description and og:title for SEO and link unfurls.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
