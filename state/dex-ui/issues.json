@@ -2101,7 +2101,7 @@
       ],
       "pr_number": 254,
       "fix_attempts": 1,
-      "note": "PR #254 has merge conflicts with dev (needs rebase). Also blocked by Vercel build errors (issue #98)."
+      "note": "PR #254 has merge conflicts with dev (needs rebase). Also blocked by Vercel build errors (issue #98). Checked 2026-03-29."
     },
     {
       "number": 225,
@@ -2130,7 +2130,8 @@
         "enhancement"
       ],
       "pr_number": 260,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "note": "PR #260 has merge conflicts with dev (needs rebase). Checked 2026-03-29."
     },
     {
       "title": "[P4] /markets funding rate column lacks tooltip to indicate rate period (4h vs hourly)",
@@ -2145,7 +2146,7 @@
       "pr_number": 261,
       "fix_attempts": 1,
       "github_number": 227,
-      "note": "PR #261 merged to dev. Vercel deployment ERROR (issue #98). Acceptance blocked until Vercel builds fixed."
+      "note": "PR #261 merged to dev (sha cca2055). Vercel dev deployment ERROR (issue #98 still active). Acceptance blocked until Vercel builds fixed. Checked 2026-03-29."
     },
     {
       "github_number": 228,
@@ -2155,7 +2156,8 @@
       "pr_number": 262,
       "created_at": "2026-03-28",
       "closed_at": null,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "note": "PR #262 open but has merge conflicts. Needs rebase against dev. Checked 2026-03-29."
     },
     {
       "github_number": 230,

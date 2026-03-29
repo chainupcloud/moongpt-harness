@@ -1520,7 +1520,9 @@
       "issue_numbers": [
         228
       ],
-      "status": "open"
+      "status": "open",
+      "note": "Copilot COMMENTED (approvable). Merge conflicts (mergeable_state=dirty). Needs rebase against dev. Checked 2026-03-29.",
+      "title": "fix: highlight oracle price when it diverges from mark price (#228)"
     },
     {
       "pr_number": 263,
