@@ -14497,11 +14497,12 @@
       "priority": 2,
       "title": "/trade?coin=BTC&side=sell — verify coin+side query params pre-fill form",
       "description": "If the app supports side param in URL, accessing /trade?coin=BTC&side=sell should pre-select Sell/Short. Verify form state matches URL params.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29",
       "last_run": "2026-03-29",
-      "result_summary": "FAIL — side=sell param ignored, BUY/Long stays active. Issue #275"
+      "result_summary": "FAIL — side=sell param ignored, BUY/Long stays active. Issue #275",
+      "note": "Reset after PR #298 merged + acceptance passed (2026-03-29)"
     },
     {
       "id": "E1235",
