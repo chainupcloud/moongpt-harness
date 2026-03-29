@@ -1587,7 +1587,7 @@
       "title": "fix: Portfolio Assets tab shows connect prompt with active session (#266)",
       "status": "open",
       "created_at": "2026-03-29",
-      "note": "Copilot COMMENTED (mergeable per rules) but merge conflict (dirty). Needs rebase onto dev. Checked 2026-03-29",
+      "note": "Copilot COMMENTED (mergeable per rules) but mergeable=None on GitHub. Needs rebase onto dev. Checked 2026-03-29",
       "last_checked": "2026-03-29"
     },
     {
@@ -1639,7 +1639,7 @@
       "branch": "fix/issue-271",
       "base": "dev",
       "created": "2026-03-29",
-      "note": "Copilot COMMENTED (mergeable per rules) but merge conflict (dirty). Needs rebase onto dev. Checked 2026-03-29",
+      "note": "Copilot COMMENTED (mergeable per rules) but mergeable=None on GitHub. Needs rebase onto dev. Checked 2026-03-29",
       "last_checked": "2026-03-29"
     },
     {
@@ -1717,16 +1717,19 @@
       "commit_sha": "fa63d51",
       "merged_at": "2026-03-29",
       "deployed": false,
-      "accepted": false,
-      "note": "Merged successfully. Vercel auto-deploy failed (team config error). Daily deployment limit hit — retry next cycle."
+      "accepted": false
     },
     {
       "pr_number": 312,
       "issue_numbers": [
         284
       ],
-      "status": "open",
-      "created_at": "2026-03-29"
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "commit_sha": "77bdb73",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false
     }
   ],
   "pull_requests": [
@@ -1786,6 +1789,18 @@
       "base": "dev",
       "created_at": "2026-03-29",
       "url": "https://github.com/chainupcloud/dex-ui/pull/292"
+    },
+    {
+      "pr_number": 313,
+      "issue_numbers": [
+        286
+      ],
+      "title": "fix: add Trailing Stop to order type dropdown (#286)",
+      "status": "open",
+      "branch": "fix/issue-286",
+      "base": "dev",
+      "created_at": "2026-03-29",
+      "url": "https://github.com/chainupcloud/dex-ui/pull/313"
     }
   ],
   "last_updated": "2026-03-29"
