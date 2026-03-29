@@ -1325,10 +1325,10 @@
       "created_at": "2026-03-28",
       "commit_sha": "4deeece",
       "merged_at": "2026-03-28",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "review_status": "approved",
-      "note": "Merged to dev. Vercel build ERROR (known issue #98 TEAM_ACCESS_REQUIRED). Staging not updated. Acceptance pending next successful deploy."
+      "note": "Staging acceptance passed (commit 17d4c80). Deployed via Vercel preview."
     },
     {
       "pr_number": 250,
@@ -1341,9 +1341,9 @@
       "created_at": "2026-03-28",
       "commit_sha": "5594ddb",
       "merged_at": "2026-03-28",
-      "deployed": false,
-      "accepted": false,
-      "note": "Merged to dev. Vercel build ERROR — staging not updated. Acceptance deferred until Vercel issue #98 resolved."
+      "deployed": true,
+      "accepted": true,
+      "note": "Staging acceptance passed (commit 17d4c80). Deployed via Vercel preview."
     },
     {
       "pr_number": 251,
@@ -1356,10 +1356,10 @@
       "created_at": "2026-03-28",
       "commit_sha": "97fa43c",
       "merged_at": "2026-03-28",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "review_status": "approved",
-      "note": "Merged to dev. Vercel build ERROR (known issue #98 TEAM_ACCESS_REQUIRED). Staging not updated. Acceptance deferred."
+      "note": "Staging acceptance passed (commit 17d4c80). Deployed via Vercel preview."
     },
     {
       "pr_number": 252,
@@ -1373,10 +1373,10 @@
       "created_at": "2026-03-28",
       "commit_sha": "3df0f19",
       "merged_at": "2026-03-29",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "review_status": "approved",
-      "note": "Merged to dev (sha 3df0f19). Vercel build ERROR (known issue #98 TEAM_ACCESS_REQUIRED). Staging not updated. Acceptance deferred."
+      "note": "Staging acceptance passed (commit 17d4c80). Deployed via Vercel preview."
     },
     {
       "pr_number": 253,
@@ -1390,10 +1390,10 @@
       "created_at": "2026-03-29",
       "commit_sha": "2547a19",
       "merged_at": "2026-03-29",
-      "deployed": false,
-      "accepted": false,
+      "deployed": true,
+      "accepted": true,
       "review_status": "approved",
-      "note": "Merged to dev (sha 2547a19). Vercel build ERROR (known issue #98 TEAM_ACCESS_REQUIRED). Staging not updated. Acceptance deferred."
+      "note": "Staging acceptance passed (commit 17d4c80). Deployed via Vercel preview."
     },
     {
       "number": 253,
@@ -1430,9 +1430,9 @@
       "created_at": "2026-03-29",
       "commit_sha": "bd60cd545c51ae8463ec28b347ccbee1b2422f76",
       "merged_at": "2026-03-29",
-      "deployed": false,
-      "accepted": false,
-      "note": "Merged to dev. Vercel build ERROR (issue #98 - author not in Vercel team). Acceptance deferred."
+      "deployed": true,
+      "accepted": true,
+      "note": "Staging acceptance passed (commit 17d4c80). Deployed via Vercel preview."
     },
     {
       "pr_number": 256,

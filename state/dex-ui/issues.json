@@ -1931,7 +1931,7 @@
       "github_issue_number": 209,
       "title": "[P3] Stop Market order type not visible in order type selector — only Limit and TWAP tabs shown",
       "scenario": "E661",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "labels": [
         "bug"
@@ -1939,7 +1939,8 @@
       "created_date": "2026-03-28",
       "pr_number": 249,
       "fix_attempts": 1,
-      "note": "PR #249 merged to dev (sha 4deeece). Vercel build ERROR — staging not updated. Acceptance deferred until Vercel issue #98 resolved."
+      "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
+      "closed_at": "2026-03-29"
     },
     {
       "id": "issue-E673-2026-03-28",
@@ -2022,7 +2023,7 @@
     {
       "id": 216,
       "title": "[P3] Explorer tx detail: Fee field shows dash (–) instead of numeric value",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E698",
       "created": "2026-03-28",
@@ -2030,13 +2031,14 @@
       "fix_branch": null,
       "fix_attempts": 1,
       "pr_number": 250,
-      "note": "PR #250 merged to dev (sha 5594ddb). Vercel build ERROR — staging not updated. Acceptance deferred until Vercel issue #98 resolved."
+      "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
+      "closed_at": "2026-03-29"
     },
     {
       "issue_id": "218",
       "github_issue_number": 218,
       "title": "[P3] TP/SL toggle silently reset when switching order type — not restored on Limit→Market→Limit roundtrip",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E707",
       "created_date": "2026-03-28",
@@ -2046,13 +2048,14 @@
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/218",
       "pr_number": 251,
       "fix_attempts": 1,
-      "note": "PR #251 merged to dev (sha 97fa43c). Vercel build ERROR — staging not updated. Acceptance deferred until Vercel issue #98 resolved."
+      "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
+      "closed_at": "2026-03-29"
     },
     {
       "github_number": 219,
       "title": "[P3] Reduce Only checkbox visible on Market orders (should be hidden)",
       "priority": "P3",
-      "status": "fixing",
+      "status": "closed",
       "scenario_id": "E711",
       "labels": [
         "bug"
@@ -2060,13 +2063,14 @@
       "created_date": "2026-03-28",
       "fix_attempts": 1,
       "pr_number": 252,
-      "note": "PR #252 merged to dev (sha 3df0f19). Vercel build ERROR — staging not updated. Acceptance deferred until Vercel issue #98 resolved."
+      "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
+      "closed_at": "2026-03-29"
     },
     {
       "id": "issue-220",
       "github_issue_number": 220,
       "title": "[P3] Leverage dialog tick labels (1x/13x/25x/38x/50x) unclickable — do not update slider",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E716",
       "created_date": "2026-03-28",
@@ -2075,7 +2079,8 @@
       ],
       "pr_number": 253,
       "fix_attempts": 1,
-      "note": "PR #253 merged, acceptance deferred (deploy blocked by Vercel #98)"
+      "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
+      "closed_at": "2026-03-29"
     },
     {
       "github_number": 223,
@@ -2094,7 +2099,7 @@
     {
       "number": 225,
       "title": "[P3] /markets vs /trade funding rate sign/value mismatch — +0.2516% vs -1.0705%",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E742",
       "created": "2026-03-28",
@@ -2103,7 +2108,8 @@
       ],
       "pr_number": 255,
       "fix_attempts": 1,
-      "note": "PR #255 merged to dev (sha bd60cd5). Vercel build ERROR — staging not updated. Acceptance deferred until Vercel issue #98 resolved."
+      "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
+      "closed_at": "2026-03-29"
     },
     {
       "number": 226,
