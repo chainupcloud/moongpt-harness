@@ -11490,10 +11490,12 @@
       "priority": 3,
       "title": "Explorer tx detail — Fee field shows '–' for PlaceOrder; verify if fee should be populated",
       "description": "TX detail page shows 'Fee: –' for PlaceOrder transactions. Verify whether fee should display a numerical value or '–' is correct for this tx type",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "track": "frontend"
+      "track": "frontend",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Fee field correctly hidden via conditional render when gasFee is null"
     },
     {
       "id": "E954",
@@ -11514,10 +11516,12 @@
       "priority": 3,
       "title": "Explorer search bar — search by tx hash navigates to tx detail",
       "description": "Use the Explorer search bar to type a known tx hash; verify it navigates to the correct tx detail page",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "track": "frontend"
+      "track": "frontend",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Search by tx hash navigates to correct tx detail page"
     },
     {
       "id": "E956",
@@ -11525,10 +11529,12 @@
       "priority": 3,
       "title": "Explorer tx detail — label consistency: 'User Account' in checkpoint vs 'User Address' in tx detail",
       "description": "After fixing E951 (User Address → From/Sender), verify label is consistent across explorer pages: checkpoint tx list, tx detail page, and address page all use the same field name.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Both checkpoint and tx detail consistently use \"From\" label"
     },
     {
       "id": "E957",
@@ -16235,9 +16241,11 @@
       "title": "/trade orderType param — verify fix: market param pre-selects Market tab",
       "description": "Regression test for Issue #307. After fix is deployed, verify that ?orderType=market pre-selects Market order type in the form. Test the full matrix: market→Market, stop_market→Stop Market, tp_market→TP Market, tp_limit→TP Limit.",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — ?orderType=market still defaults to Limit; fix not deployed (issue #307 open)"
     },
     {
       "id": "E1391",
@@ -16280,6 +16288,61 @@
       "description": "Test that the full URL /trade/BTC-USDC?orderType=stop_market correctly sets both the trading pair (BTC-USDC) AND the order type (Stop Market). Currently orderType param is broken. Also test with tp_limit once the fix is in.",
       "track": "frontend",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1395",
+      "area": "Trade",
+      "priority": 2,
+      "title": "/trade orderType full matrix — stop_market, tp_market, tp_limit params",
+      "description": "After issue #307 fix is deployed, test the full matrix: ?orderType=stop_market→Stop Market, ?orderType=tp_market→TP Market, ?orderType=tp_limit→TP Limit. Verify each URL param pre-selects the correct order type tab.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1396",
+      "area": "Explorer",
+      "priority": 3,
+      "title": "Explorer tx type filter — verify TxTypeFilter correctly filters transaction list",
+      "description": "The TxTypeFilter component was recently changed. Verify that selecting a tx type filter (e.g. PlaceOrder, UpdateOraclePrices) correctly filters the transaction list to show only that type.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1397",
+      "area": "Explorer",
+      "priority": 3,
+      "title": "Explorer search bar — search by user address navigates to address page",
+      "description": "Verify that typing a known wallet address in the Explorer search bar navigates to the /explorer/address/{addr} page (not just tx hash search).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1398",
+      "area": "Trade",
+      "priority": 3,
+      "title": "/trade/[asset-slug] routing — verify asset-specific trade page loads correctly",
+      "description": "The /trade/[...slug] routing was recently modified. Verify that navigating to e.g. /trade/BTC-USDC loads the trade page with BTC-USDC pre-selected as the trading pair.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1399",
+      "area": "Explorer",
+      "priority": 3,
+      "title": "Explorer AbsoluteTime component — verify timestamps display correctly in all locales",
+      "description": "AbsoluteTime.tsx was recently changed. Verify that transaction timestamps are displayed in correct absolute time format (not relative), and that the format is consistent across tx list, tx detail, and checkpoint pages.",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
     }
