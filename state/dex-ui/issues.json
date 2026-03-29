@@ -2132,16 +2132,18 @@
       "fix_attempts": 1
     },
     {
-      "number": 227,
       "title": "[P4] /markets funding rate column lacks tooltip to indicate rate period (4h vs hourly)",
-      "status": "open",
+      "status": "fixing",
       "priority": "P4",
       "labels": [
         "enhancement"
       ],
       "scenario_id": "E1031",
       "created_at": "2026-03-28",
-      "url": "https://github.com/chainupcloud/dex-ui/issues/227"
+      "url": "https://github.com/chainupcloud/dex-ui/issues/227",
+      "pr_number": 261,
+      "fix_attempts": 1,
+      "github_number": 227
     },
     {
       "github_number": 228,
