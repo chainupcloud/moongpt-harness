@@ -1587,7 +1587,7 @@
       "title": "fix: Portfolio Assets tab shows connect prompt with active session (#266)",
       "status": "merged",
       "created_at": "2026-03-29",
-      "note": "Merged to dev. Vercel deploy limit hit (100/day), deployment pending.",
+      "note": "Merged to dev. Staging deploy ERROR: BigInt type error from PR #287 blocks deployment. (2026-03-29)",
       "last_checked": "2026-03-29",
       "merged_at": "2026-03-29",
       "merge_sha": "b5182d8",
@@ -1643,13 +1643,14 @@
       "branch": "fix/issue-271",
       "base": "dev",
       "created": "2026-03-29",
-      "note": "Merged to dev. Vercel deploy limit hit (100/day), deployment pending.",
+      "note": "Merged to dev. Staging deploy ERROR: 'BigInt literals not available targeting < ES2020' in yarn build. Build broken. (2026-03-29)",
       "last_checked": "2026-03-29",
       "pr_number": 287,
       "merged_at": "2026-03-29",
       "merge_sha": "8ad2b54",
       "deployed": false,
-      "accepted": false
+      "accepted": false,
+      "deploy_error": "type_error: BigInt literals not available when targeting lower than ES2020"
     },
     {
       "title": "fix: /markets 24h Volume sort toggle unresponsive due to stale closure (#272)",
@@ -1739,6 +1740,19 @@
       "merged_at": "2026-03-29",
       "deployed": true,
       "accepted": true
+    },
+    {
+      "pr_number": 313,
+      "issue_numbers": [
+        286
+      ],
+      "title": "fix: add Trailing Stop to order type dropdown (#286)",
+      "status": "open",
+      "branch": "fix/issue-286",
+      "base": "dev",
+      "created_at": "2026-03-29",
+      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts (mergeable_state=dirty). (2026-03-29)",
+      "last_checked": "2026-03-29"
     }
   ],
   "pull_requests": [

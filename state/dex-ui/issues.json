@@ -2322,7 +2322,8 @@
         "bug"
       ],
       "pr_number": 277,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "note": "PR #277 merged but staging deploy blocked by PR #287 build error. (2026-03-29)"
     },
     {
       "id": "dex-ui-267",
@@ -2380,7 +2381,8 @@
       "opened_date": "2026-03-29",
       "fix_attempts": 1,
       "related_scenario": "E698",
-      "pr_number": 287
+      "pr_number": 287,
+      "note": "PR #287 merged but staging deploy broken (BigInt type error). Needs code fix. (2026-03-29)"
     },
     {
       "number": 272,
@@ -2522,7 +2524,8 @@
       "scenario": "E1274",
       "created": "2026-03-29",
       "pr_number": 313,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "note": "PR #313 has merge conflicts, cannot merge. Needs rebase. (2026-03-29)"
     },
     {
       "number": 291,
