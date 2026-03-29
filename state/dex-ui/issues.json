@@ -2314,7 +2314,7 @@
     {
       "github_number": 266,
       "title": "[P3] Portfolio Assets tab shows wallet connect prompt — balance data not rendered with active session",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E1196",
       "created_date": "2026-03-29",
@@ -2323,7 +2323,8 @@
       ],
       "pr_number": 277,
       "fix_attempts": 1,
-      "note": "PR #277 merged, BigInt fix merged (PR #314). Staging deploy pending — Vercel daily limit. (2026-03-29)"
+      "note": "PR #277 merged, BigInt fix PR #314 merged, deployed (commit a91b124). Staging acceptance passed. (2026-03-29)",
+      "closed_at": "2026-03-29"
     },
     {
       "id": "dex-ui-267",
@@ -2373,7 +2374,7 @@
     {
       "github_number": 271,
       "title": "[P3] Explorer tx detail page missing Fee field",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "labels": [
         "bug"
@@ -2382,7 +2383,8 @@
       "fix_attempts": 1,
       "related_scenario": "E698",
       "pr_number": 287,
-      "note": "PR #287 merged, BigInt fix merged (PR #314). Staging deploy pending — Vercel daily limit. (2026-03-29)"
+      "note": "PR #287 merged, BigInt fix PR #314 merged, deployed (commit a91b124). Staging acceptance passed. (2026-03-29)",
+      "closed_at": "2026-03-29"
     },
     {
       "number": 272,

@@ -1591,8 +1591,9 @@
       "last_checked": "2026-03-29",
       "merged_at": "2026-03-29",
       "merge_sha": "b5182d8",
-      "deployed": false,
-      "accepted": false
+      "deployed": true,
+      "accepted": true,
+      "commit_sha": "b5182d8"
     },
     {
       "pr_number": 279,
@@ -1648,9 +1649,10 @@
       "pr_number": 287,
       "merged_at": "2026-03-29",
       "merge_sha": "8ad2b54",
-      "deployed": false,
-      "accepted": false,
-      "deploy_error": "Fixed by PR #314. Now blocked by Vercel daily limit."
+      "deployed": true,
+      "accepted": true,
+      "deploy_error": "Fixed by PR #314. Now blocked by Vercel daily limit.",
+      "commit_sha": "8ad2b54"
     },
     {
       "title": "fix: /markets 24h Volume sort toggle unresponsive due to stale closure (#272)",
@@ -1767,8 +1769,9 @@
       "note": "Merged to dev (sha a91b124). Staging deploy pending — Vercel daily limit (100/day) exhausted. (2026-03-29)",
       "merged_at": "2026-03-29",
       "merge_sha": "a91b124",
-      "deployed": false,
-      "accepted": false
+      "deployed": true,
+      "accepted": true,
+      "commit_sha": "a91b124"
     },
     {
       "pr_number": 315,
@@ -1776,7 +1779,12 @@
         291
       ],
       "status": "open",
-      "created_at": "2026-03-29"
+      "created_at": "2026-03-29",
+      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts (mergeable_state=dirty). Needs rebase onto dev. (2026-03-29)",
+      "last_checked": "2026-03-29",
+      "title": "fix: TWAP order form fields not shown via URL param (#291)",
+      "branch": "fix/issue-291",
+      "base": "dev"
     }
   ],
   "pull_requests": [
