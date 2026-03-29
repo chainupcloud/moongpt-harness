@@ -2094,13 +2094,15 @@
     {
       "number": 225,
       "title": "[P3] /markets vs /trade funding rate sign/value mismatch — +0.2516% vs -1.0705%",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E742",
       "created": "2026-03-28",
       "labels": [
         "bug"
-      ]
+      ],
+      "pr_number": 255,
+      "fix_attempts": 1
     },
     {
       "number": 226,
