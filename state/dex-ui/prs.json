@@ -1661,8 +1661,12 @@
       "issue_numbers": [
         274
       ],
-      "status": "open",
-      "created_at": "2026-03-29"
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true,
+      "merged_at": "2026-03-29",
+      "merge_sha": "fcc50e8f8b02f434e57279f6d3177f02dcfd592a"
     },
     {
       "pr_number": 292,

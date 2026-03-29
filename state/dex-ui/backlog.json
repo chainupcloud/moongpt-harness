@@ -14425,7 +14425,7 @@
       "priority": 2,
       "title": "/trade?coin=NONEXISTENT with no matching market — verify error state or default redirect",
       "description": "Related to Issue #273: test additional invalid coin params (/trade?coin=FOOBAR, /trade?coin=ABC123) to confirm consistent behavior and determine if all params are accepted without validation",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29",
       "last_run": "2026-03-29",

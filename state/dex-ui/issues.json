@@ -2416,13 +2416,15 @@
       "id": 274,
       "title": "[P3] /trade?coin=NONEXISTENT renders invalid market silently — no error or redirect",
       "scenario": "E1229",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/274",
       "created_at": "2026-03-29",
       "fix_attempts": 1,
       "pr_number": 297,
-      "github_number": 274
+      "github_number": 274,
+      "closed_at": "2026-03-29",
+      "note": "Staging 验收通过, PR #297 merged, commit fcc50e8"
     },
     {
       "id": "dex-ui-275",
