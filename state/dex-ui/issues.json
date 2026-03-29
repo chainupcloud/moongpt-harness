@@ -2561,13 +2561,14 @@
     {
       "number": 294,
       "title": "[P3] Withdraw button navigates to Withdraw History tab instead of opening withdraw modal (regression #223)",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "labels": [
         "bug"
       ],
       "scenario": "E738",
-      "fix_attempts": 0,
+      "fix_attempts": 1,
+      "pr_number": 317,
       "created_at": "2026-03-29",
       "updated_at": "2026-03-29",
       "notes": "Regression — issue #223 was closed but bug persists on staging"
