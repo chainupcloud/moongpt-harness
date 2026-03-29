@@ -1413,12 +1413,16 @@
     {
       "pr_number": 254,
       "title": "fix: withdraw button opens modal instead of navigating to history tab (#223)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         223
       ],
       "created_at": "2026-03-29",
-      "note": "Merge conflict with dev branch (mergeable_state: dirty). Needs rebase by fix-agent."
+      "note": "Merged; Vercel deploy pending (daily rate limit reached)",
+      "commit_sha": "683b21b",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false
     },
     {
       "pr_number": 255,
@@ -1492,12 +1496,16 @@
     {
       "pr_number": 260,
       "title": "fix: Footer Docs link missing target=_blank (#226)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         226
       ],
       "created_at": "2026-03-29",
-      "note": "Merge conflict with dev branch (mergeable_state: dirty). Needs rebase by fix-agent."
+      "note": "Merged; Vercel deploy pending (daily rate limit reached)",
+      "commit_sha": "22613ef",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false
     },
     {
       "number": 261,
@@ -1520,9 +1528,13 @@
       "issue_numbers": [
         228
       ],
-      "status": "open",
-      "note": "Merge conflict with dev branch (mergeable_state: dirty). Needs rebase by fix-agent.",
-      "title": "fix: highlight oracle price when it diverges from mark price (#228)"
+      "status": "merged",
+      "note": "Merged; Vercel deploy pending (daily rate limit reached)",
+      "title": "fix: highlight oracle price when it diverges from mark price (#228)",
+      "commit_sha": "2887933",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false
     },
     {
       "pr_number": 263,
@@ -1553,6 +1565,28 @@
       "accepted": false,
       "title": "fix: make funding rate and max leverage columns sortable (#264)",
       "note": "Vercel deployment failed - daily API limit exhausted (100/day). Awaiting rate limit reset for staging verification."
+    },
+    {
+      "pr_number": 269,
+      "issue_numbers": [
+        265
+      ],
+      "title": "fix: remove wallet modal trigger from Buy/Sell tab toggle (#265)",
+      "status": "merged",
+      "note": "Merged; Vercel deploy pending (daily rate limit reached)",
+      "commit_sha": "bb52dda",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false
+    },
+    {
+      "pr_number": 277,
+      "issue_numbers": [
+        266
+      ],
+      "title": "fix: Portfolio Assets tab shows connect prompt with active session (#266)",
+      "status": "open",
+      "created_at": "2026-03-29"
     }
   ],
   "pull_requests": [
