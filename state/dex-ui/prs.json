@@ -1753,7 +1753,7 @@
       "branch": "fix/issue-286",
       "base": "dev",
       "created_at": "2026-03-29",
-      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts (mergeable_state=dirty). Needs rebase onto dev after PR #318 merge. (2026-03-29)",
+      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts confirmed (not mergeable). Needs rebase onto dev. (2026-03-29)",
       "last_checked": "2026-03-29"
     },
     {
@@ -1780,7 +1780,7 @@
       ],
       "status": "open",
       "created_at": "2026-03-29",
-      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts (mergeable_state=dirty). Needs rebase onto dev after PR #318 merge. (2026-03-29)",
+      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts confirmed (not mergeable). Needs rebase onto dev. (2026-03-29)",
       "last_checked": "2026-03-29",
       "title": "fix: TWAP order form fields not shown via URL param (#291)",
       "branch": "fix/issue-291",
@@ -1833,13 +1833,19 @@
     {
       "pr_number": 319,
       "title": "fix: add Epoch field to checkpoint detail info card (#296)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         296
       ],
       "branch": "fix/issue-296",
       "base": "dev",
-      "created_at": "2026-03-29"
+      "created_at": "2026-03-29",
+      "commit_sha": "0a3c8bc",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged to dev. Vercel deploy ERROR (likely TEAM_ACCESS_REQUIRED, see issue #98). Acceptance pending deployment fix.",
+      "last_checked": "2026-03-29"
     },
     {
       "pr_number": 320,

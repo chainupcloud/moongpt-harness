@@ -2602,7 +2602,9 @@
       ],
       "pr_number": 319,
       "fix_attempts": 1,
-      "github_number": 296
+      "github_number": 296,
+      "notes": "PR #319 merged (0a3c8bc) to dev. Deploy ERROR (TEAM_ACCESS_REQUIRED, issue #98). Acceptance pending deployment fix.",
+      "updated_at": "2026-03-29"
     },
     {
       "number": 299,
