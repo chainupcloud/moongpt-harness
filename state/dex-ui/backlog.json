@@ -11941,10 +11941,12 @@
       "priority": 3,
       "title": "Explorer filter: filter by 'PlaceOrder' type shows only PlaceOrder transactions",
       "description": "On /explorer/transactions, select 'PlaceOrder' from the Filter dropdown. Verify all visible transaction rows show Type='PlaceOrder'. Navigate to page 2 and verify filter persists.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Filter by PlaceOrder correctly shows only PlaceOrder rows, pagination \"1-10\" shown"
     },
     {
       "id": "E1001",
@@ -11967,9 +11969,11 @@
       "title": "Leverage dialog — verify all tick labels (1x/13x/38x/50x) update slider correctly",
       "description": "In leverage dialog, sequentially click each tick label (1x, 13x, 38x, 50x) and verify slider moves to correct value each time. Tests complete tick label functionality.",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Tick labels 1x/13x/38x/50x found but slider value stays 0 after click → Issue #283"
     },
     {
       "id": "E1003",
@@ -11978,9 +11982,11 @@
       "title": "Explorer search — address with mixed case characters normalizes and navigates correctly",
       "description": "Enter a valid Sui address with some uppercase hex characters. Verify search normalizes (lowercases) the address and navigates to correct address detail page.",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Sui address search routes to /explorer/tx/ instead of /explorer/address/, URL not normalized → Issue #284"
     },
     {
       "id": "E1004",
@@ -11989,9 +11995,11 @@
       "title": "Explorer address detail page — balance and transactions load correctly",
       "description": "After navigating to /explorer/address/{addr} via search, verify: (a) address displayed in header, (b) SUI balance field shows numeric value or zero, (c) transactions list renders or shows empty state.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Address detail page loads with address header, transaction rows (OrderPlaced/BridgeDeposit/BalanceUpdate)"
     },
     {
       "id": "E1005",
@@ -14803,6 +14811,61 @@
       "priority": 4,
       "title": "Stop Market — verify order type persists after page refresh",
       "description": "Select Stop Market order type, then refresh the page. Verify the order type either resets to default (Limit) or persists — ensure no broken/empty state occurs. Check if local storage or URL params control this.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1269",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — checkpoint number navigates correctly to checkpoint detail",
+      "description": "Enter a recent checkpoint sequence number (e.g. '734613') in Explorer search. Verify navigation goes to /explorer/checkpoint/{seq} and page shows checkpoint details (digest, timestamp, transactions count).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1270",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — lowercase Sui address routes to /explorer/address/ page correctly",
+      "description": "Enter a fully-lowercase Sui address in Explorer search. Verify routing goes to /explorer/address/{addr} (not /explorer/tx/). Validates fix for E1003 routing bug.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1271",
+      "area": "trade",
+      "priority": 3,
+      "title": "Leverage slider — drag interaction updates displayed leverage value",
+      "description": "In leverage dialog, click and drag the slider handle to a new position. Verify the displayed leverage value updates accordingly. Tests slider drag (not tick-click) as alternative input.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1272",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer transactions — filter persists across page navigation (page 2 and back)",
+      "description": "On /explorer/transactions, select 'CancelOrder' filter. Navigate to page 2 via arrow button. Verify: (a) filter selection still shows 'CancelOrder', (b) all rows on page 2 show CancelOrder type.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1273",
+      "area": "explorer",
+      "priority": 4,
+      "title": "Explorer address page — clicking truncated transaction hash navigates to /explorer/tx/ detail",
+      "description": "On /explorer/address/{addr} page, click a truncated transaction hash link (e.g. '0x0b6235...40aa'). Verify navigation to /explorer/tx/{full-digest} and the tx detail page renders with type, checkpoint, sender fields.",
       "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
