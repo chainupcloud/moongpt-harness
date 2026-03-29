@@ -1585,10 +1585,14 @@
         266
       ],
       "title": "fix: Portfolio Assets tab shows connect prompt with active session (#266)",
-      "status": "open",
+      "status": "merged",
       "created_at": "2026-03-29",
-      "note": "Copilot COMMENTED (mergeable per rules) but mergeable=None on GitHub. Needs rebase onto dev. Checked 2026-03-29",
-      "last_checked": "2026-03-29"
+      "note": "Merged to dev. Vercel deploy limit hit (100/day), deployment pending.",
+      "last_checked": "2026-03-29",
+      "merged_at": "2026-03-29",
+      "merge_sha": "b5182d8",
+      "deployed": false,
+      "accepted": false
     },
     {
       "pr_number": 279,
@@ -1632,15 +1636,20 @@
     {
       "number": 287,
       "title": "fix: add Fee field to explorer tx detail page (#271)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         271
       ],
       "branch": "fix/issue-271",
       "base": "dev",
       "created": "2026-03-29",
-      "note": "Copilot COMMENTED (mergeable per rules) but mergeable=None on GitHub. Needs rebase onto dev. Checked 2026-03-29",
-      "last_checked": "2026-03-29"
+      "note": "Merged to dev. Vercel deploy limit hit (100/day), deployment pending.",
+      "last_checked": "2026-03-29",
+      "pr_number": 287,
+      "merged_at": "2026-03-29",
+      "merge_sha": "8ad2b54",
+      "deployed": false,
+      "accepted": false
     },
     {
       "title": "fix: /markets 24h Volume sort toggle unresponsive due to stale closure (#272)",
