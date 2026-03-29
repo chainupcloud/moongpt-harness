@@ -2290,9 +2290,31 @@
       "github_number": 244,
       "closed_at": "2026-03-29",
       "note": "PR #258 merged+deployed, staging acceptance passed (Agent 4)"
+    },
+    {
+      "github_number": 265,
+      "title": "[P3] Clicking Sell/Short tab triggers wallet connect modal, blocking TP/SL toggle interaction",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E1189",
+      "created_date": "2026-03-29",
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "github_number": 266,
+      "title": "[P3] Portfolio Assets tab shows wallet connect prompt — balance data not rendered with active session",
+      "status": "open",
+      "priority": "P3",
+      "scenario_id": "E1196",
+      "created_date": "2026-03-29",
+      "labels": [
+        "bug"
+      ]
     }
   ],
-  "last_updated": "2026-03-28",
+  "last_updated": "2026-03-29",
   "issue_55": {
     "number": 55,
     "github_number": 55,
