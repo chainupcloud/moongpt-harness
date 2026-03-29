@@ -10787,10 +10787,12 @@
       "priority": 3,
       "title": "Stop Market — submit valid order (non-zero trigger, valid size) with connected wallet",
       "description": "With a wallet connected, enter a valid trigger price (above current market) and valid size for Stop Market order, submit and verify the order appears in Open Orders.",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — trigger price input exists (unlabeled, 0.00 placeholder) but order submission requires real wallet signing; filed #281 for missing aria-label"
     },
     {
       "id": "E897",
@@ -10798,10 +10800,12 @@
       "priority": 3,
       "title": "Stop Market — negative trigger price should be blocked",
       "description": "Enter a negative number (e.g., -100) as trigger price in Stop Market order. Verify the input is either rejected or shows a validation error, and order is not submitted.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — negative trigger price rejected by HTML number input (−100 becomes 100); native validation works"
     },
     {
       "id": "E898",
@@ -10809,9 +10813,11 @@
       "priority": 3,
       "title": "Isolated margin — verify minimum leverage is 1x and slider range is valid",
       "description": "After the Cross→Isolated 0x slider bug fix, re-verify that slider min=1x, value defaults to 1x or last used, and max reflects symbol's max leverage. Also verify slider value is sent correctly with order.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Isolated margin slider still initializes at 0x after Cross→Isolated switch (confirms #270 not fixed)"
     },
     {
       "id": "E899",
@@ -14696,10 +14702,12 @@
       "priority": 2,
       "title": "TP/SL inputs — verify price fields appear after toggle on Sell side",
       "description": "After clicking TP/SL toggle on Sell side, verify that Take Profit and Stop Loss price input fields appear and accept values. E1189 confirmed no modal interference but TP/SL inputs were not found — investigate.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — TP/SL toggle on Sell side correctly shows Take Profit and Stop Loss price inputs"
     },
     {
       "id": "E1260",
@@ -14740,6 +14748,61 @@
       "priority": 4,
       "title": "Order History tab — verify order history loads and displays past orders correctly",
       "description": "Bottom panel includes Order History tab. Verify: tab loads, shows past orders (or correct empty state), columns are correct (Time, Market, Side, Type, Size, Price, Status).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1264",
+      "area": "Stop Market",
+      "priority": 3,
+      "title": "Stop Market — verify trigger price input has proper aria-label after fix",
+      "description": "After #281 is fixed, verify that the price/trigger input in Stop Market mode has aria-label='Trigger Price' (not null). Also confirm the Limit mode still has aria-label='Price'.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1265",
+      "area": "Stop Market",
+      "priority": 3,
+      "title": "Stop Market — zero trigger price submit blocked (re-verify #268 fix)",
+      "description": "After issue #268 fix is deployed, re-verify that entering 0 as trigger price prevents form submission (submit button disabled OR error message shown) before wallet connect.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1266",
+      "area": "trade",
+      "priority": 3,
+      "title": "Isolated margin slider — verify fix for 0x initialization after issue #270 resolved",
+      "description": "After PR fixing #270 is merged, re-verify that switching Cross→Isolated initializes slider at 1x (not 0x), min=1, value>=1, and the slider is interactive.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1267",
+      "area": "TP/SL",
+      "priority": 3,
+      "title": "TP/SL Sell side — enter values and verify validation (TP above market, SL below)",
+      "description": "With Sell/Short selected and TP/SL toggle enabled, enter Take Profit price BELOW current market (should fail) and Stop Loss price ABOVE current market (should fail). Verify validation errors appear. Complements E1259 (field visibility) with value validation.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1268",
+      "area": "trade-form",
+      "priority": 4,
+      "title": "Stop Market — verify order type persists after page refresh",
+      "description": "Select Stop Market order type, then refresh the page. Verify the order type either resets to default (Limit) or persists — ensure no broken/empty state occurs. Check if local storage or URL params control this.",
       "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",

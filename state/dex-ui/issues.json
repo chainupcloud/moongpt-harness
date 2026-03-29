@@ -2444,6 +2444,18 @@
       "labels": [
         "enhancement"
       ]
+    },
+    {
+      "github_number": 281,
+      "title": "[P4] Stop Market order form — price/trigger input has null aria-label (breaks accessibility and test automation)",
+      "priority": "P4",
+      "status": "open",
+      "labels": [
+        "enhancement"
+      ],
+      "scenario_id": "E896",
+      "created_date": "2026-03-29",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-29",
