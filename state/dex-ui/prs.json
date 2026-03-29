@@ -1753,6 +1753,26 @@
       "created_at": "2026-03-29",
       "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts (mergeable_state=dirty). (2026-03-29)",
       "last_checked": "2026-03-29"
+    },
+    {
+      "pr_number": 314,
+      "issue_numbers": [
+        271
+      ],
+      "title": "fix: replace BigInt literal with BigInt(0) to unblock staging build",
+      "status": "open",
+      "branch": "fix/bigint-build-error",
+      "base": "dev",
+      "created_at": "2026-03-29",
+      "note": "Build hotfix: BigInt literal 0n → BigInt(0). Unblocks staging deploy for PRs #277/#287."
+    },
+    {
+      "pr_number": 315,
+      "issue_numbers": [
+        291
+      ],
+      "status": "open",
+      "created_at": "2026-03-29"
     }
   ],
   "pull_requests": [
