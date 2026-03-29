@@ -2074,7 +2074,8 @@
         "bug"
       ],
       "pr_number": 253,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "note": "PR #253 merged, acceptance deferred (deploy blocked by Vercel #98)"
     },
     {
       "github_number": 223,

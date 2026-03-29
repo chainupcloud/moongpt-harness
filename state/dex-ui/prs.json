@@ -1381,12 +1381,17 @@
     {
       "number": 253,
       "title": "fix: make leverage tick labels clickable (#220)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         220
       ],
       "created_date": "2026-03-29",
-      "branch": "fix/issue-220"
+      "branch": "fix/issue-220",
+      "commit_sha": "2547a19",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "note": "Deploy blocked by Vercel #98 (ERROR state)"
     }
   ],
   "pull_requests": [
