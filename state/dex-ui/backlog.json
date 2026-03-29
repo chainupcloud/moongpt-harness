@@ -10861,9 +10861,11 @@
       "priority": 3,
       "title": "Cross vs Isolated — switching back from Isolated to Cross resets margin state correctly",
       "description": "After switching to Isolated (with any leverage set), switch back to Cross. Verify the form reflects Cross state properly — no residual isolated margin values, leverage shows correct Cross value.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — switching Isolated→Cross shows valid state: mode=Cross, leverage=10x"
     },
     {
       "id": "E903",
@@ -10895,9 +10897,11 @@
       "priority": 3,
       "title": "TP/SL BUY order — Take Profit below entry price should show validation error",
       "description": "For BUY order, TP should be ABOVE entry price. Test that entering TP below entry shows validation error 'TP must be above entry price'. Symmetric test to E650 for TP direction.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — \"TP must be above entry price\" validation shown when TP<entry for BUY order"
     },
     {
       "id": "E906",
@@ -15654,10 +15658,12 @@
       "priority": 2,
       "title": "/trade?coin=INVALID_COIN → redirect to default market (PR #292 fix)",
       "description": "PR #292 fixed redirect to default market when coin param is invalid. Visit /trade?coin=INVALID123, verify page redirects or loads default BTC-USDC market instead of showing error/blank.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — /trade?coin=INVALID123 redirects to /trade default BTC-USDC market"
     },
     {
       "id": "E1342",
@@ -15676,10 +15682,12 @@
       "priority": 2,
       "title": "Cross→Isolated margin switch — leverage slider initializes at correct value (PR #285 fix)",
       "description": "PR #285 fixed isolated margin leverage slider initializing at 0x after Cross→Isolated switch. Click Account Mode button, switch Cross→Isolated, verify leverage slider/value does NOT reset to 0x but initializes to a reasonable default (e.g. 10x or previous value).",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — leverage initializes at 10x (not 0x) after Cross→Isolated switch; PR #285 fix confirmed"
     },
     {
       "id": "E1344",
@@ -15700,6 +15708,56 @@
       "description": "PR #262 added highlight when oracle price diverges from mark price. Navigate to /trade and observe PriceBar area. When oracle price differs significantly from mark price, a visual indicator (color change, icon, or text) should appear.",
       "status": "pending",
       "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1346",
+      "area": "trade-form / TP-SL",
+      "priority": 3,
+      "title": "TP/SL SELL order — Take Profit above entry price shows validation error",
+      "description": "For SELL order, TP should be BELOW entry price. Test entering TP above entry shows error 'TP must be below entry price'. Symmetric to E905 (BUY direction).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1347",
+      "area": "trade-form / TP-SL",
+      "priority": 3,
+      "title": "TP/SL BUY order — SL above entry price shows validation error",
+      "description": "For BUY order, SL should be BELOW entry. Test that SL above entry shows 'SL must be below entry price'. Complement to E909 which tests SL for long/short directions.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1348",
+      "area": "trade-form / TP-SL",
+      "priority": 3,
+      "title": "TP/SL — both TP and SL set simultaneously, submit button reflects correct state",
+      "description": "Enable TP/SL, set valid TP above entry and valid SL below entry for BUY. Verify no validation errors and submit button shows expected state (Connect Wallet or Buy/Long).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1349",
+      "area": "trade-form / margin",
+      "priority": 3,
+      "title": "Cross→Isolated switch at max leverage (50x/100x) — slider stays at max",
+      "description": "Set leverage to maximum (use slider to 50x or 100x), then switch Cross→Isolated. Verify leverage slider preserves the high value and does not reset to default.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1350",
+      "area": "navigation",
+      "priority": 3,
+      "title": "/trade?coin= (empty value) redirects to default market",
+      "description": "Visit /trade?coin= with empty coin param. Verify page loads default market (BTC-USDC) without error. Edge case of the E1341 redirect fix.",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
     }
