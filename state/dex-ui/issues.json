@@ -2059,7 +2059,8 @@
       ],
       "created_date": "2026-03-28",
       "fix_attempts": 1,
-      "pr_number": 252
+      "pr_number": 252,
+      "note": "PR #252 merged to dev (sha 3df0f19). Vercel build ERROR — staging not updated. Acceptance deferred until Vercel issue #98 resolved."
     },
     {
       "id": "issue-220",

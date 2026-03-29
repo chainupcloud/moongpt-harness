@@ -1364,13 +1364,19 @@
     {
       "pr_number": 252,
       "title": "fix: hide Reduce Only checkbox on Market orders (#219)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         219
       ],
       "branch": "fix/issue-219",
       "base": "dev",
-      "created_at": "2026-03-28"
+      "created_at": "2026-03-28",
+      "commit_sha": "3df0f19",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "review_status": "approved",
+      "note": "Merged to dev (sha 3df0f19). Vercel build ERROR (known issue #98 TEAM_ACCESS_REQUIRED). Staging not updated. Acceptance deferred."
     },
     {
       "number": 253,
