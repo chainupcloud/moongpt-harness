@@ -1473,6 +1473,15 @@
       "merged_at": "2026-03-29",
       "deployed": true,
       "accepted": true
+    },
+    {
+      "pr_number": 259,
+      "title": "fix: rename explorer sender labels to From for consistency (#213)",
+      "status": "open",
+      "issue_numbers": [
+        213
+      ],
+      "created_at": "2026-03-29"
     }
   ],
   "pull_requests": [
