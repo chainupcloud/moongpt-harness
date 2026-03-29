@@ -2428,12 +2428,13 @@
       "id": "dex-ui-275",
       "github_number": 275,
       "title": "[P3] /trade?coin=BTC&side=sell — side query param not pre-selecting SELL direction",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E1234",
       "created_date": "2026-03-29",
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/275",
-      "fix_attempts": 0
+      "fix_attempts": 1,
+      "pr_number": 298
     },
     {
       "id": "dex-ui-276",
