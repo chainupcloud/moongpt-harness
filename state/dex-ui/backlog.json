@@ -11283,9 +11283,11 @@
       "title": "Funding History — verify actual rows vs just tab accessibility",
       "description": "E676 confirmed tab accessible but couldn't verify actual history row data. Deep-check: click tab, wait for data load, count rows with time/rate/payment columns.",
       "track": "frontend",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — Funding History tab accessible (button found), no history rows for testnet wallet (expected)"
     },
     {
       "id": "E938",
@@ -11320,9 +11322,11 @@
       "title": "Markets — funding rate sign and display accuracy",
       "description": "Markets shows +0.8315% funding rate for BTC/USDC. Verify: rate sign is correct (positive = longs pay shorts), historical context. Cross-check against Funding History tab on trade page.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Funding rate -0.1086% consistent between /markets and /trade Funding tab; no NaN (issue #38 confirmed resolved)"
     },
     {
       "id": "E941",
@@ -11344,9 +11348,11 @@
       "title": "Explorer search — valid SUI address navigates to address activity page",
       "description": "Enter a full 66-char SUI address (0x + 64 hex) in the explorer search bar and verify it navigates to /explorer/address/{addr} with activity listed.",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Bug #284 still present: SUI address search routed to /explorer/tx/ instead of /explorer/address/"
     },
     {
       "id": "E943",
@@ -11381,9 +11387,11 @@
       "title": "Explorer address page — tx type badges render correctly (OrderPlaced, BalanceUpdate, BridgeDeposit)",
       "description": "On /explorer/address/{addr}, verify each event type (OrderPlacedEvent, BalanceUpdateEvent, BridgeDepositEvent) shows correct type badge and summary text. Check no raw JSON or undefined labels.",
       "track": "frontend",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — /explorer/address/ direct URL shows not found for testnet wallet address (no activity for this addr)"
     },
     {
       "id": "E946",
@@ -16152,6 +16160,61 @@
       "priority": 3,
       "title": "/markets page — verify 持仓量 column with network interception",
       "description": "Use page.route() to intercept API calls. Check what OI data the backend provides. Verify frontend renders it correctly. Compare with what's shown for 资金费率 (which correctly shows -0.0473%).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1385",
+      "area": "trade",
+      "priority": 3,
+      "title": "Funding History tab — 8h funding rate cross-check between /trade and /markets",
+      "description": "E940 confirmed funding rate -0.1086% shown on both pages, but E937 showed 0 rows in Funding History table. Deep-check: wait for Funding History tab to populate, compare displayed rate with /markets funding rate column value.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1386",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — TX hash navigates to /explorer/tx/ correctly",
+      "description": "Enter a valid tx hash (64-char hex without 0x prefix, or with 0x) in explorer search bar. Verify it navigates to /explorer/tx/{hash} page, not to address page. Complements E942 (address routing) by verifying TX hash routing works.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1387",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — checkpoint sequence number navigates to /explorer/checkpoint/",
+      "description": "Enter a checkpoint sequence number (e.g. \"1\", \"100\", \"1000\") in explorer search. Verify navigation to /explorer/checkpoint/{seq} with checkpoint detail shown. Tests numeric routing in explorer search.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1388",
+      "area": "markets",
+      "priority": 3,
+      "title": "Markets — negative funding rate indicator has UI explanation",
+      "description": "E940 found funding rate is -0.1086% (negative = shorts pay longs). Verify the UI provides context: tooltip, legend, or label explaining what negative funding means. Check no misleading \"+\" prefix on negative rates.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1389",
+      "area": "explorer",
+      "priority": 2,
+      "title": "Explorer address page — navigate via URL for address with known testnet activity",
+      "description": "E945 used SUI_ADDR (testnet test wallet) which had no explorer activity. Use the /explorer/transactions page to find an active wallet address, then navigate to /explorer/address/{addr} and verify tx type badges render correctly without undefined labels.",
       "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
