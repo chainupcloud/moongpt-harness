@@ -1691,6 +1691,15 @@
       "merged_at": "2026-03-29",
       "deployed": true,
       "accepted": true
+    },
+    {
+      "pr_number": 304,
+      "issue_numbers": [
+        276,
+        278
+      ],
+      "status": "open",
+      "created_at": "2026-03-29"
     }
   ],
   "pull_requests": [
