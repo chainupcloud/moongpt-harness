@@ -1643,14 +1643,18 @@
       "last_checked": "2026-03-29"
     },
     {
-      "number": 290,
       "title": "fix: /markets 24h Volume sort toggle unresponsive due to stale closure (#272)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         272
       ],
       "created": "2026-03-29",
-      "branch": "fix/issue-272"
+      "branch": "fix/issue-272",
+      "deployed": true,
+      "accepted": true,
+      "merged_at": "2026-03-29",
+      "commit_sha": "34aed96",
+      "pr_number": 290
     }
   ],
   "pull_requests": [

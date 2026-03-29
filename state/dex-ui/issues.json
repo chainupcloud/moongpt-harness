@@ -2385,13 +2385,16 @@
     {
       "number": 272,
       "title": "[P3] /markets — 24h 成交量 sort indicator non-functional (clicking does not toggle ↓→↑)",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E767",
       "created": "2026-03-29",
       "url": "https://github.com/chainupcloud/dex-ui/issues/272",
       "pr_number": 290,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "closed_at": "2026-03-29",
+      "note": "Staging acceptance passed — sort toggle ↓→↑→↓ verified",
+      "github_number": 272
     },
     {
       "number": 273,

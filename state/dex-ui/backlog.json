@@ -9230,12 +9230,12 @@
       "priority": 3,
       "title": "/markets — 24h Volume sort indicator: verify toggle from ↓ to ↑ on second click",
       "description": "Currently 24h Volume is sorted desc (↓). After clicking once it should toggle to asc (↑). After clicking again should return to desc (↓). Verify the indicator actually changes direction.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-29",
       "result_summary": "FAIL — 24h 成交量 sort indicator non-functional; clicking does not toggle ↓→↑ → Issue #272",
-      "note": "Reset after issue #230 closed (fix accepted)"
+      "note": "Reset after fix PR #290 merged and acceptance passed"
     },
     {
       "id": "E768",
