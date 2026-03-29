@@ -7711,11 +7711,11 @@
       "priority": 3,
       "title": "Isolated margin — slider starts at 0x after switching from Cross (should default to 1x or previous)",
       "description": "After switching Cross→Isolated, verify leverage slider does not start at 0x (invalid) but at a valid minimum like 1x or previous Cross value",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-29",
-      "result_summary": "FAIL — Isolated mode range slider value=0 (min=0, max=100); Cross mode shows 10x button but slider stays at 0 after switch → Issue #270"
+      "result_summary": "FAIL — slider=0 after Cross→Isolated (regression, issue #270 closed but bug persists → Issue #293)"
     },
     {
       "id": "E644",
@@ -8878,11 +8878,11 @@
       "priority": 3,
       "title": "Withdraw flow with authenticated session — full happy path",
       "description": "Using smoke test wallet injection pattern with approveAgent, open portfolio page and trigger withdraw. Verify: modal opens, amount input accepts valid value, address field accepts SUI address, submit button is enabled with valid inputs.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — Withdraw button on portfolio assets row navigates to Withdraw History tab instead of opening withdraw modal → Issue #223"
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Withdraw btn navigates to History tab instead of modal (regression, issue #223 closed → Issue #294)"
     },
     {
       "id": "E739",
@@ -9809,11 +9809,11 @@
       "priority": 3,
       "title": "Markets page — funding rate and max leverage columns add sort support",
       "description": "E573 found 资金费率 (funding rate) and 最高杠杆 (max leverage) lack sort indicators. Verify if this is intentional or a missing feature. Check if clicking those headers has any effect.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — Funding rate and max leverage columns not sortable → Issue #235"
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — 预测资金费率/1h ↕ and 最高杠杆 ↕ both sortable; clicking toggles ↕→↓→↑ correctly"
     },
     {
       "id": "E816",
@@ -15408,10 +15408,12 @@
       "priority": 2,
       "title": "TWAP form Duration/Interval fields — regression check after issue #291 fix",
       "description": "After issue #291 fix: select TWAP order type, verify Duration presets (5m/30m/1h/4h/12h/24h), Hour/Min custom inputs, and Interval input all appear in the form.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-29",
-      "linked_issue": 291
+      "linked_issue": 291,
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — TWAP Duration/Interval fields still missing; issue #291 still open (fix not yet deployed to staging)"
     },
     {
       "id": "E1320",
@@ -15439,6 +15441,46 @@
       "priority": 3,
       "title": "Leverage preset buttons in dialog — all options visible and selectable",
       "description": "Open Adjust Leverage dialog for BTC-USDC. Verify preset buttons (e.g. 1x, 5x, 10x, 25x, 50x) are visible inside the dialog (not just the trade form button). Click 1x preset and confirm leverage changes to 1x.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1323",
+      "area": "trade",
+      "priority": 3,
+      "title": "Isolated margin — leverage slider value persists when toggling Cross↔Isolated multiple times",
+      "description": "After fixing the 0x init bug, verify that repeated Cross→Isolated→Cross→Isolated transitions maintain a valid slider value (≥1x) on each Isolated selection, and that Cross restores its previous value.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1324",
+      "area": "portfolio",
+      "priority": 2,
+      "title": "Withdraw modal — full form validation with amount and SUI address",
+      "description": "After fixing issue #294: verify Withdraw button opens a modal (not navigates to History tab). Verify modal has amount input, SUI address field, submit button enabled only with valid inputs.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1325",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Deposit flow — full happy path with authenticated session",
+      "description": "On Portfolio Assets tab, click Deposit button. Verify modal opens with valid deposit address or QR code. Amount field accepts numeric input. Confirm correct network displayed.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1326",
+      "area": "twap",
+      "priority": 3,
+      "title": "TWAP order — verify form submits with valid duration and quantity",
+      "description": "After issue #291 is fixed: select TWAP order type, set duration (e.g. 5m), set quantity, and submit. Verify order appears in Open Orders tab with correct TWAP parameters.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"

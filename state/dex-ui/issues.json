@@ -2516,6 +2516,34 @@
       "created_date": "2026-03-29",
       "scenario_id": "E1314",
       "description": "TWAP order form missing Duration presets and Hour/Min/Interval fields"
+    },
+    {
+      "number": 293,
+      "title": "[P3] Isolated margin leverage slider still initializes at 0x after Cross→Isolated switch (regression #270)",
+      "status": "open",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "scenario": "E643",
+      "fix_attempts": 0,
+      "created_at": "2026-03-29",
+      "updated_at": "2026-03-29",
+      "notes": "Regression — issue #270 was closed but bug persists on staging"
+    },
+    {
+      "number": 294,
+      "title": "[P3] Withdraw button navigates to Withdraw History tab instead of opening withdraw modal (regression #223)",
+      "status": "open",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "scenario": "E738",
+      "fix_attempts": 0,
+      "created_at": "2026-03-29",
+      "updated_at": "2026-03-29",
+      "notes": "Regression — issue #223 was closed but bug persists on staging"
     }
   ],
   "last_updated": "2026-03-29",
