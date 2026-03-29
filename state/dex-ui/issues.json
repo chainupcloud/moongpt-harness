@@ -2151,10 +2151,11 @@
       "github_number": 228,
       "title": "[P4] Trade page stats bar — oracle price diverges from mark price with no visual indicator",
       "priority": "P4",
-      "status": "open",
-      "pr_number": null,
+      "status": "fixing",
+      "pr_number": 262,
       "created_at": "2026-03-28",
-      "closed_at": null
+      "closed_at": null,
+      "fix_attempts": 1
     },
     {
       "github_number": 230,

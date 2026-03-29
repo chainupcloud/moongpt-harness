@@ -1514,6 +1514,13 @@
       "deployed": false,
       "accepted": false,
       "note": "Merged via squash. Vercel deployment ERROR (known issue #98). Acceptance pending."
+    },
+    {
+      "pr_number": 262,
+      "issue_numbers": [
+        228
+      ],
+      "status": "open"
     }
   ],
   "pull_requests": [
