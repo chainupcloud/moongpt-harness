@@ -1919,11 +1919,16 @@
       "issue_numbers": [
         306
       ],
-      "status": "open",
+      "status": "merged",
       "branch": "fix/issue-306",
       "base": "dev",
       "created_at": "2026-03-29",
-      "note": "Frontend display fix: show '—' when OI=0. Backend (dex-sui) OI aggregation is the root cause."
+      "note": "Merged to dev. Deploy blocked: Vercel access issue (#98). Acceptance deferred.",
+      "commit_sha": "d3d3af7",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "last_checked": "2026-03-29"
     }
   ],
   "pull_requests": [

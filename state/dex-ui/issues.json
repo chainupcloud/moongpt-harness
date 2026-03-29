@@ -2695,7 +2695,8 @@
       ],
       "fix_attempts": 1,
       "pr_number": 325,
-      "note": "Root cause: backend API returns openInterest=0.0. Frontend conversion (PR #96) is correct but 0×price=0. PR #325 shows '—' instead of '$0.00' when OI unavailable. Backend OI aggregation fix needed in dex-sui."
+      "note": "PR #325 merged. Deploy blocked (Vercel access #98). Acceptance deferred.",
+      "last_checked": "2026-03-29"
     },
     {
       "number": 307,
