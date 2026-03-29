@@ -15928,7 +15928,7 @@
       "priority": 2,
       "title": "Take Profit Limit — submit button not disabled when trigger price and limit price are empty",
       "description": "E1357 found Take Profit Market submit buttons enabled with empty fields. Check if Take Profit Limit has the same validation gap — trigger price empty should disable submit.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29",
       "last_run": "2026-03-29",
