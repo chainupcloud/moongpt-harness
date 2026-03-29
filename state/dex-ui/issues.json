@@ -2699,14 +2699,15 @@
       "last_checked": "2026-03-29"
     },
     {
-      "number": 307,
       "title": "[P3] /trade?orderType URL param ignored for all values — market, stop_market, tp_market, tp_limit all default to Limit",
       "priority": "P3",
-      "status": "open",
-      "pr_number": null,
+      "status": "fixing",
+      "pr_number": 326,
       "created_at": "2026-03-29",
       "closed_at": null,
-      "scenario": "E1380"
+      "scenario": "E1380",
+      "fix_attempts": 1,
+      "github_number": 307
     },
     {
       "number": 308,
