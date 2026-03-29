@@ -2561,7 +2561,7 @@
     {
       "number": 294,
       "title": "[P3] Withdraw button navigates to Withdraw History tab instead of opening withdraw modal (regression #223)",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "labels": [
         "bug"
@@ -2571,7 +2571,8 @@
       "pr_number": 317,
       "created_at": "2026-03-29",
       "updated_at": "2026-03-29",
-      "notes": "Regression — issue #223 was closed but bug persists on staging"
+      "notes": "PR #317 merged (e2c4380), staging verified. Withdraw button now opens modal.",
+      "closed_at": "2026-03-29"
     },
     {
       "id": "dex-ui-295",
