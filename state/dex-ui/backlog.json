@@ -10883,9 +10883,11 @@
       "priority": 3,
       "title": "Explorer checkpoint — Summary column content for non-oracle transactions",
       "description": "Verify Summary column in checkpoint transaction table shows meaningful content for trade/transfer transactions (not just oracle price updates). Test with a checkpoint that has DEX trade transactions.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Summary column shows meaningful content for DEX trade transactions (e.g. BTC-USDC Buy 0.001 @ 66779.6)"
     },
     {
       "id": "E905",
@@ -10925,9 +10927,11 @@
       "priority": 3,
       "title": "Order type dropdown — Scale order configuration UI appears correctly",
       "description": "Click Order Type > Scale, verify scale-specific fields (price range, number of orders) appear",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — Scale order type not implemented; UI has Limit/Market/Stop but no Scale in order type dropdown"
     },
     {
       "id": "E909",
@@ -14943,9 +14947,11 @@
       "priority": 2,
       "title": "Isolated margin mode — switching from Cross to Isolated updates form labels",
       "description": "Click the 'Cross' margin mode button, select 'Isolated' in the modal, confirm. Verify: 1) mode button now shows 'Isolated', 2) trade form shows isolated-specific labels (e.g. margin allocation per position), 3) no JS errors during switch.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Cross→Isolated switch works, UI shows Isolated mode + leverage control appears"
     },
     {
       "id": "E1280",
@@ -14963,9 +14969,11 @@
       "priority": 2,
       "title": "API Keys — Generate button opens creation form with Name and Address fields",
       "description": "Access /api-keys (any wallet state), click the 'Generate' button. Verify a modal or form appears with at least: API Wallet Name input, API Wallet Address input (or auto-generated), Valid Until selector, and a submit/authorize button.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — Generate button disabled without wallet; page layout correct (columns visible)"
     },
     {
       "id": "E1282",
@@ -14983,6 +14991,56 @@
       "priority": 2,
       "title": "Trailing stop order — feature roadmap: verify TWAP tab as reference for trailing stop creation pattern",
       "description": "TWAP has both a bottom tab (TWAP(0)) and an order type dropdown entry. Trailing stop has only the bottom tab. Verify whether clicking the TWAP dropdown option opens a TWAP creation form, as reference for expected trailing stop behavior. Cross-check if trailing creation is accessible via any hidden route.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1284",
+      "area": "trade",
+      "priority": 2,
+      "title": "Isolated margin — leverage slider in Isolated mode shows different range than Cross",
+      "description": "After switching to Isolated mode, verify the leverage slider appears and shows a value > 0x (not initializing at 0x). Check that slider range and default value are correct.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1285",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order Type dropdown — enumerate all available order types",
+      "description": "Click the Order Type dropdown (shows 'Limit' initially), verify all expected types appear: Limit, Market, Stop Market, Stop Limit. Note any missing types.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1286",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint — clicking transaction hash navigates to tx detail page",
+      "description": "On a checkpoint page with transactions, click a transaction hash link. Verify it navigates to /explorer/tx/{digest} and shows transaction details (fee, sender, actions).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1287",
+      "area": "spot",
+      "priority": 2,
+      "title": "/spot page renders trading pairs and order form",
+      "description": "Navigate to /spot, verify the page loads without errors, shows trading pair selector, order book, and trade form.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1288",
+      "area": "api-keys",
+      "priority": 2,
+      "title": "API Keys page layout without wallet — existing keys table column headers render",
+      "description": "Access /api-keys without wallet connected. Verify: 'API Wallet Name', 'API Wallet Address', 'Valid Until', 'Action' column headers are visible, Generate button is present (disabled). No JS errors.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
