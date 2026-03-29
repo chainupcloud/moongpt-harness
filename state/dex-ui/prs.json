@@ -1641,6 +1641,16 @@
       "created": "2026-03-29",
       "note": "Copilot COMMENTED (mergeable per rules) but merge conflict (dirty). Needs rebase onto dev. Checked 2026-03-29",
       "last_checked": "2026-03-29"
+    },
+    {
+      "number": 290,
+      "title": "fix: /markets 24h Volume sort toggle unresponsive due to stale closure (#272)",
+      "status": "open",
+      "issue_numbers": [
+        272
+      ],
+      "created": "2026-03-29",
+      "branch": "fix/issue-272"
     }
   ],
   "pull_requests": [
