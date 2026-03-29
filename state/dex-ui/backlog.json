@@ -10632,11 +10632,11 @@
       "priority": 3,
       "title": "TP/SL — verify BUY direction validation (TP below entry should be invalid)",
       "description": "For BUY/Long orders: TP should be above entry price, SL below. Test entering TP below entry (invalid) and verify red-border/error message appears. Counterpart to E631.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-29",
-      "result_summary": "FAIL — BUY TP below entry + BUY SL above entry show no validation error. Issue #276"
+      "result_summary": "FAIL — No direction validation for invalid BUY TP (TP below mark price shows no error, no red border, no text) → Issue #310"
     },
     {
       "id": "E884",
@@ -10678,11 +10678,11 @@
       "priority": 3,
       "title": "TP/SL validation — submit button disabled when TP/SL values are invalid",
       "description": "When red-border validation appears for invalid TP/SL, verify the Buy/Sell submit button is also disabled to prevent submitting invalid orders.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-29",
-      "result_summary": "FAIL — Red border shown but submit button not disabled; Issue #278"
+      "result_summary": "FAIL — Submit button (Buy/Long) remains enabled when TP/SL has invalid direction value → Issue #310"
     },
     {
       "id": "E888",
@@ -11555,10 +11555,12 @@
       "priority": 3,
       "title": "Scale order — invalid range validation: Start price >= End price should show error",
       "description": "Set Scale Start price higher than End price (e.g., Start=68000, End=64000) and verify UI shows a validation error or disables the submit button.",
-      "status": "pending",
+      "status": "failed",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Scale order shows no validation when Start price(68000) > End price(64000); no red border or error text → Issue #311"
     },
     {
       "id": "E959",
@@ -11617,9 +11619,11 @@
       "priority": 3,
       "title": "Explorer tx detail — Events section with non-zero count renders event items",
       "description": "Found tx with Events (1) but event items not in standard table structure. Verify event data (type, fields) is visible in the events section.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Events section renders 20 OrderPlacedEvent cards with timestamp, market, side, price fields visible"
     },
     {
       "id": "E964",
@@ -16404,6 +16408,61 @@
       "priority": 3,
       "title": "Explorer transactions — pagination page size selector (10/20/50 rows)",
       "description": "On /explorer/transactions, find the page size select (10 20 50) and switch to 50. Verify the table renders 50 rows if data is available, or the max available rows.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1405",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "TP/SL — SELL direction validation (TP above entry should be invalid)",
+      "description": "For SELL/Short orders: TP should be below entry price, SL above. Test entering TP above market (invalid for SELL) and verify validation error appears. Counterpart to E883.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1406",
+      "area": "scale-order",
+      "priority": 3,
+      "title": "Scale order — price range percentage buttons (2%/5%/10%) auto-fill Start/End price",
+      "description": "Scale form shows 2%/5%/10% quick-fill buttons for price range. Click 5% and verify Start and End price inputs are auto-filled with current price ±5%. Verify calculation is correct.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1407",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx Events — 'Show details' button expands event data",
+      "description": "Explorer tx detail shows OrderPlacedEvent cards with 'Show details' link. Click 'Show details' and verify additional event fields are revealed (event args, types, etc.). Test the expand/collapse.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1408",
+      "area": "trade-form",
+      "priority": 2,
+      "title": "TP/SL toggle state persists when switching order type (Limit→Market→Limit)",
+      "description": "Enable TP/SL in Limit mode with values, switch to Market order type, switch back to Limit. Verify TP/SL checkbox state and values are preserved (or reset intentionally). No data loss.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1409",
+      "area": "scale-order",
+      "priority": 3,
+      "title": "Scale order Distribution buttons — Uniform/Top Heavy/Bottom Heavy affect number-of-orders allocation",
+      "description": "In Scale order form, click each Distribution option (Uniform/Top Heavy/Bottom Heavy) and verify the order allocation display changes to reflect the chosen distribution pattern.",
       "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
