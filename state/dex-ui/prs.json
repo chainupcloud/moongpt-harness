@@ -1850,13 +1850,18 @@
     {
       "pr_number": 320,
       "title": "fix: Stop Limit price validation warning (#299)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         299
       ],
       "branch": "fix/issue-299",
       "base": "dev",
-      "created_at": "2026-03-29"
+      "created_at": "2026-03-29",
+      "merged_at": "2026-03-29",
+      "commit_sha": "7966fb3",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged to dev; Vercel deploy ERROR (issue #98 blocks staging)"
     }
   ],
   "pull_requests": [
@@ -1911,11 +1916,12 @@
         273
       ],
       "title": "fix: redirect to default market when coin param is invalid (#273)",
-      "status": "open",
+      "status": "closed",
       "branch": "fix/issue-273",
       "base": "dev",
       "created_at": "2026-03-29",
-      "url": "https://github.com/chainupcloud/dex-ui/pull/292"
+      "url": "https://github.com/chainupcloud/dex-ui/pull/292",
+      "note": "Closed on GitHub without merge"
     },
     {
       "pr_number": 313,
