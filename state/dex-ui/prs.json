@@ -1418,7 +1418,7 @@
         223
       ],
       "created_at": "2026-03-29",
-      "note": "Copilot COMMENTED (approvable). Merge conflicts (mergeable_state=dirty). Needs rebase against dev. Checked 2026-03-29."
+      "note": "Merge conflict with dev branch (mergeable_state: dirty). Needs rebase by fix-agent."
     },
     {
       "pr_number": 255,
@@ -1497,7 +1497,7 @@
         226
       ],
       "created_at": "2026-03-29",
-      "note": "Copilot COMMENTED (approvable). Merge conflicts (mergeable_state=dirty). Needs rebase against dev. Checked 2026-03-29."
+      "note": "Merge conflict with dev branch (mergeable_state: dirty). Needs rebase by fix-agent."
     },
     {
       "number": 261,
@@ -1521,7 +1521,7 @@
         228
       ],
       "status": "open",
-      "note": "Copilot COMMENTED (approvable). Merge conflicts (mergeable_state=dirty). Needs rebase against dev. Checked 2026-03-29.",
+      "note": "Merge conflict with dev branch (mergeable_state: dirty). Needs rebase by fix-agent.",
       "title": "fix: highlight oracle price when it diverges from mark price (#228)"
     },
     {
@@ -1545,8 +1545,14 @@
       "issue_numbers": [
         235
       ],
-      "status": "open",
-      "created_at": "2026-03-29"
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "commit_sha": "60c0797",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "title": "fix: make funding rate and max leverage columns sortable (#264)",
+      "note": "Vercel deployment failed - daily API limit exhausted (100/day). Awaiting rate limit reset for staging verification."
     }
   ],
   "pull_requests": [
