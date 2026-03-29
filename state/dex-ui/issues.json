@@ -2118,14 +2118,17 @@
     },
     {
       "number": 226,
+      "github_number": 226,
       "title": "[P4] Footer Docs link missing target=_blank — opens in same tab",
-      "status": "open",
+      "status": "fixing",
       "priority": "P4",
       "scenario": "E552",
       "created": "2026-03-28",
       "labels": [
         "enhancement"
-      ]
+      ],
+      "pr_number": 260,
+      "fix_attempts": 1
     },
     {
       "number": 227,
