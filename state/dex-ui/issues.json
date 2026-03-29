@@ -2645,6 +2645,20 @@
       "created_at": "2026-03-29",
       "closed_at": null,
       "scenario": "E1370"
+    },
+    {
+      "github_number": 306,
+      "title": "[P3] /markets — Open Interest (持仓量) column shows $0.00 — regression",
+      "priority": "P3",
+      "status": "open",
+      "created_at": "2026-03-29",
+      "scenario": "E936",
+      "labels": [
+        "bug"
+      ],
+      "fix_attempts": 0,
+      "pr_number": null,
+      "note": "Regression of closed issue #94 (PR #96). OI shows $0.00 despite active testnet. PR #96 accepted via code review but Vercel deploy failed."
     }
   ],
   "last_updated": "2026-03-29",

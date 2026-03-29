@@ -11221,9 +11221,11 @@
       "priority": 3,
       "title": "Portfolio — Withdraw flow end-to-end (Withdraw button on asset row)",
       "description": "Click Withdraw button on USDC row in Assets tab, verify withdrawal modal opens with amount/address fields, test validation",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — wallet not connected on Portfolio, cannot test Withdraw flow without auth"
     },
     {
       "id": "E933",
@@ -11255,9 +11257,11 @@
       "priority": 3,
       "title": "Portfolio — Transfer button flow (USDC row → Transfer modal)",
       "description": "Click Transfer button on USDC row in Portfolio Assets tab. Verify modal opens with amount input, token selector. Test validation (0, negative, over-balance).",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — wallet not connected on Portfolio, cannot test Transfer modal without auth"
     },
     {
       "id": "E936",
@@ -11266,9 +11270,11 @@
       "title": "Markets page — Open Interest column shows $0.00 for all markets",
       "description": "Markets page shows BTC/USDC Open Interest as $0.00 despite active testnet trading. Verify if this is a data feed issue or rendering bug.",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Open Interest (持仓量) shows $0.00 on markets page; issue #306 filed (regression of #94)"
     },
     {
       "id": "E937",
@@ -16053,9 +16059,11 @@
       "priority": 2,
       "title": "/trade?coin=BTC&orderType=stop_limit — wait for React hydration and re-check order type",
       "description": "Same as E1370 but with 3s wait after networkidle to allow React state hydration from URL params. Check if orderType param is handled post-hydration via useEffect or router hooks.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — orderType=stop_limit URL param still shows Limit after 3s hydration wait; confirms issue #305"
     },
     {
       "id": "E1376",
@@ -16094,6 +16102,58 @@
       "title": "Portfolio Deposit History tab — empty state and column headers",
       "description": "Click Deposit History tab in Portfolio. Verify tab is accessible, shows expected column headers (Date, Asset, Amount, Status/TxHash), empty state message for testnet wallet.",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1380",
+      "area": "trade",
+      "priority": 2,
+      "title": "/trade orderType URL param — test all valid values (market, limit, stop_market, tp_market, tp_limit)",
+      "description": "Test each orderType param value: market, limit, stop_market, stop_limit, tp_market, tp_limit. For each verify the correct tab/selector is pre-selected. Issue #305 confirmed stop_limit fails. Sweep all values to identify which ones work.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1381",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets Open Interest data — verify API response and frontend mapping",
+      "description": "Intercept /dex-api/info or equivalent endpoint during markets page load. Check if OI data is returned by backend. If returned, verify frontend mapping (issue #94/#306 regression). If backend returns 0, file backend issue in dex-sui.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1382",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio Assets tab — Deposit button flow",
+      "description": "Click Deposit button on USDC row in Portfolio Assets tab. Verify deposit modal opens with amount input, chain selector, network fee display. Test with 0 amount validation.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1383",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade form URL params persistence — coin param stays after orderType selection change",
+      "description": "Navigate to /trade?coin=BTC&orderType=limit. Manually click Stop Market tab. Verify URL updates to reflect new orderType while coin=BTC is preserved in URL.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1384",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets page — verify 持仓量 column with network interception",
+      "description": "Use page.route() to intercept API calls. Check what OI data the backend provides. Verify frontend renders it correctly. Compare with what's shown for 资金费率 (which correctly shows -0.0473%).",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
     }
