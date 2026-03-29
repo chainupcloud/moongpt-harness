@@ -2687,15 +2687,15 @@
       "github_number": 306,
       "title": "[P3] /markets — Open Interest (持仓量) column shows $0.00 — regression",
       "priority": "P3",
-      "status": "open",
+      "status": "fixing",
       "created_at": "2026-03-29",
       "scenario": "E936",
       "labels": [
         "bug"
       ],
-      "fix_attempts": 0,
-      "pr_number": null,
-      "note": "Regression of closed issue #94 (PR #96). OI shows $0.00 despite active testnet. PR #96 accepted via code review but Vercel deploy failed."
+      "fix_attempts": 1,
+      "pr_number": 325,
+      "note": "Root cause: backend API returns openInterest=0.0. Frontend conversion (PR #96) is correct but 0×price=0. PR #325 shows '—' instead of '$0.00' when OI unavailable. Backend OI aggregation fix needed in dex-sui."
     },
     {
       "number": 307,

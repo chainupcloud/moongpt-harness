@@ -1913,6 +1913,17 @@
       "accepted": false,
       "note": "Merged to dev. Deploy ERROR (TEAM_ACCESS_REQUIRED, issue #98). Acceptance pending deployment fix.",
       "last_checked": "2026-03-29"
+    },
+    {
+      "pr_number": 325,
+      "issue_numbers": [
+        306
+      ],
+      "status": "open",
+      "branch": "fix/issue-306",
+      "base": "dev",
+      "created_at": "2026-03-29",
+      "note": "Frontend display fix: show '—' when OI=0. Backend (dex-sui) OI aggregation is the root cause."
     }
   ],
   "pull_requests": [
