@@ -10654,7 +10654,7 @@
       "priority": 3,
       "title": "Open Orders badge — real-time update when new limit order fills",
       "description": "E562 could not test because no open orders. Test by placing a limit order far from market (won't fill), verify badge increments to (1), then cancel, verify returns to (0).",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-28",

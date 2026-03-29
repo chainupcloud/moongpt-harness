@@ -1745,11 +1745,15 @@
     {
       "id": "issue-112",
       "title": "[P4] Limit order form missing Post-Only toggle — maker-only order placement unavailable",
-      "status": "open",
+      "status": "closed",
       "priority": "P4",
       "github_issue": 194,
       "scenario": "E578",
       "created_date": "2026-03-28",
+      "closed_at": "2026-03-29",
+      "fix_attempts": 0,
+      "resolution": "not-a-bug",
+      "note": "Post-Only already exists as ALO (Add-Liquidity-Only) in the TIF dropdown. Explore agent false positive.",
       "labels": [
         "bug",
         "enhancement"
@@ -1986,11 +1990,12 @@
       "id": "issue-213",
       "github_issue_number": 213,
       "title": "[P4] Explorer tx detail — 'User Address' label should be 'From' for consistency",
-      "status": "open",
+      "status": "fixing",
       "priority": "P4",
       "scenario_id": "E951",
       "created_date": "2026-03-28",
-      "fix_attempts": 0
+      "fix_attempts": 1,
+      "pr_number": 259
     },
     {
       "id": "issue-214",
@@ -2255,7 +2260,7 @@
     {
       "number": 244,
       "title": "[P3] Open Orders badge does not update in real-time after limit order placed",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "labels": [
         "bug"
@@ -2265,7 +2270,9 @@
       "url": "https://github.com/chainupcloud/dex-ui/issues/244",
       "pr_number": 258,
       "fix_attempts": 1,
-      "github_number": 244
+      "github_number": 244,
+      "closed_at": "2026-03-29",
+      "note": "PR #258 merged+deployed, staging acceptance passed (Agent 4)"
     }
   ],
   "last_updated": "2026-03-28",
