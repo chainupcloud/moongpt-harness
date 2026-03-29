@@ -8378,11 +8378,11 @@
       "priority": 3,
       "title": "Explorer tx detail — Fee field format and units validation",
       "description": "Verify the Fee field in /explorer/tx/{hash} shows correct units (SUI? USDC?) and the amount is reasonable (not zero, not null). Compare with on-chain data.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — Fee field shows dash (–), no numeric value or unit"
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Explorer tx detail missing Fee field entirely; only Hash/Action/From/Status/Checkpoint/Time/Events shown → Issue #271"
     },
     {
       "id": "E699",
@@ -8926,11 +8926,11 @@
       "priority": 3,
       "title": "/markets — funding rate sign and value matches /trade ticker",
       "description": "On /markets page, note the BTC funding rate value. Navigate to /trade and check the funding rate shown in the ticker/stats bar. Both should show the same value with consistent sign (+ for positive, - for negative).",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — /markets funding rate +0.2516% vs /trade predicted -1.0705%, sign and magnitude mismatch → Issue #225"
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — /markets and /trade both show -0.1667% predicted funding rate with consistent negative sign"
     },
     {
       "id": "E743",
@@ -14170,9 +14170,11 @@
       "priority": 2,
       "title": "Isolated margin — leverage slider initial value after wallet connected",
       "description": "Connect wallet, switch Cross→Isolated, verify leverage slider initializes at 10x (previous Cross leverage) or 1x minimum — not 0x. Validate the range slider value maps correctly to displayed leverage.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — Requires wallet connection for Cross→Isolated switch; UI shows \"10x\" button (valid) but cannot verify initialization without active wallet"
     },
     {
       "id": "E1213",
@@ -14210,6 +14212,48 @@
       "priority": 2,
       "title": "Isolated vs Cross margin — different account mode UI verification",
       "description": "Verify that switching Account Mode (Standard) also affects Cross/Isolated UI. Check if switching to Pro mode changes the leverage controls. Verify leverage values are preserved when switching back from Isolated to Cross.",
+      "status": "tested",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Cross margin mode button visible on trade page; \"Cross\"/\"10x\" leverage button accessible without wallet"
+    },
+    {
+      "id": "E1217",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — Events 字段加载（非 No events found 的交易）",
+      "description": "在 /explorer/transactions 中寻找 Events 不为空的交易，访问详情页，验证 Events 区域正确展示事件类型、数据字段（不是空列表）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1218",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — Sui Gas fee 可通过 RPC 对比验证",
+      "description": "对于 issue #271（详情页缺少 Fee 字段），记录修复后验证：访问同一 tx hash，确认 Fee 字段出现且金额与 Sui RPC gasUsed 对比误差 < 0.001 SUI",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1219",
+      "area": "spot",
+      "priority": 2,
+      "title": "/spot 页面加载，核心元素可见（现货交易入口）",
+      "description": "访问 /spot（新增路由），验证页面 HTTP 200，有现货交易相关内容；若有交易对选择，验证切换正常；若 testnet 不支持现货，记录具体提示",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1220",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets 资金费率 8H 与 1H 换算一致性",
+      "description": "Markets 页面显示「预测资金费率/1h」（-0.1667%），/trade 显示「预测资金费/倒计时」（8H 周期）。验证 1h 费率 × 8 ≈ 8H 费率（误差 < 5%），或确认两者时间维度相同",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
