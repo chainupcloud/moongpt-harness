@@ -2175,13 +2175,15 @@
       "id": "issue-143",
       "github_issue_number": 237,
       "title": "[P3] W3M wallet connect modal — Escape key does not close modal",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario_id": "E823",
       "created_date": "2026-03-28",
       "labels": [
         "bug"
-      ]
+      ],
+      "pr_number": 257,
+      "fix_attempts": 1
     },
     {
       "id": "issue-144",
