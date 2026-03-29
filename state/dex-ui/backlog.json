@@ -10905,9 +10905,11 @@
       "priority": 3,
       "title": "TWAP order tab — empty state UI when no TWAP orders",
       "description": "Check the TWAP tab in the bottom order panel shows a proper empty state message (e.g. 'No TWAP orders') rather than a blank panel when no TWAP orders have been placed.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — TWAP tab shows \"No TWAP orders\" empty state message"
     },
     {
       "id": "E907",
@@ -10949,9 +10951,11 @@
       "priority": 3,
       "title": "Explorer search — wallet address routes to address detail page",
       "description": "Use explorer search bar with a known wallet address, verify navigation to /explorer/address/{addr}",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — SUI address search routes to /explorer/tx/ instead of /explorer/address/ (matches existing open issue)"
     },
     {
       "id": "E911",
@@ -10959,9 +10963,11 @@
       "priority": 3,
       "title": "Explorer transaction detail — shows correct action type, user account, and timestamp",
       "description": "Navigate to a transaction detail page, verify it shows: Action, User Account, Summary, and Time fields",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — TX detail shows Action, From (User Account), Events (Summary), Time; \"From\" label is by design"
     },
     {
       "id": "E912",
@@ -15461,9 +15467,11 @@
       "priority": 2,
       "title": "Withdraw modal — full form validation with amount and SUI address",
       "description": "After fixing issue #294: verify Withdraw button opens a modal (not navigates to History tab). Verify modal has amount input, SUI address field, submit button enabled only with valid inputs.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Withdraw button opens modal correctly; amount+address fields present; submit disabled initially; issue #294 confirmed fixed"
     },
     {
       "id": "E1325",
@@ -15481,6 +15489,56 @@
       "priority": 3,
       "title": "TWAP order — verify form submits with valid duration and quantity",
       "description": "After issue #291 is fixed: select TWAP order type, set duration (e.g. 5m), set quantity, and submit. Verify order appears in Open Orders tab with correct TWAP parameters.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1327",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — Sui transaction hash routes correctly to /explorer/tx/{hash}",
+      "description": "Use explorer search bar with a known transaction digest hash, verify navigation to /explorer/tx/{hash} detail page (complementary to E910 address routing).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1328",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address detail page — shows transaction list for known wallet address",
+      "description": "After fixing address routing (E910 bug), navigate directly to /explorer/address/{known_addr} and verify the page loads a list of transactions for that address.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1329",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Withdraw modal — submit with amount exceeding available balance shows validation",
+      "description": "In the Withdraw modal on /portfolio Assets tab, enter an amount (e.g. 999999 USDC) that exceeds available balance; verify the submit button is disabled or an error message is shown.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1330",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Withdraw modal — Transfer tab (Send) shows destination address input",
+      "description": "In the Withdraw modal, click the 'Send' tab and verify it shows a destination address input field (different from the bridge withdrawal flow).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1331",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint detail — shows checkpoint sequence, epoch, and transaction count",
+      "description": "Navigate to /explorer/checkpoint/{seq} for a known checkpoint, verify it displays sequence number, epoch, and transaction count.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
