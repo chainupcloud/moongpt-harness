@@ -1587,7 +1587,7 @@
       "title": "fix: Portfolio Assets tab shows connect prompt with active session (#266)",
       "status": "merged",
       "created_at": "2026-03-29",
-      "note": "Merged to dev. Staging deploy ERROR: BigInt type error from PR #287 blocks deployment. (2026-03-29)",
+      "note": "Merged to dev. BigInt build fix merged (PR #314). Staging deploy pending — Vercel daily limit exhausted. (2026-03-29)",
       "last_checked": "2026-03-29",
       "merged_at": "2026-03-29",
       "merge_sha": "b5182d8",
@@ -1643,14 +1643,14 @@
       "branch": "fix/issue-271",
       "base": "dev",
       "created": "2026-03-29",
-      "note": "Merged to dev. Staging deploy ERROR: 'BigInt literals not available targeting < ES2020' in yarn build. Build broken. (2026-03-29)",
+      "note": "Merged to dev. BigInt build fixed by PR #314. Staging deploy pending — Vercel daily limit exhausted. (2026-03-29)",
       "last_checked": "2026-03-29",
       "pr_number": 287,
       "merged_at": "2026-03-29",
       "merge_sha": "8ad2b54",
       "deployed": false,
       "accepted": false,
-      "deploy_error": "type_error: BigInt literals not available when targeting lower than ES2020"
+      "deploy_error": "Fixed by PR #314. Now blocked by Vercel daily limit."
     },
     {
       "title": "fix: /markets 24h Volume sort toggle unresponsive due to stale closure (#272)",
@@ -1751,7 +1751,7 @@
       "branch": "fix/issue-286",
       "base": "dev",
       "created_at": "2026-03-29",
-      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts (mergeable_state=dirty). (2026-03-29)",
+      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts (mergeable_state=dirty). Needs rebase onto dev. (2026-03-29)",
       "last_checked": "2026-03-29"
     },
     {
@@ -1760,11 +1760,15 @@
         271
       ],
       "title": "fix: replace BigInt literal with BigInt(0) to unblock staging build",
-      "status": "open",
+      "status": "merged",
       "branch": "fix/bigint-build-error",
       "base": "dev",
       "created_at": "2026-03-29",
-      "note": "Build hotfix: BigInt literal 0n → BigInt(0). Unblocks staging deploy for PRs #277/#287."
+      "note": "Merged to dev (sha a91b124). Staging deploy pending — Vercel daily limit (100/day) exhausted. (2026-03-29)",
+      "merged_at": "2026-03-29",
+      "merge_sha": "a91b124",
+      "deployed": false,
+      "accepted": false
     },
     {
       "pr_number": 315,
