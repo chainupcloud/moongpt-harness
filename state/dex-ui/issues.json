@@ -2658,13 +2658,15 @@
     {
       "github_number": 303,
       "title": "[P3] Take Profit Limit order — submit button not disabled when trigger price and limit price are empty",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario_id": "E1360",
       "created_date": "2026-03-29",
       "labels": [
         "bug"
-      ]
+      ],
+      "pr_number": 323,
+      "fix_attempts": 1
     },
     {
       "github_number": 305,

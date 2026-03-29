@@ -1887,6 +1887,18 @@
       "accepted": false,
       "note": "BLOCKED: merge conflicts after PR #321 merge. Needs rebase onto dev. (2026-03-29)",
       "last_checked": "2026-03-29"
+    },
+    {
+      "pr_number": 323,
+      "issue_numbers": [
+        303
+      ],
+      "status": "open",
+      "commit_sha": "347b5ca",
+      "merged_at": null,
+      "deployed": false,
+      "accepted": false,
+      "last_checked": "2026-03-29"
     }
   ],
   "pull_requests": [
