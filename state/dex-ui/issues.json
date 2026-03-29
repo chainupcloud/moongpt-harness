@@ -2636,7 +2636,9 @@
         "bug"
       ],
       "pr_number": 321,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "notes": "PR #321 merged (44069f6) to dev. Deploy ERROR (TEAM_ACCESS_REQUIRED, issue #98). Acceptance pending deployment fix.",
+      "updated_at": "2026-03-29"
     },
     {
       "github_number": 302,
@@ -2650,7 +2652,8 @@
       ],
       "fix_attempts": 1,
       "pr_number": 322,
-      "note": "Submit buttons Buy/Long and Sell/Short not disabled when trigger price is empty; also missing aria-label on trigger price input"
+      "note": "PR #322 has merge conflicts after PR #321 merge. Needs rebase. Deploy blocked by issue #98.",
+      "updated_at": "2026-03-29"
     },
     {
       "github_number": 303,
