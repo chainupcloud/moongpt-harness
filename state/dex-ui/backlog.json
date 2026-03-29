@@ -11542,10 +11542,12 @@
       "priority": 3,
       "title": "Scale order — Distribution mode: verify Top Heavy and Bottom Heavy produce different order size distributions",
       "description": "Select Scale order type, fill price range, switch Distribution between Uniform/Top Heavy/Bottom Heavy and verify Order Preview shows different BTC amounts per order step.",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — Scale keyword in page but Scale tab not interactive without connected wallet on testnet"
     },
     {
       "id": "E958",
@@ -11564,10 +11566,12 @@
       "priority": 3,
       "title": "Explorer address page — loads transaction history for a known wallet address",
       "description": "Navigate to /explorer/address/{addr} for a known active wallet address, verify the page loads with transaction list and correct address display.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Address Activity page loads, shows tx history (OrderPlacedEvent, BridgeDepositEvent) for known address"
     },
     {
       "id": "E960",
@@ -11655,9 +11659,11 @@
       "priority": 3,
       "title": "Explorer transactions — filter by type (PlaceOrder) shows only filtered results",
       "description": "Click the 'Filter: All Types' dropdown and select 'PlaceOrder'. Verify the transaction list only shows PlaceOrder type transactions.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — TxTypeFilter select works, PlaceOrder filter correctly shows only PlaceOrder rows"
     },
     {
       "id": "E968",
@@ -16297,10 +16303,12 @@
       "priority": 2,
       "title": "/trade orderType full matrix — stop_market, tp_market, tp_limit params",
       "description": "After issue #307 fix is deployed, test the full matrix: ?orderType=stop_market→Stop Market, ?orderType=tp_market→TP Market, ?orderType=tp_limit→TP Limit. Verify each URL param pre-selects the correct order type tab.",
-      "status": "pending",
+      "status": "failed",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — stop_market/tp_market/tp_limit URL params not recognized; order types Limit+TWAP only visible; matches open issue #307"
     },
     {
       "id": "E1396",
@@ -16341,6 +16349,61 @@
       "priority": 3,
       "title": "Explorer AbsoluteTime component — verify timestamps display correctly in all locales",
       "description": "AbsoluteTime.tsx was recently changed. Verify that transaction timestamps are displayed in correct absolute time format (not relative), and that the format is consistent across tx list, tx detail, and checkpoint pages.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1400",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer transactions — User Actions filter excludes UpdateOraclePrices and system types",
+      "description": "Select 'User Actions' from the TxTypeFilter select. Verify UpdateOraclePrices and other system action types disappear from the list, leaving only PlaceOrder, CancelOrder, Deposit, etc.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1401",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer SearchBar — entering SUI address routes to /explorer/address/ page",
+      "description": "Type a known SUI address (0x94bd...) into the Explorer search bar and submit. Verify the URL changes to /explorer/address/{addr} and the Address Activity page loads.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1402",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — AbsoluteTime column shows ISO-like timestamps",
+      "description": "On /explorer/address/{addr}, verify the Time column shows absolute timestamps in YYYY-MM-DD HH:MM:SS format (not relative time like '5m ago') after the AbsoluteTime component was added.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1403",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trade page — full order type list visible when wallet connected (Market, Limit, Stop, TP)",
+      "description": "Connect wallet, then check the Order Type section. Verify that Stop Market, Stop Limit, TP Market, TP Limit tabs are visible (not just Limit and TWAP as seen without wallet). This helps diagnose if missing tabs are auth-gated or truly absent.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1404",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer transactions — pagination page size selector (10/20/50 rows)",
+      "description": "On /explorer/transactions, find the page size select (10 20 50) and switch to 50. Verify the table renders 50 rows if data is available, or the max available rows.",
       "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
