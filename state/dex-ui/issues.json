@@ -2555,7 +2555,7 @@
       "fix_attempts": 1,
       "created_at": "2026-03-29",
       "updated_at": "2026-03-29",
-      "notes": "Regression — issue #270 was closed but bug persists on staging",
+      "notes": "PR #316 merged (8e1cb59). Deploy blocked: TEAM_ACCESS_REQUIRED (issue #98). Acceptance pending deployment.",
       "pr_number": 316
     },
     {

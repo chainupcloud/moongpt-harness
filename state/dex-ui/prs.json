@@ -1791,8 +1791,14 @@
       "issue_numbers": [
         293
       ],
-      "status": "open",
-      "created_at": "2026-03-29"
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "commit_sha": "8e1cb59",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged successfully. Deploy BLOCKED: TEAM_ACCESS_REQUIRED (gitUserId:239836187 not on Vercel team) + daily deploy limit hit. Same as issue #98.",
+      "last_checked": "2026-03-29"
     }
   ],
   "pull_requests": [
