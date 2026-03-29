@@ -2088,7 +2088,8 @@
         "bug"
       ],
       "pr_number": 254,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "note": "PR #254 has merge conflicts with dev (needs rebase). Also blocked by Vercel build errors (issue #98)."
     },
     {
       "number": 225,

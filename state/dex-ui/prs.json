@@ -1379,6 +1379,23 @@
       "note": "Merged to dev (sha 3df0f19). Vercel build ERROR (known issue #98 TEAM_ACCESS_REQUIRED). Staging not updated. Acceptance deferred."
     },
     {
+      "pr_number": 253,
+      "title": "fix: make leverage tick labels clickable (#220)",
+      "status": "merged",
+      "issue_numbers": [
+        220
+      ],
+      "branch": "fix/issue-220",
+      "base": "dev",
+      "created_at": "2026-03-29",
+      "commit_sha": "2547a19",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "review_status": "approved",
+      "note": "Merged to dev (sha 2547a19). Vercel build ERROR (known issue #98 TEAM_ACCESS_REQUIRED). Staging not updated. Acceptance deferred."
+    },
+    {
       "number": 253,
       "title": "fix: make leverage tick labels clickable (#220)",
       "status": "merged",
@@ -1400,7 +1417,8 @@
       "issue_numbers": [
         223
       ],
-      "created_at": "2026-03-29"
+      "created_at": "2026-03-29",
+      "note": "Merge conflicts with dev branch (mergeable_state: dirty). Copilot review: COMMENTED (approvable). Needs rebase against dev before merge. Also blocked by Vercel build errors (issue #98)."
     }
   ],
   "pull_requests": [
