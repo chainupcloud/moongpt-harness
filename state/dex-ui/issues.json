@@ -2444,18 +2444,19 @@
       "id": "dex-ui-276",
       "github_number": 276,
       "title": "[P3] TP/SL BUY方向验证缺失：TP低于入场价时未显示错误",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E883",
       "created_date": "2026-03-29",
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/276",
       "fix_attempts": 1,
-      "pr_number": 304
+      "pr_number": 304,
+      "closed_at": "2026-03-29"
     },
     {
       "number": 278,
       "title": "[P3] TP/SL invalid value shows red border but submit button remains enabled",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "labels": [
         "bug"
@@ -2464,7 +2465,8 @@
       "opened_date": "2026-03-29",
       "url": "https://github.com/chainupcloud/dex-ui/issues/278",
       "pr_number": 304,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "closed_at": "2026-03-29"
     },
     {
       "issue_id": "dex-ui-280",
@@ -2494,11 +2496,11 @@
       "github_number": 283,
       "title": "[P3] Leverage dialog — tick labels (1x/13x/38x/50x) all fail to update slider value",
       "priority": "P3",
-      "status": "open",
-      "pr_number": null,
+      "status": "fixing",
+      "pr_number": 309,
       "created_at": "2026-03-29",
       "closed_at": null,
-      "fix_attempts": 0,
+      "fix_attempts": 1,
       "scenario_id": "E1002"
     },
     {
