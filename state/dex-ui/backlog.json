@@ -11364,7 +11364,7 @@
       "priority": 2,
       "title": "Explorer tx detail — 'User Address' label should be 'Sender' for consistency",
       "description": "TX detail page shows 'User Address' label; verify whether it should be labeled 'Sender' or 'From' as per Hyperliquid explorer conventions",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "track": "frontend",
