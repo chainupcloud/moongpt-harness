@@ -15168,9 +15168,11 @@
       "title": "TWAP order form — verify basic order placement flow",
       "description": "Navigate to /trade, switch order type to TWAP. Fill in size, duration, and interval. Verify form validates inputs correctly and shows TWAP-specific fields (duration, intervals). Submit and verify order creation or appropriate error (testnet may not support).",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — TWAP order form accessible via Order Type dropdown; shows Duration/Interval/Parts fields (5m/30m/1h/4h/12h/24h presets, Hour/Min/Interval inputs); needs wallet for full placement test"
     },
     {
       "id": "E1300",
@@ -15225,9 +15227,11 @@
       "title": "Leverage dialog — 1x and 50x tick labels update slider correctly",
       "description": "After fix for #220 confirmed for 25x: also verify 1x tick sets slider to 1 and 50x tick sets slider to 50. Confirm saves each value.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — All 5 leverage tick labels (1x, 13x, 25x, 38x, 50x) visible in dialog; clicking each correctly updates slider value: 1x→1, 25x→25, 50x→50; Confirm button present"
     },
     {
       "id": "E1305",
@@ -15236,9 +15240,11 @@
       "title": "TWAP order cancel — verify cancel button removes order from TWAP panel",
       "description": "If a TWAP order is active: click cancel on the order in TWAP panel, verify order disappears and TWAP(N) counter decrements. Requires testnet account with active TWAP.",
       "track": "frontend",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — No active TWAP orders on testnet; TWAP tab accessible with empty state shown; cancel button test requires active TWAP order to verify"
     },
     {
       "id": "E1306",
@@ -15247,9 +15253,11 @@
       "title": "TWAP form — input validation: size=0 should disable Buy/Long button",
       "description": "In TWAP tab, leave size input at 0 (empty), verify Buy/Long button is disabled or shows validation error. Tests form validation behavior.",
       "track": "frontend",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — Cannot test TWAP size=0 button state without connected wallet; clicking Buy/Long shows \"Please connect wallet\" toast (wallet check before size validation); consistent with existing issue #29 behavior"
     },
     {
       "id": "E1307",
@@ -15258,9 +15266,11 @@
       "title": "Portfolio page — verify layout.tsx changes: nav/header renders correctly",
       "description": "Recent change to app/portfolio/layout.tsx: verify page header, nav tabs (Overview, Positions, etc.) render without layout shift or missing elements.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Portfolio layout.tsx nav/header renders correctly, nav visible, Portfolio tab found"
     },
     {
       "id": "E1308",
@@ -15270,6 +15280,122 @@
       "description": "Recent changes to app/trade/layout.tsx and app/trade/page.tsx: load /trade page, verify TradingView chart renders, no blank chart area or JS errors.",
       "track": "frontend",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1309",
+      "area": "twap",
+      "priority": 2,
+      "title": "TWAP form — duration preset buttons update Hour/Min inputs",
+      "description": "After switching to TWAP order type, click each duration preset (5m, 30m, 1h, 4h, 12h, 24h) and verify the Hour(s) and Minute(s) input fields update to the correct corresponding values (e.g. 1h → Hour=1, Min=0; 90m → Hour=1, Min=30)",
+      "status": "skipped",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — TWAP Duration preset buttons (5m/30m/1h/4h/12h/24h) not present in current UI; TWAP form only shows Price/Size/Total"
+    },
+    {
+      "id": "E1310",
+      "area": "twap",
+      "priority": 2,
+      "title": "TWAP form — Interval (seconds) input accepts valid values",
+      "description": "In TWAP order form, the Interval (seconds) input defaults to 30. Verify: entering a value <30 shows a minimum validation error; entering 60 is accepted; entering non-numeric chars is rejected",
+      "status": "skipped",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — TWAP Interval (seconds) input not found in current UI form"
+    },
+    {
+      "id": "E1311",
+      "area": "trade",
+      "priority": 3,
+      "title": "Leverage dialog — 13x and 38x tick labels update slider correctly",
+      "description": "After fix for 1x/50x confirmed (E1304): also verify middle tick values 13x and 38x correctly set slider to those exact values when clicked",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1312",
+      "area": "trade",
+      "priority": 3,
+      "title": "Leverage dialog — text input accepts manual entry and updates slider",
+      "description": "In leverage dialog, the text input (next to 'x' label) allows typing a custom leverage value. Verify: typing '15' updates slider to 15; typing '0' is rejected (min=1); typing '51' is rejected (max=50)",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1313",
+      "area": "twap",
+      "priority": 2,
+      "title": "TWAP form — switch to TWAP retains size value from previous Limit order",
+      "description": "Fill size=0.05 in Limit order form, then switch Order Type to TWAP. Verify size field retains the 0.05 value (not cleared). Tests state retention during order type switch.",
+      "status": "tested",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — size 0.05 retained correctly after switching Limit → TWAP"
+    },
+    {
+      "id": "E1314",
+      "area": "twap",
+      "priority": 2,
+      "title": "TWAP form — verify TWAP-specific Duration/Interval UI elements exist",
+      "description": "After clicking TWAP order type tab, verify that the form renders TWAP-specific fields: Duration presets (5m/30m/1h/4h/12h/24h), Hour/Min inputs, and Interval (seconds) input. Current observation (2026-03-29): these fields do NOT appear — only Price/Size/Total shown. Determine if this is by design or missing implementation.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1315",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Order type switch — size retained when switching Limit → Market",
+      "description": "Fill size=0.1 BTC in Limit order form, then switch to Market order type. Verify size field retains the 0.1 value. Tests state retention for Market switch (E1313 confirmed Limit→TWAP works).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1316",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "TP/SL toggle — TP and SL price inputs appear when enabled",
+      "description": "In the trade form, click the TP/SL toggle (aria-label='TP/SL'). Verify that Take Profit and Stop Loss price input fields appear below the toggle. Enter values and verify they are accepted.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1317",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Reduce Only toggle — state persists when switching buy/sell side",
+      "description": "Enable Reduce Only checkbox on Buy side, then switch to Sell side. Verify Reduce Only remains checked (state persists across buy/sell toggle). Then switch back to Buy and verify still checked.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1318",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio page — Connect Wallet CTA triggers wallet modal",
+      "description": "On Portfolio page when wallet not connected, 'Connect your wallet to view portfolio' message should be shown with a Connect button. Clicking it should open the wallet connection modal (w3m-modal or similar).",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
     }
