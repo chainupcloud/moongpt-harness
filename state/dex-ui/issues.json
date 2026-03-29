@@ -2093,7 +2093,7 @@
       "github_number": 223,
       "title": "[P3] Withdraw action button on portfolio assets row navigates to Withdraw History tab instead of opening withdraw modal",
       "priority": "P3",
-      "status": "fixing",
+      "status": "closed",
       "scenario_id": "E738",
       "created_at": "2026-03-28",
       "labels": [
@@ -2101,7 +2101,8 @@
       ],
       "pr_number": 254,
       "fix_attempts": 1,
-      "note": "PR #254 has merge conflicts with dev (needs rebase). Also blocked by Vercel build errors (issue #98). Checked 2026-03-29."
+      "note": "PR #254 merged+deployed, staging acceptance passed (commit f8ce102)",
+      "closed_at": "2026-03-29"
     },
     {
       "number": 225,
@@ -2122,7 +2123,7 @@
       "number": 226,
       "github_number": 226,
       "title": "[P4] Footer Docs link missing target=_blank — opens in same tab",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P4",
       "scenario": "E552",
       "created": "2026-03-28",
@@ -2131,11 +2132,12 @@
       ],
       "pr_number": 260,
       "fix_attempts": 1,
-      "note": "PR #260 has merge conflicts with dev (needs rebase). Checked 2026-03-29."
+      "note": "PR #260 merged+deployed. P4 — auto acceptance skipped per rules.",
+      "closed_at": "2026-03-29"
     },
     {
       "title": "[P4] /markets funding rate column lacks tooltip to indicate rate period (4h vs hourly)",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P4",
       "labels": [
         "enhancement"
@@ -2146,18 +2148,19 @@
       "pr_number": 261,
       "fix_attempts": 1,
       "github_number": 227,
-      "note": "PR #261 merged to dev (sha cca2055). Vercel dev deployment ERROR (issue #98 still active). Acceptance blocked until Vercel builds fixed. Checked 2026-03-29."
+      "note": "PR #261 merged+deployed. P4 — auto acceptance skipped per rules.",
+      "closed_at": "2026-03-29"
     },
     {
       "github_number": 228,
       "title": "[P4] Trade page stats bar — oracle price diverges from mark price with no visual indicator",
       "priority": "P4",
-      "status": "fixing",
+      "status": "closed",
       "pr_number": 262,
       "created_at": "2026-03-28",
-      "closed_at": null,
+      "closed_at": "2026-03-29",
       "fix_attempts": 1,
-      "note": "PR #262 open but has merge conflicts. Needs rebase against dev. Checked 2026-03-29."
+      "note": "PR #262 merged+deployed. P4 — auto acceptance skipped per rules."
     },
     {
       "github_number": 230,
@@ -2190,7 +2193,7 @@
       "id": "issue_235",
       "github_number": 235,
       "title": "[P4] /markets — 资金费率 and 最高杠杆 columns not sortable (missing sort indicators)",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P4",
       "scenario": "E815",
       "created_date": "2026-03-28",
@@ -2198,7 +2201,9 @@
         "enhancement"
       ],
       "pr_number": 264,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "closed_at": "2026-03-29",
+      "note": "PR #264 merged+deployed. P4 — auto acceptance skipped per rules."
     },
     {
       "id": "issue-143",
@@ -2323,7 +2328,7 @@
       "id": "dex-ui-267",
       "github_number": 267,
       "title": "[P3] w3m-modal not dismissible — no close button found, Escape key also ineffective",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "labels": [
         "bug"
@@ -2333,7 +2338,8 @@
       "url": "https://github.com/chainupcloud/dex-ui/issues/267",
       "pr_number": 279,
       "fix_attempts": 1,
-      "note": "PR #279 merged (4186e0e). Staging deploy rate-limited; acceptance pending next deploy cycle"
+      "note": "PR #279 merged+deployed, staging acceptance passed (commit f8ce102)",
+      "closed_at": "2026-03-29"
     },
     {
       "id": "dex-ui-268",
