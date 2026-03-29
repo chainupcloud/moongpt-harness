@@ -6305,11 +6305,11 @@
       "priority": 3,
       "title": "TWAP 订单 — 必填字段验证（Orders 数量 + 间隔时间）",
       "description": "选择 TWAP 类型后填写订单数量和间隔，验证提交前字段校验逻辑（空值、负值、超范围）",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-28",
-      "result_summary": ""
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — TWAP selected but no Orders/Interval fields rendered; known stale Vercel staging false positive (issue #98)"
     },
     {
       "id": "E528",
@@ -14005,10 +14005,12 @@
       "priority": 2,
       "title": "TP/SL fields — fill via aria-label and verify value persistence after size change",
       "description": "Use aria-label='Take Profit price' and 'Stop Loss price' to fill TP=68000 SL=64000. Then change order size and verify TP/SL values still show 68000/64000 (not reset to empty).",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — TP/SL values (68000/64000) persisted after size change; aria-label inputs found and accessible"
     },
     {
       "id": "E1199",
@@ -14016,10 +14018,12 @@
       "priority": 2,
       "title": "Sell tab w3m-modal — verify modal can be dismissed to access Sell side trade form",
       "description": "After clicking Sell tab triggers w3m-modal, press Escape or click outside to close modal. Verify Sell form becomes interactive (TP/SL toggle clickable, size input fillable) after modal dismissal.",
-      "status": "pending",
+      "status": "failed",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — w3m-modal triggered by Sell tab; Escape and click-outside both non-functional; modal undismissable (overlaps open issue)"
     },
     {
       "id": "E1200",
@@ -14027,10 +14031,12 @@
       "priority": 2,
       "title": "Portfolio page — verify wallet connection state persists from /trade navigation",
       "description": "Start from /trade (where session injection works, no w3m-modal). Click Portfolio nav link. Verify /portfolio opens with wallet recognized (no Connect Wallet prompt). Check if Assets tab shows USDC row.",
-      "status": "pending",
+      "status": "failed",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Portfolio shows Connect Wallet prompt despite cookie injection; wallet state not persisted on /portfolio (overlaps open issue)"
     },
     {
       "id": "E1201",
@@ -14038,6 +14044,61 @@
       "priority": 3,
       "title": "TP/SL — verify TP gain% and SL loss% auto-calculate when price fields are filled",
       "description": "After expanding TP/SL section, fill 'Take Profit price' with 68000. Verify 'Take Profit gain percentage' auto-populates based on entry price. Repeat for Stop Loss. Check if values are reasonable (e.g., > 0 for TP above entry).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1202",
+      "area": "trade-form / sell",
+      "priority": 2,
+      "title": "Sell tab modal — verify close button inside w3m-modal closes it",
+      "description": "When w3m-modal appears after Sell tab click, look for an X/close button inside the modal and click it. Verify the modal closes and the Sell form becomes interactive.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1203",
+      "area": "trade-form / tpsl",
+      "priority": 2,
+      "title": "TP/SL — verify gain% and loss% fields auto-calculate from price inputs",
+      "description": "Fill TP=68000 and verify the 'Take Profit gain percentage' input auto-calculates based on mark price. Same for SL=64000 → loss%. Change TP value, verify % updates reactively.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1204",
+      "area": "trade-form / tpsl",
+      "priority": 3,
+      "title": "TP/SL — enter gain% directly, verify price field auto-fills",
+      "description": "Instead of filling TP price, fill the Take Profit gain percentage (e.g., 5%). Verify the Take Profit price field auto-calculates. Do the same for Stop Loss loss%.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1205",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Limit order — price input: verify mark price pre-fill and manual override",
+      "description": "Open limit order form. Check if Price input is pre-filled with mark/oracle price. Clear it and type a custom price (e.g., 65000). Verify Total field updates accordingly (Price × Size).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1206",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Order form Total field — verify bidirectional sync (Size↔Total)",
+      "description": "Fill Size=0.001. Verify Total auto-calculates as Size×Price. Then clear Total and enter a Total value (e.g., 65). Verify Size auto-updates as Total/Price. Confirm bidirectional sync.",
       "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
