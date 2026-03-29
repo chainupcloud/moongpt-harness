@@ -9909,12 +9909,12 @@
       "priority": 3,
       "title": "W3M modal — keyboard navigation and Escape key closes modal",
       "description": "Open W3M modal via Connect button. Press Escape key, verify modal closes. Reopen and press Tab multiple times, verify wallet options receive keyboard focus in order.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — W3M modal does not close on Escape key press"
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — W3M modal opens and closes with Escape key correctly"
     },
     {
       "id": "E824",
@@ -10632,9 +10632,11 @@
       "priority": 3,
       "title": "TP/SL — verify BUY direction validation (TP below entry should be invalid)",
       "description": "For BUY/Long orders: TP should be above entry price, SL below. Test entering TP below entry (invalid) and verify red-border/error message appears. Counterpart to E631.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — BUY TP below entry + BUY SL above entry show no validation error. Issue #276"
     },
     {
       "id": "E884",
@@ -14374,9 +14376,11 @@
       "priority": 2,
       "title": "/trade?coin= (empty param) — verify fallback behavior",
       "description": "Access /trade?coin= with empty string. Should either redirect to default market or show error. Should not render broken '-USDC' pair.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — /trade?coin= gracefully shows BTC-USDC default (page functional despite empty param)"
     },
     {
       "id": "E1232",
@@ -14404,9 +14408,11 @@
       "priority": 2,
       "title": "/trade?coin=BTC&side=sell — verify coin+side query params pre-fill form",
       "description": "If the app supports side param in URL, accessing /trade?coin=BTC&side=sell should pre-select Sell/Short. Verify form state matches URL params.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — side=sell param ignored, BUY/Long stays active. Issue #275"
     },
     {
       "id": "E1235",
@@ -14414,6 +14420,56 @@
       "priority": 3,
       "title": "Leverage cross vs isolated — verify margin mode switch in trade form",
       "description": "The trade form shows 'Cross 10x'. Verify clicking 'Cross' opens a mode selector, allowing switch to Isolated, and that leverage range changes accordingly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1236",
+      "area": "trade",
+      "priority": 2,
+      "title": "/trade?coin=BTC&side=buy — verify BUY side pre-selection via query param",
+      "description": "Complement to E1234: visit /trade?coin=BTC&side=buy and verify that Buy/Long direction is pre-selected (also verifies the param works for buy side, since sell side is broken)",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1237",
+      "area": "trade",
+      "priority": 2,
+      "title": "/trade?coin=ETH&side=sell — verify cross-coin URL param handling",
+      "description": "Visit /trade?coin=ETH&side=sell. Verify coin switches to ETH-USDC and side pre-fills to Sell/Short. Tests compound query param handling.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1238",
+      "area": "trade",
+      "priority": 2,
+      "title": "TP/SL SELL direction validation: SL above entry should be invalid",
+      "description": "Complement to E883 (BUY direction). In SELL mode, set SL above entry price — verify validation error appears. Also test TP above entry for SELL (invalid).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1239",
+      "area": "trade",
+      "priority": 3,
+      "title": "TP/SL — percentage mode vs price mode toggle behavior",
+      "description": "TP/SL inputs show 'TPGain%' label suggesting percentage mode. Verify: (1) switching between % and price mode works, (2) validation logic applies in both modes, (3) mode persists across page refresh.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1240",
+      "area": "navigation",
+      "priority": 3,
+      "title": "URL param persistence: trade?coin=BTC — verify URL updates when switching coins via UI",
+      "description": "Start at /trade?coin=BTC, then switch to ETH via coin selector. Verify URL updates to reflect new coin. Tests URL <-> UI sync in both directions.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"

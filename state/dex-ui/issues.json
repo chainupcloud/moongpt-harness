@@ -2392,6 +2392,28 @@
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/274",
       "created_at": "2026-03-29",
       "fix_attempts": 0
+    },
+    {
+      "id": "dex-ui-275",
+      "github_number": 275,
+      "title": "[P3] /trade?coin=BTC&side=sell — side query param not pre-selecting SELL direction",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E1234",
+      "created_date": "2026-03-29",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/275",
+      "fix_attempts": 0
+    },
+    {
+      "id": "dex-ui-276",
+      "github_number": 276,
+      "title": "[P3] TP/SL BUY方向验证缺失：TP低于入场价时未显示错误",
+      "status": "open",
+      "priority": "P3",
+      "scenario": "E883",
+      "created_date": "2026-03-29",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/276",
+      "fix_attempts": 0
     }
   ],
   "last_updated": "2026-03-29",
