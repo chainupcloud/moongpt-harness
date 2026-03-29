@@ -11426,9 +11426,11 @@
       "title": "Explorer address page — shows correct account summary (balance, positions count)",
       "description": "On /explorer/address/{addr}, verify the account summary shows: wallet balance (USDC), number of active positions, and recent transaction count. Check data accuracy against known test wallet state.",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — no account summary panel (balance/positions), page only shows tx history → Issue #308"
     },
     {
       "id": "E949",
@@ -11450,9 +11452,11 @@
       "title": "Explorer search bar — search by wallet address navigates to address page",
       "description": "Find the search bar on /explorer or /explorer/transactions. Enter the test wallet address and verify it navigates to /explorer/address/{addr} with correct account data.",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — search routes address to /explorer/tx/ instead of /explorer/address/ (known open issue)"
     },
     {
       "id": "E951",
@@ -16119,9 +16123,11 @@
       "priority": 2,
       "title": "/trade orderType URL param — test all valid values (market, limit, stop_market, tp_market, tp_limit)",
       "description": "Test each orderType param value: market, limit, stop_market, stop_limit, tp_market, tp_limit. For each verify the correct tab/selector is pre-selected. Issue #305 confirmed stop_limit fails. Sweep all values to identify which ones work.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — ALL orderType URL params ignored, all 6 values default to Limit → Issue #307"
     },
     {
       "id": "E1381",
@@ -16215,8 +16221,65 @@
       "priority": 2,
       "title": "Explorer address page — navigate via URL for address with known testnet activity",
       "description": "E945 used SUI_ADDR (testnet test wallet) which had no explorer activity. Use the /explorer/transactions page to find an active wallet address, then navigate to /explorer/address/{addr} and verify tx type badges render correctly without undefined labels.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — address page loads, shows tx history with correct type labels (FillEvent, FundingPaymentEvent, OrderPlacedEvent), no undefined labels"
+    },
+    {
+      "id": "E1390",
+      "area": "trade",
+      "priority": 2,
+      "title": "/trade orderType param — verify fix: market param pre-selects Market tab",
+      "description": "Regression test for Issue #307. After fix is deployed, verify that ?orderType=market pre-selects Market order type in the form. Test the full matrix: market→Market, stop_market→Stop Market, tp_market→TP Market, tp_limit→TP Limit.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1391",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — pagination works when tx count exceeds page size",
+      "description": "The address page shows transaction history. Test if pagination controls appear when a highly active address has more transactions than one page. Use the address 0x9b2702039d916e0b9612f26da21644a7e30304c82c9f06e824f7fa7665d61905 and check for next/prev page buttons.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1392",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — checkpoint number search routes to correct checkpoint page",
+      "description": "The search bar handles tx hash and address. Test if entering a checkpoint number (e.g., '18873') routes to /explorer/checkpoint/18873. This tests another search path beyond address/tx.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1393",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail page — tx hash from address page links navigate correctly",
+      "description": "From /explorer/address/{addr}, click on a tx hash link (e.g., 0xc5e0ea...2352). Verify it navigates to /explorer/tx/{full_hash} and the tx detail page shows proper data.",
+      "track": "frontend",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1394",
+      "area": "trade",
+      "priority": 3,
+      "title": "/trade URL param: pair + orderType combined — BTC-USDC with stop_market pre-selected",
+      "description": "Test that the full URL /trade/BTC-USDC?orderType=stop_market correctly sets both the trading pair (BTC-USDC) AND the order type (Stop Market). Currently orderType param is broken. Also test with tp_limit once the fix is in.",
+      "track": "frontend",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
     }

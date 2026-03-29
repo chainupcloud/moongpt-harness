@@ -2659,6 +2659,26 @@
       "fix_attempts": 0,
       "pr_number": null,
       "note": "Regression of closed issue #94 (PR #96). OI shows $0.00 despite active testnet. PR #96 accepted via code review but Vercel deploy failed."
+    },
+    {
+      "number": 307,
+      "title": "[P3] /trade?orderType URL param ignored for all values — market, stop_market, tp_market, tp_limit all default to Limit",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-29",
+      "closed_at": null,
+      "scenario": "E1380"
+    },
+    {
+      "number": 308,
+      "title": "[P4] Explorer address page — missing account summary (wallet balance, positions count)",
+      "priority": "P4",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-29",
+      "closed_at": null,
+      "scenario": "E948"
     }
   ],
   "last_updated": "2026-03-29",
