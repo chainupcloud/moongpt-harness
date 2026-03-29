@@ -1869,6 +1869,17 @@
         301
       ],
       "status": "open"
+    },
+    {
+      "pr_number": 322,
+      "issue_numbers": [
+        302
+      ],
+      "status": "open",
+      "commit_sha": "f358d6d",
+      "merged_at": null,
+      "deployed": false,
+      "accepted": false
     }
   ],
   "pull_requests": [
