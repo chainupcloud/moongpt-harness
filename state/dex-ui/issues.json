@@ -2578,7 +2578,7 @@
       "id": "dex-ui-295",
       "github_issue_number": 295,
       "title": "[P3] /markets 24h Volume sort indicator does not toggle — resets to ↕ after click instead of ↑",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E767",
       "created_date": "2026-03-29",
@@ -2587,7 +2587,9 @@
       ],
       "url": "https://github.com/chainupcloud/dex-ui/issues/295",
       "pr_number": 318,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "closed_at": "2026-03-29",
+      "note": "PR #318 merged, staging 验收通过 (commit 995e0ff)"
     },
     {
       "title": "[P3] Explorer checkpoint detail — Epoch field missing from info card",
