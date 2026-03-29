@@ -2065,13 +2065,15 @@
       "id": "issue-220",
       "github_issue_number": 220,
       "title": "[P3] Leverage dialog tick labels (1x/13x/25x/38x/50x) unclickable — do not update slider",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario": "E716",
       "created_date": "2026-03-28",
       "labels": [
         "bug"
-      ]
+      ],
+      "pr_number": 253,
+      "fix_attempts": 1
     },
     {
       "github_number": 223,
