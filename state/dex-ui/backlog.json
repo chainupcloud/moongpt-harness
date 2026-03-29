@@ -8547,11 +8547,11 @@
       "title": "Reduce Only checkbox — visible only for Limit orders (not Market)",
       "description": "Verify that Reduce Only checkbox appears for Limit order type but is hidden or disabled for Market orders. Switch between Market/Limit tabs and confirm checkbox visibility changes accordingly.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — Reduce Only checkbox visible on Market orders → Issue #219"
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Reduce Only hidden on Market order type, visible on Limit order type"
     },
     {
       "id": "E712",
@@ -8612,11 +8612,11 @@
       "title": "Leverage dialog: clicking tick labels (1x, 13x, 25x etc) selects leverage",
       "description": "In the leverage dialog, click one of the tick labels (e.g. 25x) directly instead of dragging slider. Verify: (1) slider moves to that position, (2) Confirm saves 25x, (3) leverage button updates.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — clicking tick labels (1x/13x/25x/38x/50x) does not update slider; Issue #220 created"
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Leverage dialog opens, tick labels (50x etc) clickable, leverage selection works"
     },
     {
       "id": "E717",
@@ -14320,9 +14320,11 @@
       "priority": 2,
       "title": "/trade?coin=BTC redirect — verify valid coin param loads correct market (not INVALID-USDC fallback)",
       "description": "Regression: since /trade?coin=INVALID renders a fake market, verify /trade?coin=BTC still loads BTC-USDC correctly and does not silently fallback to a wrong market name",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — /trade?coin=BTC loads BTC-USDC market correctly with live price data"
     },
     {
       "id": "E1227",
@@ -14350,9 +14352,11 @@
       "priority": 2,
       "title": "/trade?coin=NONEXISTENT with no matching market — verify error state or default redirect",
       "description": "Related to Issue #273: test additional invalid coin params (/trade?coin=FOOBAR, /trade?coin=ABC123) to confirm consistent behavior and determine if all params are accepted without validation",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — NONEXISTENT coin param renders NONEXISTENT-USDC market silently, no error/redirect → Issue #274"
     },
     {
       "id": "E1230",
@@ -14360,6 +14364,56 @@
       "priority": 3,
       "title": "/spot page SEO meta tags — verify title, description, og:title present",
       "description": "E1221 confirmed /spot page loads. Verify it has correct meta tags: <title>Spot | Hermes DEX</title> (already confirmed), plus meta description and og:title for SEO and link unfurls.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1231",
+      "area": "trade",
+      "priority": 2,
+      "title": "/trade?coin= (empty param) — verify fallback behavior",
+      "description": "Access /trade?coin= with empty string. Should either redirect to default market or show error. Should not render broken '-USDC' pair.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1232",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order Type dropdown — TP/SL panel visibility by order type",
+      "description": "When switching Order Type (Limit/Market/Stop), verify TP/SL panel shows/hides appropriately for each order type.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1233",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order Type: Stop-Market — verify Trigger Price input appears",
+      "description": "When Order Type = Stop-Market or Stop-Limit, a Trigger Price input should appear. Verify it is rendered and accepts input.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1234",
+      "area": "trade",
+      "priority": 2,
+      "title": "/trade?coin=BTC&side=sell — verify coin+side query params pre-fill form",
+      "description": "If the app supports side param in URL, accessing /trade?coin=BTC&side=sell should pre-select Sell/Short. Verify form state matches URL params.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1235",
+      "area": "trade",
+      "priority": 3,
+      "title": "Leverage cross vs isolated — verify margin mode switch in trade form",
+      "description": "The trade form shows 'Cross 10x'. Verify clicking 'Cross' opens a mode selector, allowing switch to Isolated, and that leverage range changes accordingly.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
