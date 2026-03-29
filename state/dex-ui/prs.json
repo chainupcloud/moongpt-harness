@@ -1527,13 +1527,18 @@
     {
       "pr_number": 263,
       "title": "fix: add aria-label to social icon links (#234)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         234
       ],
       "branch": "fix/issue-234",
       "base": "dev",
-      "created_date": "2026-03-29"
+      "created_date": "2026-03-29",
+      "deployed": true,
+      "accepted": true,
+      "merge_sha": "3169edfce4f3056075d923bdf806b3914ca2f60b",
+      "merged_at": "2026-03-29",
+      "deploy_url": "hermes-testnet-k4vlolj3i-chainupclouds-projects.vercel.app"
     },
     {
       "pr_number": 264,
