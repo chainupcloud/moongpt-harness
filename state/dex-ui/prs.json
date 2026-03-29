@@ -1617,13 +1617,17 @@
     {
       "number": 285,
       "title": "fix: isolated margin leverage slider initializes at 0x after Cross→Isolated switch (#270)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         270
       ],
       "branch": "fix/issue-270",
       "base": "dev",
-      "created": "2026-03-29"
+      "created": "2026-03-29",
+      "deployed": true,
+      "accepted": true,
+      "merged_at": "2026-03-29",
+      "commit_sha": "f8ce102"
     }
   ],
   "pull_requests": [
