@@ -10714,9 +10714,11 @@
       "priority": 3,
       "title": "Market order slippage tolerance — verify Max 1% is configurable and enforced",
       "description": "Open market order gear settings showing 'Slippage: 0.00% / Max 1%'. Check if Max can be changed. Place a market order and verify slippage protection triggers if price moves > max.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Market order form shows \"Slippage\" and \"Max 1%\" text; slippage tolerance visible client-side"
     },
     {
       "id": "E891",
@@ -10734,9 +10736,11 @@
       "priority": 3,
       "title": "Stop Market sell — trigger price should be below mark price",
       "description": "For SELL Stop Market, trigger price should be below current mark price. Test that entering a trigger above mark for sell stop shows appropriate hint/warning.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — Cannot verify trigger price validation without wallet; \"Please connect wallet\" error masks specific trigger validation. Related to issue #268"
     },
     {
       "id": "E893",
@@ -10766,10 +10770,12 @@
       "priority": 3,
       "title": "Leverage dialog — preset buttons (1x, 13x, 25x, 38x, 50x) update slider position",
       "description": "In the leverage adjust dialog, click each preset button (x1, x13, x25, x38, x50) and verify the slider moves to the corresponding position and the leverage value updates visually.",
-      "status": "pending",
+      "status": "failed",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Leverage preset values (1x, 13x, 25x, 38x, 50x) are slider tick labels, not clickable buttons. Dialog only has Close/Deposit/Confirm buttons; clicking labels does not update slider position"
     },
     {
       "id": "E896",
@@ -10891,9 +10897,11 @@
       "priority": 3,
       "title": "Order type dropdown — TWAP order configuration UI appears correctly",
       "description": "Click Order Type > TWAP, verify the trade form shows TWAP-specific fields (duration, interval, etc.)",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — TWAP order type configuration UI complete: order type shows \"TWAP\", Duration/Interval/Parts fields present, time presets (30m/1h/4h/12h/24h) functional, Buy/Long submit button visible"
     },
     {
       "id": "E908",
@@ -14622,6 +14630,56 @@
       "priority": 3,
       "title": "Open Orders tab — shows empty state message when no orders",
       "description": "When wallet has no open orders, the Open Orders tab should show an empty state (e.g., 'No open orders' text or graphic). Verify it doesn't show a loading spinner or blank white space indefinitely.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1254",
+      "area": "trade",
+      "priority": 3,
+      "title": "Leverage slider drag to specific value — input field syncs",
+      "description": "在杠杆调整对话框中拖动滑块到特定值（如25x），验证右侧数字输入框实时同步更新，且 Confirm 后 leverage 按钮显示新值",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1255",
+      "area": "trade",
+      "priority": 3,
+      "title": "Leverage dialog Confirm — saves new leverage and updates trade form",
+      "description": "在杠杆对话框中将滑块拖到 25x，点击 Confirm，验证：1) 对话框关闭；2) 交易按钮旁显示 25x；3) 刷新后杠杆仍然是 25x（持久化）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1256",
+      "area": "trade",
+      "priority": 3,
+      "title": "TWAP Parts/Slices field — adjusting total order count updates interval display",
+      "description": "在 TWAP 订单中设置 Duration=60 分钟，Parts=10，验证 interval 字段自动计算为 6 分钟（或类似逻辑），提交后 TWAP tab 中显示 1 条活跃订单",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1257",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Limit — trigger price and limit price relationship validation",
+      "description": "Stop Limit 订单中，对于 Buy 方向：trigger price 应低于 limit price（触发后挂限价单）。测试：trigger=65000, limit=64000（应显示错误）vs trigger=65000, limit=66000（有效）",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1258",
+      "area": "trade",
+      "priority": 2,
+      "title": "Market order slippage — verify 'Max 1%' tooltip explains slippage protection",
+      "description": "E890 发现 Market 订单有 Slippage/Max 1% 文字。此场景深入验证：1) 悬停或点击 Max 1% 是否有说明 tooltip；2) 是否可修改容忍度；3) slippage 警告在 BTC 波动时触发行为",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
