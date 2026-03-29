@@ -11993,11 +11993,11 @@
       "title": "Leverage dialog — verify all tick labels (1x/13x/38x/50x) update slider correctly",
       "description": "In leverage dialog, sequentially click each tick label (1x, 13x, 38x, 50x) and verify slider moves to correct value each time. Tests complete tick label functionality.",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-29",
-      "result_summary": "FAIL — Tick labels 1x/13x/38x/50x found but slider value stays 0 after click → Issue #283"
+      "result_summary": "FAIL — All tick labels (1x/13x/25x/38x/50x) are <span role=none>, clicking does NOT update slider (stays at 0). Existing open issue covers this."
     },
     {
       "id": "E1003",
@@ -12032,9 +12032,11 @@
       "title": "Withdraw modal — accessible and functional after wallet connection (inject session state)",
       "description": "Use full session cookie injection (wagmi + approveAgent signature flow) to reach authenticated portfolio state. Open withdraw modal, verify amount input renders, test balance validation with amount exceeding 0 balance.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Withdraw modal opens correctly via Balances tab: shows Withdraw/Send tabs, Coin/Network selectors, address + amount fields. Regression #223 fix (PR #254) confirmed live on staging."
     },
     {
       "id": "E1006",
@@ -12043,10 +12045,12 @@
       "title": "Leverage dialog — verify other tick labels (1x, 13x, 38x, 50x) also unclickable",
       "description": "E1001 confirms 25x tick unclickable (issue #220 open). Test remaining tick labels to verify full scope: click 1x tick — does slider go to 1? click 50x — does slider go to 50? Helps quantify how many ticks are broken.",
       "track": "frontend",
-      "status": "pending",
+      "status": "failed",
       "related_issue": "220",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Scope confirmed: ALL 5 tick labels (1x/13x/25x/38x/50x) are <span> non-interactive elements. Issue #220 full scope verified."
     },
     {
       "id": "E1007",
@@ -12055,9 +12059,11 @@
       "title": "Reduce-Only checkbox: hidden on Market order, visible only on Limit",
       "description": "DOM inspection (E723) found input[id='reduce-only'] visible. Verify: on Market tab the Reduce-Only checkbox is hidden; on Limit tab it is visible. Related to open issue about Reduce Only showing on Market orders.",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Reduce-Only checkbox (input#reduce-only) visible=true on Limit, visible=false on Market. Correct behavior."
     },
     {
       "id": "E1008",
@@ -15639,6 +15645,61 @@
       "title": "Stop Limit — placing order with Stop Price equal to Limit Price (edge case)",
       "description": "When Stop Price == Limit Price on a Stop Limit order, verify: no confusing error, form accepts/rejects as expected per UX spec. This is an edge boundary between two distinct price fields.",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1341",
+      "area": "navigation",
+      "priority": 2,
+      "title": "/trade?coin=INVALID_COIN → redirect to default market (PR #292 fix)",
+      "description": "PR #292 fixed redirect to default market when coin param is invalid. Visit /trade?coin=INVALID123, verify page redirects or loads default BTC-USDC market instead of showing error/blank.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1342",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets Max Leverage and Funding Rate columns now sortable (PR #264 fix)",
+      "description": "PR #264 made funding rate and max leverage columns sortable. Verify clicking Funding Rate and Max Leverage column headers toggles sort ↕→↑→↓ and sort indicator changes.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1343",
+      "area": "trade",
+      "priority": 2,
+      "title": "Cross→Isolated margin switch — leverage slider initializes at correct value (PR #285 fix)",
+      "description": "PR #285 fixed isolated margin leverage slider initializing at 0x after Cross→Isolated switch. Click Account Mode button, switch Cross→Isolated, verify leverage slider/value does NOT reset to 0x but initializes to a reasonable default (e.g. 10x or previous value).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1344",
+      "area": "trade",
+      "priority": 3,
+      "title": "Trigger price validation before wallet connect — shows error before modal (PR #282 fix)",
+      "description": "PR #282 added trigger price validation before wallet connect prompt. For Stop Limit: leave trigger price empty, click Buy/Long — should show validation error about trigger price, NOT immediately show Connect Wallet modal.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1345",
+      "area": "trade",
+      "priority": 3,
+      "title": "Oracle price divergence visual highlight — PriceBar shows warning when oracle != mark",
+      "description": "PR #262 added highlight when oracle price diverges from mark price. Navigate to /trade and observe PriceBar area. When oracle price differs significantly from mark price, a visual indicator (color change, icon, or text) should appear.",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
     }
