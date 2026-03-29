@@ -13073,11 +13073,12 @@
       "priority": 3,
       "title": "Trade page invalid coin param — /trade?coin=INVALID fallback behavior",
       "description": "Navigate to /trade?coin=INVALID and verify the page falls back to default pair or shows an error, not a broken UI",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-29",
-      "result_summary": "FAIL — /trade?coin=INVALID silently renders \"INVALID-USDC\" fake market with all-zero prices instead of redirect/error → Issue #273"
+      "result_summary": "FAIL — /trade?coin=INVALID silently renders \"INVALID-USDC\" fake market with all-zero prices instead of redirect/error → Issue #273",
+      "note": "Reset after fix merged (PR #292, issue #273)"
     },
     {
       "id": "E1106",

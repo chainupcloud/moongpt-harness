@@ -1663,6 +1663,18 @@
       ],
       "status": "open",
       "created_at": "2026-03-29"
+    },
+    {
+      "pr_number": 292,
+      "issue_numbers": [
+        273
+      ],
+      "title": "fix: redirect to default market when coin param is invalid (#273)",
+      "status": "merged",
+      "commit_sha": "9b0ae2e",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true
     }
   ],
   "pull_requests": [
