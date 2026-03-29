@@ -1564,6 +1564,18 @@
       "merge_commit_sha": "82a2d93",
       "deployed": true,
       "accepted": true
+    },
+    {
+      "number": 269,
+      "title": "fix: remove wallet modal trigger from Buy/Sell tab toggle (#265)",
+      "status": "open",
+      "branch": "fix/issue-265",
+      "base": "dev",
+      "issue_numbers": [
+        265
+      ],
+      "created_at": "2026-03-29",
+      "url": "https://github.com/chainupcloud/dex-ui/pull/269"
     }
   ]
 }
