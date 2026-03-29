@@ -2209,10 +2209,13 @@
       "id": "issue-145",
       "github_issue_number": 240,
       "title": "[P3] Stop Market order type — Trigger Price field missing from form",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E849",
       "created_date": "2026-03-28",
+      "closed_at": "2026-03-29",
+      "resolution": "not-a-bug",
+      "fix_attempts": 0,
       "labels": [
         "bug"
       ]
@@ -2221,10 +2224,13 @@
       "id": "issue-146",
       "github_issue_number": 241,
       "title": "[P3] Explorer tx detail — expanding Events row triggers blocking overlay (z-[9998])",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E853",
       "created_date": "2026-03-28",
+      "closed_at": "2026-03-29",
+      "resolution": "not-a-bug",
+      "fix_attempts": 0,
       "labels": [
         "bug"
       ]
@@ -2233,22 +2239,27 @@
       "github_number": 242,
       "title": "[P3] TP/SL inputs accept invalid price direction without validation — TP below mark and SL above mark for long allowed",
       "priority": "P3",
-      "status": "open",
+      "status": "closed",
       "pr_number": null,
       "created_at": "2026-03-28",
-      "closed_at": null
+      "closed_at": "2026-03-29",
+      "resolution": "not-a-bug",
+      "fix_attempts": 0
     },
     {
       "number": 244,
       "title": "[P3] Open Orders badge does not update in real-time after limit order placed",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "labels": [
         "bug"
       ],
       "scenario": "E885",
       "created_date": "2026-03-28",
-      "url": "https://github.com/chainupcloud/dex-ui/issues/244"
+      "url": "https://github.com/chainupcloud/dex-ui/issues/244",
+      "pr_number": 258,
+      "fix_attempts": 1,
+      "github_number": 244
     }
   ],
   "last_updated": "2026-03-28",
