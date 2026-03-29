@@ -11065,9 +11065,11 @@
       "priority": 3,
       "title": "Order type selector — Stop Market accessible after wallet connection",
       "description": "Connect wallet, then check if Stop Market appears in order type selector. E661 found only Limit+TWAP without wallet connection. Confirm if Stop Market becomes visible after connecting, and test setting trigger price.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Stop Market accessible in order type dropdown (alongside Stop Limit, Take Profit Market/Limit); no wallet connection needed"
     },
     {
       "id": "E920",
@@ -11075,9 +11077,11 @@
       "priority": 3,
       "title": "Explorer checkpoint tx detail — clicking transaction hash navigates to tx detail page",
       "description": "On /explorer/checkpoint/{seq}, click a transaction hash link (e.g. 0x1e351e...ab4c). Verify it navigates to /explorer/tx/{digest} and shows tx details correctly.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Checkpoint tx hash link navigates to /explorer/tx/{digest} with full tx details (hash, action, from, status, checkpoint, time)"
     },
     {
       "id": "E921",
@@ -14433,11 +14437,11 @@
       "priority": 2,
       "title": "/trade?coin=NONEXISTENT with no matching market — verify error state or default redirect",
       "description": "Related to Issue #273: test additional invalid coin params (/trade?coin=FOOBAR, /trade?coin=ABC123) to confirm consistent behavior and determine if all params are accepted without validation",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-29",
       "last_run": "2026-03-29",
-      "result_summary": "FAIL — NONEXISTENT coin param renders NONEXISTENT-USDC market silently, no error/redirect → Issue #274"
+      "result_summary": "PASS — Invalid coin params (NONEXISTENT/FOOBAR) redirect to /trade BTC-USDC default; issue #274 fix confirmed"
     },
     {
       "id": "E1230",
@@ -15815,6 +15819,48 @@
       "priority": 2,
       "title": "Stop Limit order — verify both stop and limit prices are filled before submit",
       "description": "When switching to Stop Limit, verify the form requires BOTH stop price and limit price to be non-zero before the submit button becomes active. Currently the form may allow submission with only one price filled.",
+      "status": "failed",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Stop Limit submit \"Buy/Long\" not disabled when stop+limit prices empty; stop price field also missing aria-label → Issue #301"
+    },
+    {
+      "id": "E1356",
+      "area": "trade-form",
+      "priority": 2,
+      "title": "Stop Market — trigger price field missing aria-label (accessibility)",
+      "description": "E919 found Stop Market accessible. Now verify the trigger price input field has proper aria-label and placeholder. E1355 found Stop Limit stop price has no aria-label — check if same issue exists in Stop Market form.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1357",
+      "area": "trade-form",
+      "priority": 2,
+      "title": "Take Profit Market — form fields and submit button validation",
+      "description": "E919 revealed Take Profit Market and Take Profit Limit are also available in order type dropdown. Test Take Profit Market form: verify trigger price field present, submit disabled when empty, no validation gaps.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1358",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — Events (N) expand to show event log entries",
+      "description": "E920 found a tx detail page that shows \"Events (0)\" for UpdateOraclePrices tx. Test a tx that has events (N>0) and verify the events section expands/collapses and shows event type + data correctly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1359",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Stop Limit — Stop price field aria-label missing (a11y regression)",
+      "description": "E1355 found Stop Limit form has Stop price input with null aria-label while Limit price has aria-label=\"Limit price\". Verify this is a new regression or pre-existing issue, and test keyboard navigation to the field.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
