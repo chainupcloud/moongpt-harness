@@ -1995,7 +1995,8 @@
       "scenario_id": "E951",
       "created_date": "2026-03-28",
       "fix_attempts": 1,
-      "pr_number": 259
+      "pr_number": 259,
+      "note": "PR #259 merged to dev (2026-03-29). Vercel deploy failed (seat block). Awaiting successful staging deployment for acceptance."
     },
     {
       "id": "issue-214",
