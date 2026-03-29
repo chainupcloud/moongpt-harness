@@ -1698,6 +1698,18 @@
       "merged_at": "2026-03-29",
       "commit_sha": "4186e0e95fe26e5c907f24f90d665db5c5559a0f",
       "note": "Merged. Vercel deploy rate-limited (100/day); acceptance pending next deploy"
+    },
+    {
+      "pr_number": 292,
+      "issue_numbers": [
+        273
+      ],
+      "title": "fix: redirect to default market when coin param is invalid (#273)",
+      "status": "open",
+      "branch": "fix/issue-273",
+      "base": "dev",
+      "created_at": "2026-03-29",
+      "url": "https://github.com/chainupcloud/dex-ui/pull/292"
     }
   ],
   "last_updated": "2026-03-29"
