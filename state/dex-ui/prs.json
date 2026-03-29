@@ -1521,6 +1521,17 @@
         228
       ],
       "status": "open"
+    },
+    {
+      "pr_number": 263,
+      "title": "fix: add aria-label to social icon links (#234)",
+      "status": "open",
+      "issue_numbers": [
+        234
+      ],
+      "branch": "fix/issue-234",
+      "base": "dev",
+      "created_date": "2026-03-29"
     }
   ],
   "pull_requests": [

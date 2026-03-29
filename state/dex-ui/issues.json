@@ -2172,13 +2172,15 @@
       "id": "issue-141",
       "github_number": 234,
       "title": "[P4] Nav social icon links missing aria-label — inaccessible to screen readers",
-      "status": "open",
+      "status": "fixing",
       "priority": "P4",
       "scenario_id": "E795",
       "created_date": "2026-03-28",
       "labels": [
         "enhancement"
-      ]
+      ],
+      "pr_number": 263,
+      "fix_attempts": 1
     },
     {
       "id": "issue_235",
