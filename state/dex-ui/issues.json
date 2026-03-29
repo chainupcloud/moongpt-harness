@@ -2455,14 +2455,16 @@
     {
       "number": 278,
       "title": "[P3] TP/SL invalid value shows red border but submit button remains enabled",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "labels": [
         "bug"
       ],
       "scenario": "E887",
       "opened_date": "2026-03-29",
-      "url": "https://github.com/chainupcloud/dex-ui/issues/278"
+      "url": "https://github.com/chainupcloud/dex-ui/issues/278",
+      "pr_number": 304,
+      "fix_attempts": 1
     },
     {
       "issue_id": "dex-ui-280",
