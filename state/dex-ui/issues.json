@@ -2081,12 +2081,14 @@
       "github_number": 223,
       "title": "[P3] Withdraw action button on portfolio assets row navigates to Withdraw History tab instead of opening withdraw modal",
       "priority": "P3",
-      "status": "open",
+      "status": "fixing",
       "scenario_id": "E738",
       "created_at": "2026-03-28",
       "labels": [
         "bug"
-      ]
+      ],
+      "pr_number": 254,
+      "fix_attempts": 1
     },
     {
       "number": 225,
