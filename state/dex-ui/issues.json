@@ -2502,6 +2502,18 @@
       "priority": "P3",
       "scenario": "E1274",
       "created": "2026-03-29"
+    },
+    {
+      "number": 291,
+      "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
+      "status": "open",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "created_date": "2026-03-29",
+      "scenario_id": "E1314",
+      "description": "TWAP order form missing Duration presets and Hour/Min/Interval fields"
     }
   ],
   "last_updated": "2026-03-29",
