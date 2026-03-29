@@ -11089,9 +11089,11 @@
       "priority": 3,
       "title": "Explorer — clicking tx hash in checkpoint detail navigates to tx detail page",
       "description": "From checkpoint detail page, clicking a transaction hash link should navigate to the individual transaction detail page at /explorer/tx/{hash}",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Clicking tx hash in checkpoint detail navigates to /explorer/tx/{hash}"
     },
     {
       "id": "E922",
@@ -11099,9 +11101,11 @@
       "priority": 3,
       "title": "More dropdown — API link label consistency (shows 'API' vs 'API Keys')",
       "description": "The More dropdown shows 'API' but the page is titled 'API Keys'. Check if label is consistent with other navigation contexts and documentation",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — More dropdown \"API\" label matches page H1 \"API\"; consistent"
     },
     {
       "id": "E923",
@@ -15831,9 +15835,11 @@
       "priority": 2,
       "title": "Stop Market — trigger price field missing aria-label (accessibility)",
       "description": "E919 found Stop Market accessible. Now verify the trigger price input field has proper aria-label and placeholder. E1355 found Stop Limit stop price has no aria-label — check if same issue exists in Stop Market form.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Stop Market trigger price has no aria-label (dup of existing #open issue)"
     },
     {
       "id": "E1357",
@@ -15841,9 +15847,11 @@
       "priority": 2,
       "title": "Take Profit Market — form fields and submit button validation",
       "description": "E919 revealed Take Profit Market and Take Profit Limit are also available in order type dropdown. Test Take Profit Market form: verify trigger price field present, submit disabled when empty, no validation gaps.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Take Profit Market submit button not disabled when trigger empty; missing aria-label → Issue #302"
     },
     {
       "id": "E1358",
@@ -15861,6 +15869,56 @@
       "priority": 3,
       "title": "Stop Limit — Stop price field aria-label missing (a11y regression)",
       "description": "E1355 found Stop Limit form has Stop price input with null aria-label while Limit price has aria-label=\"Limit price\". Verify this is a new regression or pre-existing issue, and test keyboard navigation to the field.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1360",
+      "area": "trade-form",
+      "priority": 2,
+      "title": "Take Profit Limit — submit button not disabled when trigger price and limit price are empty",
+      "description": "E1357 found Take Profit Market submit buttons enabled with empty fields. Check if Take Profit Limit has the same validation gap — trigger price empty should disable submit.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1361",
+      "area": "trade-form",
+      "priority": 2,
+      "title": "Take Profit Market/Limit — trigger price below current mark price shows no warning",
+      "description": "For Take Profit on LONG, trigger should be above entry price. Test if UI shows a warning/error when trigger price is set to a value that would be immediately triggered (e.g., below current mark price for a BUY TP).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1362",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer checkpoint detail — Transactions count matches tx list length",
+      "description": "The checkpoint detail page shows a 'Transactions' counter. Verify the number displayed matches the actual number of tx rows rendered in the transactions list.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1363",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — clicking sender/recipient address navigates to address detail page",
+      "description": "From /explorer/tx/{hash}, the sender and recipient addresses should be clickable links to /explorer/address/{addr}. Verify navigation works correctly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1364",
+      "area": "navigation",
+      "priority": 3,
+      "title": "More dropdown — all external links open in new tab",
+      "description": "E922 confirmed More dropdown has Docs, Discord, X/Twitter, Telegram as external links. Verify all external links open in new tab (target=_blank) and have rel=noopener for security.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
