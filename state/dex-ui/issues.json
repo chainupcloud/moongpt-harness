@@ -2294,7 +2294,7 @@
     {
       "github_number": 265,
       "title": "[P3] Clicking Sell/Short tab triggers wallet connect modal, blocking TP/SL toggle interaction",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_id": "E1189",
       "created_date": "2026-03-29",
@@ -2302,7 +2302,9 @@
         "bug"
       ],
       "pr_number": 269,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "closed_at": "2026-03-29",
+      "note": "Staging acceptance passed, closed by master-agent"
     },
     {
       "github_number": 266,

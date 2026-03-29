@@ -1576,8 +1576,8 @@
       "note": "Merged; Vercel deploy pending (daily rate limit reached)",
       "commit_sha": "bb52dda",
       "merged_at": "2026-03-29",
-      "deployed": false,
-      "accepted": false
+      "deployed": true,
+      "accepted": true
     },
     {
       "pr_number": 277,
@@ -1610,14 +1610,17 @@
     {
       "number": 269,
       "title": "fix: remove wallet modal trigger from Buy/Sell tab toggle (#265)",
-      "status": "open",
+      "status": "merged",
       "branch": "fix/issue-265",
       "base": "dev",
       "issue_numbers": [
         265
       ],
       "created_at": "2026-03-29",
-      "url": "https://github.com/chainupcloud/dex-ui/pull/269"
+      "url": "https://github.com/chainupcloud/dex-ui/pull/269",
+      "deployed": true,
+      "accepted": true,
+      "merged_at": "2026-03-29"
     }
   ]
 }

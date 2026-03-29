@@ -13914,7 +13914,7 @@
       "priority": 2,
       "title": "TP/SL toggle on Sell side — investigate AppKit modal interference",
       "description": "Reproduce E884 FAIL: navigate to trade, switch to Sell/Short, then try to enable TP/SL toggle. Verify if AppKit wallet modal overlaps and prevents TP/SL panel from appearing. Test with connected wallet vs disconnected.",
-      "status": "failed",
+      "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
