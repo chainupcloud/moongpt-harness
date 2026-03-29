@@ -2102,7 +2102,8 @@
         "bug"
       ],
       "pr_number": 255,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "note": "PR #255 merged to dev (sha bd60cd5). Vercel build ERROR — staging not updated. Acceptance deferred until Vercel issue #98 resolved."
     },
     {
       "number": 226,
