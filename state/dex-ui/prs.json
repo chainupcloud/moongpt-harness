@@ -1418,7 +1418,7 @@
         223
       ],
       "created_at": "2026-03-29",
-      "note": "Copilot COMMENTED (approvable). Merge conflicts (mergeable_state=dirty). Needs rebase against dev. Also blocked by Vercel seat issue (#98). Checked 2026-03-29."
+      "note": "Copilot COMMENTED (approvable). Merge conflicts (mergeable_state=dirty). Needs rebase against dev. Checked 2026-03-29."
     },
     {
       "pr_number": 255,
@@ -1502,12 +1502,18 @@
     {
       "number": 261,
       "title": "fix: add funding rate period tooltip on /markets (#227)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         227
       ],
       "created_at": "2026-03-29",
-      "branch": "fix/issue-227"
+      "branch": "fix/issue-227",
+      "pr_number": 261,
+      "merged_at": "2026-03-29",
+      "merge_sha": "cca205533478860e2af4eab844352a1195dabe5e",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged via squash. Vercel deployment ERROR (known issue #98). Acceptance pending."
     }
   ],
   "pull_requests": [

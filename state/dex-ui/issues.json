@@ -2144,7 +2144,8 @@
       "url": "https://github.com/chainupcloud/dex-ui/issues/227",
       "pr_number": 261,
       "fix_attempts": 1,
-      "github_number": 227
+      "github_number": 227,
+      "note": "PR #261 merged to dev. Vercel deployment ERROR (issue #98). Acceptance blocked until Vercel builds fixed."
     },
     {
       "github_number": 228,
