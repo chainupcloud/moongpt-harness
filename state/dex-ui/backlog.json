@@ -9230,11 +9230,11 @@
       "priority": 3,
       "title": "/markets — 24h Volume sort indicator: verify toggle from ↓ to ↑ on second click",
       "description": "Currently 24h Volume is sorted desc (↓). After clicking once it should toggle to asc (↑). After clicking again should return to desc (↓). Verify the indicator actually changes direction.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-29",
-      "result_summary": "FAIL — 24h 成交量 sort indicator non-functional; clicking does not toggle ↓→↑ → Issue #272",
+      "result_summary": "FAIL — 24h Volume sort indicator resets to ↕ instead of toggling to ↑",
       "note": "Reset after fix PR #290 merged and acceptance passed"
     },
     {
@@ -10582,12 +10582,12 @@
       "priority": 3,
       "title": "Footer social links — verify all external links open in new tab",
       "description": "After fix #200, verify footer Discord/Telegram icon links have target=_blank. Also check Twitter/X and any other social links in the footer section (border-top area). Extends E552 re-verify scope to footer.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — Footer Docs link (https://docs.hermes.exchange/) missing target=_blank, opens in same tab — ref existing issue #226"
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — all 3 social links (Twitter/X, Discord, Telegram) have target=_blank + noopener"
     },
     {
       "id": "E880",
@@ -10774,12 +10774,12 @@
       "priority": 3,
       "title": "Leverage dialog — preset buttons (1x, 13x, 25x, 38x, 50x) update slider position",
       "description": "In the leverage adjust dialog, click each preset button (x1, x13, x25, x38, x50) and verify the slider moves to the corresponding position and the leverage value updates visually.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-29",
-      "result_summary": "FAIL — Leverage preset values (1x, 13x, 25x, 38x, 50x) are slider tick labels, not clickable buttons. Dialog only has Close/Deposit/Confirm buttons; clicking labels does not update slider position"
+      "result_summary": "PASS — preset span elements (1x/13x/25x/38x/50x) are clickable and update slider correctly"
     },
     {
       "id": "E896",
@@ -10813,11 +10813,11 @@
       "priority": 3,
       "title": "Isolated margin — verify minimum leverage is 1x and slider range is valid",
       "description": "After the Cross→Isolated 0x slider bug fix, re-verify that slider min=1x, value defaults to 1x or last used, and max reflects symbol's max leverage. Also verify slider value is sent correctly with order.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-29",
-      "result_summary": "FAIL — Isolated margin slider still initializes at 0x after Cross→Isolated switch (confirms #270 not fixed)"
+      "result_summary": "PASS — leverage slider initializes at 10x (min=1) in Isolated mode; bug fixed"
     },
     {
       "id": "E899",
@@ -15539,6 +15539,46 @@
       "priority": 3,
       "title": "Explorer checkpoint detail — shows checkpoint sequence, epoch, and transaction count",
       "description": "Navigate to /explorer/checkpoint/{seq} for a known checkpoint, verify it displays sequence number, epoch, and transaction count.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1332",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets — all sortable columns toggle direction correctly (price, 24h change, OI, funding)",
+      "description": "After fixing 24h Volume sort (E767), verify the other sortable columns (Price ↕, 24h Change ↕, OI ↕, Predicted Funding ↕, Max Leverage ↕) all toggle ↕→↓→↑ correctly on repeated clicks.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1333",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets — sort state persists after page refresh (localStorage or URL param)",
+      "description": "After selecting a sort column+direction, refresh the page. Verify the selected sort is restored (not reset to default 24h Volume desc). Check if sort state is stored in URL query params or localStorage.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1334",
+      "area": "leverage",
+      "priority": 3,
+      "title": "Leverage dialog — tick labels (1x/13x/38x/50x) update when slider is dragged",
+      "description": "Known open issue: tick label text doesn't update when slider is dragged manually. Re-verify if still failing after recent trade page changes. Drag slider to each major value, check if tick marks highlight/update.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1335",
+      "area": "footer",
+      "priority": 4,
+      "title": "Footer links include rel=noopener noreferrer for security on all external links",
+      "description": "E879 confirmed target=_blank is set. Now verify all external links also have rel='noopener noreferrer' to prevent tab-napping attacks. Check Docs link and any other external href in footer.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
