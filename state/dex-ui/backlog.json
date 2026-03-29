@@ -11137,9 +11137,11 @@
       "priority": 3,
       "title": "Transfer modal — Withdraw tab MAX button fills correct withdrawal balance",
       "description": "In the Transfer modal, switch to the Withdraw tab and verify MAX button fills the correct available balance (not the deposit balance)",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — Deposit modal opens Sepolia bridge flow; Withdraw tab with MAX button not accessible without real testnet balance"
     },
     {
       "id": "E926",
@@ -11171,9 +11173,11 @@
       "priority": 3,
       "title": "Portfolio PnL Calendar — 展示历史盈亏热力图",
       "description": "访问 Portfolio > PnL Calendar tab，验证日历热力图正常渲染，月份切换功能正常",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS (partial) — PnL Calendar tab accessible in Portfolio nav; tab clickable; no calendar cells on testnet (empty state, expected with no trading history)"
     },
     {
       "id": "E929",
@@ -11193,9 +11197,11 @@
       "priority": 3,
       "title": "Portfolio Transaction History tab — 历史成交记录展示",
       "description": "连接钱包后访问 Portfolio > Transaction History tab，验证历史成交记录正常加载，每行显示时间、类型、资产、金额等信息",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS (partial) — Transaction History tab accessible in Portfolio; empty state (no rows on testnet wallet) as expected; no table headers rendered"
     },
     {
       "id": "E931",
@@ -15994,9 +16000,11 @@
       "priority": 2,
       "title": "/trade?coin=BTC&orderType=stop_limit — verify order type query param pre-selects Stop Limit",
       "description": "Navigate to /trade?coin=BTC&orderType=stop_limit (or similar param) and verify the order type selector is pre-set to Stop Limit. Extends E1234 to cover order type pre-fill via URL.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — URL orderType param (stop_limit/stop_market/take_profit_limit) ignored; order type always defaults to Limit regardless of param → Issue #305"
     },
     {
       "id": "E1371",
@@ -16035,6 +16043,56 @@
       "priority": 3,
       "title": "Portfolio Assets tab — AssetsTable shows correct USDC balance after recent AssetsTable.tsx changes",
       "description": "Navigate to /portfolio, connect wallet, verify the Assets tab shows correct balance data. Recent change to AssetsTable.tsx may have introduced regression. Cross-check with known open issue #fixing.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1375",
+      "area": "trade",
+      "priority": 2,
+      "title": "/trade?coin=BTC&orderType=stop_limit — wait for React hydration and re-check order type",
+      "description": "Same as E1370 but with 3s wait after networkidle to allow React state hydration from URL params. Check if orderType param is handled post-hydration via useEffect or router hooks.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1376",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio PnL Calendar — month navigation prev/next arrows change displayed month",
+      "description": "On PnL Calendar tab, click prev/next month arrows and verify the calendar header month changes correctly. Extended from E928.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1377",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio Transaction History — empty state message text and UI",
+      "description": "Verify Transaction History tab shows a user-friendly empty state message (e.g. 'No transactions found') rather than blank space or error when wallet has no history.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1378",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order type URL deep-link — verify /trade/BTC-USDC/stop-limit path variant",
+      "description": "Test if order type can be set via path segment: /trade/BTC-USDC/stop-limit or /trade?market=BTC-USDC&type=stop_limit. Complements E1370 query param approach.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1379",
+      "area": "portfolio",
+      "priority": 3,
+      "title": "Portfolio Deposit History tab — empty state and column headers",
+      "description": "Click Deposit History tab in Portfolio. Verify tab is accessible, shows expected column headers (Date, Asset, Amount, Status/TxHash), empty state message for testnet wallet.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
