@@ -1905,8 +1905,14 @@
       "issue_numbers": [
         305
       ],
-      "status": "open",
-      "created_at": "2026-03-29"
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "commit_sha": "2b737fc",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged to dev. Deploy ERROR (TEAM_ACCESS_REQUIRED, issue #98). Acceptance pending deployment fix.",
+      "last_checked": "2026-03-29"
     }
   ],
   "pull_requests": [
