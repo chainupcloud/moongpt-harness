@@ -10678,9 +10678,11 @@
       "priority": 3,
       "title": "TP/SL validation — submit button disabled when TP/SL values are invalid",
       "description": "When red-border validation appears for invalid TP/SL, verify the Buy/Sell submit button is also disabled to prevent submitting invalid orders.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Red border shown but submit button not disabled; Issue #278"
     },
     {
       "id": "E888",
@@ -10700,9 +10702,11 @@
       "priority": 3,
       "title": "Scale order — verify price distribution differs between Top Heavy, Bottom Heavy, Uniform modes",
       "description": "With a filled scale order (price range 63000-70000, 5 orders), switch between Top/Bottom/Uniform and verify the price levels in the order preview show different distributions.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — Scale order type not present in UI (only TWAP visible)"
     },
     {
       "id": "E890",
@@ -14524,9 +14528,11 @@
       "priority": 2,
       "title": "Open Orders badge increment — post-order-placement via wallet session",
       "description": "After completing approveAgent session (E104 flow), place a far-from-market limit order, verify Open Orders badge increments from (0) to (1). Cancel and verify returns to (0).",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — Wallet has no testnet deposit, ApproveAgent failed, cannot place orders"
     },
     {
       "id": "E1245",
@@ -14544,9 +14550,11 @@
       "priority": 2,
       "title": "/trade?side=buy — baseline: verify BUY side pre-selection (complement to E1241 issue #275)",
       "description": "Access /trade?coin=BTC&side=buy and verify that the Buy/Long button is active (has bg-long class). This is the baseline to compare against the side=sell bug in issue #275.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — ?side=buy correctly activates Buy/Long button (bg-long class)"
     },
     {
       "id": "E1247",
@@ -14574,6 +14582,46 @@
       "priority": 3,
       "title": "/trade/BTC-USDC slug URL — verify routing after [...slug] page changes",
       "description": "Recent changes to app/trade/[...slug]/page.tsx. Verify /trade/BTC-USDC and /trade/BTC correctly redirect or load without 404. Complement to issue #76 which was fixed but may regress.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1250",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "TP/SL SL validation — submit disabled when SL value is invalid",
+      "description": "With TP/SL enabled and Buy/Long direction, enter an invalid SL (above entry price, e.g. 99999) — verify the submit button becomes disabled when SL container shows red border. Companion to E887 (TP case) and Issue #278.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1251",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "TP/SL — simultaneous invalid TP and SL both show red borders",
+      "description": "Enable TP/SL, set both TP and SL to invalid values for BUY direction (TP < mark, SL > mark). Verify both input containers show border-short, and submit remains blocked.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1252",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "TP/SL — clearing invalid value re-enables submit button",
+      "description": "After entering an invalid TP value (red border shows), clear the input back to empty. Verify the red border disappears and the submit button becomes enabled again.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1253",
+      "area": "orders",
+      "priority": 3,
+      "title": "Open Orders tab — shows empty state message when no orders",
+      "description": "When wallet has no open orders, the Open Orders tab should show an empty state (e.g., 'No open orders' text or graphic). Verify it doesn't show a loading spinner or blank white space indefinitely.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
