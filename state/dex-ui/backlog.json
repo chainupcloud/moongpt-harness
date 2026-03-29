@@ -7711,11 +7711,11 @@
       "priority": 3,
       "title": "Isolated margin — slider starts at 0x after switching from Cross (should default to 1x or previous)",
       "description": "After switching Cross→Isolated, verify leverage slider does not start at 0x (invalid) but at a valid minimum like 1x or previous Cross value",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": ""
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Isolated mode range slider value=0 (min=0, max=100); Cross mode shows 10x button but slider stays at 0 after switch → Issue #270"
     },
     {
       "id": "E644",
@@ -7757,11 +7757,11 @@
       "priority": 3,
       "title": "API Keys — Generate new API wallet with name and valid-until date",
       "description": "On /api-keys page, enter a wallet name and set valid-until date, then click Generate. Verify the new wallet appears in the API Wallet Address list. Check if name/expiry are shown correctly.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": ""
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — /api-keys form inputs (name, address, days) are disabled without wallet connection; cannot test API wallet generation"
     },
     {
       "id": "E648",
@@ -14114,10 +14114,12 @@
       "priority": 2,
       "title": "w3m-modal — close button fix verification (issue #267)",
       "description": "After issue #267 fix: verify w3m-modal shows visible X/close button and clicking it closes the modal without navigating away; Escape key should also work.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-29",
-      "linked_issue": 267
+      "linked_issue": 267,
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — w3m-modal still not dismissible: Escape doesn't close, backdrop click ineffective, no labeled close button found in shadow DOM; issue #267 persists"
     },
     {
       "id": "E1208",
@@ -14125,10 +14127,12 @@
       "priority": 2,
       "title": "Stop Market zero trigger validation fix (issue #268)",
       "description": "After issue #268 fix: with connected wallet, enter trigger=0 in Stop Market form, verify Buy button disabled or inline error appears before wallet auth.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-29",
-      "linked_issue": 268
+      "linked_issue": 268,
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — trigger=0 proceeds through form; 'Please connect wallet' is pre-existing UI hint (not trigger-specific validation), button not disabled; issue #268 persists"
     },
     {
       "id": "E1209",
@@ -14156,6 +14160,56 @@
       "priority": 3,
       "title": "TP/SL inputs for SELL/Short direction — TP below entry, SL above entry",
       "description": "E1203 tested BUY direction. Test SELL/Short: TP should be below mark price (gain% negative direction), SL above mark. Verify auto-calculation logic reverses correctly.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1212",
+      "area": "trade",
+      "priority": 2,
+      "title": "Isolated margin — leverage slider initial value after wallet connected",
+      "description": "Connect wallet, switch Cross→Isolated, verify leverage slider initializes at 10x (previous Cross leverage) or 1x minimum — not 0x. Validate the range slider value maps correctly to displayed leverage.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1213",
+      "area": "trade",
+      "priority": 3,
+      "title": "w3m-modal — click close button via shadow DOM coordinates to close modal",
+      "description": "w3m-modal has two icon buttons in shadow DOM at y~156 (one at x=475, one at x=777). Try clicking each to identify which is the close button and verify it dismisses the modal.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1214",
+      "area": "trade",
+      "priority": 3,
+      "title": "Stop Market — trigger price 0 validation with connected wallet",
+      "description": "With wallet fully connected via EIP-6963, enter trigger=0 in Stop Market form, verify Buy button is disabled or shows inline 'Trigger price cannot be 0' error before any wallet auth dialog.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1215",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "API Keys — wallet connected: Generate button enables and form functional",
+      "description": "With wallet connected on /api-keys, verify form inputs (name, wallet address, days) become enabled, and clicking Generate either creates a new API wallet entry or shows appropriate error.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1216",
+      "area": "trade",
+      "priority": 2,
+      "title": "Isolated vs Cross margin — different account mode UI verification",
+      "description": "Verify that switching Account Mode (Standard) also affects Cross/Isolated UI. Check if switching to Pro mode changes the leverage controls. Verify leverage values are preserved when switching back from Isolated to Cross.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
