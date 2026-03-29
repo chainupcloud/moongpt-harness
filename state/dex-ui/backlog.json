@@ -1,6 +1,6 @@
 {
   "description": "探索测试背板 — explore-agent 每次从 pending 中取若干条执行，完成后标记 tested/failed",
-  "last_updated": "2026-03-28",
+  "last_updated": "2026-03-29",
   "scenarios": [
     {
       "id": "E001",
@@ -5603,11 +5603,11 @@
       "title": "TP/SL 功能 — 连接钱包后 TP/SL checkbox 是否正常展开输入字段",
       "description": "连接测试钱包后，点击 TP/SL checkbox，验证是否出现 Take Profit 价格和 Stop Loss 价格输入框。若展开，验证填入价格后下单流程。（关联 issue #122）",
       "track": "frontend",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-27",
-      "result_summary": "FAIL — TP/SL checkbox exists but clicking does not reveal TP/SL input fields (existing issue #122)"
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — TP/SL checkbox expands correctly: inputs 9→13, TP/SL/Gain/Loss/% fields appear after toggle"
     },
     {
       "id": "E471",
@@ -9619,11 +9619,11 @@
       "priority": 2,
       "title": "Explorer search — tx hash with 0x prefix routes to /explorer/tx/{digest}",
       "description": "Enter a valid SUI tx digest (66-char 0x...) in explorer search. Verify it routes to /explorer/tx/ page and loads transaction details correctly (not the address page).",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": ""
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — 0x-prefix tx hash search correctly routes to /explorer/tx/{digest} page (not address page)"
     },
     {
       "id": "E800",
@@ -11087,11 +11087,11 @@
       "priority": 2,
       "title": "Portfolio — Add funds 流程（Deposit）",
       "description": "点击 Portfolio > Total Balance 区域的 '+ Add funds' 按钮，验证存款弹窗/流程可正常打开",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": ""
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Deposit button found on Portfolio page (wallet connected), deposit UI opens on click"
     },
     {
       "id": "E928",
@@ -11364,12 +11364,12 @@
       "priority": 2,
       "title": "Explorer tx detail — 'User Address' label should be 'Sender' for consistency",
       "description": "TX detail page shows 'User Address' label; verify whether it should be labeled 'Sender' or 'From' as per Hyperliquid explorer conventions",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "track": "frontend",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — \"User Address\" label on tx detail; should be \"From\" or \"Sender\" (issue #213)"
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Tx detail page uses \"From\" label (industry standard), not \"User Address\" — consistent with Hyperliquid conventions"
     },
     {
       "id": "E952",
@@ -13952,6 +13952,46 @@
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28"
+    },
+    {
+      "id": "E1194",
+      "area": "trade",
+      "priority": 2,
+      "title": "TP/SL — fill values and verify fields persist on form submit attempt",
+      "description": "After expanding TP/SL section, fill TP=68000 and SL=64000 fields, then verify the values are accepted (not cleared), and the form shows TP/SL in the order summary or Order Value section before submission",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1195",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer tx detail — 'Show details' event expansion",
+      "description": "On /explorer/tx/{digest} page, click 'Show details' on an OrderPlacedEvent, verify the expanded section shows additional fields (price, size, orderType, etc.) without JS errors",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1196",
+      "area": "portfolio",
+      "priority": 2,
+      "title": "Portfolio Assets tab — verify balance columns with connected wallet",
+      "description": "Navigate to Portfolio > Assets tab with wallet connected. Verify table shows columns (Asset, Available, Total, Value) and at least USDC row with a numeric value (even if 0 on testnet)",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1197",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer search — address (0x prefix, 42 chars) routes to /explorer/address/",
+      "description": "Enter a 42-char Ethereum address (0x...) into the explorer search bar. Verify it routes to /explorer/address/{addr} (not /explorer/tx/), showing the address detail page",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
     }
   ]
 }
