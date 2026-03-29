@@ -2323,14 +2323,16 @@
       "id": "dex-ui-267",
       "github_number": 267,
       "title": "[P3] w3m-modal not dismissible — no close button found, Escape key also ineffective",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "labels": [
         "bug"
       ],
       "created_date": "2026-03-29",
       "linked_scenario": "E1202",
-      "url": "https://github.com/chainupcloud/dex-ui/issues/267"
+      "url": "https://github.com/chainupcloud/dex-ui/issues/267",
+      "pr_number": 279,
+      "fix_attempts": 1
     },
     {
       "id": "dex-ui-268",

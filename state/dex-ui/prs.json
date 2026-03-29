@@ -1621,6 +1621,18 @@
       "deployed": true,
       "accepted": true,
       "merged_at": "2026-03-29"
+    },
+    {
+      "number": 279,
+      "title": "fix: w3m-modal not dismissible — Escape + backdrop click (#267)",
+      "status": "open",
+      "branch": "fix/issue-267",
+      "base": "dev",
+      "issue_numbers": [
+        267
+      ],
+      "created_at": "2026-03-29",
+      "url": "https://github.com/chainupcloud/dex-ui/pull/279"
     }
   ]
 }
