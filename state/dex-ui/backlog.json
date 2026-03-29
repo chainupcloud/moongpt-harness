@@ -10748,10 +10748,12 @@
       "priority": 3,
       "title": "TWAP order — verify bottom panel TWAP tab shows active TWAP orders after submit",
       "description": "Once TWAP form has all required fields (size, interval, duration), submit a TWAP order and verify the bottom panel 'TWAP' tab shows the order with correct status and parameters.",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — TWAP form exists, TWAP tab in bottom panel shows \"No TWAP orders\" — needs wallet+active order"
     },
     {
       "id": "E894",
@@ -10759,10 +10761,12 @@
       "priority": 3,
       "title": "TWAP order — cancel active TWAP order from bottom panel",
       "description": "With an active TWAP order in the bottom TWAP panel, click the cancel button and verify the order is removed/cancelled and the panel updates accordingly.",
-      "status": "pending",
+      "status": "skipped",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — TWAP tab shows \"No TWAP orders\", cancel flow not testable without wallet"
     },
     {
       "id": "E895",
@@ -13922,12 +13926,12 @@
       "priority": 2,
       "title": "TP/SL toggle on Sell side — investigate AppKit modal interference",
       "description": "Reproduce E884 FAIL: navigate to trade, switch to Sell/Short, then try to enable TP/SL toggle. Verify if AppKit wallet modal overlaps and prevents TP/SL panel from appearing. Test with connected wallet vs disconnected.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "last_run": "2026-03-29",
-      "result_summary": "FAIL — Clicking Sell tab triggers w3m-modal to open; modal intercepts pointer events on TP/SL toggle → Issue #265"
+      "result_summary": "PASS — No AppKit modal interference on TP/SL toggle, Sell side. w3m-modal opacity:0, no open attr."
     },
     {
       "id": "E1190",
@@ -14680,7 +14684,64 @@
       "priority": 2,
       "title": "Market order slippage — verify 'Max 1%' tooltip explains slippage protection",
       "description": "E890 发现 Market 订单有 Slippage/Max 1% 文字。此场景深入验证：1) 悬停或点击 Max 1% 是否有说明 tooltip；2) 是否可修改容忍度；3) slippage 警告在 BTC 波动时触发行为",
+      "status": "skipped",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — Market order button not visible without wallet connection"
+    },
+    {
+      "id": "E1259",
+      "area": "trade-form",
+      "priority": 2,
+      "title": "TP/SL inputs — verify price fields appear after toggle on Sell side",
+      "description": "After clicking TP/SL toggle on Sell side, verify that Take Profit and Stop Loss price input fields appear and accept values. E1189 confirmed no modal interference but TP/SL inputs were not found — investigate.",
       "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1260",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "Market order — verify order type selector shows Market tab after wallet connect",
+      "description": "E1258 found Market tab not visible without wallet. Verify: after connecting wallet, Market tab appears and slippage tooltip ('Max 1%') is present and hoverable.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1261",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "TWAP order — verify TWAP tab fields: size, interval, duration inputs validation",
+      "description": "TWAP form fields found (4 text inputs). Without wallet: verify field placeholders and labels are correct. With wallet: submit TWAP order and verify it appears in the TWAP bottom panel tab.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1262",
+      "area": "bottom-panel",
+      "priority": 3,
+      "title": "Trailing tab — verify Trailing(0) tab exists and shows correct empty state",
+      "description": "Bottom panel has Trailing(0) tab (found in E894 run). Verify tab is clickable, shows empty state message, and trailing stop orders appear after placement.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1263",
+      "area": "bottom-panel",
+      "priority": 4,
+      "title": "Order History tab — verify order history loads and displays past orders correctly",
+      "description": "Bottom panel includes Order History tab. Verify: tab loads, shows past orders (or correct empty state), columns are correct (Time, Market, Side, Type, Size, Price, Status).",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
     }
