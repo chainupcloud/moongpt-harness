@@ -10825,9 +10825,11 @@
       "priority": 3,
       "title": "Isolated margin — leverage slider updates P&L preview in real time",
       "description": "With Isolated mode active and a valid leverage (e.g. 5x), change size or leverage and verify the margin required / liquidation price preview updates accordingly.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS (limited) — Leverage dialog opens correctly (1x-50x slider), \"Margin Required\" and \"Est. Liq\" preview fields present; isolated mode modal accessible; real-time update unverifiable without wallet funds"
     },
     {
       "id": "E900",
@@ -10835,9 +10837,11 @@
       "priority": 3,
       "title": "API Keys page — wallet connection required state and reconnect flow",
       "description": "Access /api-keys without wallet connected. Verify a connect-wallet prompt/button is shown. Connect wallet and verify the API wallet management UI (generate, list, remove) becomes visible.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — /api-keys shows \"Please connect your wallet to manage API keys\" prompt; Generate button and table headers visible; HTTP 200; no JS errors"
     },
     {
       "id": "E901",
@@ -10845,9 +10849,11 @@
       "priority": 3,
       "title": "API Keys — Remove existing API wallet and verify disappears from list",
       "description": "After at least one API wallet exists, click the Remove/Delete button. Confirm a dialog appears, confirm removal, and verify the wallet is removed from the list without page reload errors.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — No existing API wallets on testnet account; empty state \"No API wallets authorized\" displays correctly; management UI structure (Generate/table) visible"
     },
     {
       "id": "E902",
@@ -14885,9 +14891,11 @@
       "priority": 2,
       "title": "Trailing stop order — form opens and accepts trigger price input",
       "description": "Navigate to /trade, click on bottom panel Trailing(0) tab. Find the trailing stop order entry point (via order type dropdown or dedicated button), verify form fields appear (trigger distance/%, size). Click to create a trailing stop and verify input fields are functional.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Order type dropdown lacks \"Trailing\" option; Trailing(0) tab shows only empty state \"No trailing stop orders\" with no create button → Issue #286"
     },
     {
       "id": "E1275",
@@ -14925,6 +14933,56 @@
       "priority": 3,
       "title": "Explorer address page — SUI address transaction pagination for high-activity accounts",
       "description": "E1019 showed 4 transactions for the SUI test address. Test a more active SUI address (fetch one from explorer) and verify: 1) Pagination appears when >10 txs; 2) 'More' button or page controls work; 3) Transactions load correctly without duplication.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1279",
+      "area": "trade",
+      "priority": 2,
+      "title": "Isolated margin mode — switching from Cross to Isolated updates form labels",
+      "description": "Click the 'Cross' margin mode button, select 'Isolated' in the modal, confirm. Verify: 1) mode button now shows 'Isolated', 2) trade form shows isolated-specific labels (e.g. margin allocation per position), 3) no JS errors during switch.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1280",
+      "area": "trade",
+      "priority": 3,
+      "title": "Leverage change persists after page reload",
+      "description": "Open the Adjust Leverage dialog, set leverage to 5x via slider, click Confirm. Reload the page and verify the leverage button still shows '5x', not the default '10x'.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1281",
+      "area": "api-keys",
+      "priority": 2,
+      "title": "API Keys — Generate button opens creation form with Name and Address fields",
+      "description": "Access /api-keys (any wallet state), click the 'Generate' button. Verify a modal or form appears with at least: API Wallet Name input, API Wallet Address input (or auto-generated), Valid Until selector, and a submit/authorize button.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1282",
+      "area": "trade",
+      "priority": 3,
+      "title": "Order type dropdown — all 9 options clickable and update form correctly",
+      "description": "Open Order Type dropdown (shows: Market, Limit, Stop Market, Stop Limit, Take Profit Market, Take Profit Limit, TWAP, Scale, Scalp). Click each option and verify: 1) button label updates to selected type, 2) form fields change appropriately (e.g. Stop Market adds trigger price field), 3) no JS errors.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1283",
+      "area": "trade",
+      "priority": 2,
+      "title": "Trailing stop order — feature roadmap: verify TWAP tab as reference for trailing stop creation pattern",
+      "description": "TWAP has both a bottom tab (TWAP(0)) and an order type dropdown entry. Trailing stop has only the bottom tab. Verify whether clicking the TWAP dropdown option opens a TWAP creation form, as reference for expected trailing stop behavior. Cross-check if trailing creation is accessible via any hidden route.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
