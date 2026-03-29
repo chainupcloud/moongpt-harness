@@ -2577,14 +2577,16 @@
       "id": "dex-ui-295",
       "github_issue_number": 295,
       "title": "[P3] /markets 24h Volume sort indicator does not toggle — resets to ↕ after click instead of ↑",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario_id": "E767",
       "created_date": "2026-03-29",
       "labels": [
         "bug"
       ],
-      "url": "https://github.com/chainupcloud/dex-ui/issues/295"
+      "url": "https://github.com/chainupcloud/dex-ui/issues/295",
+      "pr_number": 318,
+      "fix_attempts": 1
     },
     {
       "number": 296,
