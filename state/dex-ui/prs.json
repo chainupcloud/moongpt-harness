@@ -1451,27 +1451,32 @@
     {
       "pr_number": 257,
       "title": "fix: W3M wallet connect modal — Escape key closes modal (#237)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         237
       ],
       "created_at": "2026-03-29",
-      "commit_sha": "7028a7d",
-      "deployed": false,
-      "accepted": false
+      "commit_sha": "17d4c80",
+      "deployed": true,
+      "accepted": true,
+      "merged_at": "2026-03-29"
     }
   ],
   "pull_requests": [
     {
       "number": 248,
       "title": "fix: TP/SL toggle click does not reveal TP/SL input fields (#239)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         239
       ],
       "branch": "fix/issue-239",
       "base": "dev",
-      "created_date": "2026-03-28"
+      "created_date": "2026-03-28",
+      "merged_at": "2026-03-28",
+      "merge_commit_sha": "82a2d93",
+      "deployed": true,
+      "accepted": true
     }
   ]
 }
