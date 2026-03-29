@@ -10945,9 +10945,11 @@
       "priority": 3,
       "title": "TP/SL — SL submit button disabled when SL price above entry price (invalid for long)",
       "description": "Enable TP/SL, enter SL price ABOVE current price for a long (invalid), verify error message shown and submit blocked",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — TP/SL long: SL=70109 above entry=66771 shows NO validation error, submit enabled. Related to open issue #278 pattern (TP/SL BUY direction validation gap). Skipped new issue — dedup with existing."
     },
     {
       "id": "E910",
@@ -11003,9 +11005,11 @@
       "priority": 3,
       "title": "Stop Market — Stop Price above market price validation",
       "description": "On Stop Market SELL order, enter a stop price significantly above current market price. Verify the form warns or prevents illogical trigger (e.g. selling at price above market on stop market sell doesn't make sense). Check if any validation message appears.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Stop Market SELL: stop price $79,000 (20% above market $66,219) shows no validation warning; submit enabled. → Issue #300 [P4]"
     },
     {
       "id": "E915",
@@ -11013,9 +11017,11 @@
       "priority": 3,
       "title": "Stop Limit — Stop Price and Limit Price cross-validation",
       "description": "On Stop Limit BUY, enter a Limit Price lower than Stop Price (which would mean the order may never fill). Verify UI warns about potential unfillable order or validates price relationship.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "FAIL — Stop Limit BUY with limit(64233) < stop(66882): no cross-price validation, submit not disabled. → Issue #299 [P3]"
     },
     {
       "id": "E916",
@@ -11023,9 +11029,11 @@
       "priority": 3,
       "title": "Stop Market — order type selector shows Stop Market option",
       "description": "Click the order type dropdown (showing Limit) and verify all expected options are visible: Market, Limit, Stop Market, Stop Limit. Capture the list and verify Stop Market is accessible.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — Stop Market option confirmed accessible in order type selector (verified by switching to it successfully in E914)"
     },
     {
       "id": "E917",
@@ -15757,6 +15765,56 @@
       "priority": 3,
       "title": "/trade?coin= (empty value) redirects to default market",
       "description": "Visit /trade?coin= with empty coin param. Verify page loads default market (BTC-USDC) without error. Edge case of the E1341 redirect fix.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1351",
+      "area": "trade-form / stop-market",
+      "priority": 3,
+      "title": "Stop Market BUY — stop price below current market shows no validation",
+      "description": "For a Stop Market BUY order, entering a stop price BELOW the current market price (e.g., stop=$60k when market=$66k) would trigger immediately. Verify UI warns or prevents this.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1352",
+      "area": "trade-form / stop-limit",
+      "priority": 3,
+      "title": "Stop Limit SELL — limit price above stop price cross-validation",
+      "description": "For Stop Limit SELL: if limit price > stop price, the order may not execute as expected. Verify UI validates this relationship (E915 tested BUY direction, this is SELL direction).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1353",
+      "area": "trade-form / TP-SL",
+      "priority": 3,
+      "title": "TP/SL SELL/Short direction — TP above entry should be invalid",
+      "description": "For a Short position, TP should be BELOW entry price (you profit when price drops). Verify that setting TP above entry price on a SHORT shows a validation error.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1354",
+      "area": "trade-form",
+      "priority": 4,
+      "title": "Order form — verify placeholder text on Stop Market trigger price input",
+      "description": "Stop Market form has generic '0.00' placeholder for the trigger price input. Verify if it has an aria-label or accessible name indicating it's the 'Stop/Trigger Price' field. Related to accessibility concern in open issue.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1355",
+      "area": "trade-form / stop-limit",
+      "priority": 2,
+      "title": "Stop Limit order — verify both stop and limit prices are filled before submit",
+      "description": "When switching to Stop Limit, verify the form requires BOTH stop price and limit price to be non-zero before the submit button becomes active. Currently the form may allow submission with only one price filled.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"

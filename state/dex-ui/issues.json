@@ -2578,6 +2578,22 @@
       "labels": [
         "bug"
       ]
+    },
+    {
+      "number": 299,
+      "title": "[P3] Stop Limit BUY — no validation when Limit Price is below Stop Price",
+      "status": "open",
+      "priority": "P3",
+      "created_at": "2026-03-29",
+      "linked_scenario": "E915"
+    },
+    {
+      "number": 300,
+      "title": "[P4] Stop Market SELL — no guidance when stop price is set far above current market",
+      "status": "open",
+      "priority": "P4",
+      "created_at": "2026-03-29",
+      "linked_scenario": "E914"
     }
   ],
   "last_updated": "2026-03-29",
