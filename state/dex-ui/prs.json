@@ -1628,6 +1628,17 @@
       "accepted": true,
       "merged_at": "2026-03-29",
       "commit_sha": "f8ce102"
+    },
+    {
+      "number": 287,
+      "title": "fix: add Fee field to explorer tx detail page (#271)",
+      "status": "open",
+      "issue_numbers": [
+        271
+      ],
+      "branch": "fix/issue-271",
+      "base": "dev",
+      "created": "2026-03-29"
     }
   ],
   "pull_requests": [

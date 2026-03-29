@@ -2366,15 +2366,15 @@
     {
       "github_number": 271,
       "title": "[P3] Explorer tx detail page missing Fee field",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "labels": [
         "bug"
       ],
       "opened_date": "2026-03-29",
-      "fix_attempts": 0,
+      "fix_attempts": 1,
       "related_scenario": "E698",
-      "pr_number": null
+      "pr_number": 287
     },
     {
       "number": 272,
