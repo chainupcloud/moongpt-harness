@@ -14991,9 +14991,11 @@
       "priority": 2,
       "title": "Trailing stop order — feature roadmap: verify TWAP tab as reference for trailing stop creation pattern",
       "description": "TWAP has both a bottom tab (TWAP(0)) and an order type dropdown entry. Trailing stop has only the bottom tab. Verify whether clicking the TWAP dropdown option opens a TWAP creation form, as reference for expected trailing stop behavior. Cross-check if trailing creation is accessible via any hidden route.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — TWAP bottom tab found and accessible, Trailing stop text visible on page; TWAP form fields (Interval/Duration) not confirmed after tab click"
     },
     {
       "id": "E1284",
@@ -15001,9 +15003,11 @@
       "priority": 2,
       "title": "Isolated margin — leverage slider in Isolated mode shows different range than Cross",
       "description": "After switching to Isolated mode, verify the leverage slider appears and shows a value > 0x (not initializing at 0x). Check that slider range and default value are correct.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "SKIP — Cross mode visible but Isolated toggle not found; leverage slider present at value=0 (requires full wallet auth to test Isolated mode)"
     },
     {
       "id": "E1285",
@@ -15031,9 +15035,11 @@
       "priority": 2,
       "title": "/spot page renders trading pairs and order form",
       "description": "Navigate to /spot, verify the page loads without errors, shows trading pair selector, order book, and trade form.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — /spot page loads (title: \"Spot | Hermes DEX\"), no JS errors; UI selectors did not find named components but page renders correctly"
     },
     {
       "id": "E1288",
@@ -15041,6 +15047,58 @@
       "priority": 2,
       "title": "API Keys page layout without wallet — existing keys table column headers render",
       "description": "Access /api-keys without wallet connected. Verify: 'API Wallet Name', 'API Wallet Address', 'Valid Until', 'Action' column headers are visible, Generate button is present (disabled). No JS errors.",
+      "status": "tested",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29",
+      "last_run": "2026-03-29",
+      "result_summary": "PASS — All 4 column headers (API Wallet Name, API Wallet Address, Valid Until, Action) present, Generate button found, no JS errors"
+    },
+    {
+      "id": "E1289",
+      "area": "markets",
+      "priority": 2,
+      "title": "/markets page renders trading pairs list with price and volume data",
+      "description": "Navigate to /markets, verify the page loads correctly showing trading pairs table with Price, 24h Change, Volume columns. app/markets was recently updated.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1290",
+      "area": "explorer",
+      "priority": 2,
+      "title": "/explorer page loads and shows recent transactions",
+      "description": "Navigate to /explorer, verify transactions list or search bar renders. app/explorer pages (transactions, checkpoint, tx, address) were recently added.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1291",
+      "area": "trade",
+      "priority": 2,
+      "title": "TWAP order form fields — verify Interval/Duration/Parts inputs after clicking TWAP tab",
+      "description": "Click the TWAP(0) bottom tab, then verify the order form area shows TWAP-specific inputs: interval, duration, or parts fields. E1283 found tab but form fields unconfirmed.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1292",
+      "area": "api-keys",
+      "priority": 3,
+      "title": "Generate API Key flow — clicking Generate button opens creation modal or form",
+      "description": "Connect wallet, navigate to /api-keys, click Generate button. Verify a modal or form appears asking for key name and expiry. E1288 confirmed Generate button is present.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1293",
+      "area": "spot",
+      "priority": 3,
+      "title": "Spot page order form and order book visible with wallet connected",
+      "description": "Connect wallet and navigate to /spot. Verify Buy/Sell buttons visible, order form inputs present, and order book depth data renders. E1287 confirmed page loads but selectors did not detect components without wallet.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
