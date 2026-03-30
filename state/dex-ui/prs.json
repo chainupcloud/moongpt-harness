@@ -2014,6 +2014,17 @@
       "base": "dev",
       "created_at": "2026-03-29",
       "url": "https://github.com/chainupcloud/dex-ui/pull/313"
+    },
+    {
+      "number": 327,
+      "title": "fix: validate TP/SL against mark price for direction correctness (#310)",
+      "status": "open",
+      "issue_numbers": [
+        310
+      ],
+      "created_date": "2026-03-30",
+      "branch": "fix/issue-310",
+      "base": "dev"
     }
   ],
   "last_updated": "2026-03-29"

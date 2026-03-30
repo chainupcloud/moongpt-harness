@@ -2723,7 +2723,7 @@
     {
       "github_number": 310,
       "title": "[P3] Trade form TP/SL inputs — no direction validation (BUY: TP below mark price not rejected)",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario_ids": [
         "E883",
@@ -2732,7 +2732,9 @@
       "created_date": "2026-03-29",
       "labels": [
         "bug"
-      ]
+      ],
+      "pr_number": 327,
+      "fix_attempts": 1
     },
     {
       "github_number": 311,
