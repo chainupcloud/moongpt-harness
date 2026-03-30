@@ -2739,7 +2739,7 @@
     {
       "github_number": 311,
       "title": "[P3] Scale order — no client-side validation when Start price > End price",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "scenario_ids": [
         "E958"
@@ -2747,7 +2747,9 @@
       "created_date": "2026-03-29",
       "labels": [
         "bug"
-      ]
+      ],
+      "pr_number": 328,
+      "fix_attempts": 1
     }
   ],
   "last_updated": "2026-03-29",

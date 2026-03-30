@@ -2028,6 +2028,17 @@
       "created_date": "2026-03-30",
       "branch": "fix/issue-310",
       "base": "dev"
+    },
+    {
+      "number": 328,
+      "title": "fix: Scale order — add client-side validation when Start price >= End price (#311)",
+      "status": "open",
+      "issue_numbers": [
+        311
+      ],
+      "branch": "fix/issue-311",
+      "base": "dev",
+      "created_date": "2026-03-30"
     }
   ],
   "last_updated": "2026-03-29"
