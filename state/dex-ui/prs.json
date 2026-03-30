@@ -1994,6 +1994,17 @@
       "accepted": false,
       "note": "Merged 2026-03-30. Deploy ERROR: alwaysRefuseToBuild (issue #98). Acceptance pending deployment fix.",
       "last_checked": "2026-03-30"
+    },
+    {
+      "number": 330,
+      "title": "fix: Stop Market trigger price input null aria-label (#281)",
+      "status": "open",
+      "branch": "fix/issue-281",
+      "base": "dev",
+      "issue_numbers": [
+        281
+      ],
+      "created_at": "2026-03-30"
     }
   ],
   "pull_requests": [
