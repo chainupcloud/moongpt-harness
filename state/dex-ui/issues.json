@@ -2484,7 +2484,9 @@
         "enhancement"
       ],
       "pr_number": 329,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "note": "PR #329 merged (2026-03-30). Deploy ERROR: alwaysRefuseToBuild (issue #98). Acceptance pending deployment fix.",
+      "updated_at": "2026-03-30"
     },
     {
       "github_number": 281,
