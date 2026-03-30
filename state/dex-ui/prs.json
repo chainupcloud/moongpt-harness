@@ -1753,8 +1753,8 @@
       "branch": "fix/issue-286",
       "base": "dev",
       "created_at": "2026-03-29",
-      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts (not mergeable). Needs rebase onto dev. (2026-03-29)",
-      "last_checked": "2026-03-29",
+      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts. Needs rebase onto dev. (2026-03-30)",
+      "last_checked": "2026-03-30",
       "blocked": "merge_conflict"
     },
     {
@@ -1781,8 +1781,8 @@
       ],
       "status": "open",
       "created_at": "2026-03-29",
-      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts (not mergeable). Needs rebase onto dev. (2026-03-29)",
-      "last_checked": "2026-03-29",
+      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts. Needs rebase onto dev. (2026-03-30)",
+      "last_checked": "2026-03-30",
       "title": "fix: TWAP order form fields not shown via URL param (#291)",
       "branch": "fix/issue-291",
       "base": "dev",
@@ -1887,8 +1887,8 @@
       "merged_at": null,
       "deployed": false,
       "accepted": false,
-      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts (not mergeable). Needs rebase onto dev. (2026-03-29)",
-      "last_checked": "2026-03-29",
+      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts. Needs rebase onto dev. (2026-03-30)",
+      "last_checked": "2026-03-30",
       "blocked": "merge_conflict"
     },
     {
@@ -1914,8 +1914,8 @@
       "merged_at": "2026-03-29",
       "deployed": false,
       "accepted": false,
-      "note": "Merged to dev. Deploy ERROR (TEAM_ACCESS_REQUIRED, issue #98). Acceptance pending deployment fix.",
-      "last_checked": "2026-03-29"
+      "note": "Merged to dev. Deploy ERROR: build failure (TokenSelector.tsx type error). Acceptance deferred. (2026-03-30)",
+      "last_checked": "2026-03-30"
     },
     {
       "pr_number": 325,
@@ -1926,12 +1926,12 @@
       "branch": "fix/issue-306",
       "base": "dev",
       "created_at": "2026-03-29",
-      "note": "Merged to dev. Deploy blocked: Vercel access issue (#98). Acceptance deferred.",
+      "note": "Merged to dev. Deploy ERROR: build failure (TokenSelector.tsx type error). Acceptance deferred. (2026-03-30)",
       "commit_sha": "d3d3af7",
       "merged_at": "2026-03-29",
       "deployed": false,
       "accepted": false,
-      "last_checked": "2026-03-29"
+      "last_checked": "2026-03-30"
     },
     {
       "pr_number": 326,
@@ -1944,7 +1944,39 @@
       "merged_at": "2026-03-29",
       "deployed": false,
       "accepted": false,
-      "note": "deploy blocked #98 (build error)"
+      "note": "Merged to dev. Deploy ERROR: build failure (TokenSelector.tsx type error). Acceptance deferred. (2026-03-30)",
+      "last_checked": "2026-03-30"
+    },
+    {
+      "pr_number": 327,
+      "issue_numbers": [
+        310
+      ],
+      "title": "fix: validate TP/SL against mark price for direction correctness (#310)",
+      "status": "merged",
+      "branch": "fix/issue-310",
+      "base": "dev",
+      "created_at": "2026-03-30",
+      "commit_sha": "3246c2d",
+      "merged_at": "2026-03-30",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged to dev. Deploy ERROR: build failure (TokenSelector.tsx type error). Acceptance deferred. (2026-03-30)",
+      "last_checked": "2026-03-30"
+    },
+    {
+      "pr_number": 328,
+      "issue_numbers": [
+        311
+      ],
+      "title": "fix: Scale order — add client-side validation when Start price >= End price (#311)",
+      "status": "open",
+      "branch": "fix/issue-311",
+      "base": "dev",
+      "created_at": "2026-03-30",
+      "note": "Copilot review COMMENTED. BLOCKED: merge conflicts after PR #327 merge. Needs rebase onto dev. (2026-03-30)",
+      "last_checked": "2026-03-30",
+      "blocked": "merge_conflict"
     }
   ],
   "pull_requests": [

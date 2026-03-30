@@ -2527,7 +2527,7 @@
       "created": "2026-03-29",
       "pr_number": 313,
       "fix_attempts": 1,
-      "note": "PR #313 has merge conflicts, cannot merge. Needs rebase onto dev. (2026-03-29)"
+      "note": "PR #313 has merge conflicts, cannot merge. Needs rebase onto dev. (2026-03-30)"
     },
     {
       "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
@@ -2541,7 +2541,8 @@
       "description": "TWAP order form missing Duration presets and Hour/Min/Interval fields",
       "pr_number": 315,
       "fix_attempts": 1,
-      "github_number": 291
+      "github_number": 291,
+      "note": "PR #315 has merge conflicts, cannot merge. Needs rebase onto dev. (2026-03-30)"
     },
     {
       "number": 293,
@@ -2652,7 +2653,7 @@
       ],
       "fix_attempts": 1,
       "pr_number": 322,
-      "note": "PR #322 has merge conflicts after PR #321 merge. Needs rebase. Deploy blocked by issue #98.",
+      "note": "PR #322 has merge conflicts. Needs rebase. Deploy blocked by build error. (2026-03-30)",
       "updated_at": "2026-03-29"
     },
     {
@@ -2734,7 +2735,9 @@
         "bug"
       ],
       "pr_number": 327,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "note": "PR #327 merged (3246c2d) to dev. Deploy ERROR: build failure (TokenSelector.tsx type error). Acceptance pending. (2026-03-30)",
+      "updated_at": "2026-03-30"
     },
     {
       "github_number": 311,
@@ -2749,7 +2752,9 @@
         "bug"
       ],
       "pr_number": 328,
-      "fix_attempts": 1
+      "fix_attempts": 1,
+      "note": "PR #328 has merge conflicts after PR #327 merge. Needs rebase onto dev. (2026-03-30)",
+      "updated_at": "2026-03-30"
     }
   ],
   "last_updated": "2026-03-29",
