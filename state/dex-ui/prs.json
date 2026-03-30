@@ -1998,13 +1998,19 @@
     {
       "number": 330,
       "title": "fix: Stop Market trigger price input null aria-label (#281)",
-      "status": "open",
+      "status": "merged",
       "branch": "fix/issue-281",
       "base": "dev",
       "issue_numbers": [
         281
       ],
-      "created_at": "2026-03-30"
+      "created_at": "2026-03-30",
+      "pr_number": 330,
+      "commit_sha": "71a9fbc",
+      "merged_at": "2026-03-30",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged but Vercel build failed (yarn build exit 1)"
     }
   ],
   "pull_requests": [

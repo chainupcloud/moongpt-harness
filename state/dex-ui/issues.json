@@ -2499,7 +2499,8 @@
       "scenario_id": "E896",
       "created_date": "2026-03-29",
       "fix_attempts": 1,
-      "pr_number": 330
+      "pr_number": 330,
+      "note": "PR #330 merged 2026-03-30, but Vercel staging build failed - acceptance pending"
     },
     {
       "github_number": 283,
