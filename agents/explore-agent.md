@@ -104,8 +104,10 @@ TEST_URL="{staging_url}" TEST_WALLET_PRIVATE_KEY="{wallet_pk}" \
 
 优先级判断：
 - 功能完全不工作 → P2
-- 有明显缺陷/异常 → P3
-- 轻微体验问题 → P4（enhancement label）
+- 有明显缺陷/异常 → P3（**不建 issue，记录在输出报告中即可**）
+- 轻微体验问题 → P4（**不建 issue，记录在输出报告中即可**）
+
+**只为 P1/P2 建 GitHub Issue，P3/P4 仅在输出报告中注明，不创建 issue。**
 
 去重：`state/{project}/issues.json` 中 status != "closed" 且标题关键词重叠 > 60% → 跳过。
 
