@@ -2186,6 +2186,16 @@
       "created_date": "2026-04-08",
       "merged_at": "2026-04-08",
       "merge_sha": "d1facc5"
+    },
+    {
+      "pr_number": 339,
+      "title": "fix: Trailing Stop order selection causes app crash (#336)",
+      "issue_number": 336,
+      "status": "open",
+      "review_status": "changes_requested",
+      "deployed": false,
+      "accepted": false,
+      "created_at": "2026-04-08"
     }
   ],
   "last_updated": "2026-04-08"
