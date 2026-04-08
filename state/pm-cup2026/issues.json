@@ -31,6 +31,56 @@
       "created_at": "2026-04-08",
       "fix_attempts": 0,
       "source": "human"
+    },
+    {
+      "github_number": 46,
+      "title": "[P2] 事件列表页：单市场事件展示异常",
+      "priority": "P2",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-04-08",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 47,
+      "title": "[P2] 推荐事件列表接口错误：应使用 curation/events",
+      "priority": "P2",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-04-08",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 48,
+      "title": "[P2] 事件列表搜索「win」返回无 win 文案的事件",
+      "priority": "P2",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-04-08",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 49,
+      "title": "[P2] 市场搜索列表按创建时间排序结果不正确",
+      "priority": "P2",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-04-08",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 50,
+      "title": "[P3] 事件搜索列表筛选图标缺少 tooltip 说明文案",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-04-08",
+      "fix_attempts": 0,
+      "source": "human"
     }
   ],
   "last_test_run": null
