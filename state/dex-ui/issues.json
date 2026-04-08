@@ -3281,19 +3281,6 @@
       "fix_attempts": 1,
       "source": "human",
       "closed_at": "2026-04-08"
-    },
-    {
-      "github_number": 336,
-      "title": "[P2] Trailing Stop order selection causes app crash (client-side exception)",
-      "status": "open",
-      "priority": "P2",
-      "scenario_id": "E1274",
-      "created_date": "2026-04-08",
-      "labels": [
-        "bug"
-      ],
-      "fix_attempts": 0,
-      "note": "Trailing Stop added to dropdown by PR #313, but selecting it crashes the app (TrailingStopForm render exception)"
     }
   ],
   "last_updated": "2026-04-08",
