@@ -76,10 +76,15 @@ def cron_label(expr):
     day_names = {'0':'周日','1':'周一','2':'周二','3':'周三','4':'周四','5':'周五','6':'周六','7':'周日'}
     if dow not in ('*', '?'):
         return f'每{day_names.get(dow,"?")} {hour.zfill(2)}:{minute.zfill(2)}'
-    if hour == '*':
+    if minute.startswith('*/'):
+        return f'每 {minute[2:]}m'
+    if hour == '*' and ',' not in minute and not minute.startswith('*/'):
         return f'每 1h (:{minute.zfill(2)})'
     if hour.startswith('*/'):
         return f'每 {hour[2:]}h (:{minute.zfill(2)})'
+    if ',' in minute:
+        interval = int(minute.split(',')[1]) - int(minute.split(',')[0])
+        return f'每 {interval}m'
     if ',' in hour:
         return f'每 2h (:{minute.zfill(2)})'
     return expr
