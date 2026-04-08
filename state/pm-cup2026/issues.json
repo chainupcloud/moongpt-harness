@@ -1,12 +1,15 @@
-[
-  {
-    "github_number": 41,
-    "title": "[P2] 生成项目文档：CLAUDE.md（AI上下文）+ README.md（人工说明）",
-    "priority": "P2",
-    "status": "open",
-    "pr_number": null,
-    "created_at": "2026-04-08",
-    "fix_attempts": 0,
-    "source": "human"
-  }
-]
+{
+  "issues": [
+    {
+      "github_number": 41,
+      "title": "[P2] 生成项目文档：CLAUDE.md（AI上下文）+ README.md（人工说明）",
+      "priority": "P2",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-04-08",
+      "fix_attempts": 0,
+      "source": "human"
+    }
+  ],
+  "last_test_run": null
+}

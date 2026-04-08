@@ -55,7 +55,8 @@ def parse_crontab_schedules(project: str = 'dex-ui'):
             continue
         expr, cmd = m.group(1), m.group(2)
         # Match project-specific entries
-        if (f'run-loop.sh {project}' in cmd or f'run-scheduler.sh {project}' in cmd):
+        if (f'run-loop.sh {project}' in cmd or f'run-scheduler.sh {project}' in cmd
+                or f'run-agent.sh explore {project}' in cmd):
             schedules['explore'] = expr
         elif f'run-agent.sh fix {project}' in cmd:
             schedules['fix'] = expr
@@ -263,6 +264,7 @@ async function loadAll() {
     fetch(`/api/agents?project=${currentProject}`).then(r=>r.json()),
     fetch(`/api/logs?agent=${currentLog}&project=${currentProject}`).then(r=>r.json()),
   ]);
+  window._projectMap = Object.fromEntries(projects.map(p => [p.name, p]));
   renderStats(state);
   renderProjectTabs(projects);
   renderAgents(agents);
@@ -356,18 +358,21 @@ function renderAgents(agents) {
 }
 
 function issueUrl(issue) {
-  // backend issues go to dex-sui
-  if (issue.track === 'backend') {
-    return `https://github.com/chainupcloud/dex-sui/issues/${issue.github_number}`;
-  }
-  return `https://github.com/chainupcloud/dex-ui/issues/${issue.github_number}`;
+  const proj = window._projectMap && window._projectMap[currentProject];
+  const owner = proj?.issue_tracker?.owner || proj?.github?.owner || 'chainupcloud';
+  const repo  = issue.track === 'backend'
+    ? (proj?.backend_issue_tracker?.repo || proj?.github?.repo)
+    : (proj?.issue_tracker?.repo || proj?.github?.repo || 'dex-ui');
+  return `https://github.com/${owner}/${repo}/issues/${issue.github_number}`;
 }
 
 function prUrl(pr) {
-  if (pr.track === 'backend') {
-    return `https://github.com/chainupcloud/dex-sui/pull/${pr.pr_number}`;
-  }
-  return `https://github.com/chainupcloud/dex-ui/pull/${pr.pr_number}`;
+  const proj = window._projectMap && window._projectMap[currentProject];
+  const owner = proj?.github?.owner || 'chainupcloud';
+  const repo  = pr.track === 'backend'
+    ? (proj?.backend_issue_tracker?.repo || proj?.github?.repo)
+    : (proj?.github?.repo || 'dex-ui');
+  return `https://github.com/${owner}/${repo}/pull/${pr.pr_number}`;
 }
 
 function renderIssues(issues) {
@@ -456,7 +461,7 @@ def parse_log_times(agent: str, project: str = 'dex-ui'):
 
 def is_agent_running(agent: str, project: str = 'dex-ui') -> bool:
     patterns = {
-        'explore': f'run-loop.sh {project}',
+        'explore': f'run-agent.sh explore {project}',
         'plan':    f'run-agent.sh plan {project}',
         'fix':     f'run-agent.sh fix {project}',
         'master':  f'run-agent.sh master {project}',
@@ -531,11 +536,7 @@ def api_agents():
         last_start, last_end, status = parse_log_times(name, project)
         running = is_agent_running(name, project)
         cron_expr = schedules.get(name, '')
-        # explore runs as a continuous loop, not on a fixed schedule
-        if name == 'explore':
-            nxt_label, pct = ('持续运行', 100) if running else ('等待 watchdog', 0)
-        else:
-            nxt_label, pct = next_run_info(cron_expr)
+        nxt_label, pct = next_run_info(cron_expr)
 
         duration = None
         if last_start and last_end and last_end >= last_start:
@@ -550,7 +551,7 @@ def api_agents():
             'last_duration': duration,
             'next_run': nxt_label,
             'next_run_pct': pct,
-            'schedule_label': '持续循环 (watchdog 5m)' if name == 'explore' else cron_label(cron_expr),
+            'schedule_label': cron_label(cron_expr),
             'cron': cron_expr,
         })
     return jsonify(result)
