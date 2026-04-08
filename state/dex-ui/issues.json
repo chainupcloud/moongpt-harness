@@ -1097,9 +1097,9 @@
       "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
       "priority": "P3",
       "status": "open",
-      "pr_number": null,
+      "pr_number": 340,
       "created_at": "2026-03-27",
-      "fix_attempts": 0,
+      "fix_attempts": 1,
       "source": "human",
       "note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt"
     },
@@ -2587,9 +2587,9 @@
       "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
       "priority": "P3",
       "status": "open",
-      "pr_number": null,
+      "pr_number": 343,
       "created_at": "2026-03-29",
-      "fix_attempts": 0,
+      "fix_attempts": 1,
       "source": "human",
       "note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - TWAP toast interval fallback, disconnected user stale orders, type-casting defeats checks"
     },
