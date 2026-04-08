@@ -2325,7 +2325,8 @@
       "base": "dev",
       "created_date": "2026-04-07",
       "review_notes": "Copilot inline: button click can still trigger order submission when wallet disconnected — need to guard handleSubmit at TradeForm/index.tsx:1163. (1 inline comment, no HARNESS_VERDICT)",
-      "review_status": "changes_requested"
+      "review_status": "changes_requested",
+      "note": "Copilot inline: When disconnected, button label is 'Connect Wallet' but clicking can still early-return on input validation"
     },
     {
       "number": 343,
@@ -2338,7 +2339,8 @@
       "base": "dev",
       "created_date": "2026-04-07",
       "review_notes": "Copilot 3 inlines: (1) interval=0 fallback treats 0 as falsy at TradeForm:556, (2) twapOrders not cleared on wallet disconnect at AccountPanel:1130, (3) type casting in getTwapOrders at AccountPanel:1148. (no HARNESS_VERDICT)",
-      "review_status": "changes_requested"
+      "review_status": "changes_requested",
+      "note": "Copilot inline: (1) intervalSeconds||30 treats 0 as unset; (2) fetchTwapOrders doesn't clear twapOrders on disconnect; (3) getTwapOrders type casting issues"
     }
   ],
   "last_updated": "2026-04-08"
