@@ -1977,8 +1977,8 @@
       "branch": "fix/issue-311",
       "base": "dev",
       "created_at": "2026-03-30",
-      "note": "Copilot review COMMENTED. BLOCKED: merge conflicts after PR #327 merge. Needs rebase onto dev. (2026-03-30)",
-      "last_checked": "2026-03-30",
+      "note": "Copilot COMMENTED (mergeable once rebased). BLOCKED: merge conflicts with dev. Needs rebase. (2026-04-08)",
+      "last_checked": "2026-04-08",
       "blocked": "merge_conflict"
     },
     {
@@ -2026,7 +2026,9 @@
       "base": "dev",
       "created_at": "2026-04-07",
       "pr_number": 334,
-      "note": "PR #334 open but blocked by Vercel build failure (2026-04-08). Copilot COMMENTED (mergeable once build fixed)."
+      "note": "Copilot COMMENTED. BLOCKED: merge conflicts with dev (dirty). Needs rebase. (2026-04-08)",
+      "blocked": "merge_conflict",
+      "last_checked": "2026-04-08"
     }
   ],
   "pull_requests": [
