@@ -2147,7 +2147,9 @@
       ],
       "branch": "fix/issue-289",
       "base": "dev",
-      "created_at": "2026-04-08"
+      "created_at": "2026-04-08",
+      "review_status": "changes_requested",
+      "review_note": "Copilot: 3 inline comments"
     }
   ],
   "pull_requests": [

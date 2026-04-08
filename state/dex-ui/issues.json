@@ -2702,9 +2702,9 @@
       "scenario": null,
       "created_date": "2026-03-29",
       "closed_at": null,
-      "fix_attempts": 0,
+      "fix_attempts": 1,
       "resolution": null,
-      "note": null,
+      "note": "Copilot requested changes on PR #343: src/components/trading/TradeForm/index.tsx: In the TWAP success toast, `interval` falls back with `state.intervalSeconds || 30`, which treats `0; src/components/trading/AccountPanel.tsx: `fetchTwapOrders` returns early when `suiAddress` is falsy, but `twapOrders` is not cleared. If the ; src/components/trading/AccountPanel.tsx: `dexClient.getTwapOrders` is typed to return `TwapOrdersResponse`, but the mapping casts each order ",
       "labels": [
         "bug",
         "human"
