@@ -76,7 +76,7 @@ closed → open（验收失败时回滚，fix_attempts += 1）
 - スケジュール：`state/{project}/schedule.json`
 - 规则文件：`rules/{test,fix,acceptance}-rules.md`
 - Shell 入口：`scripts/run-agent.sh`, `scripts/run-scheduler.sh`, `scripts/run-all.sh`
-- 面板：`dashboard/app.py`
+- 面板：`dashboard/app.py`（port 5050，唯一实例）
 - 文档：`docs/architecture.md`, `docs/setup.md`
 
 ---
