@@ -2088,7 +2088,7 @@
       "base": "dev",
       "created_at": "2026-04-08",
       "review_status": "changes_requested",
-      "review_note": "Copilot: 1 inline comment — button click early-returns on validation before reaching openAppKit() when disconnected"
+      "review_note": "Copilot: 1 inline comment — button click early-returns on validation before reaching openAppKit() when disconnected. No HARNESS_VERDICT."
     },
     {
       "number": 341,
@@ -2149,7 +2149,7 @@
       "base": "dev",
       "created_at": "2026-04-08",
       "review_status": "changes_requested",
-      "review_note": "Copilot: 3 inline comments (interval 0 treated as unset, twapOrders not cleared on disconnect, type assertion unsafe)"
+      "review_note": "Copilot: 3 inline comments (interval 0 treated as unset, twapOrders not cleared on disconnect, type assertion unsafe). No HARNESS_VERDICT."
     },
     {
       "number": 344,
