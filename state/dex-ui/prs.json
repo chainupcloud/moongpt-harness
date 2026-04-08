@@ -2296,7 +2296,7 @@
       "deployed": false,
       "accepted": false,
       "created_at": "2026-04-08",
-      "note": "Copilot: 1 inline comment - handle disconnected case before validation",
+      "note": "Copilot: 1 inline comment - button click can still trigger trade action when disconnected despite label change",
       "review_note": "Copilot review: TradeForm index.tsx:1163 — When disconnected, button label is 'Connect Wallet' but clicking can still trigger validation path"
     },
     {
@@ -2320,7 +2320,7 @@
       "deployed": false,
       "accepted": false,
       "created_at": "2026-04-08",
-      "note": "Copilot: 3 inline comments - interval=0, stale orders on disconnect, type casting",
+      "note": "Copilot: 3 inline comments - (1) intervalSeconds=0 treated as unset in toast, (2) twapOrders not cleared on disconnect, (3) type casting in getTwapOrders mapping",
       "review_note": "Copilot review: (1) TradeForm index.tsx:556 — TWAP toast interval fallback treats 0 as falsy; (2) AccountPanel.tsx:1130 — twapOrders not cleared on disconnect; (3) AccountPanel.tsx:1148 — type cast issue"
     },
     {
@@ -2348,7 +2348,7 @@
       "branch": "fix/issue-70",
       "base": "dev",
       "created_date": "2026-04-07",
-      "review_notes": "Copilot: button click can still early-return on validation before connect wallet action when disconnected"
+      "review_notes": "Copilot: 1 inline comment - button click can still trigger trade action when disconnected despite label change"
     },
     {
       "number": 343,
@@ -2360,7 +2360,7 @@
       "branch": "fix/issue-289",
       "base": "dev",
       "created_date": "2026-04-07",
-      "review_notes": "Copilot: intervalSeconds 0 treated as unset; twapOrders not cleared on disconnect; type casting defeats type-checking"
+      "review_notes": "Copilot: 3 inline comments - (1) intervalSeconds=0 treated as unset in toast, (2) twapOrders not cleared on disconnect, (3) type casting in getTwapOrders mapping"
     }
   ],
   "last_updated": "2026-04-08"

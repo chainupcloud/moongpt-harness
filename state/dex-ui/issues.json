@@ -375,7 +375,7 @@
       "fix_branch": null,
       "fix_attempts": 6,
       "pr_number": null,
-      "note": "Copilot review on PR #340: button click can still early-return on validation before connect wallet action when disconnected",
+      "note": "PR #340 changes_requested. Copilot: 1 inline comment on disconnect button behavior",
       "closed_at": null,
       "source": "human"
     },
@@ -1785,7 +1785,7 @@
       "fix_branch": null,
       "fix_attempts": 4,
       "pr_number": null,
-      "note": "Copilot review on PR #343: intervalSeconds 0 treated as unset; twapOrders not cleared on disconnect; type casting defeats type-checking",
+      "note": "PR #343 changes_requested. Copilot: 3 inline comments on interval fallback, stale twapOrders, type casting",
       "closed_at": null,
       "source": "human"
     },
