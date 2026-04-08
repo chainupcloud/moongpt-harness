@@ -2703,9 +2703,9 @@
       "scenario": null,
       "created_date": "2026-03-29",
       "closed_at": null,
-      "fix_attempts": 1,
+      "fix_attempts": 2,
       "resolution": null,
-      "note": "Copilot requested changes on PR #343: src/components/trading/TradeForm/index.tsx: In the TWAP success toast, `interval` falls back with `state.intervalSeconds || 30`, which treats `0; src/components/trading/AccountPanel.tsx: `fetchTwapOrders` returns early when `suiAddress` is falsy, but `twapOrders` is not cleared. If the ; src/components/trading/AccountPanel.tsx: `dexClient.getTwapOrders` is typed to return `TwapOrdersResponse`, but the mapping casts each order ",
+      "note": "Copilot review (3 comments): 1) TWAP interval=0 treated as unset; 2) twapOrders not cleared on disconnect; 3) Type casting defeats type-checking.",
       "labels": [
         "bug",
         "human"
@@ -2831,9 +2831,9 @@
       "scenario": null,
       "created_date": "2026-03-27",
       "closed_at": null,
-      "fix_attempts": 3,
+      "fix_attempts": 4,
       "resolution": null,
-      "note": "Copilot requested changes on PR #340: button click early-returns on validation before reaching openAppKit() when disconnected. fix_attempts=3 → needs-human.",
+      "note": "Copilot review: When disconnected, clicking Connect Wallet can still early-return on input validation before hitting the !isConnected branch. Handle disconnected case first.",
       "labels": [
         "bug",
         "human"

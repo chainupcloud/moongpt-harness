@@ -2288,12 +2288,12 @@
       "pr_number": 340,
       "title": "fix: wallet not connected — Connect Wallet button disabled silently (#70)",
       "issue_number": 70,
-      "status": "open",
+      "status": "changes_requested",
       "review_status": "changes_requested",
       "deployed": false,
       "accepted": false,
       "created_at": "2026-04-08",
-      "note": "Copilot inline: wallet validation — handle disconnected case before form validation"
+      "note": "Copilot: 1 inline comment - handle disconnected case before validation"
     },
     {
       "pr_number": 341,
@@ -2311,12 +2311,12 @@
       "pr_number": 343,
       "title": "fix: TWAP order toast and tab counter (#289)",
       "issue_number": 289,
-      "status": "open",
+      "status": "changes_requested",
       "review_status": "changes_requested",
       "deployed": false,
       "accepted": false,
       "created_at": "2026-04-08",
-      "note": "Copilot inline: 3 comments on TWAP toast/counter logic"
+      "note": "Copilot: 3 inline comments - interval=0, stale orders on disconnect, type casting"
     },
     {
       "number": 344,
