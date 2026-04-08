@@ -5,7 +5,7 @@
   "github": {
     "owner": "chainupcloud",
     "repo": "pm-cup2026",
-    "fix_base_branch": "pm-v1",
+    "fix_base_branch": "dev",
     "production_branch": "main",
     "fix_branch_prefix": "fix/issue-"
   },
