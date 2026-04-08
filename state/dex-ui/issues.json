@@ -2751,14 +2751,14 @@
     {
       "id": "issue-98",
       "title": "[P3] Vercel staging perpetually stale — 4 dev commits undeployed, 3 consecutive ERROR builds",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "github_issue": 98,
       "scenario": null,
       "created_date": "2026-03-27",
-      "closed_at": null,
+      "closed_at": "2026-04-08",
       "fix_attempts": 0,
-      "resolution": null,
+      "resolution": "Vercel staging builds now succeeding — issue self-resolved",
       "note": null,
       "labels": [
         "bug",
