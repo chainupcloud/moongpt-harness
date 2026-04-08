@@ -11,6 +11,16 @@
       "fix_attempts": 1,
       "source": "human",
       "note": "Merged via PR #42, staging URL 待配置"
+    },
+    {
+      "github_number": 44,
+      "title": "[P3] C端页面标签展示顺序错误",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-04-08",
+      "fix_attempts": 0,
+      "source": "human"
     }
   ],
   "last_test_run": null
