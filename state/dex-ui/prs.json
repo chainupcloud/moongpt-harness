@@ -2337,6 +2337,30 @@
       "merge_commit_sha": "3fb7125c7dbb68068e684fdcdf4f1f8260c4665b",
       "deployed": true,
       "accepted": true
+    },
+    {
+      "number": 340,
+      "title": "fix: wallet not connected — Connect Wallet button disabled silently (#70)",
+      "status": "changes_requested",
+      "issue_numbers": [
+        70
+      ],
+      "branch": "fix/issue-70",
+      "base": "dev",
+      "created_date": "2026-04-07",
+      "review_notes": "Copilot: button click can still early-return on validation before connect wallet action when disconnected"
+    },
+    {
+      "number": 343,
+      "title": "fix: TWAP order toast and tab counter (#289)",
+      "status": "changes_requested",
+      "issue_numbers": [
+        289
+      ],
+      "branch": "fix/issue-289",
+      "base": "dev",
+      "created_date": "2026-04-07",
+      "review_notes": "Copilot: intervalSeconds 0 treated as unset; twapOrders not cleared on disconnect; type casting defeats type-checking"
     }
   ],
   "last_updated": "2026-04-08"
