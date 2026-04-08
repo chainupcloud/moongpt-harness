@@ -2317,6 +2317,21 @@
       "accepted": false,
       "created_at": "2026-04-08",
       "note": "Copilot inline: 3 comments on TWAP toast/counter logic"
+    },
+    {
+      "number": 344,
+      "title": "fix: Take Profit Market submit button enabled with empty trigger price (#302)",
+      "status": "merged",
+      "issue_numbers": [
+        302
+      ],
+      "branch": "fix/issue-302",
+      "base": "dev",
+      "created_date": "2026-04-08",
+      "merged_at": "2026-04-08",
+      "merge_commit_sha": "3fb7125c7dbb68068e684fdcdf4f1f8260c4665b",
+      "deployed": true,
+      "accepted": true
     }
   ],
   "last_updated": "2026-04-08"
