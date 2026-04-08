@@ -2099,7 +2099,9 @@
       ],
       "created_at": "2026-04-08",
       "branch": "fix/issue-71",
-      "base": "dev"
+      "base": "dev",
+      "review_status": "changes_requested",
+      "review_note": "Copilot inline: scrollIntoView should respect prefers-reduced-motion"
     }
   ],
   "pull_requests": [
