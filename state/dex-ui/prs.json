@@ -2125,33 +2125,52 @@
         286
       ],
       "title": "fix: add Trailing Stop to order type dropdown (#286)",
-      "status": "open",
+      "status": "merged",
       "branch": "fix/issue-286",
       "base": "dev",
       "created_at": "2026-03-29",
-      "url": "https://github.com/chainupcloud/dex-ui/pull/313"
+      "url": "https://github.com/chainupcloud/dex-ui/pull/313",
+      "merged_at": "2026-04-08",
+      "merge_sha": "c3c7f13"
     },
     {
       "number": 327,
       "title": "fix: validate TP/SL against mark price for direction correctness (#310)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         310
       ],
       "created_date": "2026-03-30",
       "branch": "fix/issue-310",
-      "base": "dev"
+      "base": "dev",
+      "merged_at": "2026-03-30",
+      "merge_sha": "3246c2d"
     },
     {
       "number": 328,
       "title": "fix: Scale order — add client-side validation when Start price >= End price (#311)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         311
       ],
       "branch": "fix/issue-311",
       "base": "dev",
-      "created_date": "2026-03-30"
+      "created_date": "2026-03-30",
+      "merged_at": "2026-04-08",
+      "merge_sha": "54ce3a5"
+    },
+    {
+      "number": 338,
+      "title": "fix: TWAP order submit button does nothing (#232)",
+      "status": "merged",
+      "issue_numbers": [
+        232
+      ],
+      "branch": "fix/issue-232",
+      "base": "dev",
+      "created_date": "2026-04-08",
+      "merged_at": "2026-04-08",
+      "merge_sha": "d1facc5"
     }
   ],
   "last_updated": "2026-04-08"

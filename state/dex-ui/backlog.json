@@ -2968,11 +2968,11 @@
       "priority": 3,
       "title": "TWAP order form: submit a TWAP order with 5m duration",
       "description": "Select TWAP order type, set size and 5m duration, click Buy/Long (wallet must be connected). Verify TWAP order appears in the TWAP tab in the open orders panel.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-27",
-      "result_summary": "FAIL — same as E375: TWAP form lacks TWAP-specific parameter fields → Issue #109"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E252",
@@ -3220,11 +3220,11 @@
       "priority": 3,
       "title": "TWAP order submission — end-to-end with valid inputs",
       "description": "Fill TWAP order form: set amount, duration, and price limit. Confirm wallet not connected shows connect prompt or error. Do not actually submit on testnet.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-27",
-      "result_summary": "FAIL — TWAP selected from Order Type dropdown but no TWAP-specific fields shown; form identical to Limit → Issue #113"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E273",
@@ -3243,11 +3243,11 @@
       "title": "TWAP 订单类型：字段显示和提交验证",
       "description": "在交易表单中选择 TWAP 订单类型，验证是否出现 TWAP 特有字段（时间段、子订单数量等），及提交前表单验证行为",
       "track": "frontend",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-27",
-      "result_summary": "FAIL — same root cause as E272; TWAP form only shows Price/Amount, no Duration/Interval/sub-order fields → Issue #113"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E275",
@@ -4861,11 +4861,11 @@
       "priority": 3,
       "title": "TP/SL validation — verify TP price must be above entry for long, SL must be below",
       "description": "Enable TP/SL checkbox, enter a Take Profit price below current price for a long order, verify an error/warning appears. Then enter SL above current price and verify similar validation",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — TP/SL inputs accept invalid values (TP=1 for long at ~66821) with no validation error. Issue #146 created."
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E409",
@@ -5063,11 +5063,11 @@
       "priority": 2,
       "title": "TWAP order — verify TwapOrderForm component renders after type selection",
       "description": "After E272/E274 FAIL: check if TwapOrderForm.tsx is actually mounted when TWAP selected. Inspect DOM for twap-form class or data attributes. Verify component renders with duration and interval inputs.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-27",
-      "result_summary": "FAIL — TwapOrderForm still not rendered after TWAP selection; issue #113 still open"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E426",
@@ -5785,11 +5785,11 @@
       "title": "TP/SL price validation re-verify after #122 fix — long position constraints",
       "description": "After issue #122 (TP/SL checkbox not revealing inputs) is fixed, re-verify price validation: (1) For LONG: TP must be > current price, SL must be < current price. Enter reversed values and check for validation errors. (2) Verify decimal precision constraints (e.g. max 1 decimal for BTC).",
       "track": "frontend",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-27",
-      "result_summary": "FAIL — TP/SL inputs still not revealed after clicking toggle; issue #122 still open"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E485",
@@ -5862,11 +5862,11 @@
       "priority": 2,
       "title": "TWAP order form — regression E314 re-verify after fix",
       "description": "After issue #125 (TWAP fields missing) is fixed: select TWAP, verify duration input and interval count fields appear and accept numeric input.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-27",
-      "result_summary": "FAIL — TWAP duration/interval fields still absent after #125 closed (regression)"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E491",
@@ -5886,11 +5886,11 @@
       "priority": 3,
       "title": "TWAP order — submit flow with valid duration/interval values",
       "description": "Once TWAP fields are rendered (post #125 fix): fill in duration=5min, parts=5, no price limit, submit. Verify order acknowledgement or error if not connected.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — TWAP tab exists but TWAP-specific fields (duration/parts/interval) not rendered; Issue #170"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E493",
@@ -5980,11 +5980,11 @@
       "priority": 2,
       "title": "TWAP order form — third regression check (post #129 fix)",
       "description": "After issue #129 is fixed: select TWAP, confirm duration and interval fields appear and accept numeric input. Previous fixes (#109, #113, #125) all regressed.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-27",
-      "result_summary": "FAIL — TWAP button selectable but no Duration/Interval fields appear (only 7 standard inputs). Regression persists, issue #129 open."
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E501",
@@ -6052,11 +6052,11 @@
       "priority": 2,
       "title": "TWAP order — submit after duration/interval fix and verify order appears in history",
       "description": "After issue #129 fix lands: select TWAP, fill Duration=60 Interval=10, enter size, submit. Confirm order appears in Order History with TWAP type. End-to-end TWAP submission flow.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-27",
-      "result_summary": "FAIL — TWAP Duration/Interval fields still absent (confirmed issue #131 still open)"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E507",
@@ -6305,11 +6305,11 @@
       "priority": 3,
       "title": "TWAP 订单 — 必填字段验证（Orders 数量 + 间隔时间）",
       "description": "选择 TWAP 类型后填写订单数量和间隔，验证提交前字段校验逻辑（空值、负值、超范围）",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-27",
-      "last_run": "2026-03-29",
-      "result_summary": "FAIL — TWAP selected but no Orders/Interval fields rendered; known stale Vercel staging false positive (issue #98)"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E528",
@@ -7038,11 +7038,11 @@
       "priority": 3,
       "title": "TWAP order — verify interval and duration fields appear when TWAP selected",
       "description": "On /trade, click order type and select TWAP. Verify that TWAP-specific fields (e.g. interval, duration, number of orders) appear in the form.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — TWAP button selectable but no Interval/Duration fields appear (Issue #183 existing)"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E588",
@@ -7084,11 +7084,11 @@
       "priority": 3,
       "title": "TWAP order: verify duration/interval fields appear and accept input",
       "description": "After selecting TWAP order type from the dropdown (not the TWAP tab in bottom panel), confirm the form shows TWAP-specific fields like duration and interval",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — TWAP selected but no duration/interval fields appear; TWAP issue already tracked"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E592",
@@ -7144,11 +7144,11 @@
       "priority": 3,
       "title": "TP/SL — verify order is blocked from submission with invalid TP/SL values",
       "description": "After wallet connection, submit a limit order with clearly invalid TP/SL (TP below entry for long). Verify the order is rejected or blocked by the UI before reaching the blockchain.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — TP/SL invalid values not validated, submit button not disabled → Issue #197"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E597",
@@ -7300,11 +7300,11 @@
       "priority": 2,
       "title": "TP/SL validation — invalid inputs rejected (TP below entry for long, SL above entry)",
       "description": "Open TP/SL section for a long order with entry ~$66800. Enter TP=60000 (below entry) and SL=70000 (above entry). Verify form shows validation error or disables submit button.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — No validation for invalid TP (below entry) and SL (above entry) on long order → Issue #148 [P3]"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E610",
@@ -7385,12 +7385,12 @@
       "priority": 2,
       "title": "TP/SL SELL order validation — TP below entry and SL above entry (correct) vs reversed (invalid)",
       "description": "For SELL order: TP should be below entry, SL above entry. Test 1: enter correct values and verify no error. Test 2: enter TP above entry (invalid for sell) and verify 'TP must be below entry price' error shows.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
       "track": "frontend",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — TP above entry price for SELL accepted with no validation error → Issue #149"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E617",
@@ -7627,11 +7627,11 @@
       "priority": 3,
       "title": "TWAP order — submit TWAP order and verify it appears in TWAP Orders tab",
       "description": "After configuring TWAP (size, price range, duration hours/minutes), submit the order and verify it appears in the TWAP orders bottom panel with correct parameters.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — TWAP form missing interval/duration fields (issue-183 related); bottom TWAP panel tab exists as \"TWAP\""
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E637",
@@ -10050,11 +10050,11 @@
       "priority": 2,
       "title": "TWAP order — verify total order count / amount splitting logic",
       "description": "After Issue #183 is fixed and TWAP fields appear: enter a TWAP order, set interval and duration, verify the order is split into expected number of sub-orders and total size equals the original.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — TWAP form missing duration/interval/order-count fields (duplicate of existing TWAP issue)"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E836",
@@ -10320,11 +10320,11 @@
       "priority": 3,
       "title": "TP/SL — invalid values show validation errors",
       "description": "Enable TP/SL on a long order. Enter a TP value BELOW current price (invalid for long). Verify validation error appears. Enter SL ABOVE current price (invalid for long). Verify error. Then fix values and verify errors clear.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — TP/SL accepts invalid TP below mark and SL above mark for long with no inline validation; issue #242 filed"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E858",
@@ -10634,11 +10634,11 @@
       "priority": 3,
       "title": "TP/SL — verify BUY direction validation (TP below entry should be invalid)",
       "description": "For BUY/Long orders: TP should be above entry price, SL below. Test entering TP below entry (invalid) and verify red-border/error message appears. Counterpart to E631.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-29",
-      "result_summary": "FAIL — No direction validation for invalid BUY TP (TP below mark price shows no error, no red border, no text) → Issue #310"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E884",
@@ -10646,11 +10646,11 @@
       "priority": 3,
       "title": "TP/SL — switching Sell→Buy also clears TP/SL values",
       "description": "E518 confirmed Buy→Sell clears TP/SL. Verify the reverse: start on Sell, set TP/SL, switch to Buy — values should clear or recalculate for BUY direction constraints.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — TP/SL panel does not appear when enabling on Sell side (AppKit modal may interfere after Sell button click); related to existing #P2 issue"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E885",
@@ -10680,11 +10680,11 @@
       "priority": 3,
       "title": "TP/SL validation — submit button disabled when TP/SL values are invalid",
       "description": "When red-border validation appears for invalid TP/SL, verify the Buy/Sell submit button is also disabled to prevent submitting invalid orders.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-29",
-      "result_summary": "FAIL — Submit button (Buy/Long) remains enabled when TP/SL has invalid direction value → Issue #310"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E888",
@@ -10947,11 +10947,11 @@
       "priority": 3,
       "title": "TP/SL — SL submit button disabled when SL price above entry price (invalid for long)",
       "description": "Enable TP/SL, enter SL price ABOVE current price for a long (invalid), verify error message shown and submit blocked",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-29",
-      "result_summary": "FAIL — TP/SL long: SL=70109 above entry=66771 shows NO validation error, submit enabled. Related to open issue #278 pattern (TP/SL BUY direction validation gap). Skipped new issue — dedup with existing."
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E910",
@@ -11557,12 +11557,12 @@
       "priority": 3,
       "title": "Scale order — invalid range validation: Start price >= End price should show error",
       "description": "Set Scale Start price higher than End price (e.g., Start=68000, End=64000) and verify UI shows a validation error or disables the submit button.",
-      "status": "failed",
+      "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-29",
-      "result_summary": "FAIL — Scale order shows no validation when Start price(68000) > End price(64000); no red border or error text → Issue #311"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E959",
@@ -13815,12 +13815,12 @@
       "priority": 2,
       "title": "TP/SL server-side validation — attempt order submit with invalid TP/SL",
       "description": "With session key: enable TP/SL on Limit BUY, set TP below mark price (invalid). Attempt to place order. Verify server rejects the order or client blocks submission. Current known issue #242: client-side validation missing.",
-      "status": "failed",
+      "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-28",
-      "result_summary": "FAIL — TP/SL toggle unresponsive; no input fields appear after click (issue #239 still open)"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E1168",
@@ -15448,12 +15448,12 @@
       "priority": 2,
       "title": "TWAP form — verify TWAP-specific Duration/Interval UI elements exist",
       "description": "After clicking TWAP order type tab, verify that the form renders TWAP-specific fields: Duration presets (5m/30m/1h/4h/12h/24h), Hour/Min inputs, and Interval (seconds) input. Current observation (2026-03-29): these fields do NOT appear — only Price/Size/Total shown. Determine if this is by design or missing implementation.",
-      "status": "failed",
+      "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-29",
-      "last_run": "2026-03-29",
-      "result_summary": "FAIL — TWAP form shows only Price/Size/Total; no Duration presets (5m/30m/1h/4h/12h/24h), no Hour/Min or Interval inputs → Issue #291",
+      "last_run": null,
+      "result_summary": null,
       "linked_issue": 291
     },
     {
@@ -15506,12 +15506,12 @@
       "priority": 2,
       "title": "TWAP form Duration/Interval fields — regression check after issue #291 fix",
       "description": "After issue #291 fix: select TWAP order type, verify Duration presets (5m/30m/1h/4h/12h/24h), Hour/Min custom inputs, and Interval input all appear in the form.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29",
       "linked_issue": 291,
-      "last_run": "2026-03-29",
-      "result_summary": "FAIL — TWAP Duration/Interval fields still missing; issue #291 still open (fix not yet deployed to staging)"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E1320",
