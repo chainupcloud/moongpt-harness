@@ -2705,7 +2705,7 @@
       "closed_at": null,
       "fix_attempts": 2,
       "resolution": null,
-      "note": "Copilot review (3 comments): 1) TWAP interval=0 treated as unset; 2) twapOrders not cleared on disconnect; 3) Type casting defeats type-checking.",
+      "note": "Copilot review (PR #343, 3 comments): 1) TWAP interval=0 treated as unset; 2) twapOrders not cleared on disconnect; 3) Type casting defeats type-checking.",
       "labels": [
         "bug",
         "human"
@@ -2833,7 +2833,7 @@
       "closed_at": null,
       "fix_attempts": 4,
       "resolution": null,
-      "note": "Copilot review: When disconnected, clicking Connect Wallet can still early-return on input validation before hitting the !isConnected branch. Handle disconnected case first.",
+      "note": "Copilot review (PR #340): When disconnected, clicking Connect Wallet can still early-return on input validation before hitting the !isConnected branch. Handle disconnected case first.",
       "labels": [
         "bug",
         "human"

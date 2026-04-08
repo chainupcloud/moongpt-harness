@@ -2088,7 +2088,7 @@
       "base": "dev",
       "created_at": "2026-04-08",
       "review_status": "changes_requested",
-      "review_note": "Copilot inline: button click early-returns on validation before reaching openAppKit() when disconnected"
+      "review_note": "Copilot: 1 inline comment — button click early-returns on validation before reaching openAppKit() when disconnected"
     },
     {
       "number": 341,
