@@ -50,7 +50,7 @@
     {
       "id": 70,
       "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
-      "status": "closed",
+      "status": "open",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-27",
@@ -58,7 +58,7 @@
       "fix_branch": null,
       "fix_attempts": 6,
       "pr_number": null,
-      "note": "PR #340 changes_requested. Copilot: 1 inline comment — button click early-returns before openAppKit(). No HARNESS_VERDICT. | Superseded by GitHub-tracked duplicate",
+      "note": "PR #340 changes_requested. Copilot: handleSubmit early-returns on validation before !isConnected branch — button click silently fails. fix-agent must skip validation when disconnected.",
       "closed_at": "2026-04-08",
       "source": "human"
     },
@@ -479,7 +479,7 @@
     {
       "id": 289,
       "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
-      "status": "closed",
+      "status": "open",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-29",
@@ -487,7 +487,7 @@
       "fix_branch": null,
       "fix_attempts": 4,
       "pr_number": null,
-      "note": "PR #343 changes_requested. Copilot: 3 inline comments (interval fallback, stale twapOrders, type casting). No HARNESS_VERDICT. | Superseded by GitHub-tracked duplicate",
+      "note": "PR #343 changes_requested. Copilot: (1) interval=0 falsy in toast fallback, (2) twapOrders not cleared on disconnect, (3) type-casting in getTwapOrders. fix-agent must address all 3.",
       "closed_at": "2026-04-08",
       "source": "human"
     },
