@@ -1041,7 +1041,7 @@
       "title": "[P2] Trailing Stop order selection causes app crash (client-side exception)",
       "github_issue_number": 336,
       "github_repo": "chainupcloud/dex-ui",
-      "status": "open",
+      "status": "closed",
       "priority": "P2",
       "created_date": "2026-04-08",
       "scenarios": [],
@@ -1049,8 +1049,8 @@
         "human"
       ],
       "notes": "",
-      "closed_at": null,
-      "note": "Addressed Copilot review comments on PR #339: reworded CHANGELOG entry, removed unused getActiveOrders/getActiveOrdersByCoin getters. Re-requested Copilot review.",
+      "closed_at": "2026-04-08",
+      "note": "PR #339 merged, staging acceptance passed (commit 2f9807c). Closed by master-agent.",
       "fix_attempts": 3,
       "source": "human",
       "pr_number": 339
