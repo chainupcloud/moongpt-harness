@@ -1100,7 +1100,8 @@
       "pr_number": null,
       "created_at": "2026-03-27",
       "fix_attempts": 0,
-      "source": "human"
+      "source": "human",
+      "note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt"
     },
     {
       "github_number": 73,
@@ -2589,7 +2590,8 @@
       "pr_number": null,
       "created_at": "2026-03-29",
       "fix_attempts": 0,
-      "source": "human"
+      "source": "human",
+      "note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - TWAP toast interval fallback, disconnected user stale orders, type-casting defeats checks"
     },
     {
       "github_number": 291,

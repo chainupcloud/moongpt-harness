@@ -2088,7 +2088,7 @@
       "base": "dev",
       "created_at": "2026-04-08",
       "review_status": "changes_requested",
-      "review_note": "Copilot: 1 inline comment — button click early-returns on validation before reaching openAppKit() when disconnected. No HARNESS_VERDICT."
+      "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt"
     },
     {
       "number": 341,
@@ -2149,7 +2149,7 @@
       "base": "dev",
       "created_at": "2026-04-08",
       "review_status": "changes_requested",
-      "review_note": "Copilot: 3 inline comments (interval 0 treated as unset, twapOrders not cleared on disconnect, type assertion unsafe). No HARNESS_VERDICT."
+      "review_note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - TWAP toast interval fallback, disconnected user stale orders, type-casting defeats checks"
     },
     {
       "number": 344,
@@ -2296,8 +2296,8 @@
       "deployed": false,
       "accepted": false,
       "created_at": "2026-04-08",
-      "note": "Copilot: 1 inline comment - button click can still trigger trade action when disconnected despite label change",
-      "review_note": "Copilot review: TradeForm index.tsx:1163 — When disconnected, button label is 'Connect Wallet' but clicking can still trigger validation path"
+      "note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt",
+      "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt"
     },
     {
       "pr_number": 341,
@@ -2320,8 +2320,8 @@
       "deployed": false,
       "accepted": false,
       "created_at": "2026-04-08",
-      "note": "Copilot: 3 inline comments - (1) intervalSeconds=0 treated as unset in toast, (2) twapOrders not cleared on disconnect, (3) type casting in getTwapOrders mapping",
-      "review_note": "Copilot review: (1) TradeForm index.tsx:556 — TWAP toast interval fallback treats 0 as falsy; (2) AccountPanel.tsx:1130 — twapOrders not cleared on disconnect; (3) AccountPanel.tsx:1148 — type cast issue"
+      "note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - TWAP toast interval fallback, disconnected user stale orders, type-casting defeats checks",
+      "review_note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - TWAP toast interval fallback, disconnected user stale orders, type-casting defeats checks"
     },
     {
       "number": 344,
@@ -2348,7 +2348,8 @@
       "branch": "fix/issue-70",
       "base": "dev",
       "created_date": "2026-04-07",
-      "review_notes": "Copilot: 1 inline comment - button click can still trigger trade action when disconnected despite label change"
+      "review_notes": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt",
+      "review_status": "changes_requested"
     },
     {
       "number": 343,
@@ -2360,7 +2361,8 @@
       "branch": "fix/issue-289",
       "base": "dev",
       "created_date": "2026-04-07",
-      "review_notes": "Copilot: 3 inline comments - (1) intervalSeconds=0 treated as unset in toast, (2) twapOrders not cleared on disconnect, (3) type casting in getTwapOrders mapping"
+      "review_notes": "Copilot review (no HARNESS_VERDICT): 3 inline comments - TWAP toast interval fallback, disconnected user stale orders, type-casting defeats checks",
+      "review_status": "changes_requested"
     }
   ],
   "last_updated": "2026-04-08"
