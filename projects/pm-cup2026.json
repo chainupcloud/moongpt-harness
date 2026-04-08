@@ -1,0 +1,27 @@
+{
+  "name": "pm-cup2026",
+  "description": "2026 FIFA 世界杯预测市场平台（SaaS 多租户白标）— Go 后端微服务 + 智能合约",
+
+  "github": {
+    "owner": "chainupcloud",
+    "repo": "pm-cup2026",
+    "fix_base_branch": "pm-v1",
+    "production_branch": "main",
+    "fix_branch_prefix": "fix/issue-"
+  },
+
+  "vercel": null,
+
+  "test": {
+    "staging_url": null,
+    "production_url": null,
+    "active_env": "staging"
+  },
+
+  "issue_tracker": {
+    "owner": "chainupcloud",
+    "repo": "pm-cup2026"
+  },
+
+  "local_path": "/home/ubuntu/chainup/pm-cup2026"
+}
