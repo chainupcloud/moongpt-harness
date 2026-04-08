@@ -1101,7 +1101,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 1,
       "source": "human",
-      "note": "Copilot changes_requested on PR #340: handleSubmit not guarded when wallet disconnected. fix_agent should address."
+      "note": "PR #340 changes_requested. Copilot: handleSubmit early-returns on validation before !isConnected branch — button click silently fails. fix-agent must skip validation when disconnected."
     },
     {
       "github_number": 73,
@@ -2591,7 +2591,7 @@
       "created_at": "2026-03-29",
       "fix_attempts": 1,
       "source": "human",
-      "note": "Copilot changes_requested on PR #343: interval=0 falsy, twapOrders not cleared on disconnect, type casting. fix_agent should address."
+      "note": "PR #343 changes_requested. Copilot: (1) interval=0 falsy in toast fallback, (2) twapOrders not cleared on disconnect, (3) type-casting in getTwapOrders. fix-agent must address all 3."
     },
     {
       "github_number": 291,
