@@ -2772,6 +2772,16 @@
       "updated_at": "2026-03-30"
     },
     {
+      "github_number": 335,
+      "title": "[P2] 导航栏「更多」下拉菜单 — 删除 Discord、X/Twitter、Telegram 三个社交链接",
+      "priority": "P2",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-04-08",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
       "github_number": 336,
       "title": "[P2] Trailing Stop order selection causes app crash (client-side exception)",
       "status": "open",
