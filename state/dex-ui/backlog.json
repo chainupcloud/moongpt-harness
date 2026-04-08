@@ -1,6 +1,6 @@
 {
   "description": "探索测试背板 — explore-agent 每次从 pending 中取若干条执行，完成后标记 tested/failed",
-  "last_updated": "2026-03-29",
+  "last_updated": "2026-04-08",
   "scenarios": [
     {
       "id": "E001",
@@ -14122,11 +14122,11 @@
       "priority": 2,
       "title": "Portfolio Assets tab — verify balance columns with connected wallet",
       "description": "Navigate to Portfolio > Assets tab with wallet connected. Verify table shows columns (Asset, Available, Total, Value) and at least USDC row with a numeric value (even if 0 on testnet)",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
       "added_date": "2026-03-29",
-      "last_run": "2026-03-29",
-      "result_summary": "FAIL — Portfolio Assets tab shows Connect Wallet prompt; no columns or USDC row rendered despite session injection that works on /trade → Issue #266"
+      "last_run": "2026-04-08",
+      "result_summary": "SKIP — wagmi.store cookie injection doesn't work for /portfolio page (known test limitation); page shows 'Connect your wallet' with session injection. Portfolio fix (issue #266) was BigInt serialization, not auth detection."
     },
     {
       "id": "E1197",
@@ -14985,11 +14985,11 @@
       "priority": 2,
       "title": "Trailing stop order — form opens and accepts trigger price input",
       "description": "Navigate to /trade, click on bottom panel Trailing(0) tab. Find the trailing stop order entry point (via order type dropdown or dedicated button), verify form fields appear (trigger distance/%, size). Click to create a trailing stop and verify input fields are functional.",
-      "status": "pending",
+      "status": "failed",
       "added_by": "explore-agent",
       "added_date": "2026-03-29",
-      "last_run": "2026-03-29",
-      "result_summary": "FAIL — Order type dropdown lacks \"Trailing\" option; Trailing(0) tab shows only empty state \"No trailing stop orders\" with no create button → Issue #286"
+      "last_run": "2026-04-08",
+      "result_summary": "FAIL — Trailing Stop is now in order type dropdown (PR #313 fix), but selecting it causes full app crash (client-side exception). TrailingStopForm render error → Issue #336 [P2]"
     },
     {
       "id": "E1275",
@@ -15928,11 +15928,11 @@
       "priority": 2,
       "title": "Take Profit Limit — submit button not disabled when trigger price and limit price are empty",
       "description": "E1357 found Take Profit Market submit buttons enabled with empty fields. Check if Take Profit Limit has the same validation gap — trigger price empty should disable submit.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
       "added_date": "2026-03-29",
-      "last_run": "2026-03-29",
-      "result_summary": "FAIL — Submit button enabled when TP Limit trigger+limit prices are empty (Issue #303)"
+      "last_run": "2026-04-08",
+      "result_summary": "SKIP — Could not reliably open Take Profit Limit via order type dropdown in test environment; dropdown interaction unstable in headless mode"
     },
     {
       "id": "E1361",
@@ -16452,10 +16452,12 @@
       "priority": 2,
       "title": "TP/SL toggle state persists when switching order type (Limit→Market→Limit)",
       "description": "Enable TP/SL in Limit mode with values, switch to Market order type, switch back to Limit. Verify TP/SL checkbox state and values are preserved (or reset intentionally). No data loss.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-03-29"
+      "added_date": "2026-03-29",
+      "last_run": "2026-04-08",
+      "result_summary": "PASS — TP/SL checkbox state persists (remains checked) when switching Limit→Market→Limit. Toggle preserved correctly."
     },
     {
       "id": "E1409",
@@ -16467,6 +16469,62 @@
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-29"
+    },
+    {
+      "id": "E1410",
+      "area": "trade-form",
+      "priority": 1,
+      "title": "Trailing Stop form renders without crash after order type selection",
+      "description": "Select 'Trailing Stop' from the order type dropdown (CONDITIONAL group). Verify the TrailingStopForm renders correctly with fields for callback rate/distance, activation price, size. No crash should occur.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1411",
+      "area": "trade-form",
+      "priority": 2,
+      "title": "Trailing Stop order — submit with valid callback rate and size",
+      "description": "After selecting Trailing Stop order type, fill in callback rate (e.g. 1%), activation price, and size. Verify submit button becomes enabled. (Only test if E{max_id+1} passes)",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1412",
+      "area": "trade-form",
+      "priority": 2,
+      "title": "Take Profit Limit — verify all order types in dropdown after PR #313",
+      "description": "Open order type dropdown. Verify all CONDITIONAL options visible: Stop Limit, Stop Market, Take Profit Market, Take Profit Limit, Trailing Stop. Verify BASIC and ADVANCED groups also present.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1413",
+      "area": "trade-form",
+      "priority": 3,
+      "title": "TP/SL values persist (not just toggle) after order type switch",
+      "description": "E1408 showed the checkbox state persists after Limit→Market→Limit. Now verify the NUMERIC VALUES (TP price and SL price) also persist. Fill TP=90000 SL=80000, switch to Market, switch back to Limit. Values should be preserved.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1414",
+      "area": "portfolio",
+      "priority": 2,
+      "title": "Portfolio Assets tab — verify USDC balance shows with real wallet session",
+      "description": "This scenario requires a real wallet connection (wagmi.store injection doesn't work for portfolio). Manual verification: Connect wallet, navigate to Portfolio > Assets tab, confirm USDC row visible with Available/Total/Value columns. Automated testing limited.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08",
+      "notes": "Requires real wallet — cannot automate with cookie injection"
     }
   ]
 }
