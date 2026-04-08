@@ -48,21 +48,6 @@
       "source": "human"
     },
     {
-      "id": 70,
-      "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
-      "status": "needs-human",
-      "priority": "P3",
-      "scenario": null,
-      "created": "2026-03-27",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/70",
-      "fix_branch": null,
-      "fix_attempts": 6,
-      "pr_number": 340,
-      "note": "PR #340 changes_requested. Copilot (no HARNESS_VERDICT, 1 inline): handleSubmit early-returns on validation before !isConnected branch — button click silently fails. fix-agent must skip validation when disconnected.",
-      "closed_at": "2026-04-08",
-      "source": "human"
-    },
-    {
       "id": 73,
       "title": "[P3] 移动端竖屏（390×844）底部面板标签栏水平溢出 — 4 个标签不可见",
       "status": "closed",
@@ -475,21 +460,6 @@
       "note": "PR #329 merged (2026-03-30). Deploy ERROR: alwaysRefuseToBuild (issue #98). Acceptance pending deployment fix. Synced from GitHub: closed 2026-04-03.",
       "updated_at": "2026-03-30",
       "closed_at": "2026-04-03"
-    },
-    {
-      "id": 289,
-      "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
-      "status": "needs-human",
-      "priority": "P3",
-      "scenario": null,
-      "created": "2026-03-29",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/289",
-      "fix_branch": null,
-      "fix_attempts": 4,
-      "pr_number": 343,
-      "note": "PR #343 changes_requested. Copilot (no HARNESS_VERDICT, 3 inlines): (1) interval=0 falsy in toast fallback, (2) twapOrders not cleared on disconnect, (3) type-casting defeats type checks in getTwapOrders. fix-agent must address all 3.",
-      "closed_at": "2026-04-08",
-      "source": "human"
     },
     {
       "id": 291,
@@ -1091,6 +1061,16 @@
       "deployed_sha": "f958ab50fda9fe40a27853c501abc7f0b01e2e92",
       "accepted": true,
       "note": "PR #74 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification."
+    },
+    {
+      "github_number": 70,
+      "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
+      "priority": "P3",
+      "status": "needs-human",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 6,
+      "source": "human"
     },
     {
       "github_number": 73,
@@ -2570,6 +2550,16 @@
       "github_number": 288,
       "created_at": "2026-03-29",
       "pr_number": 342
+    },
+    {
+      "github_number": 289,
+      "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
+      "priority": "P3",
+      "status": "needs-human",
+      "pr_number": null,
+      "created_at": "2026-03-29",
+      "fix_attempts": 4,
+      "source": "human"
     },
     {
       "github_number": 291,
