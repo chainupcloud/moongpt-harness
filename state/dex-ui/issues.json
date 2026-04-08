@@ -1050,8 +1050,8 @@
       ],
       "notes": "",
       "closed_at": null,
-      "note": "Copilot review on PR #339 has 2 inline comments: 1) CHANGELOG.md: Reword entry to match actual user-facing issue (crash on selecting Trailing Stop, not 'crashes app'). 2) trailingStopStore.ts: Inlined active-order filtering makes getActiveOrders/getActiveOrdersByCoin unused - consider using existing getters or removing them.",
-      "fix_attempts": 2,
+      "note": "Addressed Copilot review comments on PR #339: reworded CHANGELOG entry, removed unused getActiveOrders/getActiveOrdersByCoin getters. Re-requested Copilot review.",
+      "fix_attempts": 3,
       "source": "human",
       "pr_number": 339
     },
