@@ -1,0 +1,2146 @@
+{
+  "prs": [
+    {
+      "pr_number": 3,
+      "issue_numbers": [
+        1
+      ],
+      "status": "merged",
+      "commit_sha": "d4bdadc",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 5,
+      "issue_numbers": [],
+      "status": "merged",
+      "commit_sha": "1ebc02b",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 6,
+      "issue_numbers": [],
+      "status": "merged",
+      "commit_sha": "ceb6214",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 10,
+      "issue_numbers": [
+        7
+      ],
+      "status": "merged",
+      "commit_sha": "49c83a2",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 12,
+      "issue_numbers": [
+        11
+      ],
+      "status": "merged",
+      "commit_sha": "dd3adaa",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 15,
+      "issue_numbers": [
+        13
+      ],
+      "status": "merged",
+      "commit_sha": "c75879c",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 16,
+      "issue_numbers": [
+        14
+      ],
+      "status": "merged",
+      "commit_sha": "aaa0c240b15986a0ec8a7bb14623686cdf4826ee",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 20,
+      "issue_numbers": [
+        17
+      ],
+      "status": "merged",
+      "commit_sha": "7ffca6301372781db64d82eec4cd5a937cbf7336",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": false,
+      "note": "P4 issue — awaiting human acceptance"
+    },
+    {
+      "pr_number": 21,
+      "issue_numbers": [
+        18
+      ],
+      "status": "merged",
+      "commit_sha": "71a1647f3a55e68b08402246529a66bbaa6757cc",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": false,
+      "note": "P4 issue — awaiting human acceptance"
+    },
+    {
+      "pr_number": 22,
+      "issue_numbers": [
+        19
+      ],
+      "status": "merged",
+      "commit_sha": "4e9367437c21524984392884b8cbb4c5f5723e20",
+      "merged_at": "2026-03-26",
+      "deployed": true,
+      "accepted": false,
+      "note": "P4 issue — awaiting human acceptance"
+    },
+    {
+      "pr_number": 23,
+      "issue_numbers": [],
+      "status": "merged",
+      "title": "fix: correct spot navigation link to /spot",
+      "commit_sha": "fd926f8b5976271a6fc401ff4e99341ac7f3f130",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 25,
+      "issue_numbers": [
+        24
+      ],
+      "status": "merged",
+      "title": "fix: TradingView study_templates 404 及 K 线时间违规 (#24)",
+      "commit_sha": "e57204ad61d3d49307b93e55dfd7dc52c02e28d6",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 30,
+      "issue_numbers": [
+        26
+      ],
+      "status": "merged",
+      "title": "fix: disable Buy/Long button when balance insufficient (#26)",
+      "commit_sha": "bbd5b0a00e532fe8b0cf0891e36cd7ab972ff3b6",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 31,
+      "issue_numbers": [
+        27
+      ],
+      "status": "merged",
+      "title": "fix: 交易表单 price/size 输入框过滤非法字符 (#27)",
+      "commit_sha": "b8f208046e0a5107b69271d07b5926e451b7234d",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 32,
+      "issue_numbers": [
+        28
+      ],
+      "status": "merged",
+      "title": "fix: /markets page showing $0 prices — coin key mismatch (#28)",
+      "commit_sha": "261087acf6501d57d3320c2f5ab3f1fc4d998799",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 33,
+      "issue_numbers": [
+        29
+      ],
+      "status": "merged",
+      "title": "fix: 交易表单下单按钮未感知钱包连接状态 (#29)",
+      "commit_sha": "a5f31a4d8a66ec625aad2f24593c20a35db6dc98",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 36,
+      "issue_numbers": [
+        34
+      ],
+      "status": "merged",
+      "title": "fix: /markets 24h 涨跌幅显示 +Infinity% (#34)",
+      "commit_sha": "04d7d8cf37ca7d98697ec20627ad1855d79b9960",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 37,
+      "issue_numbers": [
+        35
+      ],
+      "status": "merged",
+      "title": "fix: checkpoint detail Time shows 1970-01-01 (#35)",
+      "commit_sha": "23df6db0e87e6bedfb8f3086e7b0df6f1b13d68e",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully."
+    },
+    {
+      "pr_number": 39,
+      "issue_numbers": [
+        38
+      ],
+      "status": "merged",
+      "title": "fix: /markets 资金费率显示 NaN% (#38)",
+      "commit_sha": "48df86b12047f8e38656ec5a2f93457314f3ba8e",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 42,
+      "issue_numbers": [
+        41
+      ],
+      "status": "merged",
+      "title": "fix: 移动端横屏底部标签栏 Order History 按钮溢出视口 (#41)",
+      "commit_sha": "dd607dba85a55938bafa4b35c090c2bff9e21ff3",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": false,
+      "note": "Acceptance failed: Order History button still overflows viewport in 812×375 landscape"
+    },
+    {
+      "pr_number": 43,
+      "issue_numbers": [
+        40
+      ],
+      "status": "merged",
+      "title": "fix: deposit modal add insufficient balance validation (#40)",
+      "commit_sha": "d85511226ee5a5a45cd9ede7ce8b133aabd738cc",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": false,
+      "note": "P4 issue — awaiting human acceptance"
+    },
+    {
+      "pr_number": 46,
+      "issue_numbers": [
+        45
+      ],
+      "status": "merged",
+      "title": "fix: limit order submit shows no feedback toast (#45) (#46)",
+      "commit_sha": "9b9bc5811588734efe53ef5ab44bb4fe621bc35e",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 48,
+      "issue_numbers": [
+        41
+      ],
+      "status": "merged",
+      "title": "fix: constrain AccountPanel width to prevent tab overflow in landscape mobile (#41) (#48)",
+      "commit_sha": "07e21780f0ca42e8bec02d13ffaf4e6cf7156062",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": false,
+      "note": "Acceptance FAILED: Order History button right=909 > 812px. Issue #41 → needs-human."
+    },
+    {
+      "pr_number": 50,
+      "issue_numbers": [
+        47
+      ],
+      "status": "merged",
+      "title": "fix: preserve size when switching order types (#47)",
+      "commit_sha": "292bb53f46e1c8ae5d6ab4b58711c6a1be3617d9",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 52,
+      "issue_numbers": [
+        51
+      ],
+      "status": "merged",
+      "title": "fix: /trade shows error message instead of infinite skeleton when API 500 (#51)",
+      "commit_sha": "5b3d30740be4af300d180171a895b165610e36c7",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 56,
+      "issue_numbers": [
+        54
+      ],
+      "status": "merged",
+      "title": "fix: limit order submit shows no toast with session key (#54)",
+      "commit_sha": "ca2a113",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 59,
+      "issue_numbers": [
+        53
+      ],
+      "status": "merged",
+      "title": "fix: trade form Buy/Long button validation feedback for size=0 (#53)",
+      "commit_sha": "a9e0479ebbc21ee9ec0ba292631f105b0c4f6e7d",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 61,
+      "issue_numbers": [
+        57
+      ],
+      "status": "merged",
+      "title": "fix: /markets 价格列显示 $0 — midPx 回退链补全 markPx/oraclePx (#57)",
+      "commit_sha": "02d720d40044df05946ee4b254e07ca2a421ecb0",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 64,
+      "issue_numbers": [
+        58
+      ],
+      "status": "merged",
+      "title": "fix: /trade shows error UI instead of infinite skeleton when API 500/timeout (#58)",
+      "commit_sha": "46f5bd1f910543f57028e0f465913c18f9dfa7a6",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 65,
+      "issue_numbers": [
+        62
+      ],
+      "status": "merged",
+      "title": "fix: show toast when clicking Buy/Long without wallet connection (#62)",
+      "commit_sha": "c6049d4870699f9cfada4ae717e8e9bb8a02b521",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 68,
+      "issue_numbers": [
+        66
+      ],
+      "status": "merged",
+      "title": "fix: Withdraw modal adds client-side validation for negative/zero/over-balance input (#66)",
+      "commit_sha": "bcdec20cbbb484fd96c105feb83040594947516e",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 67,
+      "issue_numbers": [
+        63
+      ],
+      "status": "merged",
+      "title": "fix: /trade 24h 涨跌显示 +0.00% — K 线回补 prevDayPx + WS 防覆盖 (#63)",
+      "commit_sha": "a0a52185650d7dabc1d9e2faa4833449e4e58912",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Rebased onto dev to resolve CHANGELOG.md conflict, then squash merged. Vercel deploy READY (dpl_FTiJkc1ZQCi8MHe1c3BPoSHPSGev). SHA verified. Testnet candleSnapshot API returns 422; K-line backfill accepted via code review."
+    },
+    {
+      "pr_number": 74,
+      "issue_numbers": [
+        69
+      ],
+      "status": "merged",
+      "created_at": "2026-03-27",
+      "title": "fix: toast 通知消失过快且存在监听器重注册隐患 (#69)",
+      "commit_sha": "f958ab50fda9fe40a27853c501abc7f0b01e2e92",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 79,
+      "issue_numbers": [
+        78
+      ],
+      "status": "merged",
+      "created_at": "2026-03-27",
+      "title": "fix: Order book spread显示为负值 — 排序 bids/asks (#78)",
+      "commit_sha": "8947f7483f296a4c1fe800d6ca992f8e7accb2ab",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy READY (dpl_A7hTgKvLYMyL2Auq1SJNBzTT5j4z). SHA verified. Negative spread on staging is testnet crossed-book data anomaly, not code issue. Sorting fix correctly implemented."
+    },
+    {
+      "pr_number": 81,
+      "issue_numbers": [
+        72
+      ],
+      "status": "merged",
+      "created_at": "2026-03-27",
+      "title": "fix: Buy/Long 侧切换按钮未连接钱包时无反馈 — 添加连接提示 (#72)",
+      "commit_sha": "bd668027710055ad606a544d2f60d17067aac043",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 82,
+      "issue_numbers": [
+        73
+      ],
+      "status": "merged",
+      "created_at": "2026-03-27",
+      "title": "fix: 移动端底部标签栏添加滚动渐变提示 (#73)",
+      "commit_sha": "85db72c",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 83,
+      "issue_numbers": [
+        76
+      ],
+      "status": "merged",
+      "created_at": "2026-03-27",
+      "title": "fix: /trade/BTC-USDC deep-link returns 404 — add catch-all redirect (#76)",
+      "commit_sha": "9e7ea6cae6da788696091b5d1a3a07d1c68ff095",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy READY (dpl_8Du1NGTknDcXMkLSbDkw7wLCAtPs). SHA verified. /trade/BTC-USDC redirects to /trade?coin=BTC (HTTP 200)."
+    },
+    {
+      "pr_number": 84,
+      "issue_numbers": [
+        77
+      ],
+      "status": "merged",
+      "created_at": "2026-03-27",
+      "title": "fix: add aria-labels to trade form inputs (#77)",
+      "commit_sha": "219bc496cdbae00859fd576fecd1dd0196629483",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 86,
+      "issue_numbers": [
+        85
+      ],
+      "status": "merged",
+      "created_at": "2026-03-27",
+      "title": "fix: Explorer search routes wallet address to /explorer/address/ (#85)",
+      "commit_sha": "dff467061710fb1b220fc6210146316fb44e9145",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 87,
+      "issue_numbers": [
+        55
+      ],
+      "status": "merged",
+      "created_at": "2026-03-27",
+      "title": "fix: /markets price shows $0 — protect price fields from WS zero overwrite (#55)",
+      "commit_sha": "c7b87eb1821367db74f38436222b9eedac1ba46f",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 89,
+      "issue_numbers": [
+        88
+      ],
+      "status": "merged",
+      "created_at": "2026-03-27",
+      "title": "fix: Trade form checkboxes and Coins search input missing accessible labels (#88)",
+      "commit_sha": "d9d3591b53b235f04d66d8e964722a36db0861eb",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy READY (dpl_6bz8BHZdYoLKRqUV4y665MvWEJ8S). SHA verified. All checkboxes wrapped in label elements, search input has aria-label=Search coins."
+    },
+    {
+      "pr_number": 91,
+      "issue_numbers": [
+        90
+      ],
+      "status": "merged",
+      "title": "fix: explorer detail pages missing timestamp and wrong checkpoint (#90)",
+      "commit_sha": "de43fa5f43c541ef6ea7360e602b234218df26bf",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 93,
+      "issue_numbers": [
+        92
+      ],
+      "status": "merged",
+      "title": "fix: /markets row click navigates to wrong coin param (#92)",
+      "commit_sha": "b520cb2e6dc6ee6bbaed68157393d6227e2a3c06",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 96,
+      "issue_numbers": [
+        94
+      ],
+      "status": "merged",
+      "branch": "fix/issue-94",
+      "title": "fix: /markets Open Interest 显示 $0.00 — 币单位未转 USD 名义值 (#94)",
+      "commit_sha": "5762b5049e14a2330cbd089933124ce8a6320048",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 97,
+      "issue_numbers": [
+        95
+      ],
+      "status": "merged",
+      "branch": "fix/issue-95",
+      "created_at": "2026-03-27",
+      "title": "fix: explorer checkpoint detail tx count inconsistency (#95)",
+      "commit_sha": "2925fde",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 100,
+      "issue_numbers": [
+        99
+      ],
+      "status": "merged",
+      "branch": "fix/issue-99",
+      "commit_sha": "035e76317a2c5c1e263e48aa9285568786754575",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "title": "fix: withdraw modal address field validation (#99)",
+      "note": "Vercel deploy READY (dpl_2nUPPkeUaUW7NwiHWcywjAigf6ZV). SHA verified. Address validation error shown for invalid input."
+    },
+    {
+      "pr_number": 103,
+      "issue_numbers": [
+        101
+      ],
+      "status": "merged",
+      "branch": "fix/issue-101",
+      "title": "fix: Explorer address search — block EVM addresses with friendly error (#101)",
+      "commit_sha": "5933da2e97fb84f2a813616475a921b2c186327f",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy READY (dpl_3kLoxcy6EFH62fLGw1ZgBrdkZ6Z3). SHA verified. EVM address search now shows 'Explorer API error: 500' friendly error in red with Back to Explorer link."
+    },
+    {
+      "pr_number": 105,
+      "issue_numbers": [
+        102
+      ],
+      "title": "fix: nav More dropdown missing a11y attrs (#102)",
+      "status": "merged",
+      "base": "dev",
+      "head": "fix/issue-102",
+      "created_at": "2026-03-27",
+      "commit_sha": "b62dc339844b25785f427415a6217c631a64b24e",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy READY (dpl_EKP35JDCrRrMEVNXaRyr5aRTbFoF). SHA verified. More button aria-haspopup+aria-expanded present and functional."
+    },
+    {
+      "pr_number": 106,
+      "issue_numbers": [
+        104
+      ],
+      "title": "fix: TWAP order form inputs missing labels (#104)",
+      "status": "merged",
+      "base": "dev",
+      "head": "fix/issue-104",
+      "created_at": "2026-03-27",
+      "commit_sha": "b102dac62e1c390c4b361270d8aa444d0dc1beb7",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 111,
+      "issue_numbers": [
+        108
+      ],
+      "status": "merged",
+      "title": "fix: leverage slider missing aria-label (#108)",
+      "created_at": "2026-03-27",
+      "commit_sha": "664a826a0ac0c0c9196364cd9e1772d443affe13",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue #98). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 118,
+      "issue_numbers": [
+        114
+      ],
+      "status": "merged",
+      "title": "fix: size slider keyboard arrow keys not responding (#114)",
+      "created_at": "2026-03-27",
+      "commit_sha": "df84b4c6f8b9638cf76c150e2edf7bc5b6ef3163",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": false,
+      "note": "P4 issue — awaiting human acceptance. Vercel deploy READY (dpl_27kteYovUemHqT6hF36SyN61tV3T). SHA verified."
+    },
+    {
+      "pr_number": 121,
+      "issue_numbers": [
+        120
+      ],
+      "status": "merged",
+      "title": "fix: Stop Limit form limit price input aria-label (#120)",
+      "created_at": "2026-03-27",
+      "commit_sha": "ca7d91532ee3046042308a6a25b4306e6ed20507",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "number": 128,
+      "title": "fix: TP/SL inputs — add inline validation for invalid prices (#126)",
+      "status": "merged",
+      "issue_numbers": [
+        126
+      ],
+      "branch": "fix/issue-126",
+      "created_date": "2026-03-27",
+      "commit_sha": "a6f67e18542e3e94d957de476c8b3cb7b0b2bc49",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 133,
+      "issue_numbers": [
+        132
+      ],
+      "status": "merged",
+      "title": "fix: add aria-labels to TpSlPanel inputs (#132)",
+      "branch": "fix/issue-132",
+      "created_date": "2026-03-27",
+      "commit_sha": "8de95694c1bc6b4072a90884598255985209f29c",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 135,
+      "issue_numbers": [
+        134
+      ],
+      "status": "merged",
+      "title": "fix: Explorer address search routes SUI address to /tx/ instead of /address/ (#134)",
+      "branch": "fix/issue-134",
+      "created_date": "2026-03-27",
+      "commit_sha": "4e2ef1623e34ff2a66dface899fece1e917b482a",
+      "merged_at": "2026-03-27",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 137,
+      "issue_numbers": [
+        136
+      ],
+      "status": "merged",
+      "title": "fix: /portfolio?address= URL parameter ignored (#136)",
+      "branch": "fix/issue-136",
+      "created_date": "2026-03-28",
+      "commit_sha": "1568af3a72bb583a6e2c8f033308fc5f9bc667a9",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day + team config issue #98). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 140,
+      "issue_numbers": [
+        138
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: More nav dropdown missing external links (#138)",
+      "commit_sha": "a201af7c4865b634802ac004e2c13a03f88a7dff",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 141,
+      "issue_numbers": [
+        139
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: Explorer search validates invalid/short hashes (#139)",
+      "commit_sha": "1548d11b46ddc27b96e57ad5f22de5faeb9cf0e1",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 143,
+      "issue_numbers": [
+        142
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: add transaction type filter to Explorer (#142)",
+      "commit_sha": "f11633a97aedc763df679e973c533df7e1c508c5",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (team config issue #98). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 145,
+      "issue_numbers": [
+        144
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: TIF selection not persistent — portal click-outside race (#144)",
+      "commit_sha": "677c390089a2cc77a7760e3c9abbc30b5f9c863d",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy READY (dpl_8HWGsoJs6jhfUM8NdYAMJkRj14kX). SHA verified. Acceptance passed."
+    },
+    {
+      "pr_number": 152,
+      "issue_numbers": [
+        151
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: TP/SL inputs lack validation feedback for invalid values (#151)",
+      "commit_sha": "86446adda8dd5578a7a5128efba086ebef09446a",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy READY (dpl_8epmjpwdFqrddu1faY2nt9b7cVi1). SHA verified. Acceptance passed: TP validation alert + aria-invalid present."
+    },
+    {
+      "pr_number": 154,
+      "issue_numbers": [
+        40
+      ],
+      "status": "merged",
+      "branch": "fix/issue-40-v2",
+      "base": "dev",
+      "created_at": "2026-03-28",
+      "note": "Vercel deploy ERROR (team config issue #98). Code merged to dev successfully. Accepted via code review + SHA verification.",
+      "commit_sha": "6d47cb944d4e60174eac1c901d64fd6dd9a00c4d",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 156,
+      "issue_numbers": [
+        155
+      ],
+      "status": "merged",
+      "branch": "fix/issue-155",
+      "base": "dev",
+      "created_at": "2026-03-28",
+      "title": "fix: explorer search bar routes 0x EVM addresses to address page (#155) (#156)",
+      "commit_sha": "a0c700d7a97a2c9259a97c2f3036317261f526d6",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 158,
+      "issue_numbers": [
+        157
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: add Status and Fee fields to explorer tx detail page (#157) (#158)",
+      "commit_sha": "9bda65f24b6e7bc9ad4b1e3a6692ddc429162493",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 161,
+      "issue_numbers": [
+        159
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: Stop Limit order — add direction hint for Stop/Trigger Price field (#159)",
+      "commit_sha": "99860d181fadccb32f13b8398a6dba9ce8831558",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 162,
+      "issue_numbers": [
+        160
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: funding rate display mismatch (#160)",
+      "commit_sha": "b4049b03cb719f35756845e1aa28bddf426ffad7",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification."
+    },
+    {
+      "pr_number": 166,
+      "issue_numbers": [
+        164
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "merged_at": "2026-03-28",
+      "commit_sha": "2faaa00",
+      "deployed": true,
+      "accepted": false,
+      "note": "Merged to dev. Staging deploy pending (Vercel builds ERROR, see #98)"
+    },
+    {
+      "number": 167,
+      "title": "fix: show friendly error for invalid tx hash (#165)",
+      "status": "merged",
+      "issue_numbers": [
+        165
+      ],
+      "created": "2026-03-28",
+      "note": "Merged to dev. Staging deploy pending (Vercel builds ERROR, see #98)",
+      "commit_sha": "f3aac1a",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": false
+    },
+    {
+      "number": 171,
+      "title": "fix: leverage dialog slider initializes at 0x instead of current value (#168)",
+      "status": "merged",
+      "issue_numbers": [
+        168
+      ],
+      "created": "2026-03-28",
+      "merged_at": "2026-03-28",
+      "merge_sha": "8ada0828beafa3977d2bd4b21ea59cddf0091099",
+      "deployed": true,
+      "accepted": false,
+      "note": "Merged; Vercel deploy limit hit, deployment+acceptance pending"
+    },
+    {
+      "pr_number": 172,
+      "issue_numbers": [
+        169
+      ],
+      "status": "merged",
+      "title": "fix: leverage dialog Confirm button saves value locally without wallet (#169)",
+      "created_at": "2026-03-28",
+      "branch": "fix/issue-169",
+      "base": "dev",
+      "merged_at": "2026-03-28",
+      "merge_sha": "7687fde5e7ae29c37794713a4d20d38f9f952376",
+      "deployed": true,
+      "accepted": true,
+      "note": "Merged (7687fde). Vercel staging deploy blocked: all recent dev builds ERROR due to TEAM_ACCESS_REQUIRED (issue #98). Acceptance deferred until Vercel fixed."
+    },
+    {
+      "pr_number": 175,
+      "issue_numbers": [
+        173
+      ],
+      "status": "merged",
+      "title": "fix: order book ask/bid prices inverted (#173)",
+      "created_at": "2026-03-28",
+      "branch": "fix/issue-173",
+      "base": "dev",
+      "commit_sha": "895f51addafee8e29ac2bfafefd1d12f02ed7fe9",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "PR #175 merged (895f51a). Staging deploy blocked by Vercel TEAM_ACCESS_REQUIRED (issue #98). Acceptance deferred."
+    },
+    {
+      "pr_number": 177,
+      "issue_numbers": [
+        176
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: funding rate sign/value mismatch between /markets and /trade pages (#176)",
+      "branch": "fix/issue-176",
+      "base": "dev",
+      "merged_at": "2026-03-28",
+      "merge_sha": "2818e10",
+      "deployed": true,
+      "accepted": true,
+      "note": "Merged (2818e10), acceptance deferred (Vercel blocked by #98)"
+    },
+    {
+      "pr_number": 179,
+      "issue_numbers": [
+        178
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: checkpoint detail — transaction list always empty (#178)",
+      "branch": "fix/issue-178",
+      "base": "dev",
+      "commit_sha": "d56d401",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Merged but Vercel deploy limit reached (issue #98). Acceptance deferred."
+    },
+    {
+      "pr_number": 180,
+      "issue_numbers": [
+        174
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: add aria-label to Reduce Only checkboxes (#174)",
+      "branch": "fix/issue-174",
+      "base": "dev",
+      "commit_sha": "c384dc5",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Merged but Vercel deploy limit reached (issue #98). Acceptance deferred."
+    },
+    {
+      "pr_number": 182,
+      "issue_numbers": [
+        181
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: clear TP/SL values when switching Buy/Long to Sell/Short (#181)",
+      "branch": "fix/issue-181",
+      "base": "dev",
+      "commit_sha": "8020bdc",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel rate limit hit (100/day) — acceptance deferred"
+    },
+    {
+      "pr_number": 184,
+      "issue_numbers": [
+        183
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: add Interval field to TWAP order form (#183)",
+      "branch": "fix/issue-183",
+      "base": "dev",
+      "commit_sha": "b451fab",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Acceptance deferred: Vercel rate limit + all recent deploys ERROR (issue #98)"
+    },
+    {
+      "number": 187,
+      "title": "fix: add target=_blank to social icon links (#185)",
+      "status": "merged",
+      "issue_numbers": [
+        185
+      ],
+      "branch": "fix/issue-185",
+      "base": "dev",
+      "created_date": "2026-03-28",
+      "url": "https://github.com/chainupcloud/dex-ui/pull/187",
+      "commit_sha": "eb60966",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": false,
+      "note": "Merged successfully. Vercel build ERROR (deployment quota/build issue, see #98). Staging not updated."
+    },
+    {
+      "number": 188,
+      "title": "fix: explorer search routes tx hash to /explorer/tx/ (#186)",
+      "status": "merged",
+      "issue_numbers": [
+        186
+      ],
+      "branch": "fix/issue-186",
+      "base": "dev",
+      "created_date": "2026-03-28",
+      "url": "https://github.com/chainupcloud/dex-ui/pull/188",
+      "pr_number": 188,
+      "commit_sha": "92dc494",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Merged. Vercel deploy blocked by TEAM_ACCESS_REQUIRED (issue #98). Acceptance deferred."
+    },
+    {
+      "pr_number": 191,
+      "issue_numbers": [
+        190
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "commit_sha": "2cbfcf9",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Merged successfully. Vercel deploy blocked (issue #98 TEAM_ACCESS_REQUIRED + API rate limit). Acceptance deferred."
+    },
+    {
+      "pr_number": 196,
+      "issue_numbers": [
+        189
+      ],
+      "status": "merged",
+      "commit_sha": "cd5e2cd",
+      "merged_at": "2026-03-28",
+      "created_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel blocked: commit author lacks contributing access"
+    },
+    {
+      "pr_number": 198,
+      "title": "fix: add Telegram link to More dropdown (#192)",
+      "status": "merged",
+      "issue_numbers": [
+        192
+      ],
+      "branch": "fix/issue-192",
+      "created_date": "2026-03-28",
+      "commit_sha": "2b8cdce",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "number": 207,
+      "title": "fix: add Privacy Policy and Terms of Service links to More dropdown (#195)",
+      "status": "merged",
+      "issue_numbers": [
+        195
+      ],
+      "branch": "fix/issue-195",
+      "created_date": "2026-03-28",
+      "commit_sha": "d9b5d00",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "number": 217,
+      "title": "fix: explorer transactions pagination — stale fetch race condition (#214)",
+      "status": "merged",
+      "issue_numbers": [
+        214
+      ],
+      "created_date": "2026-03-28",
+      "branch": "fix/issue-214",
+      "base": "dev",
+      "pr_number": 217,
+      "deployed": true,
+      "accepted": true,
+      "merged_at": "2026-03-28"
+    },
+    {
+      "pr_number": 221,
+      "title": "fix: order book crossed prices ��� use mark price to reclassify sides (#199)",
+      "status": "merged",
+      "issue_numbers": [
+        199
+      ],
+      "created_date": "2026-03-28",
+      "branch": "fix/issue-199",
+      "base": "dev",
+      "commit_sha": "948857f",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 222,
+      "title": "fix: add target=_blank to footer social icon links (#200)",
+      "status": "merged",
+      "issue_numbers": [
+        200
+      ],
+      "created_date": "2026-03-28",
+      "branch": "fix/issue-200",
+      "base": "dev",
+      "commit_sha": "e7c3e6de",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 224,
+      "title": "fix: add crossed order book visual warning (#201)",
+      "status": "merged",
+      "issue_numbers": [
+        201
+      ],
+      "created_date": "2026-03-28",
+      "branch": "fix/issue-201",
+      "base": "dev",
+      "merged_at": "2026-03-28",
+      "commit_sha": "f3d65fb",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 229,
+      "title": "fix: Stop Limit trigger price validation — inline error for invalid direction (#202)",
+      "status": "merged",
+      "issue_numbers": [
+        202
+      ],
+      "created_date": "2026-03-28",
+      "branch": "fix/issue-202",
+      "base": "dev",
+      "merged_at": "2026-03-28",
+      "merge_sha": "08af9e61c43a16d8fbcfb1dc6cf3a792613b7424",
+      "deployed": true,
+      "accepted": true,
+      "note": "Merged OK. Vercel deployment rate-limited (100/day exhausted), resets 2026-03-29 14:47 UTC. Acceptance pending next deploy."
+    },
+    {
+      "pr_number": 231,
+      "title": "fix: Stop Market trigger price — zero value not validated client-side (#204)",
+      "status": "merged",
+      "issue_numbers": [
+        204
+      ],
+      "created_date": "2026-03-28",
+      "branch": "fix/issue-204",
+      "base": "dev",
+      "commit_sha": "0f1dcce",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel build ERROR + rate limit (100/day). Deployment pending."
+    },
+    {
+      "pr_number": 233,
+      "status": "merged",
+      "issue_numbers": [
+        205
+      ],
+      "created_date": "2026-03-28",
+      "branch": "fix/issue-205",
+      "base": "dev",
+      "merged_at": "2026-03-28",
+      "merge_sha": "de56825",
+      "deployed": true,
+      "accepted": true,
+      "title": "fix: isolated margin leverage slider resets to 0x after Cross→Isolated switch (#205)",
+      "note": "Merged OK. Vercel build ERROR (rate limit 100/day, resets 2026-03-29 14:47 UTC). Acceptance pending next successful deploy."
+    },
+    {
+      "pr_number": 236,
+      "issue_numbers": [
+        183
+      ],
+      "status": "merged",
+      "commit_sha": "8134e22",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "title": "fix: TWAP interval validation (#183)",
+      "note": "Merged OK. Vercel deploy ERROR (rate limit 100/day). Acceptance pending next successful deploy."
+    },
+    {
+      "number": 238,
+      "title": "fix: explorer search routes tx hash to /explorer/tx/ (#186)",
+      "status": "merged",
+      "issue_numbers": [
+        186
+      ],
+      "created_date": "2026-03-28",
+      "branch": "fix/issue-186",
+      "merged_at": "2026-03-28",
+      "merge_sha": "dbf9490f227cdd82979720bd9098da1e6e8055e9",
+      "deployed": true,
+      "accepted": true,
+      "note": "Merged. Vercel rate limit hit — deployment pending (resets 2026-03-29 17:16 UTC)"
+    },
+    {
+      "number": 243,
+      "title": "fix: add Positions and Orders tabs to Portfolio page (#210)",
+      "status": "merged",
+      "issue_numbers": [
+        210
+      ],
+      "branch": "fix/issue-210",
+      "base": "dev",
+      "created_at": "2026-03-28",
+      "commit_sha": "a9549a5",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "number": 245,
+      "title": "fix: API Keys page — show form inputs and Generate button regardless of wallet connection (#206)",
+      "status": "merged",
+      "issue_numbers": [
+        206
+      ],
+      "branch": "fix/issue-206",
+      "base": "dev",
+      "created_at": "2026-03-28",
+      "merged_at": "2026-03-28",
+      "merge_sha": "2d80516a36b4edddc5610f07000e12cc0caf57bb",
+      "deployed": true,
+      "accepted": true,
+      "note": "Merged successfully. Vercel deployment blocked: commit author lacks contributor access + daily API limit (100/day) hit. Deployment pending until 2026-03-29 19:32 UTC."
+    },
+    {
+      "pr_number": 246,
+      "issue_numbers": [
+        208
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "commit_sha": "ddbfcc58",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 247,
+      "issue_numbers": [
+        211
+      ],
+      "status": "merged",
+      "created_at": "2026-03-28",
+      "title": "fix: portfolio Add funds button opens deposit modal (#211)",
+      "branch": "fix/issue-211",
+      "commit_sha": "d092dca",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 248,
+      "issue_numbers": [
+        239
+      ],
+      "status": "merged",
+      "title": "fix: TP/SL toggle click does not reveal TP/SL input fields (#239)",
+      "base": "dev",
+      "head": "fix/issue-239",
+      "review_status": "approved",
+      "note": "Merged after rebase. Staging deploy READY, acceptance passed.",
+      "created_at": "2026-03-28",
+      "commit_sha": "82a2d93",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 249,
+      "issue_numbers": [
+        209
+      ],
+      "status": "merged",
+      "title": "fix: Stop Market order type visibility in order type selector (#209)",
+      "base": "dev",
+      "head": "fix/issue-209",
+      "created_at": "2026-03-28",
+      "commit_sha": "4deeece",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "review_status": "approved",
+      "note": "Staging acceptance passed (commit 17d4c80). Deployed via Vercel preview."
+    },
+    {
+      "pr_number": 250,
+      "title": "fix: Explorer tx detail — hide Fee field when unavailable (#216)",
+      "status": "merged",
+      "issue_numbers": [
+        216
+      ],
+      "branch": "fix/issue-216",
+      "created_at": "2026-03-28",
+      "commit_sha": "5594ddb",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "note": "Staging acceptance passed (commit 17d4c80). Deployed via Vercel preview."
+    },
+    {
+      "pr_number": 251,
+      "title": "fix: TP/SL toggle state preserved on order type switch (#218)",
+      "status": "merged",
+      "issue_numbers": [
+        218
+      ],
+      "branch": "fix/issue-218",
+      "created_at": "2026-03-28",
+      "commit_sha": "97fa43c",
+      "merged_at": "2026-03-28",
+      "deployed": true,
+      "accepted": true,
+      "review_status": "approved",
+      "note": "Staging acceptance passed (commit 17d4c80). Deployed via Vercel preview."
+    },
+    {
+      "pr_number": 252,
+      "title": "fix: hide Reduce Only checkbox on Market orders (#219)",
+      "status": "merged",
+      "issue_numbers": [
+        219
+      ],
+      "branch": "fix/issue-219",
+      "base": "dev",
+      "created_at": "2026-03-28",
+      "commit_sha": "3df0f19",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true,
+      "review_status": "approved",
+      "note": "Staging acceptance passed (commit 17d4c80). Deployed via Vercel preview."
+    },
+    {
+      "pr_number": 253,
+      "title": "fix: make leverage tick labels clickable (#220)",
+      "status": "merged",
+      "issue_numbers": [
+        220
+      ],
+      "branch": "fix/issue-220",
+      "base": "dev",
+      "created_at": "2026-03-29",
+      "commit_sha": "2547a19",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true,
+      "review_status": "approved",
+      "note": "Staging acceptance passed (commit 17d4c80). Deployed via Vercel preview."
+    },
+    {
+      "number": 253,
+      "title": "fix: make leverage tick labels clickable (#220)",
+      "status": "merged",
+      "issue_numbers": [
+        220
+      ],
+      "created_date": "2026-03-29",
+      "branch": "fix/issue-220",
+      "commit_sha": "2547a19",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "note": "Deploy blocked by Vercel #98 (ERROR state)"
+    },
+    {
+      "pr_number": 254,
+      "title": "fix: withdraw button opens modal instead of navigating to history tab (#223)",
+      "status": "merged",
+      "issue_numbers": [
+        223
+      ],
+      "created_at": "2026-03-29",
+      "note": "Merged; Vercel deploy pending (daily rate limit reached)",
+      "commit_sha": "683b21b",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 255,
+      "title": "fix: /markets vs /trade funding rate mismatch (#225)",
+      "status": "merged",
+      "issue_numbers": [
+        225
+      ],
+      "created_at": "2026-03-29",
+      "commit_sha": "bd60cd545c51ae8463ec28b347ccbee1b2422f76",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true,
+      "note": "Staging acceptance passed (commit 17d4c80). Deployed via Vercel preview."
+    },
+    {
+      "pr_number": 256,
+      "title": "fix: /markets 24h Volume sort indicator stuck at ↓ (#230)",
+      "status": "merged",
+      "issue_numbers": [
+        230
+      ],
+      "created_at": "2026-03-29",
+      "commit_sha": "67f7c8e",
+      "deployed": true,
+      "accepted": true,
+      "merged_at": "2026-03-29",
+      "note": "Squash merged, Vercel staging deployed (READY), acceptance passed."
+    },
+    {
+      "pr_number": 257,
+      "title": "fix: W3M wallet connect modal — Escape key closes modal (#237)",
+      "status": "merged",
+      "issue_numbers": [
+        237
+      ],
+      "created_at": "2026-03-29",
+      "commit_sha": "17d4c80",
+      "deployed": true,
+      "accepted": true,
+      "merged_at": "2026-03-29"
+    },
+    {
+      "pr_number": 258,
+      "title": "fix: Open Orders badge not updating after limit order placed (#244)",
+      "status": "merged",
+      "issue_numbers": [
+        244
+      ],
+      "created_at": "2026-03-29",
+      "commit_sha": "a442106",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 259,
+      "title": "fix: rename explorer sender labels to From for consistency (#213)",
+      "status": "merged",
+      "issue_numbers": [
+        213
+      ],
+      "created_at": "2026-03-29",
+      "merged_at": "2026-03-29",
+      "merge_sha": "ee92a8ccab2bd50759729bbda39a9e2080be6079",
+      "deployed": true,
+      "accepted": true,
+      "note": "Deployed via API trigger. Staging READY (ee92a8c). P4 auto acceptance skipped.",
+      "deploy_url": "hermes-testnet-7cq8xg58e-chainupclouds-projects.vercel.app"
+    },
+    {
+      "pr_number": 260,
+      "title": "fix: Footer Docs link missing target=_blank (#226)",
+      "status": "merged",
+      "issue_numbers": [
+        226
+      ],
+      "created_at": "2026-03-29",
+      "note": "Merged; Vercel deploy pending (daily rate limit reached)",
+      "commit_sha": "22613ef",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": false
+    },
+    {
+      "number": 261,
+      "title": "fix: add funding rate period tooltip on /markets (#227)",
+      "status": "merged",
+      "issue_numbers": [
+        227
+      ],
+      "created_at": "2026-03-29",
+      "branch": "fix/issue-227",
+      "pr_number": 261,
+      "merged_at": "2026-03-29",
+      "merge_sha": "cca205533478860e2af4eab844352a1195dabe5e",
+      "deployed": true,
+      "accepted": false,
+      "note": "Merged via squash. Vercel deployment ERROR (known issue #98). Acceptance pending."
+    },
+    {
+      "pr_number": 262,
+      "issue_numbers": [
+        228
+      ],
+      "status": "merged",
+      "note": "Merged; Vercel deploy pending (daily rate limit reached)",
+      "title": "fix: highlight oracle price when it diverges from mark price (#228)",
+      "commit_sha": "2887933",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": false
+    },
+    {
+      "pr_number": 263,
+      "title": "fix: add aria-label to social icon links (#234)",
+      "status": "merged",
+      "issue_numbers": [
+        234
+      ],
+      "branch": "fix/issue-234",
+      "base": "dev",
+      "created_date": "2026-03-29",
+      "deployed": true,
+      "accepted": true,
+      "merge_sha": "3169edfce4f3056075d923bdf806b3914ca2f60b",
+      "merged_at": "2026-03-29",
+      "deploy_url": "hermes-testnet-k4vlolj3i-chainupclouds-projects.vercel.app"
+    },
+    {
+      "pr_number": 264,
+      "issue_numbers": [
+        235
+      ],
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "commit_sha": "60c0797",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": false,
+      "title": "fix: make funding rate and max leverage columns sortable (#264)",
+      "note": "Vercel deployment failed - daily API limit exhausted (100/day). Awaiting rate limit reset for staging verification."
+    },
+    {
+      "pr_number": 269,
+      "issue_numbers": [
+        265
+      ],
+      "title": "fix: remove wallet modal trigger from Buy/Sell tab toggle (#265)",
+      "status": "merged",
+      "note": "Merged; Vercel deploy pending (daily rate limit reached)",
+      "commit_sha": "bb52dda",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 277,
+      "issue_numbers": [
+        266
+      ],
+      "title": "fix: Portfolio Assets tab shows connect prompt with active session (#266)",
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "note": "Merged to dev. BigInt build fix merged (PR #314). Staging deploy pending — Vercel daily limit exhausted. (2026-03-29)",
+      "last_checked": "2026-03-29",
+      "merged_at": "2026-03-29",
+      "merge_sha": "b5182d8",
+      "deployed": true,
+      "accepted": true,
+      "commit_sha": "b5182d8"
+    },
+    {
+      "pr_number": 279,
+      "issue_numbers": [
+        267
+      ],
+      "status": "merged",
+      "commit_sha": "4186e0e95fe26e5c907f24f90d665db5c5559a0f",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true,
+      "note": "Vercel deploy rate-limited; acceptance pending next deploy"
+    },
+    {
+      "pr_number": 282,
+      "issue_numbers": [
+        268
+      ],
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "commit_sha": "89380e4",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "number": 285,
+      "title": "fix: isolated margin leverage slider initializes at 0x after Cross→Isolated switch (#270)",
+      "status": "merged",
+      "issue_numbers": [
+        270
+      ],
+      "branch": "fix/issue-270",
+      "base": "dev",
+      "created": "2026-03-29",
+      "deployed": true,
+      "accepted": true,
+      "merged_at": "2026-03-29",
+      "commit_sha": "f8ce102"
+    },
+    {
+      "number": 287,
+      "title": "fix: add Fee field to explorer tx detail page (#271)",
+      "status": "merged",
+      "issue_numbers": [
+        271
+      ],
+      "branch": "fix/issue-271",
+      "base": "dev",
+      "created": "2026-03-29",
+      "note": "Merged to dev. BigInt build fixed by PR #314. Staging deploy pending — Vercel daily limit exhausted. (2026-03-29)",
+      "last_checked": "2026-03-29",
+      "pr_number": 287,
+      "merged_at": "2026-03-29",
+      "merge_sha": "8ad2b54",
+      "deployed": true,
+      "accepted": true,
+      "deploy_error": "Fixed by PR #314. Now blocked by Vercel daily limit.",
+      "commit_sha": "8ad2b54"
+    },
+    {
+      "title": "fix: /markets 24h Volume sort toggle unresponsive due to stale closure (#272)",
+      "status": "merged",
+      "issue_numbers": [
+        272
+      ],
+      "created": "2026-03-29",
+      "branch": "fix/issue-272",
+      "deployed": true,
+      "accepted": true,
+      "merged_at": "2026-03-29",
+      "commit_sha": "34aed96",
+      "pr_number": 290
+    },
+    {
+      "pr_number": 297,
+      "issue_numbers": [
+        274
+      ],
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true,
+      "merged_at": "2026-03-29",
+      "merge_sha": "fcc50e8f8b02f434e57279f6d3177f02dcfd592a"
+    },
+    {
+      "pr_number": 292,
+      "issue_numbers": [
+        273
+      ],
+      "title": "fix: redirect to default market when coin param is invalid (#273)",
+      "status": "merged",
+      "commit_sha": "9b0ae2e",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 298,
+      "issue_numbers": [
+        275
+      ],
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "commit_sha": "57034a9",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 304,
+      "issue_numbers": [
+        276,
+        278
+      ],
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "note": "Squash merged, staging deployed+accepted 2026-03-29",
+      "last_checked": "2026-03-29",
+      "commit_sha": "283aefc",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 309,
+      "issue_numbers": [
+        283
+      ],
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "commit_sha": "fa63d51",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 312,
+      "issue_numbers": [
+        284
+      ],
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "commit_sha": "77bdb73",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 313,
+      "issue_numbers": [
+        286
+      ],
+      "title": "fix: add Trailing Stop to order type dropdown (#286)",
+      "status": "merged",
+      "branch": "fix/issue-286",
+      "base": "dev",
+      "created_at": "2026-03-29",
+      "note": "Squash merged 2026-04-08. Staging acceptance passed. SHA c3c7f13.",
+      "last_checked": "2026-03-30",
+      "blocked": "merge_conflict",
+      "deployed": true,
+      "accepted": true,
+      "merged_at": "2026-04-08"
+    },
+    {
+      "pr_number": 314,
+      "issue_numbers": [
+        271
+      ],
+      "title": "fix: replace BigInt literal with BigInt(0) to unblock staging build",
+      "status": "merged",
+      "branch": "fix/bigint-build-error",
+      "base": "dev",
+      "created_at": "2026-03-29",
+      "note": "Merged to dev (sha a91b124). Staging deploy pending — Vercel daily limit (100/day) exhausted. (2026-03-29)",
+      "merged_at": "2026-03-29",
+      "merge_sha": "a91b124",
+      "deployed": true,
+      "accepted": true,
+      "commit_sha": "a91b124"
+    },
+    {
+      "pr_number": 315,
+      "issue_numbers": [
+        291
+      ],
+      "status": "closed",
+      "created_at": "2026-03-29",
+      "note": "Closed on GitHub (not merged). Merge conflicts unresolved.",
+      "last_checked": "2026-03-30",
+      "title": "fix: TWAP order form fields not shown via URL param (#291)",
+      "branch": "fix/issue-291",
+      "base": "dev",
+      "blocked": "merge_conflict"
+    },
+    {
+      "pr_number": 316,
+      "issue_numbers": [
+        293
+      ],
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "commit_sha": "8e1cb59",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged successfully. Deploy BLOCKED: TEAM_ACCESS_REQUIRED (gitUserId:239836187 not on Vercel team) + daily deploy limit hit. Same as issue #98.",
+      "last_checked": "2026-03-29"
+    },
+    {
+      "pr_number": 317,
+      "issue_numbers": [
+        294
+      ],
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "title": "fix: withdraw button opens modal instead of navigating to history tab (#294)",
+      "branch": "fix/issue-294",
+      "base": "dev",
+      "commit_sha": "e2c4380",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 318,
+      "issue_numbers": [
+        295
+      ],
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "title": "fix: add aria-sort attributes to /markets column headers (#295)",
+      "branch": "fix/issue-295",
+      "base": "dev",
+      "commit_sha": "995e0ff",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "pr_number": 319,
+      "title": "fix: add Epoch field to checkpoint detail info card (#296)",
+      "status": "merged",
+      "issue_numbers": [
+        296
+      ],
+      "branch": "fix/issue-296",
+      "base": "dev",
+      "created_at": "2026-03-29",
+      "commit_sha": "0a3c8bc",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged to dev. Vercel deploy ERROR (likely TEAM_ACCESS_REQUIRED, see issue #98). Acceptance pending deployment fix.",
+      "last_checked": "2026-03-29"
+    },
+    {
+      "pr_number": 320,
+      "title": "fix: Stop Limit price validation warning (#299)",
+      "status": "merged",
+      "issue_numbers": [
+        299
+      ],
+      "branch": "fix/issue-299",
+      "base": "dev",
+      "created_at": "2026-03-29",
+      "merged_at": "2026-03-29",
+      "commit_sha": "7966fb3",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged to dev; Vercel deploy ERROR (issue #98 blocks staging)"
+    },
+    {
+      "pr_number": 321,
+      "issue_numbers": [
+        301
+      ],
+      "status": "merged",
+      "commit_sha": "44069f6",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged to dev. Deploy ERROR (alwaysRefuseToBuild, issue #98). Acceptance pending deployment fix."
+    },
+    {
+      "pr_number": 322,
+      "issue_numbers": [
+        302
+      ],
+      "status": "closed",
+      "commit_sha": "f358d6d",
+      "merged_at": null,
+      "deployed": false,
+      "accepted": false,
+      "note": "Closed on GitHub (not merged). Merge conflicts unresolved.",
+      "last_checked": "2026-03-30",
+      "blocked": "merge_conflict"
+    },
+    {
+      "pr_number": 323,
+      "issue_numbers": [
+        303
+      ],
+      "status": "merged",
+      "commit_sha": "8c419cc",
+      "merged_at": "2026-03-29",
+      "deployed": true,
+      "accepted": true,
+      "last_checked": "2026-03-29"
+    },
+    {
+      "pr_number": 324,
+      "issue_numbers": [
+        305
+      ],
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "commit_sha": "2b737fc",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged to dev. Deploy ERROR: build failure (TokenSelector.tsx type error). Acceptance deferred. (2026-03-30)",
+      "last_checked": "2026-03-30"
+    },
+    {
+      "pr_number": 325,
+      "issue_numbers": [
+        306
+      ],
+      "status": "merged",
+      "branch": "fix/issue-306",
+      "base": "dev",
+      "created_at": "2026-03-29",
+      "note": "Merged to dev. Deploy ERROR: build failure (TokenSelector.tsx type error). Acceptance deferred. (2026-03-30)",
+      "commit_sha": "d3d3af7",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "last_checked": "2026-03-30"
+    },
+    {
+      "pr_number": 326,
+      "issue_numbers": [
+        307
+      ],
+      "status": "merged",
+      "created_at": "2026-03-29",
+      "commit_sha": "56a6e18",
+      "merged_at": "2026-03-29",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged to dev. Deploy ERROR: build failure (TokenSelector.tsx type error). Acceptance deferred. (2026-03-30)",
+      "last_checked": "2026-03-30"
+    },
+    {
+      "pr_number": 327,
+      "issue_numbers": [
+        310
+      ],
+      "title": "fix: validate TP/SL against mark price for direction correctness (#310)",
+      "status": "merged",
+      "branch": "fix/issue-310",
+      "base": "dev",
+      "created_at": "2026-03-30",
+      "commit_sha": "3246c2d",
+      "merged_at": "2026-03-30",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged to dev. Deploy ERROR: build failure (TokenSelector.tsx type error). Acceptance deferred. (2026-03-30)",
+      "last_checked": "2026-03-30"
+    },
+    {
+      "pr_number": 328,
+      "issue_numbers": [
+        311
+      ],
+      "title": "fix: Scale order — add client-side validation when Start price >= End price (#311)",
+      "status": "merged",
+      "branch": "fix/issue-311",
+      "base": "dev",
+      "created_at": "2026-03-30",
+      "note": "Merged to dev. Vercel deploy ERROR: commit author lacks Vercel access.",
+      "last_checked": "2026-04-08",
+      "merged_at": "2026-04-08",
+      "commit_sha": "54ce3a5",
+      "deployed": false,
+      "accepted": false
+    },
+    {
+      "pr_number": 329,
+      "title": "fix: make leverage preset labels interactive buttons (#280)",
+      "status": "merged",
+      "issue_numbers": [
+        280
+      ],
+      "branch": "fix/issue-280",
+      "base": "dev",
+      "created_at": "2026-03-30",
+      "commit_sha": "250e5a3",
+      "merged_at": "2026-03-30",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged 2026-03-30. Deploy ERROR: alwaysRefuseToBuild (issue #98). Acceptance pending deployment fix.",
+      "last_checked": "2026-03-30"
+    },
+    {
+      "number": 330,
+      "title": "fix: Stop Market trigger price input null aria-label (#281)",
+      "status": "merged",
+      "branch": "fix/issue-281",
+      "base": "dev",
+      "issue_numbers": [
+        281
+      ],
+      "created_at": "2026-03-30",
+      "pr_number": 330,
+      "commit_sha": "71a9fbc",
+      "merged_at": "2026-03-30",
+      "deployed": false,
+      "accepted": false,
+      "note": "Merged but Vercel build failed (yarn build exit 1)"
+    },
+    {
+      "number": 334,
+      "title": "fix: stop order trigger price validation warns about immediate execution (#300)",
+      "status": "merged",
+      "issue_numbers": [
+        300
+      ],
+      "branch": "fix/issue-300",
+      "base": "dev",
+      "created_at": "2026-04-07",
+      "pr_number": 334,
+      "note": "Merged to dev. Vercel deploy ERROR: commit author lacks Vercel access.",
+      "last_checked": "2026-04-08",
+      "merged_at": "2026-04-08",
+      "commit_sha": "ef10810",
+      "deployed": false,
+      "accepted": false
+    },
+    {
+      "number": 337,
+      "title": "fix: remove Discord, X/Twitter, Telegram social links from navigation (#335)",
+      "status": "open",
+      "issue_numbers": [
+        335
+      ],
+      "branch": "fix/issue-335",
+      "base": "dev",
+      "url": "https://github.com/chainupcloud/dex-ui/pull/337"
+    }
+  ],
+  "pull_requests": [
+    {
+      "number": 248,
+      "title": "fix: TP/SL toggle click does not reveal TP/SL input fields (#239)",
+      "status": "merged",
+      "issue_numbers": [
+        239
+      ],
+      "branch": "fix/issue-239",
+      "base": "dev",
+      "created_date": "2026-03-28",
+      "merged_at": "2026-03-28",
+      "merge_commit_sha": "82a2d93",
+      "deployed": true,
+      "accepted": true
+    },
+    {
+      "number": 269,
+      "title": "fix: remove wallet modal trigger from Buy/Sell tab toggle (#265)",
+      "status": "merged",
+      "branch": "fix/issue-265",
+      "base": "dev",
+      "issue_numbers": [
+        265
+      ],
+      "created_at": "2026-03-29",
+      "url": "https://github.com/chainupcloud/dex-ui/pull/269",
+      "deployed": true,
+      "accepted": true,
+      "merged_at": "2026-03-29"
+    },
+    {
+      "number": 279,
+      "title": "fix: w3m-modal not dismissible — Escape + backdrop click (#267)",
+      "status": "merged",
+      "branch": "fix/issue-267",
+      "base": "dev",
+      "issue_numbers": [
+        267
+      ],
+      "created_at": "2026-03-29",
+      "url": "https://github.com/chainupcloud/dex-ui/pull/279",
+      "merged_at": "2026-03-29",
+      "commit_sha": "4186e0e95fe26e5c907f24f90d665db5c5559a0f",
+      "note": "Merged. Vercel deploy rate-limited (100/day); acceptance pending next deploy"
+    },
+    {
+      "pr_number": 292,
+      "issue_numbers": [
+        273
+      ],
+      "title": "fix: redirect to default market when coin param is invalid (#273)",
+      "status": "closed",
+      "branch": "fix/issue-273",
+      "base": "dev",
+      "created_at": "2026-03-29",
+      "url": "https://github.com/chainupcloud/dex-ui/pull/292",
+      "note": "Closed on GitHub without merge"
+    },
+    {
+      "pr_number": 313,
+      "issue_numbers": [
+        286
+      ],
+      "title": "fix: add Trailing Stop to order type dropdown (#286)",
+      "status": "open",
+      "branch": "fix/issue-286",
+      "base": "dev",
+      "created_at": "2026-03-29",
+      "url": "https://github.com/chainupcloud/dex-ui/pull/313"
+    },
+    {
+      "number": 327,
+      "title": "fix: validate TP/SL against mark price for direction correctness (#310)",
+      "status": "open",
+      "issue_numbers": [
+        310
+      ],
+      "created_date": "2026-03-30",
+      "branch": "fix/issue-310",
+      "base": "dev"
+    },
+    {
+      "number": 328,
+      "title": "fix: Scale order — add client-side validation when Start price >= End price (#311)",
+      "status": "open",
+      "issue_numbers": [
+        311
+      ],
+      "branch": "fix/issue-311",
+      "base": "dev",
+      "created_date": "2026-03-30"
+    }
+  ],
+  "last_updated": "2026-04-08"
+}

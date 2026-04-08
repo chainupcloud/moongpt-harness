@@ -19,9 +19,14 @@
 - `local_path` → 本地代码路径
 
 ### Step 2：选取目标 Issue
-读取 state/issues.json，按优先级（P1>P2>P3>P4）找到第一个满足以下条件的 issue：
+
+**首先检查 fix_disabled 标志：**
+读取末尾【当前项目配置】中的 `fix_disabled` 字段。若 `fix_disabled = true`，立即打印 "fix disabled for this project — exiting." 并退出。此项目不允许 fix-agent 进行任何代码提交操作（例如 dex-sui 为纯后端只读项目）。
+
+读取 state/{project}/issues.json，按优先级（P1>P2>P3>P4）找到第一个满足以下条件的 issue：
 - status = "open"
 - fix_attempts < 3
+- **track != "backend"**（后端 issue 由人工在对应仓库修复，fix-agent 不处理）
 
 若无符合条件的 issue → 打印 "No open issues to fix." 并退出。
 
@@ -78,18 +83,19 @@ curl -s -X POST \
 ```
 
 ### Step 7：更新状态文件并提交
-更新 state/issues.json：status → "fixing", pr_number → PR_NUMBER, fix_attempts += 1
-更新 state/prs.json：添加新 PR 条目（status: "open", issue_numbers: [github_number]）
+更新 state/{project}/issues.json：status → "fixing", pr_number → PR_NUMBER, fix_attempts += 1
+更新 state/{project}/prs.json：添加新 PR 条目（status: "open", issue_numbers: [github_number]）
 
 ```bash
 cd /home/ubuntu/chainup/moongpt-harness
-git add state/
+git add state/{project}/
 git commit -m "state: issue #{github_number} → fixing, PR #{PR_NUMBER}"
 git push origin randd1024
 ```
 
 ## 注意事项
 - 每次只处理一个 issue
+- **track = "backend" 的 issue 跳过**：后端问题由工程师在 dex-sui 仓库人工修复，PR 由 master-agent 验收
 - 禁止修改 .github/workflows/
 - 禁止 git push --force
 - fix_attempts >= 3 → status → "needs-human"

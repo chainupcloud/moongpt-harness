@@ -1,7 +1,7 @@
 #!/usr/bin/env -S uv run
 """
 moongpt-harness 任务面板
-用法: uv run dashboard.py [--port 8080]
+用法: uv run dashboard/app.py [--port 8080]
 """
 
 import json
@@ -14,11 +14,32 @@ from flask import Flask, jsonify, request, Response
 from croniter import croniter
 
 app = Flask(__name__)
-BASE = Path(__file__).parent
+BASE = Path(__file__).parent  # dashboard/
+HARNESS_DIR = BASE.parent     # repo root
+
+# Log file suffix per agent (prefix is {project}-)
+LOG_SUFFIX = {
+    'explore': 'explore-loop',
+    'plan':    'plan-agent',
+    'fix':     'fix-agent',
+    'master':  'master-agent',
+}
+
+def log_file(project: str, agent: str) -> Path:
+    """Return log file path for a given project+agent, trying new prefixed name first."""
+    suffix = LOG_SUFFIX.get(agent, f'{agent}-agent')
+    candidates = [
+        HARNESS_DIR / 'logs' / f'{project}-{suffix}.log',   # new: dex-ui-explore-loop.log
+        HARNESS_DIR / 'logs' / f'{suffix}.log',              # legacy: explore-loop.log
+    ]
+    for p in candidates:
+        if p.exists():
+            return p
+    return candidates[0]  # return new path even if doesn't exist yet
 
 
-def parse_crontab_schedules():
-    """Read crontab -l and extract cron expressions for each agent (single source of truth)."""
+def parse_crontab_schedules(project: str = 'dex-ui'):
+    """Read crontab -l and extract cron expressions for each agent of a given project."""
     try:
         output = subprocess.check_output(['crontab', '-l'], text=True)
     except subprocess.CalledProcessError:
@@ -33,19 +54,28 @@ def parse_crontab_schedules():
         if not m:
             continue
         expr, cmd = m.group(1), m.group(2)
-        if 'run-scheduler.sh' in cmd:
-            schedules['test'] = expr
-        elif 'run-agent.sh fix' in cmd:
+        # Match project-specific entries
+        if (f'run-loop.sh {project}' in cmd or f'run-scheduler.sh {project}' in cmd
+                or f'run-agent.sh explore {project}' in cmd):
+            schedules['explore'] = expr
+        elif f'run-agent.sh fix {project}' in cmd:
             schedules['fix'] = expr
-        elif 'run-agent.sh master' in cmd:
+        elif f'run-agent.sh master {project}' in cmd:
             schedules['master'] = expr
+        elif f'run-agent.sh plan {project}' in cmd:
+            schedules['plan'] = expr
     return schedules
 
 
 def cron_label(expr):
     """Human-readable label derived from cron expression."""
+    if not expr:
+        return '未配置'
     parts = expr.split()
-    minute, hour = parts[0], parts[1]
+    minute, hour, dom, month, dow = parts
+    day_names = {'0':'周日','1':'周一','2':'周二','3':'周三','4':'周四','5':'周五','6':'周六','7':'周日'}
+    if dow not in ('*', '?'):
+        return f'每{day_names.get(dow,"?")} {hour.zfill(2)}:{minute.zfill(2)}'
     if hour == '*':
         return f'每 1h (:{minute.zfill(2)})'
     if hour.startswith('*/'):
@@ -165,7 +195,7 @@ HTML = """<!DOCTYPE html>
   .log-box { background: #0d1117; border: 1px solid #21262d; border-radius: 6px;
              padding: 12px; font-family: monospace; font-size: 12px; color: #7d8590;
              max-height: 220px; overflow-y: auto; white-space: pre-wrap; }
-  .log-tabs { display: flex; gap: 8px; margin-bottom: 12px; }
+  .log-tabs { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
   .log-tab { padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 12px;
              background: #21262d; color: #7d8590; border: 1px solid #30363d; }
   .log-tab.active { background: #388bfd26; color: #58a6ff; border-color: #388bfd; }
@@ -176,8 +206,9 @@ HTML = """<!DOCTYPE html>
 </head>
 <body>
 <div class="header">
-  <h1>🤖 moongpt-harness 任务面板</h1>
+  <h1>moongpt-harness 任务面板</h1>
   <div style="display:flex;align-items:center;gap:12px;">
+    <div id="project-tabs" style="display:flex;gap:6px;"></div>
     <span class="updated" id="ts"></span>
     <button class="refresh-btn" onclick="loadAll()">↻ 刷新</button>
   </div>
@@ -211,10 +242,8 @@ HTML = """<!DOCTYPE html>
     <div class="section">
       <h2>Agent 日志（最近 30 行）</h2>
       <div class="log-tabs">
-        <button class="log-tab active" onclick="showLog('smoke',event)">smoke</button>
-        <button class="log-tab" onclick="showLog('coverage',event)">coverage</button>
-        <button class="log-tab" onclick="showLog('advanced',event)">advanced</button>
-        <button class="log-tab" onclick="showLog('scheduler',event)">scheduler</button>
+        <button class="log-tab active" onclick="showLog('explore',event)">explore</button>
+        <button class="log-tab" onclick="showLog('plan',event)">plan</button>
         <button class="log-tab" onclick="showLog('fix',event)">fix</button>
         <button class="log-tab" onclick="showLog('master',event)">master</button>
       </div>
@@ -224,17 +253,20 @@ HTML = """<!DOCTYPE html>
 </div>
 
 <script>
-let currentLog = 'smoke';
+let currentLog = 'explore';
+let currentProject = 'dex-ui';
 
 async function loadAll() {
   document.getElementById('ts').textContent = '更新于 ' + new Date().toLocaleTimeString('zh');
   const [state, projects, agents, logs] = await Promise.all([
-    fetch('/api/state').then(r=>r.json()),
+    fetch(`/api/state?project=${currentProject}`).then(r=>r.json()),
     fetch('/api/projects').then(r=>r.json()),
-    fetch('/api/agents').then(r=>r.json()),
-    fetch('/api/logs?agent=' + currentLog).then(r=>r.json()),
+    fetch(`/api/agents?project=${currentProject}`).then(r=>r.json()),
+    fetch(`/api/logs?agent=${currentLog}&project=${currentProject}`).then(r=>r.json()),
   ]);
+  window._projectMap = Object.fromEntries(projects.map(p => [p.name, p]));
   renderStats(state);
+  renderProjectTabs(projects);
   renderAgents(agents);
   renderIssues(state.issues || []);
   renderPRs(state.prs || []);
@@ -246,12 +278,34 @@ function showLog(agent, e) {
   currentLog = agent;
   document.querySelectorAll('.log-tab').forEach(t => t.classList.remove('active'));
   e.target.classList.add('active');
-  fetch('/api/logs?agent=' + agent).then(r=>r.json()).then(d => {
+  fetch(`/api/logs?agent=${agent}&project=${currentProject}`).then(r=>r.json()).then(d => {
     document.getElementById('log-box').textContent = d.content || '（无日志）';
+    const title = document.querySelector('.section h2:last-of-type');
   });
 }
 
-const AGENT_LABELS = {test:'🔍 Test Agent', fix:'🔧 Fix Agent', master:'🎛 Master Agent'};
+function switchProject(name, e) {
+  currentProject = name;
+  document.querySelectorAll('.proj-tab').forEach(t => t.classList.remove('active'));
+  e.target.classList.add('active');
+  loadAll();
+}
+
+function renderProjectTabs(projects) {
+  const names = projects.map(p => p.name || p.github?.repo).filter(Boolean);
+  const wrap = document.getElementById('project-tabs');
+  if (names.length <= 1) { wrap.innerHTML = ''; return; }
+  wrap.innerHTML = names.map(n =>
+    `<button class="log-tab proj-tab${n===currentProject?' active':''}" onclick="switchProject('${n}',event)">${n}</button>`
+  ).join('');
+}
+
+const AGENT_LABELS = {
+  explore: '🔍 Explore Agent',
+  plan:    '📋 Plan Agent',
+  fix:     '🔧 Fix Agent',
+  master:  '🎛 Master Agent',
+};
 function agentLabel(name) { return AGENT_LABELS[name] || name; }
 
 function esc(s) {
@@ -267,14 +321,14 @@ function renderStats(state) {
   const prs = state.prs || [];
   const counts = { open:0, fixing:0, closed:0, 'needs-human':0 };
   issues.forEach(i => { if (counts[i.status] !== undefined) counts[i.status]++; });
-  const lastRun = state.last_test_run || '未运行';
+  const lastRun = state.last_explore_run || '未运行';
   document.getElementById('stats').innerHTML = `
     <div class="stat-card"><div class="label">Open Issues</div><div class="value blue">${counts.open}</div></div>
     <div class="stat-card"><div class="label">Fixing</div><div class="value yellow">${counts.fixing}</div></div>
     <div class="stat-card"><div class="label">Closed</div><div class="value green">${counts.closed}</div></div>
     <div class="stat-card"><div class="label">需人工</div><div class="value red">${counts['needs-human']}</div></div>
     <div class="stat-card"><div class="label">PRs Open</div><div class="value blue">${prs.filter(p=>p.status==='open').length}</div></div>
-    <div class="stat-card"><div class="label">上次测试</div><div class="value" style="font-size:14px;padding-top:6px">${lastRun}</div></div>
+    <div class="stat-card"><div class="label">上次 Explore</div><div class="value" style="font-size:13px;padding-top:6px">${lastRun}</div></div>
   `;
 }
 
@@ -303,21 +357,40 @@ function renderAgents(agents) {
   }).join('');
 }
 
+function issueUrl(issue) {
+  const proj = window._projectMap && window._projectMap[currentProject];
+  const owner = proj?.issue_tracker?.owner || proj?.github?.owner || 'chainupcloud';
+  const repo  = issue.track === 'backend'
+    ? (proj?.backend_issue_tracker?.repo || proj?.github?.repo)
+    : (proj?.issue_tracker?.repo || proj?.github?.repo || 'dex-ui');
+  return `https://github.com/${owner}/${repo}/issues/${issue.github_number}`;
+}
+
+function prUrl(pr) {
+  const proj = window._projectMap && window._projectMap[currentProject];
+  const owner = proj?.github?.owner || 'chainupcloud';
+  const repo  = pr.track === 'backend'
+    ? (proj?.backend_issue_tracker?.repo || proj?.github?.repo)
+    : (proj?.github?.repo || 'dex-ui');
+  return `https://github.com/${owner}/${repo}/pull/${pr.pr_number}`;
+}
+
 function renderIssues(issues) {
   if (!issues.length) { document.getElementById('issues-wrap').innerHTML = '<p class="none-tip">暂无 issue</p>'; return; }
   const rows = issues.map(i => `
     <tr>
-      <td><a href="https://github.com/chainupcloud/dex-ui/issues/${i.github_number}" target="_blank">#${i.github_number}</a></td>
+      <td>${i.github_number != null ? `<a href="${issueUrl(i)}" target="_blank">#${i.github_number}</a>` : '—'}</td>
       <td>${esc(i.title)}</td>
       <td>${badge(i.priority.toLowerCase(), i.priority)}</td>
       <td>${badge(i.status, i.status)}</td>
-      <td>${i.pr_number ? `<a href="https://github.com/chainupcloud/dex-ui/pull/${i.pr_number}" target="_blank">PR #${i.pr_number}</a>` : '—'}</td>
+      <td>${i.track === 'backend' ? '<span style="color:#7d8590;font-size:11px">backend</span>' : ''}</td>
+      <td>${i.pr_number ? `<a href="${prUrl(i)}" target="_blank">PR #${i.pr_number}</a>` : '—'}</td>
       <td>${i.fix_attempts || 0}</td>
-      <td>${i.resolution || '—'}</td>
+      <td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${i.note || i.resolution || '—'}</td>
     </tr>`).join('');
   document.getElementById('issues-wrap').innerHTML = `
     <div class="table-wrap"><table><thead><tr>
-      <th>#</th><th>标题</th><th>优先级</th><th>状态</th><th>PR</th><th>尝试次数</th><th>备注</th>
+      <th>#</th><th>标题</th><th>优先级</th><th>状态</th><th>Track</th><th>PR</th><th>尝试</th><th>备注</th>
     </tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 
@@ -362,13 +435,13 @@ setInterval(loadAll, 15000);
 </html>
 """
 
-def parse_log_times(agent: str):
+def parse_log_times(agent: str, project: str = 'dex-ui'):
     """从日志文件解析最后一次运行的开始时间、结束时间、状态。"""
-    log_file = BASE / 'logs' / f'{agent}-agent.log'
-    if not log_file.exists():
+    lf = log_file(project, agent)
+    if not lf.exists():
         return None, None, None
 
-    lines = log_file.read_text().splitlines()
+    lines = lf.read_text().splitlines()
     start_re = re.compile(r'\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\] Starting')
     end_re   = re.compile(r'\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\] \S+ agent completed')
 
@@ -381,17 +454,21 @@ def parse_log_times(agent: str):
 
     last_start = starts[-1] if starts else None
     last_end   = ends[-1]   if ends   else None
-    # 判断是否异常结束（有 start 但无对应 end，或最后一行是 error）
     status = 'ok'
     if last_start and (not last_end or last_end < last_start):
         status = 'error'
     return last_start, last_end, status
 
-def is_agent_running(agent: str) -> bool:
+def is_agent_running(agent: str, project: str = 'dex-ui') -> bool:
+    patterns = {
+        'explore': f'run-agent.sh explore {project}',
+        'plan':    f'run-agent.sh plan {project}',
+        'fix':     f'run-agent.sh fix {project}',
+        'master':  f'run-agent.sh master {project}',
+    }
+    pat = patterns.get(agent, f'run-agent.sh {agent} {project}')
     try:
-        out = subprocess.check_output(
-            ['pgrep', '-fa', f'run-agent.sh {agent}'], text=True
-        )
+        out = subprocess.check_output(['pgrep', '-fa', pat], text=True)
         return bool(out.strip())
     except subprocess.CalledProcessError:
         return False
@@ -410,7 +487,15 @@ def next_run_info(cron_expr: str):
         delta = nxt - now
         mins = int(delta.total_seconds() // 60)
         secs = int(delta.total_seconds() % 60)
-        return (f'{mins}m {secs}s 后' if mins > 0 else f'{secs}s 后'), pct
+        if mins >= 60:
+            hrs = mins // 60
+            mins = mins % 60
+            label = f'{hrs}h {mins}m 后'
+        elif mins > 0:
+            label = f'{mins}m {secs}s 后'
+        else:
+            label = f'{secs}s 后'
+        return label, pct
     except Exception:
         return '—', 0
 
@@ -420,24 +505,36 @@ def index():
 
 @app.route('/api/state')
 def api_state():
-    issues_file = BASE / 'state' / 'issues.json'
-    prs_file    = BASE / 'state' / 'prs.json'
-    data = {}
-    if issues_file.exists():
-        d = json.loads(issues_file.read_text())
-        data['issues'] = d.get('issues', [])
-        data['last_test_run'] = d.get('last_test_run')
-    if prs_file.exists():
-        data['prs'] = json.loads(prs_file.read_text()).get('prs', [])
+    project_filter = request.args.get('project')  # if set, show only this project
+    data = {'issues': [], 'prs': [], 'last_explore_run': None}
+    state_dir = HARNESS_DIR / 'state'
+    for project_dir in sorted(state_dir.iterdir()):
+        if not project_dir.is_dir():
+            continue
+        if project_filter and project_dir.name != project_filter:
+            continue
+        issues_file = project_dir / 'issues.json'
+        prs_file    = project_dir / 'prs.json'
+        if issues_file.exists():
+            d = json.loads(issues_file.read_text())
+            data['issues'].extend(d.get('issues', []))
+            if d.get('last_test_run'):
+                data['last_explore_run'] = d.get('last_test_run')
+        if prs_file.exists():
+            data['prs'].extend(json.loads(prs_file.read_text()).get('prs', []))
+    # Newest first
+    data['issues'] = list(reversed(data['issues']))
+    data['prs'] = list(reversed(data['prs']))
     return jsonify(data)
 
 @app.route('/api/agents')
 def api_agents():
-    schedules = parse_crontab_schedules()
+    project = request.args.get('project', 'dex-ui')
+    schedules = parse_crontab_schedules(project)
     result = []
-    for name in ('test', 'fix', 'master'):
-        last_start, last_end, status = parse_log_times(name)
-        running = is_agent_running(name)
+    for name in ('explore', 'plan', 'fix', 'master'):
+        last_start, last_end, status = parse_log_times(name, project)
+        running = is_agent_running(name, project)
         cron_expr = schedules.get(name, '')
         nxt_label, pct = next_run_info(cron_expr)
 
@@ -454,7 +551,7 @@ def api_agents():
             'last_duration': duration,
             'next_run': nxt_label,
             'next_run_pct': pct,
-            'schedule_label': cron_label(cron_expr) if cron_expr else '未配置',
+            'schedule_label': cron_label(cron_expr),
             'cron': cron_expr,
         })
     return jsonify(result)
@@ -462,7 +559,7 @@ def api_agents():
 @app.route('/api/projects')
 def api_projects():
     projects = []
-    for f in sorted((BASE / 'projects').glob('*.json')):
+    for f in sorted((HARNESS_DIR / 'projects').glob('*.json')):
         if f.stem == 'template':
             continue
         try:
@@ -473,18 +570,13 @@ def api_projects():
 
 @app.route('/api/logs')
 def api_logs():
-    agent = request.args.get('agent', 'smoke')
-    # Map agent name to log file (scheduler writes to test-{module}.log)
-    candidates = [
-        BASE / 'logs' / f'test-{agent}.log',   # new: test-smoke.log, test-coverage.log
-        BASE / 'logs' / f'{agent}-agent.log',   # legacy: fix-agent.log, master-agent.log
-        BASE / 'logs' / f'{agent}.log',         # new: scheduler.log
-    ]
-    for log_file in candidates:
-        if log_file.exists():
-            lines = log_file.read_text().splitlines()
-            return jsonify({'content': '\n'.join(lines[-30:])})
-    return jsonify({'content': f'日志文件不存在（agent={agent}）'})
+    agent = request.args.get('agent', 'explore')
+    project = request.args.get('project', 'dex-ui')
+    lf = log_file(project, agent)
+    if lf.exists():
+        lines = lf.read_text().splitlines()
+        return jsonify({'content': '\n'.join(lines[-30:]), 'file': lf.name})
+    return jsonify({'content': f'日志文件不存在（{lf.name}）', 'file': lf.name})
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

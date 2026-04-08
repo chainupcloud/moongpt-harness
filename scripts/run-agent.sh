@@ -23,20 +23,42 @@ if [ ! -f "$PROJECT_CONFIG" ]; then
 fi
 
 case "$AGENT" in
-  test|smoke|fix|master|coverage|advanced) ;;
+  test|smoke|fix|master|explore|plan) ;;
   *) echo "Unknown agent: $AGENT"; exit 1 ;;
 esac
 
 # smoke is an alias for test (uses test-agent.md)
 [ "$AGENT" = "smoke" ] && AGENT="test"
 
+# ── Task-level locks (per resource, not per agent) ────────────────────────────
+# fix and explore can run in parallel (different state files).
+# Two fix-agents or two master-agents can't operate on the same resource.
+LOCK_DIR="$HARNESS_DIR/state/$PROJECT"
+mkdir -p "$LOCK_DIR"
+case "$AGENT" in
+  fix)     LOCK_FILE="$LOCK_DIR/issues.json.lock" ;;
+  master)  LOCK_FILE="$LOCK_DIR/prs.json.lock" ;;
+  explore) LOCK_FILE="$LOCK_DIR/backlog.json.lock" ;;
+  plan)    LOCK_FILE="$LOCK_DIR/backlog.json.lock" ;;
+  *)       LOCK_FILE="" ;;
+esac
+
+if [ -n "$LOCK_FILE" ]; then
+  exec 200>"$LOCK_FILE"
+  flock --nonblock 200 || {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $AGENT: task lock busy ($LOCK_FILE) — another $AGENT is running on same resource, skipping."
+    exit 0
+  }
+fi
+# ─────────────────────────────────────────────────────────────────────────────
+
 # 各 Agent 使用的模型
 case "$AGENT" in
-  test)     MODEL="claude-sonnet-4-6" ;;
-  coverage) MODEL="claude-sonnet-4-6" ;;
-  advanced) MODEL="claude-sonnet-4-6" ;;
-  fix)      MODEL="claude-opus-4-6" ;;
-  master)   MODEL="" ;;  # 默认模型
+  test)    MODEL="claude-sonnet-4-6" ;;
+  explore) MODEL="claude-sonnet-4-6" ;;
+  plan)    MODEL="claude-sonnet-4-6" ;;
+  fix)     MODEL="claude-opus-4-6" ;;
+  master)  MODEL="" ;;  # 默认模型
 esac
 
 # Load secrets from .env
@@ -58,10 +80,25 @@ git pull origin randd1024 --quiet 2>/dev/null || true
 # ── Pre-checks: skip Claude entirely when there is nothing to do ──────────────
 
 if [ "$AGENT" = "fix" ]; then
+  # Check fix_disabled flag in project config
+  FIX_DISABLED=$(python3 -c "
+import json, sys
+try:
+    d = json.load(open('$PROJECT_CONFIG'))
+    print('true' if d.get('fix_disabled', False) else 'false')
+except Exception:
+    print('false')
+" 2>/dev/null)
+  if [ "${FIX_DISABLED}" = "true" ]; then
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] fix: fix_disabled=true in project config — fix agent is disabled for $PROJECT. Skipping (0 tokens used)."
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] fix agent completed for $PROJECT."
+    exit 0
+  fi
+
   OPEN_COUNT=$(python3 -c "
 import json, sys
 try:
-    d = json.load(open('$HARNESS_DIR/state/issues.json'))
+    d = json.load(open('$HARNESS_DIR/state/$PROJECT/issues.json'))
     n = sum(1 for i in d.get('issues', []) if i.get('status') == 'open' and i.get('fix_attempts', 0) < 3)
     print(n)
 except Exception as e:
@@ -83,7 +120,7 @@ if [ "$AGENT" = "master" ]; then
   LOCAL_OPEN=$(python3 -c "
 import json
 try:
-    d = json.load(open('$HARNESS_DIR/state/prs.json'))
+    d = json.load(open('$HARNESS_DIR/state/$PROJECT/prs.json'))
     print(sum(1 for p in d.get('prs', []) if p.get('status') == 'open'))
 except:
     print(1)
@@ -103,7 +140,8 @@ import json, urllib.request, os, sys
 config_path = os.environ.get('HARNESS_PROJECT_CONFIG', '')
 harness_dir = '/home/ubuntu/chainup/moongpt-harness'
 token = os.environ.get('GH_TOKEN', '')
-issues_path = harness_dir + '/state/issues.json'
+project = os.environ.get('HARNESS_PROJECT', 'dex-ui')
+issues_path = harness_dir + '/state/' + project + '/issues.json'
 
 try:
     with open(config_path) as f:
@@ -149,7 +187,7 @@ PYEOF
 )
   if [ "${SYNCED:-0}" != "0" ]; then
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] master: synced ${SYNCED} issue(s) closed on GitHub → state updated."
-    git -C "$HARNESS_DIR" add state/issues.json
+    git -C "$HARNESS_DIR" add state/$PROJECT/issues.json
     git -C "$HARNESS_DIR" commit -m "state: sync ${SYNCED} issue(s) closed on GitHub [$PROJECT]" 2>/dev/null || true
     git -C "$HARNESS_DIR" push origin randd1024 2>/dev/null || true
   fi
@@ -168,11 +206,17 @@ fi
 MODEL_FLAG=""
 [ -n "$MODEL" ] && MODEL_FLAG="--model $MODEL"
 
+# master needs more turns for Vercel deployment polling + Playwright acceptance
+# fix needs more turns for codebase analysis + implementation
+MAX_TURNS=40
+[ "$AGENT" = "fix" ]    && MAX_TURNS=60
+[ "$AGENT" = "master" ] && MAX_TURNS=80
+
 $CLAUDE \
   --print \
   $MODEL_FLAG \
   --allowedTools "Bash,Read,Write,Edit,Glob,Grep" \
-  --max-turns 40 \
+  --max-turns $MAX_TURNS \
   -p "$(cat "$PROMPT_FILE")
 
 ---

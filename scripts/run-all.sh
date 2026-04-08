@@ -10,14 +10,14 @@ LOG_DIR="$HARNESS_DIR/logs"
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] run-all start for $PROJECT"
 
 # Ordered list of test agents — add new modules here
-TEST_AGENTS=(smoke coverage advanced)
+TEST_AGENTS=(explore)
 
 for AGENT in "${TEST_AGENTS[@]}"; do
   echo ""
   echo "════════════════════════════════════════"
   echo "Running: $AGENT"
   echo "════════════════════════════════════════"
-  bash "$HARNESS_DIR/run-agent.sh" "$AGENT" "$PROJECT" \
+  bash "$HARNESS_DIR/scripts/run-agent.sh" "$AGENT" "$PROJECT" \
     >> "$LOG_DIR/${AGENT}-agent.log" 2>&1
   EXIT=$?
   if [ $EXIT -ne 0 ]; then
