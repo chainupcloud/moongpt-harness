@@ -3,6 +3,486 @@
   "last_coverage_run": "2026-03-27T00:01:33Z",
   "issues": [
     {
+      "id": "issue-2026-03-27-dex-sui-26",
+      "title": "[P2] /dex-api/info 500 — column dex_perpetuals.owner_address does not exist — 交易页完全卡在骨架屏",
+      "github_issue_number": 26,
+      "github_repo": "chainupcloud/dex-sui",
+      "status": "closed",
+      "priority": "P2",
+      "created_date": "2026-03-27",
+      "scenarios": [
+        "E041",
+        "E042",
+        "E046"
+      ],
+      "labels": [
+        "bug",
+        "backend"
+      ],
+      "notes": "E061 2026-03-27: API /dex-api/info POST returns 200 with market data. Skeleton gone on trade page. GitHub issue still open - may need manual close by backend team.",
+      "closed_at": "2026-03-27",
+      "note": "Synced from GitHub"
+    },
+    {
+      "github_issue_number": 63,
+      "title": "[P3] /trade 页面 24h 涨跌显示 +0.00% — 标记价格正常但涨跌幅数据缺失",
+      "status": "closed",
+      "priority": "P3",
+      "scenario": "E185",
+      "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
+      "fix_attempts": 1,
+      "pr_number": 67,
+      "labels": [
+        "bug"
+      ],
+      "deployed_sha": "a0a52185650d7dabc1d9e2faa4833449e4e58912",
+      "accepted": true,
+      "note": "PR #67 merged to dev. Testnet backend does not support candleSnapshot API (422), K-line backfill UI verification not possible on testnet. Accepted via code review + SHA verification. Production human review recommended."
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-75",
+      "title": "[P3] Withdraw modal: no client-side validation for negative/zero/over-balance input",
+      "github_issue_number": 75,
+      "status": "closed",
+      "priority": "P3",
+      "scenario": "E111",
+      "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
+      "labels": [
+        "bug"
+      ],
+      "fix_attempts": 0,
+      "resolution": "duplicate",
+      "note": "Duplicate of #66 (fixed in PR #68). Validation already exists on dev."
+    },
+    {
+      "id": "issue-90",
+      "github_issue_number": 90,
+      "title": "[P3] Explorer detail pages show missing timestamp (Time: –) and wrong checkpoint (#0)",
+      "status": "closed",
+      "priority": "P3",
+      "scenario": "E177",
+      "created_date": "2026-03-27",
+      "fix_attempts": 1,
+      "pr_number": 91,
+      "closed_at": "2026-03-27",
+      "deployed_sha": "de43fa5f43c541ef6ea7360e602b234218df26bf",
+      "accepted": true,
+      "note": "PR #91 merged + deployed. Playwright verified: /explorer/checkpoint/1 HTTP 200, no 1970-01-01 timestamps."
+    },
+    {
+      "id": "issue-2026-03-27-dex-sui-29",
+      "title": "[P3] Explorer checkpoint detail API returns empty transactions when list shows txCount=1",
+      "github_issue_number": 29,
+      "github_repo": "chainupcloud/dex-sui",
+      "status": "closed",
+      "priority": "P3",
+      "created_date": "2026-03-27",
+      "scenarios": [
+        "E227"
+      ],
+      "labels": [
+        "bug",
+        "backend"
+      ],
+      "notes": "Backend /dex-api/explorer checkpoint detail returns transactions:[] and timestampMs:0 for all checkpoints, while list API shows txCount=1",
+      "closed_at": "2026-03-27",
+      "note": "Synced from GitHub"
+    },
+    {
+      "id": "dex-ui-109",
+      "issue_number": 109,
+      "title": "[P3] TWAP order form missing interval/parts/duration fields — cannot configure TWAP parameters",
+      "status": "closed",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "scenario_ids": [
+        "E375",
+        "E251"
+      ],
+      "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/109",
+      "note": "TwapPanel already has Duration presets, Hour(s)/Minute(s) inputs, Randomize/Private checkboxes, and TWAP Order Preview. Explore agent false positive — likely observed stale staging (issue #98 Vercel deploy failures)."
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-120",
+      "title": "[P4] Stop Limit form: limit price input has wrong aria-label (\"Trigger price\" instead of \"Limit price\")",
+      "github_issue_number": 120,
+      "github_repo": "chainupcloud/dex-ui",
+      "status": "closed",
+      "priority": "P4",
+      "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
+      "scenarios": [
+        "E302"
+      ],
+      "labels": [
+        "bug",
+        "accessibility"
+      ],
+      "notes": "src/components/trading/TradeForm/index.tsx line ~673: aria-label=\"Trigger price\" on limitPrice input for stop-limit",
+      "fix_attempts": 1,
+      "pr_number": 121
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-129",
+      "title": "[P3] TWAP order form — duration/interval fields still absent (regression after #125 closed)",
+      "status": "closed",
+      "priority": "P3",
+      "scenario_id": "E490",
+      "github_issue_number": 129,
+      "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
+      "labels": [
+        "bug"
+      ],
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "TwapPanel component exists on dev with full duration/interval/preview fields. 5th duplicate false positive (same as #109, #113, #117, #125) — stale Vercel staging (issue #98)."
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-130",
+      "title": "[P3] Withdraw modal — address format not validated (regression after #99 closed)",
+      "status": "closed",
+      "priority": "P3",
+      "scenario_id": "E326",
+      "github_issue_number": 130,
+      "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
+      "labels": [
+        "bug"
+      ],
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "WithdrawModal on dev has full address validation via isAddress() from viem. Explore agent false positive — stale Vercel staging (issue #98)."
+    },
+    {
+      "issue_number": 132,
+      "title": "[P4] TpSlPanel inputs missing aria-labels — TP/SL price and gain/loss fields inaccessible to screen readers",
+      "status": "closed",
+      "priority": "P4",
+      "scenario": "E486",
+      "opened_date": "2026-03-27",
+      "fix_attempts": 1,
+      "pr_number": 133,
+      "closed_at": "2026-03-27",
+      "note": "Accepted via code review + SHA verification. Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully."
+    },
+    {
+      "id": "issue-87",
+      "github_issue_number": 150,
+      "title": "[P3] /api-keys page renders 404 component despite HTTP 200",
+      "status": "closed",
+      "priority": "P3",
+      "scenario_id": "E433",
+      "created_date": "2026-03-28",
+      "closed_at": "2026-03-28",
+      "fix_attempts": 0,
+      "resolution": "not-a-bug",
+      "labels": [
+        "bug"
+      ],
+      "note": "False positive — screenshots from E433 test show page rendering correctly. Explore agent's cookie injection to simulate wallet connection caused misreport."
+    },
+    {
+      "id": "explore-e492-170",
+      "issue_number": 170,
+      "title": "[P3] TWAP order type selected but no TWAP-specific fields rendered",
+      "scenario_id": "E492",
+      "priority": "P3",
+      "status": "closed",
+      "created_date": "2026-03-28",
+      "closed_date": "2026-03-28",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/170",
+      "resolution": "not-a-bug",
+      "fix_attempts": 0,
+      "labels": [
+        "bug"
+      ],
+      "note": "False positive: explore agent clicked TWAP tab in AccountPanel instead of OrderTypeSelector dropdown. TWAP form renders correctly."
+    },
+    {
+      "id": "issue-192",
+      "github_issue_number": 192,
+      "title": "[P3] More dropdown missing Telegram link — only Docs, Discord, Twitter, API visible",
+      "status": "closed",
+      "priority": "P3",
+      "scenario_id": "E568",
+      "created_date": "2026-03-28",
+      "fix_attempts": 1,
+      "pr_number": 198,
+      "closed_at": "2026-03-28",
+      "note": "PR #198 merged (2b8cdce), staging verified — Telegram link present in More dropdown"
+    },
+    {
+      "id": "issue-193",
+      "github_issue_number": 193,
+      "title": "[P3] Limit order TIF dropdown (GTC) has chevron but does not open — IOC/FOK unselectable",
+      "status": "closed",
+      "priority": "P3",
+      "scenario_id": "E575",
+      "created_date": "2026-03-28",
+      "closed_at": "2026-03-28",
+      "fix_attempts": 0,
+      "resolution": "not-reproducible",
+      "note": "Dropdown works correctly on staging — ALO/GTC/IOC all selectable. Verified 2026-03-28."
+    },
+    {
+      "id": "issue-112",
+      "title": "[P4] Limit order form missing Post-Only toggle — maker-only order placement unavailable",
+      "status": "closed",
+      "priority": "P4",
+      "github_issue": 194,
+      "scenario": "E578",
+      "created_date": "2026-03-28",
+      "closed_at": "2026-03-29",
+      "fix_attempts": 0,
+      "resolution": "not-a-bug",
+      "note": "Post-Only already exists as ALO (Add-Liquidity-Only) in the TIF dropdown. Explore agent false positive.",
+      "labels": [
+        "bug",
+        "enhancement"
+      ]
+    },
+    {
+      "id": "issue-197",
+      "github_issue_number": 197,
+      "title": "[P3] TP/SL inputs accept invalid values without validation — order submission not blocked",
+      "status": "closed",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "scenario_id": "E596",
+      "created_date": "2026-03-28",
+      "closed_at": "2026-03-28",
+      "fix_attempts": 0,
+      "resolution": "already-fixed",
+      "note": "Fixed by PR #151/#152 (86446ad). Red borders + error messages + submit disabled all confirmed on staging."
+    },
+    {
+      "id": "issue-199",
+      "github_issue_id": 199,
+      "title": "[P3] Order book shows crossed prices — ask side (~$64,566) significantly below mark price (~$67,882)",
+      "status": "closed",
+      "priority": "P3",
+      "scenario": "E497",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ],
+      "pr_number": 221,
+      "fix_attempts": 1,
+      "closed_at": "2026-03-28"
+    },
+    {
+      "id": "issue-E643-2026-03-28",
+      "title": "[P3] Isolated margin leverage slider resets to 0x after Cross→Isolated switch",
+      "github_issue_number": 205,
+      "status": "closed",
+      "priority": "P3",
+      "scenario_id": "E643",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ],
+      "pr_number": 233,
+      "fix_attempts": 1,
+      "closed_at": "2026-03-28",
+      "note": "Staging acceptance passed (d092dca). Closed by Agent 4."
+    },
+    {
+      "id": "issue-E647-2026-03-28",
+      "title": "[P3] API Keys page — Generate button and name/date inputs missing from UI",
+      "github_issue_number": 206,
+      "status": "closed",
+      "priority": "P3",
+      "scenario_id": "E647",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ],
+      "pr_number": 245,
+      "fix_attempts": 1,
+      "note": "Staging acceptance passed (d092dca). Closed by Agent 4.",
+      "closed_at": "2026-03-28"
+    },
+    {
+      "id": "issue-E661-2026-03-28",
+      "github_issue_number": 209,
+      "title": "[P3] Stop Market order type not visible in order type selector — only Limit and TWAP tabs shown",
+      "scenario": "E661",
+      "status": "closed",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "created_date": "2026-03-28",
+      "pr_number": 249,
+      "fix_attempts": 1,
+      "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
+      "closed_at": "2026-03-29"
+    },
+    {
+      "title": "[P3] Portfolio \"+Add funds\" button non-functional — click does not open deposit modal",
+      "github_issue": 211,
+      "status": "closed",
+      "priority": "P3",
+      "scenario": "E927",
+      "opened_date": "2026-03-28",
+      "pr_number": 247,
+      "fix_attempts": 1,
+      "closed_at": "2026-03-28",
+      "note": "PR #247 merged (d092dca), staging acceptance passed"
+    },
+    {
+      "id": "issue-213",
+      "github_issue_number": 213,
+      "title": "[P4] Explorer tx detail — 'User Address' label should be 'From' for consistency",
+      "status": "closed",
+      "priority": "P4",
+      "scenario_id": "E951",
+      "created_date": "2026-03-28",
+      "fix_attempts": 1,
+      "pr_number": 259,
+      "note": "PR #259 merged+deployed. Staging deploy READY (ee92a8c). P4: auto acceptance skipped, human confirmation recommended.",
+      "closed_at": "2026-03-29"
+    },
+    {
+      "id": "issue-214",
+      "github_issue_number": 214,
+      "title": "[P2] Explorer transactions pagination — page 2 returns empty list",
+      "status": "closed",
+      "priority": "P2",
+      "scenario_id": "E960",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ],
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/214",
+      "pr_number": 217,
+      "fix_attempts": 1,
+      "closed_at": "2026-03-28",
+      "note": "Staging acceptance passed, merged PR #217"
+    },
+    {
+      "id": 216,
+      "title": "[P3] Explorer tx detail: Fee field shows dash (–) instead of numeric value",
+      "status": "closed",
+      "priority": "P3",
+      "scenario": "E698",
+      "created": "2026-03-28",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/216",
+      "fix_branch": null,
+      "fix_attempts": 1,
+      "pr_number": 250,
+      "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
+      "closed_at": "2026-03-29"
+    },
+    {
+      "issue_id": "218",
+      "github_issue_number": 218,
+      "title": "[P3] TP/SL toggle silently reset when switching order type — not restored on Limit→Market→Limit roundtrip",
+      "status": "closed",
+      "priority": "P3",
+      "scenario_id": "E707",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ],
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/218",
+      "pr_number": 251,
+      "fix_attempts": 1,
+      "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
+      "closed_at": "2026-03-29"
+    },
+    {
+      "id": "issue-220",
+      "github_issue_number": 220,
+      "title": "[P3] Leverage dialog tick labels (1x/13x/25x/38x/50x) unclickable — do not update slider",
+      "status": "closed",
+      "priority": "P3",
+      "scenario": "E716",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ],
+      "pr_number": 253,
+      "fix_attempts": 1,
+      "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
+      "closed_at": "2026-03-29"
+    },
+    {
+      "id": "issue-145",
+      "github_issue_number": 240,
+      "title": "[P3] Stop Market order type — Trigger Price field missing from form",
+      "status": "closed",
+      "priority": "P3",
+      "scenario_id": "E849",
+      "created_date": "2026-03-28",
+      "closed_at": "2026-03-29",
+      "resolution": "not-a-bug",
+      "fix_attempts": 0,
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "id": "issue-146",
+      "github_issue_number": 241,
+      "title": "[P3] Explorer tx detail — expanding Events row triggers blocking overlay (z-[9998])",
+      "status": "closed",
+      "priority": "P3",
+      "scenario_id": "E853",
+      "created_date": "2026-03-28",
+      "closed_at": "2026-03-29",
+      "resolution": "not-a-bug",
+      "fix_attempts": 0,
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "issue_id": "dex-ui-280",
+      "github_issue_number": 280,
+      "title": "[P4] Leverage dialog preset values (1x/13x/25x/38x/50x) are non-clickable tick labels — not interactive buttons",
+      "priority": "P4",
+      "status": "closed",
+      "scenario": "E895",
+      "created_date": "2026-03-29",
+      "labels": [
+        "enhancement"
+      ],
+      "pr_number": 329,
+      "fix_attempts": 1,
+      "note": "PR #329 merged (2026-03-30). Deploy ERROR: alwaysRefuseToBuild (issue #98). Acceptance pending deployment fix. Synced from GitHub: closed 2026-04-03.",
+      "updated_at": "2026-03-30",
+      "closed_at": "2026-04-03"
+    },
+    {
+      "id": "dex-ui-295",
+      "github_issue_number": 295,
+      "title": "[P3] /markets 24h Volume sort indicator does not toggle — resets to ↕ after click instead of ↑",
+      "status": "closed",
+      "priority": "P3",
+      "scenario_id": "E767",
+      "created_date": "2026-03-29",
+      "labels": [
+        "bug"
+      ],
+      "url": "https://github.com/chainupcloud/dex-ui/issues/295",
+      "pr_number": 318,
+      "fix_attempts": 1,
+      "closed_at": "2026-03-29",
+      "note": "PR #318 merged, staging 验收通过 (commit 995e0ff)"
+    },
+    {
       "github_number": 1,
       "title": "/app 路径 404",
       "priority": "P1",
@@ -157,6 +637,18 @@
       "accepted": true
     },
     {
+      "title": "[P3] /info API prevDayPx always returns 0.0 — 24h price change unavailable",
+      "status": "closed",
+      "repo": "dex-sui",
+      "number": 27,
+      "scenario": "E216",
+      "priority": "P3",
+      "created": "2026-03-27",
+      "url": "https://github.com/chainupcloud/dex-sui/issues/27",
+      "closed_at": "2026-03-27",
+      "note": "Synced from GitHub"
+    },
+    {
       "number": 28,
       "title": "[P3] /markets 页面 BTC 价格显示为 $0 — 实际价格 $68,107",
       "status": "closed",
@@ -170,6 +662,24 @@
       "github_number": 28,
       "deployed_sha": "261087acf6501d57d3320c2f5ab3f1fc4d998799",
       "accepted": true
+    },
+    {
+      "title": "[P3] /dex-api/info asset contexts returns [] — Open Interest data unavailable (backend)",
+      "status": "closed",
+      "repo": "dex-sui",
+      "number": 28,
+      "github_number": 28,
+      "scenario": "E200",
+      "priority": "P3",
+      "created": "2026-03-27",
+      "url": "https://github.com/chainupcloud/dex-sui/issues/28",
+      "labels": [
+        "bug",
+        "backend"
+      ],
+      "notes": "E200 re-run 2026-03-27: Markets page OI shows $0.00. API asset contexts endpoint returns []. PR #96 (dex-ui) deployment also failed (Vercel ERROR). Backend fix needed first.",
+      "closed_at": "2026-03-27",
+      "note": "Synced from GitHub (closed by human)"
     },
     {
       "id": "issue-29",
@@ -188,27 +698,6 @@
       "deployed_sha": "a5f31a4d8a66ec625aad2f24593c20a35db6dc98",
       "accepted": true,
       "note": "Accepted via code review + SHA verification. Backend 502s prevented Playwright UI test."
-    },
-    {
-      "id": "issue-2026-03-27-dex-sui-26",
-      "title": "[P2] /dex-api/info 500 — column dex_perpetuals.owner_address does not exist — 交易页完全卡在骨架屏",
-      "github_issue_number": 26,
-      "github_repo": "chainupcloud/dex-sui",
-      "status": "closed",
-      "priority": "P2",
-      "created_date": "2026-03-27",
-      "scenarios": [
-        "E041",
-        "E042",
-        "E046"
-      ],
-      "labels": [
-        "bug",
-        "backend"
-      ],
-      "notes": "E061 2026-03-27: API /dex-api/info POST returns 200 with market data. Skeleton gone on trade page. GitHub issue still open - may need manual close by backend team.",
-      "closed_at": "2026-03-27",
-      "note": "Synced from GitHub"
     },
     {
       "number": 34,
@@ -464,21 +953,14 @@
       "note": "PR #65 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification."
     },
     {
-      "github_issue_number": 63,
+      "github_number": 63,
       "title": "[P3] /trade 页面 24h 涨跌显示 +0.00% — 标记价格正常但涨跌幅数据缺失",
-      "status": "closed",
       "priority": "P3",
-      "scenario": "E185",
-      "created_date": "2026-03-27",
-      "closed_at": "2026-03-27",
-      "fix_attempts": 1,
-      "pr_number": 67,
-      "labels": [
-        "bug"
-      ],
-      "deployed_sha": "a0a52185650d7dabc1d9e2faa4833449e4e58912",
-      "accepted": true,
-      "note": "PR #67 merged to dev. Testnet backend does not support candleSnapshot API (422), K-line backfill UI verification not possible on testnet. Accepted via code review + SHA verification. Production human review recommended."
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
     },
     {
       "github_number": 66,
@@ -514,6 +996,26 @@
       "note": "PR #74 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification."
     },
     {
+      "github_number": 70,
+      "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 71,
+      "title": "[P3] 移动端竖屏（390×844）底部面板标签栏水平溢出 — 4 个标签不可见",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
       "id": "issue-2026-03-27-dex-ui-72",
       "github_issue_number": 72,
       "github_number": 72,
@@ -545,34 +1047,6 @@
       "pr_number": 82,
       "deployed_sha": "85db72c",
       "accepted": true
-    },
-    {
-      "title": "[P3] /info API prevDayPx always returns 0.0 — 24h price change unavailable",
-      "status": "closed",
-      "repo": "dex-sui",
-      "number": 27,
-      "scenario": "E216",
-      "priority": "P3",
-      "created": "2026-03-27",
-      "url": "https://github.com/chainupcloud/dex-sui/issues/27",
-      "closed_at": "2026-03-27",
-      "note": "Synced from GitHub"
-    },
-    {
-      "id": "issue-2026-03-27-dex-ui-75",
-      "title": "[P3] Withdraw modal: no client-side validation for negative/zero/over-balance input",
-      "github_issue_number": 75,
-      "status": "closed",
-      "priority": "P3",
-      "scenario": "E111",
-      "created_date": "2026-03-27",
-      "closed_at": "2026-03-27",
-      "labels": [
-        "bug"
-      ],
-      "fix_attempts": 0,
-      "resolution": "duplicate",
-      "note": "Duplicate of #66 (fixed in PR #68). Validation already exists on dev."
     },
     {
       "id": "issue-2026-03-27-dex-ui-76",
@@ -678,21 +1152,6 @@
       "note": "PR #89 merged + deployed (dpl_6bz8BHZdYoLKRqUV4y665MvWEJ8S). Checkboxes wrapped in label elements, search input aria-label added. Playwright verified."
     },
     {
-      "id": "issue-90",
-      "github_issue_number": 90,
-      "title": "[P3] Explorer detail pages show missing timestamp (Time: –) and wrong checkpoint (#0)",
-      "status": "closed",
-      "priority": "P3",
-      "scenario": "E177",
-      "created_date": "2026-03-27",
-      "fix_attempts": 1,
-      "pr_number": 91,
-      "closed_at": "2026-03-27",
-      "deployed_sha": "de43fa5f43c541ef6ea7360e602b234218df26bf",
-      "accepted": true,
-      "note": "PR #91 merged + deployed. Playwright verified: /explorer/checkpoint/1 HTTP 200, no 1970-01-01 timestamps."
-    },
-    {
       "github_issue_number": 92,
       "github_number": 92,
       "title": "[P3] /markets page BTC-USDC row click does not navigate to /trade?coin=BTC",
@@ -738,24 +1197,6 @@
       "note": "PR #97 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification."
     },
     {
-      "title": "[P3] /dex-api/info asset contexts returns [] — Open Interest data unavailable (backend)",
-      "status": "closed",
-      "repo": "dex-sui",
-      "number": 28,
-      "github_number": 28,
-      "scenario": "E200",
-      "priority": "P3",
-      "created": "2026-03-27",
-      "url": "https://github.com/chainupcloud/dex-sui/issues/28",
-      "labels": [
-        "bug",
-        "backend"
-      ],
-      "notes": "E200 re-run 2026-03-27: Markets page OI shows $0.00. API asset contexts endpoint returns []. PR #96 (dex-ui) deployment also failed (Vercel ERROR). Backend fix needed first.",
-      "closed_at": "2026-03-27",
-      "note": "Synced from GitHub (closed by human)"
-    },
-    {
       "github_number": 98,
       "title": "[P3] Vercel staging perpetually stale — 4 dev commits undeployed, 3 consecutive ERROR builds",
       "priority": "P3",
@@ -785,25 +1226,6 @@
       "pr_number": 100,
       "closed_at": "2026-03-27",
       "note": " Staging acceptance passed (commit 035e763). Invalid address validation confirmed."
-    },
-    {
-      "id": "issue-2026-03-27-dex-sui-29",
-      "title": "[P3] Explorer checkpoint detail API returns empty transactions when list shows txCount=1",
-      "github_issue_number": 29,
-      "github_repo": "chainupcloud/dex-sui",
-      "status": "closed",
-      "priority": "P3",
-      "created_date": "2026-03-27",
-      "scenarios": [
-        "E227"
-      ],
-      "labels": [
-        "bug",
-        "backend"
-      ],
-      "notes": "Backend /dex-api/explorer checkpoint detail returns transactions:[] and timestampMs:0 for all checkpoints, while list API shows txCount=1",
-      "closed_at": "2026-03-27",
-      "note": "Synced from GitHub"
     },
     {
       "id": "issue-2026-03-27-dex-ui-101",
@@ -891,26 +1313,6 @@
       "deployed_sha": "664a826a0ac0c0c9196364cd9e1772d443affe13",
       "accepted": true,
       "note": "PR #111 merged to dev. Vercel deploy ERROR (team config issue #98, not code). Accepted via code review + SHA verification."
-    },
-    {
-      "id": "dex-ui-109",
-      "issue_number": 109,
-      "title": "[P3] TWAP order form missing interval/parts/duration fields — cannot configure TWAP parameters",
-      "status": "closed",
-      "priority": "P3",
-      "labels": [
-        "bug"
-      ],
-      "scenario_ids": [
-        "E375",
-        "E251"
-      ],
-      "created_date": "2026-03-27",
-      "closed_at": "2026-03-27",
-      "fix_attempts": 0,
-      "resolution": "already-resolved",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/109",
-      "note": "TwapPanel already has Duration presets, Hour(s)/Minute(s) inputs, Randomize/Private checkboxes, and TWAP Order Preview. Explore agent false positive — likely observed stale staging (issue #98 Vercel deploy failures)."
     },
     {
       "number": 112,
@@ -1016,26 +1418,6 @@
       "note": "TwapPanel component already exists on dev with Duration presets, Hour(s)/Minute(s) inputs, Randomize/Private checkboxes, and TWAP Order Preview. Same false positive as #109 and #113 — stale Vercel staging (issue #98)."
     },
     {
-      "id": "issue-2026-03-27-dex-ui-120",
-      "title": "[P4] Stop Limit form: limit price input has wrong aria-label (\"Trigger price\" instead of \"Limit price\")",
-      "github_issue_number": 120,
-      "github_repo": "chainupcloud/dex-ui",
-      "status": "closed",
-      "priority": "P4",
-      "created_date": "2026-03-27",
-      "closed_at": "2026-03-27",
-      "scenarios": [
-        "E302"
-      ],
-      "labels": [
-        "bug",
-        "accessibility"
-      ],
-      "notes": "src/components/trading/TradeForm/index.tsx line ~673: aria-label=\"Trigger price\" on limitPrice input for stop-limit",
-      "fix_attempts": 1,
-      "pr_number": 121
-    },
-    {
       "github_number": 122,
       "title": "[P3] TP/SL checkbox in trade form — clicking does not reveal Take Profit / Stop Loss input fields",
       "status": "closed",
@@ -1124,38 +1506,6 @@
       "note": "WithdrawModal on dev: regex filter prevents negative input, amountValidation rejects <= 0 with inline error. Explore agent false positive — stale Vercel staging (issue #98)."
     },
     {
-      "id": "issue-2026-03-27-dex-ui-129",
-      "title": "[P3] TWAP order form — duration/interval fields still absent (regression after #125 closed)",
-      "status": "closed",
-      "priority": "P3",
-      "scenario_id": "E490",
-      "github_issue_number": 129,
-      "created_date": "2026-03-27",
-      "closed_at": "2026-03-27",
-      "labels": [
-        "bug"
-      ],
-      "fix_attempts": 0,
-      "resolution": "already-resolved",
-      "note": "TwapPanel component exists on dev with full duration/interval/preview fields. 5th duplicate false positive (same as #109, #113, #117, #125) — stale Vercel staging (issue #98)."
-    },
-    {
-      "id": "issue-2026-03-27-dex-ui-130",
-      "title": "[P3] Withdraw modal — address format not validated (regression after #99 closed)",
-      "status": "closed",
-      "priority": "P3",
-      "scenario_id": "E326",
-      "github_issue_number": 130,
-      "created_date": "2026-03-27",
-      "closed_at": "2026-03-27",
-      "labels": [
-        "bug"
-      ],
-      "fix_attempts": 0,
-      "resolution": "already-resolved",
-      "note": "WithdrawModal on dev has full address validation via isAddress() from viem. Explore agent false positive — stale Vercel staging (issue #98)."
-    },
-    {
       "id": "issue-2026-03-27-dex-ui-131",
       "github_number": 131,
       "title": "[P3] TWAP order form — duration/interval fields absent (4th regression, post #129 close)",
@@ -1168,18 +1518,6 @@
       "fix_attempts": 0,
       "resolution": "already-resolved",
       "note": "6th duplicate false positive (same as #109, #113, #117, #125, #129). TwapPanel component exists on dev with full Duration/Interval/Randomize/Private fields. Root cause: stale Vercel staging (issue #98, needs-human)."
-    },
-    {
-      "issue_number": 132,
-      "title": "[P4] TpSlPanel inputs missing aria-labels — TP/SL price and gain/loss fields inaccessible to screen readers",
-      "status": "closed",
-      "priority": "P4",
-      "scenario": "E486",
-      "opened_date": "2026-03-27",
-      "fix_attempts": 1,
-      "pr_number": 133,
-      "closed_at": "2026-03-27",
-      "note": "Accepted via code review + SHA verification. Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully."
     },
     {
       "github_number": 134,
@@ -1348,22 +1686,6 @@
       "resolution": "already-fixed",
       "url": "https://github.com/chainupcloud/dex-ui/issues/149",
       "note": "Already fixed by PR #128 (commit a6f67e1) — TpSlPanel.tsx has inline validation for both buy and sell sides. Explore test E616 ran against stale staging (issue #98 Vercel deploy failures)."
-    },
-    {
-      "id": "issue-87",
-      "github_issue_number": 150,
-      "title": "[P3] /api-keys page renders 404 component despite HTTP 200",
-      "status": "closed",
-      "priority": "P3",
-      "scenario_id": "E433",
-      "created_date": "2026-03-28",
-      "closed_at": "2026-03-28",
-      "fix_attempts": 0,
-      "resolution": "not-a-bug",
-      "labels": [
-        "bug"
-      ],
-      "note": "False positive — screenshots from E433 test show page rendering correctly. Explore agent's cookie injection to simulate wallet connection caused misreport."
     },
     {
       "github_number": 151,
@@ -1541,23 +1863,6 @@
       "closed_at": "2026-03-28"
     },
     {
-      "id": "explore-e492-170",
-      "issue_number": 170,
-      "title": "[P3] TWAP order type selected but no TWAP-specific fields rendered",
-      "scenario_id": "E492",
-      "priority": "P3",
-      "status": "closed",
-      "created_date": "2026-03-28",
-      "closed_date": "2026-03-28",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/170",
-      "resolution": "not-a-bug",
-      "fix_attempts": 0,
-      "labels": [
-        "bug"
-      ],
-      "note": "False positive: explore agent clicked TWAP tab in AccountPanel instead of OrderTypeSelector dropdown. TWAP form renders correctly."
-    },
-    {
       "number": 173,
       "github_number": 173,
       "title": "[P3] Order book ask/bid prices inverted — asks show below market price, bids above",
@@ -1717,49 +2022,6 @@
       "closed_at": "2026-03-28"
     },
     {
-      "id": "issue-192",
-      "github_issue_number": 192,
-      "title": "[P3] More dropdown missing Telegram link — only Docs, Discord, Twitter, API visible",
-      "status": "closed",
-      "priority": "P3",
-      "scenario_id": "E568",
-      "created_date": "2026-03-28",
-      "fix_attempts": 1,
-      "pr_number": 198,
-      "closed_at": "2026-03-28",
-      "note": "PR #198 merged (2b8cdce), staging verified — Telegram link present in More dropdown"
-    },
-    {
-      "id": "issue-193",
-      "github_issue_number": 193,
-      "title": "[P3] Limit order TIF dropdown (GTC) has chevron but does not open — IOC/FOK unselectable",
-      "status": "closed",
-      "priority": "P3",
-      "scenario_id": "E575",
-      "created_date": "2026-03-28",
-      "closed_at": "2026-03-28",
-      "fix_attempts": 0,
-      "resolution": "not-reproducible",
-      "note": "Dropdown works correctly on staging — ALO/GTC/IOC all selectable. Verified 2026-03-28."
-    },
-    {
-      "id": "issue-112",
-      "title": "[P4] Limit order form missing Post-Only toggle — maker-only order placement unavailable",
-      "status": "closed",
-      "priority": "P4",
-      "github_issue": 194,
-      "scenario": "E578",
-      "created_date": "2026-03-28",
-      "closed_at": "2026-03-29",
-      "fix_attempts": 0,
-      "resolution": "not-a-bug",
-      "note": "Post-Only already exists as ALO (Add-Liquidity-Only) in the TIF dropdown. Explore agent false positive.",
-      "labels": [
-        "bug",
-        "enhancement"
-      ]
-    },
-    {
       "id": "issue-195",
       "github_number": 195,
       "title": "[P3] More nav dropdown missing API Keys, Privacy, Terms links — pages exist but not linked",
@@ -1772,37 +2034,6 @@
       "fix_attempts": 1,
       "closed_at": "2026-03-28",
       "note": "Staging acceptance passed — Privacy & Terms links verified"
-    },
-    {
-      "id": "issue-197",
-      "github_issue_number": 197,
-      "title": "[P3] TP/SL inputs accept invalid values without validation — order submission not blocked",
-      "status": "closed",
-      "priority": "P3",
-      "labels": [
-        "bug"
-      ],
-      "scenario_id": "E596",
-      "created_date": "2026-03-28",
-      "closed_at": "2026-03-28",
-      "fix_attempts": 0,
-      "resolution": "already-fixed",
-      "note": "Fixed by PR #151/#152 (86446ad). Red borders + error messages + submit disabled all confirmed on staging."
-    },
-    {
-      "id": "issue-199",
-      "github_issue_id": 199,
-      "title": "[P3] Order book shows crossed prices — ask side (~$64,566) significantly below mark price (~$67,882)",
-      "status": "closed",
-      "priority": "P3",
-      "scenario": "E497",
-      "created_date": "2026-03-28",
-      "labels": [
-        "bug"
-      ],
-      "pr_number": 221,
-      "fix_attempts": 1,
-      "closed_at": "2026-03-28"
     },
     {
       "id": "issue-200",
@@ -1883,38 +2114,6 @@
       "closed_at": "2026-03-28"
     },
     {
-      "id": "issue-E643-2026-03-28",
-      "title": "[P3] Isolated margin leverage slider resets to 0x after Cross→Isolated switch",
-      "github_issue_number": 205,
-      "status": "closed",
-      "priority": "P3",
-      "scenario_id": "E643",
-      "created_date": "2026-03-28",
-      "labels": [
-        "bug"
-      ],
-      "pr_number": 233,
-      "fix_attempts": 1,
-      "closed_at": "2026-03-28",
-      "note": "Staging acceptance passed (d092dca). Closed by Agent 4."
-    },
-    {
-      "id": "issue-E647-2026-03-28",
-      "title": "[P3] API Keys page — Generate button and name/date inputs missing from UI",
-      "github_issue_number": 206,
-      "status": "closed",
-      "priority": "P3",
-      "scenario_id": "E647",
-      "created_date": "2026-03-28",
-      "labels": [
-        "bug"
-      ],
-      "pr_number": 245,
-      "fix_attempts": 1,
-      "note": "Staging acceptance passed (d092dca). Closed by Agent 4.",
-      "closed_at": "2026-03-28"
-    },
-    {
       "number": 208,
       "title": "[P3] Order type dropdown missing Take Profit Market and Take Profit Limit options",
       "status": "closed",
@@ -1929,22 +2128,6 @@
       "fix_attempts": 1,
       "closed_at": "2026-03-28",
       "note": "Staging acceptance passed — Playwright verified TP Market + TP Limit in dropdown"
-    },
-    {
-      "id": "issue-E661-2026-03-28",
-      "github_issue_number": 209,
-      "title": "[P3] Stop Market order type not visible in order type selector — only Limit and TWAP tabs shown",
-      "scenario": "E661",
-      "status": "closed",
-      "priority": "P3",
-      "labels": [
-        "bug"
-      ],
-      "created_date": "2026-03-28",
-      "pr_number": 249,
-      "fix_attempts": 1,
-      "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
-      "closed_at": "2026-03-29"
     },
     {
       "id": "issue-E673-2026-03-28",
@@ -1963,18 +2146,6 @@
       "closed_at": "2026-03-28"
     },
     {
-      "title": "[P3] Portfolio \"+Add funds\" button non-functional — click does not open deposit modal",
-      "github_issue": 211,
-      "status": "closed",
-      "priority": "P3",
-      "scenario": "E927",
-      "opened_date": "2026-03-28",
-      "pr_number": 247,
-      "fix_attempts": 1,
-      "closed_at": "2026-03-28",
-      "note": "PR #247 merged (d092dca), staging acceptance passed"
-    },
-    {
       "title": "[P3] Stop Market BUY — trigger price below mark price accepted without blocking validation",
       "github_issue": 212,
       "github_number": 212,
@@ -1985,36 +2156,6 @@
       "closed_at": "2026-03-28",
       "fix_attempts": 0,
       "note": "Already fixed by PR #229 (commit 08af9e6) — TriggerPriceInput inline error + useOrderValidation direction check. Explore agent false positive — stale Vercel staging (issue #98)."
-    },
-    {
-      "id": "issue-213",
-      "github_issue_number": 213,
-      "title": "[P4] Explorer tx detail — 'User Address' label should be 'From' for consistency",
-      "status": "closed",
-      "priority": "P4",
-      "scenario_id": "E951",
-      "created_date": "2026-03-28",
-      "fix_attempts": 1,
-      "pr_number": 259,
-      "note": "PR #259 merged+deployed. Staging deploy READY (ee92a8c). P4: auto acceptance skipped, human confirmation recommended.",
-      "closed_at": "2026-03-29"
-    },
-    {
-      "id": "issue-214",
-      "github_issue_number": 214,
-      "title": "[P2] Explorer transactions pagination — page 2 returns empty list",
-      "status": "closed",
-      "priority": "P2",
-      "scenario_id": "E960",
-      "created_date": "2026-03-28",
-      "labels": [
-        "bug"
-      ],
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/214",
-      "pr_number": 217,
-      "fix_attempts": 1,
-      "closed_at": "2026-03-28",
-      "note": "Staging acceptance passed, merged PR #217"
     },
     {
       "github_number": 215,
@@ -2028,37 +2169,6 @@
       "close_reason": "false-positive: explore agent clicked nav More dropdown, not pagination"
     },
     {
-      "id": 216,
-      "title": "[P3] Explorer tx detail: Fee field shows dash (–) instead of numeric value",
-      "status": "closed",
-      "priority": "P3",
-      "scenario": "E698",
-      "created": "2026-03-28",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/216",
-      "fix_branch": null,
-      "fix_attempts": 1,
-      "pr_number": 250,
-      "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
-      "closed_at": "2026-03-29"
-    },
-    {
-      "issue_id": "218",
-      "github_issue_number": 218,
-      "title": "[P3] TP/SL toggle silently reset when switching order type — not restored on Limit→Market→Limit roundtrip",
-      "status": "closed",
-      "priority": "P3",
-      "scenario_id": "E707",
-      "created_date": "2026-03-28",
-      "labels": [
-        "bug"
-      ],
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/218",
-      "pr_number": 251,
-      "fix_attempts": 1,
-      "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
-      "closed_at": "2026-03-29"
-    },
-    {
       "github_number": 219,
       "title": "[P3] Reduce Only checkbox visible on Market orders (should be hidden)",
       "priority": "P3",
@@ -2070,22 +2180,6 @@
       "created_date": "2026-03-28",
       "fix_attempts": 1,
       "pr_number": 252,
-      "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
-      "closed_at": "2026-03-29"
-    },
-    {
-      "id": "issue-220",
-      "github_issue_number": 220,
-      "title": "[P3] Leverage dialog tick labels (1x/13x/25x/38x/50x) unclickable — do not update slider",
-      "status": "closed",
-      "priority": "P3",
-      "scenario": "E716",
-      "created_date": "2026-03-28",
-      "labels": [
-        "bug"
-      ],
-      "pr_number": 253,
-      "fix_attempts": 1,
       "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
       "closed_at": "2026-03-29"
     },
@@ -2174,6 +2268,16 @@
       "note": "PR #256 merged, staging acceptance passed. Sort indicator toggles correctly."
     },
     {
+      "github_number": 232,
+      "title": "[P2] TWAP order submit button does nothing — TwapOrderForm not wired to TradeForm",
+      "priority": "P2",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-28",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
       "id": "issue-141",
       "github_number": 234,
       "title": "[P4] Nav social icon links missing aria-label — inaccessible to screen readers",
@@ -2237,36 +2341,6 @@
       "fix_attempts": 1,
       "closed_at": "2026-03-28",
       "github_number": 239
-    },
-    {
-      "id": "issue-145",
-      "github_issue_number": 240,
-      "title": "[P3] Stop Market order type — Trigger Price field missing from form",
-      "status": "closed",
-      "priority": "P3",
-      "scenario_id": "E849",
-      "created_date": "2026-03-28",
-      "closed_at": "2026-03-29",
-      "resolution": "not-a-bug",
-      "fix_attempts": 0,
-      "labels": [
-        "bug"
-      ]
-    },
-    {
-      "id": "issue-146",
-      "github_issue_number": 241,
-      "title": "[P3] Explorer tx detail — expanding Events row triggers blocking overlay (z-[9998])",
-      "status": "closed",
-      "priority": "P3",
-      "scenario_id": "E853",
-      "created_date": "2026-03-28",
-      "closed_at": "2026-03-29",
-      "resolution": "not-a-bug",
-      "fix_attempts": 0,
-      "labels": [
-        "bug"
-      ]
     },
     {
       "github_number": 242,
@@ -2473,23 +2547,6 @@
       "closed_at": "2026-03-29"
     },
     {
-      "issue_id": "dex-ui-280",
-      "github_issue_number": 280,
-      "title": "[P4] Leverage dialog preset values (1x/13x/25x/38x/50x) are non-clickable tick labels — not interactive buttons",
-      "priority": "P4",
-      "status": "closed",
-      "scenario": "E895",
-      "created_date": "2026-03-29",
-      "labels": [
-        "enhancement"
-      ],
-      "pr_number": 329,
-      "fix_attempts": 1,
-      "note": "PR #329 merged (2026-03-30). Deploy ERROR: alwaysRefuseToBuild (issue #98). Acceptance pending deployment fix. Synced from GitHub: closed 2026-04-03.",
-      "updated_at": "2026-03-30",
-      "closed_at": "2026-04-03"
-    },
-    {
       "github_number": 281,
       "title": "[P4] Stop Market order form — price/trigger input has null aria-label (breaks accessibility and test automation)",
       "priority": "P4",
@@ -2540,6 +2597,26 @@
       "github_number": 286
     },
     {
+      "github_number": 288,
+      "title": "[P3] TWAP tab in order panel shows blank content — missing empty state message",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-29",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 289,
+      "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-29",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
       "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
       "status": "fixing",
       "priority": "P3",
@@ -2584,23 +2661,6 @@
       "updated_at": "2026-03-29",
       "notes": "PR #317 merged (e2c4380), staging verified. Withdraw button now opens modal.",
       "closed_at": "2026-03-29"
-    },
-    {
-      "id": "dex-ui-295",
-      "github_issue_number": 295,
-      "title": "[P3] /markets 24h Volume sort indicator does not toggle — resets to ↕ after click instead of ↑",
-      "status": "closed",
-      "priority": "P3",
-      "scenario_id": "E767",
-      "created_date": "2026-03-29",
-      "labels": [
-        "bug"
-      ],
-      "url": "https://github.com/chainupcloud/dex-ui/issues/295",
-      "pr_number": 318,
-      "fix_attempts": 1,
-      "closed_at": "2026-03-29",
-      "note": "PR #318 merged, staging 验收通过 (commit 995e0ff)"
     },
     {
       "title": "[P3] Explorer checkpoint detail — Epoch field missing from info card",
