@@ -1101,7 +1101,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 1,
       "source": "human",
-      "note": "PR #340 changes_requested. Copilot: handleSubmit early-returns on validation before !isConnected branch — button click silently fails. fix-agent must skip validation when disconnected."
+      "note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt. handleSubmit must skip validation when !isConnected."
     },
     {
       "github_number": 73,
@@ -2591,7 +2591,7 @@
       "created_at": "2026-03-29",
       "fix_attempts": 1,
       "source": "human",
-      "note": "PR #343 changes_requested. Copilot: (1) interval=0 falsy in toast fallback, (2) twapOrders not cleared on disconnect, (3) type-casting in getTwapOrders. fix-agent must address all 3."
+      "note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - (1) interval=0 treated as falsy in TWAP toast fallback, (2) twapOrders not cleared on disconnect/address change, (3) type-casting defeats type checks in getTwapOrders mapping."
     },
     {
       "github_number": 291,
