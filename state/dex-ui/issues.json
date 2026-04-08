@@ -749,7 +749,7 @@
       "id": "I288",
       "title": "[P3] TWAP tab in order panel shows blank content — missing empty state message",
       "github_repo": "chainupcloud/dex-ui",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "created_date": "2026-03-29",
       "scenarios": [],
@@ -757,7 +757,7 @@
         "human"
       ],
       "notes": "",
-      "closed_at": null,
+      "closed_at": "2026-04-08",
       "note": null,
       "fix_attempts": 1,
       "source": "human",
@@ -3104,21 +3104,24 @@
       "issue_number": 203,
       "title": "[P3] TWAP order form missing Randomize and Private toggles",
       "priority": "P3",
-      "status": "open",
+      "status": "closed",
       "pr_number": null,
       "created_date": "2026-03-28",
       "fix_attempts": 0,
-      "source": "human"
+      "source": "human",
+      "closed_at": "2026-04-08",
+      "note": "Synced from GitHub"
     },
     {
       "issue_number": 288,
       "title": "[P3] TWAP tab in order panel shows blank content — missing empty state message",
       "priority": "P3",
-      "status": "open",
+      "status": "closed",
       "pr_number": null,
       "created_date": "2026-03-29",
       "fix_attempts": 0,
-      "source": "human"
+      "source": "human",
+      "closed_at": "2026-04-08"
     },
     {
       "issue_number": 289,
