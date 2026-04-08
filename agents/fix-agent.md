@@ -60,7 +60,7 @@ git commit -m "fix: {issue title} (#{github_number})"
 git push origin {fix_branch_prefix}{github_number}
 ```
 
-### Step 6：创建 PR 并请求 Copilot review
+### Step 6：创建 PR，设置 commit status，请求 Copilot review
 ```bash
 PR=$(curl -s -X POST \
   "https://api.github.com/repos/{github.owner}/{github.repo}/pulls" \
@@ -74,6 +74,22 @@ PR=$(curl -s -X POST \
   }")
 
 PR_NUMBER=$(echo $PR | python3 -c "import sys,json; print(json.load(sys.stdin)['number'])")
+
+# 获取 PR 的 head commit SHA
+PR_SHA=$(curl -s "https://api.github.com/repos/{github.owner}/{github.repo}/pulls/$PR_NUMBER" \
+  -H "Authorization: token $GH_TOKEN" \
+  | python3 -c "import sys,json; print(json.load(sys.stdin)['head']['sha'])")
+
+# 设置 commit status 为 pending（等待 Copilot review）
+curl -s -X POST \
+  "https://api.github.com/repos/{github.owner}/{github.repo}/statuses/$PR_SHA" \
+  -H "Authorization: token $GH_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "state": "pending",
+    "context": "harness/copilot-review",
+    "description": "Waiting for Copilot review verdict"
+  }'
 
 # 请求 Copilot review
 curl -s -X POST \

@@ -139,15 +139,68 @@ git push origin randd1024
 ```
 
 ### Step 3：检查每个 PR 的 review 状态
+
 ```bash
-curl -s "https://api.github.com/repos/{github.owner}/{github.repo}/pulls/{pr_number}/reviews" \
-  -H "Authorization: token $GH_TOKEN"
+REVIEWS=$(curl -s "https://api.github.com/repos/{github.owner}/{github.repo}/pulls/{pr_number}/reviews" \
+  -H "Authorization: token $GH_TOKEN")
 ```
 
-判断是否可以合并：
-- 任意 reviewer state = "APPROVED" → 可合并
-- reviewer login = "copilot-pull-request-reviewer[bot]" 且 state = "COMMENTED" → 可合并
-- 否则 → 跳过，等待下次轮询
+判断是否可以合并（按优先级）：
+
+**情况 A：任意人工 reviewer state = "APPROVED"** → 直接可合并，跳到 Step 4。
+
+**情况 B：Copilot 已 review** → 读取 Copilot review body，查找 `HARNESS_VERDICT` 标记：
+
+```python
+import json, re
+
+reviews = json.loads(REVIEWS)
+copilot = next((r for r in reviews if 'copilot' in r['user']['login'].lower()), None)
+
+if not copilot:
+    # Copilot 尚未 review → 跳过，等待下次轮询
+    skip = True
+else:
+    body = copilot.get('body', '')
+    m = re.search(r'<!--\s*HARNESS_VERDICT:\s*(\w+)\s*-->', body)
+    verdict = m.group(1) if m else None
+
+    if verdict == 'APPROVE':
+        # 可合并 → 继续 Step 4
+        can_merge = True
+    elif verdict == 'REQUEST_CHANGES':
+        # 有问题 → 将 review body 写入 issue note，issue 回滚 open，等 fix-agent 处理
+        can_merge = False
+        # 更新 state/{project}/issues.json 中对应 issue 的 note 字段：
+        # note = "Copilot requested changes: {copilot_review_body[:500]}"
+        # status → "open", fix_attempts += 1
+    else:
+        # 无 HARNESS_VERDICT 标记（旧 review 或格式异常）→ 降级：inline 评论数=0 视为可合并
+        INLINE_COUNT=$(curl -s "https://api.github.com/repos/{github.owner}/{github.repo}/pulls/{pr_number}/comments" \
+          -H "Authorization: token $GH_TOKEN" \
+          | python3 -c "import json,sys; cs=json.load(sys.stdin); print(sum(1 for c in cs if 'copilot' in c['user']['login'].lower()))")
+        can_merge = (INLINE_COUNT == 0)
+```
+
+**情况 C：无任何 review** → 跳过，等待下次轮询。
+
+**verdict 确定后，更新 commit status：**
+```bash
+PR_SHA=$(curl -s "https://api.github.com/repos/{github.owner}/{github.repo}/pulls/{pr_number}" \
+  -H "Authorization: token $GH_TOKEN" \
+  | python3 -c "import sys,json; print(json.load(sys.stdin)['head']['sha'])")
+
+# state = "success" 或 "failure"
+curl -s -X POST \
+  "https://api.github.com/repos/{github.owner}/{github.repo}/statuses/$PR_SHA" \
+  -H "Authorization: token $GH_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"state\": \"{success_or_failure}\",
+    \"context\": \"harness/copilot-review\",
+    \"description\": \"HARNESS_VERDICT: {verdict}\"
+  }"
+```
 
 ### Step 4：Squash merge PR
 ```bash
