@@ -11633,9 +11633,11 @@
       "priority": 3,
       "title": "Explorer address page — activity sections (positions, orders, history) render",
       "description": "After searching for a wallet address, verify /explorer/address/{addr} shows at least one of: positions, open orders, trade history, funding payments.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-04-08",
+      "result_summary": "PASS — Explorer address page loads; shows \"No activity found\" for wallet with no testnet activity"
     },
     {
       "id": "E965",
@@ -11643,9 +11645,11 @@
       "priority": 3,
       "title": "Explorer search — invalid/non-existent address shows helpful error",
       "description": "Search with a syntactically valid but non-existent address (0x0000...0001). Expect a helpful 'address not found' or 'no activity' message rather than blank page.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-04-08",
+      "result_summary": "PASS — Non-existent address shows helpful \"No activity found for this address\" message"
     },
     {
       "id": "E966",
@@ -16777,10 +16781,12 @@
       "priority": 2,
       "title": "TradeForm — TP/SL: Long position TP must be ABOVE mark price",
       "description": "For Long position (Buy): enable TP/SL, enter TP price BELOW mark price → expect 'TP must be above entry price' error. Enter TP above mark → no error. Validates BUY-side direction check in TpSlPanel.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-04-08"
+      "added_date": "2026-04-08",
+      "last_run": "2026-04-08",
+      "result_summary": "PASS — TP validation fires for Long: \"TP must be above entry price\" shown when TP below mark"
     },
     {
       "id": "E1436",
@@ -16788,10 +16794,12 @@
       "priority": 2,
       "title": "TradeForm — TP/SL Short: SL must be ABOVE mark price (opposite of Long)",
       "description": "For Short position: enable TP/SL, enter SL price BELOW mark → expect 'SL must be above entry price' error. Enter SL above mark → no error.",
-      "status": "pending",
+      "status": "tested",
       "track": "frontend",
       "added_by": "explore-agent",
-      "added_date": "2026-04-08"
+      "added_date": "2026-04-08",
+      "last_run": "2026-04-08",
+      "result_summary": "PASS — SL validation fires for Short: \"SL must be above entry price\" shown when SL below mark"
     },
     {
       "id": "E1437",
@@ -16810,6 +16818,61 @@
       "priority": 3,
       "title": "Navigation — MobileDrawer opens and shows correct links",
       "description": "On mobile viewport (390x844), tap the hamburger/menu button to open MobileDrawer. Verify all navigation items (Trade, Portfolio, Explorer) are visible and links work. Tests MobileDrawer.tsx which was recently modified.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1439",
+      "area": "TradeForm",
+      "priority": 2,
+      "title": "TradeForm — TP/SL: SL below entry price for Long shows error",
+      "description": "For Long position: enable TP/SL, enter SL price ABOVE entry price → expect 'SL must be below entry price for long' error. Tests that SL direction is enforced for Buy side.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1440",
+      "area": "TradeForm",
+      "priority": 2,
+      "title": "TradeForm — TP/SL: TP above entry price for Short shows error",
+      "description": "For Short position: enable TP/SL, enter TP price ABOVE entry price → expect 'TP must be below entry price for short' error.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1441",
+      "area": "TradeForm",
+      "priority": 2,
+      "title": "TradeForm — TP/SL: Valid TP/SL values clear error and enable submit",
+      "description": "After entering invalid TP/SL (error shown), correct the values to valid ones. Verify the error message disappears and the form becomes submittable.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1442",
+      "area": "explorer",
+      "priority": 3,
+      "title": "Explorer address page — shows Hyperliquid native address format",
+      "description": "Navigate to /explorer/address/{SUI_ADDR} where SUI_ADDR is the 0x94bd... format Hyperliquid address. Verify page renders and displays activity.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1443",
+      "area": "TradeForm",
+      "priority": 3,
+      "title": "TradeForm — TP/SL % field: entering gain% auto-calculates TP price",
+      "description": "With a TP price input and Gain% input side by side, enter a value in Gain% (e.g. 5%). Verify TP price is auto-calculated as entry_price * 1.05 for Long.",
       "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
