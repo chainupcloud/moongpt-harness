@@ -2048,6 +2048,16 @@
       "url": "https://github.com/chainupcloud/dex-ui/pull/337",
       "deployed": true,
       "accepted": true
+    },
+    {
+      "pr_number": 338,
+      "title": "fix: TWAP order submit button does nothing (#232)",
+      "status": "open",
+      "issue_numbers": [
+        232
+      ],
+      "created_at": "2026-04-08",
+      "branch": "fix/issue-232"
     }
   ],
   "pull_requests": [
