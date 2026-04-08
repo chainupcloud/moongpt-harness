@@ -91,9 +91,11 @@ closed → open（验收失败时回滚，fix_attempts += 1）
 
 ---
 
-## 系统 Crontab 调度（dex-ui）
+## 系统 Crontab 调度
 
 所有 agent 调度通过系统 crontab 管理，**不使用 Claude session cron**，重启后自动恢复。
+
+### dex-ui
 
 | Agent | 频率 | cron 表达式 |
 |-------|------|-------------|
@@ -101,5 +103,12 @@ closed → open（验收失败时回滚，fix_attempts += 1）
 | fix | 每30分钟 | `*/30 * * * *` |
 | master | 每10分钟（:05偏移） | `5,15,25,35,45,55 * * * *` |
 | plan | 每周一 03:00 | `0 3 * * 1` |
+
+### pm-cup2026
+
+| Agent | 频率 | cron 表达式 |
+|-------|------|-------------|
+| fix | 每30分钟 | `*/30 * * * *` |
+| master | 每30分钟（:15偏移） | `15,45 * * * *` |
 
 修改调度频率请直接编辑系统 crontab（`crontab -e`），并同步更新此表。
