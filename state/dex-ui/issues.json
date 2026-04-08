@@ -2624,20 +2624,21 @@
     {
       "id": "issue-302",
       "title": "[P3] Take Profit Market order type — submit button enabled with empty trigger price (validation gap)",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "github_issue": 302,
       "scenario": null,
       "created_date": "2026-03-29",
       "closed_at": null,
-      "fix_attempts": 2,
+      "fix_attempts": 3,
       "resolution": null,
       "note": null,
       "labels": [
         "bug",
         "human"
       ],
-      "source": "human"
+      "source": "human",
+      "pr_number": 344
     },
     {
       "id": "issue-301",
