@@ -3,55 +3,6 @@
   "last_coverage_run": "2026-03-27T00:01:33Z",
   "issues": [
     {
-      "id": "dex-ui-109",
-      "issue_number": 109,
-      "title": "[P3] TWAP order form missing interval/parts/duration fields — cannot configure TWAP parameters",
-      "status": "closed",
-      "priority": "P3",
-      "labels": [
-        "bug"
-      ],
-      "scenario_ids": [
-        "E375",
-        "E251"
-      ],
-      "created_date": "2026-03-27",
-      "closed_at": "2026-03-27",
-      "fix_attempts": 0,
-      "resolution": "already-resolved",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/109",
-      "note": "TwapPanel already has Duration presets, Hour(s)/Minute(s) inputs, Randomize/Private checkboxes, and TWAP Order Preview. Explore agent false positive — likely observed stale staging (issue #98 Vercel deploy failures)."
-    },
-    {
-      "issue_number": 132,
-      "title": "[P4] TpSlPanel inputs missing aria-labels — TP/SL price and gain/loss fields inaccessible to screen readers",
-      "status": "closed",
-      "priority": "P4",
-      "scenario": "E486",
-      "opened_date": "2026-03-27",
-      "fix_attempts": 1,
-      "pr_number": 133,
-      "closed_at": "2026-03-27",
-      "note": "Accepted via code review + SHA verification. Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully."
-    },
-    {
-      "id": "explore-e492-170",
-      "issue_number": 170,
-      "title": "[P3] TWAP order type selected but no TWAP-specific fields rendered",
-      "scenario_id": "E492",
-      "priority": "P3",
-      "status": "closed",
-      "created_date": "2026-03-28",
-      "closed_date": "2026-03-28",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/170",
-      "resolution": "not-a-bug",
-      "fix_attempts": 0,
-      "labels": [
-        "bug"
-      ],
-      "note": "False positive: explore agent clicked TWAP tab in AccountPanel instead of OrderTypeSelector dropdown. TWAP form renders correctly."
-    },
-    {
       "id": "issue-112",
       "title": "[P4] Limit order form missing Post-Only toggle — maker-only order placement unavailable",
       "status": "closed",
@@ -1344,24 +1295,6 @@
       "accepted": true
     },
     {
-      "id": "issue-2026-03-27-dex-ui-49",
-      "issue_number": 49,
-      "github_number": 49,
-      "title": "[P4] UI language hardcoded to Chinese — no language toggle available",
-      "status": "closed",
-      "priority": "P4",
-      "labels": [
-        "enhancement"
-      ],
-      "scenario": "E055",
-      "created_at": "2026-03-27",
-      "closed_at": "2026-03-27",
-      "repository": "chainupcloud/dex-ui",
-      "fix_attempts": 0,
-      "resolution": "already-resolved",
-      "note": "Language toggle already exists in Settings → Language tab (LanguagePanel component) + mobile LanguageSelector. Full i18n stack (i18next + EN/ZH translations) in place. Explore agent missed nested UI."
-    },
-    {
       "id": "issue-2026-03-27-dex-ui-51",
       "github_number": 51,
       "title": "[P3] /trade shows 70 skeleton loaders instead of error message when API returns 500",
@@ -1446,20 +1379,6 @@
       "deployed_sha": "46f5bd1f910543f57028e0f465913c18f9dfa7a6",
       "accepted": true,
       "note": "PR #64 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification."
-    },
-    {
-      "issue_number": 60,
-      "github_number": 60,
-      "title": "[P3] /explorer 交易详情页返回 404 — checkpoint 路由未实现",
-      "status": "closed",
-      "priority": "P3",
-      "scenario_id": "E098",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/60",
-      "created_date": "2026-03-27",
-      "closed_at": "2026-03-27",
-      "fix_attempts": 0,
-      "resolution": "already-resolved",
-      "note": "Route /explorer/checkpoint/[seq] already existed on dev. Staging returns 200. Closed without code change."
     },
     {
       "number": 62,
@@ -1922,21 +1841,6 @@
       "note": "Backend issue — checkpoint detail API returns empty transactions (dex-sui#29). Frontend correctly shows 'not yet available'. Not fixable on frontend."
     },
     {
-      "id": "E313-124",
-      "issue_number": 124,
-      "github_number": 124,
-      "title": "[P3] /markets Trade button has href=\"#\" — clicking does not navigate to /trade",
-      "status": "closed",
-      "priority": "P3",
-      "scenario_id": "E313",
-      "created_date": "2026-03-27",
-      "closed_at": "2026-03-27",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/124",
-      "fix_attempts": 0,
-      "resolution": "already-resolved",
-      "note": "MarketRow component already wraps entire row in <Link href=/trade?coin={base}>. No href=\"#\" in codebase. Explore agent false positive — likely stale staging (issue #98 Vercel deploy failures)."
-    },
-    {
       "id": "issue-2026-03-27-dex-ui-125",
       "github_number": 125,
       "title": "[P3] TWAP order type — TWAP-specific fields (duration/interval) still absent after prior fix (regression)",
@@ -2044,20 +1948,6 @@
       "pr_number": 140,
       "closed_at": "2026-03-28",
       "note": "PR #140 merged. Vercel deploy ERROR (daily limit 100/day). Accepted via code review + SHA verification."
-    },
-    {
-      "issue_number": 139,
-      "github_number": 139,
-      "title": "[P3] Explorer search accepts invalid/short hashes — shows empty tx detail instead of not-found error",
-      "status": "closed",
-      "priority": "P3",
-      "scenario": "E369",
-      "created_date": "2026-03-28",
-      "url": "https://github.com/chainupcloud/dex-ui/issues/139",
-      "fix_attempts": 1,
-      "pr_number": 141,
-      "closed_at": "2026-03-28",
-      "note": "PR #141 merged to dev. Vercel deploy ERROR (daily limit). Accepted via code review + SHA verification."
     },
     {
       "id": "issue-142",
@@ -2998,6 +2888,286 @@
       "fix_attempts": 1,
       "source": "human",
       "closed_at": "2026-04-08"
+    },
+    {
+      "issue_number": 24,
+      "title": "[P3] TradingView 图表初始化缺失 user/client 参数，导致 study_templates API 每次 404",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "issue_number": 41,
+      "title": "[P3] 移动端横屏（812×375）底部标签栏 Order History 按钮溢出视口",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "id": "issue-2026-03-27-dex-ui-49",
+      "issue_number": 49,
+      "github_number": 49,
+      "title": "[P4] UI language hardcoded to Chinese — no language toggle available",
+      "status": "closed",
+      "priority": "P4",
+      "labels": [
+        "enhancement"
+      ],
+      "scenario": "E055",
+      "created_at": "2026-03-27",
+      "closed_at": "2026-03-27",
+      "repository": "chainupcloud/dex-ui",
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "Language toggle already exists in Settings → Language tab (LanguagePanel component) + mobile LanguageSelector. Full i18n stack (i18next + EN/ZH translations) in place. Explore agent missed nested UI."
+    },
+    {
+      "issue_number": 60,
+      "github_number": 60,
+      "title": "[P3] /explorer 交易详情页返回 404 — checkpoint 路由未实现",
+      "status": "closed",
+      "priority": "P3",
+      "scenario_id": "E098",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/60",
+      "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "Route /explorer/checkpoint/[seq] already existed on dev. Staging returns 200. Closed without code change."
+    },
+    {
+      "issue_number": 63,
+      "title": "[P3] /trade 页面 24h 涨跌显示 +0.00% — 标记价格正常但涨跌幅数据缺失",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "issue_number": 70,
+      "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "issue_number": 73,
+      "title": "[P3] 移动端竖屏（390×844）底部面板标签栏水平溢出 — 4 个标签不可见",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "issue_number": 77,
+      "title": "[P3] Trade form inputs missing aria-labels — 5 inputs have no accessible names",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "issue_number": 85,
+      "title": "[P3] Explorer 搜索框将钱包地址误路由到 /explorer/tx/ — 应区分 tx hash 和 address",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "issue_number": 98,
+      "title": "[P3] Vercel staging perpetually stale — 4 dev commits undeployed, 3 consecutive ERROR builds",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "issue_number": 102,
+      "title": "[P3] Nav \"More\" dropdown — clicking button shows no content (chevron present but no menu appears)",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "issue_number": 104,
+      "title": "[P3] TWAP order form — Interval and Parts inputs have no labels (placeholder=\"0\" only)",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "id": "dex-ui-109",
+      "issue_number": 109,
+      "title": "[P3] TWAP order form missing interval/parts/duration fields — cannot configure TWAP parameters",
+      "status": "closed",
+      "priority": "P3",
+      "labels": [
+        "bug"
+      ],
+      "scenario_ids": [
+        "E375",
+        "E251"
+      ],
+      "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/109",
+      "note": "TwapPanel already has Duration presets, Hour(s)/Minute(s) inputs, Randomize/Private checkboxes, and TWAP Order Preview. Explore agent false positive — likely observed stale staging (issue #98 Vercel deploy failures)."
+    },
+    {
+      "id": "E313-124",
+      "issue_number": 124,
+      "github_number": 124,
+      "title": "[P3] /markets Trade button has href=\"#\" — clicking does not navigate to /trade",
+      "status": "closed",
+      "priority": "P3",
+      "scenario_id": "E313",
+      "created_date": "2026-03-27",
+      "closed_at": "2026-03-27",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/124",
+      "fix_attempts": 0,
+      "resolution": "already-resolved",
+      "note": "MarketRow component already wraps entire row in <Link href=/trade?coin={base}>. No href=\"#\" in codebase. Explore agent false positive — likely stale staging (issue #98 Vercel deploy failures)."
+    },
+    {
+      "issue_number": 132,
+      "title": "[P4] TpSlPanel inputs missing aria-labels — TP/SL price and gain/loss fields inaccessible to screen readers",
+      "status": "closed",
+      "priority": "P4",
+      "scenario": "E486",
+      "opened_date": "2026-03-27",
+      "fix_attempts": 1,
+      "pr_number": 133,
+      "closed_at": "2026-03-27",
+      "note": "Accepted via code review + SHA verification. Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully."
+    },
+    {
+      "issue_number": 139,
+      "github_number": 139,
+      "title": "[P3] Explorer search accepts invalid/short hashes — shows empty tx detail instead of not-found error",
+      "status": "closed",
+      "priority": "P3",
+      "scenario": "E369",
+      "created_date": "2026-03-28",
+      "url": "https://github.com/chainupcloud/dex-ui/issues/139",
+      "fix_attempts": 1,
+      "pr_number": 141,
+      "closed_at": "2026-03-28",
+      "note": "PR #141 merged to dev. Vercel deploy ERROR (daily limit). Accepted via code review + SHA verification."
+    },
+    {
+      "id": "explore-e492-170",
+      "issue_number": 170,
+      "title": "[P3] TWAP order type selected but no TWAP-specific fields rendered",
+      "scenario_id": "E492",
+      "priority": "P3",
+      "status": "closed",
+      "created_date": "2026-03-28",
+      "closed_date": "2026-03-28",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/170",
+      "resolution": "not-a-bug",
+      "fix_attempts": 0,
+      "labels": [
+        "bug"
+      ],
+      "note": "False positive: explore agent clicked TWAP tab in AccountPanel instead of OrderTypeSelector dropdown. TWAP form renders correctly."
+    },
+    {
+      "issue_number": 203,
+      "title": "[P3] TWAP order form missing Randomize and Private toggles",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-28",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "issue_number": 288,
+      "title": "[P3] TWAP tab in order panel shows blank content — missing empty state message",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-29",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "issue_number": 289,
+      "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-29",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "issue_number": 291,
+      "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-29",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "issue_number": 293,
+      "title": "[P3] Isolated margin leverage slider still initializes at 0x after Cross→Isolated switch (regression #270)",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-29",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "issue_number": 301,
+      "title": "[P3] Stop Limit — submit button not disabled when Stop price and Limit price are empty",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-29",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "issue_number": 302,
+      "title": "[P3] Take Profit Market order type — submit button enabled with empty trigger price (validation gap)",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_date": "2026-03-29",
+      "fix_attempts": 0,
+      "source": "human"
     }
   ],
   "last_updated": "2026-04-08",
