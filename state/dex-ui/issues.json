@@ -5,7 +5,7 @@
     {
       "id": 24,
       "title": "[P3] TradingView 图表初始化缺失 user/client 参数，导致 study_templates API 每次 404",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-27",
@@ -13,14 +13,14 @@
       "fix_branch": null,
       "fix_attempts": 1,
       "pr_number": null,
-      "note": null,
-      "closed_at": null,
+      "note": "Superseded by GitHub-tracked duplicate",
+      "closed_at": "2026-04-08",
       "source": "human"
     },
     {
       "id": 41,
       "title": "[P3] 移动端横屏（812×375）底部标签栏 Order History 按钮溢出视口",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-27",
@@ -28,14 +28,14 @@
       "fix_branch": null,
       "fix_attempts": 3,
       "pr_number": null,
-      "note": null,
-      "closed_at": null,
+      "note": "Superseded by GitHub-tracked duplicate",
+      "closed_at": "2026-04-08",
       "source": "human"
     },
     {
       "id": 63,
       "title": "[P3] /trade 页面 24h 涨跌显示 +0.00% — 标记价格正常但涨跌幅数据缺失",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-27",
@@ -43,14 +43,14 @@
       "fix_branch": null,
       "fix_attempts": 1,
       "pr_number": null,
-      "note": null,
-      "closed_at": null,
+      "note": "Superseded by GitHub-tracked duplicate",
+      "closed_at": "2026-04-08",
       "source": "human"
     },
     {
       "id": 70,
       "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
-      "status": "needs-human",
+      "status": "closed",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-27",
@@ -58,14 +58,14 @@
       "fix_branch": null,
       "fix_attempts": 6,
       "pr_number": null,
-      "note": "PR #340 changes_requested. Copilot: 1 inline comment — button click early-returns before openAppKit(). No HARNESS_VERDICT.",
-      "closed_at": null,
+      "note": "PR #340 changes_requested. Copilot: 1 inline comment — button click early-returns before openAppKit(). No HARNESS_VERDICT. | Superseded by GitHub-tracked duplicate",
+      "closed_at": "2026-04-08",
       "source": "human"
     },
     {
       "id": 73,
       "title": "[P3] 移动端竖屏（390×844）底部面板标签栏水平溢出 — 4 个标签不可见",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-27",
@@ -73,8 +73,8 @@
       "fix_branch": null,
       "fix_attempts": 3,
       "pr_number": null,
-      "note": null,
-      "closed_at": null,
+      "note": "Superseded by GitHub-tracked duplicate",
+      "closed_at": "2026-04-08",
       "source": "human"
     },
     {
@@ -96,7 +96,7 @@
     {
       "id": 77,
       "title": "[P3] Trade form inputs missing aria-labels — 5 inputs have no accessible names",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-27",
@@ -104,14 +104,14 @@
       "fix_branch": null,
       "fix_attempts": 1,
       "pr_number": null,
-      "note": null,
-      "closed_at": null,
+      "note": "Superseded by GitHub-tracked duplicate",
+      "closed_at": "2026-04-08",
       "source": "human"
     },
     {
       "id": 85,
       "title": "[P3] Explorer 搜索框将钱包地址误路由到 /explorer/tx/ — 应区分 tx hash 和 address",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-27",
@@ -119,8 +119,8 @@
       "fix_branch": null,
       "fix_attempts": 1,
       "pr_number": null,
-      "note": null,
-      "closed_at": null,
+      "note": "Superseded by GitHub-tracked duplicate",
+      "closed_at": "2026-04-08",
       "source": "human"
     },
     {
@@ -176,7 +176,7 @@
     {
       "id": 102,
       "title": "[P3] Nav \"More\" dropdown — clicking button shows no content (chevron present but no menu appears)",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-27",
@@ -184,14 +184,14 @@
       "fix_branch": null,
       "fix_attempts": 1,
       "pr_number": null,
-      "note": null,
-      "closed_at": null,
+      "note": "Superseded by GitHub-tracked duplicate",
+      "closed_at": "2026-04-08",
       "source": "human"
     },
     {
       "id": 104,
       "title": "[P3] TWAP order form — Interval and Parts inputs have no labels (placeholder=\"0\" only)",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-27",
@@ -199,8 +199,8 @@
       "fix_branch": null,
       "fix_attempts": 1,
       "pr_number": null,
-      "note": null,
-      "closed_at": null,
+      "note": "Superseded by GitHub-tracked duplicate",
+      "closed_at": "2026-04-08",
       "source": "human"
     },
     {
@@ -479,7 +479,7 @@
     {
       "id": 289,
       "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
-      "status": "needs-human",
+      "status": "closed",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-29",
@@ -487,14 +487,14 @@
       "fix_branch": null,
       "fix_attempts": 4,
       "pr_number": null,
-      "note": "PR #343 changes_requested. Copilot: 3 inline comments (interval fallback, stale twapOrders, type casting). No HARNESS_VERDICT.",
-      "closed_at": null,
+      "note": "PR #343 changes_requested. Copilot: 3 inline comments (interval fallback, stale twapOrders, type casting). No HARNESS_VERDICT. | Superseded by GitHub-tracked duplicate",
+      "closed_at": "2026-04-08",
       "source": "human"
     },
     {
       "id": 291,
       "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-29",
@@ -502,14 +502,14 @@
       "fix_branch": null,
       "fix_attempts": 2,
       "pr_number": null,
-      "note": null,
-      "closed_at": null,
+      "note": "Superseded by GitHub-tracked duplicate",
+      "closed_at": "2026-04-08",
       "source": "human"
     },
     {
       "id": 293,
       "title": "[P3] Isolated margin leverage slider still initializes at 0x after Cross→Isolated switch (regression #270)",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-29",
@@ -517,8 +517,8 @@
       "fix_branch": null,
       "fix_attempts": 1,
       "pr_number": null,
-      "note": null,
-      "closed_at": null,
+      "note": "Superseded by GitHub-tracked duplicate",
+      "closed_at": "2026-04-08",
       "source": "human"
     },
     {
@@ -541,7 +541,7 @@
     {
       "id": 301,
       "title": "[P3] Stop Limit — submit button not disabled when Stop price and Limit price are empty",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-29",
@@ -549,8 +549,8 @@
       "fix_branch": null,
       "fix_attempts": 1,
       "pr_number": null,
-      "note": null,
-      "closed_at": null,
+      "note": "Superseded by GitHub-tracked duplicate",
+      "closed_at": "2026-04-08",
       "source": "human"
     },
     {
