@@ -2768,7 +2768,7 @@
       ],
       "pr_number": 328,
       "fix_attempts": 1,
-      "note": "PR #328 has merge conflicts after PR #327 merge. Needs rebase onto dev. (2026-03-30)",
+      "note": "PR #328 merged 2026-04-08. Deploy failed (Vercel author access). Pending staging verification.",
       "updated_at": "2026-03-30"
     },
     {
