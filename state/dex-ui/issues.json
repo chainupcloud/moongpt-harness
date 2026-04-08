@@ -2691,12 +2691,12 @@
     {
       "number": 300,
       "title": "[P4] Stop Market SELL — no guidance when stop price is set far above current market",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P4",
       "created_at": "2026-03-29",
       "linked_scenario": "E914",
       "closed_at": "2026-04-03",
-      "note": "Synced from GitHub: closed 2026-04-03.",
+      "note": "Synced from GitHub",
       "pr_number": 334,
       "fix_attempts": 1
     },
