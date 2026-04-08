@@ -103,6 +103,7 @@ TEST_URL="{staging_url}" TEST_WALLET_PRIVATE_KEY="{wallet_pk}" \
 ### Step 5：为 FAIL 场景建 GitHub Issue
 
 优先级判断：
+- 核心流程阻断（无法下单/连钱包/进入页面）→ P1
 - 功能完全不工作 → P2
 - 有明显缺陷/异常 → P3（**不建 issue，记录在输出报告中即可**）
 - 轻微体验问题 → P4（**不建 issue，记录在输出报告中即可**）
@@ -116,7 +117,7 @@ curl -s -X POST "https://api.github.com/repos/{owner}/{repo}/issues" \
   -H "Authorization: token $GH_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "title": "[P3] {title}",
+    "title": "[P{priority}] {title}",
     "body": "## 现象\n{detail}\n\n## 复现步骤\n{steps}\n\n## 期望结果\n{expected}\n\n_Explore Agent — 场景 {id}，{date}_",
     "labels": ["bug"]
   }'
@@ -193,7 +194,7 @@ git push origin randd1024
 Explore run complete — {date}
 Scenarios: E003 E007 E011 E014
 PASS (2): E003 session key持久, E011 设置保存
-FAIL (1): E007 订单历史tab空白 → Issue #31 [P3]
+FAIL (1): E007 订单历史tab空白 → Issue #31 [P2]（P3/P4仅记录，不建issue）
 SKIP (1): E014 testnet无移动端触摸支持
 
 Backlog: +4 new scenarios added (E031-E034)
