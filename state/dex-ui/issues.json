@@ -749,7 +749,7 @@
       "id": "I288",
       "title": "[P3] TWAP tab in order panel shows blank content — missing empty state message",
       "github_repo": "chainupcloud/dex-ui",
-      "status": "open",
+      "status": "fixing",
       "priority": "P3",
       "created_date": "2026-03-29",
       "scenarios": [],
@@ -759,10 +759,11 @@
       "notes": "",
       "closed_at": null,
       "note": null,
-      "fix_attempts": 0,
+      "fix_attempts": 1,
       "source": "human",
       "github_number": 288,
-      "created_at": "2026-03-29"
+      "created_at": "2026-03-29",
+      "pr_number": 342
     },
     {
       "id": "I289",
