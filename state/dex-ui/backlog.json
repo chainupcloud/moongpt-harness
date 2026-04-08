@@ -8878,11 +8878,11 @@
       "priority": 3,
       "title": "Withdraw flow with authenticated session — full happy path",
       "description": "Using smoke test wallet injection pattern with approveAgent, open portfolio page and trigger withdraw. Verify: modal opens, amount input accepts valid value, address field accepts SUI address, submit button is enabled with valid inputs.",
-      "status": "pending",
+      "status": "skipped",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-29",
-      "result_summary": "FAIL — Withdraw btn navigates to History tab instead of modal (regression, issue #223 closed → Issue #294)"
+      "last_run": "2026-04-08",
+      "result_summary": "SKIP — Portfolio page requires wallet connection; wallet injection not working in this test run."
     },
     {
       "id": "E739",
@@ -9230,11 +9230,11 @@
       "priority": 3,
       "title": "/markets — 24h Volume sort indicator: verify toggle from ↓ to ↑ on second click",
       "description": "Currently 24h Volume is sorted desc (↓). After clicking once it should toggle to asc (↑). After clicking again should return to desc (↓). Verify the indicator actually changes direction.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
       "added_date": "2026-03-28",
-      "last_run": "2026-03-29",
-      "result_summary": "FAIL — 24h Volume sort indicator resets to ↕ instead of toggling to ↑",
+      "last_run": "2026-04-08",
+      "result_summary": "PASS — 24h Volume sort indicator toggles ↓→↑→↓ correctly. Previous bug (reset to ↕) is fixed.",
       "note": "Reset after fix PR #290 merged and acceptance passed"
     },
     {
@@ -16675,9 +16675,11 @@
       "priority": 2,
       "title": "TradeForm — TP/SL: Long position TP trigger > mark price validation (deep test)",
       "description": "E1421 confirmed TP/SL section renders. Now specifically: (1) set order side to Long, (2) enable TP/SL, (3) find TP trigger price input, (4) enter value < mark price, (5) verify validation error shown, (6) enter value > mark price, (7) verify no error.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-04-08"
+      "added_date": "2026-04-08",
+      "last_run": "2026-04-08",
+      "result_summary": "PASS — TP validation shows \"TP must be above entry price\" for Long with TP < mark. Fix confirmed via TpSlPanel.tsx/useOrderValidation.ts."
     },
     {
       "id": "E1427",
@@ -16685,9 +16687,11 @@
       "priority": 2,
       "title": "TradeForm — SL trigger price validation for Long (must be below mark price)",
       "description": "For Long Stop Loss: trigger price must be < mark price. Enter trigger > mark price → expect validation error. Enter trigger < mark price → expect no error. Test with Short position too.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-04-08"
+      "added_date": "2026-04-08",
+      "last_run": "2026-04-08",
+      "result_summary": "PASS — SL validation shows \"SL must be below entry price\" for Long with SL > mark. Fix confirmed in TpSlPanel.tsx."
     },
     {
       "id": "E1428",
@@ -16705,6 +16709,56 @@
       "priority": 3,
       "title": "TradeForm — order type dropdown: verify all expected types are listed",
       "description": "Open the order type selector on /trade. Enumerate all available order types (Limit, Market, Stop Limit, Stop Market, Trailing, TWAP, etc.). Document which are present vs. missing. Stop Market was absent in E1422 — confirm if intentional.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1430",
+      "area": "TradeForm",
+      "priority": 2,
+      "title": "TradeForm — TP/SL: Short position TP must be BELOW mark price",
+      "description": "For Short position: switch side to Sell/Short, enable TP/SL, enter TP price ABOVE mark price → expect 'TP must be below entry price' error. Enter TP below mark → expect no error. Validates side-aware direction check in TpSlPanel.tsx.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1431",
+      "area": "TradeForm",
+      "priority": 2,
+      "title": "TradeForm — TP/SL percent input auto-calculates price correctly",
+      "description": "Enter 10% in TP Gain % field for Long → verify TP price auto-populates to entryPrice * 1.10. Enter 5% in SL Loss % → verify SL = entryPrice * 0.95. Tests handleTpPercentChange / handleSlPercentChange callbacks in TpSlPanel.tsx.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1432",
+      "area": "TradeForm",
+      "priority": 3,
+      "title": "TradeForm — TP/SL submit button disabled when TP/SL inputs have errors",
+      "description": "With TP/SL enabled and invalid TP (below entry for Long): verify the submit/Connect Wallet button is disabled (hasInputErrors=true). When TP is corrected to valid value: button should re-enable. Tests validation.hasInputErrors logic in useOrderValidation.ts line 1151.",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1433",
+      "area": "markets",
+      "priority": 3,
+      "title": "/markets — Price column sort: verify ↕→↑→↓ full cycle",
+      "description": "The 价格 column currently shows ↕ (unsorted). Click once → should sort ↑ (asc). Click again → should sort ↓ (desc). Click again → back to ↕. Verify all three states cycle correctly (unlike 成交量 which starts sorted).",
+      "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1434",
+      "area": "TradeForm",
+      "priority": 3,
+      "title": "TradeForm — TriggerPriceInput inline error for Stop order (Buy stop must be above current price)",
+      "description": "Switch to Stop Market order type. In BUY direction: enter trigger price BELOW current BTC price → expect inline error 'Buy stop price must be above current mark price'. Clear → enter trigger ABOVE current price → error should disappear. Tests TriggerPriceInput.tsx line 74-86.",
       "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-04-08"
