@@ -3,51 +3,6 @@
   "last_coverage_run": "2026-03-27T00:01:33Z",
   "issues": [
     {
-      "id": "issue-112",
-      "title": "[P4] Limit order form missing Post-Only toggle — maker-only order placement unavailable",
-      "status": "closed",
-      "priority": "P4",
-      "github_issue": 194,
-      "scenario": "E578",
-      "created_date": "2026-03-28",
-      "closed_at": "2026-03-29",
-      "fix_attempts": 0,
-      "resolution": "not-a-bug",
-      "note": "Post-Only already exists as ALO (Add-Liquidity-Only) in the TIF dropdown. Explore agent false positive.",
-      "labels": [
-        "bug",
-        "enhancement"
-      ]
-    },
-    {
-      "id": "issue-199",
-      "github_issue_id": 199,
-      "title": "[P3] Order book shows crossed prices — ask side (~$64,566) significantly below mark price (~$67,882)",
-      "status": "closed",
-      "priority": "P3",
-      "scenario": "E497",
-      "created_date": "2026-03-28",
-      "labels": [
-        "bug"
-      ],
-      "pr_number": 221,
-      "fix_attempts": 1,
-      "closed_at": "2026-03-28",
-      "github_issue": 199
-    },
-    {
-      "title": "[P3] Portfolio \"+Add funds\" button non-functional — click does not open deposit modal",
-      "github_issue": 211,
-      "status": "closed",
-      "priority": "P3",
-      "scenario": "E927",
-      "opened_date": "2026-03-28",
-      "pr_number": 247,
-      "fix_attempts": 1,
-      "closed_at": "2026-03-28",
-      "note": "PR #247 merged (d092dca), staging acceptance passed"
-    },
-    {
       "id": 216,
       "title": "[P3] Explorer tx detail: Fee field shows dash (–) instead of numeric value",
       "status": "closed",
@@ -589,44 +544,6 @@
       "note": "False positive: explore agent clicked TWAP tab in AccountPanel instead of OrderTypeSelector dropdown. TWAP form renders correctly."
     },
     {
-      "id": "issue-302",
-      "title": "[P3] Take Profit Market order type — submit button enabled with empty trigger price (validation gap)",
-      "status": "closed",
-      "priority": "P3",
-      "github_issue": 302,
-      "scenario": null,
-      "created_date": "2026-03-29",
-      "closed_at": "2026-04-08",
-      "fix_attempts": 3,
-      "resolution": "fixed",
-      "note": "PR #344 merged, staging accepted",
-      "labels": [
-        "bug",
-        "human"
-      ],
-      "source": "human",
-      "pr_number": 344
-    },
-    {
-      "id": "issue-98",
-      "title": "[P3] Vercel staging perpetually stale — 4 dev commits undeployed, 3 consecutive ERROR builds",
-      "status": "closed",
-      "priority": "P3",
-      "github_issue": 98,
-      "scenario": null,
-      "created_date": "2026-03-27",
-      "closed_at": "2026-04-08",
-      "fix_attempts": 0,
-      "resolution": "Vercel staging builds now succeeding — issue self-resolved",
-      "note": null,
-      "labels": [
-        "bug",
-        "infrastructure",
-        "human"
-      ],
-      "source": "human"
-    },
-    {
       "github_number": 1,
       "title": "/app 路径 404",
       "priority": "P1",
@@ -735,16 +652,6 @@
       "fix_attempts": 1,
       "deployed_sha": "4e9367437c21524984392884b8cbb4c5f5723e20",
       "note": "Manually closed by human after acceptance."
-    },
-    {
-      "github_number": 24,
-      "title": "[P3] TradingView 图表初始化缺失 user/client 参数，导致 study_templates API 每次 404",
-      "priority": "P3",
-      "status": "open",
-      "pr_number": null,
-      "created_at": "2026-03-27",
-      "fix_attempts": 1,
-      "source": "human"
     },
     {
       "id": "issue-2026-03-27-dex-sui-26",
@@ -896,16 +803,6 @@
       "pr_number": 154,
       "note": "PR #154 merged (v2 fix). Vercel deploy ERROR (team config issue #98). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-28"
-    },
-    {
-      "github_number": 41,
-      "title": "[P3] 移动端横屏（812×375）底部标签栏 Order History 按钮溢出视口",
-      "priority": "P3",
-      "status": "open",
-      "pr_number": null,
-      "created_at": "2026-03-27",
-      "fix_attempts": 3,
-      "source": "human"
     },
     {
       "id": "issue-2026-03-27-dex-ui-44",
@@ -1086,16 +983,6 @@
       "note": "PR #65 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification."
     },
     {
-      "github_number": 63,
-      "title": "[P3] /trade 页面 24h 涨跌显示 +0.00% — 标记价格正常但涨跌幅数据缺失",
-      "priority": "P3",
-      "status": "open",
-      "pr_number": null,
-      "created_at": "2026-03-27",
-      "fix_attempts": 1,
-      "source": "human"
-    },
-    {
       "github_number": 66,
       "title": "[P3] Withdraw modal accepts negative amounts without validation — no error feedback",
       "status": "closed",
@@ -1129,27 +1016,6 @@
       "note": "PR #74 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification."
     },
     {
-      "github_number": 70,
-      "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
-      "priority": "P3",
-      "status": "needs-human",
-      "pr_number": null,
-      "created_at": "2026-03-27",
-      "fix_attempts": 4,
-      "source": "human",
-      "note": "Copilot review (PR #340): When disconnected, clicking Connect Wallet can still early-return on input validation before hitting the !isConnected branch. Handle disconnected case first."
-    },
-    {
-      "github_number": 73,
-      "title": "[P3] 移动端竖屏（390×844）底部面板标签栏水平溢出 — 4 个标签不可见",
-      "priority": "P3",
-      "status": "open",
-      "pr_number": null,
-      "created_at": "2026-03-27",
-      "fix_attempts": 3,
-      "source": "human"
-    },
-    {
       "id": "issue-2026-03-27-dex-ui-76",
       "title": "[P3] /trade/BTC-USDC URL returns 404 — deep-link to specific market broken",
       "github_issue_number": 76,
@@ -1167,16 +1033,6 @@
       "deployed_sha": "9e7ea6cae6da788696091b5d1a3a07d1c68ff095",
       "accepted": true,
       "note": "PR #83 merged + deployed (dpl_8Du1NGTknDcXMkLSbDkw7wLCAtPs). /trade/BTC-USDC now redirects to /trade?coin=BTC (HTTP 200). Acceptance passed."
-    },
-    {
-      "github_number": 77,
-      "title": "[P3] Trade form inputs missing aria-labels — 5 inputs have no accessible names",
-      "priority": "P3",
-      "status": "open",
-      "pr_number": null,
-      "created_at": "2026-03-27",
-      "fix_attempts": 1,
-      "source": "human"
     },
     {
       "github_number": 78,
@@ -1209,16 +1065,6 @@
       "fix_attempts": 0,
       "resolution": "already-resolved",
       "note": "TriggerPriceInput component has 'Stop Price' label + direction indicators. Limit Price has separate labeled section. Both distinguishable on dev."
-    },
-    {
-      "github_number": 85,
-      "title": "[P3] Explorer 搜索框将钱包地址误路由到 /explorer/tx/ — 应区分 tx hash 和 address",
-      "priority": "P3",
-      "status": "open",
-      "pr_number": null,
-      "created_at": "2026-03-27",
-      "fix_attempts": 1,
-      "source": "human"
     },
     {
       "github_number": 88,
@@ -1320,26 +1166,6 @@
       "deployed_sha": "5933da2e97fb84f2a813616475a921b2c186327f",
       "accepted": true,
       "note": "Staging acceptance passed (commit 5933da2). EVM address search shows 'Explorer API error: 500' friendly error with Back to Explorer link."
-    },
-    {
-      "github_number": 102,
-      "title": "[P3] Nav \"More\" dropdown — clicking button shows no content (chevron present but no menu appears)",
-      "priority": "P3",
-      "status": "open",
-      "pr_number": null,
-      "created_at": "2026-03-27",
-      "fix_attempts": 1,
-      "source": "human"
-    },
-    {
-      "github_number": 104,
-      "title": "[P3] TWAP order form — Interval and Parts inputs have no labels (placeholder=\"0\" only)",
-      "priority": "P3",
-      "status": "open",
-      "pr_number": null,
-      "created_at": "2026-03-27",
-      "fix_attempts": 1,
-      "source": "human"
     },
     {
       "id": "dex-ui-107",
@@ -2159,18 +1985,6 @@
       "closed_at": "2026-03-28"
     },
     {
-      "title": "[P3] Stop Market BUY — trigger price below mark price accepted without blocking validation",
-      "github_issue": 212,
-      "github_number": 212,
-      "status": "closed",
-      "priority": "P3",
-      "scenario": "E675",
-      "opened_date": "2026-03-28",
-      "closed_at": "2026-03-28",
-      "fix_attempts": 0,
-      "note": "Already fixed by PR #229 (commit 08af9e6) — TriggerPriceInput inline error + useOrderValidation direction check. Explore agent false positive — stale Vercel staging (issue #98)."
-    },
-    {
       "github_number": 215,
       "title": "[P3] Explorer transactions — \"More\" button does not load additional rows",
       "priority": "P3",
@@ -2577,37 +2391,6 @@
       "pr_number": 342
     },
     {
-      "github_number": 289,
-      "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
-      "priority": "P3",
-      "status": "open",
-      "pr_number": null,
-      "created_at": "2026-03-29",
-      "fix_attempts": 2,
-      "source": "human",
-      "note": "Copilot review (PR #343, 3 comments): 1) TWAP interval=0 treated as unset; 2) twapOrders not cleared on disconnect; 3) Type casting defeats type-checking."
-    },
-    {
-      "github_number": 291,
-      "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
-      "priority": "P3",
-      "status": "open",
-      "pr_number": null,
-      "created_at": "2026-03-29",
-      "fix_attempts": 2,
-      "source": "human"
-    },
-    {
-      "github_number": 293,
-      "title": "[P3] Isolated margin leverage slider still initializes at 0x after Cross→Isolated switch (regression #270)",
-      "priority": "P3",
-      "status": "open",
-      "pr_number": null,
-      "created_at": "2026-03-29",
-      "fix_attempts": 1,
-      "source": "human"
-    },
-    {
       "title": "[P3] Explorer checkpoint detail — Epoch field missing from info card",
       "status": "closed",
       "priority": "P3",
@@ -2648,16 +2431,6 @@
       "linked_scenario": "E915",
       "pr_number": 320,
       "github_number": 299
-    },
-    {
-      "github_number": 301,
-      "title": "[P3] Stop Limit — submit button not disabled when Stop price and Limit price are empty",
-      "priority": "P3",
-      "status": "open",
-      "pr_number": null,
-      "created_at": "2026-03-29",
-      "fix_attempts": 1,
-      "source": "human"
     },
     {
       "github_number": 303,
@@ -2790,6 +2563,285 @@
       "fix_attempts": 1,
       "source": "human",
       "closed_at": "2026-04-08"
+    },
+    {
+      "github_number": 24,
+      "title": "[P3] TradingView 图表初始化缺失 user/client 参数，导致 study_templates API 每次 404",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 1,
+      "source": "human",
+      "github_issue": 24,
+      "labels": [
+        "human"
+      ]
+    },
+    {
+      "github_number": 41,
+      "title": "[P3] 移动端横屏（812×375）底部标签栏 Order History 按钮溢出视口",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 3,
+      "source": "human",
+      "github_issue": 41,
+      "labels": [
+        "human"
+      ]
+    },
+    {
+      "github_number": 63,
+      "title": "[P3] /trade 页面 24h 涨跌显示 +0.00% — 标记价格正常但涨跌幅数据缺失",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 1,
+      "source": "human",
+      "github_issue": 63,
+      "labels": [
+        "human"
+      ]
+    },
+    {
+      "github_number": 70,
+      "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
+      "priority": "P3",
+      "status": "needs-human",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 4,
+      "source": "human",
+      "note": "Copilot review (PR #340): When disconnected, clicking Connect Wallet can still early-return on input validation before hitting the !isConnected branch. Handle disconnected case first.",
+      "github_issue": 70,
+      "labels": [
+        "human"
+      ]
+    },
+    {
+      "github_number": 73,
+      "title": "[P3] 移动端竖屏（390×844）底部面板标签栏水平溢出 — 4 个标签不可见",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 3,
+      "source": "human",
+      "github_issue": 73,
+      "labels": [
+        "human"
+      ]
+    },
+    {
+      "github_number": 77,
+      "title": "[P3] Trade form inputs missing aria-labels — 5 inputs have no accessible names",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 1,
+      "source": "human",
+      "github_issue": 77,
+      "labels": [
+        "human"
+      ]
+    },
+    {
+      "github_number": 85,
+      "title": "[P3] Explorer 搜索框将钱包地址误路由到 /explorer/tx/ — 应区分 tx hash 和 address",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 1,
+      "source": "human",
+      "github_issue": 85,
+      "labels": [
+        "human"
+      ]
+    },
+    {
+      "id": "issue-98",
+      "title": "[P3] Vercel staging perpetually stale — 4 dev commits undeployed, 3 consecutive ERROR builds",
+      "status": "closed",
+      "priority": "P3",
+      "github_issue": 98,
+      "scenario": null,
+      "created_date": "2026-03-27",
+      "closed_at": "2026-04-08",
+      "fix_attempts": 0,
+      "resolution": "Vercel staging builds now succeeding — issue self-resolved",
+      "note": null,
+      "labels": [
+        "bug",
+        "infrastructure",
+        "human"
+      ],
+      "source": "human"
+    },
+    {
+      "github_number": 102,
+      "title": "[P3] Nav \"More\" dropdown — clicking button shows no content (chevron present but no menu appears)",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 1,
+      "source": "human",
+      "github_issue": 102,
+      "labels": [
+        "human"
+      ]
+    },
+    {
+      "github_number": 104,
+      "title": "[P3] TWAP order form — Interval and Parts inputs have no labels (placeholder=\"0\" only)",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 1,
+      "source": "human",
+      "github_issue": 104,
+      "labels": [
+        "human"
+      ]
+    },
+    {
+      "id": "issue-112",
+      "title": "[P4] Limit order form missing Post-Only toggle — maker-only order placement unavailable",
+      "status": "closed",
+      "priority": "P4",
+      "github_issue": 194,
+      "scenario": "E578",
+      "created_date": "2026-03-28",
+      "closed_at": "2026-03-29",
+      "fix_attempts": 0,
+      "resolution": "not-a-bug",
+      "note": "Post-Only already exists as ALO (Add-Liquidity-Only) in the TIF dropdown. Explore agent false positive.",
+      "labels": [
+        "bug",
+        "enhancement"
+      ]
+    },
+    {
+      "id": "issue-199",
+      "github_issue_id": 199,
+      "title": "[P3] Order book shows crossed prices — ask side (~$64,566) significantly below mark price (~$67,882)",
+      "status": "closed",
+      "priority": "P3",
+      "scenario": "E497",
+      "created_date": "2026-03-28",
+      "labels": [
+        "bug"
+      ],
+      "pr_number": 221,
+      "fix_attempts": 1,
+      "closed_at": "2026-03-28",
+      "github_issue": 199
+    },
+    {
+      "title": "[P3] Portfolio \"+Add funds\" button non-functional — click does not open deposit modal",
+      "github_issue": 211,
+      "status": "closed",
+      "priority": "P3",
+      "scenario": "E927",
+      "opened_date": "2026-03-28",
+      "pr_number": 247,
+      "fix_attempts": 1,
+      "closed_at": "2026-03-28",
+      "note": "PR #247 merged (d092dca), staging acceptance passed"
+    },
+    {
+      "title": "[P3] Stop Market BUY — trigger price below mark price accepted without blocking validation",
+      "github_issue": 212,
+      "github_number": 212,
+      "status": "closed",
+      "priority": "P3",
+      "scenario": "E675",
+      "opened_date": "2026-03-28",
+      "closed_at": "2026-03-28",
+      "fix_attempts": 0,
+      "note": "Already fixed by PR #229 (commit 08af9e6) — TriggerPriceInput inline error + useOrderValidation direction check. Explore agent false positive — stale Vercel staging (issue #98)."
+    },
+    {
+      "github_number": 289,
+      "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-29",
+      "fix_attempts": 2,
+      "source": "human",
+      "note": "Copilot review (PR #343, 3 comments): 1) TWAP interval=0 treated as unset; 2) twapOrders not cleared on disconnect; 3) Type casting defeats type-checking.",
+      "github_issue": 289,
+      "labels": [
+        "human"
+      ]
+    },
+    {
+      "github_number": 291,
+      "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-29",
+      "fix_attempts": 2,
+      "source": "human",
+      "github_issue": 291,
+      "labels": [
+        "human"
+      ]
+    },
+    {
+      "github_number": 293,
+      "title": "[P3] Isolated margin leverage slider still initializes at 0x after Cross→Isolated switch (regression #270)",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-29",
+      "fix_attempts": 1,
+      "source": "human",
+      "github_issue": 293,
+      "labels": [
+        "human"
+      ]
+    },
+    {
+      "github_number": 301,
+      "title": "[P3] Stop Limit — submit button not disabled when Stop price and Limit price are empty",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-29",
+      "fix_attempts": 1,
+      "source": "human",
+      "github_issue": 301,
+      "labels": [
+        "human"
+      ]
+    },
+    {
+      "id": "issue-302",
+      "title": "[P3] Take Profit Market order type — submit button enabled with empty trigger price (validation gap)",
+      "status": "closed",
+      "priority": "P3",
+      "github_issue": 302,
+      "scenario": null,
+      "created_date": "2026-03-29",
+      "closed_at": "2026-04-08",
+      "fix_attempts": 3,
+      "resolution": "fixed",
+      "note": "PR #344 merged, staging accepted",
+      "labels": [
+        "bug",
+        "human"
+      ],
+      "source": "human",
+      "pr_number": 344
     }
   ],
   "last_updated": "2026-04-08",
