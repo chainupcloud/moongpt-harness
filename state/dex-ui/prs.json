@@ -2076,6 +2076,17 @@
       "deployed": true,
       "accepted": true,
       "merged_at": "2026-04-08"
+    },
+    {
+      "number": 340,
+      "title": "fix: wallet not connected — Connect Wallet button disabled silently (#70)",
+      "status": "open",
+      "issue_numbers": [
+        70
+      ],
+      "branch": "fix/issue-70",
+      "base": "dev",
+      "created_at": "2026-04-08"
     }
   ],
   "pull_requests": [
