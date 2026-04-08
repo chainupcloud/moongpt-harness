@@ -535,6 +535,9 @@ def api_agents():
     for name in ('explore', 'plan', 'fix', 'master'):
         last_start, last_end, status = parse_log_times(name, project)
         running = is_agent_running(name, project)
+        # agent currently running → incomplete log is not an error
+        if running and status == 'error':
+            status = 'ok'
         cron_expr = schedules.get(name, '')
         nxt_label, pct = next_run_info(cron_expr)
 
