@@ -879,7 +879,7 @@
       "title": "[P3] Explorer checkpoint detail — Epoch field missing from info card",
       "github_issue_number": 296,
       "github_repo": "chainupcloud/dex-ui",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "created_date": "2026-03-29",
       "scenarios": [],
@@ -887,8 +887,8 @@
         "human"
       ],
       "notes": "",
-      "closed_at": null,
-      "note": null,
+      "closed_at": "2026-04-08",
+      "note": " Synced from GitHub",
       "fix_attempts": 0,
       "source": "human"
     },
@@ -897,7 +897,7 @@
       "title": "[P3] Stop Limit BUY — no validation when Limit Price is below Stop Price",
       "github_issue_number": 299,
       "github_repo": "chainupcloud/dex-ui",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "created_date": "2026-03-29",
       "scenarios": [],
@@ -905,8 +905,8 @@
         "human"
       ],
       "notes": "",
-      "closed_at": null,
-      "note": null,
+      "closed_at": "2026-04-08",
+      "note": " Synced from GitHub",
       "fix_attempts": 0,
       "source": "human"
     },
@@ -951,7 +951,7 @@
       "title": "[P3] /trade?orderType=stop_limit URL param ignored — order type always defaults to Limit",
       "github_issue_number": 305,
       "github_repo": "chainupcloud/dex-ui",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "created_date": "2026-03-29",
       "scenarios": [],
@@ -959,8 +959,8 @@
         "human"
       ],
       "notes": "",
-      "closed_at": null,
-      "note": null,
+      "closed_at": "2026-04-08",
+      "note": " Synced from GitHub",
       "fix_attempts": 0,
       "source": "human"
     },
@@ -969,7 +969,7 @@
       "title": "[P3] /markets — Open Interest (持仓量) column shows $0.00 — regression",
       "github_issue_number": 306,
       "github_repo": "chainupcloud/dex-ui",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "created_date": "2026-03-29",
       "scenarios": [],
@@ -977,8 +977,8 @@
         "human"
       ],
       "notes": "",
-      "closed_at": null,
-      "note": null,
+      "closed_at": "2026-04-08",
+      "note": " Synced from GitHub",
       "fix_attempts": 0,
       "source": "human"
     },
@@ -987,7 +987,7 @@
       "title": "[P3] /trade?orderType URL param ignored for all values — market, stop_market, tp_market, tp_limit all default to Limit",
       "github_issue_number": 307,
       "github_repo": "chainupcloud/dex-ui",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "created_date": "2026-03-29",
       "scenarios": [],
@@ -995,8 +995,8 @@
         "human"
       ],
       "notes": "",
-      "closed_at": null,
-      "note": null,
+      "closed_at": "2026-04-08",
+      "note": " Synced from GitHub",
       "fix_attempts": 0,
       "source": "human"
     },
