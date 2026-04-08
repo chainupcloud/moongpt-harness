@@ -2613,9 +2613,9 @@
       "status": "needs-human",
       "pr_number": null,
       "created_at": "2026-03-27",
-      "fix_attempts": 4,
+      "fix_attempts": 5,
       "source": "human",
-      "note": "Copilot review (PR #340): When disconnected, clicking Connect Wallet can still early-return on input validation before hitting the !isConnected branch. Handle disconnected case first.",
+      "note": "Copilot review: TradeForm index.tsx:1163 — When disconnected, button label is 'Connect Wallet' but clicking can still trigger validation path",
       "github_issue": 70,
       "labels": [
         "human"
@@ -2771,12 +2771,12 @@
       "github_number": 289,
       "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
       "priority": "P3",
-      "status": "open",
+      "status": "needs-human",
       "pr_number": null,
       "created_at": "2026-03-29",
-      "fix_attempts": 2,
+      "fix_attempts": 3,
       "source": "human",
-      "note": "Copilot review (PR #343, 3 comments): 1) TWAP interval=0 treated as unset; 2) twapOrders not cleared on disconnect; 3) Type casting defeats type-checking.",
+      "note": "Copilot review: (1) TradeForm index.tsx:556 — TWAP toast interval fallback treats 0 as falsy; (2) AccountPanel.tsx:1130 — twapOrders not cleared on disconnect; (3) AccountPanel.tsx:1148 — type cast issue",
       "github_issue": 289,
       "labels": [
         "human"
