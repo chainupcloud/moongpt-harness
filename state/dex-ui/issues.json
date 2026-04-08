@@ -552,15 +552,15 @@
       "id": "I203",
       "title": "[P3] TWAP order form missing Randomize and Private toggles",
       "github_repo": "chainupcloud/dex-ui",
-      "status": "open",
+      "status": "closed",
       "priority": "P3",
       "created_date": "2026-03-28",
       "scenarios": [],
       "labels": [
         "human"
       ],
-      "notes": "",
-      "closed_at": null,
+      "notes": "Already fixed in codebase — toggles exist in TwapPanel.tsx",
+      "closed_at": "2026-04-08",
       "note": null,
       "fix_attempts": 0,
       "source": "human",
