@@ -32,7 +32,8 @@
       ],
       "pr_number": 221,
       "fix_attempts": 1,
-      "closed_at": "2026-03-28"
+      "closed_at": "2026-03-28",
+      "github_issue": 199
     },
     {
       "title": "[P3] Portfolio \"+Add funds\" button non-functional — click does not open deposit modal",
@@ -3171,6 +3172,278 @@
       "pr_number": null,
       "created_date": "2026-03-29",
       "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "id": "issue-302",
+      "title": "[P3] Take Profit Market order type — submit button enabled with empty trigger price (validation gap)",
+      "status": "open",
+      "priority": "P3",
+      "github_issue": 302,
+      "scenario": null,
+      "created_date": "2026-03-29",
+      "closed_at": null,
+      "fix_attempts": 0,
+      "resolution": null,
+      "note": null,
+      "labels": [
+        "bug",
+        "human"
+      ],
+      "source": "human"
+    },
+    {
+      "id": "issue-301",
+      "title": "[P3] Stop Limit — submit button not disabled when Stop price and Limit price are empty",
+      "status": "open",
+      "priority": "P3",
+      "github_issue": 301,
+      "scenario": null,
+      "created_date": "2026-03-29",
+      "closed_at": null,
+      "fix_attempts": 0,
+      "resolution": null,
+      "note": null,
+      "labels": [
+        "bug",
+        "human"
+      ],
+      "source": "human"
+    },
+    {
+      "id": "issue-293",
+      "title": "[P3] Isolated margin leverage slider still initializes at 0x after Cross→Isolated switch (regression #270)",
+      "status": "open",
+      "priority": "P3",
+      "github_issue": 293,
+      "scenario": null,
+      "created_date": "2026-03-29",
+      "closed_at": null,
+      "fix_attempts": 0,
+      "resolution": null,
+      "note": null,
+      "labels": [
+        "bug",
+        "human"
+      ],
+      "source": "human"
+    },
+    {
+      "id": "issue-291",
+      "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
+      "status": "open",
+      "priority": "P3",
+      "github_issue": 291,
+      "scenario": null,
+      "created_date": "2026-03-29",
+      "closed_at": null,
+      "fix_attempts": 0,
+      "resolution": null,
+      "note": null,
+      "labels": [
+        "bug",
+        "human"
+      ],
+      "source": "human"
+    },
+    {
+      "id": "issue-289",
+      "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
+      "status": "open",
+      "priority": "P3",
+      "github_issue": 289,
+      "scenario": null,
+      "created_date": "2026-03-29",
+      "closed_at": null,
+      "fix_attempts": 0,
+      "resolution": null,
+      "note": null,
+      "labels": [
+        "bug",
+        "human"
+      ],
+      "source": "human"
+    },
+    {
+      "id": "issue-104",
+      "title": "[P3] TWAP order form — Interval and Parts inputs have no labels (placeholder=\"0\" only)",
+      "status": "open",
+      "priority": "P3",
+      "github_issue": 104,
+      "scenario": null,
+      "created_date": "2026-03-27",
+      "closed_at": null,
+      "fix_attempts": 0,
+      "resolution": null,
+      "note": null,
+      "labels": [
+        "bug",
+        "human"
+      ],
+      "source": "human"
+    },
+    {
+      "id": "issue-102",
+      "title": "[P3] Nav \"More\" dropdown — clicking button shows no content (chevron present but no menu appears)",
+      "status": "open",
+      "priority": "P3",
+      "github_issue": 102,
+      "scenario": null,
+      "created_date": "2026-03-27",
+      "closed_at": null,
+      "fix_attempts": 0,
+      "resolution": null,
+      "note": null,
+      "labels": [
+        "bug",
+        "human"
+      ],
+      "source": "human"
+    },
+    {
+      "id": "issue-98",
+      "title": "[P3] Vercel staging perpetually stale — 4 dev commits undeployed, 3 consecutive ERROR builds",
+      "status": "open",
+      "priority": "P3",
+      "github_issue": 98,
+      "scenario": null,
+      "created_date": "2026-03-27",
+      "closed_at": null,
+      "fix_attempts": 0,
+      "resolution": null,
+      "note": null,
+      "labels": [
+        "bug",
+        "infrastructure",
+        "human"
+      ],
+      "source": "human"
+    },
+    {
+      "id": "issue-85",
+      "title": "[P3] Explorer 搜索框将钱包地址误路由到 /explorer/tx/ — 应区分 tx hash 和 address",
+      "status": "open",
+      "priority": "P3",
+      "github_issue": 85,
+      "scenario": null,
+      "created_date": "2026-03-27",
+      "closed_at": null,
+      "fix_attempts": 0,
+      "resolution": null,
+      "note": null,
+      "labels": [
+        "bug",
+        "human"
+      ],
+      "source": "human"
+    },
+    {
+      "id": "issue-77",
+      "title": "[P3] Trade form inputs missing aria-labels — 5 inputs have no accessible names",
+      "status": "open",
+      "priority": "P3",
+      "github_issue": 77,
+      "scenario": null,
+      "created_date": "2026-03-27",
+      "closed_at": null,
+      "fix_attempts": 0,
+      "resolution": null,
+      "note": null,
+      "labels": [
+        "bug",
+        "accessibility",
+        "human"
+      ],
+      "source": "human"
+    },
+    {
+      "id": "issue-73",
+      "title": "[P3] 移动端竖屏（390×844）底部面板标签栏水平溢出 — 4 个标签不可见",
+      "status": "open",
+      "priority": "P3",
+      "github_issue": 73,
+      "scenario": null,
+      "created_date": "2026-03-27",
+      "closed_at": null,
+      "fix_attempts": 0,
+      "resolution": null,
+      "note": null,
+      "labels": [
+        "bug",
+        "human"
+      ],
+      "source": "human"
+    },
+    {
+      "id": "issue-70",
+      "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
+      "status": "open",
+      "priority": "P3",
+      "github_issue": 70,
+      "scenario": null,
+      "created_date": "2026-03-27",
+      "closed_at": null,
+      "fix_attempts": 0,
+      "resolution": null,
+      "note": null,
+      "labels": [
+        "bug",
+        "human"
+      ],
+      "source": "human"
+    },
+    {
+      "id": "issue-63",
+      "title": "[P3] /trade 页面 24h 涨跌显示 +0.00% — 标记价格正常但涨跌幅数据缺失",
+      "status": "open",
+      "priority": "P3",
+      "github_issue": 63,
+      "scenario": null,
+      "created_date": "2026-03-27",
+      "closed_at": null,
+      "fix_attempts": 0,
+      "resolution": null,
+      "note": null,
+      "labels": [
+        "bug",
+        "human"
+      ],
+      "source": "human"
+    },
+    {
+      "id": "issue-41",
+      "title": "[P3] 移动端横屏（812×375）底部标签栏 Order History 按钮溢出视口",
+      "status": "open",
+      "priority": "P3",
+      "github_issue": 41,
+      "scenario": null,
+      "created_date": "2026-03-27",
+      "closed_at": null,
+      "fix_attempts": 0,
+      "resolution": null,
+      "note": null,
+      "labels": [
+        "bug",
+        "human"
+      ],
+      "source": "human"
+    },
+    {
+      "id": "issue-24",
+      "title": "[P3] TradingView 图表初始化缺失 user/client 参数，导致 study_templates API 每次 404",
+      "status": "open",
+      "priority": "P3",
+      "github_issue": 24,
+      "scenario": null,
+      "created_date": "2026-03-27",
+      "closed_at": null,
+      "fix_attempts": 0,
+      "resolution": null,
+      "note": null,
+      "labels": [
+        "bug",
+        "human"
+      ],
       "source": "human"
     }
   ],
