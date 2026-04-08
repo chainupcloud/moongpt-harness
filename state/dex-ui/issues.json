@@ -2835,11 +2835,12 @@
       "github_number": 335,
       "title": "[P2] 导航栏「更多」下拉菜单 — 删除 Discord、X/Twitter、Telegram 三个社交链接",
       "priority": "P2",
-      "status": "fixing",
+      "status": "closed",
       "pr_number": 337,
       "created_at": "2026-04-08",
       "fix_attempts": 1,
-      "source": "human"
+      "source": "human",
+      "closed_at": "2026-04-08"
     },
     {
       "github_number": 336,

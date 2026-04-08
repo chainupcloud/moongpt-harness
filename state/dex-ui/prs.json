@@ -2039,13 +2039,15 @@
     {
       "number": 337,
       "title": "fix: remove Discord, X/Twitter, Telegram social links from navigation (#335)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [
         335
       ],
       "branch": "fix/issue-335",
       "base": "dev",
-      "url": "https://github.com/chainupcloud/dex-ui/pull/337"
+      "url": "https://github.com/chainupcloud/dex-ui/pull/337",
+      "deployed": true,
+      "accepted": true
     }
   ],
   "pull_requests": [
