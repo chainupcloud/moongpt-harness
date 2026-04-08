@@ -403,7 +403,7 @@ function renderPRs(prs) {
   if (!prs.length) { document.getElementById('prs-wrap').innerHTML = '<p class="none-tip">暂无 PR</p>'; return; }
   const rows = prs.map(p => `
     <tr>
-      <td><a href="https://github.com/chainupcloud/dex-ui/pull/${p.pr_number}" target="_blank">#${p.pr_number}</a></td>
+      <td><a href="${prUrl(p)}" target="_blank">#${p.pr_number}</a></td>
       <td>${badge(p.status, p.status)}</td>
       <td><code style="font-size:11px;color:#7d8590">${(p.commit_sha||'—').slice(0,7)}</code></td>
       <td>${p.deployed ? '✅' : '—'}</td>
