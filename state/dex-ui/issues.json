@@ -50,7 +50,7 @@
     {
       "id": 70,
       "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
-      "status": "open",
+      "status": "needs-human",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-27",
@@ -479,7 +479,7 @@
     {
       "id": 289,
       "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
-      "status": "open",
+      "status": "needs-human",
       "priority": "P3",
       "scenario": null,
       "created": "2026-03-29",
