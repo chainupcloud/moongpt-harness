@@ -3,10 +3,14 @@
     {
       "pr_number": 42,
       "title": "fix: 生成项目文档 CLAUDE.md + README.md (#41)",
-      "status": "open",
+      "status": "merged",
       "issue_numbers": [41],
       "created_at": "2026-04-08",
-      "branch": "fix/issue-41"
+      "merged_at": "2026-04-08",
+      "branch": "fix/issue-41",
+      "deployed": true,
+      "accepted": true,
+      "merge_sha": "60aabd5b183678fac877dd25e2e46f4258d918a2"
     }
   ]
 }
