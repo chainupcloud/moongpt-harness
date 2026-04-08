@@ -1516,12 +1516,12 @@
       "github_number": 70,
       "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
       "priority": "P3",
-      "status": "open",
+      "status": "needs-human",
       "pr_number": 340,
       "created_at": "2026-03-27",
-      "fix_attempts": 2,
+      "fix_attempts": 3,
       "source": "human",
-      "note": "Copilot review on PR #340: Connect Wallet button can still fail if form has validation errors — need to handle disconnected case before input validation. fix_attempts=2"
+      "note": "fix_attempts=3, Copilot review feedback not resolved after 3 attempts. Last: button click early-returns on validation before openAppKit() when disconnected."
     },
     {
       "id": "issue-2026-03-27-dex-ui-72",
