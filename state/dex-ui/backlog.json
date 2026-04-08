@@ -10378,9 +10378,11 @@
       "priority": 4,
       "title": "Order type selector persistence across page navigation",
       "description": "Select 'Stop Market' order type. Navigate away to Portfolio page and back to Trade. Verify if the last used order type is remembered (persisted in localStorage or reset to default Limit).",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-04-08",
+      "result_summary": "PASS — TWAP order type persisted after Portfolio→Trade navigation"
     },
     {
       "id": "E863",
@@ -11685,9 +11687,11 @@
       "priority": 3,
       "title": "Trade header stats — mark price matches oracle price within 1% tolerance",
       "description": "On /trade page, read '标记价格' (mark price) and '预言机价格' (oracle price). Verify |mark - oracle| / oracle < 1%. Large divergence could indicate stale data.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-03-28"
+      "added_date": "2026-03-28",
+      "last_run": "2026-04-08",
+      "result_summary": "PASS — mark=71768.5, oracle=71768.5, diff=0.0000%"
     },
     {
       "id": "E970",
@@ -16719,9 +16723,11 @@
       "priority": 2,
       "title": "TradeForm — TP/SL: Short position TP must be BELOW mark price",
       "description": "For Short position: switch side to Sell/Short, enable TP/SL, enter TP price ABOVE mark price → expect 'TP must be below entry price' error. Enter TP below mark → expect no error. Validates side-aware direction check in TpSlPanel.tsx.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-04-08"
+      "added_date": "2026-04-08",
+      "last_run": "2026-04-08",
+      "result_summary": "PASS — Short TP direction validated: error when TP above mark, no error when TP below mark"
     },
     {
       "id": "E1431",
@@ -16729,9 +16735,11 @@
       "priority": 2,
       "title": "TradeForm — TP/SL percent input auto-calculates price correctly",
       "description": "Enter 10% in TP Gain % field for Long → verify TP price auto-populates to entryPrice * 1.10. Enter 5% in SL Loss % → verify SL = entryPrice * 0.95. Tests handleTpPercentChange / handleSlPercentChange callbacks in TpSlPanel.tsx.",
-      "status": "pending",
+      "status": "tested",
       "added_by": "explore-agent",
-      "added_date": "2026-04-08"
+      "added_date": "2026-04-08",
+      "last_run": "2026-04-08",
+      "result_summary": "PASS — TP 10% percent auto-calculates to correct price; SL 5% also correct"
     },
     {
       "id": "E1432",
@@ -16760,6 +16768,50 @@
       "title": "TradeForm — TriggerPriceInput inline error for Stop order (Buy stop must be above current price)",
       "description": "Switch to Stop Market order type. In BUY direction: enter trigger price BELOW current BTC price → expect inline error 'Buy stop price must be above current mark price'. Clear → enter trigger ABOVE current price → error should disappear. Tests TriggerPriceInput.tsx line 74-86.",
       "status": "pending",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1435",
+      "area": "TradeForm",
+      "priority": 2,
+      "title": "TradeForm — TP/SL: Long position TP must be ABOVE mark price",
+      "description": "For Long position (Buy): enable TP/SL, enter TP price BELOW mark price → expect 'TP must be above entry price' error. Enter TP above mark → no error. Validates BUY-side direction check in TpSlPanel.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1436",
+      "area": "TradeForm",
+      "priority": 2,
+      "title": "TradeForm — TP/SL Short: SL must be ABOVE mark price (opposite of Long)",
+      "description": "For Short position: enable TP/SL, enter SL price BELOW mark → expect 'SL must be above entry price' error. Enter SL above mark → no error.",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1437",
+      "area": "TradeForm",
+      "priority": 3,
+      "title": "TradeForm — TP/SL percent bidirectional sync: editing TP price updates TP percent",
+      "description": "After enabling TP/SL, manually type a TP price (e.g., entryPrice * 1.15). Verify the Gain% field auto-updates to 15%. Tests reverse sync direction (price → percent).",
+      "status": "pending",
+      "track": "frontend",
+      "added_by": "explore-agent",
+      "added_date": "2026-04-08"
+    },
+    {
+      "id": "E1438",
+      "area": "navigation",
+      "priority": 3,
+      "title": "Navigation — MobileDrawer opens and shows correct links",
+      "description": "On mobile viewport (390x844), tap the hamburger/menu button to open MobileDrawer. Verify all navigation items (Trade, Portfolio, Explorer) are visible and links work. Tests MobileDrawer.tsx which was recently modified.",
+      "status": "pending",
+      "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-04-08"
     }
