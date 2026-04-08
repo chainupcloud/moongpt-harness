@@ -11,6 +11,16 @@
       "deployed": true,
       "accepted": true,
       "merge_sha": "60aabd5b183678fac877dd25e2e46f4258d918a2"
+    },
+    {
+      "pr_number": 51,
+      "title": "fix: filter out inactive tags (active=0) from C端 API (#45)",
+      "status": "open",
+      "issue_numbers": [45],
+      "created_at": "2026-04-08",
+      "branch": "fix/issue-45",
+      "deployed": false,
+      "accepted": false
     }
   ]
 }
