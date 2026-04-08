@@ -1101,7 +1101,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 1,
       "source": "human",
-      "note": "Copilot inline comment on PR #340: When disconnected, button label is 'Connect Wallet' but clicking can still early-return on validation before wallet connect prompt"
+      "note": "Copilot changes_requested on PR #340: handleSubmit not guarded when wallet disconnected. fix_agent should address."
     },
     {
       "github_number": 73,
@@ -2591,7 +2591,7 @@
       "created_at": "2026-03-29",
       "fix_attempts": 1,
       "source": "human",
-      "note": "Copilot inline comments on PR #343: (1) TWAP toast interval fallback treats 0 as falsy, (2) fetchTwapOrders returns early when no address but twapOrders not cleared, (3) getTwapOrders type-casting defeats type checks"
+      "note": "Copilot changes_requested on PR #343: interval=0 falsy, twapOrders not cleared on disconnect, type casting. fix_agent should address."
     },
     {
       "github_number": 291,

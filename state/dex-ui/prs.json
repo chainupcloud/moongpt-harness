@@ -2288,18 +2288,6 @@
       "created_at": "2026-04-08"
     },
     {
-      "pr_number": 340,
-      "title": "fix: wallet not connected — Connect Wallet button disabled silently (#70)",
-      "issue_number": 70,
-      "status": "changes_requested",
-      "review_status": "changes_requested",
-      "deployed": false,
-      "accepted": false,
-      "created_at": "2026-04-08",
-      "note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt",
-      "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt"
-    },
-    {
       "pr_number": 341,
       "title": "fix: 移动端底部面板标签栏添加双向滚动渐变提示和自动滚动 (#71)",
       "issue_number": 71,
@@ -2310,18 +2298,6 @@
       "created_at": "2026-04-08",
       "merged_at": "2026-04-08",
       "merge_commit_sha": "94e509257e5a496299870854bb07ead53a59b588"
-    },
-    {
-      "pr_number": 343,
-      "title": "fix: TWAP order toast and tab counter (#289)",
-      "issue_number": 289,
-      "status": "changes_requested",
-      "review_status": "changes_requested",
-      "deployed": false,
-      "accepted": false,
-      "created_at": "2026-04-08",
-      "note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - TWAP toast interval fallback, disconnected user stale orders, type-casting defeats checks",
-      "review_note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - TWAP toast interval fallback, disconnected user stale orders, type-casting defeats checks"
     },
     {
       "number": 344,
@@ -2348,7 +2324,7 @@
       "branch": "fix/issue-70",
       "base": "dev",
       "created_date": "2026-04-07",
-      "review_notes": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt",
+      "review_notes": "Copilot inline: button click can still trigger order submission when wallet disconnected — need to guard handleSubmit. (1 inline comment, no HARNESS_VERDICT)",
       "review_status": "changes_requested"
     },
     {
@@ -2361,7 +2337,7 @@
       "branch": "fix/issue-289",
       "base": "dev",
       "created_date": "2026-04-07",
-      "review_notes": "Copilot review (no HARNESS_VERDICT): 3 inline comments - TWAP toast interval fallback, disconnected user stale orders, type-casting defeats checks",
+      "review_notes": "Copilot 3 inlines: (1) interval=0 fallback treats 0 as falsy, (2) twapOrders not cleared on wallet disconnect, (3) type casting in getTwapOrders. (no HARNESS_VERDICT)",
       "review_status": "changes_requested"
     }
   ],
