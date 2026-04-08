@@ -2062,6 +2062,17 @@
       "commit_sha": "d1facc5",
       "deployed": true,
       "accepted": true
+    },
+    {
+      "number": 339,
+      "title": "fix: Trailing Stop order selection causes app crash (#336)",
+      "status": "open",
+      "issue_numbers": [
+        336
+      ],
+      "branch": "fix/issue-336",
+      "base": "dev",
+      "created_date": "2026-04-08"
     }
   ],
   "pull_requests": [

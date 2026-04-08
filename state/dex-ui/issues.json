@@ -1041,7 +1041,7 @@
       "title": "[P2] Trailing Stop order selection causes app crash (client-side exception)",
       "github_issue_number": 336,
       "github_repo": "chainupcloud/dex-ui",
-      "status": "open",
+      "status": "fixing",
       "priority": "P2",
       "created_date": "2026-04-08",
       "scenarios": [],
@@ -1051,8 +1051,9 @@
       "notes": "",
       "closed_at": null,
       "note": null,
-      "fix_attempts": 0,
-      "source": "human"
+      "fix_attempts": 1,
+      "source": "human",
+      "pr_number": 339
     },
     {
       "github_number": 1,
