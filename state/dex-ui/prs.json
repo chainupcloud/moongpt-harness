@@ -2306,6 +2306,17 @@
       "created_at": "2026-04-08",
       "merged_at": "2026-04-08",
       "merge_commit_sha": "94e509257e5a496299870854bb07ead53a59b588"
+    },
+    {
+      "pr_number": 343,
+      "title": "fix: TWAP order toast and tab counter (#289)",
+      "issue_number": 289,
+      "status": "open",
+      "review_status": "changes_requested",
+      "deployed": false,
+      "accepted": false,
+      "created_at": "2026-04-08",
+      "note": "Copilot inline: 3 comments on TWAP toast/counter logic"
     }
   ],
   "last_updated": "2026-04-08"
