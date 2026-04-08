@@ -2615,7 +2615,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 5,
       "source": "human",
-      "note": "Copilot review: TradeForm index.tsx:1163 — When disconnected, button label is 'Connect Wallet' but clicking can still trigger validation path",
+      "note": "Copilot review: TradeForm index.tsx:1163 — When disconnected, button label is 'Connect Wallet' but clicking can still trigger validation path (early-return before openAppKit)",
       "github_issue": 70,
       "labels": [
         "human"
