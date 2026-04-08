@@ -1586,11 +1586,13 @@
       "github_number": 232,
       "title": "[P2] TWAP order submit button does nothing — TwapOrderForm not wired to TradeForm",
       "priority": "P2",
-      "status": "fixing",
+      "status": "closed",
       "pr_number": 338,
       "created_at": "2026-03-28",
       "fix_attempts": 2,
-      "source": "human"
+      "source": "human",
+      "closed_at": "2026-04-08",
+      "note": "Synced from GitHub (closed by human)"
     },
     {
       "id": "issue-141",
@@ -2081,7 +2083,7 @@
     {
       "github_number": 310,
       "title": "[P3] Trade form TP/SL inputs — no direction validation (BUY: TP below mark price not rejected)",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_ids": [
         "E883",
@@ -2093,13 +2095,14 @@
       ],
       "pr_number": 327,
       "fix_attempts": 1,
-      "note": "PR #327 merged (3246c2d) to dev. Deploy ERROR: build failure (TokenSelector.tsx type error). Acceptance pending. (2026-03-30)",
-      "updated_at": "2026-03-30"
+      "note": "Synced from GitHub (closed by human)",
+      "updated_at": "2026-03-30",
+      "closed_at": "2026-04-08"
     },
     {
       "github_number": 311,
       "title": "[P3] Scale order — no client-side validation when Start price > End price",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario_ids": [
         "E958"
@@ -2110,8 +2113,9 @@
       ],
       "pr_number": 328,
       "fix_attempts": 1,
-      "note": "PR #328 merged 2026-04-08. Deploy failed (Vercel author access). Pending staging verification.",
-      "updated_at": "2026-03-30"
+      "note": "Synced from GitHub (closed by human)",
+      "updated_at": "2026-03-30",
+      "closed_at": "2026-04-08"
     },
     {
       "github_number": 335,
