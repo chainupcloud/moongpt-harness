@@ -1101,7 +1101,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 1,
       "source": "human",
-      "note": "PR #340 changes_requested. Copilot (no HARNESS_VERDICT, 1 inline): handleSubmit early-returns on validation before !isConnected branch — button click silently fails. fix-agent must skip validation when disconnected."
+      "note": "Copilot inline: button click can still trigger order submission when wallet disconnected — need to guard handleSubmit at TradeForm/index.tsx:1163. (1 inline comment, no HARNESS_VERDICT)"
     },
     {
       "github_number": 73,
@@ -2591,7 +2591,7 @@
       "created_at": "2026-03-29",
       "fix_attempts": 1,
       "source": "human",
-      "note": "PR #343 changes_requested. Copilot (no HARNESS_VERDICT, 3 inlines): (1) interval=0 falsy in toast fallback, (2) twapOrders not cleared on disconnect, (3) type-casting defeats type checks in getTwapOrders. fix-agent must address all 3."
+      "note": "Copilot 3 inlines: (1) interval=0 fallback treats 0 as falsy at TradeForm:556, (2) twapOrders not cleared on wallet disconnect at AccountPanel:1130, (3) type casting in getTwapOrders at AccountPanel:1148. (no HARNESS_VERDICT)"
     },
     {
       "github_number": 291,
