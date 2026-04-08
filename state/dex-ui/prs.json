@@ -2254,17 +2254,20 @@
       "review_status": "changes_requested",
       "deployed": false,
       "accepted": false,
-      "created_at": "2026-04-08"
+      "created_at": "2026-04-08",
+      "note": "Copilot inline: wallet validation — handle disconnected case before form validation"
     },
     {
       "pr_number": 341,
       "title": "fix: 移动端底部面板标签栏添加双向滚动渐变提示和自动滚动 (#71)",
       "issue_number": 71,
-      "status": "open",
+      "status": "merged",
       "review_status": "changes_requested",
-      "deployed": false,
-      "accepted": false,
-      "created_at": "2026-04-08"
+      "deployed": true,
+      "accepted": true,
+      "created_at": "2026-04-08",
+      "merged_at": "2026-04-08",
+      "merge_commit_sha": "94e509257e5a496299870854bb07ead53a59b588"
     }
   ],
   "last_updated": "2026-04-08"
