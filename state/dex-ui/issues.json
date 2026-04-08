@@ -2632,7 +2632,7 @@
       "closed_at": "2026-04-08",
       "fix_attempts": 3,
       "resolution": "fixed",
-      "note": null,
+      "note": "PR #344 merged, staging accepted",
       "labels": [
         "bug",
         "human"
