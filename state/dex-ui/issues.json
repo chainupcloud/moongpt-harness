@@ -215,7 +215,7 @@
     {
       "number": 293,
       "title": "[P3] Isolated margin leverage slider still initializes at 0x after Cross→Isolated switch (regression #270)",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "labels": [
         "bug"
@@ -225,7 +225,9 @@
       "created_at": "2026-03-29",
       "updated_at": "2026-03-29",
       "notes": "PR #316 merged (8e1cb59). Deploy blocked: TEAM_ACCESS_REQUIRED (issue #98). Acceptance pending deployment.",
-      "pr_number": 316
+      "pr_number": 316,
+      "closed_at": "2026-04-08",
+      "note": "PR #316 merged"
     },
     {
       "number": 294,
@@ -258,7 +260,7 @@
     {
       "number": 301,
       "title": "[P3] Stop Limit — submit button not disabled when Stop price and Limit price are empty",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E1355",
       "created": "2026-03-29",
@@ -268,7 +270,9 @@
       "pr_number": 321,
       "fix_attempts": 1,
       "notes": "PR #321 merged (44069f6) to dev. Deploy ERROR (TEAM_ACCESS_REQUIRED, issue #98). Acceptance pending deployment fix.",
-      "updated_at": "2026-03-29"
+      "updated_at": "2026-03-29",
+      "closed_at": "2026-04-08",
+      "note": "PR #321 merged"
     },
     {
       "number": 308,
@@ -3095,7 +3099,7 @@
     },
     {
       "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
-      "status": "fixing",
+      "status": "open",
       "priority": "P3",
       "labels": [
         "bug"
@@ -3103,8 +3107,8 @@
       "created_date": "2026-03-29",
       "scenario_id": "E1314",
       "description": "TWAP order form missing Duration presets and Hour/Min/Interval fields",
-      "pr_number": 315,
-      "fix_attempts": 1,
+      "pr_number": null,
+      "fix_attempts": 2,
       "github_number": 291,
       "note": "PR #315 has merge conflicts, cannot merge. Needs rebase onto dev. (2026-03-30)"
     },
@@ -3120,7 +3124,7 @@
     },
     {
       "title": "[P3] Explorer checkpoint detail — Epoch field missing from info card",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "scenario": "E917",
       "created_date": "2026-03-29",
@@ -3131,18 +3135,22 @@
       "fix_attempts": 1,
       "github_number": 296,
       "notes": "PR #319 merged (0a3c8bc) to dev. Deploy ERROR (TEAM_ACCESS_REQUIRED, issue #98). Acceptance pending deployment fix.",
-      "updated_at": "2026-03-29"
+      "updated_at": "2026-03-29",
+      "closed_at": "2026-04-08",
+      "note": "PR #319 merged"
     },
     {
       "number": 299,
       "title": "[P3] Stop Limit BUY — no validation when Limit Price is below Stop Price",
-      "status": "fixing",
+      "status": "closed",
       "priority": "P3",
       "created_at": "2026-03-29",
       "linked_scenario": "E915",
       "pr_number": 320,
       "fix_attempts": 1,
-      "github_number": 299
+      "github_number": 299,
+      "closed_at": "2026-04-08",
+      "note": "PR #320 merged"
     },
     {
       "github_number": 301,
@@ -3158,14 +3166,14 @@
       "github_number": 302,
       "title": "[P3] Take Profit Market order type — submit button enabled with empty trigger price (validation gap)",
       "priority": "P3",
-      "status": "fixing",
+      "status": "open",
       "created_at": "2026-03-29",
       "scenario": "E1357",
       "labels": [
         "bug"
       ],
-      "fix_attempts": 1,
-      "pr_number": 322,
+      "fix_attempts": 2,
+      "pr_number": null,
       "note": "PR #322 has merge conflicts. Needs rebase. Deploy blocked by build error. (2026-03-30)",
       "updated_at": "2026-03-29"
     },
@@ -3188,20 +3196,20 @@
       "github_number": 305,
       "title": "[P3] /trade?orderType=stop_limit URL param ignored — order type always defaults to Limit",
       "priority": "P3",
-      "status": "fixing",
+      "status": "closed",
       "pr_number": 324,
       "created_at": "2026-03-29",
-      "closed_at": null,
+      "closed_at": "2026-04-08",
       "scenario": "E1370",
       "fix_attempts": 1,
-      "note": "PR #324 merged (2b737fc) to dev. Deploy ERROR (TEAM_ACCESS_REQUIRED, issue #98). Acceptance pending deployment fix.",
+      "note": "PR #324 merged",
       "updated_at": "2026-03-29"
     },
     {
       "github_number": 306,
       "title": "[P3] /markets — Open Interest (持仓量) column shows $0.00 — regression",
       "priority": "P3",
-      "status": "fixing",
+      "status": "closed",
       "created_at": "2026-03-29",
       "scenario": "E936",
       "labels": [
@@ -3209,20 +3217,21 @@
       ],
       "fix_attempts": 1,
       "pr_number": 325,
-      "note": "PR #325 merged. Deploy blocked (Vercel access #98). Acceptance deferred.",
-      "last_checked": "2026-03-29"
+      "note": "PR #325 merged",
+      "last_checked": "2026-03-29",
+      "closed_at": "2026-04-08"
     },
     {
       "title": "[P3] /trade?orderType URL param ignored for all values — market, stop_market, tp_market, tp_limit all default to Limit",
       "priority": "P3",
-      "status": "fixing",
+      "status": "closed",
       "pr_number": 326,
       "created_at": "2026-03-29",
-      "closed_at": null,
+      "closed_at": "2026-04-08",
       "scenario": "E1380",
       "fix_attempts": 1,
       "github_number": 307,
-      "note": "PR #326 merged, deploy blocked #98"
+      "note": "PR #326 merged"
     },
     {
       "github_number": 310,
