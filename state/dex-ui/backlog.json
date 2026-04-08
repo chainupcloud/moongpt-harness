@@ -14985,7 +14985,7 @@
       "priority": 2,
       "title": "Trailing stop order — form opens and accepts trigger price input",
       "description": "Navigate to /trade, click on bottom panel Trailing(0) tab. Find the trailing stop order entry point (via order type dropdown or dedicated button), verify form fields appear (trigger distance/%, size). Click to create a trailing stop and verify input fields are functional.",
-      "status": "failed",
+      "status": "pending",
       "added_by": "explore-agent",
       "added_date": "2026-03-29",
       "last_run": "2026-03-29",

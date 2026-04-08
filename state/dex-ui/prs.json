@@ -1749,13 +1749,16 @@
         286
       ],
       "title": "fix: add Trailing Stop to order type dropdown (#286)",
-      "status": "open",
+      "status": "merged",
       "branch": "fix/issue-286",
       "base": "dev",
       "created_at": "2026-03-29",
-      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts. Needs rebase onto dev. (2026-03-30)",
+      "note": "Squash merged 2026-04-08. Staging acceptance passed. SHA c3c7f13.",
       "last_checked": "2026-03-30",
-      "blocked": "merge_conflict"
+      "blocked": "merge_conflict",
+      "deployed": true,
+      "accepted": true,
+      "merged_at": "2026-04-08"
     },
     {
       "pr_number": 314,
@@ -1779,9 +1782,9 @@
       "issue_numbers": [
         291
       ],
-      "status": "open",
+      "status": "closed",
       "created_at": "2026-03-29",
-      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts. Needs rebase onto dev. (2026-03-30)",
+      "note": "Closed on GitHub (not merged). Merge conflicts unresolved.",
       "last_checked": "2026-03-30",
       "title": "fix: TWAP order form fields not shown via URL param (#291)",
       "branch": "fix/issue-291",
@@ -1882,12 +1885,12 @@
       "issue_numbers": [
         302
       ],
-      "status": "open",
+      "status": "closed",
       "commit_sha": "f358d6d",
       "merged_at": null,
       "deployed": false,
       "accepted": false,
-      "note": "Copilot review COMMENTED (mergeable). BLOCKED: merge conflicts. Needs rebase onto dev. (2026-03-30)",
+      "note": "Closed on GitHub (not merged). Merge conflicts unresolved.",
       "last_checked": "2026-03-30",
       "blocked": "merge_conflict"
     },
@@ -2021,7 +2024,9 @@
       ],
       "branch": "fix/issue-300",
       "base": "dev",
-      "created_at": "2026-04-07"
+      "created_at": "2026-04-07",
+      "pr_number": 334,
+      "note": "PR #334 open but blocked by Vercel build failure (2026-04-08). Copilot COMMENTED (mergeable once build fixed)."
     }
   ],
   "pull_requests": [
