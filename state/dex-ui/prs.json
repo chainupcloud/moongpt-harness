@@ -2137,6 +2137,17 @@
       "accepted": true,
       "merged_at": "2026-04-08",
       "commit_sha": "5b26deb1c25cd6535dd9c35d7e6a7e44981aefa0"
+    },
+    {
+      "number": 343,
+      "title": "fix: TWAP order toast and tab counter (#289)",
+      "status": "open",
+      "issue_numbers": [
+        289
+      ],
+      "branch": "fix/issue-289",
+      "base": "dev",
+      "created_at": "2026-04-08"
     }
   ],
   "pull_requests": [
