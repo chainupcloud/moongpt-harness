@@ -2074,7 +2074,7 @@
       "review_note": "Checked 2026-04-09: merge conflict",
       "merge_conflict": true,
       "copilot_inline_comments": 1,
-      "blocked_reason": "merge conflict + 1 copilot inline",
+      "blocked_reason": "merge conflict + copilot inline",
       "note": "Review checked 2026-04-09T18:17: still blocked — merge_conflict + copilot_inline(1)"
     },
     {
@@ -2121,7 +2121,7 @@
       "review_note": "Checked 2026-04-09: merge conflict",
       "merge_conflict": true,
       "copilot_inline_comments": 3,
-      "blocked_reason": "merge conflict + 3 copilot inlines",
+      "blocked_reason": "merge conflict + copilot inline",
       "note": "Review checked 2026-04-09T18:17: still blocked — merge_conflict + copilot_inline(3)"
     },
     {
@@ -2149,7 +2149,7 @@
       "review_note": "Checked 2026-04-09: merge conflict",
       "merge_conflict": true,
       "copilot_inline_comments": 1,
-      "blocked_reason": "merge conflict + 1 copilot inline",
+      "blocked_reason": "merge conflict + copilot inline",
       "note": "Review checked 2026-04-09T18:17: still blocked — merge_conflict + copilot_inline(1)"
     },
     {
@@ -2166,7 +2166,7 @@
       "review_note": "Checked 2026-04-09: merge conflict",
       "merge_conflict": true,
       "copilot_inline_comments": 2,
-      "blocked_reason": "merge conflict + 2 copilot inlines",
+      "blocked_reason": "merge conflict + copilot inline",
       "note": "Review checked 2026-04-09T18:17: still blocked — merge_conflict + copilot_inline(2)"
     },
     {
@@ -2182,7 +2182,7 @@
       "review_note": "Checked 2026-04-09: merge conflict",
       "merge_conflict": true,
       "copilot_inline_comments": 2,
-      "blocked_reason": "merge conflict + 2 copilot inlines",
+      "blocked_reason": "merge conflict + copilot inline",
       "note": "Review checked 2026-04-09T18:17: still blocked — merge_conflict + copilot_inline(2)"
     },
     {
@@ -2198,7 +2198,7 @@
       "review_note": "Checked 2026-04-09: merge conflict",
       "merge_conflict": true,
       "copilot_inline_comments": 4,
-      "blocked_reason": "merge conflict + 4 copilot inlines",
+      "blocked_reason": "merge conflict + copilot inline",
       "note": "Review checked 2026-04-09T18:17: still blocked — merge_conflict + copilot_inline(4)"
     },
     {
@@ -2228,7 +2228,7 @@
       "review_note": "Checked 2026-04-09: 1 copilot inline comment (no HARNESS_VERDICT)",
       "merge_conflict": false,
       "copilot_inline_comments": 1,
-      "blocked_reason": "1 copilot inline comment",
+      "blocked_reason": "copilot inline comments",
       "note": "Review checked 2026-04-09T18:17: still blocked — copilot_inline(1)",
       "copilot_inline_count": 1
     },
@@ -2246,7 +2246,7 @@
       "review_note": "Checked 2026-04-09: 3 copilot inline comments (no HARNESS_VERDICT)",
       "merge_conflict": false,
       "copilot_inline_comments": 3,
-      "blocked_reason": "3 copilot inline comments",
+      "blocked_reason": "copilot inline comments",
       "note": "Review checked 2026-04-09T18:17: still blocked — copilot_inline(3)",
       "copilot_inline_count": 3
     },
@@ -2259,7 +2259,11 @@
       ],
       "branch": "fix/issue-293-v2",
       "created_at": "2026-04-09",
-      "copilot_review": "pending"
+      "copilot_review": "pending",
+      "merge_conflict": false,
+      "copilot_inline_comments": 4,
+      "blocked_reason": "copilot inline comments",
+      "review_status": "blocked"
     }
   ],
   "pull_requests": [
