@@ -83,6 +83,26 @@
       "created_at": "2026-04-08",
       "fix_attempts": 0,
       "source": "human"
+    },
+    {
+      "github_number": 59,
+      "title": "[P3] 预测市场列表页：标签右侧缺少事件总数展示",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-04-09",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 60,
+      "title": "[P2] 预测市场列表页：按交易量/流动性搜索应改为服务端接口查询",
+      "priority": "P2",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-04-09",
+      "fix_attempts": 0,
+      "source": "human"
     }
   ],
   "last_test_run": null
