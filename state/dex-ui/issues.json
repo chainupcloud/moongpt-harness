@@ -560,11 +560,11 @@
     {
       "title": "[P3] Trade form inputs missing aria-labels — 5 inputs have no accessible names",
       "priority": "P3",
-      "status": "open",
+      "status": "needs-human",
       "pr_number": 349,
       "fix_attempts": 3,
       "source": "human",
-      "note": "PR #349 has 4 copilot inline comments: aria-labels hardcoded in English, should use t() for localization. Returned to open for fix-agent.",
+      "note": "PR #349 has 4 copilot inline comments: aria-labels hardcoded in English, should use t() for localization. needs-human (3 attempts)",
       "id": 77,
       "created": "2026-03-27",
       "scenario": null,

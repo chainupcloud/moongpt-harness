@@ -2208,7 +2208,9 @@
       ],
       "title": "fix: add aria-labels to ScalePanel and ScalpPanel inputs (#77)",
       "branch": "fix/issue-77",
-      "created": "2026-04-09"
+      "created": "2026-04-09",
+      "review_status": "changes_requested",
+      "review_note": "Copilot review (no HARNESS_VERDICT): 4 inline comments - aria-labels hardcoded in English, should use t() for localization. Issue #77 needs-human (3 attempts)."
     }
   ],
   "pull_requests": [
