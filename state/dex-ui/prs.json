@@ -2187,6 +2187,16 @@
       "review_status": "changes_requested",
       "copilot_status": "pending",
       "review_note": "Copilot review (no HARNESS_VERDICT): 2 inline comments - lastHistoricalBarTime overwritten on every getBars call, reducing it on non-initial calls."
+    },
+    {
+      "number": 348,
+      "status": "open",
+      "issue_numbers": [
+        63
+      ],
+      "title": "fix: 24h price change shows +0.00% — cascade candle intervals (#63)",
+      "branch": "fix/issue-63",
+      "created": "2026-04-09"
     }
   ],
   "pull_requests": [

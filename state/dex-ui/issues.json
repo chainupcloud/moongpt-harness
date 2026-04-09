@@ -455,16 +455,16 @@
     {
       "title": "[P3] /trade 页面 24h 涨跌显示 +0.00% — 标记价格正常但涨跌幅数据缺失",
       "priority": "P3",
-      "status": "open",
-      "pr_number": null,
-      "fix_attempts": 1,
+      "status": "fixing",
+      "pr_number": 348,
+      "fix_attempts": 2,
       "source": "human",
       "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
       "id": 63,
       "created": "2026-03-27",
       "scenario": null,
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/63",
-      "fix_branch": null,
+      "fix_branch": "fix/issue-63",
       "closed_at": null
     },
     {
