@@ -2211,6 +2211,16 @@
       "created": "2026-04-09",
       "review_status": "changes_requested",
       "review_note": "Copilot review (no HARNESS_VERDICT): 4 inline comments - aria-labels hardcoded in English, should use t() for localization. Issue #77 needs-human (3 attempts)."
+    },
+    {
+      "number": 350,
+      "title": "fix: add missing 5m duration preset to TWAP panel (#291)",
+      "status": "open",
+      "issue_numbers": [
+        291
+      ],
+      "created": "2026-04-09",
+      "branch": "fix/issue-291"
     }
   ],
   "pull_requests": [
