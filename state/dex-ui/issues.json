@@ -161,7 +161,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 3,
       "source": "human",
-      "note": "PR #347 has 2 copilot inline comments: lastHistoricalBarTime overwritten on every getBars call, reducing it on non-initial calls. needs-human (3 attempts)"
+      "note": "PR #347 has merge conflict — needs rebase. PR #347 has 2 copilot inline comments: lastHistoricalBarTime overwritten on every getBars call, reducing it on non-initial calls. needs-human (3 attempts)"
     },
     {
       "id": 26,
@@ -453,7 +453,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 3,
       "source": "human",
-      "note": "PR #348 has 2 copilot inline comments: (1) intervals uses '1D' but codebase uses lowercase '1d', (2) per-interval catch {} silently ignores all errors. needs-human (3 attempts)"
+      "note": "PR #348 has merge conflict — needs rebase. PR #348 has 2 copilot inline comments: (1) intervals uses '1D' but codebase uses lowercase '1d', (2) per-interval catch {} silently ignores all errors. needs-human (3 attempts)"
     },
     {
       "id": 66,
@@ -494,7 +494,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 6,
       "source": "human",
-      "note": "PR #340 has copilot inline comments; needs-human (6 attempts)"
+      "note": "PR #340 has merge conflict — needs rebase. PR #340 has copilot inline comments; needs-human (6 attempts)"
     },
     {
       "github_number": 73,
@@ -546,7 +546,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 3,
       "source": "human",
-      "note": "PR #349 has 4 copilot inline comments: aria-labels hardcoded in English, should use t() for localization. needs-human (3 attempts)"
+      "note": "PR #349 has merge conflict — needs rebase. PR #349 has 4 copilot inline comments: aria-labels hardcoded in English, should use t() for localization. needs-human (3 attempts)"
     },
     {
       "id": 78,
@@ -703,7 +703,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 3,
       "source": "human",
-      "note": "PR #346 has copilot inline comment: extract More dropdown items into shared constant to prevent desktop/mobile menu divergence. Returned to open for fix-agent."
+      "note": "PR #346 has merge conflict — needs rebase. PR #346 has copilot inline comment: extract More dropdown items into shared constant to prevent desktop/mobile menu divergence. Returned to open for fix-agent."
     },
     {
       "github_number": 104,
@@ -2285,7 +2285,7 @@
       "created_at": "2026-03-29",
       "fix_attempts": 4,
       "source": "human",
-      "note": "PR #343 has copilot inline comments; needs-human (4 attempts)"
+      "note": "PR #343 has merge conflict — needs rebase. PR #343 has copilot inline comments; needs-human (4 attempts)"
     },
     {
       "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
@@ -2550,7 +2550,7 @@
       "source": "human"
     }
   ],
-  "last_updated": "2026-04-08",
+  "last_updated": "2026-04-09",
   "issue_55": {
     "number": 55,
     "github_number": 55,

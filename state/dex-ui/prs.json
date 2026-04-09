@@ -2391,7 +2391,7 @@
     {
       "number": 340,
       "title": "fix: wallet not connected — Connect Wallet button disabled silently (#70)",
-      "status": "changes_requested",
+      "status": "open",
       "issue_numbers": [
         70
       ],
@@ -2400,7 +2400,7 @@
       "created_date": "2026-04-07",
       "review_notes": "Copilot inline: button click can still trigger order submission when wallet disconnected — need to guard handleSubmit at TradeForm/index.tsx:1163. (1 inline comment, no HARNESS_VERDICT)",
       "review_status": "changes_requested",
-      "note": "merge conflict + 1 copilot inline comment",
+      "note": "Blocked: merge conflict",
       "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt. handleSubmit must skip validation when !isConnected.",
       "merge_conflict": true,
       "copilot_inline_comments": 1,
@@ -2409,7 +2409,7 @@
     {
       "number": 343,
       "title": "fix: TWAP order toast and tab counter (#289)",
-      "status": "changes_requested",
+      "status": "open",
       "issue_numbers": [
         289
       ],
@@ -2418,7 +2418,7 @@
       "created_date": "2026-04-07",
       "review_notes": "Copilot 3 inlines: (1) interval=0 fallback treats 0 as falsy at TradeForm:556, (2) twapOrders not cleared on wallet disconnect at AccountPanel:1130, (3) type casting in getTwapOrders at AccountPanel:1148. (no HARNESS_VERDICT)",
       "review_status": "changes_requested",
-      "note": "merge conflict + 3 copilot inline comments",
+      "note": "Blocked: merge conflict",
       "review_note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - (1) interval=0 treated as falsy in TWAP toast fallback, (2) twapOrders not cleared on disconnect/address change, (3) type-casting defeats type checks in getTwapOrders mapping.",
       "merge_conflict": true,
       "copilot_inline_comments": 3,
@@ -2427,10 +2427,10 @@
     {
       "number": 349,
       "issue_number": 77,
-      "status": "changes_requested",
+      "status": "open",
       "title": "fix: add aria-labels to ScalePanel and ScalpPanel inputs (#77)",
       "branch": "fix/issue-77",
-      "note": "merge conflict + 4 copilot inline comments",
+      "note": "Blocked: merge conflict",
       "merge_conflict": true,
       "copilot_inline_comments": 4,
       "blocked_reason": "merge_conflict + copilot_inline(4)"
@@ -2447,13 +2447,13 @@
     {
       "pr_number": 351,
       "title": "fix: Explorer search — detect base58 SUI tx digests and route correctly",
-      "status": "changes_requested",
+      "status": "open",
       "issue_id": 85,
       "github_url": "https://github.com/chainupcloud/dex-ui/pull/351",
       "created_at": "2026-04-09",
       "deployed": false,
       "accepted": false,
-      "note": "1 copilot inline comment (no conflict)",
+      "note": "Blocked: 1 copilot inline comment(s)",
       "merge_conflict": false,
       "copilot_inline_comments": 1,
       "blocked_reason": "copilot_inline(1)"
@@ -2461,7 +2461,7 @@
     {
       "number": 346,
       "title": "fix: Nav More dropdown shows no content (#102)",
-      "status": "changes_requested",
+      "status": "open",
       "issue_numbers": [
         102
       ],
@@ -2474,12 +2474,13 @@
       "accepted": false,
       "merge_conflict": true,
       "copilot_inline_comments": 1,
-      "blocked_reason": "merge_conflict + copilot_inline(1)"
+      "blocked_reason": "merge_conflict + copilot_inline(1)",
+      "note": "Blocked: merge conflict"
     },
     {
       "number": 347,
       "title": "fix: TradingView study_templates 404 (#24)",
-      "status": "changes_requested",
+      "status": "open",
       "issue_numbers": [
         24
       ],
@@ -2492,12 +2493,13 @@
       "accepted": false,
       "merge_conflict": true,
       "copilot_inline_comments": 2,
-      "blocked_reason": "merge_conflict + copilot_inline(2)"
+      "blocked_reason": "merge_conflict + copilot_inline(2)",
+      "note": "Blocked: merge conflict"
     },
     {
       "number": 348,
       "title": "fix: 24h price change shows +0.00% (#63)",
-      "status": "changes_requested",
+      "status": "open",
       "issue_numbers": [
         63
       ],
@@ -2510,7 +2512,8 @@
       "accepted": false,
       "merge_conflict": true,
       "copilot_inline_comments": 2,
-      "blocked_reason": "merge_conflict + copilot_inline(2)"
+      "blocked_reason": "merge_conflict + copilot_inline(2)",
+      "note": "Blocked: merge conflict"
     }
   ],
   "last_updated": "2026-04-09"
