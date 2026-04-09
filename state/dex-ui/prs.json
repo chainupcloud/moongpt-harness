@@ -2199,6 +2199,16 @@
       "created": "2026-04-09",
       "review_status": "changes_requested",
       "review_note": "Copilot review (no HARNESS_VERDICT): 2 inline comments - (1) intervals '1D' vs lowercase '1d', (2) silent catch {} on candle fetch errors. Issue #63 needs-human (3 attempts)."
+    },
+    {
+      "number": 349,
+      "status": "open",
+      "issue_numbers": [
+        77
+      ],
+      "title": "fix: add aria-labels to ScalePanel and ScalpPanel inputs (#77)",
+      "branch": "fix/issue-77",
+      "created": "2026-04-09"
     }
   ],
   "pull_requests": [
