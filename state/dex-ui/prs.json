@@ -2221,6 +2221,16 @@
       ],
       "created": "2026-04-09",
       "branch": "fix/issue-291"
+    },
+    {
+      "number": 351,
+      "title": "fix: Explorer search — detect base58 SUI tx digests and route correctly (#85)",
+      "status": "open",
+      "issue_numbers": [
+        85
+      ],
+      "created": "2026-04-09",
+      "branch": "fix/issue-85"
     }
   ],
   "pull_requests": [

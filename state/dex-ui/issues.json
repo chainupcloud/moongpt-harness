@@ -605,16 +605,16 @@
     {
       "title": "[P3] Explorer 搜索框将钱包地址误路由到 /explorer/tx/ — 应区分 tx hash 和 address",
       "priority": "P3",
-      "status": "open",
-      "pr_number": null,
-      "fix_attempts": 1,
+      "status": "fixing",
+      "pr_number": 351,
+      "fix_attempts": 2,
       "source": "human",
       "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
       "id": 85,
       "created": "2026-03-27",
       "scenario": null,
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/85",
-      "fix_branch": null,
+      "fix_branch": "fix/issue-85",
       "closed_at": null
     },
     {
