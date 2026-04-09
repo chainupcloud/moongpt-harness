@@ -1379,23 +1379,6 @@
       "note": "Staging acceptance passed (commit 17d4c80). Deployed via Vercel preview."
     },
     {
-      "pr_number": 253,
-      "title": "fix: make leverage tick labels clickable (#220)",
-      "status": "merged",
-      "issue_numbers": [
-        220
-      ],
-      "branch": "fix/issue-220",
-      "base": "dev",
-      "created_at": "2026-03-29",
-      "commit_sha": "2547a19",
-      "merged_at": "2026-03-29",
-      "deployed": true,
-      "accepted": true,
-      "review_status": "approved",
-      "note": "Staging acceptance passed (commit 17d4c80). Deployed via Vercel preview."
-    },
-    {
       "number": 253,
       "title": "fix: make leverage tick labels clickable (#220)",
       "status": "merged",
@@ -2087,26 +2070,12 @@
       "branch": "fix/issue-70",
       "base": "dev",
       "created_at": "2026-04-08",
-      "review_status": "blocked",
-      "review_note": "merge conflict + 1 copilot inline comment"
-    },
-    {
-      "number": 341,
-      "title": "fix: 移动端底部面板标签栏添加双向滚动渐变提示和自动滚动 (#71)",
-      "status": "merged",
-      "issue_numbers": [
-        71
-      ],
-      "created_at": "2026-04-08",
-      "branch": "fix/issue-71",
-      "base": "dev",
       "review_status": "changes_requested",
-      "review_note": "Copilot inline: scrollIntoView should respect prefers-reduced-motion",
-      "merged_at": "2026-04-08",
-      "merge_sha": "94e509257e5a",
-      "deployed": false,
-      "accepted": false,
-      "note": "Merged via squash. Vercel deploy ERROR (TEAM_ACCESS_REQUIRED #98)."
+      "review_note": "merge conflict + 1 copilot inline comment",
+      "merge_conflict": true,
+      "copilot_inline_comments": 1,
+      "blocked_reason": "merge_conflict + copilot_inline(1)",
+      "note": "Blocked: merge conflict + 1 copilot inline comment"
     },
     {
       "pr_number": 341,
@@ -2148,8 +2117,12 @@
       "branch": "fix/issue-289",
       "base": "dev",
       "created_at": "2026-04-08",
-      "review_status": "blocked",
-      "review_note": "merge conflict + 3 copilot inline comments"
+      "review_status": "changes_requested",
+      "review_note": "merge conflict + 3 copilot inline comments",
+      "merge_conflict": true,
+      "copilot_inline_comments": 3,
+      "blocked_reason": "merge_conflict + copilot_inline(3)",
+      "note": "Blocked: merge conflict + 3 copilot inline comments"
     },
     {
       "number": 344,
@@ -2172,8 +2145,12 @@
         102
       ],
       "created_at": "2026-04-09",
-      "review_status": "blocked",
-      "review_note": "merge conflict + 1 copilot inline comment"
+      "review_status": "changes_requested",
+      "review_note": "merge conflict + 1 copilot inline comment",
+      "merge_conflict": true,
+      "copilot_inline_comments": 1,
+      "blocked_reason": "merge_conflict + copilot_inline(1)",
+      "note": "Blocked: merge conflict + 1 copilot inline comment"
     },
     {
       "pr_number": 347,
@@ -2184,9 +2161,13 @@
       ],
       "created": "2026-04-09",
       "branch": "fix/issue-24",
-      "review_status": "blocked",
+      "review_status": "changes_requested",
       "copilot_status": "pending",
-      "review_note": "merge conflict + 2 copilot inline comments"
+      "review_note": "merge conflict + 2 copilot inline comments",
+      "merge_conflict": true,
+      "copilot_inline_comments": 2,
+      "blocked_reason": "merge_conflict + copilot_inline(2)",
+      "note": "Blocked: merge conflict + 2 copilot inline comments"
     },
     {
       "number": 348,
@@ -2197,8 +2178,12 @@
       "title": "fix: 24h price change shows +0.00% — cascade candle intervals (#63)",
       "branch": "fix/issue-63",
       "created": "2026-04-09",
-      "review_status": "blocked",
-      "review_note": "merge conflict + 2 copilot inline comments"
+      "review_status": "changes_requested",
+      "review_note": "merge conflict + 2 copilot inline comments",
+      "merge_conflict": true,
+      "copilot_inline_comments": 2,
+      "blocked_reason": "merge_conflict + copilot_inline(2)",
+      "note": "Blocked: merge conflict + 2 copilot inline comments"
     },
     {
       "number": 349,
@@ -2209,8 +2194,12 @@
       "title": "fix: add aria-labels to ScalePanel and ScalpPanel inputs (#77)",
       "branch": "fix/issue-77",
       "created": "2026-04-09",
-      "review_status": "blocked",
-      "review_note": "merge conflict + 4 copilot inline comments"
+      "review_status": "changes_requested",
+      "review_note": "merge conflict + 4 copilot inline comments",
+      "merge_conflict": true,
+      "copilot_inline_comments": 4,
+      "blocked_reason": "merge_conflict + copilot_inline(4)",
+      "note": "Blocked: merge conflict + 4 copilot inline comments"
     },
     {
       "number": 350,
@@ -2235,8 +2224,12 @@
       ],
       "created": "2026-04-09",
       "branch": "fix/issue-85",
-      "review_status": "blocked",
-      "review_note": "1 copilot inline comment (no merge conflict)"
+      "review_status": "changes_requested",
+      "review_note": "1 copilot inline comment (no merge conflict)",
+      "merge_conflict": false,
+      "copilot_inline_comments": 1,
+      "blocked_reason": "copilot_inline(1)",
+      "note": "Blocked: 1 copilot inline comment"
     }
   ],
   "pull_requests": [
