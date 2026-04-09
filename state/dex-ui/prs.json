@@ -2236,7 +2236,7 @@
       "created": "2026-04-09",
       "branch": "fix/issue-85",
       "review_status": "blocked",
-      "review_note": "Blocked: 1 copilot inline comment(s), no merge conflict"
+      "review_note": "Blocked: 1 copilot inline comment(s)"
     }
   ],
   "pull_requests": [
