@@ -15387,12 +15387,12 @@
       "priority": 2,
       "title": "TWAP form — duration preset buttons update Hour/Min inputs",
       "description": "After switching to TWAP order type, click each duration preset (5m, 30m, 1h, 4h, 12h, 24h) and verify the Hour(s) and Minute(s) input fields update to the correct corresponding values (e.g. 1h → Hour=1, Min=0; 90m → Hour=1, Min=30)",
-      "status": "skipped",
+      "status": "pending",
       "track": "frontend",
       "added_by": "explore-agent",
       "added_date": "2026-03-29",
-      "last_run": "2026-03-29",
-      "result_summary": "SKIP — TWAP Duration preset buttons (5m/30m/1h/4h/12h/24h) not present in current UI; TWAP form only shows Price/Size/Total"
+      "last_run": null,
+      "result_summary": null
     },
     {
       "id": "E1310",
