@@ -2075,7 +2075,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": true,
       "blocked_reason": "merge conflict + 1 copilot inline comment",
-      "note": "2026-04-09 master check: merge conflict + 1 copilot inline comment",
+      "note": "merge conflict with base branch",
       "copilot_inline_count": 1,
       "pr_number": 340
     },
@@ -2124,7 +2124,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": true,
       "blocked_reason": "merge conflict + 3 copilot inline comments",
-      "note": "2026-04-09 master check: merge conflict + 3 copilot inline comments",
+      "note": "merge conflict with base branch",
       "copilot_inline_count": 3,
       "pr_number": 343
     },
@@ -2154,7 +2154,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": true,
       "blocked_reason": "merge conflict + 1 copilot inline comment",
-      "note": "2026-04-09 master check: merge conflict + 1 copilot inline comment",
+      "note": "merge conflict with base branch",
       "copilot_inline_count": 1,
       "pr_number": 346
     },
@@ -2173,7 +2173,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": true,
       "blocked_reason": "merge conflict + 2 copilot inline comments",
-      "note": "2026-04-09 master check: merge conflict + 2 copilot inline comments",
+      "note": "merge conflict with base branch",
       "copilot_inline_count": 2
     },
     {
@@ -2190,7 +2190,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": true,
       "blocked_reason": "merge conflict + 2 copilot inline comments",
-      "note": "2026-04-09 master check: merge conflict + 2 copilot inline comments",
+      "note": "merge conflict with base branch",
       "copilot_inline_count": 2,
       "pr_number": 348
     },
@@ -2208,7 +2208,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": true,
       "blocked_reason": "merge conflict + 4 copilot inline comments",
-      "note": "2026-04-09 master check: merge conflict + 4 copilot inline comments",
+      "note": "merge conflict with base branch; 4 copilot inline comments",
       "copilot_inline_count": 4,
       "pr_number": 349
     },
@@ -2240,7 +2240,7 @@
       "merge_conflict": false,
       "copilot_inline_comments": true,
       "blocked_reason": "1 copilot inline comment",
-      "note": "2026-04-09 master check: 1 copilot inline comment",
+      "note": "1 copilot inline comments",
       "copilot_inline_count": 1,
       "pr_number": 351
     },
@@ -2259,7 +2259,7 @@
       "merge_conflict": false,
       "copilot_inline_comments": true,
       "blocked_reason": "3 copilot inline comments",
-      "note": "2026-04-09 master check: 3 copilot inline comments",
+      "note": "3 copilot inline comments",
       "copilot_inline_count": 3,
       "pr_number": 352
     },
@@ -2277,7 +2277,7 @@
       "copilot_inline_comments": true,
       "blocked_reason": "4 copilot inline comments",
       "review_status": "blocked",
-      "note": "2026-04-09 master check: 4 copilot inline comments",
+      "note": "4 copilot inline comments",
       "copilot_inline_count": 4
     },
     {
@@ -2295,7 +2295,7 @@
       "copilot_inline_count": 1,
       "blocked_reason": "merge conflict + 1 copilot inline comment",
       "review_status": "blocked",
-      "note": "2026-04-09 master check: merge conflict + 1 copilot inline comment",
+      "note": "merge conflict with base branch",
       "pr_number": 354
     }
   ],
