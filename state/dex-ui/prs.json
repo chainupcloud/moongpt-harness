@@ -2174,6 +2174,18 @@
       "created_at": "2026-04-09",
       "review_status": "changes_requested",
       "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - suggests extracting More dropdown items into shared constant to prevent desktop/mobile divergence. Issue #102 status updated."
+    },
+    {
+      "pr_number": 347,
+      "title": "fix: TradingView study_templates 404 及 K 线 time violation (#24)",
+      "status": "open",
+      "issue_numbers": [
+        24
+      ],
+      "created": "2026-04-09",
+      "branch": "fix/issue-24",
+      "review_status": "pending",
+      "copilot_status": "pending"
     }
   ],
   "pull_requests": [
