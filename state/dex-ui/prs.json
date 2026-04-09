@@ -2249,6 +2249,17 @@
       "blocked_reason": "3 copilot inline comments",
       "note": "Review checked 2026-04-09T18:17: still blocked — copilot_inline(3)",
       "copilot_inline_count": 3
+    },
+    {
+      "pr_number": 353,
+      "title": "fix: isolated margin leverage slider initializes at 0x after Cross→Isolated switch (#293)",
+      "status": "open",
+      "issue_numbers": [
+        293
+      ],
+      "branch": "fix/issue-293-v2",
+      "created_at": "2026-04-09",
+      "copilot_review": "pending"
     }
   ],
   "pull_requests": [
