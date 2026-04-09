@@ -2404,7 +2404,7 @@
       "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt. handleSubmit must skip validation when !isConnected.",
       "merge_conflict": true,
       "copilot_inline_comments": 1,
-      "blocked_reason": "merge_conflict"
+      "blocked_reason": "merge_conflict + copilot_inline(1)"
     },
     {
       "number": 343,
@@ -2422,7 +2422,7 @@
       "review_note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - (1) interval=0 treated as falsy in TWAP toast fallback, (2) twapOrders not cleared on disconnect/address change, (3) type-casting defeats type checks in getTwapOrders mapping.",
       "merge_conflict": true,
       "copilot_inline_comments": 3,
-      "blocked_reason": "merge_conflict"
+      "blocked_reason": "merge_conflict + copilot_inline(3)"
     },
     {
       "number": 349,
@@ -2433,7 +2433,7 @@
       "note": "merge conflict + 4 copilot inline comments",
       "merge_conflict": true,
       "copilot_inline_comments": 4,
-      "blocked_reason": "merge_conflict"
+      "blocked_reason": "merge_conflict + copilot_inline(4)"
     },
     {
       "number": 350,
@@ -2456,7 +2456,7 @@
       "note": "1 copilot inline comment (no conflict)",
       "merge_conflict": false,
       "copilot_inline_comments": 1,
-      "blocked_reason": "copilot_inline_comments"
+      "blocked_reason": "copilot_inline(1)"
     },
     {
       "number": 346,
@@ -2474,7 +2474,7 @@
       "accepted": false,
       "merge_conflict": true,
       "copilot_inline_comments": 1,
-      "blocked_reason": "merge_conflict"
+      "blocked_reason": "merge_conflict + copilot_inline(1)"
     },
     {
       "number": 347,
@@ -2492,7 +2492,7 @@
       "accepted": false,
       "merge_conflict": true,
       "copilot_inline_comments": 2,
-      "blocked_reason": "merge_conflict"
+      "blocked_reason": "merge_conflict + copilot_inline(2)"
     },
     {
       "number": 348,
@@ -2510,7 +2510,7 @@
       "accepted": false,
       "merge_conflict": true,
       "copilot_inline_comments": 2,
-      "blocked_reason": "merge_conflict"
+      "blocked_reason": "merge_conflict + copilot_inline(2)"
     }
   ],
   "last_updated": "2026-04-09"
