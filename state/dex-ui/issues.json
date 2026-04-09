@@ -153,21 +153,6 @@
       "source": "explore"
     },
     {
-      "id": 24,
-      "title": "[P3] TradingView 图表初始化缺失 user/client 参数，导致 study_templates API 每次 404",
-      "status": "open",
-      "priority": "P3",
-      "scenario": null,
-      "created": "2026-03-27",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/24",
-      "fix_branch": null,
-      "fix_attempts": 1,
-      "pr_number": null,
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
-      "closed_at": null,
-      "source": "human"
-    },
-    {
       "id": 26,
       "title": "[P2] /dex-api/info 500 — column dex_perpetuals.owner_address does not exist — 交易页完全卡在骨架屏",
       "status": "closed",
@@ -271,21 +256,6 @@
       "note": "PR #154 merged (v2 fix). Vercel deploy ERROR (team config issue #98). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-28",
       "source": "explore"
-    },
-    {
-      "id": 41,
-      "title": "[P3] 移动端横屏（812×375）底部标签栏 Order History 按钮溢出视口",
-      "status": "needs-human",
-      "priority": "P3",
-      "scenario": null,
-      "created": "2026-03-27",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/41",
-      "fix_branch": null,
-      "fix_attempts": 3,
-      "pr_number": null,
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
-      "closed_at": null,
-      "source": "human"
     },
     {
       "id": 44,
@@ -453,21 +423,6 @@
       "source": "explore"
     },
     {
-      "id": 63,
-      "title": "[P3] /trade 页面 24h 涨跌显示 +0.00% — 标记价格正常但涨跌幅数据缺失",
-      "status": "open",
-      "priority": "P3",
-      "scenario": null,
-      "created": "2026-03-27",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/63",
-      "fix_branch": null,
-      "fix_attempts": 1,
-      "pr_number": null,
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
-      "closed_at": null,
-      "source": "human"
-    },
-    {
       "id": 66,
       "title": "[P3] Withdraw modal accepts negative amounts without validation — no error feedback",
       "status": "closed",
@@ -496,36 +451,6 @@
       "note": "PR #74 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-27",
       "source": "explore"
-    },
-    {
-      "id": 70,
-      "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
-      "status": "needs-human",
-      "priority": "P3",
-      "scenario": null,
-      "created": "2026-03-27",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/70",
-      "fix_branch": null,
-      "fix_attempts": 6,
-      "pr_number": 340,
-      "note": "PR #340 has copilot inline comments; needs-human (6 attempts)",
-      "closed_at": null,
-      "source": "human"
-    },
-    {
-      "id": 73,
-      "title": "[P3] 移动端竖屏（390×844）底部面板标签栏水平溢出 — 4 个标签不可见",
-      "status": "needs-human",
-      "priority": "P3",
-      "scenario": null,
-      "created": "2026-03-27",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/73",
-      "fix_branch": null,
-      "fix_attempts": 3,
-      "pr_number": null,
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
-      "closed_at": null,
-      "source": "human"
     },
     {
       "id": 75,
@@ -558,21 +483,6 @@
       "source": "explore"
     },
     {
-      "id": 77,
-      "title": "[P3] Trade form inputs missing aria-labels — 5 inputs have no accessible names",
-      "status": "open",
-      "priority": "P3",
-      "scenario": null,
-      "created": "2026-03-27",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/77",
-      "fix_branch": null,
-      "fix_attempts": 1,
-      "pr_number": null,
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
-      "closed_at": null,
-      "source": "human"
-    },
-    {
       "id": 78,
       "title": "[P2] Order book spread显示为负值 — 买卖盘价格倒置（asks < bids）",
       "status": "closed",
@@ -601,21 +511,6 @@
       "note": "TriggerPriceInput component has 'Stop Price' label + direction indicators. Limit Price has separate labeled section. Both distinguishable on dev.",
       "closed_at": "2026-03-27",
       "source": "explore"
-    },
-    {
-      "id": 85,
-      "title": "[P3] Explorer 搜索框将钱包地址误路由到 /explorer/tx/ — 应区分 tx hash 和 address",
-      "status": "open",
-      "priority": "P3",
-      "scenario": null,
-      "created": "2026-03-27",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/85",
-      "fix_branch": null,
-      "fix_attempts": 1,
-      "pr_number": null,
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
-      "closed_at": null,
-      "source": "human"
     },
     {
       "id": 88,
@@ -721,36 +616,6 @@
       "note": "Staging acceptance passed (commit 5933da2). EVM address search shows 'Explorer API error: 500' friendly error with Back to Explorer link.",
       "closed_at": "2026-03-27",
       "source": "explore"
-    },
-    {
-      "id": 102,
-      "title": "[P3] Nav \"More\" dropdown — clicking button shows no content (chevron present but no menu appears)",
-      "status": "open",
-      "priority": "P3",
-      "scenario": null,
-      "created": "2026-03-27",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/102",
-      "fix_branch": null,
-      "fix_attempts": 1,
-      "pr_number": null,
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
-      "closed_at": null,
-      "source": "human"
-    },
-    {
-      "id": 104,
-      "title": "[P3] TWAP order form — Interval and Parts inputs have no labels (placeholder=\"0\" only)",
-      "status": "open",
-      "priority": "P3",
-      "scenario": null,
-      "created": "2026-03-27",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/104",
-      "fix_branch": null,
-      "fix_attempts": 1,
-      "pr_number": null,
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
-      "closed_at": null,
-      "source": "human"
     },
     {
       "id": 107,
@@ -2313,51 +2178,6 @@
       "source": "human"
     },
     {
-      "id": 289,
-      "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
-      "status": "needs-human",
-      "priority": "P3",
-      "scenario": null,
-      "created": "2026-03-29",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/289",
-      "fix_branch": null,
-      "fix_attempts": 4,
-      "pr_number": 343,
-      "note": "PR #343 has copilot inline comments; needs-human (4 attempts)",
-      "closed_at": null,
-      "source": "human"
-    },
-    {
-      "id": 291,
-      "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
-      "status": "open",
-      "priority": "P3",
-      "scenario": null,
-      "created": "2026-03-29",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/291",
-      "fix_branch": null,
-      "fix_attempts": 2,
-      "pr_number": null,
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
-      "closed_at": null,
-      "source": "human"
-    },
-    {
-      "id": 293,
-      "title": "[P3] Isolated margin leverage slider still initializes at 0x after Cross→Isolated switch (regression #270)",
-      "status": "open",
-      "priority": "P3",
-      "scenario": null,
-      "created": "2026-03-29",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/293",
-      "fix_branch": null,
-      "fix_attempts": 1,
-      "pr_number": null,
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
-      "closed_at": null,
-      "source": "human"
-    },
-    {
       "id": 294,
       "title": "[P3] Withdraw button navigates to Withdraw History tab instead of opening withdraw modal (regression #223)",
       "status": "closed",
@@ -2431,21 +2251,6 @@
       "note": "Synced from GitHub",
       "closed_at": "2026-04-03",
       "source": "explore"
-    },
-    {
-      "id": 301,
-      "title": "[P3] Stop Limit — submit button not disabled when Stop price and Limit price are empty",
-      "status": "open",
-      "priority": "P3",
-      "scenario": null,
-      "created": "2026-03-29",
-      "github_url": "https://github.com/chainupcloud/dex-ui/issues/301",
-      "fix_branch": null,
-      "fix_attempts": 1,
-      "pr_number": null,
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
-      "closed_at": null,
-      "source": "human"
     },
     {
       "id": 302,
@@ -2596,6 +2401,149 @@
       "note": "PR #339 merged, staging acceptance passed (commit 2f9807c). Closed by master-agent.",
       "closed_at": "2026-04-08",
       "source": "human"
+    },
+    {
+      "github_number": 24,
+      "title": "[P3] TradingView 图表初始化缺失 user/client 参数，导致 study_templates API 每次 404",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 1,
+      "source": "human",
+      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open"
+    },
+    {
+      "github_number": 41,
+      "title": "[P3] 移动端横屏（812×375）底部标签栏 Order History 按钮溢出视口",
+      "priority": "P3",
+      "status": "needs-human",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 3,
+      "source": "human",
+      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open"
+    },
+    {
+      "github_number": 63,
+      "title": "[P3] /trade 页面 24h 涨跌显示 +0.00% — 标记价格正常但涨跌幅数据缺失",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 1,
+      "source": "human",
+      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open"
+    },
+    {
+      "github_number": 70,
+      "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
+      "priority": "P3",
+      "status": "needs-human",
+      "pr_number": 340,
+      "created_at": "2026-03-27",
+      "fix_attempts": 6,
+      "source": "human",
+      "note": "PR #340 has copilot inline comments; needs-human (6 attempts)"
+    },
+    {
+      "github_number": 73,
+      "title": "[P3] 移动端竖屏（390×844）底部面板标签栏水平溢出 — 4 个标签不可见",
+      "priority": "P3",
+      "status": "needs-human",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 3,
+      "source": "human",
+      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open"
+    },
+    {
+      "github_number": 77,
+      "title": "[P3] Trade form inputs missing aria-labels — 5 inputs have no accessible names",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 1,
+      "source": "human",
+      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open"
+    },
+    {
+      "github_number": 85,
+      "title": "[P3] Explorer 搜索框将钱包地址误路由到 /explorer/tx/ — 应区分 tx hash 和 address",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 1,
+      "source": "human",
+      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open"
+    },
+    {
+      "github_number": 102,
+      "title": "[P3] Nav \"More\" dropdown — clicking button shows no content (chevron present but no menu appears)",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 1,
+      "source": "human",
+      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open"
+    },
+    {
+      "github_number": 104,
+      "title": "[P3] TWAP order form — Interval and Parts inputs have no labels (placeholder=\"0\" only)",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 1,
+      "source": "human",
+      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open"
+    },
+    {
+      "github_number": 289,
+      "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
+      "priority": "P3",
+      "status": "needs-human",
+      "pr_number": 343,
+      "created_at": "2026-03-29",
+      "fix_attempts": 4,
+      "source": "human",
+      "note": "PR #343 has copilot inline comments; needs-human (4 attempts)"
+    },
+    {
+      "github_number": 291,
+      "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-29",
+      "fix_attempts": 2,
+      "source": "human",
+      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open"
+    },
+    {
+      "github_number": 293,
+      "title": "[P3] Isolated margin leverage slider still initializes at 0x after Cross→Isolated switch (regression #270)",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-29",
+      "fix_attempts": 1,
+      "source": "human",
+      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open"
+    },
+    {
+      "github_number": 301,
+      "title": "[P3] Stop Limit — submit button not disabled when Stop price and Limit price are empty",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-29",
+      "fix_attempts": 1,
+      "source": "human",
+      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open"
     }
   ],
   "last_updated": "2026-04-08",
