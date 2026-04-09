@@ -2401,7 +2401,10 @@
       "review_notes": "Copilot inline: button click can still trigger order submission when wallet disconnected — need to guard handleSubmit at TradeForm/index.tsx:1163. (1 inline comment, no HARNESS_VERDICT)",
       "review_status": "changes_requested",
       "note": "merge conflict + 1 copilot inline comment",
-      "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt. handleSubmit must skip validation when !isConnected."
+      "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt. handleSubmit must skip validation when !isConnected.",
+      "merge_conflict": true,
+      "copilot_inline_comments": 1,
+      "blocked_reason": "merge_conflict"
     },
     {
       "number": 343,
@@ -2416,29 +2419,10 @@
       "review_notes": "Copilot 3 inlines: (1) interval=0 fallback treats 0 as falsy at TradeForm:556, (2) twapOrders not cleared on wallet disconnect at AccountPanel:1130, (3) type casting in getTwapOrders at AccountPanel:1148. (no HARNESS_VERDICT)",
       "review_status": "changes_requested",
       "note": "merge conflict + 3 copilot inline comments",
-      "review_note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - (1) interval=0 treated as falsy in TWAP toast fallback, (2) twapOrders not cleared on disconnect/address change, (3) type-casting defeats type checks in getTwapOrders mapping."
-    },
-    {
-      "pr_number": 340,
-      "issue_id": 70,
-      "title": "fix: issue #70",
-      "status": "changes_requested",
-      "created_at": "2026-04-08",
-      "merged_at": null,
-      "deployed": false,
-      "accepted": false,
-      "note": "merge conflict + 1 copilot inline comment"
-    },
-    {
-      "pr_number": 343,
-      "issue_id": 289,
-      "title": "fix: issue #289",
-      "status": "changes_requested",
-      "created_at": "2026-04-08",
-      "merged_at": null,
-      "deployed": false,
-      "accepted": false,
-      "note": "merge conflict + 3 copilot inline comments"
+      "review_note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - (1) interval=0 treated as falsy in TWAP toast fallback, (2) twapOrders not cleared on disconnect/address change, (3) type-casting defeats type checks in getTwapOrders mapping.",
+      "merge_conflict": true,
+      "copilot_inline_comments": 3,
+      "blocked_reason": "merge_conflict"
     },
     {
       "number": 349,
@@ -2446,7 +2430,10 @@
       "status": "changes_requested",
       "title": "fix: add aria-labels to ScalePanel and ScalpPanel inputs (#77)",
       "branch": "fix/issue-77",
-      "note": "merge conflict + 4 copilot inline comments"
+      "note": "merge conflict + 4 copilot inline comments",
+      "merge_conflict": true,
+      "copilot_inline_comments": 4,
+      "blocked_reason": "merge_conflict"
     },
     {
       "number": 350,
@@ -2466,7 +2453,64 @@
       "created_at": "2026-04-09",
       "deployed": false,
       "accepted": false,
-      "note": "1 copilot inline comment (no conflict)"
+      "note": "1 copilot inline comment (no conflict)",
+      "merge_conflict": false,
+      "copilot_inline_comments": 1,
+      "blocked_reason": "copilot_inline_comments"
+    },
+    {
+      "number": 346,
+      "title": "fix: Nav More dropdown shows no content (#102)",
+      "status": "changes_requested",
+      "issue_numbers": [
+        102
+      ],
+      "branch": "fix/issue-102",
+      "base": "dev",
+      "created_date": "2026-04-08",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "deployed": false,
+      "accepted": false,
+      "merge_conflict": true,
+      "copilot_inline_comments": 1,
+      "blocked_reason": "merge_conflict"
+    },
+    {
+      "number": 347,
+      "title": "fix: TradingView study_templates 404 (#24)",
+      "status": "changes_requested",
+      "issue_numbers": [
+        24
+      ],
+      "branch": "fix/issue-24",
+      "base": "dev",
+      "created_date": "2026-04-08",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "deployed": false,
+      "accepted": false,
+      "merge_conflict": true,
+      "copilot_inline_comments": 2,
+      "blocked_reason": "merge_conflict"
+    },
+    {
+      "number": 348,
+      "title": "fix: 24h price change shows +0.00% (#63)",
+      "status": "changes_requested",
+      "issue_numbers": [
+        63
+      ],
+      "branch": "fix/issue-63",
+      "base": "dev",
+      "created_date": "2026-04-08",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "deployed": false,
+      "accepted": false,
+      "merge_conflict": true,
+      "copilot_inline_comments": 2,
+      "blocked_reason": "merge_conflict"
     }
   ],
   "last_updated": "2026-04-09"
