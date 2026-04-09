@@ -2076,7 +2076,8 @@
       "copilot_inline_comments": true,
       "blocked_reason": "merge conflict + 1 copilot inline comment",
       "note": "2026-04-09 master check: merge conflict + 1 copilot inline comment",
-      "copilot_inline_count": 1
+      "copilot_inline_count": 1,
+      "pr_number": 340
     },
     {
       "pr_number": 341,
@@ -2124,7 +2125,8 @@
       "copilot_inline_comments": true,
       "blocked_reason": "merge conflict + 3 copilot inline comments",
       "note": "2026-04-09 master check: merge conflict + 3 copilot inline comments",
-      "copilot_inline_count": 3
+      "copilot_inline_count": 3,
+      "pr_number": 343
     },
     {
       "number": 344,
@@ -2153,7 +2155,8 @@
       "copilot_inline_comments": true,
       "blocked_reason": "merge conflict + 1 copilot inline comment",
       "note": "2026-04-09 master check: merge conflict + 1 copilot inline comment",
-      "copilot_inline_count": 1
+      "copilot_inline_count": 1,
+      "pr_number": 346
     },
     {
       "pr_number": 347,
@@ -2188,7 +2191,8 @@
       "copilot_inline_comments": true,
       "blocked_reason": "merge conflict + 2 copilot inline comments",
       "note": "2026-04-09 master check: merge conflict + 2 copilot inline comments",
-      "copilot_inline_count": 2
+      "copilot_inline_count": 2,
+      "pr_number": 348
     },
     {
       "number": 349,
@@ -2205,7 +2209,8 @@
       "copilot_inline_comments": true,
       "blocked_reason": "merge conflict + 4 copilot inline comments",
       "note": "2026-04-09 master check: merge conflict + 4 copilot inline comments",
-      "copilot_inline_count": 4
+      "copilot_inline_count": 4,
+      "pr_number": 349
     },
     {
       "number": 350,
@@ -2236,7 +2241,8 @@
       "copilot_inline_comments": true,
       "blocked_reason": "1 copilot inline comment",
       "note": "2026-04-09 master check: 1 copilot inline comment",
-      "copilot_inline_count": 1
+      "copilot_inline_count": 1,
+      "pr_number": 351
     },
     {
       "number": 352,
@@ -2254,7 +2260,8 @@
       "copilot_inline_comments": true,
       "blocked_reason": "3 copilot inline comments",
       "note": "2026-04-09 master check: 3 copilot inline comments",
-      "copilot_inline_count": 3
+      "copilot_inline_count": 3,
+      "pr_number": 352
     },
     {
       "pr_number": 353,
@@ -2288,7 +2295,8 @@
       "copilot_inline_count": 1,
       "blocked_reason": "merge conflict + 1 copilot inline comment",
       "review_status": "blocked",
-      "note": "2026-04-09 master check: merge conflict + 1 copilot inline comment"
+      "note": "2026-04-09 master check: merge conflict + 1 copilot inline comment",
+      "pr_number": 354
     }
   ],
   "pull_requests": [
