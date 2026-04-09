@@ -2272,6 +2272,17 @@
       "review_status": "blocked",
       "note": "Review checked 2026-04-09T21:17: still blocked — copilot_inline(4)",
       "copilot_inline_count": 4
+    },
+    {
+      "number": 354,
+      "title": "fix: constrain AccountPanel width to prevent tab overflow in landscape mobile (#41)",
+      "status": "open",
+      "issue_numbers": [
+        41
+      ],
+      "branch": "fix/issue-41-v2",
+      "base": "dev",
+      "created_at": "2026-04-09"
     }
   ],
   "pull_requests": [
