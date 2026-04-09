@@ -2393,12 +2393,12 @@
       "github_number": 301,
       "title": "[P3] Stop Limit — submit button not disabled when Stop price and Limit price are empty",
       "priority": "P3",
-      "status": "fixing",
+      "status": "open",
       "pr_number": 321,
       "created_at": "2026-03-29",
-      "fix_attempts": 1,
+      "fix_attempts": 2,
       "source": "human",
-      "note": "PR #321 merged into dev (commit 44069f6). Fix verified in code — awaiting staging deployment verification by master-agent."
+      "note": "Staging acceptance failed 2026-04-09: Buy/Long and Sell/Short buttons still enabled with empty Stop Price and Limit Price after PR #321 merge. Fix not effective."
     },
     {
       "id": 302,
