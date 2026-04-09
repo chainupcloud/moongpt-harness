@@ -153,15 +153,19 @@
       "source": "explore"
     },
     {
-      "github_number": 24,
       "title": "[P3] TradingView 图表初始化缺失 user/client 参数，导致 study_templates API 每次 404",
       "priority": "P3",
       "status": "needs-human",
       "pr_number": 347,
-      "created_at": "2026-03-27",
       "fix_attempts": 3,
       "source": "human",
-      "note": "Copilot review on PR #347: lastHistoricalBarTime overwritten on every getBars call, can reduce on non-initial calls. Also merge conflict."
+      "note": "Copilot review on PR #347: lastHistoricalBarTime overwritten on every getBars call, can reduce on non-initial calls. Also merge conflict.",
+      "id": 24,
+      "created": "2026-03-27",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/24",
+      "scenario": null,
+      "fix_branch": null,
+      "closed_at": null
     },
     {
       "id": 26,
@@ -269,15 +273,19 @@
       "source": "explore"
     },
     {
-      "github_number": 41,
       "title": "[P3] 移动端横屏（812×375）底部标签栏 Order History 按钮溢出视口",
       "priority": "P3",
       "status": "needs-human",
       "pr_number": null,
-      "created_at": "2026-03-27",
       "fix_attempts": 3,
       "source": "human",
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open"
+      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
+      "id": 41,
+      "created": "2026-03-27",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/41",
+      "scenario": null,
+      "fix_branch": null,
+      "closed_at": null
     },
     {
       "id": 44,
@@ -445,15 +453,19 @@
       "source": "explore"
     },
     {
-      "github_number": 63,
       "title": "[P3] /trade 页面 24h 涨跌显示 +0.00% — 标记价格正常但涨跌幅数据缺失",
       "priority": "P3",
       "status": "needs-human",
       "pr_number": 348,
-      "created_at": "2026-03-27",
       "fix_attempts": 3,
       "source": "human",
-      "note": "Copilot review on PR #348: (1) intervals uses '1D' but API expects lowercase '1d' (2) per-interval catch silently ignores errors. Also merge conflict."
+      "note": "Copilot review on PR #348: (1) intervals uses '1D' but API expects lowercase '1d' (2) per-interval catch silently ignores errors. Also merge conflict.",
+      "id": 63,
+      "created": "2026-03-27",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/63",
+      "scenario": null,
+      "fix_branch": null,
+      "closed_at": null
     },
     {
       "id": 66,
@@ -486,26 +498,34 @@
       "source": "explore"
     },
     {
-      "github_number": 70,
       "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
       "priority": "P3",
       "status": "needs-human",
       "pr_number": 340,
-      "created_at": "2026-03-27",
       "fix_attempts": 6,
       "source": "human",
-      "note": "Copilot review on PR #340: button click can still trigger trade action when disconnected. Also merge conflict."
+      "note": "Copilot review on PR #340: button click can still trigger trade action when disconnected. Also merge conflict.",
+      "id": 70,
+      "created": "2026-03-27",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/70",
+      "scenario": null,
+      "fix_branch": null,
+      "closed_at": null
     },
     {
-      "github_number": 73,
       "title": "[P3] 移动端竖屏（390×844）底部面板标签栏水平溢出 — 4 个标签不可见",
       "priority": "P3",
       "status": "needs-human",
       "pr_number": null,
-      "created_at": "2026-03-27",
       "fix_attempts": 3,
       "source": "human",
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open"
+      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
+      "id": 73,
+      "created": "2026-03-27",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/73",
+      "scenario": null,
+      "fix_branch": null,
+      "closed_at": null
     },
     {
       "id": 75,
@@ -538,15 +558,19 @@
       "source": "explore"
     },
     {
-      "github_number": 77,
       "title": "[P3] Trade form inputs missing aria-labels — 5 inputs have no accessible names",
       "priority": "P3",
       "status": "needs-human",
       "pr_number": 349,
-      "created_at": "2026-03-27",
       "fix_attempts": 3,
       "source": "human",
-      "note": "Copilot review on PR #349: all 4 comments say aria-label strings hard-coded in English, should use t('...'). Also merge conflict."
+      "note": "Copilot review on PR #349: all 4 comments say aria-label strings hard-coded in English, should use t('...'). Also merge conflict.",
+      "id": 77,
+      "created": "2026-03-27",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/77",
+      "scenario": null,
+      "fix_branch": null,
+      "closed_at": null
     },
     {
       "id": 78,
@@ -579,15 +603,19 @@
       "source": "explore"
     },
     {
-      "github_number": 85,
       "title": "[P3] Explorer 搜索框将钱包地址误路由到 /explorer/tx/ — 应区分 tx hash 和 address",
       "priority": "P3",
       "status": "needs-human",
       "pr_number": 351,
-      "created_at": "2026-03-27",
       "fix_attempts": 5,
       "source": "human",
-      "note": "Copilot: 1 inline comment on PR #351"
+      "note": "Copilot: 1 inline comment on PR #351",
+      "id": 85,
+      "created": "2026-03-27",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/85",
+      "scenario": null,
+      "fix_branch": null,
+      "closed_at": null
     },
     {
       "id": 88,
@@ -695,27 +723,34 @@
       "source": "explore"
     },
     {
-      "github_number": 102,
       "title": "[P3] Nav \"More\" dropdown — clicking button shows no content (chevron present but no menu appears)",
       "priority": "P3",
       "status": "needs-human",
       "pr_number": 346,
-      "created_at": "2026-03-27",
       "fix_attempts": 3,
       "source": "human",
-      "note": "Copilot review on PR #346: More dropdown links duplicated across TradeHeader/MobileDrawer/Footer. Also merge conflict."
+      "note": "Copilot review on PR #346: More dropdown links duplicated across TradeHeader/MobileDrawer/Footer. Also merge conflict.",
+      "id": 102,
+      "created": "2026-03-27",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/102",
+      "scenario": null,
+      "fix_branch": null,
+      "closed_at": null
     },
     {
-      "github_number": 104,
       "title": "[P3] TWAP order form — Interval and Parts inputs have no labels (placeholder=\"0\" only)",
       "priority": "P3",
       "status": "needs-human",
       "pr_number": 352,
-      "created_at": "2026-03-27",
       "fix_attempts": 3,
       "source": "human",
       "note": "Copilot: 3 inline comments on PR #352",
-      "fix_branch": "fix/issue-104"
+      "fix_branch": "fix/issue-104",
+      "id": 104,
+      "created": "2026-03-27",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/104",
+      "scenario": null,
+      "closed_at": null
     },
     {
       "id": 107,
@@ -2278,15 +2313,19 @@
       "source": "human"
     },
     {
-      "github_number": 289,
       "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
       "priority": "P3",
       "status": "needs-human",
       "pr_number": 343,
-      "created_at": "2026-03-29",
       "fix_attempts": 4,
       "source": "human",
-      "note": "Copilot review on PR #343: (1) TWAP interval fallback treats 0 as falsy (2) twapOrders not cleared on disconnect (3) type cast may miss fields. Also merge conflict."
+      "note": "Copilot review on PR #343: (1) TWAP interval fallback treats 0 as falsy (2) twapOrders not cleared on disconnect (3) type cast may miss fields. Also merge conflict.",
+      "id": 289,
+      "created": "2026-03-29",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/289",
+      "scenario": null,
+      "fix_branch": null,
+      "closed_at": null
     },
     {
       "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
@@ -2304,15 +2343,19 @@
       "closed_at": "2026-04-09"
     },
     {
-      "github_number": 293,
       "title": "[P3] Isolated margin leverage slider still initializes at 0x after Cross→Isolated switch (regression #270)",
       "priority": "P3",
       "status": "needs-human",
       "pr_number": 353,
-      "created_at": "2026-03-29",
       "fix_attempts": 3,
       "source": "human",
-      "note": "Copilot: 4 inline comments on PR #353"
+      "note": "Copilot: 4 inline comments on PR #353",
+      "id": 293,
+      "created": "2026-03-29",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/293",
+      "scenario": null,
+      "fix_branch": null,
+      "closed_at": null
     },
     {
       "id": 294,
@@ -2390,15 +2433,19 @@
       "source": "explore"
     },
     {
-      "github_number": 301,
       "title": "[P3] Stop Limit — submit button not disabled when Stop price and Limit price are empty",
       "priority": "P3",
       "status": "closed",
       "pr_number": 321,
-      "created_at": "2026-03-29",
       "fix_attempts": 2,
       "source": "human",
-      "note": "Fix confirmed working on staging 2026-04-09: submit button correctly disabled (shows \"Enter Trigger Price\") when Stop Price and Limit Price are empty. Previous acceptance was false negative — test matched side selector tab instead of submit button."
+      "note": "Fix confirmed working on staging 2026-04-09: submit button correctly disabled (shows \"Enter Trigger Price\") when Stop Price and Limit Price are empty. Previous acceptance was false negative — test matched side selector tab instead of submit button.",
+      "id": 301,
+      "created": "2026-03-29",
+      "github_url": "https://github.com/chainupcloud/dex-ui/issues/301",
+      "scenario": null,
+      "fix_branch": null,
+      "closed_at": null
     },
     {
       "id": 302,
