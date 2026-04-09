@@ -2241,9 +2241,12 @@
       "branch": "fix/issue-104",
       "base": "dev",
       "created_at": "2026-04-09",
-      "copilot_review": "pending",
-      "review_status": "pending",
-      "note": "Review checked 2026-04-09: awaiting Copilot review"
+      "review_status": "changes_requested",
+      "review_note": "3 copilot inline comments, no HARNESS_VERDICT",
+      "merge_conflict": false,
+      "copilot_inline_comments": 3,
+      "blocked_reason": "copilot_inline(3)",
+      "note": "Review checked 2026-04-09T21:00: copilot_inline(3)"
     }
   ],
   "pull_requests": [
