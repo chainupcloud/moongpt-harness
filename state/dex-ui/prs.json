@@ -2075,7 +2075,8 @@
       "merge_conflict": true,
       "copilot_inline_comments": 1,
       "blocked_reason": "merge_conflict + copilot_inline(1)",
-      "note": "Review checked 2026-04-09T21:00: still blocked — merge_conflict + copilot_inline(1)"
+      "note": "Review checked 2026-04-09T20:46: still blocked — merge_conflict + copilot_inline(1)",
+      "copilot_inline_count": 1
     },
     {
       "pr_number": 341,
@@ -2122,7 +2123,8 @@
       "merge_conflict": true,
       "copilot_inline_comments": 3,
       "blocked_reason": "merge_conflict + copilot_inline(3)",
-      "note": "Review checked 2026-04-09T21:00: still blocked — merge_conflict + copilot_inline(3)"
+      "note": "Review checked 2026-04-09T20:46: still blocked — merge_conflict + copilot_inline(3)",
+      "copilot_inline_count": 3
     },
     {
       "number": 344,
@@ -2150,7 +2152,8 @@
       "merge_conflict": true,
       "copilot_inline_comments": 1,
       "blocked_reason": "merge_conflict + copilot_inline(1)",
-      "note": "Review checked 2026-04-09T21:00: still blocked — merge_conflict + copilot_inline(1)"
+      "note": "Review checked 2026-04-09T20:46: still blocked — merge_conflict + copilot_inline(1)",
+      "copilot_inline_count": 1
     },
     {
       "pr_number": 347,
@@ -2167,7 +2170,8 @@
       "merge_conflict": true,
       "copilot_inline_comments": 2,
       "blocked_reason": "merge_conflict + copilot_inline(2)",
-      "note": "Review checked 2026-04-09T21:00: still blocked — merge_conflict + copilot_inline(2)"
+      "note": "Review checked 2026-04-09T20:46: still blocked — merge_conflict + copilot_inline(2)",
+      "copilot_inline_count": 2
     },
     {
       "number": 348,
@@ -2183,7 +2187,8 @@
       "merge_conflict": true,
       "copilot_inline_comments": 2,
       "blocked_reason": "merge_conflict + copilot_inline(2)",
-      "note": "Review checked 2026-04-09T21:00: still blocked — merge_conflict + copilot_inline(2)"
+      "note": "Review checked 2026-04-09T20:46: still blocked — merge_conflict + copilot_inline(2)",
+      "copilot_inline_count": 2
     },
     {
       "number": 349,
@@ -2199,7 +2204,8 @@
       "merge_conflict": true,
       "copilot_inline_comments": 4,
       "blocked_reason": "merge_conflict + copilot_inline(4)",
-      "note": "Review checked 2026-04-09T21:00: still blocked — merge_conflict + copilot_inline(4)"
+      "note": "Review checked 2026-04-09T20:46: still blocked — merge_conflict + copilot_inline(4)",
+      "copilot_inline_count": 4
     },
     {
       "number": 350,
@@ -2229,7 +2235,7 @@
       "merge_conflict": false,
       "copilot_inline_comments": 1,
       "blocked_reason": "copilot_inline(1)",
-      "note": "Review checked 2026-04-09T21:00: still blocked — copilot_inline(1)",
+      "note": "Review checked 2026-04-09T20:46: still blocked — copilot_inline(1)",
       "copilot_inline_count": 1
     },
     {
@@ -2247,7 +2253,7 @@
       "merge_conflict": false,
       "copilot_inline_comments": 3,
       "blocked_reason": "copilot_inline(3)",
-      "note": "Review checked 2026-04-09T21:00: still blocked — copilot_inline(3)",
+      "note": "Review checked 2026-04-09T20:46: still blocked — copilot_inline(3)",
       "copilot_inline_count": 3
     },
     {
@@ -2264,7 +2270,8 @@
       "copilot_inline_comments": 4,
       "blocked_reason": "copilot_inline(4)",
       "review_status": "blocked",
-      "note": "Review checked 2026-04-09T21:00: still blocked — copilot_inline(4)"
+      "note": "Review checked 2026-04-09T20:46: still blocked — copilot_inline(4)",
+      "copilot_inline_count": 4
     }
   ],
   "pull_requests": [
