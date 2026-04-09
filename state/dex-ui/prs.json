@@ -2088,7 +2088,7 @@
       "base": "dev",
       "created_at": "2026-04-08",
       "review_status": "changes_requested",
-      "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment(s)"
+      "review_note": "Copilot review (no HARNESS_VERDICT): merge conflict + 1 inline comment(s)"
     },
     {
       "number": 341,
@@ -2149,7 +2149,7 @@
       "base": "dev",
       "created_at": "2026-04-08",
       "review_status": "changes_requested",
-      "review_note": "Copilot review (no HARNESS_VERDICT): 3 inline comment(s)"
+      "review_note": "Copilot review (no HARNESS_VERDICT): merge conflict + 3 inline comment(s)"
     },
     {
       "number": 344,
@@ -2173,7 +2173,7 @@
       ],
       "created_at": "2026-04-09",
       "review_status": "changes_requested",
-      "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment(s)"
+      "review_note": "Copilot review (no HARNESS_VERDICT): merge conflict + 1 inline comment(s)"
     },
     {
       "pr_number": 347,
@@ -2186,7 +2186,7 @@
       "branch": "fix/issue-24",
       "review_status": "changes_requested",
       "copilot_status": "pending",
-      "review_note": "Copilot review (no HARNESS_VERDICT): 2 inline comment(s)"
+      "review_note": "Copilot review (no HARNESS_VERDICT): merge conflict + 2 inline comment(s)"
     },
     {
       "number": 348,
@@ -2198,7 +2198,7 @@
       "branch": "fix/issue-63",
       "created": "2026-04-09",
       "review_status": "changes_requested",
-      "review_note": "Copilot review (no HARNESS_VERDICT): 2 inline comment(s)"
+      "review_note": "Copilot review (no HARNESS_VERDICT): merge conflict + 2 inline comment(s)"
     },
     {
       "number": 349,
@@ -2210,7 +2210,7 @@
       "branch": "fix/issue-77",
       "created": "2026-04-09",
       "review_status": "changes_requested",
-      "review_note": "Copilot review (no HARNESS_VERDICT): 4 inline comment(s)"
+      "review_note": "Copilot review (no HARNESS_VERDICT): merge conflict + 4 inline comment(s)"
     },
     {
       "number": 350,
