@@ -2088,7 +2088,7 @@
       "base": "dev",
       "created_at": "2026-04-08",
       "review_status": "changes_requested",
-      "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt. handleSubmit must skip validation when !isConnected."
+      "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - button click can still early-return on validation before wallet connect prompt when disconnected. Issue #70 needs-human (6 attempts)."
     },
     {
       "number": 341,
@@ -2149,7 +2149,7 @@
       "base": "dev",
       "created_at": "2026-04-08",
       "review_status": "changes_requested",
-      "review_note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - (1) interval=0 treated as falsy in TWAP toast fallback, (2) twapOrders not cleared on disconnect/address change, (3) type-casting defeats type checks in getTwapOrders mapping."
+      "review_note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - (1) interval=0 treated as falsy in TWAP toast, (2) twapOrders not cleared on disconnect, (3) type-casting defeats type checks. Issue #289 needs-human (4 attempts)."
     },
     {
       "number": 344,
