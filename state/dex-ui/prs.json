@@ -2071,11 +2071,11 @@
       "base": "dev",
       "created_at": "2026-04-08",
       "review_status": "changes_requested",
-      "review_note": "merge conflict + 1 copilot inline comment",
+      "review_note": "merge conflict + 1 copilot inline comment (button click still triggers trade when disconnected)",
       "merge_conflict": true,
       "copilot_inline_comments": 1,
-      "blocked_reason": "merge_conflict",
-      "note": "Merge conflict detected 2026-04-09"
+      "blocked_reason": "merge_conflict + copilot_inline_comments",
+      "note": "Review checked 2026-04-09: merge conflict + 1 copilot inline comment (button click still triggers trade when disconnected)"
     },
     {
       "pr_number": 341,
@@ -2118,11 +2118,11 @@
       "base": "dev",
       "created_at": "2026-04-08",
       "review_status": "changes_requested",
-      "review_note": "merge conflict + 3 copilot inline comments",
+      "review_note": "merge conflict + 3 copilot inline comments (interval fallback, disconnect cleanup, type cast)",
       "merge_conflict": true,
       "copilot_inline_comments": 3,
-      "blocked_reason": "merge_conflict",
-      "note": "Merge conflict detected 2026-04-09"
+      "blocked_reason": "merge_conflict + copilot_inline_comments",
+      "note": "Review checked 2026-04-09: merge conflict + 3 copilot inline comments (interval fallback, disconnect cleanup, type cast)"
     },
     {
       "number": 344,
@@ -2146,11 +2146,11 @@
       ],
       "created_at": "2026-04-09",
       "review_status": "changes_requested",
-      "review_note": "merge conflict + 1 copilot inline comment",
+      "review_note": "merge conflict + 1 copilot inline comment (duplicated dropdown links)",
       "merge_conflict": true,
       "copilot_inline_comments": 1,
-      "blocked_reason": "merge_conflict",
-      "note": "Merge conflict detected 2026-04-09"
+      "blocked_reason": "merge_conflict + copilot_inline_comments",
+      "note": "Review checked 2026-04-09: merge conflict + 1 copilot inline comment (duplicated dropdown links)"
     },
     {
       "pr_number": 347,
@@ -2163,11 +2163,11 @@
       "branch": "fix/issue-24",
       "review_status": "changes_requested",
       "copilot_status": "pending",
-      "review_note": "merge conflict + 2 copilot inline comments",
+      "review_note": "merge conflict + 2 copilot inline comments (lastHistoricalBarTime overwrite on non-initial getBars)",
       "merge_conflict": true,
       "copilot_inline_comments": 2,
-      "blocked_reason": "merge_conflict",
-      "note": "Merge conflict detected 2026-04-09"
+      "blocked_reason": "merge_conflict + copilot_inline_comments",
+      "note": "Review checked 2026-04-09: merge conflict + 2 copilot inline comments (lastHistoricalBarTime overwrite on non-initial getBars)"
     },
     {
       "number": 348,
@@ -2179,11 +2179,11 @@
       "branch": "fix/issue-63",
       "created": "2026-04-09",
       "review_status": "changes_requested",
-      "review_note": "merge conflict + 2 copilot inline comments",
+      "review_note": "merge conflict + 2 copilot inline comments (uppercase '1D' vs lowercase '1d', silent catch)",
       "merge_conflict": true,
       "copilot_inline_comments": 2,
-      "blocked_reason": "merge_conflict",
-      "note": "Merge conflict detected 2026-04-09"
+      "blocked_reason": "merge_conflict + copilot_inline_comments",
+      "note": "Review checked 2026-04-09: merge conflict + 2 copilot inline comments (uppercase '1D' vs lowercase '1d', silent catch)"
     },
     {
       "number": 349,
@@ -2195,11 +2195,11 @@
       "branch": "fix/issue-77",
       "created": "2026-04-09",
       "review_status": "changes_requested",
-      "review_note": "merge conflict + 4 copilot inline comments",
+      "review_note": "merge conflict + 4 copilot inline comments (all: hard-coded English aria-labels, should use t())",
       "merge_conflict": true,
       "copilot_inline_comments": 4,
-      "blocked_reason": "merge_conflict",
-      "note": "Merge conflict detected 2026-04-09"
+      "blocked_reason": "merge_conflict + copilot_inline_comments",
+      "note": "Review checked 2026-04-09: merge conflict + 4 copilot inline comments (all: hard-coded English aria-labels, should use t())"
     },
     {
       "number": 350,
@@ -2225,11 +2225,11 @@
       "created": "2026-04-09",
       "branch": "fix/issue-85",
       "review_status": "changes_requested",
-      "review_note": "1 copilot inline comment (no merge conflict)",
+      "review_note": "1 copilot inline comment (base58 regex false positives with hex strings), no merge conflict",
       "merge_conflict": false,
       "copilot_inline_comments": 1,
       "blocked_reason": "copilot_inline_comments",
-      "note": "1 copilot inline comment, no HARNESS_VERDICT - 2026-04-09"
+      "note": "Review checked 2026-04-09: 1 copilot inline comment (base58 regex false positives with hex strings), no merge conflict"
     }
   ],
   "pull_requests": [

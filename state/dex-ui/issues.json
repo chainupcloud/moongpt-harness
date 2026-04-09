@@ -161,7 +161,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 3,
       "source": "human",
-      "note": "PR #347 has merge conflict — needs rebase. PR #347 has 2 copilot inline comments: lastHistoricalBarTime overwritten on every getBars call, reducing it on non-initial calls. needs-human (3 attempts)"
+      "note": "Copilot review on PR #347: lastHistoricalBarTime overwritten on every getBars call, can reduce on non-initial calls. Also merge conflict."
     },
     {
       "id": 26,
@@ -453,7 +453,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 3,
       "source": "human",
-      "note": "PR #348 has merge conflict — needs rebase. PR #348 has 2 copilot inline comments: (1) intervals uses '1D' but codebase uses lowercase '1d', (2) per-interval catch {} silently ignores all errors. needs-human (3 attempts)"
+      "note": "Copilot review on PR #348: (1) intervals uses '1D' but API expects lowercase '1d' (2) per-interval catch silently ignores errors. Also merge conflict."
     },
     {
       "id": 66,
@@ -494,7 +494,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 6,
       "source": "human",
-      "note": "PR #340 has merge conflict — needs rebase. PR #340 has copilot inline comments; needs-human (6 attempts)"
+      "note": "Copilot review on PR #340: button click can still trigger trade action when disconnected. Also merge conflict."
     },
     {
       "github_number": 73,
@@ -546,7 +546,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 3,
       "source": "human",
-      "note": "PR #349 has merge conflict — needs rebase. PR #349 has 4 copilot inline comments: aria-labels hardcoded in English, should use t() for localization. needs-human (3 attempts)"
+      "note": "Copilot review on PR #349: all 4 comments say aria-label strings hard-coded in English, should use t('...'). Also merge conflict."
     },
     {
       "id": 78,
@@ -587,7 +587,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 4,
       "source": "human",
-      "note": "Copilot inline: base58 regex matches hex strings, needs disambiguation (SearchBar.tsx:19)"
+      "note": "Copilot review on PR #351: base58 tx-digest regex also matches pure-hex strings (false positives). No merge conflict - fix inline comment to unblock."
     },
     {
       "id": 88,
@@ -703,7 +703,7 @@
       "created_at": "2026-03-27",
       "fix_attempts": 3,
       "source": "human",
-      "note": "PR #346 has merge conflict — needs rebase. PR #346 has copilot inline comment: extract More dropdown items into shared constant to prevent desktop/mobile menu divergence. Returned to open for fix-agent."
+      "note": "Copilot review on PR #346: More dropdown links duplicated across TradeHeader/MobileDrawer/Footer. Also merge conflict."
     },
     {
       "github_number": 104,
@@ -2285,7 +2285,7 @@
       "created_at": "2026-03-29",
       "fix_attempts": 4,
       "source": "human",
-      "note": "PR #343 has merge conflict — needs rebase. PR #343 has copilot inline comments; needs-human (4 attempts)"
+      "note": "Copilot review on PR #343: (1) TWAP interval fallback treats 0 as falsy (2) twapOrders not cleared on disconnect (3) type cast may miss fields. Also merge conflict."
     },
     {
       "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
