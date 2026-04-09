@@ -2070,12 +2070,12 @@
       "branch": "fix/issue-70",
       "base": "dev",
       "created_at": "2026-04-08",
-      "review_status": "copilot_commented",
+      "review_status": "blocked",
       "review_note": "Checked 2026-04-09: merge conflict",
       "merge_conflict": true,
       "copilot_inline_comments": true,
-      "blocked_reason": "merge conflict",
-      "note": "checked 2026-04-09",
+      "blocked_reason": "merge conflict + 1 copilot inline comment",
+      "note": "2026-04-09 master check: merge conflict + 1 copilot inline comment",
       "copilot_inline_count": 1
     },
     {
@@ -2118,12 +2118,12 @@
       "branch": "fix/issue-289",
       "base": "dev",
       "created_at": "2026-04-08",
-      "review_status": "copilot_commented",
+      "review_status": "blocked",
       "review_note": "Checked 2026-04-09: merge conflict",
       "merge_conflict": true,
       "copilot_inline_comments": true,
-      "blocked_reason": "merge conflict",
-      "note": "checked 2026-04-09",
+      "blocked_reason": "merge conflict + 3 copilot inline comments",
+      "note": "2026-04-09 master check: merge conflict + 3 copilot inline comments",
       "copilot_inline_count": 3
     },
     {
@@ -2147,12 +2147,12 @@
         102
       ],
       "created_at": "2026-04-09",
-      "review_status": "copilot_commented",
+      "review_status": "blocked",
       "review_note": "Checked 2026-04-09: merge conflict",
       "merge_conflict": true,
       "copilot_inline_comments": true,
-      "blocked_reason": "merge conflict",
-      "note": "checked 2026-04-09",
+      "blocked_reason": "merge conflict + 1 copilot inline comment",
+      "note": "2026-04-09 master check: merge conflict + 1 copilot inline comment",
       "copilot_inline_count": 1
     },
     {
@@ -2164,13 +2164,13 @@
       ],
       "created": "2026-04-09",
       "branch": "fix/issue-24",
-      "review_status": "copilot_commented",
+      "review_status": "blocked",
       "copilot_status": "pending",
       "review_note": "Checked 2026-04-09: merge conflict",
       "merge_conflict": true,
       "copilot_inline_comments": true,
-      "blocked_reason": "merge conflict",
-      "note": "checked 2026-04-09",
+      "blocked_reason": "merge conflict + 2 copilot inline comments",
+      "note": "2026-04-09 master check: merge conflict + 2 copilot inline comments",
       "copilot_inline_count": 2
     },
     {
@@ -2182,12 +2182,12 @@
       "title": "fix: 24h price change shows +0.00% — cascade candle intervals (#63)",
       "branch": "fix/issue-63",
       "created": "2026-04-09",
-      "review_status": "copilot_commented",
+      "review_status": "blocked",
       "review_note": "Checked 2026-04-09: merge conflict",
       "merge_conflict": true,
       "copilot_inline_comments": true,
-      "blocked_reason": "merge conflict",
-      "note": "checked 2026-04-09",
+      "blocked_reason": "merge conflict + 2 copilot inline comments",
+      "note": "2026-04-09 master check: merge conflict + 2 copilot inline comments",
       "copilot_inline_count": 2
     },
     {
@@ -2199,12 +2199,12 @@
       "title": "fix: add aria-labels to ScalePanel and ScalpPanel inputs (#77)",
       "branch": "fix/issue-77",
       "created": "2026-04-09",
-      "review_status": "copilot_commented",
+      "review_status": "blocked",
       "review_note": "Checked 2026-04-09: merge conflict",
       "merge_conflict": true,
       "copilot_inline_comments": true,
-      "blocked_reason": "merge conflict",
-      "note": "checked 2026-04-09",
+      "blocked_reason": "merge conflict + 4 copilot inline comments",
+      "note": "2026-04-09 master check: merge conflict + 4 copilot inline comments",
       "copilot_inline_count": 4
     },
     {
@@ -2230,12 +2230,12 @@
       ],
       "created": "2026-04-09",
       "branch": "fix/issue-85",
-      "review_status": "copilot_commented",
+      "review_status": "blocked",
       "review_note": "Checked 2026-04-09: 1 copilot inline comment (no HARNESS_VERDICT)",
       "merge_conflict": false,
       "copilot_inline_comments": true,
-      "blocked_reason": "copilot 1 inline comments",
-      "note": "checked 2026-04-09",
+      "blocked_reason": "1 copilot inline comment",
+      "note": "2026-04-09 master check: 1 copilot inline comment",
       "copilot_inline_count": 1
     },
     {
@@ -2248,12 +2248,12 @@
       "branch": "fix/issue-104",
       "base": "dev",
       "created_at": "2026-04-09",
-      "review_status": "copilot_commented",
+      "review_status": "blocked",
       "review_note": "Checked 2026-04-09: 3 copilot inline comments (no HARNESS_VERDICT)",
       "merge_conflict": false,
       "copilot_inline_comments": true,
-      "blocked_reason": "copilot 3 inline comments",
-      "note": "checked 2026-04-09",
+      "blocked_reason": "3 copilot inline comments",
+      "note": "2026-04-09 master check: 3 copilot inline comments",
       "copilot_inline_count": 3
     },
     {
@@ -2268,9 +2268,9 @@
       "copilot_review": "pending",
       "merge_conflict": false,
       "copilot_inline_comments": true,
-      "blocked_reason": "copilot 4 inline comments",
-      "review_status": "copilot_commented",
-      "note": "checked 2026-04-09",
+      "blocked_reason": "4 copilot inline comments",
+      "review_status": "blocked",
+      "note": "2026-04-09 master check: 4 copilot inline comments",
       "copilot_inline_count": 4
     },
     {
@@ -2284,11 +2284,11 @@
       "base": "dev",
       "created_at": "2026-04-09",
       "merge_conflict": true,
-      "copilot_inline_comments": false,
-      "copilot_inline_count": 0,
-      "blocked_reason": "merge conflict + no review",
-      "review_status": "no_review",
-      "note": "checked 2026-04-09"
+      "copilot_inline_comments": true,
+      "copilot_inline_count": 1,
+      "blocked_reason": "merge conflict + 1 copilot inline comment",
+      "review_status": "blocked",
+      "note": "2026-04-09 master check: merge conflict + 1 copilot inline comment"
     }
   ],
   "pull_requests": [
