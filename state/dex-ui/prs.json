@@ -2074,8 +2074,8 @@
       "review_note": "merge conflict + 1 copilot inline comment (button click still triggers trade when disconnected)",
       "merge_conflict": true,
       "copilot_inline_comments": 1,
-      "blocked_reason": "merge_conflict + copilot_inline_comments",
-      "note": "Review checked 2026-04-09T2: merge conflict + 1 copilot inline comment (button click still triggers trade when disconnected)"
+      "blocked_reason": "merge_conflict + copilot_inline(1)",
+      "note": "Review checked 2026-04-09T3: merge conflict + 1 copilot inline comment"
     },
     {
       "pr_number": 341,
@@ -2121,8 +2121,8 @@
       "review_note": "merge conflict + 3 copilot inline comments (interval fallback, disconnect cleanup, type cast)",
       "merge_conflict": true,
       "copilot_inline_comments": 3,
-      "blocked_reason": "merge_conflict + copilot_inline_comments",
-      "note": "Review checked 2026-04-09T2: merge conflict + 3 copilot inline comments (interval fallback, disconnect cleanup, type cast)"
+      "blocked_reason": "merge_conflict + copilot_inline(3)",
+      "note": "Review checked 2026-04-09T3: merge conflict + 3 copilot inline comments"
     },
     {
       "number": 344,
@@ -2149,8 +2149,8 @@
       "review_note": "merge conflict + 1 copilot inline comment (duplicated dropdown links)",
       "merge_conflict": true,
       "copilot_inline_comments": 1,
-      "blocked_reason": "merge_conflict + copilot_inline_comments",
-      "note": "Review checked 2026-04-09T2: merge conflict + 1 copilot inline comment (duplicated dropdown links)"
+      "blocked_reason": "merge_conflict + copilot_inline(1)",
+      "note": "Review checked 2026-04-09T3: merge conflict + 1 copilot inline comment"
     },
     {
       "pr_number": 347,
@@ -2166,8 +2166,8 @@
       "review_note": "merge conflict + 2 copilot inline comments (lastHistoricalBarTime overwrite on non-initial getBars)",
       "merge_conflict": true,
       "copilot_inline_comments": 2,
-      "blocked_reason": "merge_conflict + copilot_inline_comments",
-      "note": "Review checked 2026-04-09T2: merge conflict + 2 copilot inline comments (lastHistoricalBarTime overwrite on non-initial getBars)"
+      "blocked_reason": "merge_conflict + copilot_inline(2)",
+      "note": "Review checked 2026-04-09T3: merge conflict + 2 copilot inline comments"
     },
     {
       "number": 348,
@@ -2182,8 +2182,8 @@
       "review_note": "merge conflict + 2 copilot inline comments (uppercase '1D' vs lowercase '1d', silent catch)",
       "merge_conflict": true,
       "copilot_inline_comments": 2,
-      "blocked_reason": "merge_conflict + copilot_inline_comments",
-      "note": "Review checked 2026-04-09T2: merge conflict + 2 copilot inline comments (uppercase '1D' vs lowercase '1d', silent catch)"
+      "blocked_reason": "merge_conflict + copilot_inline(2)",
+      "note": "Review checked 2026-04-09T3: merge conflict + 2 copilot inline comments"
     },
     {
       "number": 349,
@@ -2198,8 +2198,8 @@
       "review_note": "merge conflict + 4 copilot inline comments (all: hard-coded English aria-labels, should use t())",
       "merge_conflict": true,
       "copilot_inline_comments": 4,
-      "blocked_reason": "merge_conflict + copilot_inline_comments",
-      "note": "Review checked 2026-04-09T2: merge conflict + 4 copilot inline comments (all: hard-coded English aria-labels, should use t())"
+      "blocked_reason": "merge_conflict + copilot_inline(4)",
+      "note": "Review checked 2026-04-09T3: merge conflict + 4 copilot inline comments"
     },
     {
       "number": 350,
@@ -2228,8 +2228,8 @@
       "review_note": "1 copilot inline comment (base58 regex false positives with hex strings), no merge conflict",
       "merge_conflict": false,
       "copilot_inline_comments": 1,
-      "blocked_reason": "copilot_inline_comments",
-      "note": "Review checked 2026-04-09T2: 1 copilot inline comment (base58 regex false positives with hex strings), no merge conflict"
+      "blocked_reason": "copilot_inline(1)",
+      "note": "Review checked 2026-04-09T3: no merge conflict, 1 copilot inline comment"
     }
   ],
   "pull_requests": [
