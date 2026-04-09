@@ -2411,6 +2411,13 @@
       "deployed": false,
       "accepted": false,
       "note": "Copilot: 3 inline comments on TWAP toast, order fetch, type cast"
+    },
+    {
+      "number": 349,
+      "issue_number": 77,
+      "status": "changes_requested",
+      "title": "fix: add aria-labels to ScalePanel and ScalpPanel inputs (#77)",
+      "branch": "fix/issue-77"
     }
   ],
   "last_updated": "2026-04-09"
