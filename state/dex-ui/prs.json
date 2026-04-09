@@ -2196,7 +2196,9 @@
       ],
       "title": "fix: 24h price change shows +0.00% — cascade candle intervals (#63)",
       "branch": "fix/issue-63",
-      "created": "2026-04-09"
+      "created": "2026-04-09",
+      "review_status": "changes_requested",
+      "review_note": "Copilot review (no HARNESS_VERDICT): 2 inline comments - (1) intervals '1D' vs lowercase '1d', (2) silent catch {} on candle fetch errors. Issue #63 needs-human (3 attempts)."
     }
   ],
   "pull_requests": [
