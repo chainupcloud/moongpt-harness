@@ -2087,8 +2087,8 @@
       "branch": "fix/issue-70",
       "base": "dev",
       "created_at": "2026-04-08",
-      "review_status": "changes_requested",
-      "review_note": "Copilot review (no HARNESS_VERDICT): merge conflict + 1 inline comment(s)"
+      "review_status": "blocked",
+      "review_note": "Blocked: merge conflict, 1 copilot inline comment(s)"
     },
     {
       "number": 341,
@@ -2148,8 +2148,8 @@
       "branch": "fix/issue-289",
       "base": "dev",
       "created_at": "2026-04-08",
-      "review_status": "changes_requested",
-      "review_note": "Copilot review (no HARNESS_VERDICT): merge conflict + 3 inline comment(s)"
+      "review_status": "blocked",
+      "review_note": "Blocked: merge conflict, 3 copilot inline comment(s)"
     },
     {
       "number": 344,
@@ -2172,8 +2172,8 @@
         102
       ],
       "created_at": "2026-04-09",
-      "review_status": "changes_requested",
-      "review_note": "Copilot review (no HARNESS_VERDICT): merge conflict + 1 inline comment(s)"
+      "review_status": "blocked",
+      "review_note": "Blocked: merge conflict, 1 copilot inline comment(s)"
     },
     {
       "pr_number": 347,
@@ -2184,9 +2184,9 @@
       ],
       "created": "2026-04-09",
       "branch": "fix/issue-24",
-      "review_status": "changes_requested",
+      "review_status": "blocked",
       "copilot_status": "pending",
-      "review_note": "Copilot review (no HARNESS_VERDICT): merge conflict + 2 inline comment(s)"
+      "review_note": "Blocked: merge conflict, 2 copilot inline comment(s)"
     },
     {
       "number": 348,
@@ -2197,8 +2197,8 @@
       "title": "fix: 24h price change shows +0.00% — cascade candle intervals (#63)",
       "branch": "fix/issue-63",
       "created": "2026-04-09",
-      "review_status": "changes_requested",
-      "review_note": "Copilot review (no HARNESS_VERDICT): merge conflict + 2 inline comment(s)"
+      "review_status": "blocked",
+      "review_note": "Blocked: merge conflict, 2 copilot inline comment(s)"
     },
     {
       "number": 349,
@@ -2209,8 +2209,8 @@
       "title": "fix: add aria-labels to ScalePanel and ScalpPanel inputs (#77)",
       "branch": "fix/issue-77",
       "created": "2026-04-09",
-      "review_status": "changes_requested",
-      "review_note": "Copilot review (no HARNESS_VERDICT): merge conflict + 4 inline comment(s)"
+      "review_status": "blocked",
+      "review_note": "Blocked: merge conflict, 4 copilot inline comment(s)"
     },
     {
       "number": 350,
@@ -2235,8 +2235,8 @@
       ],
       "created": "2026-04-09",
       "branch": "fix/issue-85",
-      "review_status": "changes_requested",
-      "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment(s), no merge conflict"
+      "review_status": "blocked",
+      "review_note": "Blocked: 1 copilot inline comment(s)"
     }
   ],
   "pull_requests": [
