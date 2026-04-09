@@ -2455,6 +2455,16 @@
       "deployed": true,
       "accepted": true,
       "merged_at": "2026-04-09"
+    },
+    {
+      "pr_number": 351,
+      "title": "fix: Explorer search — detect base58 SUI tx digests and route correctly",
+      "status": "changes_requested",
+      "issue_id": 85,
+      "github_url": "https://github.com/chainupcloud/dex-ui/pull/351",
+      "created_at": "2026-04-09",
+      "deployed": false,
+      "accepted": false
     }
   ],
   "last_updated": "2026-04-09"
