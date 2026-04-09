@@ -2241,7 +2241,9 @@
       "branch": "fix/issue-104",
       "base": "dev",
       "created_at": "2026-04-09",
-      "copilot_review": "pending"
+      "copilot_review": "pending",
+      "review_status": "pending",
+      "note": "Review checked 2026-04-09: awaiting Copilot review"
     }
   ],
   "pull_requests": [
