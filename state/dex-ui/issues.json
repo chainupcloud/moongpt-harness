@@ -709,12 +709,13 @@
       "github_number": 104,
       "title": "[P3] TWAP order form — Interval and Parts inputs have no labels (placeholder=\"0\" only)",
       "priority": "P3",
-      "status": "open",
-      "pr_number": null,
+      "status": "fixing",
+      "pr_number": 352,
       "created_at": "2026-03-27",
-      "fix_attempts": 1,
+      "fix_attempts": 2,
       "source": "human",
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open"
+      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
+      "fix_branch": "fix/issue-104"
     },
     {
       "id": 107,

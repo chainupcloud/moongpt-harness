@@ -2230,6 +2230,18 @@
       "copilot_inline_comments": 1,
       "blocked_reason": "copilot_inline(1)",
       "note": "Review checked 2026-04-09T17:28: copilot_inline(1)"
+    },
+    {
+      "number": 352,
+      "title": "fix: add Parts input with label to TWAP order form (#104)",
+      "status": "open",
+      "issue_numbers": [
+        104
+      ],
+      "branch": "fix/issue-104",
+      "base": "dev",
+      "created_at": "2026-04-09",
+      "copilot_review": "pending"
     }
   ],
   "pull_requests": [
