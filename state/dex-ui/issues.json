@@ -2711,10 +2711,10 @@
       "github_number": 301,
       "title": "[P3] Stop Limit — submit button not disabled when Stop price and Limit price are empty",
       "priority": "P3",
-      "status": "open",
-      "pr_number": null,
+      "status": "closed",
+      "pr_number": 321,
       "created_at": "2026-03-29",
-      "fix_attempts": 0,
+      "fix_attempts": 1,
       "source": "human"
     }
   ],
