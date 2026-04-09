@@ -2235,8 +2235,8 @@
       ],
       "created": "2026-04-09",
       "branch": "fix/issue-85",
-      "review_status": "pending",
-      "review_note": "No reviews yet"
+      "review_status": "changes_requested",
+      "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - base58 regex also matches pure-hex strings"
     }
   ],
   "pull_requests": [
