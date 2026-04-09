@@ -2074,7 +2074,7 @@
       "review_note": "merge conflict + 1 copilot inline comment",
       "merge_conflict": true,
       "copilot_inline_comments": 1,
-      "blocked_reason": "merge_conflict + copilot_inline(1)",
+      "blocked_reason": "merge_conflict",
       "note": "Blocked: merge conflict + 1 copilot inline comment"
     },
     {
@@ -2121,7 +2121,7 @@
       "review_note": "merge conflict + 3 copilot inline comments",
       "merge_conflict": true,
       "copilot_inline_comments": 3,
-      "blocked_reason": "merge_conflict + copilot_inline(3)",
+      "blocked_reason": "merge_conflict",
       "note": "Blocked: merge conflict + 3 copilot inline comments"
     },
     {
@@ -2149,7 +2149,7 @@
       "review_note": "merge conflict + 1 copilot inline comment",
       "merge_conflict": true,
       "copilot_inline_comments": 1,
-      "blocked_reason": "merge_conflict + copilot_inline(1)",
+      "blocked_reason": "merge_conflict",
       "note": "Blocked: merge conflict + 1 copilot inline comment"
     },
     {
@@ -2166,7 +2166,7 @@
       "review_note": "merge conflict + 2 copilot inline comments",
       "merge_conflict": true,
       "copilot_inline_comments": 2,
-      "blocked_reason": "merge_conflict + copilot_inline(2)",
+      "blocked_reason": "merge_conflict",
       "note": "Blocked: merge conflict + 2 copilot inline comments"
     },
     {
@@ -2182,7 +2182,7 @@
       "review_note": "merge conflict + 2 copilot inline comments",
       "merge_conflict": true,
       "copilot_inline_comments": 2,
-      "blocked_reason": "merge_conflict + copilot_inline(2)",
+      "blocked_reason": "merge_conflict",
       "note": "Blocked: merge conflict + 2 copilot inline comments"
     },
     {
@@ -2198,7 +2198,7 @@
       "review_note": "merge conflict + 4 copilot inline comments",
       "merge_conflict": true,
       "copilot_inline_comments": 4,
-      "blocked_reason": "merge_conflict + copilot_inline(4)",
+      "blocked_reason": "merge_conflict",
       "note": "Blocked: merge conflict + 4 copilot inline comments"
     },
     {
@@ -2229,7 +2229,7 @@
       "merge_conflict": false,
       "copilot_inline_comments": 1,
       "blocked_reason": "copilot_inline(1)",
-      "note": "Blocked: 1 copilot inline comment"
+      "note": "Copilot 1 inline: base58 regex also matches hex strings, needs disambiguation (SearchBar.tsx:19)"
     }
   ],
   "pull_requests": [
