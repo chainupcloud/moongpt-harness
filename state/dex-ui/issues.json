@@ -2406,12 +2406,12 @@
       "github_number": 24,
       "title": "[P3] TradingView 图表初始化缺失 user/client 参数，导致 study_templates API 每次 404",
       "priority": "P3",
-      "status": "fixing",
+      "status": "needs-human",
       "pr_number": 347,
       "created_at": "2026-03-27",
-      "fix_attempts": 2,
+      "fix_attempts": 3,
       "source": "human",
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open"
+      "note": "PR #347 has 2 copilot inline comments: lastHistoricalBarTime overwritten on every getBars call, reducing it on non-initial calls. needs-human (3 attempts)"
     },
     {
       "github_number": 41,

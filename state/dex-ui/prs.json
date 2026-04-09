@@ -2184,8 +2184,9 @@
       ],
       "created": "2026-04-09",
       "branch": "fix/issue-24",
-      "review_status": "pending",
-      "copilot_status": "pending"
+      "review_status": "changes_requested",
+      "copilot_status": "pending",
+      "review_note": "Copilot review (no HARNESS_VERDICT): 2 inline comments - lastHistoricalBarTime overwritten on every getBars call, reducing it on non-initial calls."
     }
   ],
   "pull_requests": [
