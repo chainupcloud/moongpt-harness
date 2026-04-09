@@ -2423,7 +2423,7 @@
       "created_date": "2026-04-07",
       "review_notes": "Copilot inline: button click can still trigger order submission when wallet disconnected — need to guard handleSubmit at TradeForm/index.tsx:1163. (1 inline comment, no HARNESS_VERDICT)",
       "review_status": "changes_requested",
-      "note": "Review checked 2026-04-09T17:57: merge_conflict + copilot_inline(1)",
+      "note": "Review checked 2026-04-09: merge_conflict + copilot_inline(1)",
       "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt. handleSubmit must skip validation when !isConnected.",
       "merge_conflict": true,
       "copilot_inline_comments": 1,
@@ -2441,7 +2441,7 @@
       "created_date": "2026-04-07",
       "review_notes": "Copilot 3 inlines: (1) interval=0 fallback treats 0 as falsy at TradeForm:556, (2) twapOrders not cleared on wallet disconnect at AccountPanel:1130, (3) type casting in getTwapOrders at AccountPanel:1148. (no HARNESS_VERDICT)",
       "review_status": "changes_requested",
-      "note": "Review checked 2026-04-09T17:57: merge_conflict + copilot_inline(3)",
+      "note": "Review checked 2026-04-09: merge_conflict + copilot_inline(3)",
       "review_note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - (1) interval=0 treated as falsy in TWAP toast fallback, (2) twapOrders not cleared on disconnect/address change, (3) type-casting defeats type checks in getTwapOrders mapping.",
       "merge_conflict": true,
       "copilot_inline_comments": 3,
@@ -2453,7 +2453,7 @@
       "status": "open",
       "title": "fix: add aria-labels to ScalePanel and ScalpPanel inputs (#77)",
       "branch": "fix/issue-77",
-      "note": "Review checked 2026-04-09T17:57: merge_conflict + copilot_inline(4)",
+      "note": "Review checked 2026-04-09: merge_conflict + copilot_inline(4)",
       "merge_conflict": true,
       "copilot_inline_comments": 4,
       "blocked_reason": "merge_conflict + copilot_inline(4)",
@@ -2477,7 +2477,7 @@
       "created_at": "2026-04-09",
       "deployed": false,
       "accepted": false,
-      "note": "Review checked 2026-04-09T17:57: copilot_inline(1)",
+      "note": "Review checked 2026-04-09: copilot_inline(1)",
       "merge_conflict": false,
       "copilot_inline_comments": 1,
       "blocked_reason": "copilot_inline(1)",
@@ -2500,7 +2500,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": 1,
       "blocked_reason": "merge_conflict + copilot_inline(1)",
-      "note": "Review checked 2026-04-09T17:57: merge_conflict + copilot_inline(1)",
+      "note": "Review checked 2026-04-09: merge_conflict + copilot_inline(1)",
       "review_status": "changes_requested"
     },
     {
@@ -2520,7 +2520,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": 2,
       "blocked_reason": "merge_conflict + copilot_inline(2)",
-      "note": "Review checked 2026-04-09T17:57: merge_conflict + copilot_inline(2)",
+      "note": "Review checked 2026-04-09: merge_conflict + copilot_inline(2)",
       "review_status": "changes_requested"
     },
     {
@@ -2540,7 +2540,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": 2,
       "blocked_reason": "merge_conflict + copilot_inline(2)",
-      "note": "Review checked 2026-04-09T17:57: merge_conflict + copilot_inline(2)",
+      "note": "Review checked 2026-04-09: merge_conflict + copilot_inline(2)",
       "review_status": "changes_requested"
     },
     {
@@ -2560,7 +2560,25 @@
       "copilot_inline_comments": 3,
       "blocked_reason": "copilot_inline(3)",
       "review_status": "changes_requested",
-      "note": "Review checked 2026-04-09T17:57: copilot_inline(3)"
+      "note": "Review checked 2026-04-09: copilot_inline(3)"
+    },
+    {
+      "number": 353,
+      "title": "fix: isolated margin leverage slider initializes at 0x after Cross→Isolated switch (#293)",
+      "status": "open",
+      "issue_numbers": [
+        293
+      ],
+      "branch": "fix/issue-293",
+      "base": "dev",
+      "created_date": "2026-04-09",
+      "deployed": false,
+      "accepted": false,
+      "merge_conflict": false,
+      "copilot_inline_comments": 4,
+      "blocked_reason": "copilot_inline(4)",
+      "review_status": "changes_requested",
+      "note": "Review checked 2026-04-09: copilot_inline(4)"
     }
   ],
   "last_updated": "2026-04-09"
