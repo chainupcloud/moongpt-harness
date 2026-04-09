@@ -2075,7 +2075,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": 1,
       "blocked_reason": "merge_conflict",
-      "note": "Blocked: merge conflict + 1 copilot inline comment"
+      "note": "Merge conflict detected 2026-04-09"
     },
     {
       "pr_number": 341,
@@ -2122,7 +2122,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": 3,
       "blocked_reason": "merge_conflict",
-      "note": "Blocked: merge conflict + 3 copilot inline comments"
+      "note": "Merge conflict detected 2026-04-09"
     },
     {
       "number": 344,
@@ -2150,7 +2150,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": 1,
       "blocked_reason": "merge_conflict",
-      "note": "Blocked: merge conflict + 1 copilot inline comment"
+      "note": "Merge conflict detected 2026-04-09"
     },
     {
       "pr_number": 347,
@@ -2167,7 +2167,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": 2,
       "blocked_reason": "merge_conflict",
-      "note": "Blocked: merge conflict + 2 copilot inline comments"
+      "note": "Merge conflict detected 2026-04-09"
     },
     {
       "number": 348,
@@ -2183,7 +2183,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": 2,
       "blocked_reason": "merge_conflict",
-      "note": "Blocked: merge conflict + 2 copilot inline comments"
+      "note": "Merge conflict detected 2026-04-09"
     },
     {
       "number": 349,
@@ -2199,7 +2199,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": 4,
       "blocked_reason": "merge_conflict",
-      "note": "Blocked: merge conflict + 4 copilot inline comments"
+      "note": "Merge conflict detected 2026-04-09"
     },
     {
       "number": 350,
@@ -2228,8 +2228,8 @@
       "review_note": "1 copilot inline comment (no merge conflict)",
       "merge_conflict": false,
       "copilot_inline_comments": 1,
-      "blocked_reason": "copilot_inline(1)",
-      "note": "Copilot 1 inline: base58 regex also matches hex strings, needs disambiguation (SearchBar.tsx:19)"
+      "blocked_reason": "copilot_inline_comments",
+      "note": "1 copilot inline comment, no HARNESS_VERDICT - 2026-04-09"
     }
   ],
   "pull_requests": [
