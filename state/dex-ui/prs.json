@@ -2430,6 +2430,15 @@
       "status": "changes_requested",
       "title": "fix: add aria-labels to ScalePanel and ScalpPanel inputs (#77)",
       "branch": "fix/issue-77"
+    },
+    {
+      "number": 350,
+      "title": "fix: add missing 5m duration preset to TWAP panel (#291)",
+      "status": "merged",
+      "issue_number": 291,
+      "deployed": true,
+      "accepted": true,
+      "merged_at": "2026-04-09"
     }
   ],
   "last_updated": "2026-04-09"

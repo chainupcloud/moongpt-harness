@@ -2330,17 +2330,17 @@
     {
       "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
       "priority": "P3",
-      "status": "fixing",
+      "status": "closed",
       "pr_number": 350,
       "fix_attempts": 4,
       "source": "human",
-      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open",
+      "note": "Superseded by GitHub-tracked duplicate; Reopened: GitHub issue still open; Staging acceptance passed, merged via PR #350",
       "id": 291,
       "created": "2026-03-29",
       "scenario": null,
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/291",
       "fix_branch": "fix/issue-291",
-      "closed_at": null
+      "closed_at": "2026-04-09"
     },
     {
       "title": "[P3] Isolated margin leverage slider still initializes at 0x after Cross→Isolated switch (regression #270)",
