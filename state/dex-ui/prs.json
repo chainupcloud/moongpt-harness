@@ -2088,7 +2088,7 @@
       "base": "dev",
       "created_at": "2026-04-08",
       "review_status": "blocked",
-      "review_note": "merge conflict + 1 copilot inline comment"
+      "review_note": "Blocked: merge conflict + copilot inline comments (1) (checked 2026-04-09 14:46)"
     },
     {
       "number": 341,
@@ -2149,7 +2149,7 @@
       "base": "dev",
       "created_at": "2026-04-08",
       "review_status": "blocked",
-      "review_note": "merge conflict + 3 copilot inline comments"
+      "review_note": "Blocked: merge conflict + copilot inline comments (3) (checked 2026-04-09 14:46)"
     },
     {
       "number": 344,
@@ -2173,7 +2173,7 @@
       ],
       "created_at": "2026-04-09",
       "review_status": "blocked",
-      "review_note": "merge conflict + 1 copilot inline comment"
+      "review_note": "Blocked: merge conflict + copilot inline comments (1) (checked 2026-04-09 14:46)"
     },
     {
       "pr_number": 347,
@@ -2186,7 +2186,7 @@
       "branch": "fix/issue-24",
       "review_status": "blocked",
       "copilot_status": "pending",
-      "review_note": "merge conflict + 2 copilot inline comments"
+      "review_note": "Blocked: merge conflict + copilot inline comments (2) (checked 2026-04-09 14:46)"
     },
     {
       "number": 348,
@@ -2198,7 +2198,7 @@
       "branch": "fix/issue-63",
       "created": "2026-04-09",
       "review_status": "blocked",
-      "review_note": "merge conflict + 2 copilot inline comments"
+      "review_note": "Blocked: merge conflict + copilot inline comments (2) (checked 2026-04-09 14:46)"
     },
     {
       "number": 349,
@@ -2210,7 +2210,7 @@
       "branch": "fix/issue-77",
       "created": "2026-04-09",
       "review_status": "blocked",
-      "review_note": "merge conflict + 4 copilot inline comments"
+      "review_note": "Blocked: merge conflict + copilot inline comments (4) (checked 2026-04-09 14:46)"
     },
     {
       "number": 350,
@@ -2236,7 +2236,7 @@
       "created": "2026-04-09",
       "branch": "fix/issue-85",
       "review_status": "blocked",
-      "review_note": "1 copilot inline comment (no merge conflict)"
+      "review_note": "Blocked: copilot inline comments (1) (checked 2026-04-09 14:46)"
     }
   ],
   "pull_requests": [
