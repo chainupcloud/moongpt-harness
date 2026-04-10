@@ -2075,7 +2075,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": 1,
       "blocked_reason": "merge conflict + copilot inline comments",
-      "note": "merge conflict with base branch",
+      "note": "Review checked 2026-04-10: still blocked — merge_conflict + copilot_inline(1)",
       "copilot_inline_count": 1,
       "pr_number": 340,
       "last_checked": "2026-04-10"
@@ -2156,7 +2156,7 @@
       "merge_conflict": true,
       "copilot_inline_comments": 1,
       "blocked_reason": "merge conflict + copilot inline comments",
-      "note": "merge conflict with base branch",
+      "note": "Review checked 2026-04-10: still blocked — merge_conflict + copilot_inline(1)",
       "copilot_inline_count": 1,
       "pr_number": 346,
       "last_checked": "2026-04-10"
@@ -2308,7 +2308,7 @@
       "copilot_inline_count": 1,
       "blocked_reason": "merge conflict + copilot inline comments",
       "review_status": "blocked",
-      "note": "merge conflict with base branch",
+      "note": "Review checked 2026-04-10: still blocked — merge_conflict + copilot_inline(1)",
       "pr_number": 354,
       "review_note": "Checked 2026-04-10: merge conflict — all 9 PRs blocked",
       "last_checked": "2026-04-10"
