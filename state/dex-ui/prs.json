@@ -2688,6 +2688,18 @@
       ],
       "branch": "fix/issue-301",
       "created_at": "2026-03-29"
+    },
+    {
+      "number": 354,
+      "pr_number": 354,
+      "title": "fix: constrain AccountPanel width to prevent tab overflow in landscape (#41)",
+      "status": "open",
+      "issue_number": 41,
+      "github_number": 41,
+      "created_at": "2026-04-10",
+      "review_status": "copilot_commented",
+      "mergeable": false,
+      "note": "Merge conflict + copilot inline comments"
     }
   ],
   "last_updated": "2026-04-10"
