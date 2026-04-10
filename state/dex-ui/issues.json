@@ -2596,6 +2596,116 @@
       "note": "PR #339 merged, staging acceptance passed (commit 2f9807c). Closed by master-agent.",
       "closed_at": "2026-04-08",
       "source": "human"
+    },
+    {
+      "github_number": 24,
+      "title": "[P3] TradingView 图表初始化缺失 user/client 参数，导致 study_templates API 每次 404",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 41,
+      "title": "[P3] 移动端横屏（812×375）底部标签栏 Order History 按钮溢出视口",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 63,
+      "title": "[P3] /trade 页面 24h 涨跌显示 +0.00% — 标记价格正常但涨跌幅数据缺失",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 70,
+      "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 73,
+      "title": "[P3] 移动端竖屏（390×844）底部面板标签栏水平溢出 — 4 个标签不可见",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 77,
+      "title": "[P3] Trade form inputs missing aria-labels — 5 inputs have no accessible names",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 102,
+      "title": "[P3] Nav \"More\" dropdown — clicking button shows no content (chevron present but no menu appears)",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 104,
+      "title": "[P3] TWAP order form — Interval and Parts inputs have no labels (placeholder=\"0\" only)",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-27",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 289,
+      "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-29",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 293,
+      "title": "[P3] Isolated margin leverage slider still initializes at 0x after Cross→Isolated switch (regression #270)",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-29",
+      "fix_attempts": 0,
+      "source": "human"
+    },
+    {
+      "github_number": 301,
+      "title": "[P3] Stop Limit — submit button not disabled when Stop price and Limit price are empty",
+      "priority": "P3",
+      "status": "open",
+      "pr_number": null,
+      "created_at": "2026-03-29",
+      "fix_attempts": 0,
+      "source": "human"
     }
   ],
   "last_updated": "2026-04-09",
