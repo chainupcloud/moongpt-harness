@@ -2697,9 +2697,11 @@
       "issue_number": 41,
       "github_number": 41,
       "created_at": "2026-04-10",
-      "review_status": "copilot_commented",
+      "review_status": "blocked",
       "mergeable": false,
-      "note": "Merge conflict + copilot inline comments"
+      "note": "Merge conflict + copilot inline comments",
+      "last_checked": "2026-04-10",
+      "merge_blocked": "conflict"
     }
   ],
   "last_updated": "2026-04-10"
