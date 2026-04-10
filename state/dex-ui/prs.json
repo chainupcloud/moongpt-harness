@@ -2466,11 +2466,12 @@
       "created_date": "2026-04-07",
       "review_notes": "Copilot inline: button click can still trigger order submission when wallet disconnected — need to guard handleSubmit at TradeForm/index.tsx:1163. (1 inline comment, no HARNESS_VERDICT)",
       "review_status": "NO_VERDICT(inline=1)",
-      "note": "Review checked 2026-04-09T22:57: still blocked — merge_conflict + copilot_inline(1)",
+      "note": "merge conflict with dev + copilot inline comments",
       "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt. handleSubmit must skip validation when !isConnected.",
       "merge_conflict": true,
       "copilot_inline_comments": 1,
-      "blocked_reason": "merge conflict, copilot inline comments (1)"
+      "blocked_reason": "merge conflict, copilot inline comments (1)",
+      "last_checked": "2026-04-10"
     },
     {
       "number": 343,
@@ -2484,11 +2485,12 @@
       "created_date": "2026-04-07",
       "review_notes": "Copilot 3 inlines: (1) interval=0 fallback treats 0 as falsy at TradeForm:556, (2) twapOrders not cleared on wallet disconnect at AccountPanel:1130, (3) type casting in getTwapOrders at AccountPanel:1148. (no HARNESS_VERDICT)",
       "review_status": "NO_VERDICT(inline=3)",
-      "note": "Review checked 2026-04-09T22:57: still blocked — merge_conflict + copilot_inline(3)",
+      "note": "merge conflict with dev + copilot inline comments",
       "review_note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - (1) interval=0 treated as falsy in TWAP toast fallback, (2) twapOrders not cleared on disconnect/address change, (3) type-casting defeats type checks in getTwapOrders mapping.",
       "merge_conflict": true,
       "copilot_inline_comments": 3,
-      "blocked_reason": "merge conflict, copilot inline comments (3)"
+      "blocked_reason": "merge conflict, copilot inline comments (3)",
+      "last_checked": "2026-04-10"
     },
     {
       "number": 349,
@@ -2496,11 +2498,12 @@
       "status": "open",
       "title": "fix: add aria-labels to ScalePanel and ScalpPanel inputs (#77)",
       "branch": "fix/issue-77",
-      "note": "Review checked 2026-04-09T22:57: still blocked — merge_conflict + copilot_inline(4)",
+      "note": "merge conflict with dev + copilot inline comments",
       "merge_conflict": true,
       "copilot_inline_comments": 4,
       "blocked_reason": "merge conflict, copilot inline comments (4)",
-      "review_status": "NO_VERDICT(inline=4)"
+      "review_status": "NO_VERDICT(inline=4)",
+      "last_checked": "2026-04-10"
     },
     {
       "number": 350,
@@ -2545,8 +2548,9 @@
       "merge_conflict": true,
       "copilot_inline_comments": 1,
       "blocked_reason": "merge conflict, copilot inline comments (1)",
-      "note": "Review checked 2026-04-09T22:57: still blocked — merge_conflict + copilot_inline(1)",
-      "review_status": "NO_VERDICT(inline=1)"
+      "note": "merge conflict with dev + copilot inline comments",
+      "review_status": "NO_VERDICT(inline=1)",
+      "last_checked": "2026-04-10"
     },
     {
       "number": 347,
@@ -2565,8 +2569,9 @@
       "merge_conflict": true,
       "copilot_inline_comments": 2,
       "blocked_reason": "merge conflict, copilot inline comments (2)",
-      "note": "Review checked 2026-04-09T22:57: still blocked — merge_conflict + copilot_inline(2)",
-      "review_status": "NO_VERDICT(inline=2)"
+      "note": "merge conflict with dev + copilot inline comments",
+      "review_status": "NO_VERDICT(inline=2)",
+      "last_checked": "2026-04-10"
     },
     {
       "number": 348,
@@ -2585,8 +2590,9 @@
       "merge_conflict": true,
       "copilot_inline_comments": 2,
       "blocked_reason": "merge conflict, copilot inline comments (2)",
-      "note": "Review checked 2026-04-09T22:57: still blocked — merge_conflict + copilot_inline(2)",
-      "review_status": "NO_VERDICT(inline=2)"
+      "note": "merge conflict with dev + copilot inline comments",
+      "review_status": "NO_VERDICT(inline=2)",
+      "last_checked": "2026-04-10"
     },
     {
       "pr_number": 352,
@@ -2605,7 +2611,8 @@
       "copilot_inline_comments": 3,
       "blocked_reason": "copilot inline comments (3)",
       "review_status": "NO_VERDICT(inline=3)",
-      "note": "Review checked 2026-04-09T22:57: still blocked — copilot_inline(3)"
+      "note": "merge conflict with dev + copilot inline comments",
+      "last_checked": "2026-04-10"
     },
     {
       "number": 353,
@@ -2623,7 +2630,8 @@
       "copilot_inline_comments": 4,
       "blocked_reason": "copilot inline comments (4)",
       "review_status": "NO_VERDICT(inline=4)",
-      "note": "Review checked 2026-04-09T22:57: still blocked — copilot_inline(4)"
+      "note": "merge conflict with dev + copilot inline comments",
+      "last_checked": "2026-04-10"
     }
   ],
   "last_updated": "2026-04-10"
