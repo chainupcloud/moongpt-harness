@@ -2616,9 +2616,9 @@
       "created_date": "2026-04-09",
       "deployed": false,
       "accepted": false,
-      "merge_conflict": false,
+      "merge_conflict": true,
       "copilot_inline_comments": 3,
-      "blocked_reason": "copilot inline comments (3)",
+      "blocked_reason": "merge conflict, copilot inline comments (3)",
       "review_status": "NO_VERDICT(inline=3)",
       "note": "merge conflict with dev + copilot inline comments",
       "last_checked": "2026-04-10"
@@ -2635,9 +2635,9 @@
       "created_date": "2026-04-09",
       "deployed": false,
       "accepted": false,
-      "merge_conflict": false,
+      "merge_conflict": true,
       "copilot_inline_comments": 4,
-      "blocked_reason": "copilot inline comments (4)",
+      "blocked_reason": "merge conflict, copilot inline comments (4)",
       "review_status": "NO_VERDICT(inline=4)",
       "note": "merge conflict with dev + copilot inline comments",
       "last_checked": "2026-04-10"
