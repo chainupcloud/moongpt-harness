@@ -2483,12 +2483,12 @@
       "base": "dev",
       "created_date": "2026-04-07",
       "review_notes": "Copilot inline: button click can still trigger order submission when wallet disconnected — need to guard handleSubmit at TradeForm/index.tsx:1163. (1 inline comment, no HARNESS_VERDICT)",
-      "review_status": "NO_VERDICT(inline=1)",
+      "review_status": "copilot_commented",
       "note": "merge conflict with dev + copilot inline comments",
       "review_note": "Copilot review (no HARNESS_VERDICT): 1 inline comment - TradeForm button click can still early-return on validation before wallet connect prompt. handleSubmit must skip validation when !isConnected.",
       "merge_conflict": true,
       "copilot_inline_comments": 1,
-      "blocked_reason": "merge conflict, copilot inline comments (1)",
+      "blocked_reason": "merge conflict + copilot inline comments",
       "last_checked": "2026-04-10"
     },
     {
@@ -2502,12 +2502,12 @@
       "base": "dev",
       "created_date": "2026-04-07",
       "review_notes": "Copilot 3 inlines: (1) interval=0 fallback treats 0 as falsy at TradeForm:556, (2) twapOrders not cleared on wallet disconnect at AccountPanel:1130, (3) type casting in getTwapOrders at AccountPanel:1148. (no HARNESS_VERDICT)",
-      "review_status": "NO_VERDICT(inline=3)",
+      "review_status": "copilot_commented",
       "note": "merge conflict with dev + copilot inline comments",
       "review_note": "Copilot review (no HARNESS_VERDICT): 3 inline comments - (1) interval=0 treated as falsy in TWAP toast fallback, (2) twapOrders not cleared on disconnect/address change, (3) type-casting defeats type checks in getTwapOrders mapping.",
       "merge_conflict": true,
       "copilot_inline_comments": 3,
-      "blocked_reason": "merge conflict, copilot inline comments (3)",
+      "blocked_reason": "merge conflict + copilot inline comments",
       "last_checked": "2026-04-10"
     },
     {
@@ -2519,8 +2519,8 @@
       "note": "merge conflict with dev + copilot inline comments",
       "merge_conflict": true,
       "copilot_inline_comments": 4,
-      "blocked_reason": "merge conflict, copilot inline comments (4)",
-      "review_status": "NO_VERDICT(inline=4)",
+      "blocked_reason": "merge conflict + copilot inline comments",
+      "review_status": "copilot_commented",
       "last_checked": "2026-04-10"
     },
     {
@@ -2565,9 +2565,9 @@
       "accepted": false,
       "merge_conflict": true,
       "copilot_inline_comments": 1,
-      "blocked_reason": "merge conflict, copilot inline comments (1)",
+      "blocked_reason": "merge conflict + copilot inline comments",
       "note": "merge conflict with dev + copilot inline comments",
-      "review_status": "NO_VERDICT(inline=1)",
+      "review_status": "copilot_commented",
       "last_checked": "2026-04-10"
     },
     {
@@ -2586,9 +2586,9 @@
       "accepted": false,
       "merge_conflict": true,
       "copilot_inline_comments": 2,
-      "blocked_reason": "merge conflict, copilot inline comments (2)",
+      "blocked_reason": "merge conflict + copilot inline comments",
       "note": "merge conflict with dev + copilot inline comments",
-      "review_status": "NO_VERDICT(inline=2)",
+      "review_status": "copilot_commented",
       "last_checked": "2026-04-10"
     },
     {
@@ -2607,9 +2607,9 @@
       "accepted": false,
       "merge_conflict": true,
       "copilot_inline_comments": 2,
-      "blocked_reason": "merge conflict, copilot inline comments (2)",
+      "blocked_reason": "merge conflict + copilot inline comments",
       "note": "merge conflict with dev + copilot inline comments",
-      "review_status": "NO_VERDICT(inline=2)",
+      "review_status": "copilot_commented",
       "last_checked": "2026-04-10"
     },
     {
@@ -2627,8 +2627,8 @@
       "accepted": false,
       "merge_conflict": true,
       "copilot_inline_comments": 3,
-      "blocked_reason": "merge conflict, copilot inline comments (3)",
-      "review_status": "NO_VERDICT(inline=3)",
+      "blocked_reason": "merge conflict + copilot inline comments",
+      "review_status": "copilot_commented",
       "note": "merge conflict with dev + copilot inline comments",
       "last_checked": "2026-04-10"
     },
@@ -2646,8 +2646,8 @@
       "accepted": false,
       "merge_conflict": true,
       "copilot_inline_comments": 4,
-      "blocked_reason": "merge conflict, copilot inline comments (4)",
-      "review_status": "NO_VERDICT(inline=4)",
+      "blocked_reason": "merge conflict + copilot inline comments",
+      "review_status": "copilot_commented",
       "note": "merge conflict with dev + copilot inline comments",
       "last_checked": "2026-04-10"
     },
