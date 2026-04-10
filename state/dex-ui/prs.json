@@ -2079,7 +2079,10 @@
       "copilot_inline_count": 1,
       "pr_number": 340,
       "last_checked": "2026-04-10",
-      "merge_blocked": true
+      "merge_blocked": true,
+      "copilot_verdict": "COMMENTED",
+      "human_approved": false,
+      "block_reason": "merge conflict + copilot inline comments"
     },
     {
       "pr_number": 341,
@@ -2130,7 +2133,10 @@
       "copilot_inline_count": 3,
       "pr_number": 343,
       "last_checked": "2026-04-10",
-      "merge_blocked": true
+      "merge_blocked": true,
+      "copilot_verdict": "COMMENTED",
+      "human_approved": false,
+      "block_reason": "merge conflict + copilot inline comments"
     },
     {
       "number": 344,
@@ -2162,7 +2168,10 @@
       "copilot_inline_count": 1,
       "pr_number": 346,
       "last_checked": "2026-04-10",
-      "merge_blocked": true
+      "merge_blocked": true,
+      "copilot_verdict": "COMMENTED",
+      "human_approved": false,
+      "block_reason": "merge conflict + copilot inline comments"
     },
     {
       "pr_number": 347,
@@ -2182,7 +2191,10 @@
       "note": "Blocked: merge conflicts + 2 copilot inline comments (no HARNESS_VERDICT)",
       "copilot_inline_count": 2,
       "last_checked": "2026-04-10",
-      "merge_blocked": true
+      "merge_blocked": true,
+      "copilot_verdict": "COMMENTED",
+      "human_approved": false,
+      "block_reason": "merge conflict + copilot inline comments"
     },
     {
       "number": 348,
@@ -2202,7 +2214,10 @@
       "copilot_inline_count": 2,
       "pr_number": 348,
       "last_checked": "2026-04-10",
-      "merge_blocked": true
+      "merge_blocked": true,
+      "copilot_verdict": "COMMENTED",
+      "human_approved": false,
+      "block_reason": "merge conflict + copilot inline comments"
     },
     {
       "number": 349,
@@ -2222,7 +2237,10 @@
       "copilot_inline_count": 4,
       "pr_number": 349,
       "last_checked": "2026-04-10",
-      "merge_blocked": true
+      "merge_blocked": true,
+      "copilot_verdict": "COMMENTED",
+      "human_approved": false,
+      "block_reason": "merge conflict + copilot inline comments"
     },
     {
       "number": 350,
@@ -2279,7 +2297,10 @@
       "copilot_inline_count": 3,
       "pr_number": 352,
       "last_checked": "2026-04-10",
-      "merge_blocked": true
+      "merge_blocked": true,
+      "copilot_verdict": "COMMENTED",
+      "human_approved": false,
+      "block_reason": "merge conflict + copilot inline comments"
     },
     {
       "pr_number": 353,
@@ -2299,7 +2320,10 @@
       "copilot_inline_count": 4,
       "review_note": "Checked 2026-04-10: merge conflict — all 9 PRs blocked",
       "last_checked": "2026-04-10",
-      "merge_blocked": true
+      "merge_blocked": true,
+      "copilot_verdict": "COMMENTED",
+      "human_approved": false,
+      "block_reason": "merge conflict + copilot inline comments"
     },
     {
       "number": 354,
@@ -2320,7 +2344,10 @@
       "pr_number": 354,
       "review_note": "Checked 2026-04-10: merge conflict — all 9 PRs blocked",
       "last_checked": "2026-04-10",
-      "merge_blocked": true
+      "merge_blocked": true,
+      "copilot_verdict": "COMMENTED",
+      "human_approved": false,
+      "block_reason": "merge conflict + copilot inline comments"
     },
     {
       "number": 321,
