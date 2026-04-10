@@ -15,7 +15,8 @@
       "pr_number": 3,
       "note": null,
       "closed_at": "2026-03-26",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 1
     },
     {
       "id": 7,
@@ -30,7 +31,8 @@
       "pr_number": 10,
       "note": null,
       "closed_at": "2026-03-26",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 7
     },
     {
       "id": 8,
@@ -45,7 +47,8 @@
       "pr_number": null,
       "note": "not-a-bug",
       "closed_at": "2026-03-26",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 8
     },
     {
       "id": 9,
@@ -60,7 +63,8 @@
       "pr_number": null,
       "note": "not-actionable",
       "closed_at": "2026-03-26",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 9
     },
     {
       "id": 11,
@@ -75,7 +79,8 @@
       "pr_number": 12,
       "note": null,
       "closed_at": "2026-03-26",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 11
     },
     {
       "id": 13,
@@ -90,7 +95,8 @@
       "pr_number": 15,
       "note": null,
       "closed_at": "2026-03-26",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 13
     },
     {
       "id": 14,
@@ -105,7 +111,8 @@
       "pr_number": 16,
       "note": null,
       "closed_at": "2026-03-26",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 14
     },
     {
       "id": 17,
@@ -120,7 +127,8 @@
       "pr_number": 20,
       "note": "Manually closed by human after acceptance.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 17
     },
     {
       "id": 18,
@@ -135,7 +143,8 @@
       "pr_number": 21,
       "note": "Manually closed by human after acceptance.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 18
     },
     {
       "id": 19,
@@ -150,7 +159,8 @@
       "pr_number": 22,
       "note": "Manually closed by human after acceptance.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 19
     },
     {
       "title": "[P3] TradingView 图表初始化缺失 user/client 参数，导致 study_templates API 每次 404",
@@ -165,7 +175,8 @@
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/24",
       "scenario": null,
       "fix_branch": null,
-      "closed_at": null
+      "closed_at": null,
+      "github_number": 24
     },
     {
       "id": 26,
@@ -180,7 +191,8 @@
       "pr_number": 30,
       "note": "Synced from GitHub",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 26
     },
     {
       "id": 27,
@@ -195,7 +207,8 @@
       "pr_number": 31,
       "note": null,
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 27
     },
     {
       "id": 29,
@@ -210,7 +223,8 @@
       "pr_number": 33,
       "note": "Accepted via code review + SHA verification. Backend 502s prevented Playwright UI test.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 29
     },
     {
       "id": 34,
@@ -225,7 +239,8 @@
       "pr_number": 36,
       "note": null,
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 34
     },
     {
       "id": 35,
@@ -240,7 +255,8 @@
       "pr_number": 37,
       "note": "PR merged to dev. Vercel deploy failed (team config error, not code). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 35
     },
     {
       "id": 38,
@@ -255,7 +271,8 @@
       "pr_number": 39,
       "note": "PR merged to dev. Vercel deploy failed (team config error, not code). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 38
     },
     {
       "id": 40,
@@ -270,7 +287,8 @@
       "pr_number": 154,
       "note": "PR #154 merged (v2 fix). Vercel deploy ERROR (team config issue #98). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 40
     },
     {
       "title": "[P3] 移动端横屏（812×375）底部标签栏 Order History 按钮溢出视口",
@@ -285,7 +303,8 @@
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/41",
       "scenario": null,
       "fix_branch": null,
-      "closed_at": null
+      "closed_at": null,
+      "github_number": 41
     },
     {
       "id": 44,
@@ -300,7 +319,8 @@
       "pr_number": null,
       "note": "Sound toggle already exists in Settings → Layout tab → Audio Settings section. Explore agent missed it (nested in Layout tab).",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 44
     },
     {
       "id": 45,
@@ -315,7 +335,8 @@
       "pr_number": 46,
       "note": null,
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 45
     },
     {
       "id": 47,
@@ -330,7 +351,8 @@
       "pr_number": 50,
       "note": null,
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 47
     },
     {
       "id": 49,
@@ -345,7 +367,8 @@
       "pr_number": null,
       "note": "Language toggle already exists in Settings → Language tab (LanguagePanel component) + mobile LanguageSelector. Full i18n stack (i18next + EN/ZH translations) in place. Explore agent missed nested UI.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 49
     },
     {
       "id": 51,
@@ -360,7 +383,8 @@
       "pr_number": 52,
       "note": "PR merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 51
     },
     {
       "id": 53,
@@ -375,7 +399,8 @@
       "pr_number": 59,
       "note": "PR #59 merged to dev. Vercel deploy ERROR (team config). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 53
     },
     {
       "id": 54,
@@ -390,7 +415,8 @@
       "pr_number": 56,
       "note": null,
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 54
     },
     {
       "id": 57,
@@ -405,7 +431,8 @@
       "pr_number": 61,
       "note": null,
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 57
     },
     {
       "id": 58,
@@ -420,7 +447,8 @@
       "pr_number": 64,
       "note": "PR #64 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 58
     },
     {
       "id": 60,
@@ -435,7 +463,8 @@
       "pr_number": null,
       "note": "Route /explorer/checkpoint/[seq] already existed on dev. Staging returns 200. Closed without code change.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 60
     },
     {
       "id": 62,
@@ -450,7 +479,8 @@
       "pr_number": 65,
       "note": "PR #65 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 62
     },
     {
       "title": "[P3] /trade 页面 24h 涨跌显示 +0.00% — 标记价格正常但涨跌幅数据缺失",
@@ -465,7 +495,8 @@
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/63",
       "scenario": null,
       "fix_branch": null,
-      "closed_at": null
+      "closed_at": null,
+      "github_number": 63
     },
     {
       "id": 66,
@@ -480,7 +511,8 @@
       "pr_number": 68,
       "note": "PR #68 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 66
     },
     {
       "id": 69,
@@ -495,7 +527,8 @@
       "pr_number": 74,
       "note": "PR #74 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 69
     },
     {
       "title": "[P3] 钱包未连接时点击 Buy/Long 无任何提示 — 静默失败（回归）",
@@ -510,7 +543,8 @@
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/70",
       "scenario": null,
       "fix_branch": null,
-      "closed_at": null
+      "closed_at": null,
+      "github_number": 70
     },
     {
       "title": "[P3] 移动端竖屏（390×844）底部面板标签栏水平溢出 — 4 个标签不可见",
@@ -525,7 +559,8 @@
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/73",
       "scenario": null,
       "fix_branch": null,
-      "closed_at": null
+      "closed_at": null,
+      "github_number": 73
     },
     {
       "id": 75,
@@ -540,7 +575,8 @@
       "pr_number": null,
       "note": "Duplicate of #66 (fixed in PR #68). Validation already exists on dev.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 75
     },
     {
       "id": 76,
@@ -555,7 +591,8 @@
       "pr_number": 83,
       "note": "PR #83 merged + deployed (dpl_8Du1NGTknDcXMkLSbDkw7wLCAtPs). /trade/BTC-USDC now redirects to /trade?coin=BTC (HTTP 200). Acceptance passed.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 76
     },
     {
       "title": "[P3] Trade form inputs missing aria-labels — 5 inputs have no accessible names",
@@ -570,7 +607,8 @@
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/77",
       "scenario": null,
       "fix_branch": null,
-      "closed_at": null
+      "closed_at": null,
+      "github_number": 77
     },
     {
       "id": 78,
@@ -585,7 +623,8 @@
       "pr_number": 79,
       "note": "Sorting fix correctly implemented (bids desc, asks asc). Remaining negative spread on staging is testnet crossed-book data anomaly.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 78
     },
     {
       "id": 80,
@@ -600,7 +639,8 @@
       "pr_number": null,
       "note": "TriggerPriceInput component has 'Stop Price' label + direction indicators. Limit Price has separate labeled section. Both distinguishable on dev.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 80
     },
     {
       "title": "[P3] Explorer 搜索框将钱包地址误路由到 /explorer/tx/ — 应区分 tx hash 和 address",
@@ -615,7 +655,8 @@
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/85",
       "scenario": null,
       "fix_branch": null,
-      "closed_at": "2026-04-10"
+      "closed_at": "2026-04-10",
+      "github_number": 85
     },
     {
       "id": 88,
@@ -630,7 +671,8 @@
       "pr_number": 89,
       "note": "PR #89 merged + deployed (dpl_6bz8BHZdYoLKRqUV4y665MvWEJ8S). Checkboxes wrapped in label elements, search input aria-label added. Playwright verified.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 88
     },
     {
       "id": 90,
@@ -645,7 +687,8 @@
       "pr_number": 91,
       "note": "PR #91 merged + deployed. Playwright verified: /explorer/checkpoint/1 HTTP 200, no 1970-01-01 timestamps.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 90
     },
     {
       "id": 94,
@@ -660,7 +703,8 @@
       "pr_number": 96,
       "note": "PR #96 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 94
     },
     {
       "id": 95,
@@ -675,7 +719,8 @@
       "pr_number": 97,
       "note": "PR #97 merged to dev. Vercel deploy ERROR (team config issue, not code). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 95
     },
     {
       "id": 98,
@@ -690,7 +735,8 @@
       "pr_number": null,
       "note": "Vercel staging builds now succeeding — issue self-resolved",
       "closed_at": "2026-04-08",
-      "source": "human"
+      "source": "human",
+      "github_number": 98
     },
     {
       "id": 99,
@@ -705,7 +751,8 @@
       "pr_number": 100,
       "note": " Staging acceptance passed (commit 035e763). Invalid address validation confirmed.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 99
     },
     {
       "id": 101,
@@ -720,7 +767,8 @@
       "pr_number": 103,
       "note": "Staging acceptance passed (commit 5933da2). EVM address search shows 'Explorer API error: 500' friendly error with Back to Explorer link.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 101
     },
     {
       "title": "[P3] Nav \"More\" dropdown — clicking button shows no content (chevron present but no menu appears)",
@@ -735,7 +783,8 @@
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/102",
       "scenario": null,
       "fix_branch": null,
-      "closed_at": null
+      "closed_at": null,
+      "github_number": 102
     },
     {
       "title": "[P3] TWAP order form — Interval and Parts inputs have no labels (placeholder=\"0\" only)",
@@ -750,7 +799,8 @@
       "created": "2026-03-27",
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/104",
       "scenario": null,
-      "closed_at": null
+      "closed_at": null,
+      "github_number": 104
     },
     {
       "id": 107,
@@ -765,7 +815,8 @@
       "pr_number": null,
       "note": "Staging /spot renders 'Spot Trading Coming Soon' correctly (commit b62dc33). Explore agent false positive — page was already fixed in PR #20.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 107
     },
     {
       "id": 108,
@@ -780,7 +831,8 @@
       "pr_number": 111,
       "note": "PR #111 merged to dev. Vercel deploy ERROR (team config issue #98, not code). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 108
     },
     {
       "id": 109,
@@ -795,7 +847,8 @@
       "pr_number": null,
       "note": "TwapPanel already has Duration presets, Hour(s)/Minute(s) inputs, Randomize/Private checkboxes, and TWAP Order Preview. Explore agent false positive — likely observed stale staging (issue #98 Vercel deploy failures).",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 109
     },
     {
       "id": 113,
@@ -810,7 +863,8 @@
       "pr_number": null,
       "note": "TwapPanel component already exists on dev with Duration presets, Hour(s)/Minute(s) inputs, Randomize/Private checkboxes, and TWAP Order Preview. Explore agent false positive — likely observed stale staging (issue #98 Vercel deploy failures).",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 113
     },
     {
       "id": 114,
@@ -825,7 +879,8 @@
       "pr_number": 118,
       "note": "P4 issue — awaiting human acceptance",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 114
     },
     {
       "id": 115,
@@ -840,7 +895,8 @@
       "pr_number": null,
       "note": "By design: /trade is a dedicated perps page. Spot has its own /spot route (Coming Soon). The ?type=spot param was never designed to exist.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 115
     },
     {
       "id": 116,
@@ -855,7 +911,8 @@
       "pr_number": null,
       "note": "OrderSummary component already displays 'Slippage: X.XX% / Max 1%' when orderType=market. estSlippage calculated from order book depth. Explore agent false positive.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 116
     },
     {
       "id": 117,
@@ -870,7 +927,8 @@
       "pr_number": null,
       "note": "TwapPanel component already exists on dev with Duration presets, Hour(s)/Minute(s) inputs, Randomize/Private checkboxes, and TWAP Order Preview. Same false positive as #109 and #113 — stale Vercel staging (issue #98).",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 117
     },
     {
       "id": 120,
@@ -885,7 +943,8 @@
       "pr_number": 121,
       "note": "src/components/trading/TradeForm/index.tsx line ~673: aria-label=\"Trigger price\" on limitPrice input for stop-limit",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 120
     },
     {
       "id": 122,
@@ -900,7 +959,8 @@
       "pr_number": null,
       "note": "Playwright verified on staging: TP/SL checkbox reveals TP price, Gain%, SL price, Loss% fields correctly. Explore agent false positive — likely stale staging (issue #98 Vercel deploy failures).",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 122
     },
     {
       "id": 123,
@@ -915,7 +975,8 @@
       "pr_number": null,
       "note": "Backend issue — checkpoint detail API returns empty transactions (dex-sui#29). Frontend correctly shows 'not yet available'. Not fixable on frontend.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 123
     },
     {
       "id": 124,
@@ -930,7 +991,8 @@
       "pr_number": null,
       "note": "MarketRow component already wraps entire row in <Link href=/trade?coin={base}>. No href=\"#\" in codebase. Explore agent false positive — likely stale staging (issue #98 Vercel deploy failures).",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 124
     },
     {
       "id": 125,
@@ -945,7 +1007,8 @@
       "pr_number": null,
       "note": "TwapPanel renders when orderType=twap with duration/randomize/private fields. Same false positive as #109, #113, #117 — stale staging (issue #98).",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 125
     },
     {
       "id": 126,
@@ -960,7 +1023,8 @@
       "pr_number": 128,
       "note": null,
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 126
     },
     {
       "id": 127,
@@ -975,7 +1039,8 @@
       "pr_number": null,
       "note": "WithdrawModal on dev: regex filter prevents negative input, amountValidation rejects <= 0 with inline error. Explore agent false positive — stale Vercel staging (issue #98).",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 127
     },
     {
       "id": 129,
@@ -990,7 +1055,8 @@
       "pr_number": null,
       "note": "TwapPanel component exists on dev with full duration/interval/preview fields. 5th duplicate false positive (same as #109, #113, #117, #125) — stale Vercel staging (issue #98).",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 129
     },
     {
       "id": 130,
@@ -1005,7 +1071,8 @@
       "pr_number": null,
       "note": "WithdrawModal on dev has full address validation via isAddress() from viem. Explore agent false positive — stale Vercel staging (issue #98).",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 130
     },
     {
       "id": 131,
@@ -1020,7 +1087,8 @@
       "pr_number": null,
       "note": "6th duplicate false positive (same as #109, #113, #117, #125, #129). TwapPanel component exists on dev with full Duration/Interval/Randomize/Private fields. Root cause: stale Vercel staging (issue #98, needs-human).",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 131
     },
     {
       "id": 132,
@@ -1035,7 +1103,8 @@
       "pr_number": 133,
       "note": "Accepted via code review + SHA verification. Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 132
     },
     {
       "id": 134,
@@ -1050,7 +1119,8 @@
       "pr_number": 135,
       "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification.",
       "closed_at": "2026-03-27",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 134
     },
     {
       "id": 136,
@@ -1065,7 +1135,8 @@
       "pr_number": 137,
       "note": "Vercel deploy ERROR (daily limit 100/day + team config issue #98). Code merged to dev successfully. Accepted via code review + SHA verification.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 136
     },
     {
       "id": 138,
@@ -1080,7 +1151,8 @@
       "pr_number": 140,
       "note": "PR #140 merged. Vercel deploy ERROR (daily limit 100/day). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 138
     },
     {
       "id": 139,
@@ -1095,7 +1167,8 @@
       "pr_number": 141,
       "note": "PR #141 merged to dev. Vercel deploy ERROR (daily limit). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 139
     },
     {
       "id": 142,
@@ -1110,7 +1183,8 @@
       "pr_number": 143,
       "note": "PR #143 merged+deployed to dev. Vercel deploy ERROR (team config issue #98). Accepted via code review + SHA verification.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 142
     },
     {
       "id": 146,
@@ -1125,7 +1199,8 @@
       "pr_number": null,
       "note": "Duplicate of #126 (fixed in PR #128, commit a6f67e1). Inline validation already on dev. Staging stale due to Vercel deploy failures (#98).",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 146
     },
     {
       "id": 147,
@@ -1140,7 +1215,8 @@
       "pr_number": null,
       "note": "Duplicate of #142 (fixed in PR #143, commit f11633a). Transaction type filter already on dev. Staging stale due to Vercel deploy failures (#98).",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 147
     },
     {
       "id": 148,
@@ -1155,7 +1231,8 @@
       "pr_number": null,
       "note": "Already fixed by PR #128 (commit a6f67e1) — inline TP/SL validation in TpSlPanel.tsx. Explore test E609 likely ran before deploy completed.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 148
     },
     {
       "id": 149,
@@ -1170,7 +1247,8 @@
       "pr_number": null,
       "note": "Already fixed by PR #128 (commit a6f67e1) — TpSlPanel.tsx has inline validation for both buy and sell sides. Explore test E616 ran against stale staging (issue #98 Vercel deploy failures).",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 149
     },
     {
       "id": 150,
@@ -1185,7 +1263,8 @@
       "pr_number": null,
       "note": "False positive — screenshots from E433 test show page rendering correctly. Explore agent's cookie injection to simulate wallet connection caused misreport.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 150
     },
     {
       "id": 151,
@@ -1200,7 +1279,8 @@
       "pr_number": 152,
       "note": "Staging acceptance passed: TP=1.00 shows 'TP must be above entry price' alert, aria-invalid set. PR #152 merged (86446ad), deployed dpl_8epmjpwdFqrddu1faY2nt9b7cVi1.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 151
     },
     {
       "id": 153,
@@ -1215,7 +1295,8 @@
       "pr_number": null,
       "note": "False positive from E634 cookie injection test. hl_* cookies don't affect wagmi state; page correctly shows connect prompt in both states.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 153
     },
     {
       "id": 155,
@@ -1230,7 +1311,8 @@
       "pr_number": 156,
       "note": "Vercel deploy ERROR (daily limit 100/day). Code merged to dev successfully. Accepted via code review + SHA verification.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 155
     },
     {
       "id": 157,
@@ -1245,7 +1327,8 @@
       "pr_number": 158,
       "note": "PR #158 merged. Vercel deploy limit. Accepted via code review + SHA verification.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 157
     },
     {
       "id": 159,
@@ -1260,7 +1343,8 @@
       "pr_number": 161,
       "note": null,
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 159
     },
     {
       "id": 160,
@@ -1275,7 +1359,8 @@
       "pr_number": 162,
       "note": "PR #162 merged. Accepted via code review + SHA verification.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 160
     },
     {
       "id": 163,
@@ -1290,7 +1375,8 @@
       "pr_number": null,
       "note": "Status field already added in PR #158 (commit 9bda65f) on dev. Backend doesn't return status/gasFee but UI handles gracefully (defaults to Success/–).",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 163
     },
     {
       "id": 164,
@@ -1305,7 +1391,8 @@
       "pr_number": 166,
       "note": "PR #166 merged (2faaa00). Staging verify skipped (Vercel ERROR, see #98)",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 164
     },
     {
       "id": 165,
@@ -1320,7 +1407,8 @@
       "pr_number": 167,
       "note": "Same fix as #165, PR #167",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 165
     },
     {
       "id": 168,
@@ -1335,7 +1423,8 @@
       "pr_number": 171,
       "note": "PR #171 merged (8ada082), deployment pending (Vercel limit)",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 168
     },
     {
       "id": 169,
@@ -1350,7 +1439,8 @@
       "pr_number": 172,
       "note": "Staging acceptance passed (2026-03-28), PR merged and deployed",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 169
     },
     {
       "id": 170,
@@ -1365,7 +1455,8 @@
       "pr_number": null,
       "note": "False positive: explore agent clicked TWAP tab in AccountPanel instead of OrderTypeSelector dropdown. TWAP form renders correctly.",
       "closed_at": null,
-      "source": "explore"
+      "source": "explore",
+      "github_number": 170
     },
     {
       "id": 173,
@@ -1380,7 +1471,8 @@
       "pr_number": 175,
       "note": "Staging acceptance passed (2026-03-28), PR merged and deployed",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 173
     },
     {
       "id": 174,
@@ -1395,7 +1487,8 @@
       "pr_number": 180,
       "note": "Staging acceptance passed (2026-03-28), PR merged and deployed",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 174
     },
     {
       "id": 176,
@@ -1410,7 +1503,8 @@
       "pr_number": 177,
       "note": "Staging acceptance passed (2026-03-28), PR merged and deployed",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 176
     },
     {
       "id": 178,
@@ -1425,7 +1519,8 @@
       "pr_number": 179,
       "note": "Staging acceptance passed (2026-03-28), PR merged and deployed",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 178
     },
     {
       "id": 181,
@@ -1440,7 +1535,8 @@
       "pr_number": 182,
       "note": "Staging acceptance passed (2026-03-28), PR merged and deployed",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 181
     },
     {
       "id": 183,
@@ -1455,7 +1551,8 @@
       "pr_number": 236,
       "note": "Staging acceptance passed (d092dca). Closed by Agent 4.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 183
     },
     {
       "id": 185,
@@ -1470,7 +1567,8 @@
       "pr_number": 187,
       "note": "Staging acceptance passed (2026-03-28), PR merged and deployed",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 185
     },
     {
       "id": 186,
@@ -1485,7 +1583,8 @@
       "pr_number": 238,
       "note": "Staging acceptance passed (d092dca). Closed by Agent 4.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 186
     },
     {
       "id": 189,
@@ -1500,7 +1599,8 @@
       "pr_number": 196,
       "note": "Staging acceptance passed (2026-03-28), PR merged and deployed",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 189
     },
     {
       "id": 190,
@@ -1515,7 +1615,8 @@
       "pr_number": 191,
       "note": "Staging acceptance passed (2026-03-28), PR merged and deployed",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 190
     },
     {
       "id": 192,
@@ -1530,7 +1631,8 @@
       "pr_number": 198,
       "note": "PR #198 merged (2b8cdce), staging verified — Telegram link present in More dropdown",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 192
     },
     {
       "id": 193,
@@ -1545,7 +1647,8 @@
       "pr_number": null,
       "note": "Dropdown works correctly on staging — ALO/GTC/IOC all selectable. Verified 2026-03-28.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 193
     },
     {
       "id": 194,
@@ -1560,7 +1663,8 @@
       "pr_number": null,
       "note": "Post-Only already exists as ALO (Add-Liquidity-Only) in the TIF dropdown. Explore agent false positive.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 194
     },
     {
       "id": 195,
@@ -1575,7 +1679,8 @@
       "pr_number": 207,
       "note": "Staging acceptance passed — Privacy & Terms links verified",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 195
     },
     {
       "id": 197,
@@ -1590,7 +1695,8 @@
       "pr_number": null,
       "note": "Fixed by PR #151/#152 (86446ad). Red borders + error messages + submit disabled all confirmed on staging.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 197
     },
     {
       "id": 199,
@@ -1605,7 +1711,8 @@
       "pr_number": 221,
       "note": null,
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 199
     },
     {
       "id": 200,
@@ -1620,7 +1727,8 @@
       "pr_number": 222,
       "note": "Staging acceptance passed — all social links verified with target=_blank",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 200
     },
     {
       "id": 201,
@@ -1635,7 +1743,8 @@
       "pr_number": 224,
       "note": "Staging acceptance passed, PR #224 merged",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 201
     },
     {
       "id": 202,
@@ -1650,7 +1759,8 @@
       "pr_number": 229,
       "note": "Staging acceptance passed (d092dca). Closed by Agent 4.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 202
     },
     {
       "id": 203,
@@ -1665,7 +1775,8 @@
       "pr_number": null,
       "note": "Randomize and Private toggles already present in TwapPanel.tsx on dev branch since initial creation (aab4b68). No code change needed.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 203
     },
     {
       "id": 204,
@@ -1680,7 +1791,8 @@
       "pr_number": 231,
       "note": "Staging acceptance passed (d092dca). Closed by Agent 4.",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 204
     },
     {
       "id": 208,
@@ -1695,7 +1807,8 @@
       "pr_number": 246,
       "note": "Staging acceptance passed — Playwright verified TP Market + TP Limit in dropdown",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 208
     },
     {
       "id": 210,
@@ -1710,7 +1823,8 @@
       "pr_number": 243,
       "note": "PR #243 merged, staging accepted (a9549a5)",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 210
     },
     {
       "id": 211,
@@ -1725,7 +1839,8 @@
       "pr_number": 247,
       "note": "PR #247 merged (d092dca), staging acceptance passed",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 211
     },
     {
       "id": 212,
@@ -1740,7 +1855,8 @@
       "pr_number": null,
       "note": "Already fixed by PR #229 (commit 08af9e6) — TriggerPriceInput inline error + useOrderValidation direction check. Explore agent false positive — stale Vercel staging (issue #98).",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 212
     },
     {
       "id": 213,
@@ -1755,7 +1871,8 @@
       "pr_number": 259,
       "note": "PR #259 merged+deployed. Staging deploy READY (ee92a8c). P4: auto acceptance skipped, human confirmation recommended.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 213
     },
     {
       "id": 214,
@@ -1770,7 +1887,8 @@
       "pr_number": 217,
       "note": "Staging acceptance passed, merged PR #217",
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 214
     },
     {
       "id": 215,
@@ -1785,7 +1903,8 @@
       "pr_number": null,
       "note": null,
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 215
     },
     {
       "id": 216,
@@ -1800,7 +1919,8 @@
       "pr_number": 250,
       "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 216
     },
     {
       "id": 218,
@@ -1815,7 +1935,8 @@
       "pr_number": 251,
       "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 218
     },
     {
       "id": 219,
@@ -1830,7 +1951,8 @@
       "pr_number": 252,
       "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 219
     },
     {
       "id": 220,
@@ -1845,7 +1967,8 @@
       "pr_number": 253,
       "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 220
     },
     {
       "id": 223,
@@ -1860,7 +1983,8 @@
       "pr_number": 254,
       "note": "PR #254 merged+deployed, staging acceptance passed (commit f8ce102)",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 223
     },
     {
       "id": 225,
@@ -1875,7 +1999,8 @@
       "pr_number": 255,
       "note": "Staging acceptance passed (commit 17d4c80). Closed by Master Agent.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 225
     },
     {
       "id": 226,
@@ -1890,7 +2015,8 @@
       "pr_number": 260,
       "note": "PR #260 merged+deployed. P4 — auto acceptance skipped per rules.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 226
     },
     {
       "id": 227,
@@ -1905,7 +2031,8 @@
       "pr_number": 261,
       "note": "PR #261 merged+deployed. P4 — auto acceptance skipped per rules.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 227
     },
     {
       "id": 228,
@@ -1920,7 +2047,8 @@
       "pr_number": 262,
       "note": "PR #262 merged+deployed. P4 — auto acceptance skipped per rules.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 228
     },
     {
       "id": 230,
@@ -1935,7 +2063,8 @@
       "pr_number": 256,
       "note": "PR #256 merged, staging acceptance passed. Sort indicator toggles correctly.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 230
     },
     {
       "id": 232,
@@ -1950,7 +2079,8 @@
       "pr_number": 338,
       "note": "Merged via PR #338",
       "closed_at": "2026-04-08",
-      "source": "human"
+      "source": "human",
+      "github_number": 232
     },
     {
       "id": 234,
@@ -1965,7 +2095,8 @@
       "pr_number": 263,
       "note": "PR #263 merged, deployed to staging (commit 3169edf). P4 — auto acceptance skipped.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 234
     },
     {
       "id": 235,
@@ -1980,7 +2111,8 @@
       "pr_number": 264,
       "note": "PR #264 merged+deployed. P4 — auto acceptance skipped per rules.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 235
     },
     {
       "id": 237,
@@ -1995,7 +2127,8 @@
       "pr_number": 257,
       "note": "PR #257 merged, staging accepted (commit 17d4c80)",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 237
     },
     {
       "id": 239,
@@ -2010,7 +2143,8 @@
       "pr_number": 248,
       "note": null,
       "closed_at": "2026-03-28",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 239
     },
     {
       "id": 240,
@@ -2025,7 +2159,8 @@
       "pr_number": null,
       "note": "not-a-bug",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 240
     },
     {
       "id": 242,
@@ -2040,7 +2175,8 @@
       "pr_number": null,
       "note": "not-a-bug",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 242
     },
     {
       "id": 265,
@@ -2055,7 +2191,8 @@
       "pr_number": 269,
       "note": "Staging acceptance passed, closed by master-agent",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 265
     },
     {
       "id": 266,
@@ -2070,7 +2207,8 @@
       "pr_number": 277,
       "note": "PR #277 merged, BigInt fix PR #314 merged, deployed (commit a91b124). Staging acceptance passed. (2026-03-29)",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 266
     },
     {
       "id": 267,
@@ -2085,7 +2223,8 @@
       "pr_number": 279,
       "note": "PR #279 merged+deployed, staging acceptance passed (commit f8ce102)",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 267
     },
     {
       "id": 268,
@@ -2100,7 +2239,8 @@
       "pr_number": 282,
       "note": "Staging acceptance passed (commit 89380e4). Agent 4.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 268
     },
     {
       "id": 270,
@@ -2115,7 +2255,8 @@
       "pr_number": 285,
       "note": "Merged PR #285, staging acceptance passed (commit f8ce102)",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 270
     },
     {
       "id": 271,
@@ -2130,7 +2271,8 @@
       "pr_number": 287,
       "note": "PR #287 merged, BigInt fix PR #314 merged, deployed (commit a91b124). Staging acceptance passed. (2026-03-29)",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 271
     },
     {
       "id": 272,
@@ -2145,7 +2287,8 @@
       "pr_number": 290,
       "note": "Staging acceptance passed — sort toggle ↓→↑→↓ verified",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 272
     },
     {
       "id": 273,
@@ -2160,7 +2303,8 @@
       "pr_number": 292,
       "note": "Staging acceptance passed — /trade?coin=INVALID redirects to default market",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 273
     },
     {
       "id": 274,
@@ -2175,7 +2319,8 @@
       "pr_number": 297,
       "note": "Staging 验收通过, PR #297 merged, commit fcc50e8",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 274
     },
     {
       "id": 275,
@@ -2190,7 +2335,8 @@
       "pr_number": 298,
       "note": "Staging acceptance passed — PR #298 merged, commit 57034a9",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 275
     },
     {
       "id": 276,
@@ -2205,7 +2351,8 @@
       "pr_number": 304,
       "note": null,
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 276
     },
     {
       "id": 278,
@@ -2220,7 +2367,8 @@
       "pr_number": 304,
       "note": null,
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 278
     },
     {
       "id": 280,
@@ -2235,7 +2383,8 @@
       "pr_number": 329,
       "note": "PR #329 merged (2026-03-30). Deploy ERROR: alwaysRefuseToBuild (issue #98). Acceptance pending deployment fix. Synced from GitHub: closed 2026-04-03.",
       "closed_at": "2026-04-03",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 280
     },
     {
       "id": 281,
@@ -2250,7 +2399,8 @@
       "pr_number": 330,
       "note": "Synced from GitHub (closed by human)",
       "closed_at": "2026-04-03",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 281
     },
     {
       "id": 283,
@@ -2265,7 +2415,8 @@
       "pr_number": 309,
       "note": null,
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 283
     },
     {
       "id": 284,
@@ -2280,7 +2431,8 @@
       "pr_number": 312,
       "note": null,
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 284
     },
     {
       "id": 286,
@@ -2295,7 +2447,8 @@
       "pr_number": 313,
       "note": "PR #313 has merge conflicts, cannot merge. Needs rebase onto dev. (2026-03-30) Closed via PR #313 merge, staging acceptance passed 2026-04-08.",
       "closed_at": "2026-04-08",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 286
     },
     {
       "id": 288,
@@ -2310,7 +2463,8 @@
       "pr_number": 342,
       "note": null,
       "closed_at": "2026-04-08",
-      "source": "human"
+      "source": "human",
+      "github_number": 288
     },
     {
       "title": "[P3] TWAP order submission — no success/error toast and TWAP tab counter does not increment",
@@ -2325,7 +2479,8 @@
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/289",
       "scenario": null,
       "fix_branch": null,
-      "closed_at": null
+      "closed_at": null,
+      "github_number": 289
     },
     {
       "title": "[P3] TWAP 订单表单缺少 Duration/Interval 字段",
@@ -2340,7 +2495,8 @@
       "scenario": null,
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/291",
       "fix_branch": "fix/issue-291",
-      "closed_at": "2026-04-09"
+      "closed_at": "2026-04-09",
+      "github_number": 291
     },
     {
       "title": "[P3] Isolated margin leverage slider still initializes at 0x after Cross→Isolated switch (regression #270)",
@@ -2355,7 +2511,8 @@
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/293",
       "scenario": null,
       "fix_branch": null,
-      "closed_at": null
+      "closed_at": null,
+      "github_number": 293
     },
     {
       "id": 294,
@@ -2370,7 +2527,8 @@
       "pr_number": 317,
       "note": "PR #317 merged (e2c4380), staging verified. Withdraw button now opens modal.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 294
     },
     {
       "id": 295,
@@ -2385,7 +2543,8 @@
       "pr_number": 318,
       "note": "PR #318 merged, staging 验收通过 (commit 995e0ff)",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 295
     },
     {
       "id": 296,
@@ -2400,7 +2559,8 @@
       "pr_number": 319,
       "note": "PR #319 merged",
       "closed_at": "2026-04-08",
-      "source": "human"
+      "source": "human",
+      "github_number": 296
     },
     {
       "id": 299,
@@ -2415,7 +2575,8 @@
       "pr_number": 320,
       "note": " Synced from GitHub",
       "closed_at": "2026-04-08",
-      "source": "human"
+      "source": "human",
+      "github_number": 299
     },
     {
       "id": 300,
@@ -2430,7 +2591,8 @@
       "pr_number": 334,
       "note": "Synced from GitHub",
       "closed_at": "2026-04-03",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 300
     },
     {
       "title": "[P3] Stop Limit — submit button not disabled when Stop price and Limit price are empty",
@@ -2445,7 +2607,8 @@
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/301",
       "scenario": null,
       "fix_branch": null,
-      "closed_at": null
+      "closed_at": null,
+      "github_number": 301
     },
     {
       "id": 302,
@@ -2460,7 +2623,8 @@
       "pr_number": 344,
       "note": "PR #344 merged, staging accepted",
       "closed_at": "2026-04-08",
-      "source": "human"
+      "source": "human",
+      "github_number": 302
     },
     {
       "id": 303,
@@ -2475,7 +2639,8 @@
       "pr_number": 323,
       "note": "PR #323 merged (8c419cc), staging accepted. Closed by Master Agent.",
       "closed_at": "2026-03-29",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 303
     },
     {
       "id": 305,
@@ -2490,7 +2655,8 @@
       "pr_number": 324,
       "note": " Synced from GitHub",
       "closed_at": "2026-04-08",
-      "source": "human"
+      "source": "human",
+      "github_number": 305
     },
     {
       "id": 306,
@@ -2505,7 +2671,8 @@
       "pr_number": 325,
       "note": "PR #325 merged",
       "closed_at": "2026-04-08",
-      "source": "human"
+      "source": "human",
+      "github_number": 306
     },
     {
       "id": 307,
@@ -2520,7 +2687,8 @@
       "pr_number": 326,
       "note": " Synced from GitHub",
       "closed_at": "2026-04-08",
-      "source": "human"
+      "source": "human",
+      "github_number": 307
     },
     {
       "id": 308,
@@ -2535,7 +2703,8 @@
       "pr_number": null,
       "note": "Synced from GitHub: closed 2026-04-03.",
       "closed_at": "2026-04-03",
-      "source": "explore"
+      "source": "explore",
+      "github_number": 308
     },
     {
       "id": 310,
@@ -2550,7 +2719,8 @@
       "pr_number": 327,
       "note": "Synced from GitHub (closed by human)",
       "closed_at": "2026-04-08",
-      "source": "human"
+      "source": "human",
+      "github_number": 310
     },
     {
       "id": 311,
@@ -2565,7 +2735,8 @@
       "pr_number": 328,
       "note": "Synced from GitHub (closed by human)",
       "closed_at": "2026-04-08",
-      "source": "human"
+      "source": "human",
+      "github_number": 311
     },
     {
       "id": 335,
@@ -2580,7 +2751,8 @@
       "pr_number": 337,
       "note": null,
       "closed_at": "2026-04-08",
-      "source": "human"
+      "source": "human",
+      "github_number": 335
     },
     {
       "id": 336,
@@ -2595,7 +2767,8 @@
       "pr_number": 339,
       "note": "PR #339 merged, staging acceptance passed (commit 2f9807c). Closed by master-agent.",
       "closed_at": "2026-04-08",
-      "source": "human"
+      "source": "human",
+      "github_number": 336
     }
   ],
   "last_updated": "2026-04-09",
