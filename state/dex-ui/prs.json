@@ -2489,9 +2489,9 @@
       "merge_conflict": true,
       "copilot_inline_comments": 1,
       "blocked_reason": "merge conflict + copilot inline comments",
-      "last_checked": "2026-04-10",
+      "last_checked": "2026-04-10T17:37:06Z",
       "copilot_inline_count": 1,
-      "merge_blocked": "conflict"
+      "merge_blocked": true
     },
     {
       "number": 343,
@@ -2510,9 +2510,9 @@
       "merge_conflict": true,
       "copilot_inline_comments": 3,
       "blocked_reason": "merge conflict + copilot inline comments",
-      "last_checked": "2026-04-10",
+      "last_checked": "2026-04-10T17:37:06Z",
       "copilot_inline_count": 3,
-      "merge_blocked": "conflict"
+      "merge_blocked": true
     },
     {
       "number": 349,
@@ -2525,11 +2525,11 @@
       "copilot_inline_comments": 4,
       "blocked_reason": "merge conflict + copilot inline comments",
       "review_status": "blocked",
-      "last_checked": "2026-04-10",
+      "last_checked": "2026-04-10T17:37:06Z",
       "review_notes": "Checked 2026-04-10: merge conflict + 4 copilot inline comment(s)",
       "copilot_inline_count": 4,
       "review_note": "Checked 2026-04-10: merge conflict + 4 copilot inline comment(s)",
-      "merge_blocked": "conflict"
+      "merge_blocked": true
     },
     {
       "number": 350,
@@ -2576,11 +2576,11 @@
       "blocked_reason": "merge conflict + copilot inline comments",
       "note": "Blocked: merge conflicts + 1 copilot inline comments (no HARNESS_VERDICT)",
       "review_status": "blocked",
-      "last_checked": "2026-04-10",
+      "last_checked": "2026-04-10T17:37:06Z",
       "review_notes": "Checked 2026-04-10: merge conflict + 1 copilot inline comment(s)",
       "copilot_inline_count": 1,
       "review_note": "Checked 2026-04-10: merge conflict + 1 copilot inline comment(s)",
-      "merge_blocked": "conflict"
+      "merge_blocked": true
     },
     {
       "number": 347,
@@ -2601,11 +2601,11 @@
       "blocked_reason": "merge conflict + copilot inline comments",
       "note": "Blocked: merge conflicts + 2 copilot inline comments (no HARNESS_VERDICT)",
       "review_status": "blocked",
-      "last_checked": "2026-04-10",
+      "last_checked": "2026-04-10T17:37:06Z",
       "review_notes": "Checked 2026-04-10: merge conflict + 2 copilot inline comment(s)",
       "copilot_inline_count": 2,
       "review_note": "Checked 2026-04-10: merge conflict + 2 copilot inline comment(s)",
-      "merge_blocked": "conflict"
+      "merge_blocked": true
     },
     {
       "number": 348,
@@ -2626,11 +2626,11 @@
       "blocked_reason": "merge conflict + copilot inline comments",
       "note": "Blocked: merge conflicts + 2 copilot inline comments (no HARNESS_VERDICT)",
       "review_status": "blocked",
-      "last_checked": "2026-04-10",
+      "last_checked": "2026-04-10T17:37:06Z",
       "review_notes": "Checked 2026-04-10: merge conflict + 2 copilot inline comment(s)",
       "copilot_inline_count": 2,
       "review_note": "Checked 2026-04-10: merge conflict + 2 copilot inline comment(s)",
-      "merge_blocked": "conflict"
+      "merge_blocked": true
     },
     {
       "pr_number": 352,
@@ -2650,11 +2650,11 @@
       "blocked_reason": "merge conflict + copilot inline comments",
       "review_status": "blocked",
       "note": "Blocked: merge conflicts + 3 copilot inline comments (no HARNESS_VERDICT)",
-      "last_checked": "2026-04-10",
+      "last_checked": "2026-04-10T17:37:06Z",
       "review_notes": "Checked 2026-04-10: merge conflict + 3 copilot inline comment(s)",
       "copilot_inline_count": 3,
       "review_note": "Checked 2026-04-10: merge conflict + 3 copilot inline comment(s)",
-      "merge_blocked": "conflict"
+      "merge_blocked": true
     },
     {
       "number": 353,
@@ -2673,11 +2673,11 @@
       "blocked_reason": "merge conflict + copilot inline comments",
       "review_status": "blocked",
       "note": "Blocked: merge conflicts + 4 copilot inline comments (no HARNESS_VERDICT)",
-      "last_checked": "2026-04-10",
+      "last_checked": "2026-04-10T17:37:06Z",
       "review_notes": "Checked 2026-04-10: merge conflict + 4 copilot inline comment(s)",
       "copilot_inline_count": 4,
       "review_note": "Checked 2026-04-10: merge conflict + 4 copilot inline comment(s)",
-      "merge_blocked": "conflict"
+      "merge_blocked": true
     },
     {
       "number": 321,
@@ -2700,8 +2700,11 @@
       "review_status": "blocked",
       "mergeable": false,
       "note": "Merge conflict + copilot inline comments",
-      "last_checked": "2026-04-10",
-      "merge_blocked": "conflict"
+      "last_checked": "2026-04-10T17:37:06Z",
+      "merge_blocked": true,
+      "merge_conflict": true,
+      "copilot_inline_comments": 1,
+      "blocked_reason": "merge conflict + copilot inline comments"
     }
   ],
   "last_updated": "2026-04-10"
