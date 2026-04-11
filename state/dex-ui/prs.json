@@ -2082,7 +2082,8 @@
       "merge_blocked": true,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments + no human approval"
+      "block_reason": "merge conflict + copilot inline comments + no human approval",
+      "mergeable": false
     },
     {
       "pr_number": 341,
@@ -2136,7 +2137,8 @@
       "merge_blocked": true,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments + no human approval"
+      "block_reason": "merge conflict + copilot inline comments + no human approval",
+      "mergeable": false
     },
     {
       "number": 344,
@@ -2171,7 +2173,8 @@
       "merge_blocked": true,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments + no human approval"
+      "block_reason": "merge conflict + copilot inline comments + no human approval",
+      "mergeable": false
     },
     {
       "pr_number": 347,
@@ -2194,7 +2197,8 @@
       "merge_blocked": true,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments + no human approval"
+      "block_reason": "merge conflict + copilot inline comments + no human approval",
+      "mergeable": false
     },
     {
       "number": 348,
@@ -2217,7 +2221,8 @@
       "merge_blocked": true,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments + no human approval"
+      "block_reason": "merge conflict + copilot inline comments + no human approval",
+      "mergeable": false
     },
     {
       "number": 349,
@@ -2240,7 +2245,8 @@
       "merge_blocked": true,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments + no human approval"
+      "block_reason": "merge conflict + copilot inline comments + no human approval",
+      "mergeable": false
     },
     {
       "number": 350,
@@ -2300,7 +2306,8 @@
       "merge_blocked": true,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments + no human approval"
+      "block_reason": "merge conflict + copilot inline comments + no human approval",
+      "mergeable": false
     },
     {
       "pr_number": 353,
@@ -2323,7 +2330,8 @@
       "merge_blocked": true,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments + no human approval"
+      "block_reason": "merge conflict + copilot inline comments + no human approval",
+      "mergeable": false
     },
     {
       "number": 354,
@@ -2347,7 +2355,8 @@
       "merge_blocked": true,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments + no human approval"
+      "block_reason": "merge conflict + copilot inline comments + no human approval",
+      "mergeable": false
     },
     {
       "number": 321,
