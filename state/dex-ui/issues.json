@@ -2601,7 +2601,7 @@
       "pr_number": 356,
       "fix_attempts": 4,
       "source": "human",
-      "note": "Copilot requested changes on PR #356: 1) handleSubmit triggerTypes fallback diverges from orderTypeOption?.needsTrigger guard; 2) TRIGGER_TYPES/LIMIT_PRICE_TYPES should be typed as readonly OrderType[] not string[]",
+      "note": "PR #356 blocked: Copilot 2 inline comments — (1) handleSubmit triggerTypes fallback inconsistency (2) TRIGGER_TYPES typed as string[] weakens type-safety",
       "id": 301,
       "created": "2026-03-29",
       "github_url": "https://github.com/chainupcloud/dex-ui/issues/301",
