@@ -2814,7 +2814,7 @@
       "accepted": false,
       "merge_conflict": false,
       "copilot_inline_comments": false,
-      "blocked_reason": null,
+      "blocked_reason": "copilot_inline_comments=2",
       "review_status": "NO_REVIEW",
       "note": "Mergeable, awaiting Copilot review",
       "last_checked": "2026-04-12",
