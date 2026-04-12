@@ -2813,17 +2813,18 @@
       "deployed": false,
       "accepted": false,
       "merge_conflict": false,
-      "copilot_inline_comments": false,
+      "copilot_inline_comments": 2,
       "blocked_reason": "copilot_inline_comments=2",
       "review_status": "NO_REVIEW",
       "note": "Mergeable, awaiting Copilot review",
       "last_checked": "2026-04-12",
-      "copilot_inline_count": 0,
-      "merge_blocked": false,
+      "copilot_inline_count": 2,
+      "merge_blocked": true,
       "mergeable": true,
       "copilot_verdict": null,
       "human_approved": false,
-      "block_reason": null
+      "block_reason": "copilot inline comments=2",
+      "review_note": "Copilot has 2 inline comments (no HARNESS_VERDICT), blocked"
     }
   ],
   "last_updated": "2026-04-11"
