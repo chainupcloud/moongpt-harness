@@ -2390,7 +2390,7 @@
       "merge_blocked": true,
       "block_reason": "copilot inline comments (2)",
       "note": "Mergeable but blocked: 2 copilot inline comments, no HARNESS_VERDICT",
-      "review_notes": "Checked 2026-04-12: all blocked",
+      "review_notes": "Checked 2026-04-12: mergeable but blocked by 2 copilot inline comments, no HARNESS_VERDICT",
       "blocked_reason": "copilot inline comments (2)",
       "copilot_inline_comments": 2,
       "mergeable_state": "unstable",
