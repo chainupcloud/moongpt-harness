@@ -2877,10 +2877,10 @@
       "copilot_inline_count": 2,
       "merge_blocked": true,
       "mergeable": true,
-      "copilot_verdict": null,
+      "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "2 copilot inline comments",
-      "review_note": "Copilot COMMENTED with 2 inline comment(s), no HARNESS_VERDICT. Mergeable but unstable.",
+      "block_reason": "Copilot inline comments (2), no HARNESS_VERDICT",
+      "review_note": "Copilot COMMENTED with 2 inline suggestions on TradeForm validation. No HARNESS_VERDICT tag. Blocked per fallback logic.",
       "review_notes": "Checked 2026-04-12: all blocked",
       "has_conflict": false
     }
