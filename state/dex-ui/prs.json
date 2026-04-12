@@ -2799,6 +2799,31 @@
       "copilot_verdict": null,
       "human_approved": false,
       "block_reason": "merge conflict + copilot inline comments"
+    },
+    {
+      "number": 356,
+      "title": "fix: stop-limit submit button not disabled when prices empty (#301)",
+      "status": "open",
+      "issue_numbers": [
+        301
+      ],
+      "branch": "fix/issue-301",
+      "base": "dev",
+      "created_date": "2026-04-12",
+      "deployed": false,
+      "accepted": false,
+      "merge_conflict": false,
+      "copilot_inline_comments": false,
+      "blocked_reason": null,
+      "review_status": "NO_REVIEW",
+      "note": "Mergeable, awaiting Copilot review",
+      "last_checked": "2026-04-12",
+      "copilot_inline_count": 0,
+      "merge_blocked": false,
+      "mergeable": true,
+      "copilot_verdict": null,
+      "human_approved": false,
+      "block_reason": null
     }
   ],
   "last_updated": "2026-04-11"
