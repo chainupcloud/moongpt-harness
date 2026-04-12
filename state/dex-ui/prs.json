@@ -2817,8 +2817,8 @@
       "merge_conflict": false,
       "copilot_inline_comments": 2,
       "blocked_reason": "copilot_inline_comments=2",
-      "review_status": "NO_REVIEW",
-      "note": "Mergeable, awaiting Copilot review",
+      "review_status": "NO_VERDICT(inline=2)",
+      "note": "Blocked: 2 copilot inline comments, no HARNESS_VERDICT",
       "last_checked": "2026-04-12",
       "copilot_inline_count": 2,
       "merge_blocked": true,
@@ -2826,7 +2826,8 @@
       "copilot_verdict": null,
       "human_approved": false,
       "block_reason": "copilot inline comments=2",
-      "review_note": "Copilot has 2 inline comments (no HARNESS_VERDICT), blocked"
+      "review_note": "Copilot COMMENTED with 2 inline comment(s), no HARNESS_VERDICT.",
+      "review_notes": "Checked 2026-04-12: Blocked: copilot inline comment(s)"
     }
   ],
   "last_updated": "2026-04-11"
