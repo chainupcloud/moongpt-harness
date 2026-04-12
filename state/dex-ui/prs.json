@@ -2564,15 +2564,15 @@
       "note": "Blocked: merge conflicts + 1 copilot inline comment(s)",
       "review_note": "Copilot COMMENTED with 1 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
       "merge_conflict": true,
-      "copilot_inline_comments": 0,
+      "copilot_inline_comments": 1,
       "blocked_reason": "merge conflict",
-      "last_checked": "2026-04-12T06:37:04Z",
+      "last_checked": "2026-04-12",
       "copilot_inline_count": 1,
       "merge_blocked": true,
       "mergeable": false,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict + copilot inline comments (1)"
     },
     {
       "number": 343,
@@ -2589,15 +2589,15 @@
       "note": "Blocked: merge conflicts + 3 copilot inline comment(s)",
       "review_note": "Copilot COMMENTED with 3 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
       "merge_conflict": true,
-      "copilot_inline_comments": 0,
+      "copilot_inline_comments": 3,
       "blocked_reason": "merge conflict",
-      "last_checked": "2026-04-12T06:37:04Z",
+      "last_checked": "2026-04-12",
       "copilot_inline_count": 3,
       "merge_blocked": true,
       "mergeable": false,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict + copilot inline comments (3)"
     },
     {
       "number": 349,
@@ -2607,10 +2607,10 @@
       "branch": "fix/issue-77",
       "note": "Blocked: merge conflicts + 4 copilot inline comment(s)",
       "merge_conflict": true,
-      "copilot_inline_comments": 0,
+      "copilot_inline_comments": 4,
       "blocked_reason": "merge conflict",
       "review_status": "NO_VERDICT(inline=4)",
-      "last_checked": "2026-04-12T06:37:04Z",
+      "last_checked": "2026-04-12",
       "review_notes": "Checked 2026-04-12: all blocked",
       "copilot_inline_count": 4,
       "review_note": "Copilot COMMENTED with 4 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
@@ -2618,7 +2618,7 @@
       "mergeable": false,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict + copilot inline comments (4)"
     },
     {
       "number": 350,
@@ -2661,11 +2661,11 @@
       "deployed": false,
       "accepted": false,
       "merge_conflict": true,
-      "copilot_inline_comments": 0,
+      "copilot_inline_comments": 1,
       "blocked_reason": "merge conflict",
       "note": "Blocked: merge conflicts + 1 copilot inline comment(s)",
       "review_status": "NO_VERDICT(inline=1)",
-      "last_checked": "2026-04-12T06:37:04Z",
+      "last_checked": "2026-04-12",
       "review_notes": "Checked 2026-04-12: all blocked",
       "copilot_inline_count": 1,
       "review_note": "Copilot COMMENTED with 1 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
@@ -2673,7 +2673,7 @@
       "mergeable": false,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict + copilot inline comments (1)"
     },
     {
       "number": 347,
@@ -2690,11 +2690,11 @@
       "deployed": false,
       "accepted": false,
       "merge_conflict": true,
-      "copilot_inline_comments": 0,
+      "copilot_inline_comments": 2,
       "blocked_reason": "merge conflict",
       "note": "Blocked: merge conflicts + 2 copilot inline comment(s)",
       "review_status": "NO_VERDICT(inline=2)",
-      "last_checked": "2026-04-12T06:37:04Z",
+      "last_checked": "2026-04-12",
       "review_notes": "Checked 2026-04-12: all blocked",
       "copilot_inline_count": 2,
       "review_note": "Copilot COMMENTED with 2 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
@@ -2702,7 +2702,7 @@
       "mergeable": false,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict + copilot inline comments (2)"
     },
     {
       "number": 348,
@@ -2719,11 +2719,11 @@
       "deployed": false,
       "accepted": false,
       "merge_conflict": true,
-      "copilot_inline_comments": 0,
+      "copilot_inline_comments": 2,
       "blocked_reason": "merge conflict",
       "note": "Blocked: merge conflicts + 2 copilot inline comment(s)",
       "review_status": "NO_VERDICT(inline=2)",
-      "last_checked": "2026-04-12T06:37:04Z",
+      "last_checked": "2026-04-12",
       "review_notes": "Checked 2026-04-12: all blocked",
       "copilot_inline_count": 2,
       "review_note": "Copilot COMMENTED with 2 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
@@ -2731,7 +2731,7 @@
       "mergeable": false,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict + copilot inline comments (2)"
     },
     {
       "pr_number": 352,
@@ -2747,11 +2747,11 @@
       "deployed": false,
       "accepted": false,
       "merge_conflict": true,
-      "copilot_inline_comments": 0,
+      "copilot_inline_comments": 3,
       "blocked_reason": "merge conflict",
       "review_status": "NO_VERDICT(inline=3)",
       "note": "Blocked: merge conflicts + 3 copilot inline comment(s)",
-      "last_checked": "2026-04-12T06:37:04Z",
+      "last_checked": "2026-04-12",
       "review_notes": "Checked 2026-04-12: all blocked",
       "copilot_inline_count": 3,
       "review_note": "Copilot COMMENTED with 3 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
@@ -2759,7 +2759,7 @@
       "mergeable": false,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict + copilot inline comments (3)"
     },
     {
       "number": 353,
@@ -2774,11 +2774,11 @@
       "deployed": false,
       "accepted": false,
       "merge_conflict": true,
-      "copilot_inline_comments": 0,
+      "copilot_inline_comments": 4,
       "blocked_reason": "merge conflict",
       "review_status": "NO_VERDICT(inline=4)",
       "note": "Blocked: merge conflicts + 4 copilot inline comment(s)",
-      "last_checked": "2026-04-12T06:37:04Z",
+      "last_checked": "2026-04-12",
       "review_notes": "Checked 2026-04-12: all blocked",
       "copilot_inline_count": 4,
       "review_note": "Copilot COMMENTED with 4 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
@@ -2786,7 +2786,7 @@
       "mergeable": false,
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict + copilot inline comments (4)"
     },
     {
       "number": 321,
@@ -2809,17 +2809,17 @@
       "review_status": "NO_VERDICT(inline=1)",
       "mergeable": false,
       "note": "Blocked: merge conflicts + 1 copilot inline comment(s)",
-      "last_checked": "2026-04-12T06:37:04Z",
+      "last_checked": "2026-04-12",
       "merge_blocked": true,
       "merge_conflict": true,
-      "copilot_inline_comments": 0,
+      "copilot_inline_comments": 1,
       "blocked_reason": "merge conflict",
       "copilot_inline_count": 1,
       "review_note": "Copilot COMMENTED with 1 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
       "review_notes": "Checked 2026-04-12: all blocked",
       "copilot_verdict": "COMMENTED",
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict + copilot inline comments (1)"
     },
     {
       "number": 356,
@@ -2838,13 +2838,13 @@
       "blocked_reason": "copilot inline comments",
       "review_status": "changes_requested",
       "note": "Blocked: 2 copilot inline comment(s)",
-      "last_checked": "2026-04-12T06:37:04Z",
+      "last_checked": "2026-04-12",
       "copilot_inline_count": 2,
       "merge_blocked": true,
       "mergeable": true,
       "copilot_verdict": null,
       "human_approved": false,
-      "block_reason": "copilot_inline_comments",
+      "block_reason": "copilot inline comments (2)",
       "review_note": "2 copilot inline comments: (1) handleSubmit triggerTypes fallback inconsistency, (2) TRIGGER_TYPES/LIMIT_PRICE_TYPES typed as string[] instead of OrderType[]",
       "review_notes": "Checked 2026-04-12: all blocked"
     }
