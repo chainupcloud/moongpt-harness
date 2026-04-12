@@ -2597,9 +2597,9 @@
     {
       "title": "[P3] Stop Limit — submit button not disabled when Stop price and Limit price are empty",
       "priority": "P3",
-      "status": "open",
-      "pr_number": 321,
-      "fix_attempts": 2,
+      "status": "fixing",
+      "pr_number": 356,
+      "fix_attempts": 3,
       "source": "human",
       "note": "Fix confirmed working on staging 2026-04-09: submit button correctly disabled (shows \"Enter Trigger Price\") when Stop Price and Limit Price are empty. Previous acceptance was false negative — test matched side selector tab instead of submit button. | Reopened: GitHub issue still open (synced 2026-04-12)",
       "id": 301,
