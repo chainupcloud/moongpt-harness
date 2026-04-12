@@ -2553,7 +2553,7 @@
       "mergeable": false,
       "copilot_verdict": null,
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict"
     },
     {
       "number": 343,
@@ -2578,7 +2578,7 @@
       "mergeable": false,
       "copilot_verdict": null,
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict"
     },
     {
       "number": 349,
@@ -2599,7 +2599,7 @@
       "mergeable": false,
       "copilot_verdict": null,
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict"
     },
     {
       "number": 350,
@@ -2654,7 +2654,7 @@
       "mergeable": false,
       "copilot_verdict": null,
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict"
     },
     {
       "number": 347,
@@ -2683,7 +2683,7 @@
       "mergeable": false,
       "copilot_verdict": null,
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict"
     },
     {
       "number": 348,
@@ -2712,7 +2712,7 @@
       "mergeable": false,
       "copilot_verdict": null,
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict"
     },
     {
       "pr_number": 352,
@@ -2740,7 +2740,7 @@
       "mergeable": false,
       "copilot_verdict": null,
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict"
     },
     {
       "number": 353,
@@ -2767,7 +2767,7 @@
       "mergeable": false,
       "copilot_verdict": null,
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict"
     },
     {
       "number": 321,
@@ -2800,7 +2800,7 @@
       "review_notes": "Checked 2026-04-12: Blocked: merge conflicts + copilot inline comment(s)",
       "copilot_verdict": null,
       "human_approved": false,
-      "block_reason": "merge conflict + copilot inline comments"
+      "block_reason": "merge conflict"
     },
     {
       "number": 356,
