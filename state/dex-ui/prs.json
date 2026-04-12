@@ -2551,7 +2551,7 @@
       "copilot_inline_count": 1,
       "merge_blocked": true,
       "mergeable": false,
-      "copilot_verdict": "REQUEST_CHANGES",
+      "copilot_verdict": "COMMENTED",
       "human_approved": false,
       "block_reason": "merge conflict"
     },
@@ -2576,7 +2576,7 @@
       "copilot_inline_count": 3,
       "merge_blocked": true,
       "mergeable": false,
-      "copilot_verdict": "REQUEST_CHANGES",
+      "copilot_verdict": "COMMENTED",
       "human_approved": false,
       "block_reason": "merge conflict"
     },
@@ -2597,7 +2597,7 @@
       "review_note": "Copilot COMMENTED with 4 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
       "merge_blocked": true,
       "mergeable": false,
-      "copilot_verdict": "REQUEST_CHANGES",
+      "copilot_verdict": "COMMENTED",
       "human_approved": false,
       "block_reason": "merge conflict"
     },
@@ -2652,7 +2652,7 @@
       "review_note": "Copilot COMMENTED with 1 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
       "merge_blocked": true,
       "mergeable": false,
-      "copilot_verdict": "REQUEST_CHANGES",
+      "copilot_verdict": "COMMENTED",
       "human_approved": false,
       "block_reason": "merge conflict"
     },
@@ -2681,7 +2681,7 @@
       "review_note": "Copilot COMMENTED with 2 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
       "merge_blocked": true,
       "mergeable": false,
-      "copilot_verdict": "REQUEST_CHANGES",
+      "copilot_verdict": "COMMENTED",
       "human_approved": false,
       "block_reason": "merge conflict"
     },
@@ -2710,7 +2710,7 @@
       "review_note": "Copilot COMMENTED with 2 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
       "merge_blocked": true,
       "mergeable": false,
-      "copilot_verdict": "REQUEST_CHANGES",
+      "copilot_verdict": "COMMENTED",
       "human_approved": false,
       "block_reason": "merge conflict"
     },
@@ -2738,7 +2738,7 @@
       "review_note": "Copilot COMMENTED with 3 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
       "merge_blocked": true,
       "mergeable": false,
-      "copilot_verdict": "REQUEST_CHANGES",
+      "copilot_verdict": "COMMENTED",
       "human_approved": false,
       "block_reason": "merge conflict"
     },
@@ -2765,7 +2765,7 @@
       "review_note": "Copilot COMMENTED with 4 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
       "merge_blocked": true,
       "mergeable": false,
-      "copilot_verdict": "REQUEST_CHANGES",
+      "copilot_verdict": "COMMENTED",
       "human_approved": false,
       "block_reason": "merge conflict"
     },
@@ -2798,7 +2798,7 @@
       "copilot_inline_count": 1,
       "review_note": "Copilot COMMENTED with 1 inline comment(s), no HARNESS_VERDICT. Merge conflict present.",
       "review_notes": "Checked 2026-04-12: Blocked: merge conflicts + copilot inline comment(s)",
-      "copilot_verdict": "REQUEST_CHANGES",
+      "copilot_verdict": "COMMENTED",
       "human_approved": false,
       "block_reason": "merge conflict"
     },
@@ -2823,7 +2823,7 @@
       "copilot_inline_count": 2,
       "merge_blocked": true,
       "mergeable": true,
-      "copilot_verdict": "REQUEST_CHANGES",
+      "copilot_verdict": "COMMENTED",
       "human_approved": false,
       "block_reason": "copilot inline comments=2",
       "review_note": "Copilot COMMENTED with 2 inline comment(s), no HARNESS_VERDICT.",
