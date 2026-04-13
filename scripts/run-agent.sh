@@ -4,10 +4,32 @@
 #   agent:   test | fix | master | coverage
 #   project: dex-ui | ... (must match a file in projects/{project}.json)
 
-set -e
-
 AGENT=$1
 PROJECT=${2:-dex-ui}
+
+# ── Cron-only enforcement ─────────────────────────────────────────────────────
+# Walk the process ancestry up to 10 levels looking for a cron daemon.
+# This prevents manual execution — agents must be launched from cron.
+_check_cron_ancestor() {
+  local pid=$PPID
+  local depth=0
+  while [ "$pid" -gt 1 ] && [ "$depth" -lt 10 ]; do
+    local comm
+    comm=$(ps -o comm= -p "$pid" 2>/dev/null | tr -d ' ')
+    case "$comm" in
+      cron|crond|CRON|vixie-cron|fcron) return 0 ;;
+    esac
+    pid=$(ps -o ppid= -p "$pid" 2>/dev/null | tr -d ' ')
+    depth=$((depth + 1))
+  done
+  return 1
+}
+
+if ! _check_cron_ancestor; then
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] ERROR: run-agent.sh must be launched by cron. Manual execution is not allowed." >&2
+  exit 1
+fi
+# ─────────────────────────────────────────────────────────────────────────────
 HARNESS_DIR="/home/ubuntu/chainup/moongpt-harness"
 CLAUDE="/home/ubuntu/.local/bin/claude"
 PROJECT_CONFIG="$HARNESS_DIR/projects/${PROJECT}.json"
@@ -212,7 +234,19 @@ MAX_TURNS=40
 [ "$AGENT" = "fix" ]    && MAX_TURNS=60
 [ "$AGENT" = "master" ] && MAX_TURNS=80
 
-$CLAUDE \
+# ── Hard timeout (prevents zombie processes holding locks indefinitely) ────────
+# Each agent's timeout is set to slightly less than its cron interval.
+# explore: every 10m → 9m; fix: every 30m → 28m; master: every 10m → 9m; plan: weekly → 50m
+case "$AGENT" in
+  explore) TIMEOUT_SECS=540  ;;   # 9 minutes
+  fix)     TIMEOUT_SECS=1680 ;;   # 28 minutes
+  master)  TIMEOUT_SECS=540  ;;   # 9 minutes
+  plan)    TIMEOUT_SECS=3000 ;;   # 50 minutes
+  *)       TIMEOUT_SECS=600  ;;
+esac
+# ─────────────────────────────────────────────────────────────────────────────
+
+timeout "$TIMEOUT_SECS" $CLAUDE \
   --print \
   $MODEL_FLAG \
   --allowedTools "Bash,Read,Write,Edit,Glob,Grep" \
@@ -225,5 +259,11 @@ $CLAUDE \
 配置文件: $PROJECT_CONFIG
 配置内容:
 $(cat "$PROJECT_CONFIG")"
+
+EXIT_CODE=$?
+if [ $EXIT_CODE -eq 124 ]; then
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] ERROR: $AGENT agent killed — exceeded hard timeout of ${TIMEOUT_SECS}s." >&2
+  exit 124
+fi
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] $AGENT agent completed for $PROJECT."
